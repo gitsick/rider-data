@@ -1,0 +1,1152 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>骑手解除合作登记数据分享</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Microsoft YaHei',system-ui,sans-serif;color:#222;background:#f6f7fb;padding:20px}.wrap{max-width:1300px;margin:0 auto}
+.doctitle{font-size:23px;font-weight:700;margin-bottom:6px}.doctime{color:#666;font-size:13px;margin-bottom:18px}
+.section{background:#fff;border-radius:12px;padding:20px 22px;margin-bottom:18px;box-shadow:0 1px 6px rgba(0,0,0,.06)}h2{font-size:17px;margin-bottom:12px;border-left:4px solid #409eff;padding-left:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}.metric{background:#f8fafc;border-radius:10px;padding:14px;text-align:center}.metric .m-num{font-size:26px;font-weight:800;color:#409eff}.metric .m-lbl{font-size:12px;color:#888;margin-top:4px}.metric.hd .m-num{color:#67c23a}.metric.hs .m-num{color:#e6a23c}
+.rb{display:flex;justify-content:space-between;padding:7px 4px;border-bottom:1px dashed #eee;font-size:14px}.rv{color:#409eff;font-weight:600}
+.notes{font-size:13px;line-height:1.9;color:#444}.notes li{margin-left:18px}
+.toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}.toolbar select{padding:6px 10px;border:1px solid #dfe6ee;border-radius:6px;font-size:13px}
+.pager{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 0 4px;flex-wrap:wrap}
+.pbtn{border:1px solid #dfe6ee;background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:13px;color:#5a6b7d}.pbtn:hover{background:#f0f6ff;color:#409eff}.pbtn.cur{background:#409eff;color:#fff;border-color:#409eff;font-weight:600}.pbtn:disabled{opacity:.4;cursor:not-allowed}.pinfo{font-size:13px;color:#6b7a8c;margin:0 6px}
+.tblwrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}th,td{border:1px solid #e4e7ed;padding:7px 8px;text-align:left;word-break:break-word;overflow-wrap:break-word;vertical-align:top}th{background:#f2f6fc;position:sticky;top:0}td:nth-child(1),td:nth-child(2),td:nth-child(5),td:nth-child(6),td:nth-child(7){white-space:nowrap}
+th:nth-child(1){width:55px}th:nth-child(2){width:135px}th:nth-child(3){width:90px}th:nth-child(4){width:200px}th:nth-child(5){width:70px}th:nth-child(6){width:85px}th:nth-child(7){width:115px}th:nth-child(8){width:95px}th:nth-child(9){width:90px}th:nth-child(10){width:170px}th:nth-child(11){width:110px}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;background:#ecf5ff;color:#409eff}.tag.hd{background:#f0f9eb;color:#67c23a}.tag.hs{background:#fdf6ec;color:#e6a23c}.foot{text-align:center;color:#999;font-size:12px;margin-top:14px}
+@media print{body{background:#fff;padding:0}.section{box-shadow:none;border:1px solid #ddd}.tblwrap{overflow:visible}thead{display:table-header-group}tr{break-inside:avoid}}</style><style>
+/* ====== mt-style-injected ====== */
+:root{
+  --mt-yellow:#FFC300;
+  --mt-yellow-d:#F5A623;
+  --mt-dark:#1B2233;
+  --mt-dark2:#2D3447;
+  --mt-bg:#F0F2F5;
+  --mt-text:#1B1B33;
+  --mt-text2:#8A8FA3;
+  --mt-text3:#B0B4C0;
+  --mt-border:#EAECEF;
+  --mt-card:#FFFFFF;
+  --mt-radius:10px;
+  --mt-shadow:0 1px 3px rgba(0,0,0,.05);
+  --mt-shadow-h:0 6px 16px rgba(27,34,51,.08);
+  --mt-th-bg:#F8F9FA;
+  --mt-th-c:#1B1B33;
+  --mt-row-alt:#FAFBFC;
+  --mt-row-hover:#FFF8E1;
+}
+
+/* ---- 全局 ---- */
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif!important;
+  background:var(--mt-bg)!important;
+  color:var(--mt-text)!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+/* ---- 页头 ---- */
+.header,.u-header{
+  background:linear-gradient(135deg,var(--mt-dark) 0%,var(--mt-dark2) 60%,#3A4458 100%)!important;
+  color:#fff!important;
+  border-radius:var(--mt-radius)!important;
+  padding:20px 26px!important;
+  margin-bottom:14px!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.header::after,.u-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--mt-yellow) 0%,var(--mt-yellow-d) 50%,var(--mt-yellow) 100%);
+}
+.header h1,.u-header h1,.u-header .doctitle{
+  color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;
+}
+.header .sub,.header .subtitle,.u-header .sub,.u-header .doctime,.u-header .subtitle{
+  color:var(--mt-text3)!important;font-size:12px!important;margin-top:4px!important;
+}
+
+/* ---- wrap / container ---- */
+.wrap,.container{max-width:100%!important;margin:0!important}
+
+/* ---- 标题 (非页头内) ---- */
+h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important;letter-spacing:.3px}
+.doctitle{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important}
+.doctime,.sub{color:var(--mt-text2)!important;font-size:12px!important}
+
+/* ---- 卡片 ---- */
+.card,.section,.filters,.tblwrap,.card-header,.search-bar,.filter-bar,.reasons-section{
+  background:var(--mt-card)!important;
+  border-radius:var(--mt-radius)!important;
+  box-shadow:var(--mt-shadow)!important;
+  border:1px solid var(--mt-border)!important;
+}
+.card,.section{padding:14px 16px!important;margin-bottom:14px!important}
+/* 卡片左侧彩条保留 */
+.card-title{
+  color:var(--mt-text)!important;
+  font-size:14px!important;font-weight:600!important;
+  border-bottom:1px solid var(--mt-border)!important;
+  padding-bottom:10px!important;margin-bottom:12px!important;
+}
+.card-title::before{
+  content:"";display:inline-block;width:3px;height:15px;
+  background:linear-gradient(180deg,var(--mt-yellow),var(--mt-yellow-d));border-radius:2px;margin-right:8px;
+  vertical-align:-2px;
+}
+.section h2{
+  font-size:14px!important;font-weight:600!important;color:var(--mt-text)!important;
+  border-left:3px solid var(--mt-yellow)!important;
+  padding-left:10px!important;margin-bottom:12px!important;
+}
+
+/* ---- KPI / 统计卡片 ---- */
+.card .num,.metric .m-num{
+  color:var(--mt-dark)!important;font-size:30px!important;font-weight:800!important;line-height:1.1!important;
+}
+.card.hd .num,.metric.hd .m-num{color:#52C41A!important}
+.card.hs .num,.metric.hs .m-num{color:#FA8C16!important}
+.card .lbl,.metric .m-lbl,.metric .lbl{
+  color:var(--mt-text2)!important;font-size:12px!important;margin-top:4px!important;font-weight:500!important;
+}
+.card .pct{color:var(--mt-text3)!important;font-size:11px!important;margin-top:2px!important}
+.metric{background:var(--mt-row-alt)!important;border-radius:6px!important;padding:12px!important}
+
+/* ---- 表格 ---- */
+table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}
+th,.dt th{
+  background:var(--mt-th-bg)!important;
+  color:var(--mt-th-c)!important;
+  font-weight:600!important;font-size:12px!important;
+  padding:10px 12px!important;
+  border-bottom:2px solid var(--mt-yellow)!important;
+  text-align:left!important;
+  transition:background .15s!important;
+}
+th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important}
+th:hover{background:#F0F1F2!important}
+td,.dt td{
+  padding:9px 12px!important;
+  border-bottom:1px solid #F0F1F2!important;
+  color:var(--mt-text)!important;font-size:13px!important;
+}
+.dt td{border:1px solid var(--mt-border)!important;text-align:center!important}
+tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}
+tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
+.dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}
+
+/* ---- 按钮 ---- */
+.pbtn,.clearbtn,.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{
+  border-radius:6px!important;
+  border:1px solid #E8E9EB!important;
+  background:var(--mt-card)!important;
+  color:#5A5F6B!important;
+  font-size:13px!important;
+  padding:6px 10px!important;
+  transition:all .15s!important;
+  outline:none!important;
+  font-weight:500!important;
+}
+.filters input{min-width:200px!important}
+.pbtn:hover,.clearbtn:hover,.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  border-color:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  background:var(--mt-row-hover)!important;
+}
+.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  box-shadow:0 0 0 2px rgba(255,195,0,.08)!important;
+}
+.pbtn.cur{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+.pbtn:disabled{opacity:.4!important;cursor:not-allowed!important}
+
+/* ---- Tab ---- */
+.tab{
+  padding:10px 20px!important;font-size:14px!important;
+  color:var(--mt-text2)!important;
+  border-bottom:2px solid transparent!important;
+  transition:all .15s!important;
+}
+.tab.cur{
+  color:var(--mt-dark)!important;
+  border-bottom-color:var(--mt-yellow)!important;
+  font-weight:600!important;
+  background:transparent!important;
+}
+.tab:hover{color:var(--mt-dark)!important}
+
+/* ---- 城市标签 (delivery-assessment) ---- */
+.city-tab{
+  background:rgba(255,255,255,.12)!important;
+  color:#fff!important;
+  border:2px solid transparent!important;
+  cursor:pointer!important;
+}
+.city-tab:hover{background:rgba(255,255,255,.22)!important}
+.city-tab.active{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+
+/* ---- 标签 tag ---- */
+.tag{
+  display:inline-block!important;
+  padding:2px 10px!important;
+  border-radius:4px!important;
+  font-size:11px!important;font-weight:600!important;
+  background:#FFF3D4!important;color:#B8860B!important;
+}
+.tag.hd{background:#E6F7DD!important;color:#389E0D!important}
+.tag.hs{background:#FFF1E0!important;color:#D46B08!important}
+
+/* ---- 分页 ---- */
+.pager{display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:6px!important;padding:14px 0 8px!important;flex-wrap:wrap!important}
+.pinfo{font-size:12px!important;color:var(--mt-text2)!important;margin:0 8px!important}
+
+/* ---- 页脚 ---- */
+.foot,.footer{
+  text-align:center!important;
+  color:var(--mt-text3)!important;
+  font-size:12px!important;
+  padding:18px 0!important;
+}
+
+/* ---- 杂项 ---- */
+.meta{color:var(--mt-text2)!important;font-size:12px!important}
+.rb{border-bottom:1px dashed var(--mt-border)!important}
+.rv{color:var(--mt-dark)!important;font-weight:700!important}
+.notes{color:var(--mt-text)!important;line-height:1.9!important}
+.notes li{margin-left:18px!important}
+.empty{color:var(--mt-text3)!important;padding:48px!important;text-align:center!important;font-size:14px!important}
+/* 导航按钮适配 */
+.pn{
+  background:var(--mt-dark)!important;
+  border:1px solid rgba(255,195,0,.3)!important;
+}
+.pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
+/* ====== end mt-style ====== </style>
+<style>
+/* ====== mt-style-injected ====== */
+:root{
+  --mt-yellow:#FFC300;
+  --mt-yellow-d:#F5A623;
+  --mt-dark:#1B2233;
+  --mt-dark2:#2D3447;
+  --mt-bg:#F0F2F5;
+  --mt-text:#1B1B33;
+  --mt-text2:#8A8FA3;
+  --mt-text3:#B0B4C0;
+  --mt-border:#EAECEF;
+  --mt-card:#FFFFFF;
+  --mt-radius:8px;
+  --mt-shadow:0 1px 3px rgba(0,0,0,.05);
+  --mt-shadow-h:0 6px 16px rgba(27,34,51,.08);
+  --mt-th-bg:#F8F9FA;
+  --mt-th-c:#1B1B33;
+  --mt-row-alt:#FAFBFC;
+  --mt-row-hover:#FFF8E1;
+}
+
+/* ---- 全局 ---- */
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif!important;
+  background:var(--mt-bg)!important;
+  color:var(--mt-text)!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+/* ---- 页头 ---- */
+.header,.u-header{
+  background:linear-gradient(135deg,var(--mt-dark) 0%,var(--mt-dark2) 60%,#3A4458 100%)!important;
+  color:#fff!important;
+  border-radius:var(--mt-radius)!important;
+  padding:20px 26px!important;
+  margin-bottom:14px!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.header::after,.u-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--mt-yellow) 0%,var(--mt-yellow-d) 50%,var(--mt-yellow) 100%);
+}
+.header h1,.u-header h1,.u-header .doctitle{
+  color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;
+}
+.header .sub,.header .subtitle,.u-header .sub,.u-header .doctime,.u-header .subtitle{
+  color:var(--mt-text3)!important;font-size:12px!important;margin-top:4px!important;
+}
+
+/* ---- wrap / container ---- */
+.wrap,.container{max-width:100%!important;margin:0!important}
+
+/* ---- 标题 (非页头内) ---- */
+h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important;letter-spacing:.3px}
+.doctitle{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important}
+.doctime,.sub{color:var(--mt-text2)!important;font-size:12px!important}
+
+/* ---- 卡片 ---- */
+.card,.section,.filters,.tblwrap,.card-header,.search-bar,.filter-bar,.reasons-section{
+  background:var(--mt-card)!important;
+  border-radius:var(--mt-radius)!important;
+  box-shadow:var(--mt-shadow)!important;
+  border:1px solid var(--mt-border)!important;
+}
+.card,.section{padding:10px 12px!important;margin-bottom:12px!important}
+/* 卡片左侧彩条保留 */
+.card-title{
+  color:var(--mt-text)!important;
+  font-size:14px!important;font-weight:600!important;
+  border-bottom:1px solid var(--mt-border)!important;
+  padding-bottom:10px!important;margin-bottom:12px!important;
+}
+.card-title::before{
+  content:"";display:inline-block;width:3px;height:15px;
+  background:linear-gradient(180deg,var(--mt-yellow),var(--mt-yellow-d));border-radius:2px;margin-right:8px;
+  vertical-align:-2px;
+}
+.section h2{
+  font-size:14px!important;font-weight:600!important;color:var(--mt-text)!important;
+  border-left:3px solid var(--mt-yellow)!important;
+  padding-left:10px!important;margin-bottom:12px!important;
+}
+
+/* ---- KPI / 统计卡片 ---- */
+.card .num,.metric .m-num{
+  color:var(--mt-dark)!important;font-size:24px!important;font-weight:800!important;line-height:1.1!important;
+}
+.card.hd .num,.metric.hd .m-num{color:#52C41A!important}
+.card.hs .num,.metric.hs .m-num{color:#FA8C16!important}
+.card .lbl,.metric .m-lbl,.metric .lbl{
+  color:var(--mt-text2)!important;font-size:11px!important;margin-top:3px!important;font-weight:500!important;
+}
+.card .pct{color:var(--mt-text3)!important;font-size:10px!important;margin-top:1px!important}
+.metric{background:var(--mt-row-alt)!important;border-radius:6px!important;padding:12px!important}
+
+/* ---- 表格 ---- */
+table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}
+th,.dt th{
+  background:var(--mt-th-bg)!important;
+  color:var(--mt-th-c)!important;
+  font-weight:600!important;font-size:12px!important;
+  padding:10px 12px!important;
+  border-bottom:2px solid var(--mt-yellow)!important;
+  text-align:left!important;
+  transition:background .15s!important;
+}
+th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important}
+th:hover{background:#F0F1F2!important}
+td,.dt td{
+  padding:9px 12px!important;
+  border-bottom:1px solid #F0F1F2!important;
+  color:var(--mt-text)!important;font-size:13px!important;
+}
+.dt td{border:1px solid var(--mt-border)!important;text-align:center!important}
+tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}
+tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
+.dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}
+
+/* ---- 按钮 ---- */
+.pbtn,.clearbtn,.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{
+  border-radius:6px!important;
+  border:1px solid #E8E9EB!important;
+  background:var(--mt-card)!important;
+  color:#5A5F6B!important;
+  font-size:13px!important;
+  padding:6px 10px!important;
+  transition:all .15s!important;
+  outline:none!important;
+  font-weight:500!important;
+}
+.filters input{min-width:200px!important}
+.pbtn:hover,.clearbtn:hover,.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  border-color:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  background:var(--mt-row-hover)!important;
+}
+.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  box-shadow:0 0 0 2px rgba(255,195,0,.08)!important;
+}
+.pbtn.cur{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+.pbtn:disabled{opacity:.4!important;cursor:not-allowed!important}
+
+/* ---- Tab ---- */
+.tab{
+  padding:10px 20px!important;font-size:14px!important;
+  color:var(--mt-text2)!important;
+  border-bottom:2px solid transparent!important;
+  transition:all .15s!important;
+}
+.tab.cur{
+  color:var(--mt-dark)!important;
+  border-bottom-color:var(--mt-yellow)!important;
+  font-weight:600!important;
+  background:transparent!important;
+}
+.tab:hover{color:var(--mt-dark)!important}
+
+/* ---- 城市标签 (delivery-assessment) ---- */
+.city-tab{
+  background:rgba(255,255,255,.12)!important;
+  color:#fff!important;
+  border:2px solid transparent!important;
+  cursor:pointer!important;
+}
+.city-tab:hover{background:rgba(255,255,255,.22)!important}
+.city-tab.active{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+
+/* ---- 标签 tag ---- */
+.tag{
+  display:inline-block!important;
+  padding:2px 10px!important;
+  border-radius:4px!important;
+  font-size:11px!important;font-weight:600!important;
+  background:#FFF3D4!important;color:#B8860B!important;
+}
+.tag.hd{background:#E6F7DD!important;color:#389E0D!important}
+.tag.hs{background:#FFF1E0!important;color:#D46B08!important}
+
+/* ---- 分页 ---- */
+.pager{display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:6px!important;padding:14px 0 8px!important;flex-wrap:wrap!important}
+.pinfo{font-size:12px!important;color:var(--mt-text2)!important;margin:0 8px!important}
+
+/* ---- 页脚 ---- */
+.foot,.footer{
+  text-align:center!important;
+  color:var(--mt-text3)!important;
+  font-size:12px!important;
+  padding:18px 0!important;
+}
+
+/* ---- 杂项 ---- */
+.meta{color:var(--mt-text2)!important;font-size:12px!important}
+.rb{border-bottom:1px dashed var(--mt-border)!important}
+.rv{color:var(--mt-dark)!important;font-weight:700!important}
+.notes{color:var(--mt-text)!important;line-height:1.9!important}
+.notes li{margin-left:18px!important}
+.empty{color:var(--mt-text3)!important;padding:48px!important;text-align:center!important;font-size:14px!important}
+/* 导航按钮适配 */
+.pn{
+  background:var(--mt-dark)!important;
+  border:1px solid rgba(255,195,0,.3)!important;
+}
+.pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
+/* ====== end mt-style ====== </style>
+<style>
+/* ====== mt-style-injected ====== */
+:root{
+  --mt-yellow:#FFC300;
+  --mt-yellow-d:#F5A623;
+  --mt-dark:#1B2233;
+  --mt-dark2:#2D3447;
+  --mt-bg:#F0F2F5;
+  --mt-text:#1B1B33;
+  --mt-text2:#8A8FA3;
+  --mt-text3:#B0B4C0;
+  --mt-border:#EAECEF;
+  --mt-card:#FFFFFF;
+  --mt-radius:8px;
+  --mt-shadow:0 1px 3px rgba(0,0,0,.05);
+  --mt-shadow-h:0 6px 16px rgba(27,34,51,.08);
+  --mt-th-bg:#F8F9FA;
+  --mt-th-c:#1B1B33;
+  --mt-row-alt:#FAFBFC;
+  --mt-row-hover:#FFF8E1;
+}
+
+/* ---- 全局 ---- */
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif!important;
+  background:var(--mt-bg)!important;
+  color:var(--mt-text)!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+/* ---- 页头 ---- */
+.header,.u-header{
+  background:linear-gradient(135deg,var(--mt-dark) 0%,var(--mt-dark2) 60%,#3A4458 100%)!important;
+  color:#fff!important;
+  border-radius:var(--mt-radius)!important;
+  padding:20px 26px!important;
+  margin-bottom:14px!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.header::after,.u-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--mt-yellow) 0%,var(--mt-yellow-d) 50%,var(--mt-yellow) 100%);
+}
+.header h1,.u-header h1,.u-header .doctitle{
+  color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;
+}
+.header .sub,.header .subtitle,.u-header .sub,.u-header .doctime,.u-header .subtitle{
+  color:var(--mt-text3)!important;font-size:12px!important;margin-top:4px!important;
+}
+
+/* ---- wrap / container ---- */
+.wrap,.container{max-width:100%!important;margin:0!important}
+
+/* ---- 标题 (非页头内) ---- */
+h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important;letter-spacing:.3px}
+.doctitle{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important}
+.doctime,.sub{color:var(--mt-text2)!important;font-size:12px!important}
+
+/* ---- 卡片 ---- */
+.card,.section,.filters,.tblwrap,.card-header,.search-bar,.filter-bar,.reasons-section{
+  background:var(--mt-card)!important;
+  border-radius:var(--mt-radius)!important;
+  box-shadow:var(--mt-shadow)!important;
+  border:1px solid var(--mt-border)!important;
+}
+.card,.section{padding:10px 12px!important;margin-bottom:12px!important}
+/* 卡片左侧彩条保留 */
+.card-title{
+  color:var(--mt-text)!important;
+  font-size:14px!important;font-weight:600!important;
+  border-bottom:1px solid var(--mt-border)!important;
+  padding-bottom:10px!important;margin-bottom:12px!important;
+}
+.card-title::before{
+  content:"";display:inline-block;width:3px;height:15px;
+  background:linear-gradient(180deg,var(--mt-yellow),var(--mt-yellow-d));border-radius:2px;margin-right:8px;
+  vertical-align:-2px;
+}
+.section h2{
+  font-size:14px!important;font-weight:600!important;color:var(--mt-text)!important;
+  border-left:3px solid var(--mt-yellow)!important;
+  padding-left:10px!important;margin-bottom:12px!important;
+}
+
+/* ---- KPI / 统计卡片 ---- */
+.card .num,.metric .m-num{
+  color:var(--mt-dark)!important;font-size:24px!important;font-weight:800!important;line-height:1.1!important;
+}
+.card.hd .num,.metric.hd .m-num{color:#52C41A!important}
+.card.hs .num,.metric.hs .m-num{color:#FA8C16!important}
+.card .lbl,.metric .m-lbl,.metric .lbl{
+  color:var(--mt-text2)!important;font-size:11px!important;margin-top:3px!important;font-weight:500!important;
+}
+.card .pct{color:var(--mt-text3)!important;font-size:10px!important;margin-top:1px!important}
+.metric{background:var(--mt-row-alt)!important;border-radius:6px!important;padding:12px!important}
+
+/* ---- 表格 ---- */
+table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}
+th,.dt th{
+  background:var(--mt-th-bg)!important;
+  color:var(--mt-th-c)!important;
+  font-weight:600!important;font-size:12px!important;
+  padding:10px 12px!important;
+  border-bottom:2px solid var(--mt-yellow)!important;
+  text-align:left!important;
+  transition:background .15s!important;
+}
+th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important}
+th:hover{background:#F0F1F2!important}
+td,.dt td{
+  padding:9px 12px!important;
+  border-bottom:1px solid #F0F1F2!important;
+  color:var(--mt-text)!important;font-size:13px!important;
+}
+.dt td{border:1px solid var(--mt-border)!important;text-align:center!important}
+tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}
+tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
+.dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}
+
+/* ---- 按钮 ---- */
+.pbtn,.clearbtn,.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{
+  border-radius:6px!important;
+  border:1px solid #E8E9EB!important;
+  background:var(--mt-card)!important;
+  color:#5A5F6B!important;
+  font-size:13px!important;
+  padding:6px 10px!important;
+  transition:all .15s!important;
+  outline:none!important;
+  font-weight:500!important;
+}
+.filters input{min-width:200px!important}
+.pbtn:hover,.clearbtn:hover,.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  border-color:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  background:var(--mt-row-hover)!important;
+}
+.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  box-shadow:0 0 0 2px rgba(255,195,0,.08)!important;
+}
+.pbtn.cur{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+.pbtn:disabled{opacity:.4!important;cursor:not-allowed!important}
+
+/* ---- Tab ---- */
+.tab{
+  padding:10px 20px!important;font-size:14px!important;
+  color:var(--mt-text2)!important;
+  border-bottom:2px solid transparent!important;
+  transition:all .15s!important;
+}
+.tab.cur{
+  color:var(--mt-dark)!important;
+  border-bottom-color:var(--mt-yellow)!important;
+  font-weight:600!important;
+  background:transparent!important;
+}
+.tab:hover{color:var(--mt-dark)!important}
+
+/* ---- 城市标签 (delivery-assessment) ---- */
+.city-tab{
+  background:rgba(255,255,255,.12)!important;
+  color:#fff!important;
+  border:2px solid transparent!important;
+  cursor:pointer!important;
+}
+.city-tab:hover{background:rgba(255,255,255,.22)!important}
+.city-tab.active{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+
+/* ---- 标签 tag ---- */
+.tag{
+  display:inline-block!important;
+  padding:2px 10px!important;
+  border-radius:4px!important;
+  font-size:11px!important;font-weight:600!important;
+  background:#FFF3D4!important;color:#B8860B!important;
+}
+.tag.hd{background:#E6F7DD!important;color:#389E0D!important}
+.tag.hs{background:#FFF1E0!important;color:#D46B08!important}
+
+/* ---- 分页 ---- */
+.pager{display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:6px!important;padding:14px 0 8px!important;flex-wrap:wrap!important}
+.pinfo{font-size:12px!important;color:var(--mt-text2)!important;margin:0 8px!important}
+
+/* ---- 页脚 ---- */
+.foot,.footer{
+  text-align:center!important;
+  color:var(--mt-text3)!important;
+  font-size:12px!important;
+  padding:18px 0!important;
+}
+
+/* ---- 杂项 ---- */
+.meta{color:var(--mt-text2)!important;font-size:12px!important}
+.rb{border-bottom:1px dashed var(--mt-border)!important}
+.rv{color:var(--mt-dark)!important;font-weight:700!important}
+.notes{color:var(--mt-text)!important;line-height:1.9!important}
+.notes li{margin-left:18px!important}
+.empty{color:var(--mt-text3)!important;padding:48px!important;text-align:center!important;font-size:14px!important}
+/* 导航按钮适配 */
+.pn{
+  background:var(--mt-dark)!important;
+  border:1px solid rgba(255,195,0,.3)!important;
+}
+.pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
+/* ====== end mt-style ====== </style>
+<style>
+/* ====== mt-style-injected ====== */
+:root{
+  --mt-yellow:#FFC300;
+  --mt-yellow-d:#F5A623;
+  --mt-dark:#1B2233;
+  --mt-dark2:#2D3447;
+  --mt-bg:#F0F2F5;
+  --mt-text:#1B1B33;
+  --mt-text2:#8A8FA3;
+  --mt-text3:#B0B4C0;
+  --mt-border:#EAECEF;
+  --mt-card:#FFFFFF;
+  --mt-radius:8px;
+  --mt-shadow:0 1px 4px rgba(27,34,51,.06);
+  --mt-shadow-h:0 4px 14px rgba(27,34,51,.1);
+  --mt-th-bg:#F8F9FA;
+  --mt-th-c:#1B1B33;
+  --mt-row-alt:#FAFBFC;
+  --mt-row-hover:#FFF8E1;
+}
+
+/* ---- 全局 ---- */
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif!important;
+  background:var(--mt-bg)!important;
+  color:var(--mt-text)!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+/* ---- 页头 ---- */
+.header,.u-header{
+  background:linear-gradient(135deg,var(--mt-dark) 0%,var(--mt-dark2) 60%,#3A4458 100%)!important;
+  color:#fff!important;
+  border-radius:var(--mt-radius)!important;
+  padding:20px 26px!important;
+  margin-bottom:14px!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.header::after,.u-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--mt-yellow) 0%,var(--mt-yellow-d) 50%,var(--mt-yellow) 100%);
+}
+.header h1,.u-header h1,.u-header .doctitle{
+  color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;
+}
+.header .sub,.header .subtitle,.u-header .sub,.u-header .doctime,.u-header .subtitle{
+  color:var(--mt-text3)!important;font-size:12px!important;margin-top:4px!important;
+}
+
+/* ---- wrap / container ---- */
+.wrap,.container{max-width:100%!important;margin:0!important}
+
+/* ---- 标题 (非页头内) ---- */
+h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important;letter-spacing:.3px}
+.doctitle{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important}
+.doctime,.sub{color:var(--mt-text2)!important;font-size:12px!important}
+
+/* ---- 卡片 ---- */
+.card,.section,.filters,.tblwrap,.card-header,.search-bar,.filter-bar,.reasons-section{
+  background:var(--mt-card)!important;
+  border-radius:var(--mt-radius)!important;
+  box-shadow:var(--mt-shadow)!important;
+  border:1px solid var(--mt-border)!important;
+}
+.card,.section{padding:10px 12px!important;margin-bottom:12px!important}
+/* 卡片左侧彩条保留 */
+.card-title{
+  color:var(--mt-text)!important;
+  font-size:14px!important;font-weight:600!important;
+  border-bottom:1px solid var(--mt-border)!important;
+  padding-bottom:10px!important;margin-bottom:12px!important;
+}
+.card-title::before{
+  content:"";display:inline-block;width:3px;height:15px;
+  background:linear-gradient(180deg,var(--mt-yellow),var(--mt-yellow-d));border-radius:2px;margin-right:8px;
+  vertical-align:-2px;
+}
+.section h2{
+  font-size:14px!important;font-weight:600!important;color:var(--mt-text)!important;
+  border-left:3px solid var(--mt-yellow)!important;
+  padding-left:10px!important;margin-bottom:12px!important;
+}
+
+/* ---- KPI / 统计卡片 ---- */
+.card .num,.metric .m-num{
+  color:var(--mt-dark)!important;font-size:22px!important;font-weight:800!important;line-height:1.1!important;
+}
+.card.hd .num,.metric.hd .m-num{color:#52C41A!important}
+.card.hs .num,.metric.hs .m-num{color:#FA8C16!important}
+.card .lbl,.metric .m-lbl,.metric .lbl{
+  color:var(--mt-text2)!important;font-size:11px!important;margin-top:3px!important;font-weight:500!important;
+}
+.card .pct{color:var(--mt-text3)!important;font-size:10px!important;margin-top:1px!important}
+.metric{background:var(--mt-row-alt)!important;border-radius:6px!important;padding:12px!important}
+
+/* ---- 表格 ---- */
+table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}
+th,.dt th{
+  background:var(--mt-th-bg)!important;
+  color:var(--mt-th-c)!important;
+  font-weight:600!important;font-size:12px!important;
+  padding:10px 12px!important;
+  border-bottom:2px solid var(--mt-yellow)!important;
+  text-align:left!important;
+  transition:background .15s!important;
+}
+th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important}
+th:hover{background:#F0F1F2!important}
+td,.dt td{
+  padding:9px 12px!important;
+  border-bottom:1px solid #F0F1F2!important;
+  color:var(--mt-text)!important;font-size:13px!important;
+}
+.dt td{border:1px solid var(--mt-border)!important;text-align:center!important}
+tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}
+tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
+.dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}
+
+/* ---- 按钮 ---- */
+.pbtn,.clearbtn,.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{
+  border-radius:6px!important;
+  border:1px solid #E8E9EB!important;
+  background:var(--mt-card)!important;
+  color:#5A5F6B!important;
+  font-size:13px!important;
+  padding:6px 10px!important;
+  transition:all .15s!important;
+  outline:none!important;
+  font-weight:500!important;
+}
+.filters input{min-width:200px!important}
+.pbtn:hover,.clearbtn:hover,.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  border-color:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  background:var(--mt-row-hover)!important;
+}
+.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  box-shadow:0 0 0 2px rgba(255,195,0,.08)!important;
+}
+.pbtn.cur{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+.pbtn:disabled{opacity:.4!important;cursor:not-allowed!important}
+
+/* ---- Tab ---- */
+.tab{
+  padding:10px 20px!important;font-size:14px!important;
+  color:var(--mt-text2)!important;
+  border-bottom:2px solid transparent!important;
+  transition:all .15s!important;
+}
+.tab.cur{
+  color:var(--mt-dark)!important;
+  border-bottom-color:var(--mt-yellow)!important;
+  font-weight:600!important;
+  background:transparent!important;
+}
+.tab:hover{color:var(--mt-dark)!important}
+
+/* ---- 城市标签 (delivery-assessment) ---- */
+.city-tab{
+  background:rgba(255,255,255,.12)!important;
+  color:#fff!important;
+  border:2px solid transparent!important;
+  cursor:pointer!important;
+}
+.city-tab:hover{background:rgba(255,255,255,.22)!important}
+.city-tab.active{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+
+/* ---- 标签 tag ---- */
+.tag{
+  display:inline-block!important;
+  padding:2px 10px!important;
+  border-radius:4px!important;
+  font-size:11px!important;font-weight:600!important;
+  background:#FFF3D4!important;color:#B8860B!important;
+}
+.tag.hd{background:#E6F7DD!important;color:#389E0D!important}
+.tag.hs{background:#FFF1E0!important;color:#D46B08!important}
+
+/* ---- 分页 ---- */
+.pager{display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:6px!important;padding:14px 0 8px!important;flex-wrap:wrap!important}
+.pinfo{font-size:12px!important;color:var(--mt-text2)!important;margin:0 8px!important}
+
+/* ---- 页脚 ---- */
+.foot,.footer{
+  text-align:center!important;
+  color:var(--mt-text3)!important;
+  font-size:12px!important;
+  padding:18px 0!important;
+}
+
+/* ---- 杂项 ---- */
+.meta{color:var(--mt-text2)!important;font-size:12px!important}
+.rb{border-bottom:1px dashed var(--mt-border)!important}
+.rv{color:var(--mt-dark)!important;font-weight:700!important}
+.notes{color:var(--mt-text)!important;line-height:1.9!important}
+.notes li{margin-left:18px!important}
+.empty{color:var(--mt-text3)!important;padding:48px!important;text-align:center!important;font-size:14px!important}
+/* 导航按钮适配 */
+.pn{
+  background:var(--mt-dark)!important;
+  border:1px solid rgba(255,195,0,.3)!important;
+}
+.pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
+/* ====== end mt-style ====== </style>
+<style>
+/* ====== mt-style-injected ====== */
+:root{
+  --mt-yellow:#FFC300;
+  --mt-yellow-d:#F5A623;
+  --mt-dark:#1B2233;
+  --mt-dark2:#2D3447;
+  --mt-bg:#F0F2F5;
+  --mt-text:#1B1B33;
+  --mt-text2:#8A8FA3;
+  --mt-text3:#B0B4C0;
+  --mt-border:#EAECEF;
+  --mt-card:#FFFFFF;
+  --mt-radius:8px;
+  --mt-shadow:0 1px 4px rgba(27,34,51,.06);
+  --mt-shadow-h:0 4px 14px rgba(27,34,51,.1);
+  --mt-th-bg:#F8F9FA;
+  --mt-th-c:#1B1B33;
+  --mt-row-alt:#FAFBFC;
+  --mt-row-hover:#FFF8E1;
+}
+
+/* ---- 全局 ---- */
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif!important;
+  background:var(--mt-bg)!important;
+  color:var(--mt-text)!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+/* ---- 页头 ---- */
+.header,.u-header{
+  background:linear-gradient(135deg,var(--mt-dark) 0%,var(--mt-dark2) 60%,#3A4458 100%)!important;
+  color:#fff!important;
+  border-radius:var(--mt-radius)!important;
+  padding:20px 26px!important;
+  margin-bottom:14px!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.header::after,.u-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--mt-yellow) 0%,var(--mt-yellow-d) 50%,var(--mt-yellow) 100%);
+}
+.header h1,.u-header h1,.u-header .doctitle{
+  color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;
+}
+.header .sub,.header .subtitle,.u-header .sub,.u-header .doctime,.u-header .subtitle{
+  color:var(--mt-text3)!important;font-size:12px!important;margin-top:4px!important;
+}
+
+/* ---- wrap / container ---- */
+.wrap,.container{max-width:100%!important;margin:0!important}
+
+/* ---- 标题 (非页头内) ---- */
+h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important;letter-spacing:.3px}
+.doctitle{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important}
+.doctime,.sub{color:var(--mt-text2)!important;font-size:12px!important}
+
+/* ---- 卡片 ---- */
+.card,.section,.filters,.tblwrap,.card-header,.search-bar,.filter-bar,.reasons-section{
+  background:var(--mt-card)!important;
+  border-radius:var(--mt-radius)!important;
+  box-shadow:var(--mt-shadow)!important;
+  border:1px solid var(--mt-border)!important;
+}
+.card,.section{padding:10px 12px!important;margin-bottom:12px!important}
+/* 卡片左侧彩条保留 */
+.card-title{
+  color:var(--mt-text)!important;
+  font-size:14px!important;font-weight:600!important;
+  border-bottom:1px solid var(--mt-border)!important;
+  padding-bottom:10px!important;margin-bottom:12px!important;
+}
+.card-title::before{
+  content:"";display:inline-block;width:3px;height:15px;
+  background:linear-gradient(180deg,var(--mt-yellow),var(--mt-yellow-d));border-radius:2px;margin-right:8px;
+  vertical-align:-2px;
+}
+.section h2{
+  font-size:14px!important;font-weight:600!important;color:var(--mt-text)!important;
+  border-left:3px solid var(--mt-yellow)!important;
+  padding-left:10px!important;margin-bottom:12px!important;
+}
+
+/* ---- KPI / 统计卡片 ---- */
+.card .num,.metric .m-num{
+  color:var(--mt-dark)!important;font-size:22px!important;font-weight:800!important;line-height:1.1!important;
+}
+.card.hd .num,.metric.hd .m-num{color:#52C41A!important}
+.card.hs .num,.metric.hs .m-num{color:#FA8C16!important}
+.card .lbl,.metric .m-lbl,.metric .lbl{
+  color:var(--mt-text2)!important;font-size:11px!important;margin-top:3px!important;font-weight:500!important;
+}
+.card .pct{color:var(--mt-text3)!important;font-size:10px!important;margin-top:1px!important}
+.metric{background:var(--mt-row-alt)!important;border-radius:6px!important;padding:12px!important}
+
+/* ---- 表格 ---- */
+table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}
+th,.dt th{
+  background:var(--mt-th-bg)!important;
+  color:var(--mt-th-c)!important;
+  font-weight:600!important;font-size:12px!important;
+  padding:10px 12px!important;
+  border-bottom:2px solid var(--mt-yellow)!important;
+  text-align:left!important;
+  transition:background .15s!important;
+}
+th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important}
+th:hover{background:#F0F1F2!important}
+td,.dt td{
+  padding:9px 12px!important;
+  border-bottom:1px solid #F0F1F2!important;
+  color:var(--mt-text)!important;font-size:13px!important;
+}
+.dt td{border:1px solid var(--mt-border)!important;text-align:center!important}
+tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}
+tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
+.dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}
+
+/* ---- 按钮 ---- */
+.pbtn,.clearbtn,.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{
+  border-radius:6px!important;
+  border:1px solid #E8E9EB!important;
+  background:var(--mt-card)!important;
+  color:#5A5F6B!important;
+  font-size:13px!important;
+  padding:6px 10px!important;
+  transition:all .15s!important;
+  outline:none!important;
+  font-weight:500!important;
+}
+.filters input{min-width:200px!important}
+.pbtn:hover,.clearbtn:hover,.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  border-color:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  background:var(--mt-row-hover)!important;
+}
+.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  box-shadow:0 0 0 2px rgba(255,195,0,.08)!important;
+}
+.pbtn.cur{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+.pbtn:disabled{opacity:.4!important;cursor:not-allowed!important}
+
+/* ---- Tab ---- */
+.tab{
+  padding:10px 20px!important;font-size:14px!important;
+  color:var(--mt-text2)!important;
+  border-bottom:2px solid transparent!important;
+  transition:all .15s!important;
+}
+.tab.cur{
+  color:var(--mt-dark)!important;
+  border-bottom-color:var(--mt-yellow)!important;
+  font-weight:600!important;
+  background:transparent!important;
+}
+.tab:hover{color:var(--mt-dark)!important}
+
+/* ---- 城市标签 (delivery-assessment) ---- */
+.city-tab{
+  background:rgba(255,255,255,.12)!important;
+  color:#fff!important;
+  border:2px solid transparent!important;
+  cursor:pointer!important;
+}
+.city-tab:hover{background:rgba(255,255,255,.22)!important}
+.city-tab.active{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+
+/* ---- 标签 tag ---- */
+.tag{
+  display:inline-block!important;
+  padding:2px 10px!important;
+  border-radius:4px!important;
+  font-size:11px!important;font-weight:600!important;
+  background:#FFF3D4!important;color:#B8860B!important;
+}
+.tag.hd{background:#E6F7DD!important;color:#389E0D!important}
+.tag.hs{background:#FFF1E0!important;color:#D46B08!important}
+
+/* ---- 分页 ---- */
+.pager{display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:6px!important;padding:14px 0 8px!important;flex-wrap:wrap!important}
+.pinfo{font-size:12px!important;color:var(--mt-text2)!important;margin:0 8px!important}
+
+/* ---- 页脚 ---- */
+.foot,.footer{
+  text-align:center!important;
+  color:var(--mt-text3)!important;
+  font-size:12px!important;
+  padding:18px 0!important;
+}
+
+/* ---- 杂项 ---- */
+.meta{color:var(--mt-text2)!important;font-size:12px!important}
+.rb{border-bottom:1px dashed var(--mt-border)!important}
+.rv{color:var(--mt-dark)!important;font-weight:700!important}
+.notes{color:var(--mt-text)!important;line-height:1.9!important}
+.notes li{margin-left:18px!important}
+.empty{color:var(--mt-text3)!important;padding:48px!important;text-align:center!important;font-size:14px!important}
+/* 导航按钮适配 */
+.pn{
+  background:var(--mt-dark)!important;
+  border:1px solid rgba(255,195,0,.3)!important;
+}
+.pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
+/* ====== end mt-style ====== </style>
+</head><body>
+<!-- nav-bar-injected -->
+<style>
+.nb-bar{position:fixed;left:0;top:0;bottom:0;width:52px;z-index:9999;background:linear-gradient(180deg,#1B2233 0%,#15192A 100%);display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 0;box-shadow:1px 0 6px rgba(0,0,0,.12);overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nb-bar::-webkit-scrollbar{display:none}
+.nb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:7px 2px;font-size:11px;font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#8A8FA3;text-decoration:none;border-radius:6px;margin:1px 4px;transition:all .18s ease;cursor:pointer;text-align:center;line-height:1.3;width:calc(100% - 8px);box-sizing:border-box;position:relative}
+.nb-item:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nb-item.active{color:#FFC300;font-weight:600;background:rgba(255,195,0,.12)}
+.nb-item.active::before{content:"";position:absolute;left:-4px;top:50%;transform:translateY(-50%);width:3px;height:20px;border-radius:0 2px 2px 0;background:#FFC300}
+.nb-logo{display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 2px 8px;font-size:10px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:3px;width:100%;box-sizing:border-box}
+.nb-logo .dot{width:7px;height:7px;border-radius:2px;background:#FFC300;display:inline-block}
+body{margin-left:52px!important;box-sizing:border-box!important}
+.wrap,.container{max-width:100%!important;width:100%!important;margin:0!important;padding:10px 14px 10px 6px!important;box-sizing:border-box!important}
+@media(max-width:768px){.nb-bar{width:42px}.nb-item{font-size:9px;padding:6px 1px;margin:1px 3px}.nb-logo{font-size:9px;padding:3px 2px 6px}body{margin-left:42px!important}.wrap,.container{padding:8px 10px 8px 4px!important}}
+</style>
+<nav class="nb-bar"><span class="nb-logo"><span class="dot"></span>BI</span><a href="https://gitsick.github.io/databi/" class="nb-item">看板中心</a><a href="rider_dashboard.html" class="nb-item">骑手解约</a><a href="rider_share.html" class="nb-item active">分享页</a><a href="rider_overview.html" class="nb-item">概览</a><a href="delivery-assessment-dashboard.html" class="nb-item">配送考核</a></nav>
+<!-- end-nav-bar -->
+
+
+
+<div class="wrap">
+<div class="doctitle">骑手解除合作登记数据汇总</div><div class="doctime">2026-09-23 02:56 · 数据范围：华东 + 华南 · 每3小时自动刷新</div>
+<div class="section"><h2>一、数据概览</h2><div class="grid"><div class='metric'><div class='m-num'>291</div><div class='lbl'>登记总数</div></div><div class='metric hd'><div class='m-num'>204</div><div class='lbl'>华东</div></div><div class='metric hs'><div class='m-num'>87</div><div class='lbl'>华南</div></div><div class='metric'><div class='m-num'>17</div><div class='lbl'>覆盖市/区县</div></div><div class='lbl'>覆盖市/区县</div></div></div></div>
+<div class="section"><h2>二、解除原因分布</h2><div class='rb'><span class='rk'>骑手主动提离职/离职到期</span><span class='rv'>1341 人</span></div><div class='rb'><span class='rk'>迭代/劝退（出勤、体验、违规等问题骑手）</span><span class='rv'>204 人</span></div><div class='rb'><span class='rk'>急辞/失联删号</span><span class='rv'>60 人</span></div><div class='rb'><span class='rk'>兼职/暑假工/高价</span><span class='rv'>45 人</span></div><div class='rb'><span class='rk'>其他原因（管理号、退站等非骑手原因）</span><span class='rv'>33 人</span></div><div class='rb'><span class='rk'>请长假（非事故/重病）</span><span class='rv'>27 人</span></div><div class='rb'><span class='rk'>骑手本人事故/伤病/无法出勤</span><span class='rv'>23 人</span></div><div class='rb'><span class='rk'>新人保护（首次专送10天内）</span><span class='rv'>7 人</span></div><div class='rb'><span class='rk'>重复入离职（删号重入）</span><span class='rv'>2 人</span></div></div>
+<div class="section"><h2>三、字段说明</h2><ul class="notes">
+<li><b>区域</b>：华东 / 华南（问卷来源）</li>
+<li><b>提交时间</b>：登记问卷提交时间</li>
+<li><b>市/区县</b>：站点拆分的行政市、区县（如 奉化市、大鹏新区）</li>
+<li><b>站点</b>：具体站点名称（如 浙江【奉化市】城区一站、粤海【大鹏新区】葵涌一站）</li>
+<li><b>骑手姓名 / ID / 联系方式 / 入职时间 / 预计解除合作时间</b>：骑手基本信息</li>
+<li><b>解除合作原因 / 去向</b>：申报的离职原因与去向</li>
+</ul></div>
+<div class="section"><h2>四、明细数据（291 条）</h2>
+<div class="toolbar"><span style="font-size:13px;color:#666">每页显示</span>
+<select id="pageSize"><option value="15" selected>15 条</option><option value="20">20 条</option><option value="50">50 条</option><option value="100">100 条</option><option value="200">200 条</option></select>
+<span style="font-size:13px;color:#666" id="pageInfo"></span></div>
+<div class="tblwrap"><table><thead><tr><th>区域</th><th>提交时间</th><th>市/区县</th><th>站点</th><th>姓名</th><th>骑手ID</th><th>联系方式</th><th>入职时间</th><th>预计解除</th><th>解除原因</th><th>去向</th></tr></thead><tbody id="tbody"></tbody></table></div>
+<div class="pager" id="pager"></div></div>
+<div class="foot">数据来源：华东/华南 骑手解除合作登记问卷 · 自动每3小时刷新</div>
+</div>
+<script>
+function toTs(v){if(!v)return 0;const p=String(v).trim().split(/\s+/);const d=(p[0]||'0/0/0').split('/');const t=p[1]?p[1].split(':').map(Number):[0,0,0];return Date.UTC(+d[0],(+d[1]||1)-1,+d[2]||1,t[0]||0,t[1]||0,t[2]||0)}
+const DATA=[{"区域":"华东","提交时间":"2026/4/3 18:57:56","市/区县":"奉化市","站点":"浙江【奉化市】三横乡镇站","骑手姓名":"周必达","骑手ID":"71579063","联系方式":"13616560117","入职时间":"2026-04-01","预计解除合作时间":"2026-04-03","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/4 16:59:17","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"卜稳稳","骑手ID":"54807528","联系方式":"13020678263","入职时间":"2025-04-09","预计解除合作时间":"2026-04-04","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/4/4 23:11:34","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"王成波","骑手ID":"44239352","联系方式":"17629973955","入职时间":"2024-03-01","预计解除合作时间":"2026-04-04","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/4/9 21:25:07","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"段萧","骑手ID":"71514035","联系方式":"18368042690","入职时间":"2026-03-30","预计解除合作时间":"2026-04-09","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/4/11 16:06:20","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"戚淮峰","骑手ID":"70709558","联系方式":"18258553020","入职时间":"2026-03-12","预计解除合作时间":"2026-04-11","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/11 16:08:19","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"侯长梅","骑手ID":"69952953","联系方式":"17755881315","入职时间":"2026-02-23","预计解除合作时间":"2026-04-11","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/11 17:26:57","市/区县":"诸暨市","站点":"浙江【诸暨市】城东站","骑手姓名":"何泽波","骑手ID":"47038048","联系方式":"18248615161","入职时间":"2024-06-11","预计解除合作时间":"2026-04-11","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/4/13 11:39:45","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"傅石坚","骑手ID":"71279363","联系方式":"15925809203","入职时间":"2026-03-25","预计解除合作时间":"2026-04-13","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/13 11:43:23","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"毛晨荣","骑手ID":"70275766","联系方式":"13567527617","入职时间":"2026-03-04","预计解除合作时间":"2026-04-13","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/15 11:11:26","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"邓永明","骑手ID":"71857723","联系方式":"19034625080","入职时间":"2026-04-08","预计解除合作时间":"2026-04-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/17 12:51:58","市/区县":"响水县","站点":"江苏【响水县】百汇站","骑手姓名":"彭海燕","骑手ID":"68515925","联系方式":"19504465217","入职时间":"2025-12-19","预计解除合作时间":"2026-05-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/20 12:12:26","市/区县":"诸暨市","站点":"浙江【诸暨市】大学城站","骑手姓名":"柳家超","骑手ID":"70742024","联系方式":"17815755213","入职时间":"2026-03-12","预计解除合作时间":"2026-04-16","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/22 12:02:13","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"刘彦庆","骑手ID":"70155935","联系方式":"17769715822","入职时间":"2025-03-01","预计解除合作时间":"2026-04-22","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/24 19:25:08","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"曹茂童","骑手ID":"72107652","联系方式":"15088639074","入职时间":"2026-04-14","预计解除合作时间":"2026-04-24","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/4/25 20:58:52","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"陆汉铜","骑手ID":"70044145","联系方式":"19817171548","入职时间":"2025-02-26","预计解除合作时间":"2026-04-25","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/4/27 12:54:57","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"刘火香","骑手ID":"70208452","联系方式":"18258528255","入职时间":"2026-03-20","预计解除合作时间":"2026-04-27","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/4/28 11:36:05","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"张绪贤","骑手ID":"69145962","联系方式":"19174221863","入职时间":"2026-01-13","预计解除合作时间":"2026-04-28","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/4/30 17:42:40","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"周敏","骑手ID":"72438966","联系方式":"15268357432","入职时间":"2026-04-23","预计解除合作时间":"2026-04-30","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/4/30 22:34:59","市/区县":"响水县","站点":"江苏【响水县】百汇站","骑手姓名":"王安宇","骑手ID":"69943438","联系方式":"17551764661","入职时间":"2026-02-23","预计解除合作时间":"2026-04-30","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/5/8 16:52:54","市/区县":"安吉县","站点":"浙江【安吉县】佳源乡镇站","骑手姓名":"潘正谭","骑手ID":"71805901","联系方式":"19385329979","入职时间":"2026-04-07","预计解除合作时间":"2026-05-03","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/5/8 17:12:03","市/区县":"安吉县","站点":"浙江【安吉县】凤凰乡镇站","骑手姓名":"笪贤杰","骑手ID":"71949353","联系方式":"13049146013","入职时间":"2026-04-10","预计解除合作时间":"2026-05-08","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/5/9 12:08:55","市/区县":"安吉县","站点":"浙江【安吉县】凤凰乡镇站","骑手姓名":"袁宽","骑手ID":"72753973","联系方式":"17858773063","入职时间":"2026-05-03","预计解除合作时间":"2026-05-09","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/5/12 9:22:58","市/区县":"界首市","站点":"安徽【界首市】主站","骑手姓名":"葛少奇","骑手ID":"72409693","联系方式":"19556893270","入职时间":"2026-04-22","预计解除合作时间":"2026-06-12","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/5/12 18:02:41","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"张绪贤","骑手ID":"72878201","联系方式":"19174221863","入职时间":"2026-05-07","预计解除合作时间":"2026-05-12","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/5/14 19:20:23","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"陈焘","骑手ID":"72663932","联系方式":"19521639014","入职时间":"2026-04-30","预计解除合作时间":"2026-05-14","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/5/15 21:13:22","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"郑宇枫","骑手ID":"71584929","联系方式":"17816610761","入职时间":"2026-04-01","预计解除合作时间":"2026-05-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/5/16 19:26:54","市/区县":"响水县","站点":"江苏【响水县】南峰站","骑手姓名":"罗军来","骑手ID":"10381946","联系方式":"13222330558","入职时间":"2018-12-19","预计解除合作时间":"2026-05-16","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/5/18 19:43:14","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"房梦祥","骑手ID":"72475342","联系方式":"18668083327","入职时间":"2026-04-24","预计解除合作时间":"2026-05-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/5/18 21:59:40","市/区县":"桐庐县","站点":"浙江【桐庐县】城东站","骑手姓名":"孙杰","骑手ID":"70159061","联系方式":"18458143763","入职时间":"2026-03-01","预计解除合作时间":"2026-05-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/5/21 12:00:55","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"潘彬","骑手ID":"71584701","联系方式":"19560179902","入职时间":"2026-04-01","预计解除合作时间":"2026-05-21","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/6/1 13:11:10","市/区县":"浦江县","站点":"浙江【浦江县】黄宅乡镇站","骑手姓名":"王海军","骑手ID":"71670695","联系方式":"17857491196","入职时间":"2026-04-03","预计解除合作时间":"2026-06-01","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/6/4 17:23:37","市/区县":"安吉县","站点":"浙江【安吉县】城南乡镇站","骑手姓名":"蒋思齐","骑手ID":"73678122","联系方式":"15067267167","入职时间":"2026-06-01","预计解除合作时间":"2026-06-04","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/6/4 17:24:44","市/区县":"安吉县","站点":"浙江【安吉县】城南乡镇站","骑手姓名":"张威","骑手ID":"73678687","联系方式":"18064703615","入职时间":"2026-06-01","预计解除合作时间":"2026-06-04","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/6/6 14:54:51","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"段萧","骑手ID":"73450606","联系方式":"18368042690","入职时间":"2026-05-24","预计解除合作时间":"2026-06-06","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/6/6 22:44:38","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"陆汉铜","骑手ID":"72651587","联系方式":"19817171548","入职时间":"2026-04-30","预计解除合作时间":"2026-06-06","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/6/7 22:52:47","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"张如华","骑手ID":"67624944","联系方式":"13185722212","入职时间":"2025-11-16","预计解除合作时间":"2026-06-07","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/6/19 14:40:42","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"魏朝阳","骑手ID":"52586538","联系方式":"19370871431","入职时间":"2026-04-28","预计解除合作时间":"2026-06-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/6/23 23:02:31","市/区县":"桐庐县","站点":"浙江【桐庐县】城东站","骑手姓名":"鲍佳豪","骑手ID":"66118166","联系方式":"18667171633","入职时间":"2025-10-08","预计解除合作时间":"2026-06-23","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/6/28 15:32:26","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"周子俊","骑手ID":"70933742","联系方式":"18552421589","入职时间":"2026-03-17","预计解除合作时间":"2026-06-28","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/6/30 23:07:48","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"武飞翔","骑手ID":"70277078","联系方式":"17756723973","入职时间":"2026-03-04","预计解除合作时间":"2026-06-30","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/7/2 14:22:57","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"张辉","骑手ID":"68161408","联系方式":"18868756487","入职时间":"2025-12-05","预计解除合作时间":"2026-07-02","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/7/2 15:19:19","市/区县":"响水县","站点":"江苏【响水县】百汇站","骑手姓名":"张佳鑫","骑手ID":"73098730","联系方式":"19254578638","入职时间":"2026-05-13","预计解除合作时间":"2026-07-02","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/7/2 22:38:00","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"余江","骑手ID":"69946101","联系方式":"18757565664","入职时间":"2026-02-23","预计解除合作时间":"2026-08-02","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/7/7 13:01:10","市/区县":"响水县","站点":"江苏【响水县】陈家港乡镇站","骑手姓名":"陈园园","骑手ID":"55064339","联系方式":"18761829145","入职时间":"2025-04-18","预计解除合作时间":"2026-07-07","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/7/8 16:47:25","市/区县":"泰兴县","站点":"江苏【泰兴县】城区一站","骑手姓名":"鞠伟","骑手ID":"64551142","联系方式":"15190601068","入职时间":"2025-09-05","预计解除合作时间":"2026-07-08","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业┋原因未知"},{"区域":"华东","提交时间":"2026/7/13 11:18:23","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"高家红","骑手ID":"74886144","联系方式":"139 1584 5207","入职时间":"2026-07-02","预计解除合作时间":"2026-07-13","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/7/14 10:41:55","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"刘生波","骑手ID":"73071902","联系方式":"15121202481","入职时间":"2026-05-12","预计解除合作时间":"2026-07-13","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/7/16 22:04:47","市/区县":"浦江县","站点":"【浦江】廿亩山乡镇站","骑手姓名":"蒋国文","骑手ID":"69544932","联系方式":"18169817928","入职时间":"2026-01-30","预计解除合作时间":"2026-01-30","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/7/17 20:31:47","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"陆汉铜","骑手ID":"75156900","联系方式":"19817171548","入职时间":"2026-07-07","预计解除合作时间":"2026-07-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/7/19 14:28:05","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"王少武","骑手ID":"70027149","联系方式":"13454494600","入职时间":"2026-02-26","预计解除合作时间":"2026-07-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/7 22:43:15","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"余江","骑手ID":"69946101","联系方式":"18757565664","入职时间":"2026-02-23","预计解除合作时间":"2026-08-07","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/21 16:40:41","市/区县":"诸暨市","站点":"浙江【诸暨市】城中站","骑手姓名":"傅景亮","骑手ID":"77044066","联系方式":"17306779102","入职时间":"2026-08-12","预计解除合作时间":"2026-09-12","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/21 17:38:54","市/区县":"诸暨市","站点":"浙江【诸暨市】大学城站","骑手姓名":"苏京光","骑手ID":"2028057","联系方式":"15925825380","入职时间":"2026-08-11","预计解除合作时间":"2026-08-21","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/21 17:45:26","市/区县":"安吉县","站点":"浙江【安吉县】天子湖乡镇站","骑手姓名":"吴超","骑手ID":"77271326","联系方式":"18768239311","入职时间":"2026-08-19","预计解除合作时间":"2026-08-21","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/21 18:48:34","市/区县":"诸暨市","站点":"浙江【诸暨市】大学城站","骑手姓名":"金大伟","骑手ID":"2028057","联系方式":"13357592016","入职时间":"2026-05-10","预计解除合作时间":"2026-08-21","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/22 18:43:41","市/区县":"桐庐县","站点":"浙江【桐庐县】城东站","骑手姓名":"阮文虎","骑手ID":"77000233","联系方式":"18072948841","入职时间":"2026-08-11","预计解除合作时间":"2026-08-22","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/24 10:11:12","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"张雷","骑手ID":"68677219","联系方式":"17584808512","入职时间":"2025-12-26","预计解除合作时间":"2026-08-24","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/24 11:09:03","市/区县":"诸暨市","站点":"浙江【诸暨市】城北站","骑手姓名":"张潇潇","骑手ID":"73876957","联系方式":"15372611156","入职时间":"2026-06-07","预计解除合作时间":"2026-09-23","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/24 11:11:15","市/区县":"诸暨市","站点":"浙江【诸暨市】大学城站","骑手姓名":"向凌云","骑手ID":"73687221","联系方式":"18016365943","入职时间":"2026-06-01","预计解除合作时间":"2026-09-16","解除合作原因":"请长假（非事故/重病）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/25 15:41:03","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"殷延钊","骑手ID":"77370630","联系方式":"15974880602","入职时间":"2026-08-22","预计解除合作时间":"2026-08-25","解除合作原因":"新人保护（首次专送10天内）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/25 18:35:55","市/区县":"诸暨市","站点":"浙江【诸暨市】安华镇站","骑手姓名":"陈钟辉","骑手ID":"77357624","联系方式":"13065507047","入职时间":"2026-08-22","预计解除合作时间":"2026-09-25","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/26 10:11:11","市/区县":"诸暨市","站点":"浙江【诸暨市】万达站","骑手姓名":"周叶飞","骑手ID":"76563650","联系方式":"15857521216","入职时间":"2026-08-01","预计解除合作时间":"2026-08-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/26 15:44:37","市/区县":"安吉县","站点":"浙江【安吉县】晓墅乡镇站","骑手姓名":"黄康","骑手ID":"76710361","联系方式":"15906724017","入职时间":"2026-08-04","预计解除合作时间":"2026-08-26","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/26 16:46:24","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"何忠军","骑手ID":"69927471","联系方式":"19858523305","入职时间":"2026-02-26","预计解除合作时间":"2026-08-26","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/26 16:49:29","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"杨丁勇","骑手ID":"743614298","联系方式":"13858420890","入职时间":"2025-10-29","预计解除合作时间":"2026-08-26","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/27 13:30:03","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"刘雨红","骑手ID":"75799789","联系方式":"18132851303","入职时间":"2026-07-17","预计解除合作时间":"2026-08-27","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/27 17:43:10","市/区县":"诸暨市","站点":"浙江【诸暨市】杨梅桥镇站","骑手姓名":"韦方奇","骑手ID":"76842507","联系方式":"13221509599","入职时间":"2026-08-07","预计解除合作时间":"2026-08-27","解除合作原因":"重复入离职（删号重入）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/27 17:44:05","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"楼勇彬","骑手ID":"74754837","联系方式":"13205857605","入职时间":"2026-06-30","预计解除合作时间":"2026-08-27","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/27 17:48:38","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"楼勇彬","骑手ID":"74754837","联系方式":"13205857605","入职时间":"2026-07-01","预计解除合作时间":"2026-08-27","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/27 18:15:15","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"张栋杰","骑手ID":"77139511","联系方式":"15158208359","入职时间":"2026-08-15","预计解除合作时间":"2026-08-27","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/29 19:14:18","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"陆华香","骑手ID":"77025681","联系方式":"18767598051","入职时间":"2026-08-12","预计解除合作时间":"2026-08-29","解除合作原因":"请长假（非事故/重病）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/29 22:05:20","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"陈雨豪","骑手ID":"75046006","联系方式":"18556529547","入职时间":"2026-07-05","预计解除合作时间":"2026-07-30","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/29 22:19:36","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"陈驿兴","骑手ID":"74297137","联系方式":"18257521218","入职时间":"2026-06-18","预计解除合作时间":"2026-07-31","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/29 23:01:23","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"张栋杰","骑手ID":"77139511","联系方式":"15158208359","入职时间":"2026-08-15","预计解除合作时间":"2026-08-27","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/30 12:55:18","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"阵力","骑手ID":"71857904","联系方式":"18657565626","入职时间":"2026-04-08","预计解除合作时间":"2026-08-30","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/30 23:50:56","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"倪哲远","骑手ID":"76764977","联系方式":"18857871059","入职时间":"2026-08-05","预计解除合作时间":"2026-08-30","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/31 9:39:38","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"陈至运","骑手ID":"76564259","联系方式":"16692104057","入职时间":"2026-08-01","预计解除合作时间":"2026-07-31","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/31 11:01:46","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"李豪","骑手ID":"70015592","联系方式":"18885484544","入职时间":"2026-02-25","预计解除合作时间":"2026-08-31","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/31 11:16:11","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"陈杰枫","骑手ID":"69247142","联系方式":"17305859052","入职时间":"2026-02-02","预计解除合作时间":"2026-08-31","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/31 13:04:43","市/区县":"安吉县","站点":"浙江【安吉县】晓墅乡镇站","骑手姓名":"李俊生","骑手ID":"75912050","联系方式":"19518232529","入职时间":"2026-07-19","预计解除合作时间":"2026-08-31","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/31 13:11:36","市/区县":"诸暨市","站点":"浙江【诸暨市】山下湖镇站","骑手姓名":"卢天爱","骑手ID":"73066551","联系方式":"13511236001","入职时间":"2026-04-15","预计解除合作时间":"2026-08-31","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/31 14:51:21","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"邹永","骑手ID":"76522527","联系方式":"13855226836","入职时间":"2026-07-31","预计解除合作时间":"2026-08-31","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/8/31 15:38:18","市/区县":"桐庐县","站点":"浙江【桐庐县】凌晨站","骑手姓名":"金治言","骑手ID":"73763471","联系方式":"17339491858","入职时间":"2026-06-03","预计解除合作时间":"2026-08-31","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/31 15:40:11","市/区县":"桐庐县","站点":"浙江【桐庐县】凌晨站","骑手姓名":"吉泳林","骑手ID":"68777602","联系方式":"18367164907","入职时间":"2025-12-31","预计解除合作时间":"2026-08-31","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/31 16:29:37","市/区县":"响水县","站点":"江苏【响水县】陈家港乡镇站","骑手姓名":"王芳","骑手ID":"56553417","联系方式":"15351515211","入职时间":"2025-06-03","预计解除合作时间":"2026-08-03","解除合作原因":"请长假（非事故/重病）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/31 17:21:36","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"申屠浩哲","骑手ID":"75923049","联系方式":"19967425270","入职时间":"2026-07-19","预计解除合作时间":"2026-08-31","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/8/31 18:01:03","市/区县":"桐庐县","站点":"浙江【桐庐县】分水乡镇站","骑手姓名":"蔡钰淇","骑手ID":"75969555","联系方式":"15869034475","入职时间":"2026-07-20","预计解除合作时间":"2026-08-31","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/1 11:20:20","市/区县":"诸暨市","站点":"浙江【诸暨市】万达站","骑手姓名":"卢浩林","骑手ID":"75655743","联系方式":"13173989112","入职时间":"2026-07-15","预计解除合作时间":"2026-08-31","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/1 13:23:08","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"杨爱国","骑手ID":"76772999","联系方式":"15757218718","入职时间":"2026-08-05","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/1 13:25:04","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"赵永珍","骑手ID":"76667171","联系方式":"18793939982","入职时间":"2026-08-03","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/1 13:51:17","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"孙世豪","骑手ID":"69965419","联系方式":"13175661956","入职时间":"2026-02-24","预计解除合作时间":"2026-09-01","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/1 14:42:49","市/区县":"诸暨市","站点":"浙江【诸暨市】大学城站","骑手姓名":"焦俊杰","骑手ID":"75121729","联系方式":"19941189673","入职时间":"2026-07-06","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/1 16:09:24","市/区县":"兰溪市","站点":"浙江【兰溪市】市区站","骑手姓名":"陈磊","骑手ID":"77541996","联系方式":"15068070030","入职时间":"2026-08-28","预计解除合作时间":"2026-09-01","解除合作原因":"新人保护（首次专送10天内）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/1 17:28:43","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"俞锴","骑手ID":"76620683","联系方式":"18057237230","入职时间":"2026-08-02","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/1 17:34:01","市/区县":"安吉县","站点":"浙江【安吉县】凤凰乡镇站","骑手姓名":"方宏伟","骑手ID":"76639870","联系方式":"13819223145","入职时间":"2026-08-02","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/1 17:35:15","市/区县":"安吉县","站点":"浙江【安吉县】佳源乡镇站","骑手姓名":"朱快乐","骑手ID":"76619613","联系方式":"13588356340","入职时间":"2026-08-02","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/1 17:36:19","市/区县":"安吉县","站点":"浙江【安吉县】城南乡镇站","骑手姓名":"陆强成","骑手ID":"76574406","联系方式":"15772487017","入职时间":"2026-08-01","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/3 11:45:59","市/区县":"诸暨市","站点":"浙江【诸暨市】山下湖镇站","骑手姓名":"卢天勇","骑手ID":"77129407","联系方式":"13648518894","入职时间":"2026-08-15","预计解除合作时间":"2026-08-31","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/3 11:48:06","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"陈驿兴","骑手ID":"74297137","联系方式":"18257521218","入职时间":"2026-06-18","预计解除合作时间":"2026-07-31","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/3 11:50:17","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"陈雨豪","骑手ID":"75046006","联系方式":"18556529547","入职时间":"2026-07-05","预计解除合作时间":"2026-07-30","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/3 12:00:03","市/区县":"诸暨市","站点":"浙江【诸暨市】万达站","骑手姓名":"张艺楠","骑手ID":"6553687","联系方式":"19818273313","入职时间":"2025-09-23","预计解除合作时间":"2026-09-02","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/4 8:31:48","市/区县":"浦江县","站点":"【浦江】城区早班站","骑手姓名":"沈红鑫","骑手ID":"68294824","联系方式":"18815283323","入职时间":"2025-12-10","预计解除合作时间":"2026-10-04","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/4 13:49:16","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"秦满帅","骑手ID":"76307199","联系方式":"15939281630","入职时间":"2026-07-26","预计解除合作时间":"2026-09-04","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/4 13:50:36","市/区县":"安吉县","站点":"浙江【安吉县】天子湖乡镇站","骑手姓名":"闫帅帅","骑手ID":"77669161","联系方式":"19155892228","入职时间":"2026-09-01","预计解除合作时间":"2026-09-04","解除合作原因":"新人保护（首次专送10天内）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/4 16:42:08","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"贺春喜","骑手ID":"77718542","联系方式":"15268277760","入职时间":"2026-09-02","预计解除合作时间":"2026-09-04","解除合作原因":"新人保护（首次专送10天内）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/4 19:00:32","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"杨雪鹏","骑手ID":"68326896","联系方式":"18072293921","入职时间":"2025-12-11","预计解除合作时间":"2026-09-04","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/4 22:20:57","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"龚鑫鹏","骑手ID":"70236150","联系方式":"17305858915","入职时间":"2026-03-03","预计解除合作时间":"2026-09-04","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/6 13:22:46","市/区县":"泰兴县","站点":"江苏【泰兴县】城区一站","骑手姓名":"王炜","骑手ID":"74809421","联系方式":"18165014551","入职时间":"2026-07-01","预计解除合作时间":"2026-10-05","解除合作原因":"请长假（非事故/重病）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/7 20:09:23","市/区县":"响水县","站点":"江苏【响水县】陈家港乡镇站","骑手姓名":"王亦环","骑手ID":"50536524","联系方式":"15796164992","入职时间":"2024-09-26","预计解除合作时间":"2026-09-07","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/7 23:30:47","市/区县":"诸暨市","站点":"浙江【诸暨市】安华镇站","骑手姓名":"张洲","骑手ID":"77661473","联系方式":"18720160402","入职时间":"2026-09-01","预计解除合作时间":"2026-10-01","解除合作原因":"请长假（非事故/重病）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/8 15:12:28","市/区县":"安吉县","站点":"浙江【安吉县】梅溪站","骑手姓名":"王志超","骑手ID":"77492415","联系方式":"18757273110","入职时间":"2026-08-26","预计解除合作时间":"2026-09-05","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/8 18:33:02","市/区县":"诸暨市","站点":"浙江【诸暨市】大唐镇站","骑手姓名":"廖月琴","骑手ID":"69949095","联系方式":"16605758202","入职时间":"2026-02-23","预计解除合作时间":"2026-10-08","解除合作原因":"请长假（非事故/重病）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/8 19:24:11","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"杨黄楠","骑手ID":"73946972","联系方式":"19518511953","入职时间":"2026-06-09","预计解除合作时间":"2026-08-08","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/9 11:25:40","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"张勇","骑手ID":"77667228","联系方式":"18017070244","入职时间":"2026-09-01","预计解除合作时间":"2026-09-09","解除合作原因":"新人保护（首次专送10天内）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/9 18:38:18","市/区县":"诸暨市","站点":"浙江【诸暨市】山下湖镇站","骑手姓名":"钱超远","骑手ID":"76767912","联系方式":"18657508304","入职时间":"2026-08-05","预计解除合作时间":"2026-09-09","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/11 10:31:15","市/区县":"安吉县","站点":"浙江【安吉县】晓墅乡镇站","骑手姓名":"江浪","骑手ID":"69023432","联系方式":"18757208492","入职时间":"2026-01-10","预计解除合作时间":"2026-09-10","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/11 10:32:54","市/区县":"安吉县","站点":"浙江【安吉县】晓墅乡镇站","骑手姓名":"邓正君","骑手ID":"69023544","联系方式":"18072603904","入职时间":"2026-01-10","预计解除合作时间":"2026-09-11","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/11 15:48:06","市/区县":"安吉县","站点":"浙江【安吉县】凤凰乡镇站","骑手姓名":"方宏伟","骑手ID":"76639870","联系方式":"13819223145","入职时间":"2026-08-02","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/11 15:49:16","市/区县":"安吉县","站点":"浙江【安吉县】佳源乡镇站","骑手姓名":"朱快乐","骑手ID":"76619613","联系方式":"13588356340","入职时间":"2026-08-02","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/11 15:50:23","市/区县":"安吉县","站点":"浙江【安吉县】城南乡镇站","骑手姓名":"陆强成","骑手ID":"76574406","联系方式":"15772487017","入职时间":"2026-08-13","预计解除合作时间":"2026-09-01","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/12 9:50:46","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"吴瑞健","骑手ID":"75598061","联系方式":"18657142697","入职时间":"2026-07-14","预计解除合作时间":"2026-09-12","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/12 9:51:48","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"陶建伟","骑手ID":"77872039","联系方式":"15224059899","入职时间":"2026-09-06","预计解除合作时间":"2026-09-12","解除合作原因":"新人保护（首次专送10天内）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/12 9:54:18","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"刘鑫钦","骑手ID":"73383704","联系方式":"17300962905","入职时间":"2026-05-22","预计解除合作时间":"2026-09-12","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/12 9:55:27","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"刘鑫","骑手ID":"65815091","联系方式":"18967119277","入职时间":"2025-09-30","预计解除合作时间":"2026-09-12","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/12 12:06:25","市/区县":"诸暨市","站点":"浙江【诸暨市】大唐镇站","骑手姓名":"翁烈钦","骑手ID":"77420216","联系方式":"15606857974","入职时间":"2026-08-24","预计解除合作时间":"2026-09-12","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/12 13:53:35","市/区县":"浦江县","站点":"【浦江】廿亩山乡镇站","骑手姓名":"卢兴义","骑手ID":"73316979","联系方式":"13113190686","入职时间":"2026-05-20","预计解除合作时间":"2026-09-12","解除合作原因":"请长假（非事故/重病）","解除合作去向":"我方众包、悦跑┋原因未知"},{"区域":"华东","提交时间":"2026/9/12 14:41:52","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"刘世威","骑手ID":"72801375","联系方式":"13285820679","入职时间":"2026-05-05","预计解除合作时间":"2026-09-12","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/13 13:01:11","市/区县":"浦江县","站点":"浙江【浦江县】黄宅乡镇站","骑手姓名":"朱加稳","骑手ID":"72157369","联系方式":"19057438671","入职时间":"2026-04-05","预计解除合作时间":"2026-10-13","解除合作原因":"请长假（非事故/重病）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/13 20:16:37","市/区县":"诸暨市","站点":"浙江【诸暨市】山下湖镇站","骑手姓名":"朱林","骑手ID":"78063573","联系方式":"18930717441","入职时间":"2026-09-12","预计解除合作时间":"2026-09-14","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/13 20:17:58","市/区县":"诸暨市","站点":"浙江【诸暨市】枫桥镇站","骑手姓名":"梁王威","骑手ID":"78030783","联系方式":"18258015969","入职时间":"2026-09-11","预计解除合作时间":"2026-09-14","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/13 23:17:33","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"连诗荣","骑手ID":"77463496","联系方式":"13018991093","入职时间":"2026-08-25","预计解除合作时间":"2026-09-13","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/14 9:57:51","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"孟斌凯","骑手ID":"78064486","联系方式":"13819521833","入职时间":"2026-09-12","预计解除合作时间":"2026-09-14","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/14 12:20:50","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"王阳","骑手ID":"43723069","联系方式":"15639481190","入职时间":"2024-02-02","预计解除合作时间":"2026-09-14","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/14 13:12:06","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"蔡铈英","骑手ID":"78062890","联系方式":"13645851768","入职时间":"2026-09-11","预计解除合作时间":"2026-09-14","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/14 19:09:36","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"蒙华平","骑手ID":"77962822","联系方式":"15257558944","入职时间":"2026-09-10","预计解除合作时间":"2026-09-14","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/15 12:55:33","市/区县":"安吉县","站点":"浙江【安吉县】天子湖乡镇站","骑手姓名":"叶宗虎","骑手ID":"73677518","联系方式":"17586538835","入职时间":"2026-06-01","预计解除合作时间":"2026-09-15","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/15 14:46:36","市/区县":"兰溪市","站点":"浙江【兰溪市】市区站","骑手姓名":"邓卫宏","骑手ID":"77673347","联系方式":"13868920025","入职时间":"2026-09-01","预计解除合作时间":"2026-10-15","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/15 17:44:42","市/区县":"诸暨市","站点":"浙江【诸暨市】城北站","骑手姓名":"章斌","骑手ID":"70111988","联系方式":"13675776388","入职时间":"2026-05-14","预计解除合作时间":"2026-09-15","解除合作原因":"重复入离职（删号重入）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/15 18:17:59","市/区县":"宁国市","站点":"安徽【宁国市】润发站","骑手姓名":"许广源","骑手ID":"71525119","联系方式":"19316180209","入职时间":"2026-03-31","预计解除合作时间":"2026-09-30","解除合作原因":"兼职/暑假工/高价","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/16 11:47:49","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"谢国帅","骑手ID":"61932345","联系方式":"19185587321","入职时间":"2026-06-02","预计解除合作时间":"2026-09-16","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/16 20:23:10","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"张艳辉","骑手ID":"77636834","联系方式":"18458867214","入职时间":"2026-08-31","预计解除合作时间":"2026-08-31","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/17 10:03:18","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"廖欢","骑手ID":"73687517","联系方式":"17390397331","入职时间":"2026-06-01","预计解除合作时间":"2026-09-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/17 14:36:36","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"周利民","骑手ID":"73682451","联系方式":"19942855504","入职时间":"2026-06-01","预计解除合作时间":"2026-09-17","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/17 18:11:41","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"葛靖","骑手ID":"77890293","联系方式":"15968292871","入职时间":"2026-09-07","预计解除合作时间":"2026-09-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/17 18:13:27","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"陈新建","骑手ID":"77163149","联系方式":"15968298271","入职时间":"2026-08-09","预计解除合作时间":"2026-09-17","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/17 20:31:25","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"李健峰","骑手ID":"75911812","联系方式":"19118345996","入职时间":"2026-07-18","预计解除合作时间":"2026-09-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/17 20:34:20","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"杨权","骑手ID":"70898839","联系方式":"17785279335","入职时间":"2026-03-16","预计解除合作时间":"2026-09-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/17 20:35:29","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"马生杰","骑手ID":"74716797","联系方式":"13059956772","入职时间":"2026-06-29","预计解除合作时间":"2026-09-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/17 20:37:02","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"张大红","骑手ID":"71573102","联系方式":"15755830917","入职时间":"2026-04-01","预计解除合作时间":"2026-09-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/17 20:38:42","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"李仕明","骑手ID":"76095881","联系方式":"13819263625","入职时间":"2026-07-22","预计解除合作时间":"2026-09-17","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/18 2:36:13","市/区县":"桐庐县","站点":"浙江【桐庐县】城东站","骑手姓名":"李洋洋","骑手ID":"8576","联系方式":"18736360760","入职时间":"2026-03-09","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/18 9:20:32","市/区县":"诸暨市","站点":"浙江【诸暨市】万达站","骑手姓名":"吕友明","骑手ID":"77887153","联系方式":"18757513157","入职时间":"2026-09-07","预计解除合作时间":"2026-09-18","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/18 9:28:38","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"潘孝萍","骑手ID":"71809996","联系方式":"15958199301","入职时间":"2026-04-07","预计解除合作时间":"2026-09-18","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/18 10:14:27","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"徐建礼","骑手ID":"78152843","联系方式":"15068980464","入职时间":"2026-09-15","预计解除合作时间":"2026-09-18","解除合作原因":"新人保护（首次专送10天内）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/18 10:42:56","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"孙世豪","骑手ID":"77674392","联系方式":"13175661956","入职时间":"2026-09-01","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/18 10:44:17","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"罗天祥","骑手ID":"74563559","联系方式":"13175223198","入职时间":"2026-06-25","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/18 10:45:38","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"李永嘉","骑手ID":"77778522","联系方式":"13378994637","入职时间":"2026-09-03","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/18 10:45:49","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"何宝全","骑手ID":"73875839","联系方式":"13400741720","入职时间":"2026-06-07","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/18 10:47:19","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"邓召文","骑手ID":"55731231","联系方式":"18085711271","入职时间":"2025-05-10","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/18 10:48:37","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"龙立家","骑手ID":"70348649","联系方式":"13116829114","入职时间":"2026-03-05","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/18 12:12:14","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"李文强","骑手ID":"71264489","联系方式":"18079558593","入职时间":"2026-03-24","预计解除合作时间":"2026-09-18","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/18 14:14:14","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"张鹏隆","骑手ID":"72690007","联系方式":"18735728898","入职时间":"2026-05-01","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/18 22:45:21","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"李雪丰","骑手ID":"70349936","联系方式":"19042664725","入职时间":"2026-03-05","预计解除合作时间":"2026-09-18","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/18 22:47:22","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"刘俊涛","骑手ID":"73938842","联系方式":"19373998492","入职时间":"2026-06-09","预计解除合作时间":"2026-06-09","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 9:50:15","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"李文强","骑手ID":"71264489","联系方式":"18079558583","入职时间":"2026-03-24","预计解除合作时间":"2026-09-19","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/19 12:32:17","市/区县":"诸暨市","站点":"浙江【诸暨市】万达站","骑手姓名":"王西平","骑手ID":"71323111","联系方式":"17815700150","入职时间":"2026-03-26","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/19 12:38:53","市/区县":"诸暨市","站点":"浙江【诸暨市】万达站","骑手姓名":"吴峰","骑手ID":"73669325","联系方式":"13758580548","入职时间":"2026-06-01","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/19 13:04:21","市/区县":"桐庐县","站点":"浙江【桐庐县】凌晨站","骑手姓名":"唐小飞","骑手ID":"35285781","联系方式":"19942287296","入职时间":"2023-01-30","预计解除合作时间":"2026-09-17","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 13:05:34","市/区县":"桐庐县","站点":"浙江【桐庐县】凌晨站","骑手姓名":"陈俊","骑手ID":"69918883","联系方式":"19301440137","入职时间":"2026-02-22","预计解除合作时间":"2026-09-18","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 13:06:14","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"肖灏","骑手ID":"75670372","联系方式":"18351004090","入职时间":"2026-07-15","预计解除合作时间":"2026-09-19","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 13:06:51","市/区县":"桐庐县","站点":"浙江【桐庐县】凌晨站","骑手姓名":"郑德贵","骑手ID":"70003224","联系方式":"15902533112","入职时间":"2026-02-26","预计解除合作时间":"2026-09-18","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 13:09:37","市/区县":"诸暨市","站点":"浙江【诸暨市】大唐镇站","骑手姓名":"雷顺","骑手ID":"73492676","联系方式":"16657058750","入职时间":"2026-05-26","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 13:18:00","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"韦忠祥","骑手ID":"74104686","联系方式":"18385505916","入职时间":"2026-05-13","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 14:20:35","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"熊天平","骑手ID":"73125294","联系方式":"13675768492","入职时间":"2026-05-14","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 15:14:52","市/区县":"诸暨市","站点":"浙江【诸暨市】城中站","骑手姓名":"彭富强","骑手ID":"77819586","联系方式":"13216853899","入职时间":"2026-09-04","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 16:06:30","市/区县":"桐庐县","站点":"浙江【桐庐县】凌晨站","骑手姓名":"洪伟","骑手ID":"70132022","联系方式":"17845528171","入职时间":"2026-02-28","预计解除合作时间":"2026-09-19","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 17:05:00","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"张文艺","骑手ID":"70134577","联系方式":"18023075478","入职时间":"2026-02-28","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/19 18:22:23","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"李永嘉","骑手ID":"77778522","联系方式":"13378994637","入职时间":"2026-09-03","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/19 18:29:48","市/区县":"诸暨市","站点":"浙江【诸暨市】城中站","骑手姓名":"黄俊崴","骑手ID":"75741912","联系方式":"18368582770","入职时间":"2026-07-16","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 18:40:27","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"蒋叶烽","骑手ID":"70190754","联系方式":"17305757078","入职时间":"2026-03-02","预计解除合作时间":"2026-09-19","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/19 21:04:56","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"熊天平","骑手ID":"73125294","联系方式":"13675768492","入职时间":"2026-05-04","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/20 11:09:43","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"刘江江","骑手ID":"71492296","联系方式":"17177850024","入职时间":"2026-03-30","预计解除合作时间":"2026-09-20","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/20 11:11:31","市/区县":"诸暨市","站点":"浙江【诸暨市】城西站","骑手姓名":"陆真友","骑手ID":"77338954","联系方式":"19185560063","入职时间":"2026-08-21","预计解除合作时间":"2026-09-20","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/20 11:50:19","市/区县":"诸暨市","站点":"浙江【诸暨市】万达站","骑手姓名":"杨青瑞","骑手ID":"72943462","联系方式":"15957511584","入职时间":"2026-05-09","预计解除合作时间":"2026-09-20","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/20 14:44:35","市/区县":"诸暨市","站点":"浙江【诸暨市】山下湖镇站","骑手姓名":"陈相华","骑手ID":"77898724","联系方式":"18891846178","入职时间":"2026-09-07","预计解除合作时间":"2026-09-20","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/20 14:47:33","市/区县":"诸暨市","站点":"浙江【诸暨市】山下湖镇站","骑手姓名":"虞凌风","骑手ID":"70218194","联系方式":"18888757994","入职时间":"2026-03-03","预计解除合作时间":"2026-09-20","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/20 17:21:46","市/区县":"安吉县","站点":"浙江【安吉县】晓墅乡镇站","骑手姓名":"陈明涛","骑手ID":"76726625","联系方式":"17816991622","入职时间":"2026-08-04","预计解除合作时间":"2026-09-20","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/21 11:04:34","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"邵思铭","骑手ID":"40832691","联系方式":"19906515105","入职时间":"2023-08-31","预计解除合作时间":"2026-09-21","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/21 11:05:48","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"浦仕琪","骑手ID":"75040620","联系方式":"17806912917","入职时间":"2026-07-05","预计解除合作时间":"2026-09-21","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/21 13:21:45","市/区县":"桐庐县","站点":"浙江【桐庐县】城西站","骑手姓名":"张朝贵","骑手ID":"70435278","联系方式":"13071889631","入职时间":"2026-03-07","预计解除合作时间":"2026-09-21","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/21 15:07:08","市/区县":"桐庐县","站点":"浙江【桐庐县】城南站","骑手姓名":"袁旭华","骑手ID":"71590419","联系方式":"13588896540","入职时间":"2026-04-01","预计解除合作时间":"2026-09-21","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/21 15:07:52","市/区县":"桐庐县","站点":"浙江【桐庐县】城东站","骑手姓名":"李钢","骑手ID":"78235227","联系方式":"19107001539","入职时间":"2026-03-05","预计解除合作时间":"2026-09-17","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/21 15:15:40","市/区县":"桐庐县","站点":"浙江【桐庐县】城东站","骑手姓名":"潘杰","骑手ID":"70348292","联系方式":"13075736627","入职时间":"2026-03-05","预计解除合作时间":"2026-09-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/21 16:35:15","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"杨红力","骑手ID":"59638043","联系方式":"15772288732","入职时间":"2025-07-13","预计解除合作时间":"2026-09-21","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/21 16:35:34","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"田学文","骑手ID":"70430959","联系方式":"18208472646","入职时间":"2026-03-07","预计解除合作时间":"2026-09-21","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/21 16:35:38","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"罗太松","骑手ID":"59746471","联系方式":"15120264480","入职时间":"2025-07-12","预计解除合作时间":"2026-09-21","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/21 16:35:47","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"汪文灿","骑手ID":"70431689","联系方式":"18786341050","入职时间":"2026-03-07","预计解除合作时间":"2026-09-21","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/21 16:36:18","市/区县":"诸暨市","站点":"浙江【诸暨市】店口镇站","骑手姓名":"盛晨","骑手ID":"74630413","联系方式":"13065566939","入职时间":"2026-04-21","预计解除合作时间":"2026-09-21","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"我方众包、悦跑"},{"区域":"华东","提交时间":"2026/9/21 18:56:55","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"陈明松","骑手ID":"75855162","联系方式":"18323645235","入职时间":"2026-07-15","预计解除合作时间":"2026-09-21","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/21 18:58:19","市/区县":"安吉县","站点":"浙江【安吉县】九州站","骑手姓名":"巴云龙","骑手ID":"78058307","联系方式":"18267229528","入职时间":"2026-09-12","预计解除合作时间":"2026-09-21","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/22 9:41:48","市/区县":"诸暨市","站点":"浙江【诸暨市】城南站","骑手姓名":"王雷双","骑手ID":"72842557","联系方式":"17374176135","入职时间":"2026-05-06","预计解除合作时间":"2026-09-22","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华东","提交时间":"2026/9/22 10:10:41","市/区县":"诸暨市","站点":"浙江【诸暨市】万达站","骑手姓名":"叶林","骑手ID":"76019989","联系方式":"17581846542","入职时间":"2026-07-21","预计解除合作时间":"2026-09-22","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/22 12:16:08","市/区县":"安吉县","站点":"浙江【安吉】城北站","骑手姓名":"张洪亮","骑手ID":"43885270","联系方式":"17730395850","入职时间":"2024-02-18","预计解除合作时间":"2026-09-22","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华东","提交时间":"2026/9/22 14:45:43","市/区县":"桐庐县","站点":"浙江【桐庐县】城东站","骑手姓名":"文玉祥","骑手ID":"72778595","联系方式":"15750154194","入职时间":"2026-05-04","预计解除合作时间":"2026-09-22","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/4/8 10:16:43","市/区县":"南沙区","站点":"粤海【南沙区】金洲站","骑手姓名":"邹清","骑手ID":"70523874","联系方式":"19090803002","入职时间":"2026-03-09","预计解除合作时间":"2026-04-07","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/4/8 10:19:24","市/区县":"南沙区","站点":"粤海【南沙区】金洲站","骑手姓名":"刘贺欢","骑手ID":"71538417","联系方式":"19124622214","入职时间":"2026-03-31","预计解除合作时间":"2026-04-05","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/4/8 13:22:10","市/区县":"南沙区","站点":"粤海【南沙区】金洲站","骑手姓名":"邓梓轩","骑手ID":"71806931","联系方式":"17511880736","入职时间":"2026-04-07","预计解除合作时间":"2026-04-08","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/4/12 9:44:47","市/区县":"新余","站点":"江西【新余】城南站","骑手姓名":"袁军牙","骑手ID":"71076159","联系方式":"18607901139","入职时间":"2026-03-02","预计解除合作时间":"2026-04-07","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/4/14 11:43:06","市/区县":"南沙区","站点":"粤海【南沙区】旧镇乡镇站","骑手姓名":"罗长云","骑手ID":"70591536","联系方式":"13489155027","入职时间":"2026-03-10","预计解除合作时间":"2026-04-04","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/4/14 11:51:49","市/区县":"南沙区","站点":"粤海【南沙区】旧镇乡镇站","骑手姓名":"陈国源","骑手ID":"51253422","联系方式":"16624799473","入职时间":"2024-10-28","预计解除合作时间":"2026-04-12","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/4/24 10:26:55","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"聂优","骑手ID":"70436421","联系方式":"18595977436","入职时间":"2025-11-01","预计解除合作时间":"2026-04-23","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/1 15:01:42","市/区县":"信宜市","站点":"粤海【信宜市】玉都站","骑手姓名":"吴厚桦","骑手ID":"68039870","联系方式":"16626719574","入职时间":"2025-12-01","预计解除合作时间":"2026-05-01","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/5 18:49:59","市/区县":"南沙区","站点":"粤海【南沙区】金洲站","骑手姓名":"张振坤","骑手ID":"72392924","联系方式":"17585805071","入职时间":"2026-04-22","预计解除合作时间":"2026-05-05","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/7 10:13:16","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"李海涛","骑手ID":"72524892","联系方式":"18273901591","入职时间":"2026-04-26","预计解除合作时间":"2026-05-07","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/16 9:58:01","市/区县":"新余","站点":"江西【新余】龙潭洲站","骑手姓名":"陈锦华","骑手ID":"72294018","联系方式":"13767284438","入职时间":"2026-04-19","预计解除合作时间":"2026-06-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/5/16 9:59:06","市/区县":"新余","站点":"江西【新余】龙潭洲站","骑手姓名":"何豪","骑手ID":"71071863","联系方式":"19310549950","入职时间":"2026-03-20","预计解除合作时间":"2026-06-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/5/16 10:00:13","市/区县":"新余","站点":"江西【新余】龙潭洲站","骑手姓名":"谢家浩","骑手ID":"72294075","联系方式":"15170132319","入职时间":"2026-04-19","预计解除合作时间":"2026-06-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/5/16 19:03:11","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"王智杰","骑手ID":"73158421","联系方式":"18718884471","入职时间":"2026-05-15","预计解除合作时间":"2026-05-16","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/18 16:50:41","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"陈大利","骑手ID":"70647417","联系方式":"13074253673","入职时间":"2026-03-11","预计解除合作时间":"2026-05-16","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/18 16:52:45","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"柳传洲","骑手ID":"70808122","联系方式":"13249156645","入职时间":"2026-03-14","预计解除合作时间":"2026-05-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/18 16:54:24","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"李长其","骑手ID":"56022006","联系方式":"19865436790","入职时间":"2025-05-19","预计解除合作时间":"2026-05-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/20 13:54:20","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"杨秀东","骑手ID":"71500980","联系方式":"17329975578","入职时间":"2026-03-30","预计解除合作时间":"2026-05-20","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/21 17:30:20","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"甘耀科","骑手ID":"70237241","联系方式":"13500123493","入职时间":"2026-03-03","预计解除合作时间":"2026-05-21","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/22 9:51:49","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"陈洋","骑手ID":"72660870","联系方式":"13789230184","入职时间":"2026-04-30","预计解除合作时间":"2026-05-06","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/28 20:13:37","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"王嘉锋","骑手ID":"73228033","联系方式":"19704505519","入职时间":"2026-05-17","预计解除合作时间":"2026-05-28","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/30 10:28:02","市/区县":"南沙区","站点":"粤海【南沙区】港科大站","骑手姓名":"阮家豪","骑手ID":"73504639","联系方式":"18211329917","入职时间":"2026-05-26","预计解除合作时间":"2026-05-29","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/5/31 18:32:28","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"黎优华","骑手ID":"70234500","联系方式":"17748599120","入职时间":"2026-03-03","预计解除合作时间":"2026-06-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/5/31 20:11:47","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"邵瑞","骑手ID":"73616005","联系方式":"19075274002","入职时间":"2026-05-30","预计解除合作时间":"2026-05-31","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/1 15:43:46","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"曾帆","骑手ID":"70281973","联系方式":"15811893031","入职时间":"2026-03-04","预计解除合作时间":"2026-06-01","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/1 15:46:29","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"李嘉鑫","骑手ID":"70592469","联系方式":"15019299860","入职时间":"2026-03-10","预计解除合作时间":"2026-06-01","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/1 19:51:36","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"何东城","骑手ID":"70153350","联系方式":"17612004953","入职时间":"2026-03-01","预计解除合作时间":"2026-06-01","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/1 19:53:09","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"熊后富","骑手ID":"70796963","联系方式":"19115402520","入职时间":"2026-03-14","预计解除合作时间":"2026-06-01","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/4 21:49:25","市/区县":"南沙区","站点":"粤海【南沙区】金洲站","骑手姓名":"胡瑞凤","骑手ID":"73540632","联系方式":"13429596931","入职时间":"2026-05-27","预计解除合作时间":"2026-06-04","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/10 12:45:53","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"董维少","骑手ID":"72526062","联系方式":"13077748095","入职时间":"2026-04-26","预计解除合作时间":"2026-06-10","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/6/15 19:36:35","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"刘文康","骑手ID":"71523887","联系方式":"14743599223","入职时间":"2026-03-24","预计解除合作时间":"2026-06-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/15 19:43:42","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"刘冰群","骑手ID":"70987070","联系方式":"13202500642","入职时间":"2026-03-18","预计解除合作时间":"2026-06-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/16 10:20:04","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"黎优华","骑手ID":"70234500","联系方式":"17748599120","入职时间":"2026-03-03","预计解除合作时间":"2026-06-16","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/6/20 22:09:25","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"杨文龙","骑手ID":"72166783","联系方式":"19524399984","入职时间":"2026-04-15","预计解除合作时间":"2026-06-20","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/22 16:43:42","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"李嘉鑫","骑手ID":"74333138","联系方式":"15019299860","入职时间":"2026-06-19","预计解除合作时间":"2026-06-22","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/22 16:46:03","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"刘发财","骑手ID":"73906722","联系方式":"18881981911","入职时间":"2026-06-08","预计解除合作时间":"2026-06-22","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/23 21:35:38","市/区县":"南沙区","站点":"粤海【南沙区】金洲站","骑手姓名":"杨林全","骑手ID":"70153591","联系方式":"17898470405","入职时间":"2026-03-01","预计解除合作时间":"2026-06-23","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/26 19:30:08","市/区县":"南沙区","站点":"粤海【南沙区】旧镇乡镇站","骑手姓名":"樊钰轩","骑手ID":"70240893","联系方式":"15918518241","入职时间":"2026-03-03","预计解除合作时间":"2026-06-26","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/26 19:33:28","市/区县":"南沙区","站点":"粤海【南沙区】旧镇乡镇站","骑手姓名":"吕天项","骑手ID":"70090924","联系方式":"15521595412","入职时间":"2026-02-27","预计解除合作时间":"2026-06-26","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/6/26 19:36:30","市/区县":"南沙区","站点":"粤海【南沙区】旧镇乡镇站","骑手姓名":"丁其波","骑手ID":"73880119","联系方式":"19187631035","入职时间":"2026-06-07","预计解除合作时间":"2026-06-26","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/7/6 19:01:09","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"梁镇豪","骑手ID":"70801847","联系方式":"18172457492","入职时间":"2026-03-14","预计解除合作时间":"2026-07-05","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/7/6 20:02:21","市/区县":"南沙区","站点":"粤海【南沙区】板头站","骑手姓名":"梁益堃","骑手ID":"74039464","联系方式":"15277407297","入职时间":"2026-06-11","预计解除合作时间":"2026-07-06","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/7/16 10:23:04","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"杨剑","骑手ID":"70125047","联系方式":"18978474405","入职时间":"2026-02-28","预计解除合作时间":"2026-07-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华南","提交时间":"2026/7/16 10:56:44","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"沈振兴","骑手ID":"73912940","联系方式":"18529465908","入职时间":"2026-06-08","预计解除合作时间":"2026-07-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/7/16 12:26:03","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"王传杰","骑手ID":"68296545","联系方式":"19589407144","入职时间":"2025-12-10","预计解除合作时间":"2026-07-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/7/16 12:43:32","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"郑一炫","骑手ID":"72874866","联系方式":"15207818347","入职时间":"2026-04-30","预计解除合作时间":"2026-07-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华南","提交时间":"2026/7/16 15:46:29","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"梁灿明","骑手ID":"70026725","联系方式":"13268395610","入职时间":"2026-02-26","预计解除合作时间":"2026-07-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"竞对┋本城其他行业"},{"区域":"华南","提交时间":"2026/7/16 16:02:09","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"黄嘉翔","骑手ID":"72590153","联系方式":"19986178409","入职时间":"2026-04-28","预计解除合作时间":"2026-07-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华南","提交时间":"2026/7/17 11:44:05","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"李星","骑手ID":"73616216","联系方式":"15523987905","入职时间":"2026-05-30","预计解除合作时间":"2026-07-16","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华南","提交时间":"2026/7/20 10:52:31","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"严兆辉","骑手ID":"73065854","联系方式":"17728756579","入职时间":"2026-05-12","预计解除合作时间":"2026-07-19","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/7/23 15:10:01","市/区县":"信宜市","站点":"粤海【信宜市】玉都站","骑手姓名":"许国瑜","骑手ID":"37476531","联系方式":"13809781936","入职时间":"2023-04-22","预计解除合作时间":"2026-07-23","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/7/23 17:20:20","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"阳春","骑手ID":"67794755","联系方式":"19872499578","入职时间":"2025-11-22","预计解除合作时间":"2026-07-23","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/7/26 10:02:39","市/区县":"南沙区","站点":"粤海【南沙区】东涌乡镇站","骑手姓名":"张健龙","骑手ID":"58303966","联系方式":"16626717152","入职时间":"2025-06-30","预计解除合作时间":"2026-07-26","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/8/2 11:26:50","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】凯茵小站新","骑手姓名":"彭友煜","骑手ID":"75461195","联系方式":"18629240850","入职时间":"2026-07-12","预计解除合作时间":"2026-08-16","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/8/9 23:06:41","市/区县":"连平县","站点":"粤海【连平县】忠信站","骑手姓名":"邱梓航","骑手ID":"72188688","联系方式":"17880588605","入职时间":"2026-04-16","预计解除合作时间":"2026-08-09","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/8/15 12:50:21","市/区县":"南沙区","站点":"粤海【南沙区】榄核乡镇站","骑手姓名":"邓锐松","骑手ID":"72524690","联系方式":"19145482808","入职时间":"2026-04-26","预计解除合作时间":"2026-09-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/8/15 23:30:03","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"陈权成","骑手ID":"73092666","联系方式":"13580692679","入职时间":"2026-05-13","预计解除合作时间":"2026-08-15","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华南","提交时间":"2026/8/17 9:42:29","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"何伟超","骑手ID":"77188313","联系方式":"13726222426","入职时间":"2026-02-28","预计解除合作时间":"2026-08-16","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"竞对"},{"区域":"华南","提交时间":"2026/8/18 20:01:54","市/区县":"南沙区","站点":"粤海【南沙区】榄核乡镇站","骑手姓名":"陈润锦","骑手ID":"70292321","联系方式":"17321122154","入职时间":"2026-03-04","预计解除合作时间":"2026-09-18","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/8/24 11:15:15","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"袁明鸿","骑手ID":"77369101","联系方式":"13033200042","入职时间":"2026-08-22","预计解除合作时间":"2026-08-23","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/8/26 18:31:49","市/区县":"南沙区","站点":"粤海【南沙区】东涌乡镇站","骑手姓名":"雷丰华","骑手ID":"67355422","联系方式":"18565416078","入职时间":"2025-11-08","预计解除合作时间":"2026-08-26","解除合作原因":"急辞/失联删号","解除合作去向":"竞对┋我方众包、悦跑"},{"区域":"华南","提交时间":"2026/8/26 20:59:27","市/区县":"南沙区","站点":"粤海【南沙区】东涌乡镇站","骑手姓名":"何家宏","骑手ID":"67248130","联系方式":"19874445642","入职时间":"2025-11-05","预计解除合作时间":"2026-08-26","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/8/31 14:44:21","市/区县":"大鹏新区","站点":"粤海【大鹏新区】葵涌一站","骑手姓名":"韦兆飞","骑手ID":"54775406","联系方式":"18902466113","入职时间":"2023-06-01","预计解除合作时间":"2026-08-31","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/1 18:10:21","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】凯茵小站新","骑手姓名":"王凤","骑手ID":"55274780","联系方式":"15361327310","入职时间":"2025-04-25","预计解除合作时间":"2026-09-01","解除合作原因":"骑手本人事故/伤病/无法出勤","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/3 9:27:46","市/区县":"大鹏新区","站点":"粤海【大鹏新区】葵涌一站","骑手姓名":"赵威","骑手ID":"49038025","联系方式":"15814468230","入职时间":"2024-08-01","预计解除合作时间":"2026-09-03","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/3 16:27:01","市/区县":"信宜市","站点":"粤海【信宜市】玉都站","骑手姓名":"蓝新涵","骑手ID":"22833321","联系方式":"18128372392","入职时间":"2021-03-23","预计解除合作时间":"2026-09-03","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/3 16:29:17","市/区县":"信宜市","站点":"粤海【信宜市】玉都站","骑手姓名":"叶俊良","骑手ID":"38412779","联系方式":"17811421762","入职时间":"2023-06-07","预计解除合作时间":"2026-09-02","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/4 17:17:23","市/区县":"南沙区","站点":"粤海【南沙区】万达站","骑手姓名":"黄禺粤","骑手ID":"77668773","联系方式":"15919310236","入职时间":"2026-09-01","预计解除合作时间":"2026-09-04","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/9/6 14:15:01","市/区县":"南沙区","站点":"粤海【南沙区】coco park站","骑手姓名":"陈健","骑手ID":"77194991","联系方式":"13640348316","入职时间":"2026-08-17","预计解除合作时间":"2026-09-06","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/8 16:23:04","市/区县":"信宜市","站点":"粤海【信宜市】玉都站","骑手姓名":"陈振宏","骑手ID":"27685907","联系方式":"18948117061","入职时间":"2018-03-12","预计解除合作时间":"2026-09-08","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/9 9:37:16","市/区县":"龙南县","站点":"江西【龙南市】城区站","骑手姓名":"廖振新","骑手ID":"55983832","联系方式":"18720766586","入职时间":"2026-09-09","预计解除合作时间":"2028-10-09","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/12 9:35:27","市/区县":"南沙区","站点":"粤海【南沙区】榄核乡镇站","骑手姓名":"郭海潼","骑手ID":"70279112","联系方式":"18928779820","入职时间":"2026-03-04","预计解除合作时间":"2026-10-11","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/15 22:57:43","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"王鑫雨","骑手ID":"74678153","联系方式":"18138748036","入职时间":"2026-06-28","预计解除合作时间":"2026-09-15","解除合作原因":"急辞/失联删号","解除合作去向":"我方众包、悦跑"},{"区域":"华南","提交时间":"2026/9/15 23:10:44","市/区县":"南沙区","站点":"粤海【南沙区】大岗乡镇站","骑手姓名":"宋合海","骑手ID":"72690909","联系方式":"18885461213","入职时间":"2026-05-01","预计解除合作时间":"2026-09-15","解除合作原因":"急辞/失联删号","解除合作去向":"我方众包、悦跑"},{"区域":"华南","提交时间":"2026/9/16 17:19:40","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】太阳城站新","骑手姓名":"罗宏伟","骑手ID":"74798558","联系方式":"18816874877","入职时间":"2026-07-01","预计解除合作时间":"2026-09-16","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/9/17 0:37:51","市/区县":"龙南县","站点":"江西【龙南市】城区站","骑手姓名":"朱智成","骑手ID":"67766316","联系方式":"17321138239","入职时间":"2025-11-21","预计解除合作时间":"2026-09-17","解除合作原因":"其他原因（管理号、退站等非骑手原因）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/20 18:48:12","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】凯茵小站新","骑手姓名":"陈华权","骑手ID":"73380103","联系方式":"13640467297","入职时间":"2026-05-22","预计解除合作时间":"2026-09-20","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/20 19:18:13","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】兴和里站新","骑手姓名":"陈英蓉","骑手ID":"78060103","联系方式":"13392571632","入职时间":"2026-09-12","预计解除合作时间":"2026-09-20","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/21 10:29:08","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】金华站新","骑手姓名":"阿支尔坡","骑手ID":"76847350","联系方式":"17887262038","入职时间":"2026-08-07","预计解除合作时间":"2026-09-21","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/21 10:30:55","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】金华站新","骑手姓名":"王桂泉","骑手ID":"74998429","联系方式":"13346431190","入职时间":"2026-07-04","预计解除合作时间":"2026-09-21","解除合作原因":"兼职/暑假工/高价","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/21 10:33:50","市/区县":"新余","站点":"江西【新余】燕子山站","骑手姓名":"黄易成","骑手ID":"71621919","联系方式":"14796803065","入职时间":"2026-04-02","预计解除合作时间":"2026-09-30","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"我方众包、悦跑"},{"区域":"华南","提交时间":"2026/9/21 10:36:02","市/区县":"新余","站点":"江西【新余】燕子山站","骑手姓名":"刘毅豪","骑手ID":"74220888","联系方式":"19173140329","入职时间":"2026-06-16","预计解除合作时间":"2026-09-30","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/21 10:38:16","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】翠亨站新","骑手姓名":"陈中杏","骑手ID":"78207888","联系方式":"18816874877","入职时间":"2026-09-17","预计解除合作时间":"2026-09-21","解除合作原因":"急辞/失联删号","解除合作去向":"本城其他行业"},{"区域":"华南","提交时间":"2026/9/21 16:23:11","市/区县":"南沙区","站点":"粤海【南沙区】旧镇乡镇站","骑手姓名":"李财杰","骑手ID":"71959827","联系方式":"17304493758","入职时间":"2026-04-10","预计解除合作时间":"2026-09-20","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/21 17:12:52","市/区县":"南沙区","站点":"粤海【南沙区】东涌乡镇站","骑手姓名":"何克慧","骑手ID":"72589832","联系方式":"19022050871","入职时间":"2026-04-28","预计解除合作时间":"2026-09-21","解除合作原因":"急辞/失联删号","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/22 9:25:06","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】凯茵小站新","骑手姓名":"何东","骑手ID":"68590026","联系方式":"13242248695","入职时间":"2026-09-22","预计解除合作时间":"2026-09-22","解除合作原因":"迭代/劝退（出勤、体验、违规等问题骑手）","解除合作去向":"原因未知"},{"区域":"华南","提交时间":"2026/9/22 12:38:14","市/区县":"火炬高技术产业开发区","站点":"粤海【火炬高技术产业开发区】江尾头站新","骑手姓名":"冉小龙","骑手ID":"65656802","联系方式":"13144048959","入职时间":"2021-03-12","预计解除合作时间":"2026-09-22","解除合作原因":"急辞/失联删号","解除合作去向":"竞对"}];
+DATA.sort((a,b)=>toTs(b['提交时间'])-toTs(a['提交时间']));
+let page=1,pageSize=15;
+function render(){const total=DATA.length,tp=Math.max(1,Math.ceil(total/pageSize));if(page>tp)page=tp;if(page<1)page=1;const st=(page-1)*pageSize,sl=DATA.slice(st,st+pageSize);const tb=document.getElementById('tbody');tb.innerHTML=sl.map(r=>'<tr><td><span class="tag '+(r['区域']==='华东'?'hd':'hs')+'">'+r['区域']+'</span></td><td>'+r['提交时间']+'</td><td>'+r['市/区县']+'</td><td>'+r['站点']+'</td><td>'+r['骑手姓名']+'</td><td>'+r['骑手ID']+'</td><td>'+r['联系方式']+'</td><td>'+r['入职时间']+'</td><td>'+r['预计解除合作时间']+'</td><td>'+r['解除合作原因']+'</td><td>'+r['解除合作去向']+'</td></tr>').join('');document.getElementById('pageInfo').textContent='共 '+total+' 条 · 第 '+page+' / '+tp+' 页';let h='<button class="pbtn" '+(page<=1?'disabled':'')+' onclick="go(1)">«</button><button class="pbtn" '+(page<=1?'disabled':'')+' onclick="go('+(page-1)+')">‹ 上一页</button>';for(let i=Math.max(1,page-2);i<=Math.min(tp,page+2);i++){h+='<button class="pbtn '+(i===page?'cur':'')+'" onclick="go('+i+')">'+i+'</button>';}h+='<button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="go('+(page+1)+')">下一页 ›</button><button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="go('+tp+')">»</button>';document.getElementById('pager').innerHTML=h;}
+function go(p){page=p;render();}
+document.getElementById('pageSize').addEventListener('change',function(){pageSize=parseInt(this.value)||15;page=1;render();});
+render();</script></body></html>
