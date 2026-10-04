@@ -718,7 +718,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
     <!-- 右：BI数据汇总表 -->
     <div class="card daily-card">
-      <div class="card-title"><span class="icon">📈</span>数据汇总（<span id="bi-date-label">2026-09-23</span> 单日快照）</div>
+      <div class="card-title"><span class="icon">📈</span> 数据汇总（<span id="bi-date-label">2026-09-23</span> 单日快照）</div>
       <div class="table-scroll">
       <table class="dt" id="bi-data-table">
         <thead>
@@ -748,7 +748,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <!-- 天维度：当日各模块 -->
   <div class="card" style="margin-bottom:12px;padding:12px 20px;">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-      <div class="section-label" style="margin:0;">当日各模块指标</div>
+      <div class="section-label" style="margin:0;">📊 当日各模块指标</div>
       <div class="city-tabs">
         <div class="city-tab active" onclick="switchCity(this,'泰兴')">泰兴</div>
         <div class="city-tab" onclick="switchCity(this,'诸暨')">诸暨</div>
@@ -800,7 +800,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
   <div class="grid-calc-preset">
     <div class="card">
-      <div class="card-title"><span class="icon">🧮</span>当日测算 + 承托比</div>
+      <div class="card-title"><span class="icon">🧮</span> 当日测算 + 承托比</div>
       <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
         <div style="flex:1;">
           <div style="font-size:11px;color:#888;margin-bottom:2px;">承托比（参考，不计分）</div>
@@ -846,7 +846,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div class="section-label">📈 趋势对比</div>
   <!-- 指标走势图（三城对比 · 折线/柱状可切换） -->
   <div class="card" style="margin-bottom:12px;">
-    <div class="card-title"><span class="icon">📊</span>指标走势图（三城对比 · 橙色底纹=高峰日 · 竖虚线/底纹=当前选中日期）</div>
+    <div class="card-title"><span class="icon">📊</span> 指标走势图（三城对比 · 橙色底纹=高峰日 · 竖虚线/底纹=当前选中日期）</div>
     <div class="tc-toolbar" id="tc-toolbar"></div>
     <div style="overflow-x:auto;">
       <svg id="trend-chart-svg" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" style="min-width:680px;width:100%;height:auto;display:block;"></svg>
@@ -854,7 +854,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">悬停数据点/柱可查看具体数值 | 红色虚线=考核警戒线（HD 显示 90% 零分线、推单率显示 98.8% 兜底线）| 支持折线/柱状切换，切换指标时下方表格同步高亮</div>
   </div>
 <div class="card" style="margin-bottom:12px;">
-    <div class="card-title"><span class="icon">📉</span>近期趋势（分指标展开，点击列头可切换日期）</div>
+    <div class="card-title"><span class="icon">📉</span> 近期趋势（分指标展开，点击列头可切换日期）</div>
     <div class="table-scroll">
     <table class="trend-table" id="trend-table">
       <thead>
@@ -867,7 +867,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
 <div class="section-label">🧩 拆解与归因</div>
 <div class="card" id="ym-weekly-card" style="margin-bottom:12px;">
-    <div class="card-title"><span class="icon">🗓️</span>悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制）</div>
+    <div class="card-title"><span class="icon">🗓️</span> 悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制）</div>
     <div class="table-scroll" id="ym-weekly-body"><div style="text-align:center;padding:14px;color:#6b7280;font-size:12.5px;">⏳ BI数据发布后自动生成各自然周完成度</div></div>
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">完成度=悦跑服务质量达标骑手数/目标（周均口径，目标以任务系统下发为准）；任一自然周＜90%该周记0分（自然周控制），平均完成率不控制区间；第1周8/31无BI数据按9/1-9/6日均近似；9/28-9/30计入10月第1期周期（9/28-10/4），此处不展示。</div>
   </div>
@@ -876,11 +876,11 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <!-- 两期均值对比 + 月度总分对比 并排 -->
   <div class="grid-util">
     <div class="card" style="margin-bottom:12px;">
-      <div class="card-title"><span class="icon">📶</span>两期均值对比<button class="tc-btn tc-export" onclick="exportPeriodChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+      <div class="card-title"><span class="icon">📶</span> 两期均值对比<button class="tc-btn tc-export" onclick="exportPeriodChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
       <div id="period-bar-chart"></div>
     </div>
     <div class="card" style="margin-bottom:12px;">
-      <div class="card-title"><span class="icon">🏆</span>月度总分对比<button class="tc-btn tc-export" onclick="exportMonthChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+      <div class="card-title"><span class="icon">🏆</span> 月度总分对比<button class="tc-btn tc-export" onclick="exportMonthChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
       <div id="month-bar-chart"></div>
     </div>
   </div>
@@ -888,11 +888,11 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <!-- 多角度诊断图：缺口分解 + 兜底高峰冲击 -->
   <div class="grid-util">
     <div class="card" style="margin-bottom:12px;">
-      <div class="card-title"><span class="icon">🧩</span>加权缺口分解（缺口=(100−值)×权重，与 100−总分 吻合）<button class="tc-btn tc-export" onclick="exportGapChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+      <div class="card-title"><span class="icon">🧩</span> 加权缺口分解（缺口=(100−值)×权重，与 100−总分 吻合）<button class="tc-btn tc-export" onclick="exportGapChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
       <div id="gap-chart"></div>
     </div>
     <div class="card" style="margin-bottom:12px;">
-      <div class="card-title"><span class="icon">🚨</span>推完兜底线：高峰日 vs 非高峰日（高峰冲击视角）<button class="tc-btn tc-export" onclick="exportBreachChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+      <div class="card-title"><span class="icon">🚨</span> 推完兜底线：高峰日 vs 非高峰日（高峰冲击视角）<button class="tc-btn tc-export" onclick="exportBreachChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
       <div id="breach-chart"></div>
     </div>
   </div>
@@ -920,6 +920,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
 
   <!-- 月维度：整月考核总览 -->
+<div class="section-label">🏆 月度测算与评估</div>
   <div class="card monthly-card" id="sec-overview" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#fff5f5 100%);">
     <div class="card-title" id="overview-title"><span class="icon">🏆</span>整月考核结果测算（数据截止 9/30，MTD占全月 30/30 天，全月数据齐全）</div>
     <div class="table-scroll">
@@ -970,7 +971,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <!-- 月维度：城市预估警告罚款 -->
   <div class="card" id="sec-estimate" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#fff8e1 100%);">
-    <div class="card-title"><span class="icon">💰</span>城市预估警告与罚款（基于全月总分）</div>
+    <div class="card-title"><span class="icon">💰</span> 城市预估警告与罚款（基于全月总分）</div>
     <div style="font-size:12px;color:#666;margin-bottom:12px;" id="estimate-desc">数据截止 9/30，MTD占全月 30/30 天（100%）；全月数据已齐。下表按当前总分保持不变、提升至达标线、下滑至红线三种场景预估。</div>
     <div class="table-scroll">
     <table class="dt" style="font-size:12px;">
@@ -1087,7 +1088,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
 
 <div class="card" id="sec-mtdeval" style="margin-bottom:16px;">
-    <div class="card-title"><span class="icon">📊</span>月度评估 <span id="mtd-mode-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
+    <div class="card-title"><span class="icon">📊</span> 月度评估 <span id="mtd-mode-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
     <div id="mtd-eval-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月度评估数据加载中…</div></div>
   </div>
 
@@ -1096,7 +1097,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <!-- 下月预看板模型（月末自动填充） -->
   <div class="card" id="sec-nextmonth" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f3e9fd 100%);">
-    <div class="card-title"><span class="icon">🔮</span>下月预看板模型 <span id="nextmonth-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
+    <div class="card-title"><span class="icon">🔮</span> 下月预看板模型 <span id="nextmonth-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
     <div id="nextmonth-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月末自动生成…</div></div>
   </div>
 
@@ -1110,13 +1111,13 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <!-- 公式与权重 -->
   <div class="grid grid-2" style="margin-bottom:16px;">
     <div class="card">
-      <div class="card-title"><span class="icon">📊</span>总分计算公式</div>
+      <div class="card-title"><span class="icon">📊</span> 总分计算公式</div>
       <div class="formula-box"><div class="formula">总分 = 加盟完成率×50% + 体验×20% + 推完×20% + 完结率×10% − 扣分</div></div>
       <div style="font-size:12px;color:#888;text-align:center;">画像：都不考（加盟50% 体验20% 推完20% 完结率10%）</div>
       <div style="margin-top:10px;"><span class="pill pill-period">高峰日</span><span style="font-size:12px;color:#666;">9/5、9/6、9/12、9/13、9/19、9/25、9/26、9/27（共8天）</span></div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="icon">⚖️</span>运力组合权重配置</div>
+      <div class="card-title"><span class="icon">⚖️</span> 运力组合权重配置</div>
       <table class="dt">
         <thead><tr><th>画像</th><th>加盟</th><th>悦跑</th><th>普众</th><th>体验</th><th>推完</th><th>完结率</th></tr></thead>
         <tbody>
@@ -1130,11 +1131,11 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
 
   <!-- 月维度：考核指标明细解读 -->
-  <div class="section-label">考核指标明细解读</div>
+  <div class="section-label">📋 考核指标明细解读</div>
 
   <!-- 考核指标全景表（对标官方方案） -->
   <div class="card" style="margin-bottom:16px;">
-    <div class="card-title"><span class="icon">📋</span>考核指标全景表（对标2026年9月配送考核方案）</div>
+    <div class="card-title"><span class="icon">📋</span> 考核指标全景表（对标2026年9月配送考核方案）</div>
     <div class="table-scroll">
     <table class="dt scheme-table">
       <thead>
@@ -1306,7 +1307,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <!-- 推单完成率 & 体验模块区间计分表 -->
   <div class="grid grid-2" style="margin-bottom:16px;">
     <div class="card">
-      <div class="card-title"><span class="icon">📊</span>推单完成率 · 区间计分表</div>
+      <div class="card-title"><span class="icon">📊</span> 推单完成率 · 区间计分表</div>
       <table class="penalty-table">
         <thead><tr><th>实际完成值 X</th><th>得分</th></tr></thead>
         <tbody>
@@ -1321,7 +1322,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <div style="font-size:11px;color:#6b7280;margin-top:6px;">三城当前99.14%~99.30%，处于目标~挑战区间，表现稳健</div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="icon">📊</span>体验模块 · 虚假/取消计分表</div>
+      <div class="card-title"><span class="icon">📊</span> 体验模块 · 虚假/取消计分表</div>
       <table class="penalty-table">
         <thead><tr><th>实际完成值 X</th><th>虚假点送达得分</th><th>配送取消单得分</th></tr></thead>
         <tbody>
@@ -1337,7 +1338,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <!-- 异常骑手剔除说明 -->
   <div class="card" style="margin-bottom:16px;">
-    <div class="card-title"><span class="icon">⚠️</span>异常骑手剔除说明</div>
+    <div class="card-title"><span class="icon">⚠️</span> 异常骑手剔除说明</div>
     <div style="font-size:12px;color:#555;line-height:1.8;margin-bottom:10px;padding:8px 12px;background:#fff8e1;border-radius:6px;border-left:3px solid #f5a623;">
       <strong>统计有效骑手时，剔除以下异常骑手数据</strong><br>
       <span style="font-size:11px;color:#6b7280;">加盟：同一骑手同天多异常去重算1人次 | 悦跑&amp;普众：剔除触发异常且达标的骑手</span>
@@ -1370,7 +1371,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <!-- 月维度：考核周期 -->
   <div class="card" style="margin-bottom:16px;">
-    <div class="card-title"><span class="icon">📅</span>考核周期（按月分两期 + 高峰日）</div>
+    <div class="card-title"><span class="icon">📅</span> 考核周期（按月分两期 + 高峰日）</div>
     <table class="period-table">
       <thead><tr><th>运力线</th><th>第1期</th><th>第2期</th><th>高峰日</th></tr></thead>
       <tbody>
@@ -1384,6 +1385,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
   </div>
 
+<div class="section-label">🤝 企客SKA · 月维度评估与赔付</div>
 <div class="card" id="qk-monthly-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f0ff 100%);">
   <div class="card-title">🤝 企客（SKA）· 月度模块（扣分项） <a class="anchor-btn" href="#sec-qkka" style="float:right;">查看完整评估预警 ▸</a></div>
   <div style="font-size:12px;line-height:1.75;color:#374151;">
@@ -1396,7 +1398,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
 </div>
 <div class="card" id="sec-qkka" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-    <div class="card-title"><span class="icon">🤝</span>企客门店体验 · SKA品牌KPI赔付规则解读与评估预警</div>
+    <div class="card-title"><span class="icon">🤝</span> 企客门店体验 · SKA品牌KPI赔付规则解读与评估预警</div>
     <div id="qkka-warn-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">评估预警加载中…</div></div>
     <details style="margin-top:10px;">
       <summary style="cursor:pointer;font-size:12.5px;font-weight:700;color:#1967d2;">📖 规则解读（点开查看口径与扣罚标准，来源：月度考核方案 + 《下沉SKA品牌KPI赔付规则》）</summary>
@@ -1462,7 +1464,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
 <div class="section-label">🧮 预估测算</div>
 <div class="card preset-card">
-      <div class="card-title"><span class="icon">🔮</span>预估测算器（剩余<span id="preset-remaining-days">4</span>天预估值 → 月度预估总分）</div>
+      <div class="card-title"><span class="icon">🔮</span> 预估测算器（剩余<span id="preset-remaining-days">4</span>天预估值 → 月度预估总分）</div>
 <div style="font-size:12px;color:#666;margin-bottom:10px;" id="preset-desc-text">全月 30/30 天已收官，无需预估；调整指标值可做复盘模拟</div>
       <div class="preset-input-row">
         <label>加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
@@ -1504,7 +1506,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
 <div class="section-label">📐 计分模型</div>
 <div class="card" id="sec-example" style="margin-bottom:16px;background:linear-gradient(135deg,#f8f9fb 0%,#e8f0fe 100%);">
-    <div class="card-title"><span class="icon">🧮</span>计分示例解读（以诸暨市为例 · 画像：都不考）</div>
+    <div class="card-title"><span class="icon">🧮</span> 计分示例解读（以诸暨市为例 · 画像：都不考）</div>
     <div class="table-scroll">
     <table class="dt">
       <thead>
@@ -1560,7 +1562,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
   </div>
 <div class="card" id="sec-sensitivity" style="margin-bottom:16px;">
-    <div class="card-title"><span class="icon">📈</span>指标敏感度分析（每提升1个百分点对总分的影响）</div>
+    <div class="card-title"><span class="icon">📈</span> 指标敏感度分析（每提升1个百分点对总分的影响）</div>
     <div class="table-scroll">
     <table class="dt">
       <thead>
@@ -2770,7 +2772,7 @@ function renderDataHealth() {
   var KEYS = [['twRate', '推单率'], ['tyScore', '体验分'], ['hdRate', 'HD 完成率'], ['wjRate', '推单完成率'], ['ctRate', '承托比']];
   var h;
   if (!dataDates.length) {
-    h = '<div class="card-title"><span class="icon">🩺</span>数据完整性自检 <span class="slice-chip" style="margin-left:8px;background:#fff4e5;color:#b26a00;">⏳ 本月 BI 数据尚未发布</span></div>'
+    h = '<div class="card-title"><span class="icon">🩺</span> 数据完整性自检 <span class="slice-chip" style="margin-left:8px;background:#fff4e5;color:#b26a00;">⏳ 本月 BI 数据尚未发布</span></div>'
       + '<div style="font-size:12px;color:#6b7280;line-height:1.9;">流水线每个数据日自动抓取并校验五项指标覆盖；BI 发布后此处实时展示完整性结论。</div>';
   } else {
     var miss = {};
@@ -2811,7 +2813,7 @@ function renderDataHealth() {
       });
       if (seg.length) parts.push(cityInfo[c].city + '：' + seg.join('、') + '（' + d0.join('、') + '）');
     });
-    h = '<div class="card-title"><span class="icon">🩺</span>数据完整性自检 ' + chip + '</div>'
+    h = '<div class="card-title"><span class="icon">🩺</span> 数据完整性自检 ' + chip + '</div>'
       + '<div style="font-size:12px;color:#444;line-height:2;">数据截至 <b>' + latest + '</b>，共 ' + dataDates.length + ' 个数据日 · 高峰日 ' + peakDays.length + ' 天'
       + (gapDays.length ? ' · <span style="color:#d93025;">断档：' + gapDays.join('、') + '</span>' : ' · 无断档')
       + '<br>'
