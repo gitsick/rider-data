@@ -1783,11 +1783,11 @@ function renderQkkaSka() {
       var v = m[c];
       var rc = (v.rate != null && v.rate < 95) ? 'c-red' : '';
       var oc = (v.okRatio != null && v.okRatio < 90) ? 'c-red' : '';
-      h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + v.stores + '</td>'
-        + '<td class="' + oc + '">' + v.ok + '（' + v.okRatio + '%）</td>'
+      h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + (v.stores != null ? v.stores : '—') + '</td>'
+        + '<td class="' + oc + '">' + (v.ok != null ? v.ok + '（' + v.okRatio + '%）' : '—') + '</td>'
         + '<td>' + v.ontimeWb + ' / ' + v.doneWb + '</td>'
         + '<td class="' + rc + '">' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
-        + '<td>' + v.brands + '品牌 / ' + v.stations + '站点</td></tr>';
+        + '<td>' + v.brands + '品牌' + (v.stations != null ? ' / ' + v.stations + '站点' : '') + '</td></tr>';
     });
     h += '</tbody></table></div>';
   }
@@ -3569,10 +3569,10 @@ var DAILY_EXTRA={"09-01": {"泰兴": {"ymRate": 94.95}, "响水": {"ymRate": 98.
   if (el && typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) {
     var h = '';
     Object.keys(QKKA_MONTH).forEach(function(c){ var v = QKKA_MONTH[c];
-      h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + v.stores + '</td>'
-        + '<td>' + v.ok + '（' + v.okRatio + '%）</td>'
+      h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + (v.stores != null ? v.stores : '—') + '</td>'
+        + '<td>' + (v.ok != null ? v.ok + '（' + v.okRatio + '%）' : '—') + '</td>'
         + '<td>' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
-        + '<td>' + v.brands + '品牌/' + v.stations + '站点</td></tr>';
+        + '<td>' + v.brands + '品牌' + (v.stations != null ? '/' + v.stations + '站点' : '') + '</td></tr>';
     });
     h += '<tr><td><b>诸暨</b></td><td colspan="5" style="color:#9aa0a6;">⏳ 待数据（企客KA维值权限申请中）</td></tr>';
     el.innerHTML = h;
@@ -3589,7 +3589,7 @@ var DAILY_EXTRA={"09-01": {"泰兴": {"ymRate": 94.95}, "响水": {"ymRate": 98.
     }
     if (!s && typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) {
       var p2 = [];
-      Object.keys(QKKA_MONTH).forEach(function(c){ var v = QKKA_MONTH[c]; if (v.rate != null) p2.push(c + ' ' + v.rate + '%（' + v.stores + '店）'); });
+      Object.keys(QKKA_MONTH).forEach(function(c){ var v = QKKA_MONTH[c]; if (v.rate != null) p2.push(c + ' ' + v.rate + '%' + (v.stores != null ? '（' + v.stores + '店）' : '')); });
       s = '最新KA累计：' + p2.join(' · ');
     }
     snap.textContent = s || '';
