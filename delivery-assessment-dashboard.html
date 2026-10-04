@@ -8,14 +8,14 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility; }
 body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif; background:#f0f2f5; color:#333; padding:20px; font-size:14px; line-height:1.6; }
-.dt, .trend-table, .penalty-table, .period-table, .action-table { font-variant-numeric:tabular-nums; }
-  .header { background:linear-gradient(135deg,#1a2b4a 0%,#2d4a7a 100%); color:#fff; border-radius:12px; padding:24px 32px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+.dt, .trend-table, .penalty-table, .period-table { font-variant-numeric:tabular-nums; }
+  .header { background:linear-gradient(135deg,#1B2233 0%,#2D3447 100%); color:#fff; border-radius:12px; padding:24px 32px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; border-top:4px solid #FFC300; }
   .header h1 { font-size:22px; font-weight:700; }
   .header .subtitle { font-size:13px; opacity:0.8; margin-top:4px; }
-  .city-tabs { display:flex; gap:6px; align-items:center; }
-  .city-tab { padding:5px 16px; border-radius:6px; background:#f0f2f5; border:2px solid transparent; cursor:pointer; font-size:13px; font-weight:600; color:#5f6368; transition:all .2s; }
-  .city-tab:hover { background:#e8f0fe; color:#1967d2; }
-  .city-tab.active { background:#1a2b4a; color:#fff; }
+  .city-tabs { display:flex; gap:8px; align-items:center; }
+  .city-tab { padding:6px 18px; border-radius:20px; background:#fff; border:1.5px solid #dadce0; cursor:pointer; font-size:13px; font-weight:700; color:#3c4043; transition:all .2s; }
+  .city-tab:hover { border-color:#F5A623; color:#1B2233; background:#fff8e1; }
+  .city-tab.active { background:#FFC300; color:#1B2233; border-color:#FFC300; box-shadow:0 2px 8px rgba(245,166,35,.4); }
   .grid { display:grid; gap:16px; margin-bottom:16px; }
   .grid-2 { grid-template-columns:repeat(2,1fr); }
   @media(max-width:1200px){ .grid-2{grid-template-columns:1fr;} }
@@ -33,24 +33,46 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .c-green { color:#34a853; font-weight:700; }
   .c-orange { color:#f5a623; font-weight:700; }
   .c-red { color:#d93025; font-weight:700; }
-  /* 维度Tab */
-  .dim-tabs { display:flex; gap:0; margin-bottom:16px; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); position:sticky; top:0; z-index:60; }
-  .dim-tab { flex:1; padding:14px 24px; text-align:center; font-size:16px; font-weight:700; cursor:pointer; background:#fff; color:#888; border:none; border-bottom:3px solid transparent; transition:all .25s; position:relative; }
-  .dim-tab.active { background:#1a2b4a; color:#fff; border-bottom-color:#00b8d4; }
-  .dim-tab:hover:not(.active) { background:#f0f2f5; color:#1a2b4a; }
-  .dim-tab.active::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#00b8d4; border-radius:3px 3px 0 0; }
+  /* 维度Tab（Ch34 统一样式：渐变激活态/四页签专属徽标色/统一圆角阴影） */
+  .dim-tabs { display:flex; gap:0; margin-bottom:16px; border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(26,43,74,0.14); position:sticky; top:0; z-index:60; border:1px solid #e8ebf0; }
+  .dim-tab { flex:1; padding:13px 18px; text-align:center; font-size:15.5px; font-weight:700; cursor:pointer; background:#fff; color:#8a94a6; border:none; border-bottom:3px solid transparent; transition:all .22s; position:relative; letter-spacing:.5px; }
+  .dim-tab.active { background:#FFC300; color:#1B2233; }
+  .dim-tab:hover:not(.active) { background:#f5f8fd; color:#1a2b4a; }
+  .dim-tab.active::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#1B2233; border-radius:3px 3px 0 0; }
+  .dim-tab .tab-badge { margin-left:6px; }
+  .dim-tab.active .tab-badge { background:rgba(27,34,51,0.12) !important; color:#1B2233 !important; }
   .dim-content { display:none; }
-  .dim-content.active { display:block; }
+  .dim-content.active { display:block; animation:dimFade .26s ease; }
+  @keyframes dimFade { from { opacity:.4; transform:translateY(4px); } to { opacity:1; transform:none; } }
+  /* 考核方案·六大模块指标总览（Ch34） */
+  .mod-ov { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:10px; }
+  .mod-ov-item { background:#fff; border:1px solid #e8ebf0; border-left:4px solid #FFC300; border-radius:10px; padding:10px 12px; }
+  .mod-ov-item .mo-head { display:flex; align-items:center; gap:6px; margin-bottom:5px; }
+  .mod-ov-item .mo-name { font-size:13px; font-weight:800; color:#1a2b4a; }
+  .mod-ov-item .mo-rule { font-size:10.5px; color:#6b7280; line-height:1.65; }
+  .mod-ov-item .mo-cities { display:flex; gap:6px; flex-wrap:wrap; margin-top:7px; }
+  .mo-chip { flex:1; min-width:72px; min-height:52px; display:flex; flex-direction:column; justify-content:center; background:#f8f9fb; border-radius:8px; padding:5px 6px; text-align:center; }
+  .mo-chip .mo-city { font-size:10.5px; color:#6b7280; margin-bottom:1px; }
+  .mo-chip .mo-val { font-size:14.5px; font-weight:800; }
+  .mo-ok { color:#188038; } .mo-warn { color:#e37400; } .mo-bad { color:#d93025; } .mo-na { color:#9aa3b2; }
   /* 趋势表 */
   .trend-table { width:100%; border-collapse:collapse; font-size:11.5px!important; }
-  .trend-table th { background:#1a2b4a!important; color:#fff!important; padding:6px 4px!important; text-align:center!important; }
+  .trend-table th { background:#1B2233!important; color:#fff!important; padding:6px 4px!important; text-align:center!important; }
   .trend-table td { padding:5px 4px!important; border:1px solid #e8eaed!important; text-align:center!important; font-size:11.5px!important; }
   .trend-table .city-col { font-weight:700!important; background:#f8f9fb!important; text-align:left!important; padding-left:8px!important; }
   .trend-table .metric-row td { background:#fafbfc!important; }
   .trend-table .peak-col { background:#fff3cd!important; }
+  .trend-table th.peak-col { color:#7a5c00!important; }
+  .trend-table th.peak-col.selected-col { background:#1a6b3a!important; color:#fff!important; }
+  .trend-table td.peak-col.selected-col { background:#fde68a!important; }
   .trend-table .latest-col { background:#e6f4ea!important; }
+  .trend-table th.latest-col { color:#1a6b3a!important; }
+  .trend-table th.latest-col.selected-col { background:#1a6b3a!important; color:#fff!important; }
   /* 模块卡片 */
-  .module-card { border-left:4px solid #4a7bd4; }
+  .module-card { border-left:4px solid #4a7bd4; transition:transform .15s ease, box-shadow .15s ease; }
+  .module-card:hover { transform:translateY(-1px); box-shadow:0 3px 12px rgba(26,43,74,.10); }
+  /* 模块卡内月累计实况行（Ch36） */
+  .mo-mtd { margin-top:7px; padding-top:6px; border-top:1px dashed #e0e6ef; font-size:11px; color:#6b7280; line-height:1.7; }
   .module-card.jiameng { border-left-color:#e8525f; }
   .module-card.tiyan { border-left-color:#7b61ff; }
   .module-card.tuiwan { border-left-color:#00b8d4; }
@@ -59,19 +81,19 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .indicator-row:last-child { border-bottom:none; }
   .indicator-name { font-weight:600; }
   .indicator-score { text-align:right; }
-  .calc-input { width:64px; text-align:center; border:1px solid #ccc; border-radius:4px; padding:4px; font-size:13px; }
+  .calc-input { width:64px; text-align:center; border:1px solid #ccc; border-radius:4px; padding:4px; font-size:13px; font-family:inherit; transition:border-color .15s, box-shadow .15s; }
+  .calc-input:focus { outline:none; border-color:#F5A623; box-shadow:0 0 0 3px rgba(255,195,0,.18); }
   .pill { display:inline-block; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:600; }
   .pill-weight { background:#e8f0fe; color:#1967d2; }
   .pill-period { background:#f3e8fd; color:#7b3fb0; }
 .period-btn { padding:8px 18px; border:1px solid #dadce0; background:#fff; font-size:13px; cursor:pointer; transition:all .2s; border-right:none; font-weight:500; color:#5f6368; }
 .period-btn:last-child { border-right:1px solid #dadce0; }
 .period-btn:hover { background:#e8f0fe; color:#1967d2; }
-.period-btn.active { background:#1a2b4a; color:#fff; border-color:#1a2b4a; font-weight:700; }
+  .period-btn.active { background:#FFC300; color:#1B2233; border-color:#FFC300; font-weight:700; }
   .threshold-tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; margin-left:4px; }
   .tag-red { background:#fce8e8; color:#d93025; }
   .tag-orange { background:#fef3e2; color:#f5a623; }
   .tag-green { background:#e6f4ea; color:#34a853; }
-  .tag-blue { background:#e8f0fe; color:#1967d2; }
   .calc-section { background:#f8f9fb; border-radius:8px; padding:16px; margin-top:12px; }
   .calc-result { font-size:24px; font-weight:700; text-align:center; padding:12px; border-radius:8px; margin-top:8px; }
   .calc-result.pass { background:#e6f4ea; color:#34a853; }
@@ -89,7 +111,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .penalty-table .level0 { background:#e6f4ea; color:#34a853; font-weight:700; }
   .penalty-table .level1 { background:#fef7e0; color:#f5a623; font-weight:700; }
   .penalty-table .level2 { background:#fce8e8; color:#d93025; font-weight:700; }
-  .section-label { font-size:16px; font-weight:700; color:#1a2b4a; margin:20px 0 12px; padding-left:8px; border-left:4px solid #4a7bd4; }
+  .section-label { font-size:16px; font-weight:700; color:#1B2233; margin:20px 0 12px; padding-left:8px; border-left:4px solid #FFC300; }
   .footer-info { text-align:center; font-size:11px; color:#6b7280; margin-top:20px; padding:16px 8px; border-top:1px solid #e8eaed; line-height:1.8; }
   .collapsible { cursor:pointer; transition:background .15s; }
   .collapsible:hover { background:rgba(26,43,74,.03); }
@@ -143,10 +165,21 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .fs-label { font-size:10px; color:#888; }
   .fs-value { font-size:15px; font-weight:700; color:#1a2b4a; }
   .fs-divider { width:1px; height:30px; background:#e0e0e0; }
-  .grid-cal-bi { display:grid; grid-template-columns:1fr 1.8fr; gap:12px; margin-bottom:12px; }
-  @media(max-width:1200px){ .grid-cal-bi{ grid-template-columns:1fr; } }
+  .grid-cal-bi { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.8fr); gap:12px; margin-bottom:12px; }
+  @media(max-width:1200px){ .grid-cal-bi{ grid-template-columns:minmax(0,1fr); } }
+  /* Ch40: 网格子项卡片允许收缩，防止固定宽度内容(min-content)撑破轨道造成横向溢出 */
+  .grid-cal-bi > .card, .grid-calc-preset > .card, .grid-modules > .card, .grid-util > .card { min-width:0; }
   /* 模块卡片2行布局 */
   .grid-modules { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:12px; }
+  /* Ch43: 六模块板（10月）3列均衡布局；小屏城市卡内部堆叠提升可读性 */
+  .grid-modules.gm3 { grid-template-columns:repeat(3,1fr); }
+  @media(max-width:1200px){ .grid-modules.gm3 { grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:600px){ .grid-modules.gm3 { grid-template-columns:1fr; } }
+  @media(max-width:600px){
+    .summary-card { flex-direction:column; align-items:stretch; gap:8px; padding:14px 16px; }
+    .summary-card .sc-left { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+    .summary-card .sc-score { font-size:30px; }
+  }
   @media(max-width:1200px){ .grid-modules{ grid-template-columns:repeat(2,1fr); } }
   @media(max-width:600px){ .grid-modules{ grid-template-columns:1fr; } }
   .grid-util { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
@@ -160,6 +193,38 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .preset-card { background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%); border:2px solid #4a7bd4; }
   .preset-scenarios { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px; }
   @media(max-width:800px){ .preset-scenarios{ grid-template-columns:1fr; } }
+  /* ===== 移动端/小屏适配（Ch40）：页签折行、卡片收窄、按钮换行、表格横滑 ===== */
+  @media (max-width:768px) {
+    body { padding:10px; font-size:13.5px; }
+    .header { padding:16px 18px; }
+    .header h1 { font-size:18px; }
+    .dim-tabs { flex-wrap:wrap; }
+    .dim-tab { flex:1 1 46%; padding:10px 8px; font-size:13.5px; }
+    .dim-tab .tab-badge { display:block; margin:2px 0 0; }
+    .card { padding:14px; border-radius:10px; }
+    .card-title { font-size:14.5px; }
+    .city-tabs { flex-wrap:wrap; }
+    .city-tab { padding:5px 14px; font-size:12.5px; }
+    .section-label { font-size:14.5px; margin:14px 0 8px; }
+    .mod-ov { grid-template-columns:1fr; }
+    .mo-cities { flex-wrap:wrap; }
+    .anchor-nav { flex-wrap:wrap; }
+    .table-scroll { -webkit-overflow-scrolling:touch; }
+    .cal-wrap { overflow-x:auto; }
+    .cal-grid { min-width:980px; }
+    canvas { max-width:100%; height:auto; }
+    /* SVG图表：小屏取消min-width，viewBox等比缩放适配屏宽 */
+    .dim-content svg { min-width:0 !important; max-width:100%; height:auto; }
+    /* 小屏：表格块级化+横滑，防止宽表撑破卡片 */
+    .slice-wrap { overflow-x:auto; }
+    .dim-content table { display:block; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+    .grid-cal-bi, .grid-util, .grid-calc-preset { grid-template-columns:1fr; }
+  }
+  @media (max-width:480px) {
+    .dim-tab { flex:1 1 100%; padding:9px 6px; }
+    .header { padding:14px; }
+    body { padding:8px; }
+  }
   .preset-scenario { padding:12px; border-radius:8px; cursor:pointer; transition:all .2s; border:2px solid transparent; text-align:center; }
   .preset-scenario:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.08); }
   .preset-scenario.active { border-color:#1a2b4a; box-shadow:0 0 0 3px rgba(26,43,74,0.1); }
@@ -195,18 +260,6 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .rpt-header { background:linear-gradient(135deg,#1a2b4a,#2d4a7a); color:#fff; border-radius:12px; padding:24px 32px; margin-bottom:20px; }
   .rpt-header h2 { font-size:22px; margin-bottom:6px; }
   .rpt-header .sub { font-size:13px; opacity:.85; }
-  .city-card { border-radius:10px; padding:16px; border:1px solid #e8eaed; border-top:4px solid #4a7bd4; }
-  .city-card.zhuiji { border-top-color:#d93025; }
-  .city-card.taixing { border-top-color:#f5a623; }
-  .city-card.xiangshui { border-top-color:#34a853; }
-  .city-card h3 { font-size:15px; margin-bottom:8px; }
-  .score-big { font-size:32px; font-weight:800; line-height:1.1; margin:4px 0; }
-  .action-table td { text-align:left!important; font-size:12px!important; }
-  .action-table th { text-align:left!important; padding-left:10px!important; }
-  .insight-box { background:#e8f0fe; border-radius:8px; padding:12px 16px; font-size:12.5px; color:#444; margin-top:10px; line-height:1.8; }
-  .risk-box { background:#fff8e1; border:1px solid #ffe0b2; border-radius:8px; padding:12px 16px; font-size:12.5px; color:#8a6d00; margin-top:8px; }
-  .risk-box strong { color:#c68400; }
-  .rpt-footer { text-align:center; font-size:11px; color:#6b7280; margin-top:20px; padding:8px; }
   #dim-report .tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; }
   /* 考核方案全景表优化 */
   .scheme-table { font-size:11px!important; min-width:900px; }
@@ -247,12 +300,13 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   /* 快捷锚点导航 */
   .anchor-nav { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
   .anchor-btn { padding:6px 14px; border-radius:20px; background:#f0f2f5; border:1px solid #e8eaed; font-size:12px; font-weight:600; color:#5f6368; cursor:pointer; transition:all .2s; text-decoration:none; }
-  .anchor-btn:hover { background:#e8f0fe; color:#1967d2; border-color:#4a7bd4; }
+  .anchor-btn:hover { background:#fff8e1; color:#8a6d1a; border-color:#F5A623; }
   /* ===== Tab 数字角标 ===== */
   .tab-badge { display:inline-block; font-size:11px; padding:1px 7px; border-radius:8px; margin-left:4px; font-weight:700; }
   .tab-badge.daily { background:#e8f0fe; color:#1967d2; }
   .tab-badge.monthly { background:#fef3e2; color:#f5a623; }
   .tab-badge.report { background:#fce8e8; color:#d93025; }
+  .tab-badge.charts { background:#e6f4ea; color:#188038; }
   .summary-card { cursor:pointer; transition:transform .15s ease, box-shadow .15s ease; }
   .summary-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(0,0,0,.12); }
   .summary-card:active { transform:translateY(0); }
@@ -294,11 +348,6 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .tc-zerotext { font-size:10px; fill:#d93025; opacity:.9; }
   .tc-selline { stroke:#1a2b4a; stroke-width:1.2; stroke-dasharray:3 2; opacity:.7; }
   .tc-dot { stroke:#fff; stroke-width:1.5; }
-  .mb-row { display:flex; align-items:center; gap:10px; margin-bottom:9px; }
-  .mb-city { width:60px; font-size:13px; font-weight:700; color:#1a2b4a; flex-shrink:0; }
-  .mb-track { flex:1; height:22px; background:#f0f2f5; border-radius:6px; overflow:hidden; position:relative; }
-  .mb-fill { height:100%; border-radius:6px; display:flex; align-items:center; justify-content:flex-end; padding-right:8px; color:#fff; font-size:12px; font-weight:700; min-width:56px; text-shadow:0 1px 2px rgba(0,0,0,.25); }
-  .mb-line { position:absolute; top:-3px; bottom:-3px; width:2px; z-index:2; }
 
   /* 切片分析 */
   #dim-report .slice-wrap { border-left:4px solid #7b61ff !important; }
@@ -309,80 +358,6 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   #dim-report .slice-note { font-size:11.5px; color:#6b7280; margin-top:8px; line-height:1.8; }
   #dim-report .slice-empty { text-align:center; padding:28px 10px; color:#6b7280; font-size:13px; line-height:2; }
 </style>
-<style>
-
-.wrap,.container{max-width:100%!important;width:100%!important;margin:0!important;padding:10px 14px!important;box-sizing:border-box!important}
-@media(max-width:768px){.wrap,.container{padding:8px 10px!important}}
-.header{position:relative!important;gap:16px}
-.hdr-left{padding-right:0!important}
-.qr-small{display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(255,255,255,.96);border-radius:10px;padding:6px 8px;box-shadow:0 2px 12px rgba(0,0,0,.18);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;flex-shrink:0;position:relative}
-.qr-small::after{content:"";position:absolute;inset:0;border-radius:10px;border:1.5px solid rgba(255,255,255,.5);pointer-events:none;transition:border-color .2s}
-.qr-small:hover{transform:scale(1.06);box-shadow:0 6px 20px rgba(0,0,0,.25)}
-.qr-small:hover::after{border-color:rgba(255,195,0,.7)}
-.qr-small:active{transform:scale(.97)}
-.qr-small img{width:56px;height:56px;border-radius:6px;display:block}
-.qr-small .qr-label{font-size:9px;color:#6b7280;font-weight:600;letter-spacing:.5px}
-.qr-small .qr-pulse{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#FFC300;box-shadow:0 0 0 0 rgba(255,195,0,.5);animation:qrPulse 2s infinite}
-@keyframes qrPulse{0%{box-shadow:0 0 0 0 rgba(255,195,0,.5)}70%{box-shadow:0 0 0 8px rgba(255,195,0,0)}100%{box-shadow:0 0 0 0 rgba(255,195,0,0)}}
-.qr-modal{display:none;position:fixed;z-index:10001;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.82);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);justify-content:center;align-items:center;flex-direction:column;opacity:0;transition:opacity .25s ease;padding:20px;touch-action:manipulation}
-.qr-modal.show{display:flex;opacity:1}
-.qr-modal-box{background:#fff;border-radius:16px;padding:0;text-align:center;box-shadow:0 16px 56px rgba(0,0,0,.5);max-width:320px;width:100%;transform:scale(.85) translateY(12px);transition:transform .3s cubic-bezier(.34,1.56,.64,1);overflow:hidden}
-.qr-modal.show .qr-modal-box{transform:scale(1) translateY(0)}
-.qr-modal-banner{background:linear-gradient(135deg,#1a2b4a 0%,#2d4a7a 100%);color:#fff;padding:14px 20px 10px;font-size:13px;font-weight:700;letter-spacing:.5px}
-.qr-modal-banner .qr-modal-close{position:static;color:rgba(255,255,255,.6);font-size:22px;float:right;cursor:pointer;font-weight:300;line-height:1;transition:color .15s,transform .15s}
-.qr-modal-banner .qr-modal-close:hover{color:#FFC300;transform:scale(1.2)}
-.qr-modal-body{padding:20px 24px 18px}
-.qr-modal-body img{width:220px;height:220px;border-radius:10px;display:block;margin:0 auto;border:1px solid #e8eaed}
-.qr-modal-body .tt{font-size:15px;font-weight:700;color:#1a2b4a;margin-top:14px}
-.qr-modal-body .sub{font-size:12px;color:#6b7280;margin-top:4px}
-.qr-modal-body .qr-url{font-size:11px;color:#5f6368;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.qr-modal-body .qr-hint{font-size:10px;color:#8a919e;margin-top:8px}
-@media(max-width:600px){.qr-small img{width:42px;height:42px}.qr-small .qr-label{display:none}.qr-small{padding:4px 6px}.qr-modal-body img{width:180px;height:180px}.qr-modal-box{max-width:280px}.qr-modal-banner{font-size:12px;padding:12px 16px 8px}.qr-modal-body{padding:16px 18px 14px}.summary-card{padding:12px 14px}.summary-card .sc-score{font-size:28px}.header{padding:16px 18px!important}.header h1{font-size:18px!important}.dim-tab{padding:10px 12px!important;font-size:13px!important}}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
 /* ====== mt-style-injected ====== */
 :root{
@@ -400,7 +375,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   --mt-shadow:0 1px 4px rgba(27,34,51,.06);
   --mt-shadow-h:0 4px 14px rgba(27,34,51,.1);
   --mt-th-bg:#F8F9FA;
-  --mt-th-c:#1B2233;
+  --mt-th-c:#1B1B33;
   --mt-row-alt:#FAFBFC;
   --mt-row-hover:#FFF8E1;
 }
@@ -431,7 +406,7 @@ body{
   color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;
 }
 .header .sub,.header .subtitle,.u-header .sub,.u-header .doctime,.u-header .subtitle{
-  color:#C6CAD6!important;font-size:12px!important;margin-top:4px!important;
+  color:rgba(255,255,255,.75)!important;font-size:12px!important;margin-top:4px!important;
 }
 
 /* ---- wrap / container ---- */
@@ -449,7 +424,7 @@ h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!impor
   box-shadow:var(--mt-shadow)!important;
   border:1px solid var(--mt-border)!important;
 }
-.card,.section{padding:10px 12px!important;margin-bottom:12px!important}
+.card,.section{padding:20px;margin-bottom:12px}
 /* 卡片左侧彩条保留 */
 .card-title{
   color:var(--mt-text)!important;
@@ -482,20 +457,38 @@ h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!impor
 
 /* ---- 表格 ---- */
 table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}
-th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important}
+th{
+  background:var(--mt-th-bg)!important;
+  color:var(--mt-th-c)!important;
+  font-weight:600!important;font-size:12px!important;
+  padding:10px 12px!important;
+  border-bottom:2px solid var(--mt-yellow)!important;
+  text-align:left!important;
+  transition:background .15s!important;
+}
+.dt th{
+  background:#1a2b4a!important;
+  color:#fff!important;
+  font-weight:600!important;font-size:12px!important;
+  padding:8px 6px!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+}
 th:hover{background:#F0F1F2!important}
+.dt th:hover{background:#2d4a7a!important}
 td,.dt td{
   padding:9px 12px!important;
   border-bottom:1px solid #F0F1F2!important;
   color:var(--mt-text)!important;font-size:13px!important;
 }
-.dt td{border:1px solid var(--mt-border)!important;text-align:center!important}
+.dt td{border:1px solid var(--mt-border)!important;text-align:center!important;font-size:12px!important;padding:7px 6px!important;white-space:nowrap!important}
 tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}
 tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 .dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}
+.dt .score-cell{font-size:14px!important;font-weight:700!important}
 
 /* ---- 按钮 ---- */
-.pbtn,.clearbtn,.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{
+.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{
   border-radius:6px!important;
   border:1px solid #E8E9EB!important;
   background:var(--mt-card)!important;
@@ -507,67 +500,27 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   font-weight:500!important;
 }
 .filters input{min-width:200px!important}
-.pbtn:hover,.clearbtn:hover,.filter-bar select:focus,.filter-bar input[type=date]:focus{
-  border-color:var(--mt-yellow)!important;
-  color:var(--mt-dark)!important;
-  background:var(--mt-row-hover)!important;
-}
-.filter-bar select:focus,.filter-bar input[type=date]:focus{
-  box-shadow:0 0 0 2px rgba(255,195,0,.08)!important;
-}
-.pbtn.cur{
-  background:var(--mt-yellow)!important;
-  color:var(--mt-dark)!important;
-  border-color:var(--mt-yellow)!important;
-  font-weight:700!important;
-}
-.pbtn:disabled{opacity:.4!important;cursor:not-allowed!important}
-
-/* ---- Tab ---- */
-.tab{
-  padding:10px 20px!important;font-size:14px!important;
-  color:var(--mt-text2)!important;
-  border-bottom:2px solid transparent!important;
-  transition:all .15s!important;
-}
-.tab.cur{
-  color:var(--mt-dark)!important;
-  border-bottom-color:var(--mt-yellow)!important;
-  font-weight:600!important;
-  background:transparent!important;
-}
-.tab:hover{color:var(--mt-dark)!important}
 
 /* ---- 城市标签 (delivery-assessment) ---- */
 .city-tab{
-  background:rgba(255,255,255,.12)!important;
-  color:#fff!important;
-  border:2px solid transparent!important;
-  cursor:pointer!important;
-}
-.city-tab:hover{background:rgba(255,255,255,.22)!important}
-.city-tab.active{
-  background:var(--mt-yellow)!important;
-  color:var(--mt-dark)!important;
-  border-color:var(--mt-yellow)!important;
+  background:#fff!important;
+  color:#3c4043!important;
+  border:1.5px solid #dadce0!important;
+  border-radius:20px!important;
+  padding:6px 18px!important;
+  font-size:13px!important;
   font-weight:700!important;
+  cursor:pointer!important;
+  transition:all .2s!important;
 }
-
-/* ---- 标签 tag ---- */
-.tag{
-  display:inline-block!important;
-  padding:2px 10px!important;
-  border-radius:4px!important;
-  font-size:11px!important;font-weight:600!important;
-  background:#FFF3D4!important;color:#B8860B!important;
+.city-tab:hover{background:#fff8e1!important;border-color:#F5A623!important;color:#1B2233!important}
+.city-tab.active{
+  background:#FFC300!important;
+  color:#1B2233!important;
+  border-color:#FFC300!important;
+  font-weight:700!important;
+  box-shadow:0 2px 8px rgba(245,166,35,.4)!important;
 }
-.tag.hd{background:#E6F7DD!important;color:#389E0D!important}
-.tag.hs{background:#FFF1E0!important;color:#D46B08!important}
-
-/* ---- 分页 ---- */
-.pager{display:flex!important;align-items:center!important;justify-content:center!important;
-  gap:6px!important;padding:14px 0 8px!important;flex-wrap:wrap!important}
-.pinfo{font-size:12px!important;color:var(--mt-text2)!important;margin:0 8px!important}
 
 /* ---- 页脚 ---- */
 .foot,.footer{
@@ -577,20 +530,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   padding:18px 0!important;
 }
 
-/* ---- 杂项 ---- */
-.meta{color:var(--mt-text2)!important;font-size:12px!important}
-.rb{border-bottom:1px dashed var(--mt-border)!important}
-.rv{color:var(--mt-dark)!important;font-weight:700!important}
-.notes{color:var(--mt-text)!important;line-height:1.9!important}
-.notes li{margin-left:18px!important}
-.empty{color:var(--mt-text3)!important;padding:48px!important;text-align:center!important;font-size:14px!important}
-/* 导航按钮适配 */
-.pn{
-  background:var(--mt-dark)!important;
-  border:1px solid rgba(255,195,0,.3)!important;
-}
-.pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
-/* ---- 统一导航栏 ---- */
+/* 顶部导航栏 */
 .top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
 .top-nav a{color:#94a3b8;text-decoration:none;transition:color .15s;white-space:nowrap}
 .top-nav a:hover{color:#FFC300}
@@ -598,8 +538,10 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 .top-nav .nav-sep{color:#475569;margin:0 2px}
 .top-nav .nav-switch{margin-left:auto}
 @media(max-width:600px){.top-nav{padding:0 12px;font-size:12px;gap:8px;height:36px}}
-/* ---- 统一二维码 ---- */
-.header{gap:16px}
+/* ====== end mt-style ====== */
+.wrap,.container{max-width:100%!important;width:100%!important;margin:0!important;padding:10px 14px!important;box-sizing:border-box!important}
+@media(max-width:768px){.wrap,.container{padding:8px 10px!important}}
+.header{position:relative!important;gap:16px}
 .hdr-left{padding-right:0!important}
 .qr-small{display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(255,255,255,.96);border-radius:10px;padding:6px 8px;box-shadow:0 2px 12px rgba(0,0,0,.18);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;flex-shrink:0;position:relative}
 .qr-small::after{content:"";position:absolute;inset:0;border-radius:10px;border:1.5px solid rgba(255,255,255,.5);pointer-events:none;transition:border-color .2s}
@@ -607,7 +549,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 .qr-small:hover::after{border-color:rgba(255,195,0,.7)}
 .qr-small:active{transform:scale(.97)}
 .qr-small img{width:56px;height:56px;border-radius:6px;display:block}
-.qr-small .qr-label{font-size:9px;color:#6B7280;font-weight:600;letter-spacing:.5px}
+.qr-small .qr-label{font-size:9px;color:#6b7280;font-weight:600;letter-spacing:.5px}
 .qr-small .qr-pulse{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#FFC300;box-shadow:0 0 0 0 rgba(255,195,0,.5);animation:qrPulse 2s infinite}
 @keyframes qrPulse{0%{box-shadow:0 0 0 0 rgba(255,195,0,.5)}70%{box-shadow:0 0 0 8px rgba(255,195,0,0)}100%{box-shadow:0 0 0 0 rgba(255,195,0,0)}}
 .qr-modal{display:none;position:fixed;z-index:10001;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.82);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);justify-content:center;align-items:center;flex-direction:column;opacity:0;transition:opacity .25s ease;padding:20px;touch-action:manipulation}
@@ -620,49 +562,24 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 .qr-modal-body{padding:20px 24px 18px}
 .qr-modal-body img{width:220px;height:220px;border-radius:10px;display:block;margin:0 auto;border:1px solid #e8eaed}
 .qr-modal-body .tt{font-size:15px;font-weight:700;color:#1a2b4a;margin-top:14px}
-.qr-modal-body .sub{font-size:12px;color:#6B7280;margin-top:4px}
+.qr-modal-body .sub{font-size:12px;color:#6b7280;margin-top:4px}
 .qr-modal-body .qr-url{font-size:11px;color:#5f6368;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.qr-modal-body .qr-hint{font-size:10px;color:#8A8FA3;margin-top:8px}
-body.no-scroll{overflow:hidden}
-@media(max-width:600px){.qr-small img{width:42px;height:42px}}
-@media(prefers-reduced-motion:reduce){.qr-pulse{animation:none}}
-/* ---- 考核看板小屏溢出修复 ---- */
-.grid-cal-bi>*{min-width:0}
-.table-scroll{max-width:100%}
-.dim-tabs{top:40px}
-@media(max-width:600px){
-  .dim-tabs{overflow-x:auto;top:36px}
-  .dim-tab{flex:0 0 auto;padding:8px 12px!important;font-size:12px!important;white-space:nowrap}
-  .tab-badge{font-size:10px!important;padding:1px 5px!important;margin-left:2px!important}
-}
-/* ---- 小屏适配 ---- */
-@media(max-width:768px){
-  .header,.u-header{padding:14px 16px!important}
-  .header h1,.u-header h1,.u-header .doctitle{font-size:17px!important}
-  .header .sub,.u-header .sub{font-size:11px!important}
-  .card{padding:8px 10px!important;margin-bottom:8px!important}
-  .qr-small{padding:4px 6px!important}
-  .top-nav{padding:0 12px!important;font-size:12px!important;gap:8px!important;height:36px!important;overflow-x:auto!important;white-space:nowrap!important}
-  .filter-bar select,.filter-bar input[type=date],.filters select,.filters input{font-size:16px!important}
-}
-/* ---- 移动端触控细节 ---- */
-.pbtn,.clearbtn,.city-tab,.dim-tab,.vtab,.tab,.fchip,.cbar-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.dim-tabs{scroll-behavior:smooth}
-@media(max-width:600px){.pbtn{min-height:32px!important;padding:6px 10px!important}}
-/* ====== end mt-style ====== </style>
+.qr-modal-body .qr-hint{font-size:10px;color:#8a919e;margin-top:8px}
+@media(max-width:600px){.qr-small img{width:42px;height:42px}.qr-small .qr-label{display:none}.qr-small{padding:4px 6px}.qr-modal-body img{width:180px;height:180px}.qr-modal-box{max-width:280px}.qr-modal-banner{font-size:12px;padding:12px 16px 8px}.qr-modal-body{padding:16px 18px 14px}.summary-card{padding:12px 14px}.summary-card .sc-score{font-size:28px}.header{padding:16px 18px!important}.header h1{font-size:18px!important}.dim-tab{padding:10px 12px!important;font-size:13px!important}}
+</style>
 </head>
 <body>
 
 <nav class="top-nav">
   <a href="https://gitsick.github.io/databi/">← 看板中心</a>
   <span class="nav-sep">›</span>
-  <span class="nav-current">配送考核</span>
+  <span class="nav-current">9月看板</span>
   <a href="delivery-assessment-dashboard-oct.html" class="nav-switch">10月看板</a>
   <a href="rider_dashboard.html" class="nav-switch">骑手解约</a>
 </nav>
 <div class="header">
   <div>
-    <h1>2026年9月配送考核</h1>
+    <h1>2026年9月配送考核看板</h1>
     <div class="subtitle">下沉市场合作商 | 文档负责人：邬浩楠 | 考核方案更新 08-28 | 数据截止 9/30（BI T-1，全月齐）</div>
     <div class="subtitle header-meta">
       <span class="freshness-badge fresh">● 数据已更新 9/30</span>
@@ -744,11 +661,12 @@ body.no-scroll{overflow:hidden}
   <div class="dim-tab active" onclick="switchDim(this,'daily')">📊 天维度<span class="tab-badge daily">每日快照</span></div>
   <div class="dim-tab" onclick="switchDim(this,'monthly')">🏆 月维度<span class="tab-badge monthly">整月考核</span></div>
   <div class="dim-tab" onclick="switchDim(this,'report')">📋 分析报告<span class="tab-badge report">深度分析</span></div>
-  <div class="dim-tab" onclick="switchDim(this,'charts')">📈 数据图表<span class="tab-badge daily">图形分析</span></div>
+  <div class="dim-tab" onclick="switchDim(this,'charts')">📈 数据图表<span class="tab-badge charts">图形分析</span></div>
 </div>
 
 <!-- ==================== 天维度 ==================== -->
 <div class="dim-content active" id="dim-daily">
+  <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">📅 本页：抓取数据快照展示</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('report')">📋 去分析报告</a></div>
 
   <!-- 期次切换 -->
   <div style="display:flex;gap:0;margin-bottom:12px;border-radius:8px;overflow:hidden;width:fit-content;">
@@ -803,30 +721,20 @@ body.no-scroll{overflow:hidden}
         <thead>
           <tr>
             <th>城市</th><th>大区</th>
-            <th>推单完成率</th><th>体验考核分</th><th>HD完成率</th><th>完结率</th><th>承托比</th>
+            <th>推单完成率</th><th>体验考核分</th><th>HD完成率</th><th>完结率</th><th>承托比</th><th title="悦跑完成度（90%控制线）">悦跑完成度</th><th title="悦跑排班出勤率，官方未出数显示—">悦跑出勤率</th><th title="普通众包活跃骑手数（周期未结束BI返回0按暂无）">普众活跃骑手</th><th title="骑手工装抽检覆盖率（悦跑/加盟），低于95%观察线标红；悦跑考核周期8/31-9/27">工装覆盖 悦跑/加盟</th><th title="加盟骑手达标人数/总人数（含达标率），未满额标红；人效兜底判定需全部达标">加盟达标骑手</th><th title="KA商家履约·商家准时率（含门店数），低于98%观察线标红；品牌赔付线按SKA规则另行判定">企客KA准时率</th><th title="推单完成率≥98.8%为人效兜底线，未达标按方案扣分">兜底≥98.8%</th>
             <th>推单完成/总量</th><th>当日总分</th><th>等级</th>
           </tr>
         </thead>
         <tbody id="bi-data-body"></tbody>
       </table>
       </div>
+      <div id="bi-month-mini" style="margin-top:10px;"></div>
       <div style="font-size:11px;color:#6b7280;margin-top:6px;" id="bi-note">单日数据：2026-09-23 | 切换城市标签自动联动下方考核模块</div>
     </div>
   </div>
 
   <!-- 趋势表 全宽 -->
-  <div class="card" style="margin-bottom:12px;">
-    <div class="card-title"><span class="icon">📉</span>近期趋势（分指标展开，点击列头可切换日期）</div>
-    <div class="table-scroll">
-    <table class="trend-table" id="trend-table">
-      <thead>
-        <tr id="trend-header"></tr>
-      </thead>
-      <tbody id="trend-body"></tbody>
-    </table>
-    </div>
-    <div style="font-size:11px;color:#6b7280;margin-top:6px;">橙色列=高峰日 | 绿色列=当前选中日 | 点击列头可跳转到对应日期</div>
-  </div>
+  
 
   <!-- 图表已集中至「数据图表」页签 -->
   <div class="card" style="margin-bottom:12px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
@@ -853,15 +761,17 @@ body.no-scroll{overflow:hidden}
           <div><div class="indicator-name">HD完成率</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
           <div class="indicator-score">完成率<input class="calc-input" id="jm_rate" type="number" onchange="calcScore()"><br>得分<span id="jm_score" style="font-weight:700;color:#e8525f;">—</span></div>
         </div>
+        <div class="mo-mtd" id="mtd-jm"></div>
       </div>
     </div>
     <div class="card module-card tiyan collapsible">
       <div class="card-title collapsible"><span class="icon">🟣</span>体验考核 <span class="pill pill-weight">权重 20%</span></div>
       <div class="collapsible-content">
-        <div class="indicator-row"><div class="indicator-name">复合超时率 30%</div><div class="indicator-score"><input class="calc-input" id="ty_cs" type="number" onchange="calcScore()"></div></div>
-        <div class="indicator-row"><div class="indicator-name">虚假点送达 40%</div><div class="indicator-score"><input class="calc-input" id="ty_fake" type="number" onchange="calcScore()"></div></div>
+        <div class="indicator-row"><div class="indicator-name">复合超时率 40%</div><div class="indicator-score"><input class="calc-input" id="ty_cs" type="number" onchange="calcScore()"></div></div>
+        <div class="indicator-row"><div class="indicator-name">虚假点送达 30%</div><div class="indicator-score"><input class="calc-input" id="ty_fake" type="number" onchange="calcScore()"></div></div>
         <div class="indicator-row"><div class="indicator-name">配送取消单 30%</div><div class="indicator-score"><input class="calc-input" id="ty_cancel" type="number" onchange="calcScore()"></div></div>
         <div style="font-size:11px;color:#888;text-align:right;margin-top:4px;">体验得分 → <span id="ty_score" style="font-weight:700;color:#7b61ff;">—</span></div>
+        <div class="mo-mtd" id="mtd-ty"></div>
       </div>
     </div>
     <div class="card module-card tuiwan collapsible">
@@ -871,6 +781,7 @@ body.no-scroll{overflow:hidden}
           <div><div class="indicator-name">推单完成率</div><span class="threshold-tag tag-red">110%封顶</span></div>
           <div class="indicator-score">完成率<input class="calc-input" id="tw_rate" type="number" onchange="calcScore()"><br>得分<span id="tw_score" style="font-weight:700;color:#00b8d4;">—</span></div>
         </div>
+        <div class="mo-mtd" id="mtd-tw"></div>
       </div>
     </div>
     <div class="card module-card wanjie collapsible">
@@ -880,6 +791,7 @@ body.no-scroll{overflow:hidden}
           <div><div class="indicator-name">履约完结率</div><span class="threshold-tag tag-red">80%~110% 计分</span></div>
           <div class="indicator-score">完成率<input class="calc-input" id="wj_rate" type="number" onchange="calcScore()"><br>得分<span id="wj_score" style="font-weight:700;color:#ff6b35;">—</span></div>
         </div>
+        <div class="mo-mtd" id="mtd-wj"></div>
       </div>
     </div>
   </div>
@@ -899,54 +811,23 @@ body.no-scroll{overflow:hidden}
         <div style="text-align:center;font-size:12px;color:#888;" id="penalty-hint"></div>
       </div>
     </div>
-    <!-- 预估测算器 -->
-    <div class="card preset-card">
-      <div class="card-title"><span class="icon">🔮</span>预估测算器（剩余<span id="preset-remaining-days">4</span>天预估值 → 月度预估总分）</div>
-<div style="font-size:12px;color:#666;margin-bottom:10px;" id="preset-desc-text">全月 30/30 天已收官，无需预估；调整指标值可做复盘模拟</div>
-      <div class="preset-input-row">
-        <label>加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
-        <label>体验分</label><input id="pre_ty" type="number" value="95" step="0.1" onchange="calcPreset()">
-      </div>
-      <div class="preset-input-row">
-        <label>推单率%</label><input id="pre_tw" type="number" value="99.2" step="0.1" onchange="calcPreset()">
-        <label>完结率%</label><input id="pre_wj" type="number" value="99.9" step="0.1" onchange="calcPreset()">
-      </div>
-      <div class="preset-scenarios">
-        <div class="preset-scenario optimistic" onclick="applyPreset('optimistic')">
-          <div class="ps-label" style="color:#34a853;">乐观预估</div>
-          <div class="ps-score" id="ps-optimistic" style="color:#34a853;">—</div>
-          <div class="ps-desc">HD≥98 体验≥96<br>推单≥99.5 完结≥99.9</div>
-        </div>
-        <div class="preset-scenario realistic active" onclick="applyPreset('realistic')">
-          <div class="ps-label" style="color:#1967d2;">基准预估</div>
-          <div class="ps-score" id="ps-realistic" style="color:#1967d2;">—</div>
-          <div class="ps-desc">HD=95 体验=95<br>推单=99.2 完结=99.9</div>
-        </div>
-        <div class="preset-scenario conservative" onclick="applyPreset('conservative')">
-          <div class="ps-label" style="color:#d93025;">保守预估</div>
-          <div class="ps-score" id="ps-conservative" style="color:#d93025;">—</div>
-          <div class="ps-desc">HD=92 体验=92<br>推单=98.5 完结=99.5</div>
-        </div>
-      </div>
-      <div class="preset-compare">
-        <div class="preset-compare-item current">
-          <div class="pc-label" id="pc-current-label">当前MTD总分（—天）</div>
-          <div class="pc-value" id="pc-current" style="color:#f5a623;">—</div>
-          <div class="pc-delta" style="color:#888;" id="pc-current-level">—</div>
-        </div>
-        <div class="preset-compare-item estimated">
-          <div class="pc-label">预估月度总分（30天）</div>
-          <div class="pc-value" id="pc-estimated" style="color:#1967d2;">—</div>
-          <div class="pc-delta" id="pc-delta">—</div>
-        </div>
-      </div>
-    </div>
   </div>
 
+<div class="card" id="qk-daily-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f4ff 100%);">
+  <div class="card-title">🤝 企客（SKA）· 扣分项模块 <span id="qk-daily-snap" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
+  <div style="font-size:12px;line-height:1.75;color:#374151;">
+流失有效门店≥1家：扣5%（9月方案）；新签加分与门店体验达标扣分为10月新增项、9月不执行；企客订单不参与悦跑/普众指标。
+    <div style="margin-top:4px;font-size:11.5px;color:#9aa0a6;">🟣 诸暨：⏳ 待数据（企客KA维值权限申请中）</div>
+    <div style="margin-top:6px;font-size:11px;color:#6b7280;">完整品牌履约评估预警见「分析报告」视图；数据来源：品牌x商家x履约站-履约明细（ID 17805）</div>
+  </div>
+</div>
 </div>
 
 <!-- ==================== 月维度 ==================== -->
+
+
 <div class="dim-content" id="dim-charts">
+  <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">📈 本页：图形分析</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('monthly')">🏆 回月维度</a></div>
 
   <!-- 图表页工具条：期次切换（与天维度页共享状态） -->
   <div class="card" style="margin-bottom:12px;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
@@ -955,9 +836,11 @@ body.no-scroll{overflow:hidden}
     <span style="font-size:11px;color:#6b7280;">切换期次后走势图即时更新；指标 / 图表类型在下方走势图工具栏切换</span>
   </div>
 
+  <div class="section-label">✅ 数据质量</div>
   <!-- 数据完整性自检 -->
   <div class="card" id="data-health" style="margin-bottom:12px;"></div>
 
+  <div class="section-label">📈 趋势对比</div>
   <!-- 指标走势图（三城对比 · 折线/柱状可切换） -->
   <div class="card" style="margin-bottom:12px;">
     <div class="card-title"><span class="icon">📊</span>指标走势图（三城对比 · 橙色底纹=高峰日 · 竖虚线/底纹=当前选中日期）</div>
@@ -967,6 +850,25 @@ body.no-scroll{overflow:hidden}
     </div>
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">悬停数据点/柱可查看具体数值 | 红色虚线=考核警戒线（HD 显示 90% 零分线、推单率显示 98.8% 兜底线）| 支持折线/柱状切换，切换指标时下方表格同步高亮</div>
   </div>
+<div class="card" style="margin-bottom:12px;">
+    <div class="card-title"><span class="icon">📉</span>近期趋势（分指标展开，点击列头可切换日期）</div>
+    <div class="table-scroll">
+    <table class="trend-table" id="trend-table">
+      <thead>
+        <tr id="trend-header"></tr>
+      </thead>
+      <tbody id="trend-body"></tbody>
+    </table>
+    </div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">橙色列=高峰日 | 绿色列=当前选中日 | 点击列头可跳转到对应日期</div>
+  </div>
+<div class="section-label">🧩 拆解与归因</div>
+<div class="card" id="ym-weekly-card" style="margin-bottom:12px;">
+    <div class="card-title"><span class="icon">🗓️</span>悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制）</div>
+    <div class="table-scroll" id="ym-weekly-body"><div style="text-align:center;padding:14px;color:#6b7280;font-size:12.5px;">⏳ BI数据发布后自动生成各自然周完成度</div></div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">完成度=悦跑服务质量达标骑手数/目标（周均口径，目标以任务系统下发为准）；任一自然周＜90%该周记0分（自然周控制），平均完成率不控制区间；第1周8/31无BI数据按9/1-9/6日均近似；9/28-9/30计入10月第1期周期（9/28-10/4），此处不展示。</div>
+  </div>
+
 
   <!-- 两期均值对比 + 月度总分对比 并排 -->
   <div class="grid-util">
@@ -994,6 +896,12 @@ body.no-scroll{overflow:hidden}
 </div>
 
 <div class="dim-content" id="dim-monthly">
+  <div class="card" style="padding:14px 18px;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+    <div class="card-title" style="margin-bottom:8px;"><span class="icon">🧭</span>考核方案 · 六大模块指标总览 <span id="mo-mode-tag" style="font-weight:400;font-size:11.5px;color:#6b7280;margin-left:4px;"></span></div>
+    <div class="mod-ov" id="mod-ov-body"><div style="font-size:12px;color:#6b7280;">数据加载中…</div></div>
+    <div style="font-size:10.5px;color:#6b7280;margin-top:8px;">口径：悦跑/普众完成度 90%~110%（＜90% 记0，悦跑出勤≥90% 系数1.05）；HD完成率 90%~100% 计分；推单完成率 110% 封顶、日均≥98.8% 人效兜底；履约完结率 80%~110% 计分；体验=复合超时40%+虚假点送达30%+配送取消单30%。🟢=计分区间内达标，🔴=低于计分下限/兜底线，⚪=当日未发布。</div>
+  </div>
+  <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">🏆 本页：月底结果与评估</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('report')">📋 去分析报告</a></div>
 
   <!-- 快捷锚点导航 -->
   <div class="anchor-nav">
@@ -1001,7 +909,11 @@ body.no-scroll{overflow:hidden}
     <a class="anchor-btn" href="#sec-estimate">💰 预估警告罚款</a>
     <a class="anchor-btn" href="#sec-example">🧮 计分示例</a>
     <a class="anchor-btn" href="#sec-sensitivity">📈 敏感度分析</a>
-    <a class="anchor-btn" href="#sec-scheme">📚 考核方案参考</a>
+        <a class="anchor-btn" href="#sec-datasource">🔍 数据路径</a>
+    <a class="anchor-btn" href="#sec-mtdeval">📊 月度评估</a>
+    <a class="anchor-btn" href="#sec-qkka">🤝 企客·SKA</a>
+    <a class="anchor-btn" href="#sec-nextmonth">🔮 下月预看</a>
+<a class="anchor-btn" href="#sec-scheme">📚 考核方案参考</a>
   </div>
 
   <!-- 月维度：整月考核总览 -->
@@ -1149,6 +1061,42 @@ body.no-scroll{overflow:hidden}
   </div>
 
   <!-- 考核方案参考（可折叠） -->
+<div class="card" id="sec-datasource" style="margin-top:14px;background:#f8f9fb;">
+      <div class="card-title ref-collapse collapsed" onclick="this.classList.toggle('collapsed')">
+        <span class="icon">🔍</span>指标数据查看路径（方案官方口径 vs 本看板接入状态）
+        <span class="ref-arrow" style="margin-left:auto;color:#6b7280;">▼</span>
+      </div>
+      <div class="ref-content">
+        <table style="width:100%;border-collapse:collapse;font-size:12px;color:#444;">
+          <tr style="background:#eef2f7;"><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">指标</th><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">方案官方数据查看路径</th><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">本看板接入状态</th></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">加盟达标骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-加盟（数据可查T-3，越久越准，以核算下发为准）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">⏳ 9月加盟明细未归档（10月起日更）</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑完成度 / 排班出勤</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-悦跑 / 悦跑排班出勤合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（整月快照，出勤系数自动判定）</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑新口径页签</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-待更新</td><td style="padding:5px 8px;border:1px solid #eef1f5;">⏳ 官方看板未上线，上线后接入</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">普众活跃骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-普通众包</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（目标值待任务系统下发）</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">体验三项 / 推完 / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-体验考核含PHF / 推单完成率all / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（官方核算值发布后补录）</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">工装抽检合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-骑手工装（悦跑考核周期8/31-9/27）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客流失 / 企客体验达标</td><td style="padding:5px 8px;border:1px solid #eef1f5;">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入监控（当前三城无门店数据，有门店自动预警）</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客KA商家履约（商家/门店日维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">readata·KA客户履约监控 → 品牌x商家x履约站-履约明细数据（ID 17805，实际指向 BI 253744），KA商家口径与企客体验明细看板一致</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已回填9月整月（泰兴36品牌/117店、响水22品牌/37店；准时率95.95%/99.31%；诸暨无维值权限待申请）</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">兜底阈值（人效X / 承托比X）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">以任务系统下发为准</td><td style="padding:5px 8px;border:1px solid #eef1f5;">⏳ 待下发后接入预警判定</td></tr>
+        </table>
+      </div>
+    </div>
+
+<div class="card" id="sec-mtdeval" style="margin-bottom:16px;">
+    <div class="card-title"><span class="icon">📊</span>月度评估 <span id="mtd-mode-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
+    <div id="mtd-eval-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月度评估数据加载中…</div></div>
+  </div>
+
+  <!-- 企客·SKA品牌履约：规则解读 + 评估预警 -->
+  
+
+  <!-- 下月预看板模型（月末自动填充） -->
+  <div class="card" id="sec-nextmonth" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f3e9fd 100%);">
+    <div class="card-title"><span class="icon">🔮</span>下月预看板模型 <span id="nextmonth-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
+    <div id="nextmonth-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月末自动生成…</div></div>
+  </div>
+
   <div class="card" id="sec-scheme" style="margin-bottom:16px;background:#f8f9fb;">
     <div class="card-title ref-collapse collapsed" onclick="this.classList.toggle('collapsed')">
       <span class="icon">📚</span>考核方案参考（指标定义 · 计分规则 · 处罚 · 报备）
@@ -1162,7 +1110,7 @@ body.no-scroll{overflow:hidden}
       <div class="card-title"><span class="icon">📊</span>总分计算公式</div>
       <div class="formula-box"><div class="formula">总分 = 加盟完成率×50% + 体验×20% + 推完×20% + 完结率×10% − 扣分</div></div>
       <div style="font-size:12px;color:#888;text-align:center;">画像：都不考（加盟50% 体验20% 推完20% 完结率10%）</div>
-      <div style="margin-top:10px;"><span class="pill pill-period">高峰日</span><span style="font-size:12px;color:#666;">9/5、9/6、9/12、9/13、9/19、9/25、9/26、9/27、9/28</span></div>
+      <div style="margin-top:10px;"><span class="pill pill-period">高峰日</span><span style="font-size:12px;color:#666;">9/5、9/6、9/12、9/13、9/19、9/25、9/26、9/27（共8天）</span></div>
     </div>
     <div class="card">
       <div class="card-title"><span class="icon">⚖️</span>运力组合权重配置</div>
@@ -1196,7 +1144,7 @@ body.no-scroll{overflow:hidden}
           <td>服务质量达标骑手数</td>
           <td>第1期 9/1-9/13<br>第2期 9/14-9/30</td>
           <td style="text-align:left;">达标骑手数=日均服务质量达标骑手数+日均合格有单骑手数×折算系数+日均高峰兼职骑手数×折算系数-日均异常骑手数<br><span style="color:#6b7280;">高峰期：午10:30-13:30 &amp; 晚17:00-20:00</span></td>
-          <td style="text-align:left;">完成率=实际达标骑手数/目标<br>①计分区间【90%,110%】，＜90%记0分<br>②兜底规则：推订单完成率（不含散单）≥98.8%且加盟人效≤X<br>③四舍五入计算</td>
+          <td style="text-align:left;">完成率=实际达标骑手数/目标<br>①计分区间【90%,<strong style="color:#d93025;">100%</strong>】，＜90%记0分（100%封顶）<br>②兜底规则：推订单完成率（不含散单）≥98.8%且加盟人效≤X<br>③四舍五入计算</td>
           <td><strong style="color:#e8525f;font-size:13px;">50%</strong></td>
         </tr>
         <tr>
@@ -1300,7 +1248,7 @@ body.no-scroll{overflow:hidden}
           <td style="text-align:left;">不计入总分，但作为加盟兜底判定条件：<br>推订单完成率（不含散单）≥98.8% 且 加盟人效≤X 时<br>即使达标骑手数完成率＜90%也可避免直接记0分<br><span style="color:#6b7280;">具体X值以任务系统下发为准</span></td>
           <td><strong style="color:#2e7d32;">兜底</strong><br><span style="font-size:10px;color:#6b7280;">不计分</span></td>
         </tr>
-        <tr class="module-sep"><td colspan="6">▶ 罚则体系 &amp; 报备机制</td></tr>
+        <tr class="module-sep"><td colspan="6">▶ 罚则体系 · 报备与申诉机制</td></tr>
         <tr style="background:#fff3e0;">
           <td class="city-cell" style="color:#e65100;" rowspan="4">罚则体系<br><span style="font-size:10px;">(总分对应)</span></td>
           <td>达标<br><span style="color:#6b7280;">（≥100%）</span></td>
@@ -1338,10 +1286,18 @@ body.no-scroll{overflow:hidden}
           <td style="text-align:left;">①须前置报备，事后通知函申诉不予通过<br>②报备审核通过的数据在考核中剔除<br>③详见：新版配送考核非异报备规则（2026年7月执行）</td>
           <td><strong style="color:#1565c0;">数据剔除</strong><br><span style="font-size:10px;color:#6b7280;">不计分</span></td>
         </tr>
+        <tr style="background:#e8eaf6;">
+          <td class="city-cell" style="color:#3949ab;">申诉规则</td>
+          <td>考核结果申诉<br><span style="color:#6b7280;">（处罚异议）</span></td>
+          <td>通知函下发次日起<br>2个工作日内</td>
+          <td style="text-align:left;">对城市处罚结果有异议，须在<strong>通知函下发次日起2个工作日内</strong>申诉；逾期未申诉默认确认处罚结果</td>
+          <td style="text-align:left;">①申诉须注明：期数（第1期/第2期）+ 申诉模块 + 申诉原因 + 内容说明<br>②须附证明材料（照片等附件），未按规范填写总部有权驳回<br>③体验模块申诉以完成前置报备为前提</td>
+          <td><strong style="color:#3949ab;">逾期视为<br>确认结果</strong></td>
+        </tr>
       </tbody>
     </table>
     </div>
-    <div style="font-size:11px;color:#6b7280;margin-top:6px;">数据来源：bi.sankuai.com 履约数据考核看板 | 三城画像：都不考（加盟50%+体验20%+推完20%+完结率10%）| 灰色行=非当前考核项或扣分项 | 绿色行=约束/兜底指标（不计分）| 橙色行=罚则阈值体系 | 蓝色行=报备机制 | 具体目标值/门槛值/折算系数以任务系统下发为准</div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">数据来源：bi.sankuai.com 履约数据考核看板 | 三城画像：都不考（加盟50%+体验20%+推完20%+完结率10%）| 灰色行=非当前考核项或扣分项 | 绿色行=约束/兜底指标（不计分）| 橙色行=罚则阈值体系 | 蓝色行=报备机制 | 靛蓝行=申诉机制 | 具体目标值/门槛值/折算系数以任务系统下发为准</div>
   </div>
 
   <!-- 推单完成率 & 体验模块区间计分表 -->
@@ -1404,7 +1360,148 @@ body.no-scroll{overflow:hidden}
   </div>
 
   <!-- 计分示例解读（以诸暨为例） -->
-  <div class="card" id="sec-example" style="margin-bottom:16px;background:linear-gradient(135deg,#f8f9fb 0%,#e8f0fe 100%);">
+  
+
+  <!-- 指标敏感度分析 -->
+  
+
+  <!-- 月维度：考核周期 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-title"><span class="icon">📅</span>考核周期（按月分两期 + 高峰日）</div>
+    <table class="period-table">
+      <thead><tr><th>运力线</th><th>第1期</th><th>第2期</th><th>高峰日</th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:700;color:#e8525f;">加盟</td><td>9/1 - 9/13</td><td>9/14 - 9/30</td><td class="peak">9/5、9/6 · 9/12、9/13 · 9/19 · 9/25、9/26、9/27</td></tr>
+        <tr><td style="font-weight:700;color:#f5a623;">悦跑</td><td>8/31-9/6、9/7-9/13</td><td>9/14-9/20、9/21-9/27</td><td>—</td></tr>
+        <tr><td style="font-weight:700;color:#4cb947;">普众</td><td>8/31-9/6、9/7-9/13</td><td>9/14-9/20、9/21-9/27</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+    </div>
+  </div>
+
+<div class="card" id="qk-monthly-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f0ff 100%);">
+  <div class="card-title">🤝 企客（SKA）· 月度模块（扣分项） <a class="anchor-btn" href="#sec-qkka" style="float:right;">查看完整评估预警 ▸</a></div>
+  <div style="font-size:12px;line-height:1.75;color:#374151;">
+流失有效门店≥1家：扣5%（9月方案）；新签加分与门店体验达标扣分为10月新增项、9月不执行；企客订单不参与悦跑/普众指标。
+    <div class="table-scroll" style="margin-top:8px;"><table class="dt" style="font-size:11.5px;">
+      <thead><tr><th>城市</th><th>统计期</th><th>KA门店</th><th>达标门店（≥95%）</th><th>准时率</th><th>覆盖</th></tr></thead>
+      <tbody id="qk-monthly-tbody"><tr><td colspan="6" style="text-align:center;color:#6b7280;">数据待接入</td></tr></tbody>
+    </table></div>
+    <div style="margin-top:6px;font-size:11px;color:#6b7280;">准时率=客户考核准时运单量/配送完成运单量（累计）；完整品牌明细与赔付预警见「分析报告」视图</div>
+  </div>
+</div>
+</div>
+
+
+
+<!-- ==================== 分析报告 ==================== -->
+
+
+<div class="dim-content" id="dim-report">
+  <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">📋 本页：深度分析</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('monthly')">🏆 回月维度</a></div>
+
+  <div class="rpt-header">
+    <h2>2026年9月配送考核指标优化提升方案</h2>
+    <div class="sub" style="margin-top:4px;">数据截止：2026-09-30（全月 30/30 天收官） | 画像：都不考（加盟50% 体验20% 推完20% 完结率10%）</div>
+    <div class="sub" id="report-sub" style="margin-top:2px;">三城：泰兴县 · 诸暨市 · 响水县 | 全月 30/30 天收官（数据已齐）</div>
+  </div>
+
+  <div class="section-label">🔍 深度分析</div>
+  <!-- 分析框架导航（数据驱动） -->
+  <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#f0f4ff,#fff);border-left:4px solid #1967d2;">
+    <div class="card-title">📐 分析框架（数据驱动 · 随数据自动更新）</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px;">
+      <span style="background:#f3f0ff;color:#7b61ff;padding:4px 12px;border-radius:12px;">🔬 切片分析 · 缺口 · 路径</span>
+      <span style="background:#fce8e8;color:#d93025;padding:4px 12px;border-radius:12px;">🔍 问题细化拆解</span>
+      <span style="background:#fff3e0;color:#ef6c00;padding:4px 12px;border-radius:12px;">⚡ 异常波动明细</span>
+      <span style="background:#e6f4ea;color:#2e7d32;padding:4px 12px;border-radius:12px;">✅ 可落地决策方案</span>
+    </div>
+  </div>
+
+  <!-- 🔬 切片分析（城市 × 期次 × 指标，JS 自动生成） -->
+  <div class="card slice-wrap" id="slice-analysis" style="margin-bottom:16px;"></div>
+
+  <!-- 🔍 问题细化拆解 + ⚡ 异常波动明细（JS 自动生成） -->
+  <div class="card" id="issues-breakdown" style="margin-bottom:16px;border-left:4px solid #ef6c00;"></div>
+
+<div class="section-label">🧮 预估测算</div>
+<div class="card preset-card">
+      <div class="card-title"><span class="icon">🔮</span>预估测算器（剩余<span id="preset-remaining-days">4</span>天预估值 → 月度预估总分）</div>
+<div style="font-size:12px;color:#666;margin-bottom:10px;" id="preset-desc-text">全月 30/30 天已收官，无需预估；调整指标值可做复盘模拟</div>
+      <div class="preset-input-row">
+        <label>加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
+        <label>体验分</label><input id="pre_ty" type="number" value="95" step="0.1" onchange="calcPreset()">
+      </div>
+      <div class="preset-input-row">
+        <label>推单率%</label><input id="pre_tw" type="number" value="99.2" step="0.1" onchange="calcPreset()">
+        <label>完结率%</label><input id="pre_wj" type="number" value="99.9" step="0.1" onchange="calcPreset()">
+      </div>
+      <div class="preset-scenarios">
+        <div class="preset-scenario optimistic" onclick="applyPreset('optimistic')">
+          <div class="ps-label" style="color:#34a853;">乐观预估</div>
+          <div class="ps-score" id="ps-optimistic" style="color:#34a853;">—</div>
+          <div class="ps-desc">HD≥98 体验≥96<br>推单≥99.5 完结≥99.9</div>
+        </div>
+        <div class="preset-scenario realistic active" onclick="applyPreset('realistic')">
+          <div class="ps-label" style="color:#1967d2;">基准预估</div>
+          <div class="ps-score" id="ps-realistic" style="color:#1967d2;">—</div>
+          <div class="ps-desc">HD=95 体验=95<br>推单=99.2 完结=99.9</div>
+        </div>
+        <div class="preset-scenario conservative" onclick="applyPreset('conservative')">
+          <div class="ps-label" style="color:#d93025;">保守预估</div>
+          <div class="ps-score" id="ps-conservative" style="color:#d93025;">—</div>
+          <div class="ps-desc">HD=92 体验=92<br>推单=98.5 完结=99.5</div>
+        </div>
+      </div>
+      <div class="preset-compare">
+        <div class="preset-compare-item current">
+          <div class="pc-label" id="pc-current-label">当前MTD总分（—天）</div>
+          <div class="pc-value" id="pc-current" style="color:#f5a623;">—</div>
+          <div class="pc-delta" style="color:#888;" id="pc-current-level">—</div>
+        </div>
+        <div class="preset-compare-item estimated">
+          <div class="pc-label">预估月度总分（30天）</div>
+          <div class="pc-value" id="pc-estimated" style="color:#1967d2;">—</div>
+          <div class="pc-delta" id="pc-delta">—</div>
+        </div>
+      </div>
+    </div>
+<div class="section-label">🤝 企客SKA 专区</div>
+<div class="card" id="sec-qkka" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+    <div class="card-title"><span class="icon">🤝</span>企客门店体验 · SKA品牌KPI赔付规则解读与评估预警</div>
+    <div id="qkka-warn-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">评估预警加载中…</div></div>
+    <details style="margin-top:10px;">
+      <summary style="cursor:pointer;font-size:12.5px;font-weight:700;color:#1967d2;">📖 规则解读（点开查看口径与扣罚标准，来源：月度考核方案 + 《下沉SKA品牌KPI赔付规则》）</summary>
+      <div style="font-size:12px;color:#444;line-height:1.9;margin-top:8px;">
+        <b>一、企客有效门店与流失（总分扣分项）</b><br>
+        · 有效门店：日均10单以上门店（含考核月内新签）；口径=麦肯必瑞星沃企客服务包有效门店<br>
+        · 流失定义：仅限因<b>体验问题</b>不再使用美配的门店（停业/低单未发单不算）；流失日期=美配首次未发单日（7天未发单即流失）<br>
+        · 流失扣分：流失有效门店≥1家，总分扣<b>5%</b>（9月方案）；未流失/无企客门店不扣分<br>
+        · 新签加分：9月方案无此加分项（10月起新增：新签1家加2%，最高加3%）<br>
+        <b>二、企客门店品牌体验达标（扣分项 · 10月方案新增，9月不执行）</b><br>
+        · 品牌体验指标及达标定义：按《SKA考核指标口径和看板》（学城 2741734785）执行；数据路径：企客体验明细看板 269707<br>
+        · 扣分规则：城市门店≤3家且未达标≥1家 → 扣2%；门店>3家且未达标≥2家 → 扣2%；门店全部达标不扣分<br>
+        <b>三、SKA品牌KPI赔付（2026-07-01起执行，罚款对象为合作商，严禁转嫁骑手）</b><br>
+        <table class="dt" style="font-size:11.5px;">
+          <thead><tr><th>品牌</th><th>准时率扣罚口径（门店月维度）</th><th>客诉率</th><th>配送原因取消率</th></tr></thead>
+          <tbody>
+            <tr><td>肯德基</td><td>准点率<90% 或 送达违规率>4%</td><td>—</td><td>服务商原因删单，按完单量区间 250~10000 元分档</td></tr>
+            <tr><td>必胜客</td><td>准点率<90% 或 送达违规率>2%</td><td>迟到投诉率>0.25%</td><td>同上分档</td></tr>
+            <tr><td>麦当劳</td><td>准时率<90%</td><td>其他投诉</td><td>同上分档</td></tr>
+            <tr><td style="color:#b71c1c;font-weight:700;">瑞幸</td><td style="color:#b71c1c;font-weight:700;">准时率<99%（最严）</td><td>配送客诉率>1%</td><td>—</td></tr>
+            <tr><td>星巴克</td><td>准点率<93%</td><td>客诉率>0（骑手责任场景细列）</td><td>—</td></tr>
+            <tr><td>沃尔玛</td><td>准时率分档（95-97%亏1500元起）</td><td>客诉率<0.04%</td><td>删单分档，最高2000元</td></tr>
+          </tbody>
+        </table>
+        · 客诉/取消率按月完单量区间扣 200~2550 元不等；赔付金额详见学城原文（本表为口径摘要）<br>
+        · 注：赔付规则与预警/流失要求不完全一致，日常追踪以《SKA考核指标口径和看板》为准
+      </div>
+    </details>
+  </div>
+<div class="section-label">📐 计分模型</div>
+<div class="card" id="sec-example" style="margin-bottom:16px;background:linear-gradient(135deg,#f8f9fb 0%,#e8f0fe 100%);">
     <div class="card-title"><span class="icon">🧮</span>计分示例解读（以诸暨市为例 · 画像：都不考）</div>
     <div class="table-scroll">
     <table class="dt">
@@ -1460,9 +1557,7 @@ body.no-scroll{overflow:hidden}
       <strong style="color:#d93025;">关键解读：</strong>诸暨总分94.62处于"重罚预警"区间（＜95%），核心拖累项为加盟完成率91.73%（加权仅得45.87分，比达标线少4.13分）。若加盟完成率提升至95%，总分将达96.4%（脱离"重罚"区间）；提升至100%则总分达98.9%（接近达标线）。
     </div>
   </div>
-
-  <!-- 指标敏感度分析 -->
-  <div class="card" id="sec-sensitivity" style="margin-bottom:16px;">
+<div class="card" id="sec-sensitivity" style="margin-bottom:16px;">
     <div class="card-title"><span class="icon">📈</span>指标敏感度分析（每提升1个百分点对总分的影响）</div>
     <div class="table-scroll">
     <table class="dt">
@@ -1509,52 +1604,6 @@ body.no-scroll{overflow:hidden}
       <strong style="color:#1967d2;">优先级排序：</strong>加盟完成率（每+1%→总分+0.5%）> 体验分（每+1分→总分+0.2%）= 推单完成率（每+1%→总分+0.2%）> 履约完结率（每+1%→总分+0.1%）。资源有限时，优先攻坚加盟完成率，投入产出比最高。
     </div>
   </div>
-
-  <!-- 月维度：考核周期 -->
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-title"><span class="icon">📅</span>考核周期（按月分两期 + 高峰日）</div>
-    <table class="period-table">
-      <thead><tr><th>运力线</th><th>第1期</th><th>第2期</th><th>高峰日</th></tr></thead>
-      <tbody>
-        <tr><td style="font-weight:700;color:#e8525f;">加盟</td><td>9/1 - 9/13</td><td>9/14 - 9/30</td><td class="peak">9/5、9/6 · 9/12、9/13 · 9/19 · 9/25、9/26、9/27</td></tr>
-        <tr><td style="font-weight:700;color:#f5a623;">悦跑</td><td>8/31-9/6、9/7-9/13</td><td>9/14-9/20、9/21-9/27</td><td>—</td></tr>
-        <tr><td style="font-weight:700;color:#4cb947;">普众</td><td>8/31-9/6、9/7-9/13</td><td>9/14-9/20、9/21-9/27</td><td>—</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-    </div>
-  </div>
-</div>
-
-
-
-<!-- ==================== 分析报告 ==================== -->
-<div class="dim-content" id="dim-report">
-
-  <div class="rpt-header">
-    <h2>2026年9月配送考核指标优化提升方案</h2>
-    <div class="sub" style="margin-top:4px;">数据截止：2026-09-30（全月 30/30 天收官） | 画像：都不考（加盟50% 体验20% 推完20% 完结率10%）</div>
-    <div class="sub" id="report-sub" style="margin-top:2px;">三城：泰兴县 · 诸暨市 · 响水县 | 全月 30/30 天收官（数据已齐）</div>
-  </div>
-
-  <!-- 分析框架导航（数据驱动） -->
-  <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#f0f4ff,#fff);border-left:4px solid #1967d2;">
-    <div class="card-title">📐 分析框架（数据驱动 · 随数据自动更新）</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px;">
-      <span style="background:#f3f0ff;color:#7b61ff;padding:4px 12px;border-radius:12px;">🔬 切片分析 · 缺口 · 路径</span>
-      <span style="background:#fce8e8;color:#d93025;padding:4px 12px;border-radius:12px;">🔍 问题细化拆解</span>
-      <span style="background:#fff3e0;color:#ef6c00;padding:4px 12px;border-radius:12px;">⚡ 异常波动明细</span>
-      <span style="background:#e6f4ea;color:#2e7d32;padding:4px 12px;border-radius:12px;">✅ 可落地决策方案</span>
-    </div>
-  </div>
-
-  <!-- 🔬 切片分析（城市 × 期次 × 指标，JS 自动生成） -->
-  <div class="card slice-wrap" id="slice-analysis" style="margin-bottom:16px;"></div>
-
-  <!-- 🔍 问题细化拆解 + ⚡ 异常波动明细（JS 自动生成） -->
-  <div class="card" id="issues-breakdown" style="margin-bottom:16px;border-left:4px solid #ef6c00;"></div>
-
 </div>
 
 <div class="footer-info">
@@ -1563,6 +1612,12 @@ body.no-scroll{overflow:hidden}
 </div>
 
 <script>
+function jumpDim(dim) {
+  var order = {daily:0, monthly:1, report:2, charts:3};
+  var tabs = document.querySelectorAll('.dim-tab');
+  switchDim(tabs[order[dim]], dim);
+  try { window.scrollTo(0, 0); } catch (e) {}
+}
 function switchDim(el, dim) {
   document.querySelectorAll('.dim-tab').forEach(function(t){ t.classList.remove('active'); });
   el.classList.add('active');
@@ -1584,10 +1639,187 @@ function switchDim(el, dim) {
   renderDataHealth();
 }
 
+// ===================== 月度评估（月中MTD/月末月度数据 双模式） =====================
+/* 天维度模块卡·月累计实况（Ch36）：从 MTD_EVAL 取当前城市值，按计分口径着色 */
+function renderModuleMtd() {
+  var v = (typeof MTD_EVAL !== 'undefined' && MTD_EVAL && MTD_EVAL.cities && MTD_EVAL.cities[currentCity]) ? MTD_EVAL.cities[currentCity] : null;
+  function set(id, raw, lo, label, unit, extra) {
+    var el = document.getElementById('mtd-' + id);
+    if (!el) return;
+    if (!v || raw == null || (typeof raw === 'number' && isNaN(raw))) { el.innerHTML = '<span style="color:#9aa0a6;">月累计' + label + '：待发布</span>'; return; }
+    var num = Number(raw);
+    var show = (typeof raw === 'number' || !isNaN(num)) ? num.toFixed(1) : raw;
+    var col = (lo != null && !isNaN(num) && num < lo) ? '#d93025' : '#188038';
+    el.innerHTML = '月累计' + label + '：<b style="color:' + col + ';">' + show + unit + '</b>' + (extra || '');
+  }
+  set('jm', v ? v.hdLast : null, 90, 'HD完成率', '%');
+  set('ty', v ? v.tyLast : null, 90, '体验考核分', ' 分');
+  set('tw', v ? v.twAll : null, 98.8, '推单完成率', '%', v && v.twDbOk != null ? '<span style="color:#6b7280;">（人效兜底达标 ' + v.twDbOk + ' 天）</span>' : '');
+  set('wj', v ? v.wjAvg : null, 80, '完结率', '%');
+  set('ym', v ? v.ymAvg : null, 90, '悦跑完成度', '%');
+  set('pz', v ? v.pzLast : null, 90, '普众完成度', '%');
+}
+
+/* 考核方案·六大模块指标总览（Ch34）：从 MTD_EVAL 自动取数，按考核方案计分区间着色 */
+function renderModuleOverview() {
+  var body = document.getElementById('mod-ov-body');
+  if (!body) return;
+  if (typeof MTD_EVAL === 'undefined' || !MTD_EVAL || !MTD_EVAL.cities) {
+    body.innerHTML = '<div style="font-size:12px;color:#6b7280;">⏳ 月度评估数据待流水线生成（今日数据未入库时本卡留白）</div>';
+    return;
+  }
+  var tag = document.getElementById('mo-mode-tag');
+  if (tag) tag.textContent = (MTD_EVAL.mode === 'month' ? '【月评估：整月核算】' : '【月预计：MTD 外推】') + ' 数据截至 ' + String(MTD_EVAL.date).slice(4,6) + '-' + String(MTD_EVAL.date).slice(6);
+  var cities = Object.keys(MTD_EVAL.cities);
+  function clsBy(v, lo) { if (v == null) return 'mo-na'; return v < lo ? 'mo-bad' : 'mo-ok'; }
+  var mods = [
+    { icon:'🟠', name:'悦跑运力', w:'权重 30%', rule:'达标骑手完成度 90%~110% 计分，＜90% 记 0；出勤率≥90% 系数 1.05', get:function(v){ return v.ymAvg; }, fmt:function(x){ return x.toFixed(1)+'%'; }, lo:90 },
+    { icon:'🟥', name:'加盟运力（HD）', w:'权重 15%', rule:'HD完成率 90%~100% 计分，日更自动填入', get:function(v){ return v.hdLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 },
+    { icon:'🟣', name:'体验考核', w:'权重 20%', rule:'复合超时率 40% + 虚假点送达 30% + 配送取消单 30%', get:function(v){ return v.tyLast; }, fmt:function(x){ return (isNaN(Number(x)) ? x : Number(x).toFixed(1)); }, lo:90 },
+    { icon:'🔵', name:'推单完成率', w:'权重 20%', rule:'110% 封顶；日均≥98.8% 为人效兜底线（高峰日另核）', get:function(v){ return v.twAll; }, fmt:function(x){ return x.toFixed(2)+'%'; }, lo:98.8 },
+    { icon:'🔷', name:'履约完结率', w:'权重 10%', rule:'完结率 80%~110% 计分', get:function(v){ return v.wjAvg; }, fmt:function(x){ return x.toFixed(1)+'%'; }, lo:80 },
+    { icon:'🟤', name:'普通众包运力', w:'权重 5%', rule:'活跃骑手完成度 90%~100% 计分，＜90% 记 0', get:function(v){ return v.pzLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 }
+  ];
+  var h = '';
+  mods.forEach(function(m) {
+    var chips = '';
+    cities.forEach(function(c) {
+      var v = MTD_EVAL.cities[c];
+      var raw = v ? m.get(v) : null;
+      var num = (raw == null || isNaN(Number(raw))) ? null : Number(raw);
+      chips += '<div class="mo-chip"><div class="mo-city">' + c + '</div><div class="mo-val ' + clsBy(num, m.lo) + '">' + (num == null ? '—' : m.fmt(num)) + '</div></div>';
+    });
+    h += '<div class="mod-ov-item"><div class="mo-head"><span style="font-size:15px;">' + m.icon + '</span><span class="mo-name">' + m.name + '</span><span class="pill pill-weight" style="margin-left:auto;">' + m.w + '</span></div>'
+      + '<div class="mo-rule">' + m.rule + '</div><div class="mo-cities">' + chips + '</div></div>';
+  });
+  var sc = '';
+  cities.forEach(function(c) {
+    var v = MTD_EVAL.cities[c];
+    var col = v.score >= 99.5 ? 'mo-ok' : (v.score >= 95 ? 'mo-warn' : 'mo-bad');
+    sc += '<div class="mo-chip"><div class="mo-city">' + c + '</div><div class="mo-val ' + col + '">' + (v.score != null ? v.score.toFixed(2) : '—') + '</div></div>';
+  });
+  h += '<div class="mod-ov-item" style="border-left-color:#f5a623;grid-column:1/-1;"><div class="mo-head"><span style="font-size:15px;">🏆</span><span class="mo-name">加权总分（Σ 模块得分×权重）</span><span class="pill pill-weight" style="margin-left:auto;">权重 100%</span></div>'
+    + '<div class="mo-rule">主因模块：' + cities.map(function(c){ var v = MTD_EVAL.cities[c]; return c + ' ' + v.mainMod + '（缺口 ' + (v.gap != null ? v.gap.toFixed(2) : '—') + '）'; }).join('；') + '</div><div class="mo-cities">' + sc + '</div></div>';
+  body.innerHTML = h;
+  try { renderModuleMtd(); } catch (e) {}
+}
+
+function renderMtdEval() {
+  var box = document.getElementById('mtd-eval-body');
+  if (!box) return;
+  if (typeof MTD_EVAL === 'undefined' || !MTD_EVAL || !MTD_EVAL.cities) {
+    box.innerHTML = '<div style="font-size:12px;color:#6b7280;padding:8px 0;">⏳ 月度评估数据待流水线生成（每日抓取后自动更新）</div>';
+    return;
+  }
+  var isMonth = MTD_EVAL.mode === 'month';
+  var tag = document.getElementById('mtd-mode-tag');
+  if (tag) tag.textContent = isMonth ? '【月评估：整月核算】数据截至 ' + MTD_EVAL.date.slice(4,6) + '-' + MTD_EVAL.date.slice(6)
+                                     : '【月预计：MTD 外推】数据截至 ' + MTD_EVAL.date.slice(4,6) + '-' + MTD_EVAL.date.slice(6) + '（月末自动切换为月评估）';
+  var _mDays = Object.keys(dailyByDate || {}).length;
+  var h = (!isMonth ? '<div style="font-size:11.5px;color:#8a6d1a;background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:6px 10px;margin-bottom:8px;">📌 当前月尚未结束，以下为<b>月预计</b>（按已采集 ' + _mDays + ' 天数据外推，每日自动更新）；月末数据齐全后自动切换为<b>月评估</b>。预计月末总分与罚款推算见上方「整月测算 / 城市预估警告与罚款」卡。</div>' : '') + '<div class="table-scroll"><table class="dt"><thead><tr><th>城市</th><th>已采集天数</th><th>MTD近似总分</th><th>主因模块</th><th>日均推完</th><th>高峰日均</th><th>推完最低</th><th>兜底达标天数</th><th>悦跑均完成度</th><th>悦跑最差周均</th><th>承托比首→末</th><th>企客KA最新</th><th>HD最新</th><th>体验最新</th><th>完结率均</th></tr></thead><tbody>';
+  var cities = Object.keys(MTD_EVAL.cities);
+  cities.forEach(function(c) {
+    var v = MTD_EVAL.cities[c];
+    if (!v) return;
+    var scCol = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
+    h += '<tr><td><b>' + c + '</b></td><td>' + v.days + '</td>'
+      + '<td style="color:' + scCol + ';font-weight:700;">' + (v.score!=null ? v.score.toFixed(2) : '—') + '</td>'
+      + '<td>' + (v.mainMod||'—') + (v.mainGap!=null ? '（缺'+v.mainGap+'分）' : '') + '</td>'
+      + '<td>' + _fv(v.twAll,'%') + '</td><td>' + _fv(v.twPk,'%') + '</td><td>' + _fv(v.twMin,'%') + '</td>'
+      + '<td>' + (v.twDbOk!=null ? v.twDbOk + '/' + v.days : '—') + '</td>'
+      + '<td>' + _fv(v.ymAvg,'%') + '</td><td>' + (v.ymWeekWorst!=null && v.ymWeekWorst<90 ? '<span class="c-red">'+v.ymWeekWorst+'%</span>' : _fv(v.ymWeekWorst,'%')) + '</td>'
+      + '<td>' + (v.ctFirst!=null ? v.ctFirst+'% → '+v.ctLast+'%' : '—') + '</td>'
+      + '<td>' + (v.qkka||'—') + '</td>'
+      + '<td>' + (v.hdLast!=null ? v.hdLast+'%' : '<span style="color:#9aa0a6">待发布</span>') + '</td>'
+      + '<td>' + (v.tyLast!=null ? v.tyLast+'' : '<span style="color:#9aa0a6">待发布</span>') + '</td>'
+      + '<td>' + (v.wjAvg!=null ? v.wjAvg+'%' : '<span style="color:#9aa0a6">待发布</span>') + '</td></tr>';
+  });
+  h += '</tbody></table></div>';
+  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">总分口径：已接入权重归一化（悦跑' + (isMonth?'含':'含') + '0.30；体验/HD/完结率官方值发布后自动补录）；兜底线98.8%。</div>';
+  box.innerHTML = h;
+}
+
+// ===================== 企客·SKA品牌履约评估预警 =====================
+function renderQkkaSka() {
+  var box = document.getElementById('qkka-warn-body');
+  if (!box) return;
+  if (typeof QKKA_BRAND === 'undefined' || !QKKA_BRAND || !Object.keys(QKKA_BRAND).length) {
+    box.innerHTML = '<div style="font-size:12px;color:#6b7280;padding:8px 0;">⏳ 企客KA品牌数据待接入（抓取后自动更新）</div>';
+    return;
+  }
+  var hits = [], rows = [];
+  Object.keys(QKKA_BRAND).forEach(function(city) {
+    var info = QKKA_BRAND[city];
+    var brands = info.brands || {};
+    Object.keys(brands).forEach(function(b) {
+      var v = brands[b];
+      var st, col;
+      if (v.hit) { st = '⚠ 赔付预警（<' + v.line + '%）'; col = '#d93025'; hits.push(city + '·' + b); }
+      else if (v.watch) { st = '观察（<98%）'; col = '#f5a623'; }
+      else if (v.ska) { st = 'SKA达标（≥' + v.line + '%）'; col = '#34a853'; }
+      else { st = '正常'; col = '#34a853'; }
+      rows.push('<tr><td><b>' + city + '</b></td><td>' + b + (v.ska ? ' <span class="tag tag-red">SKA</span>' : '') + '</td><td>' + v.stores + '</td><td>' + v.wb + '</td><td style="color:' + col + ';font-weight:700;">' + (v.ontime!=null ? v.ontime.toFixed(2) + '%' : '—') + '</td><td style="color:' + col + '">' + st + '</td></tr>');
+    });
+  });
+  rows.sort(function(a, b) { return (a.indexOf('赔付预警') >= 0 ? -1 : 0) - (b.indexOf('赔付预警') >= 0 ? -1 : 0); });
+  var h = '';
+  if (hits.length) {
+    h += '<div style="background:#fce8e8;border-left:4px solid #d93025;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12.5px;color:#b71c1c;"><b>⚠ 赔付预警：</b>' + hits.join('、') + ' 已低于 SKA 品牌准时率赔付线，按月度门店口径将触发扣罚，请重点保障运力与出餐衔接。</div>';
+  } else {
+    h += '<div style="background:#e6f4ea;border-left:4px solid #34a853;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12.5px;color:#188038;"><b>✓ 当前 SKA 品牌准时率均在赔付线以上</b>（瑞幸99% / 星巴克93% / 肯德基·必胜客·麦当劳90% / 沃尔玛95%口径）；非SKA品牌按98%观察线提示。</div>';
+  }
+  var m = (typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) ? QKKA_MONTH : null;
+  if (m) {
+    h += '<div class="table-scroll" style="margin-bottom:8px;"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>统计期</th><th>KA门店</th><th>达标门店（≥95%）</th><th>准时运单/完成运单</th><th>准时率</th><th>覆盖品牌/站点</th></tr></thead><tbody>';
+    Object.keys(m).forEach(function(c) {
+      var v = m[c];
+      var rc = (v.rate != null && v.rate < 95) ? 'c-red' : '';
+      var oc = (v.okRatio != null && v.okRatio < 90) ? 'c-red' : '';
+      h += '<tr><td><b>' + c + '</b></td><td>' + v.period + '</td><td>' + v.stores + '</td>'
+        + '<td class="' + oc + '">' + v.ok + '（' + v.okRatio + '%）</td>'
+        + '<td>' + v.ontimeWb + ' / ' + v.doneWb + '</td>'
+        + '<td class="' + rc + '">' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
+        + '<td>' + v.brands + '品牌 / ' + v.stations + '站点</td></tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+  h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>品牌</th><th>门店数</th><th>运单量</th><th>准时率</th><th>状态</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>';
+  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">数据：品牌x商家x履约站-履约明细（ID 17805，BI 253744，' + (QKKA_BRAND['泰兴'] ? QKKA_BRAND['泰兴'].date : '') + '）；准时率=客户考核准时运单量/配送完成运单量（累计），门店达标口径=门店准时率≥KPI目标95%；门店月维度赔付以自然月累计为准，本预警为提前提示；客诉率/取消率口径待 SKA 体验看板（学城2741734785）开放后接入。</div>';
+  box.innerHTML = h;
+}
+
+// ===================== 下月预看板模型 =====================
+function renderNextMonth() {
+  var box = document.getElementById('nextmonth-body');
+  var tag = document.getElementById('nextmonth-tag');
+  if (!box) return;
+  var isMonth = (typeof MONTH_MODE !== 'undefined') && MONTH_MODE === 'month';
+  if (tag) tag.textContent = isMonth ? '【月末已生成：下月基线模型】' : '【月中：月末自动生成本月基线】';
+  if (!isMonth) {
+    box.innerHTML = '<div style="font-size:12.5px;color:#444;line-height:2;padding:4px 0;">本月月末（最后一天数据齐后）将自动以<b>整月数据</b>生成下月预看板模型：日均/高峰日均推完、悦跑完成度与出勤、兜底达标天数、企客KA品牌履约基线，作为下月考核的预估基准与目标测算输入。<br><span style="font-size:11px;color:#6b7280;">当前为月中，展示月末生成计划；生成后此卡自动切换为基线数据表。</span></div>';
+    return;
+  }
+  if (typeof MTD_EVAL === 'undefined' || !MTD_EVAL || !MTD_EVAL.cities) {
+    box.innerHTML = '<div style="font-size:12px;color:#6b7280;padding:8px 0;">⏳ 等待整月评估数据…</div>';
+    return;
+  }
+  var nextName = '10月';
+  var h = '<div style="font-size:12.5px;color:#444;line-height:1.9;margin-bottom:8px;">以下为<b>' + nextName + '预看板基线</b>（由本月整月数据自动汇总，下月方案发布后按新权重/高峰日重算）：</div>';
+  h += '<div class="table-scroll"><table class="dt"><thead><tr><th>城市</th><th>整月日均推完</th><th>高峰日均</th><th>推完最低</th><th>兜底达标天数</th><th>悦跑均完成度</th><th>悦跑出勤</th><th>承托比首→末</th><th>企客KA最新</th><th>MTD总分基线</th></tr></thead><tbody>';
+  Object.keys(MTD_EVAL.cities).forEach(function(c) {
+    var v = MTD_EVAL.cities[c];
+    if (!v) return;
+    h += '<tr><td><b>' + c + '</b></td><td>' + _fv(v.twAll,'%') + '</td><td>' + _fv(v.twPk,'%') + '</td><td>' + _fv(v.twMin,'%') + '</td><td>' + (v.twDbOk!=null?v.twDbOk:'—') + '</td><td>' + _fv(v.ymAvg,'%') + '</td><td>' + _fv(v.ymcqLast,'%') + '</td><td>' + (v.ctFirst!=null?v.ctFirst+'% → '+v.ctLast+'%':'—') + '</td><td>' + (v.qkka||'—') + '</td><td style="font-weight:700;">' + (v.score!=null?v.score.toFixed(2):'—') + '</td></tr>';
+  });
+  h += '</tbody></table></div>';
+  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">下月考核周期/高峰日/权重以下月方案（学城）发布为准；发布后本模型自动按新口径重算。</div>';
+  box.innerHTML = h;
+}
+
 // ===================== KPI概览条 =====================
 // ===================== 基础配置 =====================
 var weekDays = ['日','一','二','三','四','五','六'];
-var peakDays = ['09-05','09-06','09-12','09-13','09-19','09-25','09-26','09-27','09-28'];
+var peakDays = ['09-05','09-06','09-12','09-13','09-19','09-25','09-26','09-27'];
 var dataDates = ['09-01','09-02','09-03','09-04','09-05','09-06','09-07','09-08','09-09','09-10','09-11','09-12','09-13','09-14','09-15','09-16','09-17','09-18','09-19','09-20','09-21','09-22','09-23','09-24','09-25','09-26','09-27','09-28','09-29','09-30']; // 有BI数据的日期（P1: 9/1-9/13, P2: 9/14-9/30，含9/30 BI T-1，全月齐）
 
 // 9月所有日期
@@ -1607,138 +1839,138 @@ var cityInfo = {
 // 完整BI数据（按日期）
 var fullDataByDate = {
   '09-01': {
-    '泰兴': {twRate:99.50, tyScore:90.0, hdRate:97.5, wjRate:99.96, ctRate:49.0, twNum:null,twDen:null},
-    '诸暨': {twRate:99.10, tyScore:93.0, hdRate:90.0, wjRate:99.91, ctRate:45.0, twNum:null,twDen:null},
-    '响水': {twRate:98.65, tyScore:97.0, hdRate:94.0, wjRate:99.96, ctRate:43.0, twNum:null,twDen:null}
+    '泰兴': {twRate:99.1, tyScore:90.0, hdRate:97.5, wjRate:99.96, ctRate:57.56, twNum:null,twDen:null},
+    '诸暨': {twRate:99, tyScore:93.0, hdRate:90.0, wjRate:99.91, ctRate:49.24, twNum:null,twDen:null},
+    '响水': {twRate:99.14, tyScore:97.0, hdRate:94.0, wjRate:99.96, ctRate:43.95, twNum:null,twDen:null}
   },
   '09-02': {
-    '泰兴': {twRate:99.42, tyScore:89.8, hdRate:97.2, wjRate:99.95, ctRate:48.5, twNum:null,twDen:null},
-    '诸暨': {twRate:98.98, tyScore:92.8, hdRate:89.5, wjRate:99.90, ctRate:44.5, twNum:null,twDen:null},
-    '响水': {twRate:98.55, tyScore:96.8, hdRate:93.5, wjRate:99.95, ctRate:42.5, twNum:null,twDen:null}
+    '泰兴': {twRate:99.13, tyScore:89.8, hdRate:97.2, wjRate:99.95, ctRate:53.1, twNum:null,twDen:null},
+    '诸暨': {twRate:98.87, tyScore:92.8, hdRate:89.5, wjRate:99.90, ctRate:51.72, twNum:null,twDen:null},
+    '响水': {twRate:99.21, tyScore:96.8, hdRate:93.5, wjRate:99.95, ctRate:46.24, twNum:null,twDen:null}
   },
   '09-03': {
-    '泰兴': {twRate:99.48, tyScore:90.2, hdRate:97.6, wjRate:99.96, ctRate:49.5, twNum:null,twDen:null},
-    '诸暨': {twRate:99.08, tyScore:93.2, hdRate:90.2, wjRate:99.92, ctRate:45.5, twNum:null,twDen:null},
-    '响水': {twRate:98.62, tyScore:97.2, hdRate:94.2, wjRate:99.96, ctRate:43.5, twNum:null,twDen:null}
+    '泰兴': {twRate:99.4, tyScore:90.2, hdRate:97.6, wjRate:99.96, ctRate:51.21, twNum:null,twDen:null},
+    '诸暨': {twRate:99.14, tyScore:93.2, hdRate:90.2, wjRate:99.92, ctRate:47.54, twNum:null,twDen:null},
+    '响水': {twRate:99.06, tyScore:97.2, hdRate:94.2, wjRate:99.96, ctRate:45.88, twNum:null,twDen:null}
   },
   '09-04': {
-    '泰兴': {twRate:99.52, tyScore:90.5, hdRate:97.9, wjRate:99.97, ctRate:50.0, twNum:null,twDen:null},
-    '诸暨': {twRate:99.15, tyScore:93.5, hdRate:90.5, wjRate:99.93, ctRate:46.0, twNum:null,twDen:null},
-    '响水': {twRate:98.70, tyScore:97.5, hdRate:94.5, wjRate:99.97, ctRate:44.0, twNum:null,twDen:null}
+    '泰兴': {twRate:99.23, tyScore:90.5, hdRate:97.9, wjRate:99.97, ctRate:52.41, twNum:null,twDen:null},
+    '诸暨': {twRate:98.91, tyScore:93.5, hdRate:90.5, wjRate:99.93, ctRate:49.56, twNum:null,twDen:null},
+    '响水': {twRate:99.18, tyScore:97.5, hdRate:94.5, wjRate:99.97, ctRate:42.6, twNum:null,twDen:null}
   },
   '09-05': {
-    '泰兴': {twRate:99.45, tyScore:90.5, hdRate:97.8, wjRate:99.94, ctRate:50.5, twNum:null,twDen:null},
-    '诸暨': {twRate:99.05, tyScore:93.5, hdRate:90.5, wjRate:99.9, ctRate:46.5, twNum:null,twDen:null},
-    '响水': {twRate:98.6, tyScore:97.5, hdRate:94.5, wjRate:99.95, ctRate:44.5, twNum:null,twDen:null}
+    '泰兴': {twRate:99.2, tyScore:90.5, hdRate:97.8, wjRate:99.94, ctRate:54.16, twNum:null,twDen:null},
+    '诸暨': {twRate:99.06, tyScore:93.5, hdRate:90.5, wjRate:99.9, ctRate:48.7, twNum:null,twDen:null},
+    '响水': {twRate:99.22, tyScore:97.5, hdRate:94.5, wjRate:99.95, ctRate:40.7, twNum:null,twDen:null}
   },
   '09-06': {
-    '泰兴': {twRate:99.38, tyScore:90.2, hdRate:97.5, wjRate:99.93, ctRate:51.0, twNum:null,twDen:null},
-    '诸暨': {twRate:98.95, tyScore:93.2, hdRate:90.2, wjRate:99.89, ctRate:47.0, twNum:null,twDen:null},
-    '响水': {twRate:98.5, tyScore:97.2, hdRate:94.2, wjRate:99.94, ctRate:45.0, twNum:null,twDen:null}
+    '泰兴': {twRate:99.29, tyScore:90.2, hdRate:97.5, wjRate:99.93, ctRate:53.23, twNum:null,twDen:null},
+    '诸暨': {twRate:98.94, tyScore:93.2, hdRate:90.2, wjRate:99.89, ctRate:48.27, twNum:null,twDen:null},
+    '响水': {twRate:99.2, tyScore:97.2, hdRate:94.2, wjRate:99.94, ctRate:40.7, twNum:null,twDen:null}
   },
   '09-07': {
-    '泰兴': {twRate:99.2, tyScore:90.8, hdRate:97.2, wjRate:99.97, ctRate:48.1, twNum:null,twDen:null},
-    '诸暨': {twRate:99.1, tyScore:93.8, hdRate:90.0, wjRate:99.93, ctRate:44.1, twNum:null,twDen:null},
-    '响水': {twRate:98.7, tyScore:97.8, hdRate:94.0, wjRate:99.98, ctRate:42.1, twNum:null,twDen:null}
+    '泰兴': {twRate:99.3, tyScore:90.8, hdRate:97.2, wjRate:99.97, ctRate:50.5, twNum:null,twDen:null},
+    '诸暨': {twRate:99.2, tyScore:93.8, hdRate:90.0, wjRate:99.93, ctRate:46.08, twNum:null,twDen:null},
+    '响水': {twRate:99.29, tyScore:97.8, hdRate:94.0, wjRate:99.98, ctRate:47.89, twNum:null,twDen:null}
   },
   '09-08': {
-    '泰兴': {twRate:99.15, tyScore:91.0, hdRate:97.0, wjRate:99.98, ctRate:48.4, twNum:null,twDen:null},
-    '诸暨': {twRate:99.0, tyScore:94.0, hdRate:89.8, wjRate:99.94, ctRate:44.4, twNum:null,twDen:null},
-    '响水': {twRate:98.55, tyScore:97.6, hdRate:93.8, wjRate:99.99, ctRate:42.4, twNum:null,twDen:null}
+    '泰兴': {twRate:99.19, tyScore:91.0, hdRate:97.0, wjRate:99.98, ctRate:49.61, twNum:null,twDen:null},
+    '诸暨': {twRate:99.2, tyScore:94.0, hdRate:89.8, wjRate:99.94, ctRate:45.69, twNum:null,twDen:null},
+    '响水': {twRate:99.47, tyScore:97.6, hdRate:93.8, wjRate:99.99, ctRate:48.28, twNum:null,twDen:null}
   },
   '09-09': {
-    '泰兴': {twRate:99.28, tyScore:90.6, hdRate:97.5, wjRate:99.98, ctRate:47.5, twNum:null,twDen:null},
-    '诸暨': {twRate:99.15, tyScore:93.6, hdRate:90.3, wjRate:99.94, ctRate:43.5, twNum:null,twDen:null},
-    '响水': {twRate:98.8, tyScore:98.0, hdRate:94.3, wjRate:99.99, ctRate:41.5, twNum:null,twDen:null}
+    '泰兴': {twRate:99.18, tyScore:90.6, hdRate:97.5, wjRate:99.98, ctRate:50.28, twNum:null,twDen:null},
+    '诸暨': {twRate:99.26, tyScore:93.6, hdRate:90.3, wjRate:99.94, ctRate:45.75, twNum:null,twDen:null},
+    '响水': {twRate:99.16, tyScore:98.0, hdRate:94.3, wjRate:99.99, ctRate:46.53, twNum:null,twDen:null}
   },
   '09-10': {
-    '泰兴': {twRate:99.35, tyScore:91.2, hdRate:97.8, wjRate:99.97, ctRate:47.8, twNum:null,twDen:null},
-    '诸暨': {twRate:99.05, tyScore:94.2, hdRate:90.5, wjRate:99.93, ctRate:43.8, twNum:null,twDen:null},
-    '响水': {twRate:98.65, tyScore:97.4, hdRate:94.5, wjRate:99.98, ctRate:41.8, twNum:null,twDen:null}
+    '泰兴': {twRate:99.16, tyScore:91.2, hdRate:97.8, wjRate:99.97, ctRate:50.36, twNum:null,twDen:null},
+    '诸暨': {twRate:99.24, tyScore:94.2, hdRate:90.5, wjRate:99.93, ctRate:47.07, twNum:null,twDen:null},
+    '响水': {twRate:99.12, tyScore:97.4, hdRate:94.5, wjRate:99.98, ctRate:46.04, twNum:null,twDen:null}
   },
   '09-11': {
-    '泰兴': {twRate:99.22, tyScore:90.9, hdRate:97.3, wjRate:99.98, ctRate:48.1, twNum:null,twDen:null},
-    '诸暨': {twRate:98.9, tyScore:93.9, hdRate:90.0, wjRate:99.94, ctRate:44.1, twNum:null,twDen:null},
-    '响水': {twRate:98.45, tyScore:97.0, hdRate:94.0, wjRate:99.99, ctRate:42.1, twNum:null,twDen:null}
+    '泰兴': {twRate:99.23, tyScore:90.9, hdRate:97.3, wjRate:99.98, ctRate:50.22, twNum:null,twDen:null},
+    '诸暨': {twRate:99.09, tyScore:93.9, hdRate:90.0, wjRate:99.94, ctRate:49.65, twNum:null,twDen:null},
+    '响水': {twRate:99.29, tyScore:97.0, hdRate:94.0, wjRate:99.99, ctRate:45.39, twNum:null,twDen:null}
   },
   '09-12': {
-    '泰兴': {twRate:99.4, tyScore:91.0, hdRate:97.6, wjRate:99.93, ctRate:51.0, twNum:null,twDen:null},
-    '诸暨': {twRate:99.2, tyScore:94.0, hdRate:90.8, wjRate:99.89, ctRate:47.0, twNum:null,twDen:null},
-    '响水': {twRate:98.9, tyScore:97.6, hdRate:94.8, wjRate:99.94, ctRate:45.0, twNum:null,twDen:null}
+    '泰兴': {twRate:99.25, tyScore:91.0, hdRate:97.6, wjRate:99.93, ctRate:52.32, twNum:null,twDen:null},
+    '诸暨': {twRate:99.1, tyScore:94.0, hdRate:90.8, wjRate:99.89, ctRate:49.31, twNum:null,twDen:null},
+    '响水': {twRate:99.2, tyScore:97.6, hdRate:94.8, wjRate:99.94, ctRate:36.86, twNum:null,twDen:null}
   },
   '09-13': {
-    '泰兴': {twRate:99.42, tyScore:91.1, hdRate:98.0, wjRate:99.92, ctRate:51.5, twNum:null,twDen:null},
-    '诸暨': {twRate:99.1, tyScore:94.1, hdRate:91.0, wjRate:99.88, ctRate:47.5, twNum:null,twDen:null},
-    '响水': {twRate:98.75, tyScore:97.8, hdRate:95.0, wjRate:99.93, ctRate:45.5, twNum:null,twDen:null}
+    '泰兴': {twRate:99.19, tyScore:91.1, hdRate:98.0, wjRate:99.92, ctRate:52.34, twNum:null,twDen:null},
+    '诸暨': {twRate:99.02, tyScore:94.1, hdRate:91.0, wjRate:99.88, ctRate:49.88, twNum:null,twDen:null},
+    '响水': {twRate:99.11, tyScore:97.8, hdRate:95.0, wjRate:99.93, ctRate:36.79, twNum:null,twDen:null}
   },
   '09-14': {
-    '泰兴': {twRate:99.38, tyScore:91.0, hdRate:98.0, wjRate:99.95, ctRate:48.0, twNum:null,twDen:null},
-    '诸暨': {twRate:99.15, tyScore:94.2, hdRate:91.0, wjRate:99.92, ctRate:44.0, twNum:null,twDen:null},
-    '响水': {twRate:98.80, tyScore:97.9, hdRate:95.1, wjRate:99.96, ctRate:42.0, twNum:null,twDen:null}
+    '泰兴': {twRate:99.26, tyScore:91.0, hdRate:98.0, wjRate:99.95, ctRate:49.12, twNum:null,twDen:null},
+    '诸暨': {twRate:99.19, tyScore:94.2, hdRate:91.0, wjRate:99.92, ctRate:47.14, twNum:null,twDen:null},
+    '响水': {twRate:99.37, tyScore:97.9, hdRate:95.1, wjRate:99.96, ctRate:48.5, twNum:null,twDen:null}
   },
   '09-15': {
-    '泰兴': {twRate:99.35, tyScore:91.0, hdRate:98.0, wjRate:99.98, ctRate:47.8, twNum:null,twDen:null},
-    '诸暨': {twRate:99.2, tyScore:94.3, hdRate:91.0, wjRate:99.94, ctRate:43.8, twNum:null,twDen:null},
-    '响水': {twRate:98.85, tyScore:97.8, hdRate:95.2, wjRate:99.99, ctRate:41.8, twNum:null,twDen:null}
+    '泰兴': {twRate:99.3, tyScore:91.0, hdRate:98.0, wjRate:99.98, ctRate:49.43, twNum:null,twDen:null},
+    '诸暨': {twRate:99.31, tyScore:94.3, hdRate:91.0, wjRate:99.94, ctRate:46.08, twNum:null,twDen:null},
+    '响水': {twRate:99.03, tyScore:97.8, hdRate:95.2, wjRate:99.99, ctRate:44.69, twNum:null,twDen:null}
   },
   '09-16': {
-    '泰兴': {twRate:99.1, tyScore:90.8, hdRate:97.5, wjRate:99.98, ctRate:48.1, twNum:null,twDen:null},
-    '诸暨': {twRate:99.0, tyScore:94.5, hdRate:91.5, wjRate:99.94, ctRate:44.1, twNum:null,twDen:null},
-    '响水': {twRate:98.7, tyScore:97.6, hdRate:95.5, wjRate:99.99, ctRate:42.1, twNum:null,twDen:null}
+    '泰兴': {twRate:99.3, tyScore:90.8, hdRate:97.5, wjRate:99.98, ctRate:49.77, twNum:null,twDen:null},
+    '诸暨': {twRate:99.25, tyScore:94.5, hdRate:91.5, wjRate:99.94, ctRate:46.61, twNum:null,twDen:null},
+    '响水': {twRate:99.27, tyScore:97.6, hdRate:95.5, wjRate:99.99, ctRate:43.34, twNum:null,twDen:null}
   },
   '09-17': {
-    '泰兴': {twRate:99.25, tyScore:91.5, hdRate:98.1, wjRate:99.97, ctRate:48.4, twNum:null,twDen:null},
-    '诸暨': {twRate:99.15, tyScore:94.2, hdRate:91.2, wjRate:99.93, ctRate:44.4, twNum:null,twDen:null},
-    '响水': {twRate:98.8, tyScore:98.0, hdRate:95.3, wjRate:99.98, ctRate:42.4, twNum:null,twDen:null}
+    '泰兴': {twRate:99.13, tyScore:91.5, hdRate:98.1, wjRate:99.97, ctRate:52.85, twNum:null,twDen:null},
+    '诸暨': {twRate:99.24, tyScore:94.2, hdRate:91.2, wjRate:99.93, ctRate:48.35, twNum:null,twDen:null},
+    '响水': {twRate:99.2, tyScore:98.0, hdRate:95.3, wjRate:99.98, ctRate:44.87, twNum:null,twDen:null}
   },
   '09-18': {
-    '泰兴': {twRate:99.3, tyScore:91.0, hdRate:98.0, wjRate:99.98, ctRate:47.5, twNum:null,twDen:null},
-    '诸暨': {twRate:99.1, tyScore:94.7, hdRate:91.8, wjRate:99.94, ctRate:43.5, twNum:null,twDen:null},
-    '响水': {twRate:98.85, tyScore:98.1, hdRate:95.8, wjRate:99.99, ctRate:41.5, twNum:null,twDen:null}
+    '泰兴': {twRate:99.21, tyScore:91.0, hdRate:98.0, wjRate:99.98, ctRate:49.37, twNum:null,twDen:null},
+    '诸暨': {twRate:99.2, tyScore:94.7, hdRate:91.8, wjRate:99.94, ctRate:48.91, twNum:null,twDen:null},
+    '响水': {twRate:99.15, tyScore:98.1, hdRate:95.8, wjRate:99.99, ctRate:40.46, twNum:null,twDen:null}
   },
   '09-19': {
-    '泰兴': {twRate:99.4, tyScore:91.8, hdRate:98.5, wjRate:99.93, ctRate:51.0, twNum:null,twDen:null},
-    '诸暨': {twRate:99.25, tyScore:94.8, hdRate:92.0, wjRate:99.89, ctRate:47.0, twNum:null,twDen:null},
-    '响水': {twRate:99.0, tyScore:98.3, hdRate:96.0, wjRate:99.94, ctRate:45.0, twNum:null,twDen:null}
+    '泰兴': {twRate:99.04, tyScore:91.8, hdRate:98.5, wjRate:99.93, ctRate:52.66, twNum:null,twDen:null},
+    '诸暨': {twRate:99.11, tyScore:94.8, hdRate:92.0, wjRate:99.89, ctRate:49.98, twNum:null,twDen:null},
+    '响水': {twRate:99.24, tyScore:98.3, hdRate:96.0, wjRate:99.94, ctRate:36.63, twNum:null,twDen:null}
   },
   '09-20': {
     '泰兴': {twRate:99.32, tyScore:91.23, hdRate:98.24, wjRate:94.55, ctRate:49.25, twNum:15390,twDen:15498},
-    '诸暨': {twRate:99.11, tyScore:94.61, hdRate:91.73, wjRate:99.95, ctRate:44.5, twNum:null,twDen:null},
-    '响水': {twRate:98.9, tyScore:98.18, hdRate:95.65, wjRate:99.98, ctRate:42.3, twNum:null,twDen:null}
+    '诸暨': {twRate:99.14, tyScore:94.61, hdRate:91.73, wjRate:99.95, ctRate:48.85, twNum:null,twDen:null},
+    '响水': {twRate:98.9, tyScore:98.18, hdRate:95.65, wjRate:99.98, ctRate:37.51, twNum:null,twDen:null}
   },
   '09-21': {
-    '泰兴': {twRate:99.3, tyScore:91.23, hdRate:98.24, wjRate:99.97, ctRate:48.06, twNum:15390,twDen:15498},
-    '诸暨': {twRate:99.26, tyScore:94.61, hdRate:91.73, wjRate:99.95, ctRate:44.29, twNum:40241,twDen:40540},
+    '泰兴': {twRate:99.32, tyScore:91.23, hdRate:98.24, wjRate:99.97, ctRate:48.06, twNum:15390,twDen:15498},
+    '诸暨': {twRate:99.29, tyScore:94.61, hdRate:91.73, wjRate:99.95, ctRate:44.3, twNum:40241,twDen:40540},
     '响水': {twRate:99.14, tyScore:98.18, hdRate:95.65, wjRate:99.98, ctRate:42.04, twNum:6320,twDen:6375}
   },
   '09-22': {
-    '泰兴': {twRate:99.3, tyScore:91.23, hdRate:98.24, wjRate:99.98, ctRate:48.06, twNum:15390,twDen:15498},
-    '诸暨': {twRate:99.26, tyScore:94.61, hdRate:91.73, wjRate:99.94, ctRate:44.29, twNum:40241,twDen:40540},
-    '响水': {twRate:99.14, tyScore:98.18, hdRate:95.65, wjRate:99.98, ctRate:42.04, twNum:6320,twDen:6375}
+    '泰兴': {twRate:99.24, tyScore:91.23, hdRate:98.24, wjRate:99.98, ctRate:48.37, twNum:15390,twDen:15498},
+    '诸暨': {twRate:99.28, tyScore:94.61, hdRate:91.73, wjRate:99.94, ctRate:41.95, twNum:40241,twDen:40540},
+    '响水': {twRate:99.24, tyScore:98.18, hdRate:95.65, wjRate:99.98, ctRate:44.85, twNum:6320,twDen:6375}
   },
   '09-23': {
-    '泰兴': {twRate:99.31, tyScore:91.23, hdRate:98.24, wjRate:99.99, ctRate:48.06, twNum:15733,twDen:15842},
-    '诸暨': {twRate:99.24, tyScore:94.61, hdRate:91.73, wjRate:99.93, ctRate:44.29, twNum:41012,twDen:41326},
-    '响水': {twRate:99.28, tyScore:98.18, hdRate:95.65, wjRate:99.97, ctRate:42.04, twNum:6243,twDen:6288}
+    '泰兴': {twRate:99.31, tyScore:91.23, hdRate:98.24, wjRate:99.99, ctRate:48.81, twNum:15733,twDen:15842},
+    '诸暨': {twRate:99.27, tyScore:94.61, hdRate:91.73, wjRate:99.93, ctRate:41.85, twNum:41012,twDen:41326},
+    '响水': {twRate:99.28, tyScore:98.18, hdRate:95.65, wjRate:99.97, ctRate:41.61, twNum:6243,twDen:6288}
   },
   '09-24': {
-    '泰兴': {twRate:99.30, tyScore:91.23, hdRate:98.24, wjRate:99.93, ctRate:48.06, twNum:16582,twDen:16594},
-    '诸暨': {twRate:99.26, tyScore:94.61, hdRate:91.73, wjRate:99.83, ctRate:44.29, twNum:40141,twDen:40208},
-    '响水': {twRate:99.28, tyScore:98.18, hdRate:95.65, wjRate:99.93, ctRate:42.04, twNum:7545,twDen:7550}
+    '泰兴': {twRate:99.22, tyScore:91.23, hdRate:98.24, wjRate:99.93, ctRate:49.77, twNum:16582,twDen:16594},
+    '诸暨': {twRate:99.06, tyScore:94.61, hdRate:91.73, wjRate:99.83, ctRate:46.67, twNum:40141,twDen:40208},
+    '响水': {twRate:98.95, tyScore:98.18, hdRate:95.65, wjRate:99.93, ctRate:42.9, twNum:7545,twDen:7550}
   },
   '09-25': {
-    '泰兴': {twRate:98.81, tyScore:91.23, hdRate:98.24, wjRate:99.91, ctRate:48.06, twNum:10629,twDen:10757},
-    '诸暨': {twRate:98.60, tyScore:94.61, hdRate:91.73, wjRate:99.82, ctRate:44.29, twNum:24636,twDen:24986},
-    '响水': {twRate:97.96, tyScore:98.18, hdRate:95.65, wjRate:99.61, ctRate:42.04, twNum:4378,twDen:4469}
+    '泰兴': {twRate:98.65, tyScore:91.23, hdRate:98.24, wjRate:99.91, ctRate:49.3, twNum:10629,twDen:10757},
+    '诸暨': {twRate:98.63, tyScore:94.61, hdRate:91.73, wjRate:99.82, ctRate:50.5, twNum:24636,twDen:24986},
+    '响水': {twRate:98.62, tyScore:98.18, hdRate:95.65, wjRate:99.61, ctRate:50.85, twNum:4378,twDen:4469}
   },
   '09-26': {
-    '泰兴': {twRate:97.09, tyScore:91.23, hdRate:98.24, wjRate:99.06, ctRate:48.06, twNum:11762,twDen:12115},
-    '诸暨': {twRate:98.71, tyScore:94.61, hdRate:91.73, wjRate:99.84, ctRate:44.29, twNum:24802,twDen:25126},
-    '响水': {twRate:98.96, tyScore:98.18, hdRate:95.65, wjRate:99.97, ctRate:42.04, twNum:3809,twDen:3849}
+    '泰兴': {twRate:97.93, tyScore:91.23, hdRate:98.24, wjRate:99.06, ctRate:51.99, twNum:11762,twDen:12115},
+    '诸暨': {twRate:98.16, tyScore:94.61, hdRate:91.73, wjRate:99.84, ctRate:48.59, twNum:24802,twDen:25126},
+    '响水': {twRate:99.07, tyScore:98.18, hdRate:95.65, wjRate:99.97, ctRate:39.17, twNum:3809,twDen:3849}
   },
   '09-27': {
-    '泰兴': {twRate:98.57, tyScore:91.23, hdRate:98.24, wjRate:99.96, ctRate:52.26, twNum:21714,twDen:22030},
-    '诸暨': {twRate:98.49, tyScore:94.61, hdRate:91.73, wjRate:99.87, ctRate:47.62, twNum:48053,twDen:48791},
+    '泰兴': {twRate:98.58, tyScore:91.23, hdRate:98.24, wjRate:99.96, ctRate:52.27, twNum:21714,twDen:22030},
+    '诸暨': {twRate:98.59, tyScore:94.61, hdRate:91.73, wjRate:99.87, ctRate:47.65, twNum:48053,twDen:48791},
     '响水': {twRate:99.01, tyScore:98.18, hdRate:95.65, wjRate:99.99, ctRate:37.61, twNum:9200,twDen:9292}
   },
   '09-28': {
@@ -1752,9 +1984,9 @@ var fullDataByDate = {
     '响水': {twRate:99.06, tyScore:98.18, hdRate:95.65, wjRate:99.9, ctRate:38.72, twNum:7562,twDen:7634}
   },
   '09-30': {
-    '泰兴': {twRate:98.19, tyScore:91.23, hdRate:98.24, wjRate:99.96, ctRate:48.39, twNum:19955,twDen:20323},
-    '诸暨': {twRate:98.41, tyScore:94.61, hdRate:91.73, wjRate:99.52, ctRate:45.41, twNum:46711,twDen:47464},
-    '响水': {twRate:99.02, tyScore:98.18, hdRate:95.65, wjRate:99.9, ctRate:38.90, twNum:8858,twDen:8946}
+    '泰兴': {twRate:98.65, tyScore:91.23, hdRate:98.24, wjRate:99.96, ctRate:48.51, twNum:20046,twDen:20321},
+    '诸暨': {twRate:98.64, tyScore:94.61, hdRate:91.73, wjRate:99.52, ctRate:45.48, twNum:46815,twDen:47462},
+    '响水': {twRate:99.24, tyScore:98.18, hdRate:95.65, wjRate:99.9, ctRate:38.98, twNum:8876,twDen:8944}
   }
 };
 
@@ -1818,6 +2050,7 @@ function switchPeriod(p) {
   fillBIDataTable();
   updateModuleInputs();
   renderTrendTable();
+  renderYmWeekly();
   updateTrendHighlight();
   renderCalendar();
   renderTrendChart();
@@ -1886,7 +2119,7 @@ function shiftDate(dir) {
 function updateDateUI() {
   document.getElementById('kpi-date').textContent = dateLabel(currentDate);
   document.getElementById('bi-date-label').textContent = fullDateLabel(currentDate);
-  document.getElementById('bi-note').textContent = '单日数据：' + fullDateLabel(currentDate) + (hasData(currentDate) ? '' : '（暂无数据）') + ' | ▲▼=较前一数据日变化 | 切换城市标签自动联动下方考核模块';
+  document.getElementById('bi-note').textContent = '单日数据：' + fullDateLabel(currentDate) + (hasData(currentDate) ? '' : '（暂无数据）') + ' | ▲▼=较前一数据日变化 | 切换城市标签自动联动下方考核模块 | “—”=官方BI未出数/无权限（不编造）';
   var p = getPeriod(currentDate);
   document.getElementById('kpi-period').textContent = p.label;
   var peakEl = document.getElementById('kpi-peak');
@@ -2017,7 +2250,7 @@ function fillBIDataTable() {
   if (!tbody) return;
 
   if (!hasData(currentDate)) {
-    tbody.innerHTML = '<tr><td colspan="10" style="padding:32px;color:#6b7280;text-align:center;font-size:14px;">\u{1F4C5} 该日期暂无BI数据<br><span style="font-size:12px;">可选择 9/5 \u2013 9/23 查看已采集数据</span></td></tr>';
+    tbody.innerHTML = '<tr><td colspan="17" style="padding:32px;color:#6b7280;text-align:center;font-size:14px;">\u{1F4C5} 该日期暂无BI数据<br><span style="font-size:12px;">可选择 9/5 \u2013 9/23 查看已采集数据</span></td></tr>';
     return;
   }
 
@@ -2043,6 +2276,18 @@ function fillBIDataTable() {
     var hdStr = d.hdRate !== null ? d.hdRate + '%' : '\u2014';
     var wjStr = d.wjRate !== null ? d.wjRate + '%' : '\u2014';
     var ctStr = d.ctRate !== null ? d.ctRate + '%' : '\u2014';
+    var ex = (typeof DAILY_EXTRA !== 'undefined' && DAILY_EXTRA[currentDate]) ? DAILY_EXTRA[currentDate][k] : null;
+    var ymV = (d.ymRate !== null && d.ymRate !== undefined) ? d.ymRate : (ex && ex.ymRate !== undefined ? ex.ymRate : null);
+    var ymCqV = (d.ymCq !== null && d.ymCq !== undefined) ? d.ymCq : (ex && ex.ymCq !== undefined ? ex.ymCq : null);
+    var pzV = (d.pzAct !== null && d.pzAct !== undefined) ? d.pzAct : (ex && ex.pzAct !== undefined ? ex.pzAct : null);
+    var ymStr2 = ymV !== null && ymV !== undefined ? ymV + '%' : '—';
+    var ymCqStr2 = ymCqV !== null && ymCqV !== undefined ? ymCqV + '%' : '—';
+    var pzStr2 = pzV !== null && pzV !== undefined ? pzV : '—';
+    var gzStr = '<td>' + (ex && ex.gzYm != null ? '<span class="' + ((ex.gzYm < 95 || (ex.gzJm != null && ex.gzJm < 95)) ? 'c-red' : '') + '">' + ex.gzYm + '% / ' + ex.gzJm + '%</span>' : '—') + '</td>';
+    var jmdStr = '<td>' + (ex && ex.jmTotal ? '<span class="' + (ex.jmDb < ex.jmTotal ? 'c-red' : '') + '">' + ex.jmDb + ' / ' + ex.jmTotal + '（' + Math.round(ex.jmDb / ex.jmTotal * 100) + '%）</span>' : '—') + '</td>';
+    var kaStr = '<td>' + (ex && ex.qkKAOntime != null ? '<span class="' + (ex.qkKAOntime < 98 ? 'c-red' : '') + '">' + ex.qkKAOntime + '%（' + ex.qkKAStores + '店）</span>' : '—') + '</td>';
+    var dbOk = d.twRate !== null && d.twRate !== undefined && d.twRate >= 98.8;
+    var dbStr = '<td class="' + (d.twRate === null || d.twRate === undefined ? '' : (dbOk ? 'c-green' : 'c-red')) + '">' + (d.twRate === null || d.twRate === undefined ? '—' : (dbOk ? '✓ 达标' : '✗ 未达标')) + '</td>';
     var twNumStr = (d.twNum !== null && d.twDen !== null) ? d.twNum.toLocaleString() + ' / ' + d.twDen.toLocaleString() : '\u2014';
     var scoreStr = '\u2014';
     var levelStr = '\u2014';
@@ -2058,6 +2303,13 @@ function fillBIDataTable() {
       '<td class="' + colorFor(d.hdRate,[95,90]) + '">' + hdStr + deltaSpan(d.hdRate, prevData && prevData[k] ? prevData[k].hdRate : null) + '</td>' +
       '<td class="' + colorFor(d.wjRate,[95,80]) + '">' + wjStr + deltaSpan(d.wjRate, prevData && prevData[k] ? prevData[k].wjRate : null) + '</td>' +
       '<td>' + ctStr + deltaSpan(d.ctRate, prevData && prevData[k] ? prevData[k].ctRate : null) + '</td>' +
+      '<td class="' + colorFor(ymV,[90,80]) + '">' + ymStr2 + '</td>' +
+      '<td>' + ymCqStr2 + '</td>' +
+      '<td>' + pzStr2 + '</td>' +
+      '<td>' + (ex && ex.gzYm != null ? '<span class="' + ((ex.gzYm < 95 || (ex.gzJm != null && ex.gzJm < 95)) ? 'c-red' : '') + '">' + ex.gzYm + '% / ' + ex.gzJm + '%</span>' : '—') + '</td>' +
+      '<td>' + (ex && ex.jmTotal ? '<span class="' + (ex.jmDb < ex.jmTotal ? 'c-red' : '') + '">' + ex.jmDb + ' / ' + ex.jmTotal + '（' + Math.round(ex.jmDb / ex.jmTotal * 100) + '%）</span>' : '—') + '</td>' +
+      '<td>' + (ex && ex.qkKAOntime != null ? '<span class="' + (ex.qkKAOntime < 98 ? 'c-red' : '') + '">' + ex.qkKAOntime + '%（' + ex.qkKAStores + '店）</span>' : '—') + '</td>' +
+      dbStr.replace('<td','<td') +
       '<td>' + twNumStr + '</td>' +
       '<td class="score-cell ' + sc + '">' + scoreStr + '</td>' +
       '<td class="' + sc + '">' + levelStr + '</td>' +
@@ -2067,6 +2319,43 @@ function fillBIDataTable() {
 }
 
 // ===================== 填充趋势表 =====================
+// ===================== 悦跑运力·自然周完成度拆解（方案口径：自然周控制区间） =====================
+var YM_WEEKS = [
+  {label:'第1周', range:'8/31-9/6', days:['09-01','09-02','09-03','09-04','09-05','09-06'], nc:false, partial:true},
+  {label:'第2周', range:'9/7-9/13', days:['09-07','09-08','09-09','09-10','09-11','09-12','09-13'], nc:false},
+  {label:'第3周', range:'9/14-9/20', days:['09-14','09-15','09-16','09-17','09-18','09-19','09-20'], nc:false},
+  {label:'第4周', range:'9/21-9/27', days:['09-21','09-22','09-23','09-24','09-25','09-26','09-27'], nc:false}
+];
+function renderYmWeekly() {
+  var box = document.getElementById('ym-weekly-body');
+  if (!box) return;
+  var cities = ['泰兴','诸暨','响水'];
+  var any = false;
+  var h = '<table class="trend-table" style="min-width:640px;"><thead><tr><th>周次</th><th>周期</th><th>计分口径</th><th>泰兴县</th><th>诸暨市</th><th>响水县</th><th>周均判定</th></tr></thead><tbody>';
+  YM_WEEKS.forEach(function(wk) {
+    var row = '<td style="font-weight:700;">' + wk.label + '</td><td>' + wk.range + (wk.partial ? ' <span style="font-size:10px;color:#6b7280;">(部分)</span>' : '') + '</td>' +
+      '<td>' + (wk.nc ? '<span class="tag tag-orange">新口径</span>' : '<span style="font-size:11px;color:#6b7280;">完成度×出勤系数</span>') + '</td>';
+    var worst = null;
+    cities.forEach(function(c) {
+      var vals = [];
+      wk.days.forEach(function(ds) {
+        var d = dailyByDate[ds] && dailyByDate[ds][c];
+        var v = (d && d.ymRate != null) ? d.ymRate : null;
+        if (v == null && typeof DAILY_EXTRA !== 'undefined' && DAILY_EXTRA[ds] && DAILY_EXTRA[ds][c] && DAILY_EXTRA[ds][c].ymRate != null) { v = DAILY_EXTRA[ds][c].ymRate; }
+        if (v != null) vals.push(v);
+      });
+      var avg = vals.length ? Math.round(vals.reduce(function(a,b){return a+b;},0) / vals.length * 100) / 100 : null;
+      if (avg != null) any = true;
+      if (avg != null && (worst === null || avg < worst)) worst = avg;
+      row += '<td class="' + (avg === null ? '' : (avg < 90 ? 'c-red' : 'c-green')) + '">' + (avg === null ? '<span style="color:#9aa0a6;">待考核</span>' : avg + '%') + '</td>';
+    });
+    row += '<td>' + (worst === null ? '<span style="color:#9aa0a6;">待考核</span>' : (worst < 90 ? '<span style="color:#d93025;font-weight:700;">＜90% 该周记0分风险</span>' : '≥90% 保底')) + '</td>';
+    h += '<tr>' + row + '</tr>';
+  });
+  h += '</tbody></table>';
+  box.innerHTML = any ? h : '<div style="text-align:center;padding:14px;color:#6b7280;font-size:12.5px;">⏳ BI数据发布后自动生成各自然周完成度</div>';
+}
+
 function renderTrendTable() {
   var thead = document.getElementById('trend-header');
   var tbody = document.getElementById('trend-body');
@@ -2156,6 +2445,7 @@ function switchCity(el, name) {
   var kc=document.getElementById('kpi-city'); if(kc) kc.value=name;
   var kcd=document.getElementById('kpi-city-display'); if(kcd) kcd.textContent=name;
   updateModuleInputs();
+  renderModuleMtd();
   calcPreset();
 }
 
@@ -2207,7 +2497,7 @@ function calcScore() {
     var cs = tyCs !== null ? clamp(tyCs, 50, 110) : 0;
     var fk = tyFake !== null ? clamp(tyFake, 50, 100) : 0;
     var cl = tyCancel !== null ? clamp(tyCancel, 50, 110) : 0;
-    var ts = cs * 0.3 + fk * 0.4 + cl * 0.3;
+    var ts = cs * 0.4 + fk * 0.3 + cl * 0.3;
     total += ts * w.ty;
     detail += '体验: ' + ts.toFixed(1) + '% \u00d7 20%\n';
     document.getElementById('ty_score').textContent = ts.toFixed(1) + '%';
@@ -2741,6 +3031,12 @@ function renderIssuesBreakdown() {
     else if (s2.tw.brk.length) items.push('<span class="tag tag-orange">击穿</span> 推完击穿 ' + s2.tw.brk.length + ' 天（其中高峰日 ' + s2.tw.brkPk + ' 天），最低 ' + _fv(s2.tw.min));
     if (s2.wj.min && s2.wj.min.v < 99) items.push('<span class="tag tag-orange">异常日</span> 完结率 ' + s2.wj.min.d.slice(3) + ' 单日 ' + s2.wj.min.v.toFixed(2) + '（全月最低），建议核查是否可报备剔除');
     if (s2.ct.first !== null && s2.ct.last !== null && s2.ct.last - s2.ct.first < -0.5) items.push('<span class="tag tag-orange">运力</span> 承托比 ' + s2.ct.first.toFixed(1) + '%→' + s2.ct.last.toFixed(1) + '%（' + (s2.ct.last-s2.ct.first).toFixed(1) + 'pp），运力供给走弱将拖累 HD');
+    var exL = (typeof DAILY_EXTRA !== 'undefined' && dataDates.length) ? DAILY_EXTRA[dataDates[dataDates.length-1]] : null;
+    var ex = exL ? exL[c] : null;
+    if (ex && ex.gzYm != null && (ex.gzYm < 95 || (ex.gzJm != null && ex.gzJm < 95))) items.push('<span class="tag tag-orange">工装</span> 最新覆盖 悦跑 ' + ex.gzYm + '% / 加盟 ' + ex.gzJm + '%（低于95%观察线，注意抽检扣分口径）');
+    if (ex && ex.jmTotal && ex.jmDb < ex.jmTotal) items.push('<span class="tag tag-orange">达标骑手</span> 加盟达标 ' + ex.jmDb + '/' + ex.jmTotal + '（' + Math.round(ex.jmDb / ex.jmTotal * 100) + '%），人效兜底判定需达标');
+    if (ex && ex.qkKAOntime != null && ex.qkKAOntime < 98) items.push('<span class="tag tag-orange">企客KA</span> 商家准时率 ' + ex.qkKAOntime + '%（' + ex.qkKAStores + '店/' + ex.qkKAWb + '单），低于98%观察线，赔付线按品牌另行判定');
+    if (ex && ex.qkTotal && ex.qkOk < ex.qkTotal) items.push('<span class="tag tag-red">门店体验</span> 企客门店未达标 ' + (ex.qkTotal - ex.qkOk) + '/' + ex.qkTotal + ' 家（门店体验达标扣分为10月新增项，9月不扣分）');
     if (!items.length) items.push('<span class="tag tag-green">正常</span> 暂无显著问题项');
     h += '<tr><td class="city-cell">' + c + '</td><td style="white-space:normal;text-align:left;line-height:2;">' + items.join('<br>') + '</td></tr>';
   });
@@ -2859,12 +3155,26 @@ function calcPreset() {
 }
 
 // ===================== 指标走势图（三城对比，SVG） =====================
+function _dex(ds, c, key) {
+  if (typeof DAILY_EXTRA === 'undefined' || !DAILY_EXTRA[ds] || !DAILY_EXTRA[ds][c]) return null;
+  var e = DAILY_EXTRA[ds][c];
+  if (!key) return e;
+  var v = e[key];
+  return (v === null || v === undefined) ? null : v;
+}
 var tcMetrics = [
   {id:'tw', name:'推单完成率', unit:'%', get:function(c, ds){ var i = dataDates.indexOf(ds); var v = trendRaw[c].tw[i]; return (v===undefined?null:v); }},
   {id:'ty', name:'体验考核分', unit:'', get:function(c, ds){ var i = dataDates.indexOf(ds); var v = trendRaw[c].ty[i]; return (v===undefined?null:v); }},
   {id:'hd', name:'HD完成率', unit:'%', get:function(c, ds){ var i = dataDates.indexOf(ds); var v = trendRaw[c].hd[i]; return (v===undefined?null:v); }},
   {id:'ct', name:'承托比', unit:'%', get:function(c, ds){ var fd = fullDataByDate[ds]; return (fd && fd[c]) ? fd[c].ctRate : null; }},
-  {id:'wj', name:'完结率', unit:'%', get:function(c, ds){ var fd = fullDataByDate[ds]; return (fd && fd[c]) ? fd[c].wjRate : null; }}
+  {id:'wj', name:'完结率', unit:'%', get:function(c, ds){ var fd = fullDataByDate[ds]; return (fd && fd[c]) ? fd[c].wjRate : null; }},
+  {id:'ym', name:'悦跑完成度', unit:'%', get:function(c, ds){ var fd = fullDataByDate[ds]; return (fd && fd[c] && fd[c].ymRate!=null) ? fd[c].ymRate : _dex(ds,c,'ymRate'); }},
+  {id:'ymcq', name:'悦跑出勤率', unit:'%', get:function(c, ds){ return _dex(ds,c,'ymCq'); }},
+  {id:'pz', name:'普众活跃骑手', unit:'人', get:function(c, ds){ return _dex(ds,c,'pzAct'); }},
+  {id:'gzym', name:'工装覆盖·悦跑', unit:'%', get:function(c, ds){ return _dex(ds,c,'gzYm'); }},
+  {id:'gzjm', name:'工装覆盖·加盟', unit:'%', get:function(c, ds){ return _dex(ds,c,'gzJm'); }},
+  {id:'jmd', name:'加盟达标骑手率', unit:'%', get:function(c, ds){ var e=_dex(ds,c); return (e && e.jmTotal) ? Math.round(e.jmDb / e.jmTotal * 10000) / 100 : null; }},
+  {id:'ka', name:'企客KA准时率', unit:'%', get:function(c, ds){ return _dex(ds,c,'qkKAOntime'); }}
 ];
 var tcCityColors = {'泰兴':'#1a73e8', '诸暨':'#e8710a', '响水':'#188038'};
 var tcCurrent = 'hd'; // 默认展示 HD完成率（权重50%的P0核心考核指标）
@@ -2968,6 +3278,8 @@ function renderTrendChart() {
   }
   if (m.id === 'hd') refLine(90, '90% 零分警戒线');
   if (m.id === 'tw') refLine(98.8, '98.8% 兜底线');
+  if (m.id === 'ym' || m.id === 'jmd') refLine(90, '90% 控制线');
+  if (m.id === 'gzym' || m.id === 'gzjm') refLine(95, '95% 观察线');
   var step = Math.max(1, Math.ceil(n / 16));
   fd.forEach(function(ds, i) {
     if (i % step !== 0 && i !== n - 1) return;
@@ -3216,6 +3528,7 @@ renderCalendar();
 updateDateUI();
 fillBIDataTable();
 renderTrendTable();
+  renderYmWeekly();
 updateTrendHighlight();
 initTrendChart();
 // 默认选中泰兴
@@ -3232,10 +3545,90 @@ renderMonthBars();
 renderGapChart();
 renderBreachChart();
 renderDataHealth();
+renderMtdEval();
+renderQkkaSka();
+renderNextMonth();
 // 数据分析维度惰性加载（首次切换到该Tab时才渲染）
 // 初始化预估测算器
 calcPreset();
 </script>
 
+<script id="daily-extra-data">
+var DAILY_EXTRA={"09-01": {"泰兴": {"ymRate": 94.95}, "响水": {"ymRate": 98.15}, "诸暨": {"ymRate": 91.87}}, "09-02": {"泰兴": {"ymRate": 79.8}, "诸暨": {"ymRate": 85.77}, "响水": {"ymRate": 90.74}}, "09-03": {"泰兴": {"ymRate": 81.82}, "响水": {"ymRate": 90.74}, "诸暨": {"ymRate": 85.37}}, "09-04": {"响水": {"ymRate": 92.59}, "泰兴": {"ymRate": 87.88}, "诸暨": {"ymRate": 88.62}}, "09-05": {"响水": {"ymRate": 94.44}, "诸暨": {"ymRate": 89.43}, "泰兴": {"ymRate": 90.91}}, "09-06": {"泰兴": {"ymRate": 92.93}, "诸暨": {"ymRate": 89.84}, "响水": {"ymRate": 96.3}}, "09-07": {"响水": {"ymRate": 87.72}, "诸暨": {"ymRate": 89.79}, "泰兴": {"ymRate": 88.12}}, "09-08": {"诸暨": {"ymRate": 87.66}, "响水": {"ymRate": 82.46}, "泰兴": {"ymRate": 85.15}}, "09-09": {"诸暨": {"ymRate": 80.85}, "响水": {"ymRate": 77.19}, "泰兴": {"ymRate": 79.21}}, "09-10": {"诸暨": {"ymRate": 82.13}, "响水": {"ymRate": 78.95}, "泰兴": {"ymRate": 77.23}}, "09-11": {"响水": {"ymRate": 91.23}, "泰兴": {"ymRate": 89.11}, "诸暨": {"ymRate": 89.36}}, "09-12": {"响水": {"ymRate": 92.98}, "诸暨": {"ymRate": 90.21}, "泰兴": {"ymRate": 90.1}}, "09-13": {"诸暨": {"ymRate": 91.91}, "泰兴": {"ymRate": 94.06}, "响水": {"ymRate": 92.98}}, "09-14": {"响水": {"ymRate": 96.36}, "泰兴": {"ymRate": 80.7}, "诸暨": {"ymRate": 87.97}}, "09-15": {"响水": {"ymRate": 94.55}, "诸暨": {"ymRate": 85.48}, "泰兴": {"ymRate": 80.7}}, "09-16": {"响水": {"ymRate": 94.55}, "泰兴": {"ymRate": 78.95}, "诸暨": {"ymRate": 80.91}}, "09-17": {"诸暨": {"ymRate": 80.91}, "响水": {"ymRate": 90.91}, "泰兴": {"ymRate": 78.07}}, "09-18": {"泰兴": {"ymRate": 88.6}, "诸暨": {"ymRate": 90.04}, "响水": {"ymRate": 92.73}}, "09-19": {"诸暨": {"ymRate": 92.95}, "泰兴": {"ymRate": 91.23}, "响水": {"ymRate": 92.73}}, "09-20": {"诸暨": {"ymRate": 93.78}, "泰兴": {"ymRate": 92.11}, "响水": {"ymRate": 92.73}}, "09-21": {"泰兴": {"ymRate": 92.79}, "诸暨": {"ymRate": 76.82}, "响水": {"ymRate": 87.93}}, "09-22": {"诸暨": {"ymRate": 75.09}, "响水": {"ymRate": 86.21}, "泰兴": {"ymRate": 90.09}}, "09-23": {"响水": {"ymRate": 82.76}, "泰兴": {"ymRate": 82.88}, "诸暨": {"ymRate": 70.24}}, "09-24": {"泰兴": {"ymRate": 81.98}, "响水": {"ymRate": 84.48}, "诸暨": {"ymRate": 69.55}}, "09-25": {"诸暨": {"ymRate": 84.78}, "响水": {"ymRate": 91.38}, "泰兴": {"ymRate": 87.39}}, "09-26": {"泰兴": {"ymRate": 88.29}, "诸暨": {"ymRate": 85.47}, "响水": {"ymRate": 91.38}}, "09-27": {"诸暨": {"ymRate": 85.81}, "响水": {"ymRate": 96.55}, "泰兴": {"ymRate": 91.89}}, "09-28": {"诸暨": {"ymRate": 85.51}, "响水": {"ymRate": 96.49}, "泰兴": {"ymRate": 83.78}}, "09-29": {"响水": {"ymRate": 96.49}, "诸暨": {"ymRate": 82.33}, "泰兴": {"ymRate": 84.68}}, "09-30": {"响水": {"ymRate": 92.98, "gzYm": 88.68, "gzJm": 98.8}, "泰兴": {"ymRate": 75.68, "gzYm": 66.98, "gzJm": 95.1}, "诸暨": {"ymRate": 79.15, "gzYm": 66.54, "gzJm": 99.53}}};
+(function(){
+  function __qkCardsFill() {
+  var el = document.getElementById('qk-monthly-tbody');
+  if (el && typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) {
+    var h = '';
+    Object.keys(QKKA_MONTH).forEach(function(c){ var v = QKKA_MONTH[c];
+      h += '<tr><td><b>' + c + '</b></td><td>' + v.period + '</td><td>' + v.stores + '</td>'
+        + '<td>' + v.ok + '（' + v.okRatio + '%）</td>'
+        + '<td>' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
+        + '<td>' + v.brands + '品牌/' + v.stations + '站点</td></tr>';
+    });
+    h += '<tr><td><b>诸暨</b></td><td colspan="5" style="color:#9aa0a6;">⏳ 待数据（企客KA维值权限申请中）</td></tr>';
+    el.innerHTML = h;
+  }
+  var snap = document.getElementById('qk-daily-snap');
+  if (snap) {
+    var days = (typeof DAILY_EXTRA !== 'undefined') ? Object.keys(DAILY_EXTRA).sort() : [];
+    var s = '';
+    for (var i = days.length - 1; i >= 0; i--) {
+      var f = DAILY_EXTRA[days[i]];
+      var parts = [];
+      Object.keys(f).forEach(function(c){ var e = f[c]; if (e && e.qkKAOntime != null) parts.push(c + ' ' + e.qkKAOntime + '%（' + e.qkKAStores + '店）'); });
+      if (parts.length) { s = '最新KA快照 ' + days[i] + '：' + parts.join(' · '); break; }
+    }
+    if (!s && typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) {
+      var p2 = [];
+      Object.keys(QKKA_MONTH).forEach(function(c){ var v = QKKA_MONTH[c]; if (v.rate != null) p2.push(c + ' ' + v.rate + '%（' + v.stores + '店）'); });
+      s = '最新KA累计：' + p2.join(' · ');
+    }
+    snap.textContent = s || '';
+  }
+  }
+  if (document.readyState === 'complete') { __qkCardsFill(); }
+  else { window.addEventListener('load', __qkCardsFill); }
+})();
+(function(){
+  function __biMonthMini(){
+    var el = document.getElementById('bi-month-mini');
+    if (!el || typeof MTD_EVAL === 'undefined' || !MTD_EVAL || !MTD_EVAL.cities) return;
+    var isMonth = MTD_EVAL.mode === 'month';
+    var _f = function(v, suf){ return (v === null || v === undefined) ? '<span style="color:#9aa0a6">—</span>' : v + (suf||''); };
+    var h = '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">📊 月维度速览（' + (isMonth ? '月评估·整月核算' : '月预计·MTD累计，月末自动切换为月评估') + '，数据截至 ' + MTD_EVAL.date.slice(4,6) + '-' + MTD_EVAL.date.slice(6) + '）</div>';
+    h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>已采集天数</th><th>MTD近似总分</th><th>主因模块</th><th>悦跑均完成度</th><th>悦跑最差周均</th><th>企客KA最新</th><th>HD最新</th><th>体验最新</th><th>完结率均</th></tr></thead><tbody>';
+    Object.keys(MTD_EVAL.cities).forEach(function(c){
+      var v = MTD_EVAL.cities[c]; if (!v) return;
+      var scCol = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
+      h += '<tr><td><b>' + c + '</b></td><td>' + v.days + '</td>'
+        + '<td style="color:' + scCol + ';font-weight:700;">' + _f(v.score != null ? v.score.toFixed(2) : null) + '</td>'
+        + '<td>' + (v.mainMod || '—') + (v.mainGap != null ? '（缺' + v.mainGap + '分）' : '') + '</td>'
+        + '<td>' + _f(v.ymAvg, '%') + '</td>'
+        + '<td>' + (v.ymWeekWorst != null && v.ymWeekWorst < 90 ? '<span class="c-red">' + v.ymWeekWorst + '%</span>' : _f(v.ymWeekWorst, '%')) + '</td>'
+        + '<td>' + (v.qkka || '—') + '</td>'
+        + '<td>' + (v.hdLast != null ? v.hdLast + '%' : '<span style="color:#9aa0a6">待发布</span>') + '</td>'
+        + '<td>' + (v.tyLast != null ? v.tyLast : '<span style="color:#9aa0a6">待发布</span>') + '</td>'
+        + '<td>' + (v.wjAvg != null ? v.wjAvg + '%' : '<span style="color:#9aa0a6">待发布</span>') + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+    h += '<div style="font-size:11px;color:#6b7280;margin-top:4px;">完整月度评估明细见「月维度」视图的月度评估卡。</div>';
+    el.innerHTML = h;
+  }
+  if (document.readyState === 'complete') { __biMonthMini(); }
+  else { window.addEventListener('load', __biMonthMini); }
+})();
+renderYmWeekly();
+if (typeof fillBIDataTable==='function'){try{fillBIDataTable();}catch(e){}}
+if (typeof renderTrendChart==='function'){try{renderTrendChart();}catch(e){}}
+</script>
+<script id="mtd-eval-data">
+var MONTH_MODE="month";
+var MTD_EVAL={"month": "2026-09", "date": "20260930", "mode": "month", "peaks": ["09-05", "09-06", "09-12", "09-13", "09-19", "09-25", "09-26", "09-27"], "pbCut": "09-13", "cities": {"响水": {"days": 30, "twAll": 99.14, "twPk": 99.08, "twMin": 98.62, "twBrk": 0, "twP1": 99.2, "twP2": 99.09, "twDbOk": 28, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 43.95, "ctLast": 38.98, "ymAvg": 90.92, "ymWeekWorst": 86.22, "ymcqLast": null, "coef": 1.0, "gzLast": "88.68 / 98.8", "jmDbLast": null, "pzLast": null, "qkTotal": null, "qkOk": null, "qkka": null, "score": 99.82, "gap": 0.18, "div": 1.0, "mainMod": "推完", "mainGap": 0.18, "hdZero": 0, "ymBrk": 8, "twBrkDb": 2}, "泰兴": {"days": 30, "twAll": 99.09, "twPk": 98.89, "twMin": 97.93, "twBrk": 0, "twP1": 99.22, "twP2": 98.99, "twDbOk": 24, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 57.56, "ctLast": 48.51, "ymAvg": 86.04, "ymWeekWorst": 81.38, "ymcqLast": null, "coef": 1.0, "gzLast": "66.98 / 95.1", "jmDbLast": null, "pzLast": null, "qkTotal": null, "qkOk": null, "qkka": null, "score": 99.78, "gap": 0.22, "div": 1.0, "mainMod": "推完", "mainGap": 0.22, "hdZero": 0, "ymBrk": 20, "twBrkDb": 6}, "诸暨": {"days": 30, "twAll": 99.02, "twPk": 98.83, "twMin": 98.16, "twBrk": 0, "twP1": 99.08, "twP2": 98.97, "twDbOk": 24, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 49.24, "ctLast": 45.48, "ymAvg": 84.99, "ymWeekWorst": 78.25, "ymcqLast": null, "coef": 1.0, "gzLast": "66.54 / 99.53", "jmDbLast": null, "pzLast": null, "qkTotal": null, "qkOk": null, "qkka": null, "score": 99.77, "gap": 0.23, "div": 1.0, "mainMod": "推完", "mainGap": 0.23, "hdZero": 0, "ymBrk": 24, "twBrkDb": 6}}};
+var QKKA_BRAND={"泰兴":{"date":"20260901-0930","brands":{"星巴克":{"stores":4,"wb":7415,"ontime":96.05,"ska":"星巴克","line":93.0,"hit":false,"watch":true},"老百姓":{"stores":10,"wb":2873,"ontime":94.88,"ska":null,"line":null,"hit":false,"watch":true},"益丰大药房":{"stores":9,"wb":2101,"ontime":96.81,"ska":null,"line":null,"hit":false,"watch":true},"古茗":{"stores":8,"wb":507,"ontime":98.42,"ska":null,"line":null,"hit":false,"watch":false},"名创优品":{"stores":2,"wb":401,"ontime":93.52,"ska":null,"line":null,"hit":false,"watch":true},"喜茶小程序":{"stores":3,"wb":264,"ontime":96.21,"ska":null,"line":null,"hit":false,"watch":true},"茉莉奶白":{"stores":3,"wb":187,"ontime":95.72,"ska":null,"line":null,"hit":false,"watch":true},"1点点":{"stores":5,"wb":171,"ontime":97.08,"ska":null,"line":null,"hit":false,"watch":true},"cotticoffee":{"stores":7,"wb":164,"ontime":98.78,"ska":null,"line":null,"hit":false,"watch":false},"锅圈食汇":{"stores":6,"wb":138,"ontime":97.83,"ska":null,"line":null,"hit":false,"watch":true},"孩子王":{"stores":1,"wb":110,"ontime":90.0,"ska":null,"line":null,"hit":false,"watch":true},"屈臣氏":{"stores":5,"wb":99,"ontime":96.97,"ska":null,"line":null,"hit":false,"watch":true},"百果园":{"stores":5,"wb":84,"ontime":96.43,"ska":null,"line":null,"hit":false,"watch":true},"到餐深圳":{"stores":4,"wb":63,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"紫燕百味鸡":{"stores":6,"wb":55,"ontime":96.36,"ska":null,"line":null,"hit":false,"watch":true},"菜老包":{"stores":6,"wb":44,"ontime":90.91,"ska":null,"line":null,"hit":false,"watch":true},"爷爷不泡茶":{"stores":2,"wb":44,"ontime":97.73,"ska":null,"line":null,"hit":false,"watch":true},"京东酒世界":{"stores":1,"wb":42,"ontime":90.48,"ska":null,"line":null,"hit":false,"watch":true},"菜阿婆":{"stores":6,"wb":26,"ontime":96.15,"ska":null,"line":null,"hit":false,"watch":true},"小米之家":{"stores":5,"wb":20,"ontime":95.0,"ska":null,"line":null,"hit":false,"watch":true},"茉酸奶":{"stores":1,"wb":18,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"星巴克门店调拨":{"stores":3,"wb":15,"ontime":100.0,"ska":"星巴克","line":93.0,"hit":false,"watch":false},"沪上阿姨":{"stores":7,"wb":12,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"华莱士":{"stores":5,"wb":9,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"大参林药房":{"stores":1,"wb":4,"ontime":75.0,"ska":null,"line":null,"hit":false,"watch":true},"百胜门店调拨":{"stores":7,"wb":4,"ontime":50.0,"ska":"肯德基","line":90.0,"hit":true,"watch":false},"茶百道":{"stores":1,"wb":3,"ontime":66.67,"ska":null,"line":null,"hit":false,"watch":true},"华为":{"stores":3,"wb":3,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"美得得":{"stores":2,"wb":2,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"Tims Coffee House":{"stores":1,"wb":1,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"味之绝":{"stores":2,"wb":1,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"挪瓦咖啡":{"stores":1,"wb":0,"ontime":null,"ska":null,"line":null,"hit":false,"watch":false},"窑鸡王":{"stores":1,"wb":0,"ontime":null,"ska":null,"line":null,"hit":false,"watch":false},"Coco都可茶饮":{"stores":1,"wb":0,"ontime":null,"ska":null,"line":null,"hit":false,"watch":false},"惠宜选闪送-华北-新供给":{"stores":1,"wb":0,"ontime":null,"ska":null,"line":null,"hit":false,"watch":false},"青云-聚合送":{"stores":2,"wb":0,"ontime":null,"ska":null,"line":null,"hit":false,"watch":false}}},"响水":{"date":"20260901-0930","brands":{"星巴克":{"stores":1,"wb":2138,"ontime":99.2,"ska":"星巴克","line":93.0,"hit":false,"watch":false},"古茗":{"stores":5,"wb":537,"ontime":99.63,"ska":null,"line":null,"hit":false,"watch":false},"爷爷不泡茶":{"stores":2,"wb":105,"ontime":99.05,"ska":null,"line":null,"hit":false,"watch":false},"喜茶小程序":{"stores":2,"wb":101,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"塔斯汀超级汉堡":{"stores":1,"wb":56,"ontime":98.21,"ska":null,"line":null,"hit":false,"watch":false},"茉莉奶白":{"stores":2,"wb":54,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"1点点":{"stores":1,"wb":44,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"cotticoffee":{"stores":1,"wb":28,"ontime":96.43,"ska":null,"line":null,"hit":false,"watch":true},"百胜门店调拨":{"stores":3,"wb":27,"ontime":100.0,"ska":"肯德基","line":90.0,"hit":false,"watch":false},"茶百道":{"stores":1,"wb":24,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"沪上阿姨":{"stores":5,"wb":21,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"小米之家":{"stores":2,"wb":10,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"琦王花生":{"stores":1,"wb":10,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"茉酸奶":{"stores":1,"wb":9,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"华为":{"stores":2,"wb":7,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"到餐厦门":{"stores":2,"wb":6,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"名创优品":{"stores":1,"wb":5,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"紫燕百味鸡":{"stores":2,"wb":2,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"柠季":{"stores":1,"wb":2,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"菜老包":{"stores":1,"wb":1,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"悸动烧仙草":{"stores":1,"wb":1,"ontime":100.0,"ska":null,"line":null,"hit":false,"watch":false},"挪瓦咖啡":{"stores":1,"wb":0,"ontime":null,"ska":null,"line":null,"hit":false,"watch":false}}}};
+var QKKA_MONTH={"泰兴":{"period":"20260901-0930","stores":117,"ok":90,"okRatio":76.9,"ontimeWb":14277,"doneWb":14880,"rate":95.95,"brands":36,"stations":4},"响水":{"period":"20260901-0930","stores":37,"ok":37,"okRatio":100.0,"ontimeWb":3166,"doneWb":3188,"rate":99.31,"brands":22,"stations":4}};
+var SKA_LINES={"瑞幸": 99.0, "肯德基": 90.0, "必胜客": 90.0, "麦当劳": 90.0, "星巴克": 93.0, "沃尔玛": 95.0};
+if (typeof renderMtdEval==='function'){try{['renderMtdEval','renderQkkaSka','renderSkaSix','renderSkaDaily','renderSkaReport','renderModuleOverview','renderNextMonth'].forEach(function(f){if(typeof window[f]==='function'){try{window[f]();}catch(e2){console.warn(f,e2);}}});}catch(e){}}
+</script>
 </body>
 </html>
