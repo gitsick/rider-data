@@ -3638,7 +3638,7 @@ var tcMetrics = [
   {id:'ka', name:'企客KA准时率', unit:'%', get:function(c, ds){ return _dex(ds,c,'qkKAOntime'); }}
 ];
 var tcCityColors = {'泰兴':'#1a73e8', '诸暨':'#e8710a', '响水':'#188038'};
-var tcCurrent = 'hd'; // 默认展示 HD完成率（权重15%；悦跑30%为最大权重，数据待接入）
+var tcCurrent = 'tw'; // 默认展示推单完成率（日更指标；10月 HD/体验分待 BI 发布后再切换查看）
 var tcChartType = 'line'; // 走势图类型：line=折线 bar=柱状
 var PB_CUT = ({ '09': '13', '10': '18' })[(dataDates[0] || '').slice(0, 2)] || '13'; // 两期对比第1期截止日（9月:9/13；10月:10/18），空数据安全
 var DATA_YEAR = 2026; // 数据年份（完整性自检断档校验用）
@@ -3700,13 +3700,13 @@ function renderTrendChart() {
   if (!m) m = tcMetrics[0];
   var fd = getFilteredDates();
   var n = fd.length;
-  if (!n) { svg.innerHTML = '<text x="500" y="150" text-anchor="middle" class="tc-tick" font-size="13">该周期暂无数据</text>'; return; }
+  if (!n) { svg.innerHTML = '<text x="500" y="143" text-anchor="middle" class="tc-tick" font-size="13">该周期暂无数据</text><text x="500" y="165" text-anchor="middle" class="tc-tick" font-size="11" fill="#9aa0a6">可点击上方其他指标查看（推单完成率为日更指标）</text>'; return; }
   var series = {}, vals = [];
   Object.keys(cityInfo).forEach(function(c) {
     series[c] = fd.map(function(ds){ var v = m.get(c, ds); return (v === null || v === undefined) ? null : v; });
     series[c].forEach(function(v){ if (v !== null) vals.push(v); });
   });
-  if (!vals.length) { svg.innerHTML = '<text x="500" y="150" text-anchor="middle" class="tc-tick" font-size="13">该周期暂无数据</text>'; return; }
+  if (!vals.length) { svg.innerHTML = '<text x="500" y="143" text-anchor="middle" class="tc-tick" font-size="13">该周期暂无数据</text><text x="500" y="165" text-anchor="middle" class="tc-tick" font-size="11" fill="#9aa0a6">可点击上方其他指标查看（推单完成率为日更指标）</text>'; return; }
   var vmin = Math.min.apply(null, vals), vmax = Math.max.apply(null, vals);
   var span = (vmax - vmin) || 1;
   vmin = Math.floor((vmin - span * 0.18) * 10) / 10;
