@@ -849,8 +849,21 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div style="font-size:12px;line-height:1.75;color:#374151;">
 流失有效门店≥1家：扣3%（原5%）；新签履约品牌门店1家+2%（最高+3%）；门店体验达标≤3家≥1家或>3家≥2家：扣2%；体验&推完指标剔除企客麦肯必瑞订单。
     <div style="margin-top:4px;font-size:11.5px;color:#9aa0a6;">🟣 诸暨：⏳ 待数据（企客KA维值权限申请中）</div>
-    <div style="margin-top:6px;font-size:11px;color:#6b7280;">完整品牌履约评估预警见「分析报告」视图；数据来源：品牌x商家x履约站-履约明细（ID 17805）</div>
+    <div style="margin-top:6px;font-size:11px;color:#6b7280;">完整品牌履约评估预警见「月维度」页签；数据来源：品牌x商家x履约站-履约明细（ID 17805）</div>
   </div>
+</div>
+<div class="section-label">🤝 企客SKA · 天维度明细与趋势</div>
+<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+  <div class="card-title"><span class="icon">📈</span>企客SKA · 月底天维度（品牌×城市 每日准时率明细 · 门店对应校验）</div>
+  <div style="font-size:11px;margin-bottom:8px;"><a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度数据源：企客KA履约监控（BI 253744）</a></div>
+  <div id="ska-daily-box"></div>
+  <div id="ska-check-box"></div>
+</div>
+<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+  <div class="card-title"><span class="icon">📊</span>企客SKA · 数据图表（天维度趋势）</div>
+  <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;color:#444;margin-bottom:4px;">每日加权准时率（%）</div><canvas id="ska-cv-rate"></canvas></div>
+  <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;"><div style="font-size:12px;font-weight:700;color:#444;margin-bottom:4px;">每日配送单量（单）</div><canvas id="ska-cv-vol"></canvas></div>
+  <div style="font-size:10.5px;color:#6b7280;margin-top:6px;">准时率=客户考核准时运单量/配送完成运单量（当日城市汇总）；虚线为赔付/预警参考线；红点=当日低于90%；数据随每日流水线刷新。</div>
 </div>
 </div>
 
@@ -1446,8 +1459,45 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <thead><tr><th>城市</th><th>统计期</th><th>KA门店</th><th>达标门店（≥95%）</th><th>准时率</th><th>覆盖</th></tr></thead>
       <tbody id="qk-monthly-tbody"><tr><td colspan="6" style="text-align:center;color:#6b7280;">数据待接入</td></tr></tbody>
     </table></div>
-    <div style="margin-top:6px;font-size:11px;color:#6b7280;">准时率=客户考核准时运单量/配送完成运单量（累计）；完整品牌明细与赔付预警见「分析报告」视图</div>
+    <div style="margin-top:6px;font-size:11px;color:#6b7280;">准时率=客户考核准时运单量/配送完成运单量（累计）；完整品牌评估预警与门店考核值赔付预估见下方卡片</div>
   </div>
+</div>
+<div class="section-label">🤝 企客SKA · 月维度评估与赔付</div>
+<div class="card" id="sec-qkka" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+    <div class="card-title"><span class="icon">🤝</span>企客门店体验 · SKA品牌KPI赔付规则解读与评估预警</div>
+    <div id="qkka-warn-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">评估预警加载中…</div></div>
+    <details style="margin-top:10px;">
+      <summary style="cursor:pointer;font-size:12.5px;font-weight:700;color:#1967d2;">📖 规则解读（点开查看口径与扣罚标准，来源：10月考核方案 + 《下沉SKA品牌KPI赔付规则》）</summary>
+      <div style="font-size:12px;color:#444;line-height:1.9;margin-top:8px;">
+        <b>一、企客有效门店与流失（总分扣分项）</b><br>
+        · 有效门店：日均10单以上门店（含考核月内新签）；口径=麦肯必瑞星沃企客服务包有效门店<br>
+        · 流失定义：仅限因<b>体验问题</b>不再使用美配的门店（停业/低单未发单不算）；流失日期=美配首次未发单日（7天未发单即流失）<br>
+        · 流失扣分：流失有效门店≥1家，总分扣<b>3%</b>（10月调整，原5%）；未流失/无企客门店不扣分<br>
+        · 新签加分：当月新签履约承接品牌有效门店1家，加<b>2%</b>，最高加3%<br>
+        <b>二、企客门店品牌体验达标（扣分项）</b><br>
+        · 品牌体验指标及达标定义：按《SKA考核指标口径和看板》（学城 2741734785）执行；数据路径：企客体验明细看板 269707<br>
+        · 扣分规则：城市门店≤3家且未达标≥1家 → 扣2%；门店>3家且未达标≥2家 → 扣2%；门店全部达标不扣分<br>
+        <b>三、SKA品牌KPI赔付（2026-07-01起执行，罚款对象为合作商，严禁转嫁骑手）</b><br>
+        <table class="dt" style="font-size:11.5px;">
+          <thead><tr><th>品牌</th><th>准时率扣罚口径（门店月维度）</th><th>客诉率</th><th>配送原因取消率</th></tr></thead>
+          <tbody>
+            <tr><td>肯德基</td><td>准点率<90% 或 送达违规率>4%</td><td>—</td><td>服务商原因删单，按完单量区间 250~10000 元分档</td></tr>
+            <tr><td>必胜客</td><td>准点率<90% 或 送达违规率>2%</td><td>迟到投诉率>0.25%</td><td>同上分档</td></tr>
+            <tr><td>麦当劳</td><td>准时率<90%</td><td>其他投诉</td><td>同上分档</td></tr>
+            <tr><td style="color:#b71c1c;font-weight:700;">瑞幸</td><td style="color:#b71c1c;font-weight:700;">准时率<99%（最严）</td><td>配送客诉率>1%</td><td>—</td></tr>
+            <tr><td>星巴克</td><td>准点率<93%</td><td>客诉率>0（骑手责任场景细列）</td><td>—</td></tr>
+            <tr><td>沃尔玛</td><td>准时率分档（95-97%亏1500元起）</td><td>客诉率<0.04%</td><td>删单分档，最高2000元</td></tr>
+          </tbody>
+        </table>
+        · 客诉/取消率按月完单量区间扣 200~2550 元不等；赔付金额详见学城原文（本表为口径摘要）<br>
+        · 注：赔付规则与预警/流失要求不完全一致，日常追踪以《SKA考核指标口径和看板》为准
+      </div>
+    </details>
+  </div>
+<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+  <div class="card-title"><span class="icon">📅</span>企客SKA · 月维度（六品牌总览 · 门店考核值 · 赔付预估）</div>
+  <div style="font-size:11px;margin-bottom:8px;"><a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a><span style="color:#6b7280;"> ｜ 门店明细补充：品牌x商家x履约站-履约明细（ID 17805）</span></div>
+  <div id="ska-six-box"></div>
 </div>
 </div>
 
@@ -1525,59 +1575,11 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         </div>
       </div>
     </div>
-<div class="section-label">🤝 企客SKA 专区</div>
-<div class="card" id="sec-qkka" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-    <div class="card-title"><span class="icon">🤝</span>企客门店体验 · SKA品牌KPI赔付规则解读与评估预警</div>
-    <div id="qkka-warn-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">评估预警加载中…</div></div>
-    <details style="margin-top:10px;">
-      <summary style="cursor:pointer;font-size:12.5px;font-weight:700;color:#1967d2;">📖 规则解读（点开查看口径与扣罚标准，来源：10月考核方案 + 《下沉SKA品牌KPI赔付规则》）</summary>
-      <div style="font-size:12px;color:#444;line-height:1.9;margin-top:8px;">
-        <b>一、企客有效门店与流失（总分扣分项）</b><br>
-        · 有效门店：日均10单以上门店（含考核月内新签）；口径=麦肯必瑞星沃企客服务包有效门店<br>
-        · 流失定义：仅限因<b>体验问题</b>不再使用美配的门店（停业/低单未发单不算）；流失日期=美配首次未发单日（7天未发单即流失）<br>
-        · 流失扣分：流失有效门店≥1家，总分扣<b>3%</b>（10月调整，原5%）；未流失/无企客门店不扣分<br>
-        · 新签加分：当月新签履约承接品牌有效门店1家，加<b>2%</b>，最高加3%<br>
-        <b>二、企客门店品牌体验达标（扣分项）</b><br>
-        · 品牌体验指标及达标定义：按《SKA考核指标口径和看板》（学城 2741734785）执行；数据路径：企客体验明细看板 269707<br>
-        · 扣分规则：城市门店≤3家且未达标≥1家 → 扣2%；门店>3家且未达标≥2家 → 扣2%；门店全部达标不扣分<br>
-        <b>三、SKA品牌KPI赔付（2026-07-01起执行，罚款对象为合作商，严禁转嫁骑手）</b><br>
-        <table class="dt" style="font-size:11.5px;">
-          <thead><tr><th>品牌</th><th>准时率扣罚口径（门店月维度）</th><th>客诉率</th><th>配送原因取消率</th></tr></thead>
-          <tbody>
-            <tr><td>肯德基</td><td>准点率<90% 或 送达违规率>4%</td><td>—</td><td>服务商原因删单，按完单量区间 250~10000 元分档</td></tr>
-            <tr><td>必胜客</td><td>准点率<90% 或 送达违规率>2%</td><td>迟到投诉率>0.25%</td><td>同上分档</td></tr>
-            <tr><td>麦当劳</td><td>准时率<90%</td><td>其他投诉</td><td>同上分档</td></tr>
-            <tr><td style="color:#b71c1c;font-weight:700;">瑞幸</td><td style="color:#b71c1c;font-weight:700;">准时率<99%（最严）</td><td>配送客诉率>1%</td><td>—</td></tr>
-            <tr><td>星巴克</td><td>准点率<93%</td><td>客诉率>0（骑手责任场景细列）</td><td>—</td></tr>
-            <tr><td>沃尔玛</td><td>准时率分档（95-97%亏1500元起）</td><td>客诉率<0.04%</td><td>删单分档，最高2000元</td></tr>
-          </tbody>
-        </table>
-        · 客诉/取消率按月完单量区间扣 200~2550 元不等；赔付金额详见学城原文（本表为口径摘要）<br>
-        · 注：赔付规则与预警/流失要求不完全一致，日常追踪以《SKA考核指标口径和看板》为准
-      </div>
-    </details>
-  </div>
-<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-  <div class="card-title"><span class="icon">📅</span>企客SKA · 月维度（六品牌总览 · 门店考核值 · 赔付预估）</div>
-  <div style="font-size:11px;margin-bottom:8px;"><a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a><span style="color:#6b7280;"> ｜ 门店明细补充：品牌x商家x履约站-履约明细（ID 17805）</span></div>
-  <div id="ska-six-box"></div>
-</div>
-<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-  <div class="card-title"><span class="icon">📈</span>企客SKA · 月底天维度（品牌×城市 每日准时率明细 · 门店对应校验）</div>
-  <div style="font-size:11px;margin-bottom:8px;"><a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度数据源：企客KA履约监控（BI 253744）</a></div>
-  <div id="ska-daily-box"></div>
-  <div id="ska-check-box"></div>
-</div>
-<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-  <div class="card-title"><span class="icon">📊</span>企客SKA · 数据图表（天维度趋势）</div>
-  <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;color:#444;margin-bottom:4px;">每日加权准时率（%）</div><canvas id="ska-cv-rate"></canvas></div>
-  <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;"><div style="font-size:12px;font-weight:700;color:#444;margin-bottom:4px;">每日配送单量（单）</div><canvas id="ska-cv-vol"></canvas></div>
-  <div style="font-size:10.5px;color:#6b7280;margin-top:6px;">准时率=客户考核准时运单量/配送完成运单量（当日城市汇总）；虚线为赔付/预警参考线；红点=当日低于90%；数据随每日流水线刷新。</div>
-</div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
   <div class="card-title"><span class="icon">📋</span>企客SKA · 分析报告（整体概览 · 持续预警 · 赔付预判）</div>
   <div id="ska-report-box"></div>
 </div>
+
 <div class="section-label">📐 计分模型</div>
 <div class="card" id="sec-example" style="margin-bottom:16px;background:linear-gradient(135deg,#f8f9fb 0%,#e8f0fe 100%);">
     <div class="card-title"><span class="icon">🧮</span>计分示例框架（画像：都考 · 加盟15% 悦跑30% 普众5% 体验20% 推完20% 完结率10%）</div>
@@ -1954,7 +1956,8 @@ function renderSkaStores() {
   if (typeof SKA_STORES === 'undefined' || !SKA_STORES || !SKA_STORES.months) { box.innerHTML = ''; return; }
   var mkeys = Object.keys(SKA_STORES.months).sort().reverse();
   var h = '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #dbe4f0;">'
-    + '<div style="font-size:12.5px;font-weight:700;color:#b71c1c;margin-bottom:4px;">🔍 商家门店考核值与赔付预结果（月维度）</div>';
+    + '<div style="font-size:12.5px;font-weight:700;color:#b71c1c;margin-bottom:4px;">🔍 商家门店考核值与赔付预结果（月维度）</div>'
+    + '<div style="font-size:11px;color:#6b7280;margin-bottom:4px;">门店明细默认收起，点开各月份可查看每家门店的考核值、预警与赔付预结果。</div>';
   var risk = SKA_STORES.risk || {};
   var rk = Object.keys(risk);
   if (rk.length) {
@@ -1974,8 +1977,8 @@ function renderSkaStores() {
   mkeys.forEach(function(mk, mi) {
     var m = SKA_STORES.months[mk];
     var label = m.label || mk;
-    var open = mi === 0 ? ' open' : '';
-    h += '<details style="margin-top:6px;"' + open + '><summary style="cursor:pointer;font-size:12px;font-weight:700;color:#1967d2;">📅 ' + label + '</summary><div style="margin-top:4px;">';
+    var open = '';
+    h += '<details style="margin-top:6px;"' + open + '><summary style="cursor:pointer;font-size:12px;font-weight:700;color:#1967d2;">📅 ' + label + ' · 点开查看门店明细</summary><div style="margin-top:4px;">';
     Object.keys(m.cities || {}).forEach(function(c) {
       var brands = m.cities[c] || {};
       var bk = Object.keys(brands);
@@ -4073,7 +4076,6 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
     if (typeof MTD_EVAL === 'undefined' || !MTD_EVAL || !MTD_EVAL.cities) return;
     var isMonth = MTD_EVAL.mode === 'month';
     var conf = [['ss-1','泰兴'],['ss-2','诸暨'],['ss-3','响水']];
-    var md = MTD_EVAL.date.slice(4,6) + '-' + MTD_EVAL.date.slice(6);
     var totalDays = new Date(parseInt(MTD_EVAL.date.slice(0,4),10), parseInt(MTD_EVAL.date.slice(4,6),10), 0).getDate();
     conf.forEach(function(cf){
       var v = MTD_EVAL.cities[cf[1]]; if (!v) return;
@@ -4089,7 +4091,7 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
         se.style.color = col;
       }
       if (le) {
-        le.textContent = emo + ' ' + lvName + ' · ' + (isMonth ? '月评估' : '月预计MTD截至' + md);
+        le.textContent = emo + ' ' + lvName + (isMonth ? ' · 月评估' : '');
         le.style.background = v.score >= 99.5 ? '#e6f4ea' : (v.score >= 95 ? '#fef3e2' : '#fce8e8');
         le.style.color = col;
       }
