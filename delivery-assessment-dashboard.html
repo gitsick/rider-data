@@ -1694,7 +1694,7 @@ function renderModuleOverview() {
       var v = MTD_EVAL.cities[c];
       var raw = v ? m.get(v) : null;
       var num = (raw == null || isNaN(Number(raw))) ? null : Number(raw);
-      chips += '<div class="mo-chip"><div class="mo-city">' + c + '</div><div class="mo-val ' + clsBy(num, m.lo) + '">' + (num == null ? '—' : m.fmt(num)) + '</div></div>';
+      chips += '<div class="mo-chip"><div class="mo-city">' + cityFull(c) + '</div><div class="mo-val ' + clsBy(num, m.lo) + '">' + (num == null ? '—' : m.fmt(num)) + '</div></div>';
     });
     h += '<div class="mod-ov-item"><div class="mo-head"><span style="font-size:15px;">' + m.icon + '</span><span class="mo-name">' + m.name + '</span><span class="pill pill-weight" style="margin-left:auto;">' + m.w + '</span></div>'
       + '<div class="mo-rule">' + m.rule + '</div><div class="mo-cities">' + chips + '</div></div>';
@@ -1703,14 +1703,15 @@ function renderModuleOverview() {
   cities.forEach(function(c) {
     var v = MTD_EVAL.cities[c];
     var col = v.score >= 99.5 ? 'mo-ok' : (v.score >= 95 ? 'mo-warn' : 'mo-bad');
-    sc += '<div class="mo-chip"><div class="mo-city">' + c + '</div><div class="mo-val ' + col + '">' + (v.score != null ? v.score.toFixed(2) : '—') + '</div></div>';
+    sc += '<div class="mo-chip"><div class="mo-city">' + cityFull(c) + '</div><div class="mo-val ' + col + '">' + (v.score != null ? v.score.toFixed(2) : '—') + '</div></div>';
   });
   h += '<div class="mod-ov-item" style="border-left-color:#f5a623;grid-column:1/-1;"><div class="mo-head"><span style="font-size:15px;">🏆</span><span class="mo-name">加权总分（Σ 模块得分×权重）</span><span class="pill pill-weight" style="margin-left:auto;">权重 100%</span></div>'
-    + '<div class="mo-rule">主因模块：' + cities.map(function(c){ var v = MTD_EVAL.cities[c]; return c + ' ' + v.mainMod + '（缺口 ' + (v.gap != null ? v.gap.toFixed(2) : '—') + '）'; }).join('；') + '</div><div class="mo-cities">' + sc + '</div></div>';
+    + '<div class="mo-rule">主因模块：' + cities.map(function(c){ var v = MTD_EVAL.cities[c]; return cityFull(c) + ' ' + v.mainMod + '（缺口 ' + (v.gap != null ? v.gap.toFixed(2) : '—') + '）'; }).join('；') + '</div><div class="mo-cities">' + sc + '</div></div>';
   body.innerHTML = h;
   try { renderModuleMtd(); } catch (e) {}
 }
 
+function cityFull(c){var m={'泰兴':'泰兴县','诸暨':'诸暨市','响水':'响水县'};return m[c]||c;}
 function renderMtdEval() {
   var box = document.getElementById('mtd-eval-body');
   if (!box) return;
@@ -1729,7 +1730,7 @@ function renderMtdEval() {
     var v = MTD_EVAL.cities[c];
     if (!v) return;
     var scCol = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
-    h += '<tr><td><b>' + c + '</b></td><td>' + v.days + '</td>'
+    h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.days + '</td>'
       + '<td style="color:' + scCol + ';font-weight:700;">' + (v.score!=null ? v.score.toFixed(2) : '—') + '</td>'
       + '<td>' + (v.mainMod||'—') + (v.mainGap!=null ? '（缺'+v.mainGap+'分）' : '') + '</td>'
       + '<td>' + _fv(v.twAll,'%') + '</td><td>' + _fv(v.twPk,'%') + '</td><td>' + _fv(v.twMin,'%') + '</td>'
@@ -1761,11 +1762,11 @@ function renderQkkaSka() {
     Object.keys(brands).forEach(function(b) {
       var v = brands[b];
       var st, col;
-      if (v.hit) { st = '⚠ 赔付预警（<' + v.line + '%）'; col = '#d93025'; hits.push(city + '·' + b); }
+      if (v.hit) { st = '⚠ 赔付预警（<' + v.line + '%）'; col = '#d93025'; hits.push(cityFull(city) + '·' + b); }
       else if (v.watch) { st = '观察（<98%）'; col = '#f5a623'; }
       else if (v.ska) { st = 'SKA达标（≥' + v.line + '%）'; col = '#34a853'; }
       else { st = '正常'; col = '#34a853'; }
-      rows.push('<tr><td><b>' + city + '</b></td><td>' + b + (v.ska ? ' <span class="tag tag-red">SKA</span>' : '') + '</td><td>' + v.stores + '</td><td>' + v.wb + '</td><td style="color:' + col + ';font-weight:700;">' + (v.ontime!=null ? v.ontime.toFixed(2) + '%' : '—') + '</td><td style="color:' + col + '">' + st + '</td></tr>');
+      rows.push('<tr><td><b>' + cityFull(city) + '</b></td><td>' + b + (v.ska ? ' <span class="tag tag-red">SKA</span>' : '') + '</td><td>' + v.stores + '</td><td>' + v.wb + '</td><td style="color:' + col + ';font-weight:700;">' + (v.ontime!=null ? v.ontime.toFixed(2) + '%' : '—') + '</td><td style="color:' + col + '">' + st + '</td></tr>');
     });
   });
   rows.sort(function(a, b) { return (a.indexOf('赔付预警') >= 0 ? -1 : 0) - (b.indexOf('赔付预警') >= 0 ? -1 : 0); });
@@ -1782,7 +1783,7 @@ function renderQkkaSka() {
       var v = m[c];
       var rc = (v.rate != null && v.rate < 95) ? 'c-red' : '';
       var oc = (v.okRatio != null && v.okRatio < 90) ? 'c-red' : '';
-      h += '<tr><td><b>' + c + '</b></td><td>' + v.period + '</td><td>' + v.stores + '</td>'
+      h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + v.stores + '</td>'
         + '<td class="' + oc + '">' + v.ok + '（' + v.okRatio + '%）</td>'
         + '<td>' + v.ontimeWb + ' / ' + v.doneWb + '</td>'
         + '<td class="' + rc + '">' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
@@ -2647,7 +2648,7 @@ function renderSliceAnalysis() {
     var hd1=_sv(c,'hdRate',P1), hd2=_sv(c,'hdRate',P2);
     var ty1=_sv(c,'tyScore',P1), ty2=_sv(c,'tyScore',P2);
     var wj1=_avg(_sv(c,'wjRate',P1)), wj2=_avg(_sv(c,'wjRate',P2));
-    h += '<tr><td class="city-cell">'+c+'</td>'
+    h += '<tr><td class="city-cell">'+cityFull(c)+'</td>'
       + '<td>'+_fv(tw1)+' → '+_fv(tw2)+_arr(tw1,tw2)+'</td>'
       + '<td>'+_fv(tw2m)+'</td>'
       + '<td>'+_fv(hd1.length?hd1[hd1.length-1]:null)+' → '+_fv(hd2.length?hd2[hd2.length-1]:null)+_arr(hd1.length?hd1[hd1.length-1]:null, hd2.length?hd2[hd2.length-1]:null)+'</td>'
@@ -2676,7 +2677,7 @@ function renderSliceAnalysis() {
       if (mn===null||v<mn) mn=v;
     }
     var span = brk.length ? (brk.length<=8 ? brk.join('、') : brk.slice(0,8).join('、')+' 等'+brk.length+'天') : '无';
-    h += '<tr><td class="city-cell">'+c+'</td><td'+(brk.length>=10?' class="c-red"':'')+'>'+brk.length+' 天</td><td>'+pk+' 天</td>'
+    h += '<tr><td class="city-cell">'+cityFull(c)+'</td><td'+(brk.length>=10?' class="c-red"':'')+'>'+brk.length+' 天</td><td>'+pk+' 天</td>'
       + '<td'+(mn<_GB_LINE-0.5?' class="c-red"':'')+'>'+_fv(mn)+'</td><td style="white-space:normal;text-align:left;">'+span+'</td></tr>';
   }
   h += '</tbody></table>';
@@ -2692,7 +2693,7 @@ function renderSliceAnalysis() {
       for (k=0;k<hits.length;k++) parts.push(dataDates[hits[k].d]+' ('+(hits[k].chg>0?'+':'')+hits[k].chg.toFixed(2)+'pp)');
       txt = parts.join('、');
     }
-    h += '<tr><td class="city-cell">'+c+'</td><td style="text-align:left;'+(hits.length?'color:#d93025;':'')+'">'+txt+'</td></tr>';
+    h += '<tr><td class="city-cell">'+cityFull(c)+'</td><td style="text-align:left;'+(hits.length?'color:#d93025;':'')+'">'+txt+'</td></tr>';
   }
   h += '</tbody></table>';
 
@@ -2722,7 +2723,7 @@ function renderSliceAnalysis() {
       var main = ['hd','ty','tw','wj'][0]; var names = {hd:'HD 加盟履约', ty:'体验分', tw:'推完', wj:'完结率'};
       for (k in g) if (k!=='tot' && g[k]>g[main]) main=k;
       var n95 = m.score-95, n98 = 98-m.score;
-      h += '<tr><td class="city-cell">'+c+'</td><td class="b">'+m.score.toFixed(2)+'</td>'
+      h += '<tr><td class="city-cell">'+cityFull(c)+'</td><td class="b">'+m.score.toFixed(2)+'</td>'
         + '<td>'+(m.level==='重罚预警'?'<span class="c-red b">'+m.level+'</span>':'<span class="c-orange">'+m.level+'</span>')+'</td>'
         + '<td>'+(n95<0?'<span class="c-red b">'+n95.toFixed(2)+'</span>':'+'+n95.toFixed(2))+'</td>'
         + '<td class="c-orange">-'+n98.toFixed(2)+'</td>'
@@ -2742,12 +2743,12 @@ function renderSliceAnalysis() {
       for (k=0;k<cands.length;k++) if (cands[k].tv<=99.5 && (!best || cands[k].pp<best.pp)) best = cands[k];
       var n2 = {hd:'HD', ty:'体验'};
       if (best) {
-        h += '<tr><td class="city-cell">'+c+'</td><td>'+goal+'</td>'
+        h += '<tr><td class="city-cell">'+cityFull(c)+'</td><td>'+goal+'</td>'
           + '<td class="b">'+n2[best.k]+' ≥ '+best.tv.toFixed(2)+'</td>'
           + '<td class="c-green">+'+best.pp.toFixed(2)+'pp</td>'
           + '<td><span class="tag '+(best.pp<=1?'tag-green':'tag-orange')+'">'+(best.pp<=1?'P0 可实现':'P1 中等')+'</span></td></tr>';
       } else {
-        h += '<tr><td class="city-cell">'+c+'</td><td>'+goal+'</td><td>单指标不可行，需 HD/体验组合改善</td><td>—</td><td><span class="tag tag-red">需组合</span></td></tr>';
+        h += '<tr><td class="city-cell">'+cityFull(c)+'</td><td>'+goal+'</td><td>单指标不可行，需 HD/体验组合改善</td><td>—</td><td><span class="tag tag-red">需组合</span></td></tr>';
       }
     }
     h += '</tbody></table>';
@@ -3045,7 +3046,7 @@ function renderIssuesBreakdown() {
     if (ex && ex.qkKAOntime != null && ex.qkKAOntime < 98) items.push('<span class="tag tag-orange">企客KA</span> 商家准时率 ' + ex.qkKAOntime + '%（' + ex.qkKAStores + '店/' + ex.qkKAWb + '单），低于98%观察线，赔付线按品牌另行判定');
     if (ex && ex.qkTotal && ex.qkOk < ex.qkTotal) items.push('<span class="tag tag-red">门店体验</span> 企客门店未达标 ' + (ex.qkTotal - ex.qkOk) + '/' + ex.qkTotal + ' 家（门店体验达标扣分为10月新增项，9月不扣分）');
     if (!items.length) items.push('<span class="tag tag-green">正常</span> 暂无显著问题项');
-    h += '<tr><td class="city-cell">' + c + '</td><td style="white-space:normal;text-align:left;line-height:2;">' + items.join('<br>') + '</td></tr>';
+    h += '<tr><td class="city-cell">' + cityFull(c) + '</td><td style="white-space:normal;text-align:left;line-height:2;">' + items.join('<br>') + '</td></tr>';
   });
   h += '</tbody></table>';
 
@@ -3062,7 +3063,7 @@ function renderIssuesBreakdown() {
     if (s2.wj.min && s2.wj.min.v < 99) rows.push('<span class="tag tag-orange">极值</span> 完结率全月最低 ' + s2.wj.min.d.slice(3) + ' = ' + s2.wj.min.v.toFixed(2));
     if (s2.ct.first !== null && s2.ct.last !== null) rows.push('<span class="tag ' + (s2.ct.last-s2.ct.first < -0.5 ? 'tag-orange' : 'tag-green') + '">承托比</span> 期初 ' + s2.ct.first.toFixed(1) + '% → 期末 ' + s2.ct.last.toFixed(1) + '%（' + (s2.ct.last-s2.ct.first>0?'+':'') + (s2.ct.last-s2.ct.first).toFixed(1) + 'pp）');
     if (!rows.length) rows.push('<span class="tag tag-green">正常</span> 暂无异动');
-    h += '<tr><td class="city-cell">' + c + '</td><td style="white-space:normal;text-align:left;line-height:2;">' + rows.join('<br>') + '</td></tr>';
+    h += '<tr><td class="city-cell">' + cityFull(c) + '</td><td style="white-space:normal;text-align:left;line-height:2;">' + rows.join('<br>') + '</td></tr>';
   });
   h += '</tbody></table>';
   h += '<div class="slice-note">口径说明：体验分/HD 按 BI 发布节奏更新（期末值为准）；推完/完结率日均为近似口径；零分日=HD 单日 &lt;90%。以上内容由 AI 生成，仅供参考，以业务解释为准。</div>';
@@ -3568,7 +3569,7 @@ var DAILY_EXTRA={"09-01": {"泰兴": {"ymRate": 94.95}, "响水": {"ymRate": 98.
   if (el && typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) {
     var h = '';
     Object.keys(QKKA_MONTH).forEach(function(c){ var v = QKKA_MONTH[c];
-      h += '<tr><td><b>' + c + '</b></td><td>' + v.period + '</td><td>' + v.stores + '</td>'
+      h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + v.stores + '</td>'
         + '<td>' + v.ok + '（' + v.okRatio + '%）</td>'
         + '<td>' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
         + '<td>' + v.brands + '品牌/' + v.stations + '站点</td></tr>';
@@ -3608,7 +3609,7 @@ var DAILY_EXTRA={"09-01": {"泰兴": {"ymRate": 94.95}, "响水": {"ymRate": 98.
     Object.keys(MTD_EVAL.cities).forEach(function(c){
       var v = MTD_EVAL.cities[c]; if (!v) return;
       var scCol = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
-      h += '<tr><td><b>' + c + '</b></td><td>' + v.days + '</td>'
+      h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.days + '</td>'
         + '<td style="color:' + scCol + ';font-weight:700;">' + _f(v.score != null ? v.score.toFixed(2) : null) + '</td>'
         + '<td>' + (v.mainMod || '—') + (v.mainGap != null ? '（缺' + v.mainGap + '分）' : '') + '</td>'
         + '<td>' + _f(v.ymAvg, '%') + '</td>'
