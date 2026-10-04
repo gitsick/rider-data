@@ -102,7 +102,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .calc-result.pass { background:#e6f4ea; color:#34a853; }
   .calc-result.warn { background:#fef7e0; color:#f5a623; }
   .calc-result.fail { background:#fce8e8; color:#d93025; }
-  .formula-box { background:#f8f9fb; border:1px solid #d0d7e3; border-radius:8px; padding:14px; font-size:12.5px; color:#444; text-align:center; margin-bottom:8px; }
+  .formula-box { background:#f8f9fb; border:1px solid #d0d7e3; border-radius:8px; padding:14px; font-size:12.5px; color:#6b7280; text-align:center; margin-bottom:8px; }
   .formula-box .formula { font-weight:700; color:#1a2b4a; font-size:13px; }
   .period-table { width:100%; border-collapse:collapse; font-size:12px; }
   .period-table th { background:#1a2b4a!important; color:#fff!important; padding:6px 8px!important; text-align:center!important; }
@@ -139,7 +139,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   /* 考核周期时间轴 */
   .cal-wrap { font-size:12px; }
   .cal-legend { display:flex; gap:12px; margin-bottom:8px; flex-wrap:wrap; }
-  .cal-legend-item { display:flex; align-items:center; gap:3px; font-size:11px; color:#666; }
+  .cal-legend-item { display:flex; align-items:center; gap:3px; font-size:11px; color:#6b7280; }
   .cal-legend-dot { width:11px; height:11px; border-radius:3px; display:inline-block; flex-shrink:0; }
   .cal-grid { display:grid; grid-template-columns:repeat(10,1fr); gap:3px; }
   @media(max-width:800px){ .cal-grid{ grid-template-columns:repeat(8,1fr); } }
@@ -160,12 +160,12 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .period-prog-card .pp-title { font-size:11px; font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:3px; }
   .period-prog-card .pp-bar { width:100%; height:5px; background:#eee; border-radius:3px; overflow:hidden; margin:4px 0; }
   .period-prog-card .pp-bar-fill { height:100%; border-radius:3px; transition:width .3s; }
-  .period-prog-card .pp-info { font-size:10.5px; color:#666; line-height:1.5; }
+  .period-prog-card .pp-info { font-size:10.5px; color:#6b7280; line-height:1.5; }
   .period-prog-card .pp-current { font-size:10.5px; font-weight:700; color:#1a2b4a; margin-bottom:2px; }
   /* BI看板风格布局 */
   .filter-strip { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
   .fs-item { display:flex; flex-direction:column; gap:1px; }
-  .fs-label { font-size:10px; color:#888; }
+  .fs-label { font-size:10px; color:#6b7280; }
   .fs-value { font-size:15px; font-weight:700; color:#1a2b4a; }
   .fs-divider { width:1px; height:30px; background:#e0e0e0; }
   .grid-cal-bi { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.8fr); gap:12px; margin-bottom:12px; }
@@ -236,15 +236,15 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .preset-scenario.conservative { background:#fce8e8; }
   .preset-scenario .ps-label { font-size:13px; font-weight:700; margin-bottom:4px; }
   .preset-scenario .ps-score { font-size:22px; font-weight:800; line-height:1.2; }
-  .preset-scenario .ps-desc { font-size:11px; color:#666; margin-top:4px; }
+  .preset-scenario .ps-desc { font-size:11px; color:#6b7280; margin-top:4px; }
   .preset-input-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
-  .preset-input-row label { font-size:12px; font-weight:600; color:#555; min-width:80px; }
+  .preset-input-row label { font-size:12px; font-weight:600; color:#6b7280; min-width:80px; }
   .preset-input-row input { width:70px; text-align:center; border:1px solid #ccc; border-radius:4px; padding:4px; font-size:13px; }
   .preset-compare { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
   .preset-compare-item { padding:10px; border-radius:8px; text-align:center; }
   .preset-compare-item.current { background:#f8f9fb; border:1px solid #e8eaed; }
   .preset-compare-item.estimated { background:#e8f0fe; border:1px solid #4a7bd4; }
-  .preset-compare-item .pc-label { font-size:11px; color:#888; }
+  .preset-compare-item .pc-label { font-size:11px; color:#6b7280; }
   .preset-compare-item .pc-value { font-size:24px; font-weight:800; margin:4px 0; }
   .preset-compare-item .pc-delta { font-size:13px; font-weight:700; }
   /* 紧凑模块卡片 */
@@ -281,7 +281,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .summary-card .sc-city { font-size:16px; font-weight:700; color:#1a2b4a; }
   .summary-card .sc-score { font-size:36px; font-weight:800; line-height:1.1; }
   .summary-card .sc-level { font-size:12px; font-weight:700; padding:3px 10px; border-radius:10px; display:inline-block; margin-top:2px; }
-  .summary-card .sc-right { flex:1; font-size:12px; line-height:1.7; color:#555; }
+  .summary-card .sc-right { flex:1; font-size:12px; line-height:1.7; color:#6b7280; }
   .summary-card .sc-risk { font-weight:700; }
   .summary-card .sc-bar { position:absolute; bottom:0; left:0; right:0; height:4px; }
   .summary-card .sc-progress { height:5px; border-radius:3px; background:rgba(0,0,0,0.08); margin-top:6px; overflow:hidden; }
@@ -302,7 +302,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   /* 速览卡片进度条 - 已在 .summary-card .sc-progress 中定义，此处删除重复 */
   /* 快捷锚点导航 */
   .anchor-nav { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
-  .anchor-btn { padding:6px 14px; border-radius:20px; background:#f0f2f5; border:1px solid #e8eaed; font-size:12px; font-weight:600; color:#5f6368; cursor:pointer; transition:all .2s; text-decoration:none; }
+  .anchor-btn { padding:6px 14px; border-radius:20px; background:#f0f2f5; border:1px solid #e8eaed; font-size:12px; font-weight:600; color:#6b7280; cursor:pointer; transition:all .2s; text-decoration:none; }
   .anchor-btn:hover { background:#fff8e1; color:#8a6d1a; border-color:#F5A623; }
   /* ===== Tab 数字角标 ===== */
   .tab-badge { display:inline-block; font-size:11px; padding:1px 7px; border-radius:8px; margin-left:4px; font-weight:700; }
@@ -327,9 +327,9 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   /* ===== 2026-10 增强：走势图 / 环比 / 总分对比条 ===== */
   .delta-good { color:#34a853; font-size:10px; font-weight:700; margin-left:3px; }
   .delta-bad { color:#d93025; font-size:10px; font-weight:700; margin-left:3px; }
-  .delta-flat { color:#8a919e; font-size:10px; margin-left:3px; }
+  .delta-flat { color:#6b7280; font-size:10px; margin-left:3px; }
   .tc-toolbar { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
-  .tc-btn { padding:5px 14px; border-radius:16px; border:1px solid #d0d7e3; background:#fff; font-size:12px; font-weight:600; color:#5f6368; cursor:pointer; transition:all .2s; }
+  .tc-btn { padding:5px 14px; border-radius:16px; border:1px solid #d0d7e3; background:#fff; font-size:12px; font-weight:600; color:#6b7280; cursor:pointer; transition:all .2s; }
   .tc-btn:hover { background:#e8f0fe; color:#1967d2; }
   .tc-btn.active { background:#1a2b4a; color:#fff; border-color:#1a2b4a; }
   .tc-divider { display:inline-block; width:1px; height:20px; background:#d0d7e3; margin:0 4px; }
@@ -341,7 +341,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
 .tc-export { margin-left:6px; border-color:#a8c7fa; color:#1967d2; background:#f8fbff; }
 .tc-export:hover { background:#e8f0fe; }
   .tc-legend { display:flex; gap:14px; margin-left:auto; flex-wrap:wrap; }
-  .tc-legend-item { display:flex; align-items:center; gap:5px; font-size:11.5px; color:#555; font-weight:600; }
+  .tc-legend-item { display:flex; align-items:center; gap:5px; font-size:11.5px; color:#6b7280; font-weight:600; }
   .tc-legend-dot { width:16px; height:3px; border-radius:2px; display:inline-block; }
   .tc-gridline { stroke:#e9edf3; stroke-width:1; }
   .tc-axis { stroke:#c9d0da; stroke-width:1; }
@@ -566,8 +566,8 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 .qr-modal-body img{width:220px;height:220px;border-radius:10px;display:block;margin:0 auto;border:1px solid #e8eaed}
 .qr-modal-body .tt{font-size:15px;font-weight:700;color:#1a2b4a;margin-top:14px}
 .qr-modal-body .sub{font-size:12px;color:#6b7280;margin-top:4px}
-.qr-modal-body .qr-url{font-size:11px;color:#5f6368;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.qr-modal-body .qr-hint{font-size:10px;color:#8a919e;margin-top:8px}
+.qr-modal-body .qr-url{font-size:11px;color:#6b7280;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qr-modal-body .qr-hint{font-size:10px;color:#6b7280;margin-top:8px}
 @media(max-width:600px){.qr-small img{width:42px;height:42px}.qr-small .qr-label{display:none}.qr-small{padding:4px 6px}.qr-modal-body img{width:180px;height:180px}.qr-modal-box{max-width:280px}.qr-modal-banner{font-size:12px;padding:12px 16px 8px}.qr-modal-body{padding:16px 18px 14px}.summary-card{padding:12px 14px}.summary-card .sc-score{font-size:28px}.header{padding:16px 18px!important}.header h1{font-size:18px!important}.dim-tab{padding:10px 12px!important;font-size:13px!important}}
 </style>
 </head>
@@ -623,7 +623,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-1">10月待考核</span>
     </div>
     <div class="sc-right">
-      <div class="sc-risk" style="color:#666;">10月考核周期 10/1-10/31</div>
+      <div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div>
       <div>画像：都考（加盟15% 悦跑30% 普众5% 体验20% 推完20% 完结10%）</div>
       <div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
       <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-1"></div></div>
@@ -637,7 +637,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-2">10月待考核</span>
     </div>
     <div class="sc-right">
-      <div class="sc-risk" style="color:#666;">10月考核周期 10/1-10/31</div>
+      <div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div>
       <div>画像：都考（加盟15% 悦跑30% 普众5% 体验20% 推完20% 完结10%）</div>
       <div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
       <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-2"></div></div>
@@ -651,7 +651,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-3">10月待考核</span>
     </div>
     <div class="sc-right">
-      <div class="sc-risk" style="color:#666;">10月考核周期 10/1-10/31</div>
+      <div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div>
       <div>画像：都考（加盟15% 悦跑30% 普众5% 体验20% 推完20% 完结10%）</div>
       <div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
       <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-3"></div></div>
@@ -704,7 +704,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div class="grid-cal-bi">
     <!-- 左：考核周期日历 -->
     <div class="card" style="padding:14px;">
-      <div class="card-title" style="margin-bottom:8px;font-size:14px;"><span class="icon">📅</span> 考核周期 <span id="cal-period-label" style="font-size:12px;color:#888;font-weight:400;">（第1期 10/1-10/18）</span></div>
+      <div class="card-title" style="margin-bottom:8px;font-size:14px;"><span class="icon">📅</span> 考核周期 <span id="cal-period-label" style="font-size:12px;color:#6b7280;font-weight:400;">（第1期 10/1-10/18）</span></div>
       <div class="cal-wrap">
         <div class="cal-legend">
           <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#e8f0fe;"></span>第1期</div>
@@ -747,7 +747,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <!-- 图表已集中至「数据图表」页签 -->
   <div class="card" style="margin-bottom:12px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
-    <div style="font-size:12.5px;color:#666;">📊 指标走势图、两期均值对比等图形化分析已集中至「<strong>数据图表</strong>」页签</div>
+    <div style="font-size:12.5px;color:#6b7280;">📊 指标走势图、两期均值对比等图形化分析已集中至「<strong>数据图表</strong>」页签</div>
     <button class="tc-btn" style="padding:7px 18px;" onclick="switchDim(document.querySelectorAll('.dim-tab')[3],'charts')">前往查看 →</button>
   </div>
 
@@ -770,7 +770,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <div><div class="indicator-name">达标骑手数完成度</div><span class="threshold-tag tag-red">90%~110% 计分</span></div>
           <div class="indicator-score">完成度<input class="calc-input" id="ym_rate" type="number" onchange="calcScore()"><br>出勤系数<select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:70px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select><br>得分<span id="ym_score" style="font-weight:700;color:#e8710a;">—</span><div style="font-size:10.5px;color:#6b7280;margin-top:3px;">BI日更自动填入；出勤率≥90%自动取1.05</div></div>
         </div>
-        <div style="font-size:11px;color:#888;text-align:left;margin-top:4px;">得分=完成度×出勤合格率系数；完成度＜90%记0分</div>
+        <div style="font-size:11px;color:#6b7280;text-align:left;margin-top:4px;">得分=完成度×出勤合格率系数；完成度＜90%记0分</div>
         <div class="mo-mtd" id="mtd-ym"></div>
       </div>
     </div>
@@ -780,7 +780,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <div class="indicator-row"><div class="indicator-name">复合超时率 40%</div><div class="indicator-score"><input class="calc-input" id="ty_cs" type="number" onchange="calcScore()"></div></div>
         <div class="indicator-row"><div class="indicator-name">虚假点送达 30%</div><div class="indicator-score"><input class="calc-input" id="ty_fake" type="number" onchange="calcScore()"></div></div>
         <div class="indicator-row"><div class="indicator-name">配送取消单 30%</div><div class="indicator-score"><input class="calc-input" id="ty_cancel" type="number" onchange="calcScore()"></div></div>
-        <div style="font-size:11px;color:#888;text-align:right;margin-top:4px;">体验得分 → <span id="ty_score" style="font-weight:700;color:#7b61ff;">—</span></div>
+        <div style="font-size:11px;color:#6b7280;text-align:right;margin-top:4px;">体验得分 → <span id="ty_score" style="font-weight:700;color:#7b61ff;">—</span></div>
         <div class="mo-mtd" id="mtd-ty"></div>
       </div>
     </div>
@@ -791,7 +791,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <div><div class="indicator-name">推单完成率</div><span class="threshold-tag tag-red">110%封顶</span></div>
           <div class="indicator-score">完成率<input class="calc-input" id="tw_rate" type="number" onchange="calcScore()"><br>得分<span id="tw_score" style="font-weight:700;color:#00b8d4;">—</span></div>
         </div>
-        <div style="font-size:11px;color:#888;text-align:left;margin-top:4px;">人效兜底：日均≥98.8%（高峰日另核）；低于兜底线触发预警，详见「🚨 推完兜底线」卡</div>
+        <div style="font-size:11px;color:#6b7280;text-align:left;margin-top:4px;">人效兜底：日均≥98.8%（高峰日另核）；低于兜底线触发预警，详见「🚨 推完兜底线」卡</div>
         <div class="mo-mtd" id="mtd-tw"></div>
       </div>
     </div>
@@ -822,7 +822,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <div><div class="indicator-name">活跃骑手数完成度</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
           <div class="indicator-score">完成度<input class="calc-input" id="pz_rate" type="number" onchange="calcScore()"><br>得分<span id="pz_score" style="font-weight:700;color:#8d6e63;">—</span><div id="pz_act" style="font-size:10.5px;color:#6b7280;margin-top:3px;"></div></div>
         </div>
-        <div style="font-size:11px;color:#888;text-align:left;margin-top:4px;">完成度＜90%记0分，100%封顶</div>
+        <div style="font-size:11px;color:#6b7280;text-align:left;margin-top:4px;">完成度＜90%记0分，100%封顶</div>
         <div class="mo-mtd" id="mtd-pz"></div>
       </div>
     </div>
@@ -832,15 +832,15 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <div class="card-title"><span class="icon">🧮</span> 当日测算 + 承托比</div>
       <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
         <div style="flex:1;">
-          <div style="font-size:11px;color:#888;margin-bottom:2px;">承托比（参考，不计分）</div>
+          <div style="font-size:11px;color:#6b7280;margin-bottom:2px;">承托比（参考，不计分）</div>
           <input class="calc-input" id="ct_rate" type="number" disabled style="width:100%;">
         </div>
-        <div style="font-size:11px;color:#888;text-align:right;line-height:1.5;">画像：都考<br>加盟15% 悦跑30% 普众5%<br>体验20% 推完20% 完结率10%<br>10月剔除企客订单</div>
+        <div style="font-size:11px;color:#6b7280;text-align:right;line-height:1.5;">画像：都考<br>加盟15% 悦跑30% 普众5%<br>体验20% 推完20% 完结率10%<br>10月剔除企客订单</div>
       </div>
       <div class="calc-section">
-        <div id="calc-detail" style="font-size:12px;color:#555;margin-top:6px;white-space:pre-line;"></div>
+        <div id="calc-detail" style="font-size:12px;color:#6b7280;margin-top:6px;white-space:pre-line;"></div>
         <div class="calc-result" id="total-score">—</div>
-        <div style="text-align:center;font-size:12px;color:#888;" id="penalty-hint"></div>
+        <div style="text-align:center;font-size:12px;color:#6b7280;" id="penalty-hint"></div>
       </div>
     </div>
   </div>
@@ -849,7 +849,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div class="card-title">🤝 企客（SKA）· 扣分项模块 <span id="qk-daily-snap" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
   <div style="font-size:12px;line-height:1.75;color:#374151;">
 流失有效门店≥1家：扣3%（原5%）；新签履约品牌门店1家+2%（最高+3%）；门店体验达标≤3家≥1家或>3家≥2家：扣2%；体验&推完指标剔除企客麦肯必瑞订单。
-    <div style="margin-top:4px;font-size:11.5px;color:#9aa0a6;">🟣 诸暨：⏳ 待数据（企客KA维值权限申请中）</div>
+    <div style="margin-top:4px;font-size:11.5px;color:#6b7280;">🟣 诸暨：⏳ 待数据（企客KA维值权限申请中）</div>
     <div style="margin-top:6px;font-size:11px;color:#6b7280;">完整品牌履约评估预警见「月维度」页签；数据来源：品牌x商家x履约站-履约明细（ID 17805）</div>
   </div>
 </div>
@@ -862,8 +862,8 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 </div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
   <div class="card-title"><span class="icon">📊</span> 企客SKA · 数据图表（天维度趋势）</div>
-  <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;color:#444;margin-bottom:4px;">每日加权准时率（%）</div><canvas id="ska-cv-rate"></canvas></div>
-  <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;"><div style="font-size:12px;font-weight:700;color:#444;margin-bottom:4px;">每日配送单量（单）</div><canvas id="ska-cv-vol"></canvas></div>
+  <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;color:#6b7280;margin-bottom:4px;">每日加权准时率（%）</div><canvas id="ska-cv-rate"></canvas></div>
+  <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;"><div style="font-size:12px;font-weight:700;color:#6b7280;margin-bottom:4px;">每日配送单量（单）</div><canvas id="ska-cv-vol"></canvas></div>
   <div style="font-size:10.5px;color:#6b7280;margin-top:6px;">准时率=客户考核准时运单量/配送完成运单量（当日城市汇总）；虚线为赔付/预警参考线；红点=当日低于90%；数据随每日流水线刷新。</div>
 </div>
 </div>
@@ -992,20 +992,20 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">画像：都考（加盟15% 悦跑30% 普众5% 体验20% 推完20% 完结率10%）| 悦跑已接入BI自动抓取；普众展示实际活跃骑手数（完成率待任务系统目标，暂按已接入权重归一）| 体验&推完剔除企客麦肯必瑞订单</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;">
       <div style="border-left:3px solid #d93025;padding:8px 12px;background:#fff5f5;border-radius:0 6px 6px 0;">
-        <div style="font-weight:700;color:#666;font-size:12px;">📊 诸暨 · 10月月预计（MTD）</div>
-        <div style="font-size:11px;color:#555;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
+        <div style="font-weight:700;color:#6b7280;font-size:12px;">📊 诸暨 · 10月月预计（MTD）</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
       </div>
       <div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;">
-        <div style="font-weight:700;color:#666;font-size:12px;">📊 泰兴 · 10月月预计（MTD）</div>
-        <div style="font-size:11px;color:#555;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
+        <div style="font-weight:700;color:#6b7280;font-size:12px;">📊 泰兴 · 10月月预计（MTD）</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
       </div>
       <div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;">
-        <div style="font-weight:700;color:#666;font-size:12px;">📊 响水 · 10月月预计（MTD）</div>
-        <div style="font-size:11px;color:#555;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
+        <div style="font-weight:700;color:#6b7280;font-size:12px;">📊 响水 · 10月月预计（MTD）</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/17-10/18 · 10/24-10/25 · 10/31</div>
       </div>
     </div>
     <!-- 三城月度总分对比已集中至「数据图表」页签 -->
-    <div style="margin-top:14px;padding:10px 16px;border:1px dashed #d0d7e3;border-radius:8px;background:#f8f9fb;font-size:12px;color:#666;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+    <div style="margin-top:14px;padding:10px 16px;border:1px dashed #d0d7e3;border-radius:8px;background:#f8f9fb;font-size:12px;color:#6b7280;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
       <span>📊 三城月度总分对比图已移至「数据图表」页签</span>
       <button class="tc-btn" onclick="switchDim(document.querySelectorAll('.dim-tab')[3],'charts')">前往查看 →</button>
     </div>
@@ -1014,7 +1014,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <!-- 月维度：城市预估警告罚款 -->
   <div class="card" id="sec-estimate" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#fff8e1 100%);">
     <div class="card-title"><span class="icon">💰</span> 城市预估警告与罚款（基于当前MTD总分推算月末结果）</div>
-    <div style="font-size:12px;color:#666;margin-bottom:12px;" id="estimate-desc">10月考核周期 10/1-10/31（31天），含13个高峰日。BI数据待更新，下表为预估框架，数据更新后自动填充。</div>
+    <div style="font-size:12px;color:#6b7280;margin-bottom:12px;" id="estimate-desc">10月考核周期 10/1-10/31（31天），含13个高峰日。BI数据待更新，下表为预估框架，数据更新后自动填充。</div>
     <div class="table-scroll">
     <table class="dt" style="font-size:12px;">
       <thead>
@@ -1080,23 +1080,23 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <div style="border:1px solid #fce8e8;border-radius:8px;padding:12px;background:#fff5f5;">
         <div style="font-size:11px;color:#6b7280;margin-bottom:4px;">维持现状 · 三城合计</div>
         <div id="est-sum-keep" style="font-size:14px;font-weight:700;color:#6b7280;">—</div>
-        <div style="font-size:11px;color:#555;margin-top:4px;">10月BI数据更新后自动计算<br>全月警告封顶2个/城，超出转罚款</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;">10月BI数据更新后自动计算<br>全月警告封顶2个/城，超出转罚款</div>
       </div>
       <div style="border:1px solid #e6f4ea;border-radius:8px;padding:12px;background:#f0faf2;">
         <div style="font-size:11px;color:#6b7280;margin-bottom:4px;">冲刺达标 · 三城合计</div>
         <div style="font-size:20px;font-weight:700;color:#34a853;">0警告</div>
-        <div style="font-size:11px;color:#555;margin-top:4px;">三城均≥100% → 无警告无罚款<br>10月考核周期 10/1-10/31</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;">三城均≥100% → 无警告无罚款<br>10月考核周期 10/1-10/31</div>
       </div>
       <div style="border:1px solid #fce8e8;border-radius:8px;padding:12px;background:#fff5f5;">
         <div style="font-size:11px;color:#6b7280;margin-bottom:4px;">持续下滑 · 三城合计</div>
         <div style="font-size:20px;font-weight:700;color:#b71c1c;">6个+警告</div>
-        <div style="font-size:11px;color:#555;margin-top:4px;">三城均跌入重罚区间（&lt;90%）<br>每城2个警告封顶后转罚款</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:4px;">三城均跌入重罚区间（&lt;90%）<br>每城2个警告封顶后转罚款</div>
       </div>
     </div>
     <!-- 诸暨重点预警 -->
     <div style="margin-top:14px;padding:12px 16px;background:#e8f0fe;border-radius:8px;border-left:4px solid #1967d2;">
       <div style="font-weight:700;color:#1967d2;font-size:13px;margin-bottom:6px;">📊 10月考核方案要点</div>
-      <div style="font-size:12px;color:#444;line-height:1.8;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;">
         <strong>10月关键变化：</strong><br>
         ① <strong>悦跑新口径</strong>：10/19起服务质量达标骑手数口径调整，需排班班次全量达成（时段在线时长+完单量要求）<br>
         ② <strong>体验&推完剔除</strong>：体验考核和推单完成率指标剔除企客麦肯必瑞订单<br>
@@ -1112,7 +1112,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <span class="ref-arrow" style="margin-left:auto;color:#6b7280;">▼</span>
       </div>
       <div class="ref-content">
-        <table style="width:100%;border-collapse:collapse;font-size:12px;color:#444;">
+        <table style="width:100%;border-collapse:collapse;font-size:12px;color:#6b7280;">
           <tr style="background:#eef2f7;"><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">指标</th><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">方案官方数据查看路径</th><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">本看板接入状态</th></tr>
           <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">加盟达标骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-加盟（数据可查T-3，越久越准，以核算下发为准）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（加盟明细：达标/总骑手）</td></tr>
           <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑完成度 / 排班出勤</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-悦跑 / 悦跑排班出勤合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（出勤系数自动判定）</td></tr>
@@ -1157,19 +1157,19 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div class="card" style="margin-bottom:16px;border-left:4px solid #e8525f;background:linear-gradient(135deg,#fff 0%,#fef6f6 100%);">
     <div class="card-title"><span class="icon">🆕</span> 10月方案迭代点（对比9月 · 核算前必读）</div>
     <div class="grid grid-2" style="margin-top:0;">
-      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #f5a623;background:#fef9f0;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #f5a623;background:#fef9f0;">
         <strong style="color:#f5a623;">悦跑 · 出勤合格率考核时间</strong><br>
         注意悦跑排班出勤合格率考核时间：第1期9/28-10/4、10/5-10/11、10/12-10/18；第2期10/19-10/25、10/26-11/1
       </div>
-      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #e8525f;background:#fef6f6;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #e8525f;background:#fef6f6;">
         <strong style="color:#e8525f;">悦跑 · 达标骑手口径调整分周期</strong><br>
         服务质量达标骑手数口径调整：新口径（排班班次全量达成）自10/19-10/25周期起生效，注意区分调整前后考核周期
       </div>
-      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #7b61ff;background:#f7f4ff;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #7b61ff;background:#f7f4ff;">
         <strong style="color:#7b61ff;">体验&amp;推完 · 剔除企客订单</strong><br>
         体验、推完指标口径订单剔除企客麦肯必瑞订单
       </div>
-      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #00b8d4;background:#f0fafe;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #00b8d4;background:#f0fafe;">
         <strong style="color:#00b8d4;">企客 · 扣分项调整</strong><br>
         考核指标与扣分分数均有调整：流失扣5%→3%、新增新签加分（1家+2%，最高+3%）、新增门店体验达标扣分（-2%）
       </div>
@@ -1181,8 +1181,8 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div class="card">
       <div class="card-title"><span class="icon">📊</span> 总分计算公式</div>
       <div class="formula-box"><div class="formula">总分 = 加盟×15% + 悦跑×30% + 普众×5% + 体验×20% + 推完×20% + 完结率×10% − 扣分（画像：都考）</div></div>
-      <div style="font-size:12px;color:#888;text-align:center;">三城10月画像：都考（即上方公式口径，权重见表）</div>
-      <div style="margin-top:10px;"><span class="pill pill-period">高峰日</span><span style="font-size:12px;color:#666;">10/1-10/7、10/11、10/17、10/18、10/24、10/25、10/31、11/1</span></div>
+      <div style="font-size:12px;color:#6b7280;text-align:center;">三城10月画像：都考（即上方公式口径，权重见表）</div>
+      <div style="margin-top:10px;"><span class="pill pill-period">高峰日</span><span style="font-size:12px;color:#6b7280;">10/1-10/7、10/11、10/17、10/18、10/24、10/25、10/31、11/1</span></div>
     </div>
     <div class="card">
       <div class="card-title"><span class="icon">⚖️</span> 运力组合权重配置</div>
@@ -1407,24 +1407,24 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <!-- 异常骑手剔除说明 -->
   <div class="card" style="margin-bottom:16px;">
     <div class="card-title"><span class="icon">⚠️</span> 异常骑手剔除说明</div>
-    <div style="font-size:12px;color:#555;line-height:1.8;margin-bottom:10px;padding:8px 12px;background:#fff8e1;border-radius:6px;border-left:3px solid #f5a623;">
+    <div style="font-size:12px;color:#6b7280;line-height:1.8;margin-bottom:10px;padding:8px 12px;background:#fff8e1;border-radius:6px;border-left:3px solid #f5a623;">
       <strong>统计有效骑手时，剔除以下异常骑手数据</strong><br>
       <span style="font-size:11px;color:#6b7280;">加盟：同一骑手同天多异常去重算1人次 | 悦跑&amp;普众：剔除触发异常且达标的骑手</span>
     </div>
     <div class="grid grid-2" style="margin-top:0;">
-      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #e8525f;background:#fef6f6;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #e8525f;background:#fef6f6;">
         <strong style="color:#e8525f;">1. 微笑行动虚假</strong><br>
         开工和抽检验真环节中，判定违规原因：注册人与送餐人身份不一致、微笑行动作弊、照片不符合规范、未在规定时间上传照片
       </div>
-      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #f5a623;background:#fef9f0;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #f5a623;background:#fef9f0;">
         <strong style="color:#f5a623;">2. 风控策略</strong><br>
         同轨迹、同设备、声纹识别、异常改派点送达和虚假转单等判定为虚假的骑手
       </div>
-      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #4cb947;background:#f4faf4;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #4cb947;background:#f4faf4;">
         <strong style="color:#4cb947;">3. 线下检核</strong><br>
         线下检核过程中发现非本人配送的情况
       </div>
-      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #00b8d4;background:#f0fafe;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #00b8d4;background:#f0fafe;">
         <strong style="color:#00b8d4;">4. 其他</strong><br>
         除以上3种情况外，发现并核实的其他异常骑手数据
       </div>
@@ -1470,7 +1470,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div id="qkka-warn-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">评估预警加载中…</div></div>
     <details style="margin-top:10px;">
       <summary style="cursor:pointer;font-size:12.5px;font-weight:700;color:#1967d2;">📖 规则解读（点开查看口径与扣罚标准，来源：10月考核方案 + 《下沉SKA品牌KPI赔付规则》）</summary>
-      <div style="font-size:12px;color:#444;line-height:1.9;margin-top:8px;">
+      <div style="font-size:12px;color:#6b7280;line-height:1.9;margin-top:8px;">
         <b>一、企客有效门店与流失（总分扣分项）</b><br>
         · 有效门店：日均10单以上门店（含考核月内新签）；口径=麦肯必瑞星沃企客服务包有效门店<br>
         · 流失定义：仅限因<b>体验问题</b>不再使用美配的门店（停业/低单未发单不算）；流失日期=美配首次未发单日（7天未发单即流失）<br>
@@ -1538,7 +1538,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 <div class="section-label">🧮 预估测算</div>
 <div class="card preset-card">
       <div class="card-title"><span class="icon">🔮</span> 预估测算器（剩余<span id="preset-remaining-days">31</span>天预估值 → 月度预估总分）</div>
-<div style="font-size:12px;color:#666;margin-bottom:10px;" id="preset-desc-text">设定10月各指标预估值，自动测算月度预估总分</div>
+<div style="font-size:12px;color:#6b7280;margin-bottom:10px;" id="preset-desc-text">设定10月各指标预估值，自动测算月度预估总分</div>
       <div class="preset-input-row">
         <label>加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
         <label>体验分</label><input id="pre_ty" type="number" value="95" step="0.1" onchange="calcPreset()">
@@ -1568,7 +1568,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <div class="preset-compare-item current">
           <div class="pc-label" id="pc-current-label">当前MTD总分（—天）</div>
           <div class="pc-value" id="pc-current" style="color:#f5a623;">—</div>
-          <div class="pc-delta" style="color:#888;" id="pc-current-level">—</div>
+          <div class="pc-delta" style="color:#6b7280;" id="pc-current-level">—</div>
         </div>
         <div class="preset-compare-item estimated">
           <div class="pc-label">预估月度总分（31天）</div>
@@ -1654,7 +1654,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       </tbody>
     </table>
     </div>
-    <div style="margin-top:10px;font-size:12px;color:#666;background:#e8f0fe;padding:10px 14px;border-radius:8px;">
+    <div style="margin-top:10px;font-size:12px;color:#6b7280;background:#e8f0fe;padding:10px 14px;border-radius:8px;">
       <strong style="color:#1967d2;">10月考核要点：</strong>体验&推完指标剔除企客麦肯必瑞订单；悦跑新口径10/19起生效（需排班班次全量达成）；企客扣分调整（流失扣3%，新签加2%最高3%）；高峰日10月内共13天（10/1-10/7、10/11、10/17-10/18、10/24-10/25、10/31；11/1计入下月周期）。
     </div>
   </div>
@@ -1717,7 +1717,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       </tbody>
     </table>
     </div>
-    <div style="margin-top:10px;font-size:12px;color:#666;background:#e8f0fe;padding:10px 14px;border-radius:8px;">
+    <div style="margin-top:10px;font-size:12px;color:#6b7280;background:#e8f0fe;padding:10px 14px;border-radius:8px;">
       <strong style="color:#1967d2;">优先级排序：</strong>加盟完成率（每+1%→总分+0.5%）> 体验分（每+1分→总分+0.2%）= 推单完成率（每+1%→总分+0.2%）> 履约完结率（每+1%→总分+0.1%）。10月体验&推完剔除企客订单后，指标值可能变化，需重新对标。
     </div>
   </div>
@@ -2015,7 +2015,7 @@ function renderSkaStores() {
     h += '</div></details>';
   });
   h += '<details style="margin-top:6px;"><summary style="cursor:pointer;font-size:12px;font-weight:700;color:#6b7280;">📖 SKA赔付规则速查（完单量分档）</summary>'
-    + '<div style="font-size:11px;color:#444;line-height:1.9;margin-top:4px;">'
+    + '<div style="font-size:11px;color:#6b7280;line-height:1.9;margin-top:4px;">'
     + '<b>准时率赔付线</b>：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90%（肯德基/必胜客另设提前点率红线4%/2%）；<b>沃尔玛按区间</b>：[95%,97%)罚1500元 · [93%,95%)罚3000元 · [90%,93%)罚5000元 · <90%罚10000元。'
     + '<b>肯德基/必胜客配送原因取消率</b>（服务商删单，按月完单量分档）：0-1000单 ≤0.10%免罚，0.10-0.15%罚90元 · 0.15-0.30%罚315元 · 0.30-0.50%罚630元 · 0.50-1.00%罚1260元 · >1.00%罚2160元；1000-3000单 0.03-0.06%罚150元 · 0.06-0.10%罚500元 · 0.10-0.20%罚900元 · >0.20%罚1800元；>3000单 0.01-0.03%罚100元 · 0.03-0.06%罚300元 · 0.06-0.10%罚600元 · 0.10-0.20%罚1200元 · >0.20%罚2000元。'
     + '<br><b>其余品牌按门店月完单量分档</b>：（0-500】单罚250元，每+500单加250元至（5000】；5000-6000单罚3000元…8000-10000单罚5000元；10000-20000单罚7000元；20000单以上罚10000元。赔付对象为合作商，严禁转嫁骑手。</div></details>'
@@ -2122,11 +2122,11 @@ function renderSkaReport() {
     h += '<div style="flex:1;min-width:150px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;">'
       + '<div style="font-size:11px;color:#6b7280;">' + o.mm + ' · ' + o.city + '</div>'
       + '<div style="font-size:20px;font-weight:800;color:' + col + ';">' + o.rate.toFixed(2) + '%</div>'
-      + '<div style="font-size:11px;color:#444;">配送单量 <b>' + o.done + '</b> · 有单门店 ' + o.stores + ' 家</div>'
+      + '<div style="font-size:11px;color:#6b7280;">配送单量 <b>' + o.done + '</b> · 有单门店 ' + o.stores + ' 家</div>'
       + '<div style="font-size:11px;color:' + (o.warn ? '#e37400' : '#188038') + ';">体验预警 ' + o.warn + ' 家 · 预估赔付 ¥' + o.amt + '</div></div>';
   });
   h += '</div>';
-  h += '<div style="font-size:12px;font-weight:700;color:#444;margin:8px 0 4px;">品牌月度表现（赔付考核线口径）</div><div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>月份</th><th>城市</th><th>品牌</th><th>配送单量</th><th>准时率</th><th>考核线</th><th>判定</th><th>预警门店</th><th>预估赔付</th></tr></thead><tbody>';
+  h += '<div style="font-size:12px;font-weight:700;color:#6b7280;margin:8px 0 4px;">品牌月度表现（赔付考核线口径）</div><div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>月份</th><th>城市</th><th>品牌</th><th>配送单量</th><th>准时率</th><th>考核线</th><th>判定</th><th>预警门店</th><th>预估赔付</th></tr></thead><tbody>';
   SKA_REPORT.brands.forEach(function(x) {
     var ok = x.rate >= x.line;
     h += '<tr><td>' + x.mm + '</td><td>' + x.city + '</td><td>' + x.b + '</td><td>' + x.done + '</td>'
@@ -2135,10 +2135,10 @@ function renderSkaReport() {
       + '<td>' + (x.warn || 0) + '</td><td>' + (x.amt ? '¥' + x.amt : '—') + '</td></tr>';
   });
   h += '</tbody></table></div>';
-  h += '<div style="font-size:12px;font-weight:700;color:#444;margin:10px 0 4px;">天维度发现</div><div style="font-size:12px;color:#444;line-height:1.9;background:#f8f9fb;border-radius:8px;padding:8px 12px;">';
+  h += '<div style="font-size:12px;font-weight:700;color:#6b7280;margin:10px 0 4px;">天维度发现</div><div style="font-size:12px;color:#6b7280;line-height:1.9;background:#f8f9fb;border-radius:8px;padding:8px 12px;">';
   SKA_REPORT.findings.forEach(function(f) { h += '· ' + f + '<br>'; });
   h += '</div>';
-  h += '<div style="font-size:12px;font-weight:700;color:#444;margin:10px 0 4px;">赔付预判汇总（月维度）</div><div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>月份</th><th>预估赔付合计</th><th>预赔门店数</th><th>主要赔付门店</th></tr></thead><tbody>';
+  h += '<div style="font-size:12px;font-weight:700;color:#6b7280;margin:10px 0 4px;">赔付预判汇总（月维度）</div><div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>月份</th><th>预估赔付合计</th><th>预赔门店数</th><th>主要赔付门店</th></tr></thead><tbody>';
   SKA_REPORT.payout.forEach(function(p) {
     h += '<tr><td>' + p.mm + '</td><td style="color:#d93025;font-weight:700;">¥' + p.amt + '</td><td>' + p.n + '</td><td style="font-size:10.5px;">' + p.main + '</td></tr>';
   });
@@ -2240,7 +2240,7 @@ function renderNextMonth() {
   var isMonth = (typeof MONTH_MODE !== 'undefined') && MONTH_MODE === 'month';
   if (tag) tag.textContent = isMonth ? '【月末已生成：下月基线模型】' : '【月中：月末自动生成本月基线】';
   if (!isMonth) {
-    box.innerHTML = '<div style="font-size:12.5px;color:#444;line-height:2;padding:4px 0;">本月月末（最后一天数据齐后）将自动以<b>整月数据</b>生成下月预看板模型：日均/高峰日均推完、悦跑完成度与出勤、兜底达标天数、企客KA品牌履约基线，作为下月考核的预估基准与目标测算输入。<br><span style="font-size:11px;color:#6b7280;">当前为月中，展示月末生成计划；生成后此卡自动切换为基线数据表。</span></div>';
+    box.innerHTML = '<div style="font-size:12.5px;color:#6b7280;line-height:2;padding:4px 0;">本月月末（最后一天数据齐后）将自动以<b>整月数据</b>生成下月预看板模型：日均/高峰日均推完、悦跑完成度与出勤、兜底达标天数、企客KA品牌履约基线，作为下月考核的预估基准与目标测算输入。<br><span style="font-size:11px;color:#6b7280;">当前为月中，展示月末生成计划；生成后此卡自动切换为基线数据表。</span></div>';
     return;
   }
   if (typeof MTD_EVAL === 'undefined' || !MTD_EVAL || !MTD_EVAL.cities) {
@@ -2248,7 +2248,7 @@ function renderNextMonth() {
     return;
   }
   var nextName = '11月';
-  var h = '<div style="font-size:12.5px;color:#444;line-height:1.9;margin-bottom:8px;">以下为<b>' + nextName + '预看板基线</b>（由本月整月数据自动汇总，下月方案发布后按新权重/高峰日重算）：</div>';
+  var h = '<div style="font-size:12.5px;color:#6b7280;line-height:1.9;margin-bottom:8px;">以下为<b>' + nextName + '预看板基线</b>（由本月整月数据自动汇总，下月方案发布后按新权重/高峰日重算）：</div>';
   h += '<div class="table-scroll"><table class="dt"><thead><tr><th>城市</th><th>整月日均推完</th><th>高峰日均</th><th>推完最低</th><th>兜底达标天数</th><th>悦跑均完成度</th><th>悦跑出勤</th><th>承托比首→末</th><th>企客KA最新</th><th>MTD总分基线</th></tr></thead><tbody>';
   Object.keys(MTD_EVAL.cities).forEach(function(c) {
     var v = MTD_EVAL.cities[c];
@@ -2541,14 +2541,14 @@ function updatePeriodProgress() {
     var isTodayPeak = line.peakList.indexOf(day) !== -1;
     allHtml += '<div class="period-prog-card" style="border-left:3px solid ' + line.color + '">';
     allHtml += '<div class="pp-title" style="color:' + line.color + '"><span style="font-size:14px;">' + line.name + '</span>';
-    allHtml += '<span style="font-size:11px;color:#888;margin-left:6px;">第' + periodNum + '期 ' + periodLabel + '</span></div>';
+    allHtml += '<span style="font-size:11px;color:#6b7280;margin-left:6px;">第' + periodNum + '期 ' + periodLabel + '</span></div>';
     allHtml += '<div class="pp-current">';
     if (isTodayPeak) {
       allHtml += '<span style="color:#d93025;">\u26A1 今日高峰日</span>';
     } else if (line.name === '\u52a0\u76df') {
       allHtml += '<span style="color:#' + (isInPeriod2 ? 'f5a623' : '1967d2') + ';">非高峰日</span>';
     } else {
-      allHtml += '<span style="color:#888;">\u2014</span>';
+      allHtml += '<span style="color:#9aa0a6;">\u2014</span>';
     }
     allHtml += '</div>';
     allHtml += '<div class="pp-bar"><div class="pp-bar-fill" style="width:' + pct + '%;background:' + line.color + ';"></div></div>';
@@ -3264,7 +3264,7 @@ function renderDataHealth() {
       if (seg.length) parts.push(cityInfo[c].city + '：' + seg.join('、') + '（' + d0.join('、') + '）');
     });
     h = '<div class="card-title"><span class="icon">🩺</span> 数据完整性自检 ' + chip + '</div>'
-      + '<div style="font-size:12px;color:#444;line-height:2;">数据截至 <b>' + latest + '</b>，共 ' + dataDates.length + ' 个数据日 · 高峰日 ' + peakDays.length + ' 天'
+      + '<div style="font-size:12px;color:#6b7280;line-height:2;">数据截至 <b>' + latest + '</b>，共 ' + dataDates.length + ' 个数据日 · 高峰日 ' + peakDays.length + ' 天'
       + (gapDays.length ? ' · <span style="color:#d93025;">断档：' + gapDays.join('、') + '</span>' : ' · 无断档')
       + '<br>'
       + (parts.length
@@ -3303,14 +3303,14 @@ function renderGapChart() {
       if (w > 34) s += '<text x="' + (x + w/2).toFixed(1) + '" y="' + (y+14.5) + '" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">' + g[sg[0]].toFixed(2) + '</text>';
       x += w;
     });
-    s += '<text x="' + (W - padR + 6) + '" y="' + (y+11) + '" font-size="10.5" font-weight="700" fill="#555">合计 ' + g.tot.toFixed(2) + '</text>';
+    s += '<text x="' + (W - padR + 6) + '" y="' + (y+11) + '" font-size="10.5" font-weight="700" fill="#6b7280">合计 ' + g.tot.toFixed(2) + '</text>';
     var main = 'hd'; segs.forEach(function(sg){ if (g[sg[0]] > g[main]) main = sg[0]; });
     var mainName = {hd:'HD 加盟履约', ty:'体验分', tw:'推完', wj:'完结率'}[main];
     s += '<text x="' + padL + '" y="' + (y+34) + '" font-size="10" fill="#d93025">主因：' + mainName + '（占 ' + Math.round(g[main]/g.tot*100) + '%）</text>';
   });
   var lx = padL;
   segs.forEach(function(sg) {
-    s += '<rect x="' + lx + '" y="' + (H-14) + '" width="11" height="8" rx="2" fill="' + sg[2] + '"/><text x="' + (lx+15) + '" y="' + (H-6) + '" font-size="10" fill="#666">' + sg[1] + '</text>';
+    s += '<rect x="' + lx + '" y="' + (H-14) + '" width="11" height="8" rx="2" fill="' + sg[2] + '"/><text x="' + (lx+15) + '" y="' + (H-6) + '" font-size="10" fill="#6b7280">' + sg[1] + '</text>';
     lx += 15 + sg[1].length * 10 + 16;
   });
   box.innerHTML = '<svg id="gap-chart-svg" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="min-width:440px;width:100%;height:auto;display:block;">' + s + '</svg>';
@@ -3358,19 +3358,19 @@ function renderBreachChart() {
     var bx = gx + (groupW - (series.length * barW + gap2)) / 2;
     series.forEach(function(sr, si) {
       var v = d[sr[0]], x = bx + si * (barW + gap2);
-      if (v === null) { s += '<text x="' + (x+barW/2) + '" y="' + (H-padB-6) + '" text-anchor="middle" font-size="9" fill="#8a919e">待发布</text>'; return; }
+      if (v === null) { s += '<text x="' + (x+barW/2) + '" y="' + (H-padB-6) + '" text-anchor="middle" font-size="9" fill="#9aa0a6">待发布</text>'; return; }
       var by = Y(v);
       s += '<rect x="' + x + '" y="' + by + '" width="' + barW + '" height="' + (H-padB-by) + '" rx="3" fill="' + sr[2] + '"><title>' + cityInfo[c].city + ' ' + sr[1] + ' ' + v.toFixed(2) + '%（样本 ' + (sr[0]==='pk'?d.pkN:d.noN) + ' 天）</title></rect>';
-      s += '<text x="' + (x+barW/2) + '" y="' + (by-4) + '" text-anchor="middle" font-size="9.5" fill="#555">' + v.toFixed(2) + '</text>';
+      s += '<text x="' + (x+barW/2) + '" y="' + (by-4) + '" text-anchor="middle" font-size="9.5" fill="#6b7280">' + v.toFixed(2) + '</text>';
     });
     var delta = (d.pk !== null && d.no !== null) ? (d.pk - d.no) : null;
     s += '<text x="' + (gx+groupW/2) + '" y="' + (H-padB+16) + '" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a2b4a">' + cityInfo[c].city + '</text>';
-    s += '<text x="' + (gx+groupW/2) + '" y="' + (H-padB+30) + '" text-anchor="middle" font-size="9.5" fill="' + (delta !== null && delta < -0.1 ? '#d93025' : '#888') + '">高峰冲击 ' + (delta === null ? '—' : (delta>0?'+':'') + delta.toFixed(2) + 'pp') + '</text>';
+    s += '<text x="' + (gx+groupW/2) + '" y="' + (H-padB+30) + '" text-anchor="middle" font-size="9.5" fill="' + (delta !== null && delta < -0.1 ? '#d93025' : '#6b7280') + '">高峰冲击 ' + (delta === null ? '—' : (delta>0?'+':'') + delta.toFixed(2) + 'pp') + '</text>';
   });
   s += '<line x1="' + padL + '" y1="' + (H-padB) + '" x2="' + (W-padR) + '" y2="' + (H-padB) + '" stroke="#d5dae2"/>';
   var lx = padL;
   series.forEach(function(sr) {
-    s += '<rect x="' + lx + '" y="' + (H-14) + '" width="11" height="8" rx="2" fill="' + sr[2] + '"/><text x="' + (lx+15) + '" y="' + (H-6) + '" font-size="10" fill="#666">' + sr[1] + '</text>';
+    s += '<rect x="' + lx + '" y="' + (H-14) + '" width="11" height="8" rx="2" fill="' + sr[2] + '"/><text x="' + (lx+15) + '" y="' + (H-6) + '" font-size="10" fill="#6b7280">' + sr[1] + '</text>';
     lx += 15 + sr[1].length * 10 + 16;
   });
   box.innerHTML = '<svg id="breach-chart-svg" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="min-width:440px;width:100%;height:auto;display:block;">' + s + '</svg>';
@@ -3924,12 +3924,12 @@ function renderPeriodBars() {
       var v = d[s2.id];
       var x = bx + si * (barW + innerGap);
       if (v === null) {
-        s += '<text x="' + (x + barW / 2) + '" y="' + (H - padB - 6) + '" text-anchor="middle" font-size="9" fill="#8a919e">待发布</text>';
+        s += '<text x="' + (x + barW / 2) + '" y="' + (H - padB - 6) + '" text-anchor="middle" font-size="9" fill="#9aa0a6">待发布</text>';
         return;
       }
       var by = Y(v);
       s += '<rect x="' + x + '" y="' + by + '" width="' + barW + '" height="' + (H - padB - by) + '" rx="3" fill="' + s2.color + '"><title>' + cityInfo[c].city + ' ' + s2.name + ' ' + v + (m.unit || '') + '</title></rect>';
-      s += '<text x="' + (x + barW / 2) + '" y="' + (by - 4) + '" text-anchor="middle" font-size="9.5" fill="#555">' + v + '</text>';
+      s += '<text x="' + (x + barW / 2) + '" y="' + (by - 4) + '" text-anchor="middle" font-size="9.5" fill="#6b7280">' + v + '</text>';
     });
     s += '<text x="' + (gx + groupW / 2) + '" y="' + (H - padB + 16) + '" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a2b4a">' + cityInfo[c].city + '</text>';
   });
@@ -3937,7 +3937,7 @@ function renderPeriodBars() {
   var lx = padL;
   series.forEach(function(s2) {
     s += '<rect x="' + lx + '" y="' + (H - 14) + '" width="12" height="8" rx="2" fill="' + s2.color + '"/>';
-    s += '<text x="' + (lx + 16) + '" y="' + (H - 6) + '" font-size="10" fill="#666">' + s2.name + '</text>';
+    s += '<text x="' + (lx + 16) + '" y="' + (H - 6) + '" font-size="10" fill="#6b7280">' + s2.name + '</text>';
     lx += 16 + s2.name.length * 10 + 18;
   });
   box.innerHTML = '<svg id="period-bar-svg" viewBox="0 0 ' + W + ' ' + H + '" style="min-width:460px;width:100%;height:auto;display:block;">' + s + '</svg>';
