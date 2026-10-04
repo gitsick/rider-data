@@ -325,7 +325,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   /* 锚点偏移（anchor-nav 跳转时不被页眉遮挡） */
   [id^="sec-"] { scroll-margin-top:20px; }
   /* 减少动画偏好 */
-  @media(prefers-reduced-motion:reduce){ .qr-pulse{animation:none} .qr-modal-box{transition:none} .card{transition:none} .summary-card{transition:none} }
+  @media(prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important;} }
   /* ===== 2026-10 增强：走势图 / 环比 / 总分对比条 ===== */
   .delta-good { color:#34a853; font-size:10px; font-weight:700; margin-left:3px; }
   .delta-bad { color:#d93025; font-size:10px; font-weight:700; margin-left:3px; }
@@ -3639,6 +3639,22 @@ var QKKA_BRAND={"泰兴":{"date":"20260901-0930","brands":{"星巴克":{"stores"
 var QKKA_MONTH={"泰兴":{"period":"20260901-0930","stores":117,"ok":90,"okRatio":76.9,"ontimeWb":14277,"doneWb":14880,"rate":95.95,"brands":36,"stations":4},"响水":{"period":"20260901-0930","stores":37,"ok":37,"okRatio":100.0,"ontimeWb":3166,"doneWb":3188,"rate":99.31,"brands":22,"stations":4}};
 var SKA_LINES={"瑞幸": 99.0, "肯德基": 90.0, "必胜客": 90.0, "麦当劳": 90.0, "星巴克": 93.0, "沃尔玛": 95.0};
 if (typeof renderMtdEval==='function'){try{['renderMtdEval','renderQkkaSka','renderSkaSix','renderSkaDaily','renderSkaReport','renderModuleOverview','renderNextMonth'].forEach(function(f){if(typeof window[f]==='function'){try{window[f]();}catch(e2){console.warn(f,e2);}}});}catch(e){}}
+</script>
+<script id="a11y-enabler">
+(function(){
+  function __a11yKeys(){
+    document.querySelectorAll('div[onclick],span[onclick]').forEach(function(el){
+      if(el.hasAttribute('tabindex')) return;
+      el.setAttribute('tabindex','0');
+      el.setAttribute('role','button');
+      el.addEventListener('keydown',function(e){
+        if(e.key==='Enter'||e.key===' '){ e.preventDefault(); el.click(); }
+      });
+    });
+  }
+  if(document.readyState==='complete'){ __a11yKeys(); }
+  else{ window.addEventListener('load', __a11yKeys); }
+})();
 </script>
 </body>
 </html>
