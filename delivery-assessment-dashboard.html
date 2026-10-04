@@ -54,7 +54,10 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .mo-chip { flex:1; min-width:72px; min-height:52px; display:flex; flex-direction:column; justify-content:center; background:#f8f9fb; border-radius:8px; padding:5px 6px; text-align:center; }
   .mo-chip .mo-city { font-size:10.5px; color:#6b7280; margin-bottom:1px; }
   .mo-chip .mo-val { font-size:14.5px; font-weight:800; }
-  .mo-ok { color:#188038; } .mo-warn { color:#e37400; } .mo-bad { color:#d93025; } .mo-na { color:#9aa3b2; }
+  .mo-ok { color:#188038; } .mo-na { color:#9aa3b2; }
+  /* Ch44: 异常/预警重点突出——异常填充红底、预警填充橙底 */
+  .mo-bad { color:#d93025; background:#fce8e8; font-weight:800; padding:1px 6px; border-radius:6px; display:inline-block; }
+  .mo-warn { color:#b35f00; background:#fef3e2; font-weight:800; padding:1px 6px; border-radius:6px; display:inline-block; }
   /* 趋势表 */
   .trend-table { width:100%; border-collapse:collapse; font-size:11.5px!important; }
   .trend-table th { background:#1B2233!important; color:#fff!important; padding:6px 4px!important; text-align:center!important; }
@@ -897,7 +900,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
 <div class="dim-content" id="dim-monthly">
   <div class="card" style="padding:14px 18px;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-    <div class="card-title" style="margin-bottom:8px;"><span class="icon">🧭</span>考核方案 · 六大模块指标总览 <span id="mo-mode-tag" style="font-weight:400;font-size:11.5px;color:#6b7280;margin-left:4px;"></span></div>
+    <div class="card-title" style="margin-bottom:8px;"><span class="icon">🧭</span>考核方案 · 四大模块指标总览 <span id="mo-mode-tag" style="font-weight:400;font-size:11.5px;color:#6b7280;margin-left:4px;"></span></div>
     <div class="mod-ov" id="mod-ov-body"><div style="font-size:12px;color:#6b7280;">数据加载中…</div></div>
     <div style="font-size:10.5px;color:#6b7280;margin-top:8px;">口径：悦跑/普众完成度 90%~110%（＜90% 记0，悦跑出勤≥90% 系数1.05）；HD完成率 90%~100% 计分；推单完成率 110% 封顶、日均≥98.8% 人效兜底；履约完结率 80%~110% 计分；体验=复合超时40%+虚假点送达30%+配送取消单30%。🟢=计分区间内达标，🔴=低于计分下限/兜底线，⚪=当日未发布。</div>
   </div>
@@ -1673,12 +1676,10 @@ function renderModuleOverview() {
   var cities = Object.keys(MTD_EVAL.cities);
   function clsBy(v, lo) { if (v == null) return 'mo-na'; return v < lo ? 'mo-bad' : 'mo-ok'; }
   var mods = [
-    { icon:'🟠', name:'悦跑运力', w:'权重 30%', rule:'达标骑手完成度 90%~110% 计分，＜90% 记 0；出勤率≥90% 系数 1.05', get:function(v){ return v.ymAvg; }, fmt:function(x){ return x.toFixed(1)+'%'; }, lo:90 },
-    { icon:'🟥', name:'加盟运力（HD）', w:'权重 15%', rule:'HD完成率 90%~100% 计分，日更自动填入', get:function(v){ return v.hdLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 },
+    { icon:'🟥', name:'加盟运力（HD）', w:'权重 50%', rule:'HD完成率 90%~100% 计分，日更自动填入', get:function(v){ return v.hdLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 },
     { icon:'🟣', name:'体验考核', w:'权重 20%', rule:'复合超时率 40% + 虚假点送达 30% + 配送取消单 30%', get:function(v){ return v.tyLast; }, fmt:function(x){ return (isNaN(Number(x)) ? x : Number(x).toFixed(1)); }, lo:90 },
     { icon:'🔵', name:'推单完成率', w:'权重 20%', rule:'110% 封顶；日均≥98.8% 为人效兜底线（高峰日另核）', get:function(v){ return v.twAll; }, fmt:function(x){ return x.toFixed(2)+'%'; }, lo:98.8 },
-    { icon:'🔷', name:'履约完结率', w:'权重 10%', rule:'完结率 80%~110% 计分', get:function(v){ return v.wjAvg; }, fmt:function(x){ return x.toFixed(1)+'%'; }, lo:80 },
-    { icon:'🟤', name:'普通众包运力', w:'权重 5%', rule:'活跃骑手完成度 90%~100% 计分，＜90% 记 0', get:function(v){ return v.pzLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 }
+    { icon:'🔷', name:'履约完结率', w:'权重 10%', rule:'完结率 80%~110% 计分', get:function(v){ return v.wjAvg; }, fmt:function(x){ return x.toFixed(1)+'%'; }, lo:80 }
   ];
   var h = '';
   mods.forEach(function(m) {
