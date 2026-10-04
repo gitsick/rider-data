@@ -1559,21 +1559,24 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
   <div class="card-title"><span class="icon">📅</span>企客SKA · 月维度（六品牌总览 · 门店考核值 · 赔付预估）</div>
+  <div style="font-size:11px;margin-bottom:8px;"><a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a><span style="color:#6b7280;"> ｜ 门店明细补充：品牌x商家x履约站-履约明细（ID 17805）</span></div>
   <div id="ska-six-box"></div>
 </div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-  <div class="card-title"><span class="icon">📈</span>企客SKA · 天维度（品牌×城市 每日准时率明细）</div>
+  <div class="card-title"><span class="icon">📈</span>企客SKA · 月底天维度（品牌×城市 每日准时率明细 · 门店对应校验）</div>
+  <div style="font-size:11px;margin-bottom:8px;"><a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度数据源：企客KA履约监控（BI 253744）</a></div>
   <div id="ska-daily-box"></div>
-</div>
-<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-  <div class="card-title"><span class="icon">📋</span>企客SKA · 分析报告（整体概览 · 持续预警 · 赔付预判）</div>
-  <div id="ska-report-box"></div>
+  <div id="ska-check-box"></div>
 </div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
   <div class="card-title"><span class="icon">📊</span>企客SKA · 数据图表（天维度趋势）</div>
   <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;color:#444;margin-bottom:4px;">每日加权准时率（%）</div><canvas id="ska-cv-rate"></canvas></div>
   <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;"><div style="font-size:12px;font-weight:700;color:#444;margin-bottom:4px;">每日配送单量（单）</div><canvas id="ska-cv-vol"></canvas></div>
   <div style="font-size:10.5px;color:#6b7280;margin-top:6px;">准时率=客户考核准时运单量/配送完成运单量（当日城市汇总）；虚线为赔付/预警参考线；红点=当日低于90%；数据随每日流水线刷新。</div>
+</div>
+<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+  <div class="card-title"><span class="icon">📋</span>企客SKA · 分析报告（整体概览 · 持续预警 · 赔付预判）</div>
+  <div id="ska-report-box"></div>
 </div>
 <div class="section-label">📐 计分模型</div>
 <div class="card" id="sec-example" style="margin-bottom:16px;background:linear-gradient(135deg,#f8f9fb 0%,#e8f0fe 100%);">
@@ -1894,7 +1897,7 @@ function renderQkkaSka() {
     h += '</tbody></table></div>';
   }
   h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>品牌</th><th>门店数</th><th>运单量</th><th>准时率</th><th>状态</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>';
-  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">数据：品牌x商家x履约站-履约明细（ID 17805，BI 253744，' + (QKKA_BRAND['泰兴'] ? QKKA_BRAND['泰兴'].date : '') + '）；准时率=客户考核准时运单量/配送完成运单量（累计），门店达标口径=门店准时率≥KPI目标95%；门店月维度赔付以自然月累计为准，本预警为提前提示；配送原因取消率已按17805明细纳入赔付预判（肯/必），客诉率/提前点率口径待数据源开放后接入。</div>';
+  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">数据：品牌x商家x履约站-履约明细（ID 17805，BI 253744，' + (QKKA_BRAND['泰兴'] ? QKKA_BRAND['泰兴'].date : '') + '）；准时率=客户考核准时运单量/配送完成运单量（累计），门店达标口径=门店准时率≥KPI目标95%；门店月维度赔付以自然月累计为准，本预警为提前提示；配送原因取消率已按17805明细纳入赔付预判（肯/必），客诉率/提前点率口径待数据源开放后接入；<a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度看板（BI 269707）</a> · <a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度明细（BI 253744）</a></div>';
   box.innerHTML = h;
 }
 
@@ -2043,6 +2046,58 @@ function renderSkaDaily() {
       + '<td>' + (r.cancel != null ? Number(r.cancel).toFixed(3) + '%' : '—') + '</td></tr>';
   });
   h += '</tbody></table></div>';
+  box.innerHTML = h;
+  try { renderSkaCheck(); } catch (e) {}
+}
+
+// ===================== SKA 月底天维度 × 月维度 门店一一对应校验 =====================
+function renderSkaCheck() {
+  var box = document.getElementById('ska-check-box');
+  if (!box) return;
+  if (typeof SKA_DAILY === 'undefined' || !SKA_DAILY || !SKA_DAILY.rows || !SKA_DAILY.rows.length
+    || typeof SKA_STORES === 'undefined' || !SKA_STORES || !SKA_STORES.months) { box.innerHTML = ''; return; }
+  var latestD = SKA_DAILY.rows.reduce(function(m, r) { return r.d > m ? r.d : m; }, '0');
+  var dayRows = SKA_DAILY.rows.filter(function(r) { return r.d === latestD; });
+  if (!dayRows.length) { box.innerHTML = ''; return; }
+  var mkeys = Object.keys(SKA_STORES.months).sort().reverse();
+  var dshow = latestD.slice(4, 6) + '-' + latestD.slice(6, 8);
+  var h = '<div style="margin-top:12px;padding-top:10px;border-top:1px dashed #dbe4f0;">'
+    + '<div style="font-size:12.5px;font-weight:700;color:#188038;margin-bottom:2px;">🧾 月底天维度 × 月维度 · 门店一一对应校验（企客KA）</div>'
+    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">两维度同源（17805 品牌x商家x履约站-履约明细，天维度入口 BI 253744）：月维度门店按自然月聚合，天维度为当日有单门店；校验最新数据日 <b>' + dshow + '</b> 的有单门店与月维度门店名单一一对应，并勾稽两维度单量。</div>'
+    + '<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>月维度门店</th><th>天维度有单门店（' + dshow + '）</th><th>门店对应</th><th>月维度单量</th><th>天维度累计单量</th><th>单量勾稽</th></tr></thead><tbody>';
+  var allOk = true;
+  dayRows.forEach(function(r) {
+    var mk = null;
+    for (var i = 0; i < mkeys.length; i++) {
+      var mm = mkeys[i];
+      if (mm === '2026-02') continue;
+      var cs = SKA_STORES.months[mm].cities || {};
+      if (cs[r.city] && cs[r.city][r.b]) { mk = mm; break; }
+    }
+    var mp = latestD.slice(0, 6);
+    var dailyDone = SKA_DAILY.rows.reduce(function(s, x) { return (x.d.slice(0, 6) === mp && x.city === r.city && x.b === r.b) ? s + (x.done || 0) : s; }, 0);
+    if (!mk) {
+      allOk = false;
+      h += '<tr><td>' + r.city + '</td><td>' + r.b + '</td><td colspan="2" style="color:#9aa0a6;">月维度暂无该品牌门店</td>'
+        + '<td style="color:#d93025;font-weight:700;">⚠ 天维度有单 ' + r.pois + ' 家未入月维度</td><td>—</td><td>' + dailyDone + '</td><td style="color:#d93025;font-weight:700;">⚠ 差异</td></tr>';
+      return;
+    }
+    var stores = SKA_STORES.months[mk].cities[r.city][r.b] || [];
+    var mCount = stores.length;
+    var mDone = stores.reduce(function(s, x) { return s + (x.done || 0); }, 0);
+    var okStore = r.pois === mCount, okDone = dailyDone === mDone;
+    if (!okStore || !okDone) allOk = false;
+    h += '<tr><td>' + r.city + '</td><td>' + r.b + '</td>'
+      + '<td><b>' + mCount + '</b> 家</td><td>' + r.pois + ' 家</td>'
+      + '<td>' + (okStore ? '<span style="color:#188038;font-weight:700;">✓ 一一对应</span>' : (r.pois < mCount ? '<span style="color:#e37400;font-weight:700;">✓ 名单一致 · 当日无单 ' + (mCount - r.pois) + ' 家</span>' : '<span style="color:#d93025;font-weight:700;">⚠ 天维度多 ' + (r.pois - mCount) + ' 家</span>')) + '</td>'
+      + '<td>' + mDone + '</td><td>' + dailyDone + '</td>'
+      + '<td>' + (okDone ? '<span style="color:#188038;font-weight:700;">✓ 平</span>' : '<span style="color:#d93025;font-weight:700;">⚠ 差 ' + Math.abs(mDone - dailyDone) + ' 单</span>') + '</td></tr>';
+  });
+  h += '</tbody></table></div>';
+  h += '<div style="font-size:11px;margin-top:4px;font-weight:700;' + (allOk ? 'color:#188038;' : 'color:#b35f00;') + '">'
+    + (allOk ? '✓ 校验结论：月底天维度企客KA有单门店与月维度门店一一对应，两维度单量勾稽一致。' : '⚠ 存在差异项，见上表标红/标橙行（当日无单门店属正常对应；标红差异需关注数据抓取时点）。') + '</div>';
+  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:2px;">说明：诸暨瑞幸月维度取自官方 SKA 看板 269707（2026-02 最新可用月），该源无天维度明细，不参与本校验；月维度门店名单明细见上方「月维度」卡片。</div>'
+    + '</div>';
   box.innerHTML = h;
 }
 
