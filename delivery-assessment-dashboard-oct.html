@@ -54,7 +54,10 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .mo-chip { flex:1; min-width:72px; min-height:52px; display:flex; flex-direction:column; justify-content:center; background:#f8f9fb; border-radius:8px; padding:5px 6px; text-align:center; }
   .mo-chip .mo-city { font-size:10.5px; color:#6b7280; margin-bottom:1px; }
   .mo-chip .mo-val { font-size:14.5px; font-weight:800; }
-  .mo-ok { color:#188038; } .mo-warn { color:#e37400; } .mo-bad { color:#d93025; } .mo-na { color:#9aa3b2; }
+  .mo-ok { color:#188038; } .mo-na { color:#9aa3b2; }
+  /* Ch44: 异常/预警重点突出——异常填充红底、预警填充橙底 */
+  .mo-bad { color:#d93025; background:#fce8e8; font-weight:800; padding:1px 6px; border-radius:6px; display:inline-block; }
+  .mo-warn { color:#b35f00; background:#fef3e2; font-weight:800; padding:1px 6px; border-radius:6px; display:inline-block; }
   /* 趋势表 */
   .trend-table { width:100%; border-collapse:collapse; font-size:11.5px!important; }
   .trend-table th { background:#1B2233!important; color:#fff!important; padding:6px 4px!important; text-align:center!important; }
@@ -760,14 +763,15 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
   </div>
   <div class="grid-modules gm3">
-    <div class="card module-card jiameng collapsible">
-      <div class="card-title collapsible"><span class="icon">🟥</span>加盟运力（HD完成率） <span class="pill pill-weight">权重 15%</span></div>
+    <div class="card module-card yuepao collapsible">
+      <div class="card-title collapsible"><span class="icon">🟠</span>悦跑运力 <span class="pill pill-weight">权重 30%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
-          <div><div class="indicator-name">HD完成率</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
-          <div class="indicator-score">完成率<input class="calc-input" id="jm_rate" type="number" onchange="calcScore()"><br>得分<span id="jm_score" style="font-weight:700;color:#e8525f;">—</span></div>
+          <div><div class="indicator-name">达标骑手数完成度</div><span class="threshold-tag tag-red">90%~110% 计分</span></div>
+          <div class="indicator-score">完成度<input class="calc-input" id="ym_rate" type="number" onchange="calcScore()"><br>出勤系数<select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:70px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select><br>得分<span id="ym_score" style="font-weight:700;color:#e8710a;">—</span><div style="font-size:10.5px;color:#6b7280;margin-top:3px;">BI日更自动填入；出勤率≥90%自动取1.05</div></div>
         </div>
-        <div class="mo-mtd" id="mtd-jm"></div>
+        <div style="font-size:11px;color:#888;text-align:left;margin-top:4px;">得分=完成度×出勤合格率系数；完成度＜90%记0分</div>
+        <div class="mo-mtd" id="mtd-ym"></div>
       </div>
     </div>
     <div class="card module-card tiyan collapsible">
@@ -790,6 +794,16 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <div class="mo-mtd" id="mtd-tw"></div>
       </div>
     </div>
+    <div class="card module-card jiameng collapsible">
+      <div class="card-title collapsible"><span class="icon">🟥</span>加盟运力（HD完成率） <span class="pill pill-weight">权重 15%</span></div>
+      <div class="collapsible-content">
+        <div class="indicator-row">
+          <div><div class="indicator-name">HD完成率</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
+          <div class="indicator-score">完成率<input class="calc-input" id="jm_rate" type="number" onchange="calcScore()"><br>得分<span id="jm_score" style="font-weight:700;color:#e8525f;">—</span></div>
+        </div>
+        <div class="mo-mtd" id="mtd-jm"></div>
+      </div>
+    </div>
     <div class="card module-card wanjie collapsible">
       <div class="card-title collapsible"><span class="icon">🟠</span>履约完结率 <span class="pill pill-weight">权重 10%</span></div>
       <div class="collapsible-content">
@@ -798,17 +812,6 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <div class="indicator-score">完成率<input class="calc-input" id="wj_rate" type="number" onchange="calcScore()"><br>得分<span id="wj_score" style="font-weight:700;color:#ff6b35;">—</span></div>
         </div>
         <div class="mo-mtd" id="mtd-wj"></div>
-      </div>
-    </div>
-    <div class="card module-card yuepao collapsible">
-      <div class="card-title collapsible"><span class="icon">🟠</span>悦跑运力 <span class="pill pill-weight">权重 30%</span></div>
-      <div class="collapsible-content">
-        <div class="indicator-row">
-          <div><div class="indicator-name">达标骑手数完成度</div><span class="threshold-tag tag-red">90%~110% 计分</span></div>
-          <div class="indicator-score">完成度<input class="calc-input" id="ym_rate" type="number" onchange="calcScore()"><br>出勤系数<select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:70px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select><br>得分<span id="ym_score" style="font-weight:700;color:#e8710a;">—</span><div style="font-size:10.5px;color:#6b7280;margin-top:3px;">BI日更自动填入；出勤率≥90%自动取1.05</div></div>
-        </div>
-        <div style="font-size:11px;color:#888;text-align:left;margin-top:4px;">得分=完成度×出勤合格率系数；完成度＜90%记0分</div>
-        <div class="mo-mtd" id="mtd-ym"></div>
       </div>
     </div>
     <div class="card module-card puzhong collapsible">
@@ -1781,9 +1784,9 @@ function renderModuleOverview() {
   function clsBy(v, lo) { if (v == null) return 'mo-na'; return v < lo ? 'mo-bad' : 'mo-ok'; }
   var mods = [
     { icon:'🟠', name:'悦跑运力', w:'权重 30%', rule:'达标骑手完成度 90%~110% 计分，＜90% 记 0；出勤率≥90% 系数 1.05', get:function(v){ return v.ymAvg; }, fmt:function(x){ return x.toFixed(1)+'%'; }, lo:90 },
-    { icon:'🟥', name:'加盟运力（HD）', w:'权重 15%', rule:'HD完成率 90%~100% 计分，日更自动填入', get:function(v){ return v.hdLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 },
     { icon:'🟣', name:'体验考核', w:'权重 20%', rule:'复合超时率 40% + 虚假点送达 30% + 配送取消单 30%', get:function(v){ return v.tyLast; }, fmt:function(x){ return (isNaN(Number(x)) ? x : Number(x).toFixed(1)); }, lo:90 },
     { icon:'🔵', name:'推单完成率', w:'权重 20%', rule:'110% 封顶；日均≥98.8% 为人效兜底线（高峰日另核）', get:function(v){ return v.twAll; }, fmt:function(x){ return x.toFixed(2)+'%'; }, lo:98.8 },
+    { icon:'🟥', name:'加盟运力（HD）', w:'权重 15%', rule:'HD完成率 90%~100% 计分，日更自动填入', get:function(v){ return v.hdLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 },
     { icon:'🔷', name:'履约完结率', w:'权重 10%', rule:'完结率 80%~110% 计分', get:function(v){ return v.wjAvg; }, fmt:function(x){ return x.toFixed(1)+'%'; }, lo:80 },
     { icon:'🟤', name:'普通众包运力', w:'权重 5%', rule:'活跃骑手完成度 90%~100% 计分，＜90% 记 0', get:function(v){ return v.pzLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 }
   ];
