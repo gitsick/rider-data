@@ -952,8 +952,8 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div class="anchor-nav">
     <a class="anchor-btn" href="#sec-overview">🏆 考核总览</a>
     <a class="anchor-btn" href="#sec-estimate">💰 预估警告罚款</a>
-    <a class="anchor-btn" href="#sec-example">🧮 计分示例</a>
-    <a class="anchor-btn" href="#sec-sensitivity">📈 敏感度分析</a>
+    <a class="anchor-btn" style="cursor:pointer;" onclick="jumpAnchor('report','sec-example');return false;" href="#sec-example">🧮 计分示例</a>
+    <a class="anchor-btn" style="cursor:pointer;" onclick="jumpAnchor('report','sec-sensitivity');return false;" href="#sec-sensitivity">📈 敏感度分析</a>
     <a class="anchor-btn" href="#sec-datasource">🔍 数据路径</a>
     <a class="anchor-btn" href="#sec-mtdeval">📊 月度评估</a>
     <a class="anchor-btn" href="#sec-qkka">🤝 企客·SKA</a>
@@ -1577,6 +1577,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         </div>
       </div>
     </div>
+<div class="section-label">🤝 企客SKA · 分析报告</div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
   <div class="card-title"><span class="icon">📋</span> 企客SKA · 分析报告（整体概览 · 持续预警 · 赔付预判）</div>
   <div id="ska-report-box"></div>
@@ -1729,10 +1730,14 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
 <script>
 function jumpDim(dim) {
-  var order = {daily:0, monthly:1, report:2, charts:3};
-  var tabs = document.querySelectorAll('.dim-tab');
-  switchDim(tabs[order[dim]], dim);
-  try { window.scrollTo(0, 0); } catch (e) {}
+var order = {daily:0, monthly:1, report:2, charts:3};
+var tabs = document.querySelectorAll('.dim-tab');
+switchDim(tabs[order[dim]], dim);
+try { window.scrollTo(0, 0); } catch (e) {}
+}
+function jumpAnchor(dim, id) {
+jumpDim(dim);
+setTimeout(function(){ var e = document.getElementById(id); if (e) { try { e.scrollIntoView({behavior:'smooth', block:'start'}); } catch(err) { e.scrollIntoView(); } } }, 500);
 }
 function switchDim(el, dim) {
   document.querySelectorAll('.dim-tab').forEach(function(t){ t.classList.remove('active'); });
