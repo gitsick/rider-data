@@ -1791,7 +1791,7 @@ function renderQkkaSka() {
     h += '</tbody></table></div>';
   }
   h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>品牌</th><th>门店数</th><th>运单量</th><th>准时率</th><th>状态</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>';
-  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">数据：品牌x商家x履约站-履约明细（ID 17805，BI 253744，' + (QKKA_BRAND['泰兴'] ? QKKA_BRAND['泰兴'].date : '') + '）；准时率=客户考核准时运单量/配送完成运单量（累计），门店达标口径=门店准时率≥KPI目标95%；门店月维度赔付以自然月累计为准，本预警为提前提示；客诉率/取消率口径待 SKA 体验看板（学城2741734785）开放后接入；<a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度看板（BI 269707）</a> · <a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度明细（BI 253744）</a></div>';
+  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">数据：品牌x商家x履约站-履约明细（ID 17805，BI 253744，' + (QKKA_BRAND['泰兴'] ? QKKA_BRAND['泰兴'].date : '') + '）；准时率=客户考核准时运单量/配送完成运单量（累计），门店达标口径=门店准时率≥KPI目标95%；门店月维度赔付以自然月累计为准，本预警为提前提示；客诉率/取消率口径待 SKA 体验看板（学城2741734785）开放后接入；<a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a> · <a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度数据源：企客KA履约监控（BI 253744）</a></div>';
   box.innerHTML = h;
 }
 
