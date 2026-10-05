@@ -2240,7 +2240,7 @@ function renderSkaStoreDetail() {
     var s2 = x.s;
     var line = (SKA_STORES.lines || {})[x.b] != null ? SKA_STORES.lines[x.b] : 90;
     var rc = (s2.rate != null && s2.rate < line) ? '#d93025' : '#188038';
-    th += '<tr><td>' + cityFull(x.c) + '</td><td>' + x.b + '</td><td style="font-size:10.5px;">' + s2.store + '</td><td><b>' + (s2.done || 0) + '</b></td>'
+    th += '<tr><td>' + cityFull(x.c) + '</td><td>' + x.b + '</td><td style="font-size:10.5px;" title="' + (s2.store||'') + '">' + skaShortName(s2.store, x.b) + '</td><td><b>' + (s2.done || 0) + '</b></td>'
       + '<td style="color:' + rc + ';font-weight:700;">' + (s2.rate != null ? Number(s2.rate).toFixed(2) + '%' : '—') + '</td>'
       + '<td>' + line + '%</td>'
       + '<td>' + (s2.days != null ? s2.days : '—') + '</td>'
@@ -4766,7 +4766,7 @@ function renderSkaWeekly(){
       var s0=x.s;
       var st=(s0.amt||0)>0?'赔付':(s0.warn?'预警':'达标');
       var col=st==='赔付'?'#d93025':(st==='预警'?'#e37400':'#188038');
-      h+='<tr><td>'+cityFull(x.c)+'</td><td>'+x.b+'</td><td style="font-size:10.5px;">'+(s0.store||'—')+'</td><td>'+(s0.done||0)+'</td>'
+      h+='<tr><td>'+cityFull(x.c)+'</td><td>'+x.b+'</td><td style="font-size:10.5px;" title="'+(s0.store||'')+'">'+skaShortName(s0.store, x.b)+'</td><td>'+(s0.done||0)+'</td>'
         +'<td style="color:'+col+';font-weight:700;">'+(s0.rate!=null?Number(s0.rate).toFixed(2)+'%':'—')+'</td>'
         +'<td>'+((s0.amt||0)>0?'<span style="color:#d93025;font-weight:700;">¥'+s0.amt+'</span>':(s0.pred||'—'))+'</td>'
         +'<td>'+(s0.warn?'<span style="color:#e37400;font-weight:700;">⚠ &lt;'+(s0.wline||'—')+'%</span>':'—')+'</td>'
