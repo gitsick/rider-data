@@ -764,7 +764,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
   </div>
   <div class="grid-modules gm3">
-    <div class="card module-card yuepao collapsible">
+    <div id="mod-run" class="card module-card yuepao collapsible">
       <div class="card-title collapsible"><span class="icon">🟠</span> 悦跑运力 <span class="pill pill-weight">权重 30%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
@@ -775,7 +775,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <div class="mo-mtd" id="mtd-ym"></div>
       </div>
     </div>
-    <div class="card module-card tiyan collapsible">
+    <div id="mod-exp" class="card module-card tiyan collapsible">
       <div class="card-title collapsible"><span class="icon">🟣</span> 体验考核 <span class="pill pill-weight">权重 20%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row"><div class="indicator-name">复合超时率 40%</div><div class="indicator-score"><input class="calc-input" id="ty_cs" type="number" onchange="calcScore()"></div></div>
@@ -785,7 +785,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <div class="mo-mtd" id="mtd-ty"></div>
       </div>
     </div>
-    <div class="card module-card tuiwan collapsible">
+    <div id="mod-push" class="card module-card tuiwan collapsible">
       <div class="card-title collapsible"><span class="icon">🔵</span> 推单完成率 <span class="pill pill-weight">权重 20%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
@@ -796,7 +796,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <div class="mo-mtd" id="mtd-tw"></div>
       </div>
     </div>
-    <div class="card module-card jiameng collapsible">
+    <div id="mod-hd" class="card module-card jiameng collapsible">
       <div class="card-title collapsible"><span class="icon">🟥</span> 加盟运力（HD完成率） <span class="pill pill-weight">权重 15%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
@@ -884,7 +884,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <div class="section-label">📈 趋势对比</div>
   <!-- 指标走势图（三城对比 · 折线/柱状可切换） -->
-  <div class="card" style="margin-bottom:12px;">
+  <div id="chart-trend" class="card" style="margin-bottom:12px;">
     <div class="card-title"><span class="icon">📊</span> 指标走势图（三城对比 · 橙色底纹=高峰日 · 竖虚线/底纹=当前选中日期）</div>
     <div class="tc-toolbar" id="tc-toolbar"></div>
     <div style="overflow-x:auto;">
@@ -905,7 +905,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">橙色列=高峰日 | 绿色列=当前选中日 | 点击列头可跳转到对应日期</div>
   </div>
 <div class="section-label">🧩 拆解与归因</div>
-<div class="card" id="ym-weekly-card" style="margin-bottom:12px;">
+<div id="chart-month" id="chart-period" class="card" id="ym-weekly-card" style="margin-bottom:12px;">
     <div class="card-title"><span class="icon">🗓️</span> 悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制）</div>
     <div class="table-scroll" id="ym-weekly-body"><div style="text-align:center;padding:14px;color:#6b7280;font-size:12.5px;">⏳ BI数据发布后自动生成各自然周完成度</div></div>
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">完成度=悦跑服务质量达标骑手数/目标（周均口径，目标以任务系统下发为准）；任一自然周＜90%该周记0分（自然周控制），平均完成率不控制区间；第1/5周含跨月日期，按已有数据日均近似。</div>
@@ -926,20 +926,21 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <!-- 多角度诊断图：缺口分解 + 兜底高峰冲击 -->
   <div class="grid-util">
-    <div class="card" style="margin-bottom:12px;">
+    <div id="chart-gap" class="card" style="margin-bottom:12px;">
       <div class="card-title"><span class="icon">🧩</span> 加权缺口分解（缺口=(100−值)×权重，与 100−总分 吻合）<button class="tc-btn tc-export" onclick="exportGapChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
       <div id="gap-chart"></div>
     </div>
-    <div class="card" style="margin-bottom:12px;">
+    <div id="chart-breach" class="card" style="margin-bottom:12px;">
       <div class="card-title"><span class="icon">🚨</span> 推完兜底线：高峰日 vs 非高峰日（高峰冲击视角）<button class="tc-btn tc-export" onclick="exportBreachChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
       <div id="breach-chart"></div>
     </div>
   </div>
-<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+<div id="chart-ska" class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
   <div class="card-title"><span class="icon">📊</span> 企客SKA · 数据图表（天维度趋势）</div>
   <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;margin-bottom:10px;"><div style="font-size:12px;font-weight:700;color:#6b7280;margin-bottom:4px;">每日加权准时率（%）</div><canvas id="ska-cv-rate"></canvas></div>
   <div style="background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:10px 12px;"><div style="font-size:12px;font-weight:700;color:#6b7280;margin-bottom:4px;">每日配送单量（单）</div><canvas id="ska-cv-vol"></canvas></div>
   <div style="font-size:10.5px;color:#6b7280;margin-top:6px;">准时率=客户考核准时运单量/配送完成运单量（当日城市汇总）；虚线为赔付/预警参考线；红点=当日低于90%；数据随每日流水线刷新。</div>
+</div>
 </div>
 
 <div class="dim-content" id="dim-monthly">
@@ -1376,7 +1377,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <!-- 推单完成率 & 体验模块区间计分表 -->
   <div class="grid grid-2" style="margin-bottom:16px;">
-    <div class="card">
+    <div id="sec-push-score" class="card">
       <div class="card-title"><span class="icon">📊</span> 推单完成率 · 区间计分表</div>
       <table class="penalty-table">
         <thead><tr><th>实际完成值 X</th><th>得分</th></tr></thead>
@@ -1391,7 +1392,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       </table>
       <div style="font-size:11px;color:#6b7280;margin-top:6px;">BI已接入日更（已更新至10-01，每日自动追加）；当前城市MTD推单完成率见「数据汇总」卡</div>
     </div>
-    <div class="card">
+    <div id="sec-exp-score" class="card">
       <div class="card-title"><span class="icon">📊</span> 体验模块 · 虚假/取消计分表</div>
       <table class="penalty-table">
         <thead><tr><th>实际完成值 X</th><th>虚假点送达得分</th><th>配送取消单得分</th></tr></thead>
@@ -1440,7 +1441,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   
 
   <!-- 月维度：考核周期 -->
-  <div class="card" style="margin-bottom:16px;">
+  <div id="sec-period" class="card" style="margin-bottom:16px;">
     <div class="card-title"><span class="icon">📅</span> 考核周期（按月分两期 + 高峰日）</div>
     <table class="period-table">
       <thead><tr><th>运力线</th><th>第1期</th><th>第2期</th><th>高峰日</th></tr></thead>
@@ -1498,7 +1499,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       </div>
     </details>
   </div>
-<div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
+<div id="ska-month-card" class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
   <div class="card-title"><span class="icon">📅</span> 企客SKA · 月维度（六品牌总览 · 门店考核值 · 赔付预估）</div>
   <div style="font-size:11px;margin-bottom:8px;"><a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a><span style="color:#6b7280;"> ｜ 门店明细补充：品牌x商家x履约站-履约明细（ID 17805）</span></div>
   <div id="ska-six-box"></div>
@@ -1757,7 +1758,20 @@ try { window.scrollTo(0, 0); } catch (e) {}
 }
 function jumpAnchor(dim, id) {
 jumpDim(dim);
-setTimeout(function(){ var e = document.getElementById(id); if (e) { try { e.scrollIntoView({behavior:'smooth', block:'start'}); } catch(err) { e.scrollIntoView(); } } }, 500);
+setTimeout(function(){
+  var e = id ? document.getElementById(id) : null;
+  if (!e) { try { window.scrollTo(0, 0); } catch (err) {} return; }
+  try {
+    var p = e;
+    while (p) { if (p.tagName === 'DETAILS') { p.open = true; } p = p.parentElement; }
+  } catch (err) {}
+  try { e.scrollIntoView({behavior:'smooth', block:'start'}); } catch (err) { e.scrollIntoView(); }
+  try {
+    e.style.transition = 'box-shadow .5s';
+    e.style.boxShadow = '0 0 0 3px rgba(255,193,0,.6)';
+    setTimeout(function(){ e.style.boxShadow = ''; }, 1800);
+  } catch (err) {}
+}, 500);
 }
 function switchDim(el, dim) {
   document.querySelectorAll('.dim-tab').forEach(function(t){ t.classList.remove('active'); });
@@ -4518,6 +4532,13 @@ if (typeof renderMtdEval==='function'){try{['renderMtdEval','renderQkkaSka','ren
 .top-nav .bar-status{flex:1 1 auto;min-width:0;color:#e8eaed;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 10px}
 @media(max-width:880px){.top-nav{gap:6px}.top-nav .bar-score{display:none}.top-nav .nav-cities{gap:4px;margin-left:8px}.top-nav .city-tab{min-width:40px;padding:2px 8px!important;font-size:11.5px!important}.top-nav .bar-status{font-size:12px;margin:0 6px}}
 @media(max-width:640px){.top-nav .bar-status{display:none}.top-nav .city-tab{min-width:40px;padding:2px 8px!important;font-size:12px!important}}
+
+/* MODULE_JUMP_CSS_START 页签间模块跳转芯片 */
+.jump-chip{display:inline-block;margin-left:5px;padding:1.5px 8px;border-radius:10px;background:#eef3ff;border:1px solid #d7e3ff;font-size:10.5px;font-weight:600;color:#3b6fd4;cursor:pointer;white-space:nowrap;vertical-align:middle;text-decoration:none;line-height:1.5;}
+.jump-chip:hover{background:#FFC300;border-color:#FFC300;color:#5b4a00;}
+.mj-wrap{float:right;margin-left:8px;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:60%;}
+@media(max-width:640px){.jump-chip{font-size:10px;padding:1px 5px;}.mj-wrap{max-width:52%;gap:3px;}}
+/* MODULE_JUMP_CSS_END */
 /* SKA_ENH_CSS_END */
 </style>
 <script>
@@ -4745,6 +4766,83 @@ window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); r
   else window.addEventListener('load', refreshDataStatus);
 })();
 /* DATA_STATUS_END */
+
+/* MODULE_JUMP_START 页签间模块指标相互跳转 */
+(function(){
+  var JM = [
+    /* —— 天维度 → —— */
+    {k:'悦跑运力', dim:'daily', chips:[['📊 走势','charts','chart-trend'],['📅 周拆解','charts','ym-weekly-card'],['📋 报告','report','slice-analysis']]},
+    {k:'加盟运力（HD完成率）', dim:'daily', chips:[['📊 走势','charts','chart-trend'],['📶 两期对比','charts','chart-period'],['📋 报告','report','slice-analysis']]},
+    {k:'普通众包运力', dim:'daily', chips:[['🏆 月度对比','charts','chart-month'],['📋 报告','report','slice-analysis']]},
+    {k:'体验考核', dim:'daily', chips:[['📊 走势','charts','chart-trend'],['📋 计分表','monthly','sec-exp-score'],['📋 报告','report','unmet-actions']]},
+    {k:'推单完成率', dim:'daily', chips:[['🚨 兜底线','charts','chart-breach'],['📋 计分表','monthly','sec-push-score'],['📋 报告','report','slice-analysis']]},
+    {k:'履约完结率', dim:'daily', chips:[['📊 走势','charts','chart-trend'],['📋 报告','report','unmet-actions']]},
+    {k:'数据汇总（', dim:'daily', chips:[['🏆 月度测算','monthly','sec-overview'],['📈 全部图表','charts','chart-trend']]},
+    {k:'当日测算 + 承托比', dim:'daily', chips:[['🔮 月度预估','monthly','sec-estimate']]},
+    {k:'考核周期', dim:'daily', chips:[['📅 月度周期','monthly','sec-period']]},
+    {k:'扣分项模块', dim:'daily', chips:[['📅 月度评估','monthly','qk-monthly-card'],['📋 评估报告','report','qike-score']]},
+    {k:'企客SKA · 月底天维度', dim:'daily', chips:[['📈 趋势图','charts','chart-ska'],['📅 周达标','report','ska-week-card'],['🤝 制度','report','ska-rules-card']]},
+    /* —— 月维度 → —— */
+    {k:'整月考核结果测算', dim:'monthly', chips:[['📈 月度对比','charts','chart-month'],['📋 报告','report','slice-analysis'],['📅 天维度','daily','']]},
+    {k:'城市预估警告', dim:'monthly', chips:[['🔮 测算器','report','preset-card']]},
+    {k:'考核指标全景表', dim:'monthly', chips:[['📅 天维度','daily','']]},
+    {k:'推单完成率 · 区间计分表', dim:'monthly', chips:[['🚨 兜底线','charts','chart-breach'],['🔵 推单模块','daily','mod-push']]},
+    {k:'体验模块 · 虚假/取消计分表', dim:'monthly', chips:[['🟣 体验模块','daily','mod-exp']]},
+    {k:'考核周期（按月分两期', dim:'monthly', chips:[['📅 天维度','daily','']]},
+    {k:'企客门店体验 · SKA品牌KPI赔付', dim:'monthly', chips:[['📅 天维度','daily','qk-daily-card'],['📋 评估报告','report','qike-score']]},
+    {k:'企客SKA · 月维度（六品牌总览', dim:'monthly', chips:[['📈 趋势','charts','chart-ska'],['📅 天维度明细','daily','qk-daily-card'],['📅 周达标','report','ska-week-card']]},
+    {k:'总分计算公式', dim:'monthly', chips:[['🧮 计分示例','report','sec-example'],['📈 敏感度','report','sec-sensitivity']]},
+    /* —— 分析报告 → —— */
+    {k:'切片分析：城市 × 期次 × 指标', dim:'report', chips:[['📶 两期对比','charts','chart-period'],['📈 走势','charts','chart-trend'],['🏆 月度','monthly','sec-overview']]},
+    {k:'未达成指标 · 落地措施', dim:'report', chips:[['🏆 月度结果','monthly','sec-overview'],['📊 走势','charts','chart-trend']]},
+    {k:'企客模块 · 方案计分规则评估', dim:'report', chips:[['📅 天维度','daily','qk-daily-card'],['📅 月度评估','monthly','qk-monthly-card'],['📈 趋势','charts','chart-ska']]},
+    {k:'SKA 考核周期维度', dim:'report', chips:[['📈 趋势','charts','chart-ska'],['📅 月度','monthly','ska-month-card']]},
+    {k:'SKA 考核制度总览', dim:'report', chips:[['📅 月度赔付','monthly','ska-month-card'],['📅 天维度','daily','qk-daily-card']]},
+    {k:'预估测算器', dim:'report', chips:[['💰 预估警告','monthly','sec-estimate'],['📈 月度对比','charts','chart-month']]},
+    {k:'问题细化拆解', dim:'report', chips:[['📊 走势','charts','chart-trend'],['🏆 月度','monthly','sec-overview']]},
+    /* —— 数据图表 → —— */
+    {k:'指标走势图', dim:'charts', chips:[['📅 天维度','daily','']]},
+    {k:'两期均值对比', dim:'charts', chips:[['📋 报告','report','slice-analysis']]},
+    {k:'月度总分对比', dim:'charts', chips:[['🏆 月度测算','monthly','sec-overview']]},
+    {k:'加权缺口分解', dim:'charts', chips:[['📋 报告','report','slice-analysis'],['🏆 月度','monthly','sec-overview']]},
+    {k:'推完兜底线', dim:'charts', chips:[['🔵 推单模块','daily','mod-push'],['📋 计分表','monthly','sec-push-score']]},
+    {k:'数据图表（天维度趋势）', dim:'charts', chips:[['📅 天维度明细','daily','qk-daily-card'],['📅 月度','monthly','ska-month-card'],['📅 周达标','report','ska-week-card']]},
+    {k:'自然周完成度拆解', dim:'charts', chips:[['🟠 悦跑模块','daily','mod-run'],['📋 报告','report','slice-analysis']]}
+  ];
+  function chipHtml(c){
+    return '<a class="jump-chip" onclick="event.stopPropagation();jumpAnchor(\'' + c[1] + '\',\'' + (c[2] || '') + '\')">' + c[0] + '</a>';
+  }
+  function apply(){
+    JM.forEach(function(m){
+      document.querySelectorAll('.card-title, summary').forEach(function(t){
+        if (t.dataset.mj) return;
+        var owner = t.closest('.dim-content');
+        if (m.dim && owner && owner.id !== 'dim-' + m.dim) return;
+        var txt = t.textContent || '';
+        if (txt.indexOf(m.k) < 0) return;
+        var span = document.createElement('span');
+        span.className = 'mj-wrap';
+        span.innerHTML = m.chips.map(chipHtml).join('');
+        t.appendChild(span);
+        t.dataset.mj = '1';
+      });
+    });
+  }
+  function tryApply(){ try { apply(); } catch (e) {} }
+  window.addEventListener('load', tryApply);
+  setTimeout(tryApply, 1500);
+  setTimeout(tryApply, 4000);
+  if (window.MutationObserver && document.body) {
+    var pend = false;
+    new MutationObserver(function(){
+      if (pend) return;
+      pend = true;
+      setTimeout(function(){ pend = false; tryApply(); }, 300);
+    }).observe(document.body, {childList:true, subtree:true});
+  }
+})();
+/* MODULE_JUMP_END */
+
 /* SKA_ENH_JS_END */
 </script>
 </body>
