@@ -1840,7 +1840,7 @@ function renderMtdEval() {
   if (tag) tag.textContent = isMonth ? '【月评估：整月核算】数据截至 ' + MTD_EVAL.date.slice(4,6) + '-' + MTD_EVAL.date.slice(6)
                                      : '【月预计：MTD 外推】数据截至 ' + MTD_EVAL.date.slice(4,6) + '-' + MTD_EVAL.date.slice(6) + '（月末自动切换为月评估）';
   var _mDays = Object.keys(dailyByDate || {}).length;
-  var h = (!isMonth ? '<div style="font-size:11.5px;color:#8a6d1a;background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:6px 10px;margin-bottom:8px;">📌 当前月尚未结束，以下为<b>月预计</b>（按日更数据 ' + _mDays + ' 天外推，每日自动更新）；月末数据齐全后自动切换为<b>月评估</b>。预计月末总分与罚款推算见上方「整月测算 / 城市预估警告与罚款」卡。</div>' : '') + '<div class="table-scroll"><table class="dt"><thead><tr><th>城市</th><th title="KA/SKA评估数据源已采集天数；与横幅所示的日更数据源更新节奏不同">评估源天数</th><th>MTD近似总分</th><th>主因模块</th><th>日均推完</th><th>高峰日均</th><th>推完最低</th><th>兜底达标天数</th><th>悦跑均完成度</th><th>悦跑最差周均</th><th>承托比首→末</th><th>企客KA最新</th><th>HD最新</th><th>体验最新</th><th>完结率均</th></tr></thead><tbody>';
+  var h = (!isMonth ? '<div style="font-size:11.5px;color:#8a6d1a;background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:6px 10px;margin-bottom:8px;">📌 当前月尚未结束，以下为<b>月预计</b>（按日更数据 ' + _mDays + ' 天外推，每日自动更新）；月末数据齐全后自动切换为<b>月评估</b>。预计月末总分与罚款推算见上方「整月测算 / 城市预估警告与罚款」卡。</div>' : '') + '<div class="table-scroll"><table class="dt"><thead><tr><th>城市</th><th title="KA/SKA评估数据源已采集天数；与横幅所示的日更数据源更新节奏不同">评估源天数</th><th>MTD近似总分</th><th>主因模块</th><th>日均推完</th><th>高峰日均</th><th>推完最低</th><th>兜底达标天数</th><th>悦跑均完成度</th><th title="按方案自然周分期计分：周完成度＜90%该周记0；第1期周乘出勤系数，10/19起新口径不乘系数">悦跑周得分</th><th>悦跑最差周均</th><th>承托比首→末</th><th>企客KA最新</th><th>HD最新</th><th>体验最新</th><th>完结率均</th></tr></thead><tbody>';
   var cities = Object.keys(MTD_EVAL.cities);
   cities.forEach(function(c) {
     var v = MTD_EVAL.cities[c];
@@ -1851,7 +1851,9 @@ function renderMtdEval() {
       + '<td>' + (v.mainMod||'—') + (v.mainGap!=null ? '（缺'+v.mainGap+'分）' : '') + '</td>'
       + '<td>' + _fv(v.twAll,'%') + '</td><td>' + _fv(v.twPk,'%') + '</td><td>' + _fv(v.twMin,'%') + '</td>'
       + '<td>' + (v.twDbOk!=null ? v.twDbOk + '/' + v.days : '—') + '</td>'
-      + '<td>' + _fv(v.ymAvg,'%') + '</td><td>' + (v.ymWeekWorst!=null && v.ymWeekWorst<90 ? '<span class="c-red">'+v.ymWeekWorst+'%</span>' : _fv(v.ymWeekWorst,'%')) + '</td>'
+      + '<td>' + _fv(v.ymAvg,'%') + '</td>'
+      + '<td>' + (v.ymWeeks && v.ymWeeks.length ? v.ymWeeks.map(function(w){ var bad = (w.score!=null && w.score===0) || (w.rate!=null && w.rate<90); var lbl = String(w.week).replace('-','/').replace(/^0/,''); return '<span style="white-space:nowrap;'+(bad?'color:#d93025;font-weight:700;':'')+'" title="周均完成度'+w.rate+'%'+(w.cq!=null?'，出勤'+w.cq+'%'+(w.coef?'，系数'+w.coef:'，第2期新口径'):'')+'">'+lbl+'周 '+w.rate+'%→'+(w.score===0?'<b>0</b>':w.score)+'</span>'; }).join(' / ') : '<span style="color:#9aa0a6">待数据</span>') + '</td>'
+      + '<td>' + (v.ymWeekWorst!=null && v.ymWeekWorst<90 ? '<span class="c-red">'+v.ymWeekWorst+'%</span>' : _fv(v.ymWeekWorst,'%')) + '</td>'
       + '<td>' + (v.ctFirst!=null ? v.ctFirst+'% → '+v.ctLast+'%' : '—') + '</td>'
       + '<td>' + (v.qkka||'—') + '</td>'
       + '<td>' + (v.hdLast!=null ? v.hdLast+'%' : '<span style="color:#9aa0a6">待发布</span>') + '</td>'
@@ -1859,7 +1861,7 @@ function renderMtdEval() {
       + '<td>' + (v.wjAvg!=null ? v.wjAvg+'%' : '<span style="color:#9aa0a6">待发布</span>') + '</td></tr>';
   });
   h += '</tbody></table></div>';
-  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">总分口径：已接入权重归一化（悦跑' + (isMonth?'含':'含') + '0.30；体验/HD/完结率官方值发布后自动补录）；兜底线98.8%。</div>';
+  h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">总分口径：已接入模块加权缺口直接计入，未发布模块（体验/HD/完结率/普众）暂按100分假设；悦跑按自然周分期计分（周完成度＜90%该周记0；第1期周乘出勤系数，10/19起新口径不乘）；推完按全月完成率；兜底线98.8%。</div>';
   box.innerHTML = h;
 }
 
@@ -4070,7 +4072,7 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
     var isMonth = MTD_EVAL.mode === 'month';
     var _f = function(v, suf){ return (v === null || v === undefined) ? '<span style="color:#9aa0a6">—</span>' : v + (suf||''); };
     var h = '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">📊 月维度速览（' + (isMonth ? '月评估·整月核算' : '月预计·MTD累计，月末自动切换为月评估') + '，数据截至 ' + MTD_EVAL.date.slice(4,6) + '-' + MTD_EVAL.date.slice(6) + '）</div>';
-    h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th title="KA/SKA评估数据源已采集天数；与横幅所示的日更数据源更新节奏不同">评估源天数</th><th>MTD近似总分</th><th>主因模块</th><th>悦跑均完成度</th><th>悦跑最差周均</th><th>企客KA最新</th><th>HD最新</th><th>体验最新</th><th>完结率均</th></tr></thead><tbody>';
+    h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th title="KA/SKA评估数据源已采集天数；与横幅所示的日更数据源更新节奏不同">评估源天数</th><th>MTD近似总分</th><th>主因模块</th><th>悦跑均完成度</th><th title="按方案自然周分期计分：周完成度＜90%该周记0">悦跑周得分</th><th>悦跑最差周均</th><th>企客KA最新</th><th>HD最新</th><th>体验最新</th><th>完结率均</th></tr></thead><tbody>';
     Object.keys(MTD_EVAL.cities).forEach(function(c){
       var v = MTD_EVAL.cities[c]; if (!v) return;
       var scCol = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
@@ -4078,6 +4080,7 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
         + '<td style="color:' + scCol + ';font-weight:700;">' + _f(v.score != null ? v.score.toFixed(2) : null) + '</td>'
         + '<td>' + (v.mainMod || '—') + (v.mainGap != null ? '（缺' + v.mainGap + '分）' : '') + '</td>'
         + '<td>' + _f(v.ymAvg, '%') + '</td>'
+        + '<td>' + (v.ymWeeks && v.ymWeeks.length ? v.ymWeeks.map(function(w){ var bad = (w.score!=null && w.score===0) || (w.rate!=null && w.rate<90); var lbl = String(w.week).replace('-','/').replace(/^0/,''); return '<span style="white-space:nowrap;'+(bad?'color:#d93025;font-weight:700;':'')+'">'+lbl+'周 '+w.rate+'%→'+(w.score===0?'<b>0</b>':w.score)+'</span>'; }).join(' / ') : '<span style="color:#9aa0a6">待数据</span>') + '</td>'
         + '<td>' + (v.ymWeekWorst != null && v.ymWeekWorst < 90 ? '<span class="c-red">' + v.ymWeekWorst + '%</span>' : _f(v.ymWeekWorst, '%')) + '</td>'
         + '<td>' + (v.qkka || '—') + '</td>'
         + '<td>' + (v.hdLast != null ? v.hdLast + '%' : '<span style="color:#9aa0a6">待发布</span>') + '</td>'
