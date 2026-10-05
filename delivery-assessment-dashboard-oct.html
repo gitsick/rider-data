@@ -591,7 +591,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div class="subtitle">下沉市场合作商 | 文档负责人：李韶雯 | 考核方案更新 09-28 | 10月考核周期 10/1-10/31</div>
     <div class="subtitle header-meta">
       <span class="freshness-badge fresh">● 10月考核进行中</span>
-      <span class="header-source">BI数据：待10月数据更新 | 来源：bi.sankuai.com/v2/dashboard/274665</span>
+      <span class="header-source" id="header-data-status">BI数据：待10月数据更新 | 来源：bi.sankuai.com/v2/dashboard/274665</span>
     </div>
   </div>
   <div class="qr-small" onclick="openQrModal()" role="button" tabindex="0" aria-label="点击查看二维码" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openQrModal()}">
@@ -4685,6 +4685,23 @@ window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); r
   else window.addEventListener('load', function(){ setTimeout(boot, 100); });
 })();
 /* CITY_ROW_HL_END */
+
+/* DATA_STATUS_START 头部数据状态动态化 */
+(function(){
+  function refreshDataStatus(){
+    try {
+      var el = document.getElementById('header-data-status'); if (!el) return;
+      var n = (typeof dataDates !== 'undefined' && dataDates) ? dataDates.length : 0;
+      if (n > 0) {
+        var last = String(dataDates[n - 1]).replace('-', '/');
+        el.textContent = '已采集 ' + n + '/31 天（最新 ' + last + '）｜ 来源：bi.sankuai.com/v2/dashboard/274665';
+      }
+    } catch (e) {}
+  }
+  if (document.readyState === 'complete') refreshDataStatus();
+  else window.addEventListener('load', refreshDataStatus);
+})();
+/* DATA_STATUS_END */
 /* SKA_ENH_JS_END */
 </script>
 </body>
