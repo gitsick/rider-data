@@ -3706,6 +3706,46 @@ if(typeof window.switchCity==='function' && !window.__switchCityWrapped){
   window.__switchCityWrapped=true;
 }
 window.addEventListener('load', function(){ cityBarStatus(); cityBarScores(); });
+
+/* CITY_UX_START 城市切换易操作：初始激活态 + 快捷键 + 读数点击回顶 */
+(function(){
+  var NAMES = ['泰兴', '诸暨', '响水'];
+  function tabsAll(){ return Array.prototype.slice.call(document.querySelectorAll('.city-tab')); }
+  function switchByName(name){
+    var t = tabsAll().filter(function(x){ return x.textContent.trim() === name; })[0];
+    if (t && typeof window.switchCity === 'function') window.switchCity(t, name);
+  }
+  function initActive(){
+    var c = (typeof currentCity !== 'undefined') ? currentCity : NAMES[0];
+    tabsAll().forEach(function(t){
+      t.classList.toggle('active', t.textContent.trim() === c);
+    });
+    try { cityBarStatus(); } catch (e) {}
+  }
+  var bar = document.getElementById('city-bar');
+  if (bar) bar.title = '快捷键：1/2/3 切换城市，←/→ 循环切换';
+  var st = document.getElementById('bar-status');
+  if (st) {
+    st.style.cursor = 'pointer';
+    st.title = '点击回到顶部查看当前城市考核卡';
+    st.addEventListener('click', function(){
+      try { window.scrollTo({top: 0, behavior: 'smooth'}); } catch (e) { window.scrollTo(0, 0); }
+    });
+  }
+  document.addEventListener('keydown', function(ev){
+    if (ev.target && ['INPUT','SELECT','TEXTAREA'].indexOf(ev.target.tagName) >= 0) return;
+    var map = {'1': NAMES[0], '2': NAMES[1], '3': NAMES[2]};
+    if (map[ev.key]) { switchByName(map[ev.key]); return; }
+    if (ev.key === 'ArrowLeft' || ev.key === 'ArrowRight') {
+      var c = (typeof currentCity !== 'undefined' && NAMES.indexOf(currentCity) >= 0) ? currentCity : NAMES[0];
+      var i = (NAMES.indexOf(c) + (ev.key === 'ArrowRight' ? 1 : -1) + 3) % 3;
+      switchByName(NAMES[i]);
+    }
+  });
+  if (document.readyState === 'complete') { initActive(); }
+  else { window.addEventListener('load', initActive); }
+})();
+/* CITY_UX_END */
 /* SKA_ENH_JS_END */
 </script>
 </body>
