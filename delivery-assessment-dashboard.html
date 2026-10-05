@@ -1,0 +1,3265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年9月配送考核</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility; }
+body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif; background:#f0f2f5; color:#333; padding:20px; font-size:14px; line-height:1.6; }
+.dt, .trend-table, .penalty-table, .period-table, .action-table { font-variant-numeric:tabular-nums; }
+  .header { background:linear-gradient(135deg,#1a2b4a 0%,#2d4a7a 100%); color:#fff; border-radius:12px; padding:24px 32px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+  .header h1 { font-size:22px; font-weight:700; }
+  .header .subtitle { font-size:13px; opacity:0.8; margin-top:4px; }
+  .city-tabs { display:flex; gap:6px; align-items:center; }
+  .city-tab { padding:5px 16px; border-radius:6px; background:#f0f2f5; border:2px solid transparent; cursor:pointer; font-size:13px; font-weight:600; color:#5f6368; transition:all .2s; }
+  .city-tab:hover { background:#e8f0fe; color:#1967d2; }
+  .city-tab.active { background:#1a2b4a; color:#fff; }
+  .grid { display:grid; gap:16px; margin-bottom:16px; }
+  .grid-2 { grid-template-columns:repeat(2,1fr); }
+  @media(max-width:1200px){ .grid-2{grid-template-columns:1fr;} }
+  .card { background:#fff; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border:1px solid #e8eaed; }
+  .card-title { font-size:15px; font-weight:700; color:#1a2b4a; margin-bottom:12px; display:flex; align-items:center; gap:6px; border-bottom:2px solid #f0f2f5; padding-bottom:8px; }
+  .card-title .icon { font-size:18px; }
+  /* 数据表 */
+  .dt { width:100%; border-collapse:collapse; font-size:12px; }
+  .dt th { background:#1a2b4a; color:#fff; padding:8px 6px; text-align:center; font-weight:600; white-space:nowrap; }
+  .dt td { padding:7px 6px; text-align:center; border:1px solid #e8eaed; white-space:nowrap; }
+  .dt tr:nth-child(even) td { background:#fafbfc; }
+  .dt .city-cell { font-weight:700; text-align:left; padding-left:10px; }
+  .dt .score-cell { font-size:14px; font-weight:700; }
+  /* 色值 */
+  .c-green { color:#34a853; font-weight:700; }
+  .c-orange { color:#f5a623; font-weight:700; }
+  .c-red { color:#d93025; font-weight:700; }
+  /* 维度Tab */
+  .dim-tabs { display:flex; gap:0; margin-bottom:16px; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); position:sticky; top:0; z-index:60; }
+  .dim-tab { flex:1; padding:14px 24px; text-align:center; font-size:16px; font-weight:700; cursor:pointer; background:#fff; color:#888; border:none; border-bottom:3px solid transparent; transition:all .25s; position:relative; }
+  .dim-tab.active { background:#1a2b4a; color:#fff; border-bottom-color:#00b8d4; }
+  .dim-tab:hover:not(.active) { background:#f0f2f5; color:#1a2b4a; }
+  .dim-tab.active::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#00b8d4; border-radius:3px 3px 0 0; }
+  .dim-content { display:none; }
+  .dim-content.active { display:block; }
+  /* 趋势表 */
+  .trend-table { width:100%; border-collapse:collapse; font-size:11.5px!important; }
+  .trend-table th { background:#1a2b4a!important; color:#fff!important; padding:6px 4px!important; text-align:center!important; }
+  .trend-table td { padding:5px 4px!important; border:1px solid #e8eaed!important; text-align:center!important; font-size:11.5px!important; }
+  .trend-table .city-col { font-weight:700!important; background:#f8f9fb!important; text-align:left!important; padding-left:8px!important; }
+  .trend-table .metric-row td { background:#fafbfc!important; }
+  .trend-table .peak-col { background:#fff3cd!important; }
+  .trend-table .latest-col { background:#e6f4ea!important; }
+  /* 模块卡片 */
+  .module-card { border-left:4px solid #4a7bd4; }
+  .module-card.jiameng { border-left-color:#e8525f; }
+  .module-card.tiyan { border-left-color:#7b61ff; }
+  .module-card.tuiwan { border-left-color:#00b8d4; }
+  .module-card.wanjie { border-left-color:#ff6b35; }
+  .indicator-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px dashed #eee; font-size:12.5px; }
+  .indicator-row:last-child { border-bottom:none; }
+  .indicator-name { font-weight:600; }
+  .indicator-score { text-align:right; }
+  .calc-input { width:64px; text-align:center; border:1px solid #ccc; border-radius:4px; padding:4px; font-size:13px; }
+  .pill { display:inline-block; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:600; }
+  .pill-weight { background:#e8f0fe; color:#1967d2; }
+  .pill-period { background:#f3e8fd; color:#7b3fb0; }
+.period-btn { padding:8px 18px; border:1px solid #dadce0; background:#fff; font-size:13px; cursor:pointer; transition:all .2s; border-right:none; font-weight:500; color:#5f6368; }
+.period-btn:last-child { border-right:1px solid #dadce0; }
+.period-btn:hover { background:#e8f0fe; color:#1967d2; }
+.period-btn.active { background:#1a2b4a; color:#fff; border-color:#1a2b4a; font-weight:700; }
+  .threshold-tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; margin-left:4px; }
+  .tag-red { background:#fce8e8; color:#d93025; }
+  .tag-orange { background:#fef3e2; color:#f5a623; }
+  .tag-green { background:#e6f4ea; color:#34a853; }
+  .tag-blue { background:#e8f0fe; color:#1967d2; }
+  .calc-section { background:#f8f9fb; border-radius:8px; padding:16px; margin-top:12px; }
+  .calc-result { font-size:24px; font-weight:700; text-align:center; padding:12px; border-radius:8px; margin-top:8px; }
+  .calc-result.pass { background:#e6f4ea; color:#34a853; }
+  .calc-result.warn { background:#fef7e0; color:#f5a623; }
+  .calc-result.fail { background:#fce8e8; color:#d93025; }
+  .formula-box { background:#f8f9fb; border:1px solid #d0d7e3; border-radius:8px; padding:14px; font-size:12.5px; color:#444; text-align:center; margin-bottom:8px; }
+  .formula-box .formula { font-weight:700; color:#1a2b4a; font-size:13px; }
+  .period-table { width:100%; border-collapse:collapse; font-size:12px; }
+  .period-table th { background:#1a2b4a!important; color:#fff!important; padding:6px 8px!important; text-align:center!important; }
+  .period-table td { padding:6px 8px!important; border:1px solid #e8eaed!important; text-align:center!important; }
+  .period-table .peak { background:#fff3cd; color:#c68400; font-weight:700; }
+  .penalty-table { width:100%; border-collapse:collapse; font-size:12px; }
+  .penalty-table th { background:#f8f9fb!important; color:#1a2b4a!important; padding:6px 8px!important; border:1px solid #e8eaed!important; text-align:center!important; }
+  .penalty-table td { padding:6px 8px!important; border:1px solid #e8eaed!important; text-align:center!important; }
+  .penalty-table .level0 { background:#e6f4ea; color:#34a853; font-weight:700; }
+  .penalty-table .level1 { background:#fef7e0; color:#f5a623; font-weight:700; }
+  .penalty-table .level2 { background:#fce8e8; color:#d93025; font-weight:700; }
+  .section-label { font-size:16px; font-weight:700; color:#1a2b4a; margin:20px 0 12px; padding-left:8px; border-left:4px solid #4a7bd4; }
+  .footer-info { text-align:center; font-size:11px; color:#6b7280; margin-top:20px; padding:16px 8px; border-top:1px solid #e8eaed; line-height:1.8; }
+  .collapsible { cursor:pointer; transition:background .15s; }
+  .collapsible:hover { background:rgba(26,43,74,.03); }
+  .collapsible-content { display:block; }
+  .collapsible.collapsed .collapsible-content { display:none; }
+  .daily-card { border-left:4px solid #00b8d4; }
+  .monthly-card { border-left:4px solid #e8453c; }
+  /* 日期选择器 */
+  .date-bar { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .date-bar label { font-size:14px; font-weight:700; color:#1a2b4a; white-space:nowrap; }
+  .date-bar select { padding:8px 14px; border:2px solid #d0d7e3; border-radius:8px; font-size:14px; background:#fff; cursor:pointer; min-width:200px; font-weight:600; color:#1a2b4a; }
+  .date-bar select:focus { outline:none; border-color:#4a7bd4; box-shadow:0 0 0 3px rgba(74,123,212,0.15); }
+  .date-bar select option:disabled { color:#ccc; }
+  .date-nav-btn { padding:6px 14px; border:1px solid #d0d7e3; background:#fff; border-radius:8px; cursor:pointer; font-size:13px; font-weight:600; color:#1a2b4a; transition:all .2s; }
+  .date-nav-btn:hover:not(:disabled) { background:#e8f0fe; border-color:#4a7bd4; color:#1967d2; }
+  .date-nav-btn:disabled { opacity:0.35; cursor:not-allowed; }
+  .date-status { font-size:12px; padding:3px 12px; border-radius:12px; font-weight:600; }
+  .date-status.has-data { background:#e6f4ea; color:#34a853; }
+  .date-status.no-data { background:#fce8e8; color:#d93025; }
+  .trend-table th.selected-col { background:#1a6b3a; }
+  .trend-table td.selected-col { background:#d4edda; font-weight:700; }
+  /* 考核周期时间轴 */
+  .cal-wrap { font-size:12px; }
+  .cal-legend { display:flex; gap:12px; margin-bottom:8px; flex-wrap:wrap; }
+  .cal-legend-item { display:flex; align-items:center; gap:3px; font-size:11px; color:#666; }
+  .cal-legend-dot { width:11px; height:11px; border-radius:3px; display:inline-block; flex-shrink:0; }
+  .cal-grid { display:grid; grid-template-columns:repeat(10,1fr); gap:3px; }
+  @media(max-width:800px){ .cal-grid{ grid-template-columns:repeat(8,1fr); } }
+  .cal-cell { height:30px; border-radius:5px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:11px; font-weight:600; transition:all .15s; position:relative; border:2px solid transparent; line-height:1; }
+  .cal-cell:hover { transform:scale(1.12); z-index:2; }
+  .cal-cell .cal-d { font-size:11px; font-weight:700; }
+  .cal-cell .cal-w { font-size:8px; opacity:0.5; margin-left:2px; }
+  .cal-cell.p1 { background:#e8f0fe; color:#1967d2; }
+  .cal-cell.p2 { background:#fef3e2; color:#f5a623; }
+  .cal-cell.peak { background:#fce8e8; color:#d93025; }
+  .cal-cell.peak::after { content:''; position:absolute; top:1px; right:1px; width:5px; height:5px; background:#d93025; border-radius:50%; }
+  .cal-cell.selected { border-color:#1a2b4a; box-shadow:0 0 0 2px rgba(26,43,74,0.25); transform:scale(1.12); z-index:3; }
+  .cal-cell.has-data { border-bottom:2px solid #34a853; }
+  .cal-cell.no-data { opacity:0.55; }
+  .period-prog { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:10px; }
+  @media(max-width:800px){ .period-prog{ grid-template-columns:1fr; } }
+  .period-prog-card { border:1px solid #e8eaed; border-radius:6px; padding:8px 10px; }
+  .period-prog-card .pp-title { font-size:11px; font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:3px; }
+  .period-prog-card .pp-bar { width:100%; height:5px; background:#eee; border-radius:3px; overflow:hidden; margin:4px 0; }
+  .period-prog-card .pp-bar-fill { height:100%; border-radius:3px; transition:width .3s; }
+  .period-prog-card .pp-info { font-size:10.5px; color:#666; line-height:1.5; }
+  .period-prog-card .pp-current { font-size:10.5px; font-weight:700; color:#1a2b4a; margin-bottom:2px; }
+  /* BI看板风格布局 */
+  .filter-strip { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .fs-item { display:flex; flex-direction:column; gap:1px; }
+  .fs-label { font-size:10px; color:#888; }
+  .fs-value { font-size:15px; font-weight:700; color:#1a2b4a; }
+  .fs-divider { width:1px; height:30px; background:#e0e0e0; }
+  .grid-cal-bi { display:grid; grid-template-columns:1fr 1.8fr; gap:12px; margin-bottom:12px; }
+  @media(max-width:1200px){ .grid-cal-bi{ grid-template-columns:1fr; } }
+  /* 模块卡片2行布局 */
+  .grid-modules { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:12px; }
+  @media(max-width:1200px){ .grid-modules{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:600px){ .grid-modules{ grid-template-columns:1fr; } }
+  .grid-util { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+  @media(max-width:800px){ .grid-util{ grid-template-columns:1fr; } }
+  /* 数据新鲜度徽章 */
+  .freshness-badge { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:12px; font-size:11px; font-weight:600; }
+  .freshness-badge.fresh { background:rgba(123,237,159,0.2); color:#7bed9f; }
+  /* 表格滚动容器 */
+  .table-scroll { overflow-x:auto; }
+  /* 预估测算器 */
+  .preset-card { background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%); border:2px solid #4a7bd4; }
+  .preset-scenarios { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px; }
+  @media(max-width:800px){ .preset-scenarios{ grid-template-columns:1fr; } }
+  .preset-scenario { padding:12px; border-radius:8px; cursor:pointer; transition:all .2s; border:2px solid transparent; text-align:center; }
+  .preset-scenario:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+  .preset-scenario.active { border-color:#1a2b4a; box-shadow:0 0 0 3px rgba(26,43,74,0.1); }
+  .preset-scenario.optimistic { background:#e6f4ea; }
+  .preset-scenario.realistic { background:#e8f0fe; }
+  .preset-scenario.conservative { background:#fce8e8; }
+  .preset-scenario .ps-label { font-size:13px; font-weight:700; margin-bottom:4px; }
+  .preset-scenario .ps-score { font-size:22px; font-weight:800; line-height:1.2; }
+  .preset-scenario .ps-desc { font-size:11px; color:#666; margin-top:4px; }
+  .preset-input-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+  .preset-input-row label { font-size:12px; font-weight:600; color:#555; min-width:80px; }
+  .preset-input-row input { width:70px; text-align:center; border:1px solid #ccc; border-radius:4px; padding:4px; font-size:13px; }
+  .preset-compare { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+  .preset-compare-item { padding:10px; border-radius:8px; text-align:center; }
+  .preset-compare-item.current { background:#f8f9fb; border:1px solid #e8eaed; }
+  .preset-compare-item.estimated { background:#e8f0fe; border:1px solid #4a7bd4; }
+  .preset-compare-item .pc-label { font-size:11px; color:#888; }
+  .preset-compare-item .pc-value { font-size:24px; font-weight:800; margin:4px 0; }
+  .preset-compare-item .pc-delta { font-size:13px; font-weight:700; }
+  /* 紧凑模块卡片 */
+  .module-card .indicator-row { padding:6px 0; }
+  .module-card .card-title { margin-bottom:8px; padding-bottom:6px; }
+  /* 布局：预估+测算合并行 */
+  .grid-calc-preset { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+  @media(max-width:800px){ .grid-calc-preset{ grid-template-columns:1fr; } }
+
+  /* ===== 分析报告 Tab 专用样式 ===== */
+  #dim-report table { width:100%; border-collapse:collapse; font-size:12.5px!important; margin-bottom:8px; }
+  #dim-report th { background:#1a2b4a!important; color:#fff!important; padding:8px 6px!important; text-align:center!important; font-weight:600!important; white-space:nowrap!important; }
+  #dim-report td { padding:7px 6px!important; border:1px solid #e8eaed!important; text-align:center!important; white-space:nowrap!important; }
+  #dim-report tr:nth-child(even) td { background:#fafbfc!important; }
+  #dim-report .city-cell { font-weight:700!important; text-align:left!important; padding-left:10px!important; }
+  .rpt-header { background:linear-gradient(135deg,#1a2b4a,#2d4a7a); color:#fff; border-radius:12px; padding:24px 32px; margin-bottom:20px; }
+  .rpt-header h2 { font-size:22px; margin-bottom:6px; }
+  .rpt-header .sub { font-size:13px; opacity:.85; }
+  .city-card { border-radius:10px; padding:16px; border:1px solid #e8eaed; border-top:4px solid #4a7bd4; }
+  .city-card.zhuiji { border-top-color:#d93025; }
+  .city-card.taixing { border-top-color:#f5a623; }
+  .city-card.xiangshui { border-top-color:#34a853; }
+  .city-card h3 { font-size:15px; margin-bottom:8px; }
+  .score-big { font-size:32px; font-weight:800; line-height:1.1; margin:4px 0; }
+  .action-table td { text-align:left!important; font-size:12px!important; }
+  .action-table th { text-align:left!important; padding-left:10px!important; }
+  .insight-box { background:#e8f0fe; border-radius:8px; padding:12px 16px; font-size:12.5px; color:#444; margin-top:10px; line-height:1.8; }
+  .risk-box { background:#fff8e1; border:1px solid #ffe0b2; border-radius:8px; padding:12px 16px; font-size:12.5px; color:#8a6d00; margin-top:8px; }
+  .risk-box strong { color:#c68400; }
+  .rpt-footer { text-align:center; font-size:11px; color:#6b7280; margin-top:20px; padding:8px; }
+  #dim-report .tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; }
+  /* 考核方案全景表优化 */
+  .scheme-table { font-size:11px!important; min-width:900px; }
+  .scheme-table td { line-height:1.7!important; vertical-align:top!important; }
+  .scheme-table .module-sep td { background:#1a2b4a!important; color:#fff; font-weight:700; font-size:11px; padding:4px 8px; text-align:left; }
+  .scheme-table .current-mod { box-shadow:inset 3px 0 0 #e8525f; }
+
+  /* ===== 顶部速览条 ===== */
+  .summary-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px; }
+  @media(max-width:800px){ .summary-strip{ grid-template-columns:1fr; } }
+  .summary-card { border-radius:12px; padding:16px 20px; display:flex; align-items:center; gap:16px; border:1px solid #e8eaed; position:relative; overflow:hidden; }
+  .summary-card.danger { background:linear-gradient(135deg,#fff5f5,#fce8e8); border-color:#f8c8c8; }
+  .summary-card.warn { background:linear-gradient(135deg,#fffdf5,#fef3e2); border-color:#ffe0b2; }
+  .summary-card.ok { background:linear-gradient(135deg,#f5fff5,#e6f4ea); border-color:#c8e6c8; }
+  .summary-card .sc-left { flex-shrink:0; }
+  .summary-card .sc-city { font-size:16px; font-weight:700; color:#1a2b4a; }
+  .summary-card .sc-score { font-size:36px; font-weight:800; line-height:1.1; }
+  .summary-card .sc-level { font-size:12px; font-weight:700; padding:3px 10px; border-radius:10px; display:inline-block; margin-top:2px; }
+  .summary-card .sc-right { flex:1; font-size:12px; line-height:1.7; color:#555; }
+  .summary-card .sc-risk { font-weight:700; }
+  .summary-card .sc-bar { position:absolute; bottom:0; left:0; right:0; height:4px; }
+  .summary-card .sc-progress { height:5px; border-radius:3px; background:rgba(0,0,0,0.08); margin-top:6px; overflow:hidden; }
+  .summary-card .sc-progress-fill { height:100%; border-radius:3px; transition:width .5s; }
+  /* ===== 折叠参考区 ===== */
+.ref-collapse { cursor:pointer; user-select:none; transition:background .15s; }
+  .ref-collapse:hover { background:rgba(26,43,74,.04); }
+  .ref-collapse .ref-arrow { display:inline-block; transition:transform .25s ease; }
+  .ref-collapse.collapsed .ref-arrow { transform:rotate(-90deg); }
+  .ref-collapse.collapsed + .ref-content { display:none; }
+  .ref-content { display:block; animation:refExpand .2s ease; }
+  @keyframes refExpand{from{opacity:0}to{opacity:1}}
+  /* ===== 优化：层次感与提速 ===== */
+  html { scroll-behavior:smooth; }
+  .card { transition:box-shadow .2s, transform .15s; }
+  .card:hover { box-shadow:var(--mt-shadow-h,0 4px 14px rgba(27,34,51,.1)); }
+  .module-card { border-left-width:5px; }
+  /* 速览卡片进度条 - 已在 .summary-card .sc-progress 中定义，此处删除重复 */
+  /* 快捷锚点导航 */
+  .anchor-nav { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+  .anchor-btn { padding:6px 14px; border-radius:20px; background:#f0f2f5; border:1px solid #e8eaed; font-size:12px; font-weight:600; color:#5f6368; cursor:pointer; transition:all .2s; text-decoration:none; }
+  .anchor-btn:hover { background:#e8f0fe; color:#1967d2; border-color:#4a7bd4; }
+  /* ===== Tab 数字角标 ===== */
+  .tab-badge { display:inline-block; font-size:11px; padding:1px 7px; border-radius:8px; margin-left:4px; font-weight:700; }
+  .tab-badge.daily { background:#e8f0fe; color:#1967d2; }
+  .tab-badge.monthly { background:#fef3e2; color:#f5a623; }
+  .tab-badge.report { background:#fce8e8; color:#d93025; }
+  .summary-card { cursor:pointer; transition:transform .15s ease, box-shadow .15s ease; }
+  .summary-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(0,0,0,.12); }
+  .summary-card:active { transform:translateY(0); }
+  /* 页眉优化 */
+  .header > div:first-child { min-width:0; flex:1; }
+  .header-meta { margin-top:6px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .header-source { color:#7bed9f; font-size:12px; }
+  .freshness-badge { white-space:nowrap; }
+  /* 锁定页面滚动时防止跳动 */
+  body.no-scroll { overflow:hidden; }
+  /* 锚点偏移（anchor-nav 跳转时不被页眉遮挡） */
+  [id^="sec-"] { scroll-margin-top:20px; }
+  /* 减少动画偏好 */
+  @media(prefers-reduced-motion:reduce){ .qr-pulse{animation:none} .qr-modal-box{transition:none} .card{transition:none} .summary-card{transition:none} }
+  /* ===== 2026-10 增强：走势图 / 环比 / 总分对比条 ===== */
+  .delta-good { color:#34a853; font-size:10px; font-weight:700; margin-left:3px; }
+  .delta-bad { color:#d93025; font-size:10px; font-weight:700; margin-left:3px; }
+  .delta-flat { color:#8a919e; font-size:10px; margin-left:3px; }
+  .tc-toolbar { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  .tc-btn { padding:5px 14px; border-radius:16px; border:1px solid #d0d7e3; background:#fff; font-size:12px; font-weight:600; color:#5f6368; cursor:pointer; transition:all .2s; }
+  .tc-btn:hover { background:#e8f0fe; color:#1967d2; }
+  .tc-btn.active { background:#1a2b4a; color:#fff; border-color:#1a2b4a; }
+  .tc-divider { display:inline-block; width:1px; height:20px; background:#d0d7e3; margin:0 4px; }
+  .card-title .tc-export { margin-left:auto; }
+  #trend-table tr.metric-hl td { background:#e8f0fe!important; }
+  #trend-table tr.metric-hl td:nth-child(2) { box-shadow:inset 3px 0 0 #1a73e8; }
+  .dt th.col-hl { background:#4a7bd4!important; color:#fff!important; }
+  .dt td.col-hl { background:#e8f0fe!important; font-weight:700!important; }
+.tc-export { margin-left:6px; border-color:#a8c7fa; color:#1967d2; background:#f8fbff; }
+.tc-export:hover { background:#e8f0fe; }
+  .tc-legend { display:flex; gap:14px; margin-left:auto; flex-wrap:wrap; }
+  .tc-legend-item { display:flex; align-items:center; gap:5px; font-size:11.5px; color:#555; font-weight:600; }
+  .tc-legend-dot { width:16px; height:3px; border-radius:2px; display:inline-block; }
+  .tc-gridline { stroke:#e9edf3; stroke-width:1; }
+  .tc-axis { stroke:#c9d0da; stroke-width:1; }
+  .tc-tick { font-size:10.5px; fill:#8a93a3; }
+  .tc-peak { fill:#fff3cd; opacity:.5; }
+  .tc-zeroline { stroke:#d93025; stroke-width:1; stroke-dasharray:5 3; opacity:.55; }
+  .tc-zerotext { font-size:10px; fill:#d93025; opacity:.9; }
+  .tc-selline { stroke:#1a2b4a; stroke-width:1.2; stroke-dasharray:3 2; opacity:.7; }
+  .tc-dot { stroke:#fff; stroke-width:1.5; }
+  .mb-row { display:flex; align-items:center; gap:10px; margin-bottom:9px; }
+  .mb-city { width:60px; font-size:13px; font-weight:700; color:#1a2b4a; flex-shrink:0; }
+  .mb-track { flex:1; height:22px; background:#f0f2f5; border-radius:6px; overflow:hidden; position:relative; }
+  .mb-fill { height:100%; border-radius:6px; display:flex; align-items:center; justify-content:flex-end; padding-right:8px; color:#fff; font-size:12px; font-weight:700; min-width:56px; text-shadow:0 1px 2px rgba(0,0,0,.25); }
+  .mb-line { position:absolute; top:-3px; bottom:-3px; width:2px; z-index:2; }
+
+  /* 切片分析 */
+  #dim-report .slice-wrap { border-left:4px solid #7b61ff !important; }
+  #dim-report .slice-chip { background:#f3f0ff; color:#5b4bc4; padding:3px 10px; border-radius:12px; font-size:11.5px; }
+  #dim-report .gap-bar { display:flex; height:22px; border-radius:5px; overflow:hidden; margin:4px 0 2px; max-width:760px; }
+  #dim-report .gap-bar div { display:flex; align-items:center; justify-content:center; color:#fff; font-size:10.5px; white-space:nowrap; }
+  #dim-report .gb-hd{background:#3b6ff5} #dim-report .gb-ty{background:#e5484d} #dim-report .gb-tw{background:#f5a623} #dim-report .gb-wj{background:#2e9e5b}
+  #dim-report .slice-note { font-size:11.5px; color:#6b7280; margin-top:8px; line-height:1.8; }
+  #dim-report .slice-empty { text-align:center; padding:28px 10px; color:#6b7280; font-size:13px; line-height:2; }
+</style>
+<style>
+
+.wrap,.container{max-width:100%!important;width:100%!important;margin:0!important;padding:10px 14px!important;box-sizing:border-box!important}
+@media(max-width:768px){.wrap,.container{padding:8px 10px!important}}
+.header{position:relative!important;gap:16px}
+.hdr-left{padding-right:0!important}
+.qr-small{display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(255,255,255,.96);border-radius:10px;padding:6px 8px;box-shadow:0 2px 12px rgba(0,0,0,.18);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;flex-shrink:0;position:relative}
+.qr-small::after{content:"";position:absolute;inset:0;border-radius:10px;border:1.5px solid rgba(255,255,255,.5);pointer-events:none;transition:border-color .2s}
+.qr-small:hover{transform:scale(1.06);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.qr-small:hover::after{border-color:rgba(255,195,0,.7)}
+.qr-small:active{transform:scale(.97)}
+.qr-small img{width:56px;height:56px;border-radius:6px;display:block}
+.qr-small .qr-label{font-size:9px;color:#6b7280;font-weight:600;letter-spacing:.5px}
+.qr-small .qr-pulse{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#FFC300;box-shadow:0 0 0 0 rgba(255,195,0,.5);animation:qrPulse 2s infinite}
+@keyframes qrPulse{0%{box-shadow:0 0 0 0 rgba(255,195,0,.5)}70%{box-shadow:0 0 0 8px rgba(255,195,0,0)}100%{box-shadow:0 0 0 0 rgba(255,195,0,0)}}
+.qr-modal{display:none;position:fixed;z-index:10001;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.82);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);justify-content:center;align-items:center;flex-direction:column;opacity:0;transition:opacity .25s ease;padding:20px;touch-action:manipulation}
+.qr-modal.show{display:flex;opacity:1}
+.qr-modal-box{background:#fff;border-radius:16px;padding:0;text-align:center;box-shadow:0 16px 56px rgba(0,0,0,.5);max-width:320px;width:100%;transform:scale(.85) translateY(12px);transition:transform .3s cubic-bezier(.34,1.56,.64,1);overflow:hidden}
+.qr-modal.show .qr-modal-box{transform:scale(1) translateY(0)}
+.qr-modal-banner{background:linear-gradient(135deg,#1a2b4a 0%,#2d4a7a 100%);color:#fff;padding:14px 20px 10px;font-size:13px;font-weight:700;letter-spacing:.5px}
+.qr-modal-banner .qr-modal-close{position:static;color:rgba(255,255,255,.6);font-size:22px;float:right;cursor:pointer;font-weight:300;line-height:1;transition:color .15s,transform .15s}
+.qr-modal-banner .qr-modal-close:hover{color:#FFC300;transform:scale(1.2)}
+.qr-modal-body{padding:20px 24px 18px}
+.qr-modal-body img{width:220px;height:220px;border-radius:10px;display:block;margin:0 auto;border:1px solid #e8eaed}
+.qr-modal-body .tt{font-size:15px;font-weight:700;color:#1a2b4a;margin-top:14px}
+.qr-modal-body .sub{font-size:12px;color:#6b7280;margin-top:4px}
+.qr-modal-body .qr-url{font-size:11px;color:#5f6368;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qr-modal-body .qr-hint{font-size:10px;color:#8a919e;margin-top:8px}
+@media(max-width:600px){.qr-small img{width:42px;height:42px}.qr-small .qr-label{display:none}.qr-small{padding:4px 6px}.qr-modal-body img{width:180px;height:180px}.qr-modal-box{max-width:280px}.qr-modal-banner{font-size:12px;padding:12px 16px 8px}.qr-modal-body{padding:16px 18px 14px}.summary-card{padding:12px 14px}.summary-card .sc-score{font-size:28px}.header{padding:16px 18px!important}.header h1{font-size:18px!important}.dim-tab{padding:10px 12px!important;font-size:13px!important}}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* ====== mt-style-injected ====== */
+:root{
+  --mt-yellow:#FFC300;
+  --mt-yellow-d:#F5A623;
+  --mt-dark:#1B2233;
+  --mt-dark2:#2D3447;
+  --mt-bg:#F0F2F5;
+  --mt-text:#1B1B33;
+  --mt-text2:#6B7280;
+  --mt-text3:#7D8290;
+  --mt-border:#EAECEF;
+  --mt-card:#FFFFFF;
+  --mt-radius:8px;
+  --mt-shadow:0 1px 4px rgba(27,34,51,.06);
+  --mt-shadow-h:0 4px 14px rgba(27,34,51,.1);
+  --mt-th-bg:#F8F9FA;
+  --mt-th-c:#1B2233;
+  --mt-row-alt:#FAFBFC;
+  --mt-row-hover:#FFF8E1;
+}
+
+/* ---- 全局 ---- */
+body{
+  font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif!important;
+  background:var(--mt-bg)!important;
+  color:var(--mt-text)!important;
+  font-size:14px!important;
+  line-height:1.6!important;
+}
+
+/* ---- 页头 ---- */
+.header,.u-header{
+  background:linear-gradient(135deg,var(--mt-dark) 0%,var(--mt-dark2) 60%,#3A4458 100%)!important;
+  color:#fff!important;
+  border-radius:var(--mt-radius)!important;
+  padding:20px 26px!important;
+  margin-bottom:14px!important;
+  position:relative!important;
+}
+.header::after,.u-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--mt-yellow) 0%,var(--mt-yellow-d) 50%,var(--mt-yellow) 100%);
+}
+.header h1,.u-header h1,.u-header .doctitle{
+  color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;
+}
+.header .sub,.header .subtitle,.u-header .sub,.u-header .doctime,.u-header .subtitle{
+  color:#C6CAD6!important;font-size:12px!important;margin-top:4px!important;
+}
+
+/* ---- wrap / container ---- */
+.wrap,.container{max-width:100%!important;margin:0!important}
+
+/* ---- 标题 (非页头内) ---- */
+h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important;letter-spacing:.3px}
+.doctitle{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important}
+.doctime,.sub{color:var(--mt-text2)!important;font-size:12px!important}
+
+/* ---- 卡片 ---- */
+.card,.section,.filters,.tblwrap,.card-header,.search-bar,.filter-bar,.reasons-section{
+  background:var(--mt-card)!important;
+  border-radius:var(--mt-radius)!important;
+  box-shadow:var(--mt-shadow)!important;
+  border:1px solid var(--mt-border)!important;
+}
+.card,.section{padding:10px 12px!important;margin-bottom:12px!important}
+/* 卡片左侧彩条保留 */
+.card-title{
+  color:var(--mt-text)!important;
+  font-size:14px!important;font-weight:600!important;
+  border-bottom:1px solid var(--mt-border)!important;
+  padding-bottom:10px!important;margin-bottom:12px!important;
+}
+.card-title::before{
+  content:"";display:inline-block;width:3px;height:15px;
+  background:linear-gradient(180deg,var(--mt-yellow),var(--mt-yellow-d));border-radius:2px;margin-right:8px;
+  vertical-align:-2px;
+}
+.section h2{
+  font-size:14px!important;font-weight:600!important;color:var(--mt-text)!important;
+  border-left:3px solid var(--mt-yellow)!important;
+  padding-left:10px!important;margin-bottom:12px!important;
+}
+
+/* ---- KPI / 统计卡片 ---- */
+.card .num,.metric .m-num{
+  color:var(--mt-dark)!important;font-size:22px!important;font-weight:800!important;line-height:1.1!important;
+}
+.card.hd .num,.metric.hd .m-num{color:#52C41A!important}
+.card.hs .num,.metric.hs .m-num{color:#FA8C16!important}
+.card .lbl,.metric .m-lbl,.metric .lbl{
+  color:var(--mt-text2)!important;font-size:11px!important;margin-top:3px!important;font-weight:500!important;
+}
+.card .pct{color:var(--mt-text3)!important;font-size:10px!important;margin-top:1px!important}
+.metric{background:var(--mt-row-alt)!important;border-radius:6px!important;padding:12px!important}
+
+/* ---- 表格 ---- */
+table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}
+th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important}
+th:hover{background:#F0F1F2!important}
+td,.dt td{
+  padding:9px 12px!important;
+  border-bottom:1px solid #F0F1F2!important;
+  color:var(--mt-text)!important;font-size:13px!important;
+}
+.dt td{border:1px solid var(--mt-border)!important;text-align:center!important}
+tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}
+tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
+.dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}
+
+/* ---- 按钮 ---- */
+.pbtn,.clearbtn,.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{
+  border-radius:6px!important;
+  border:1px solid #E8E9EB!important;
+  background:var(--mt-card)!important;
+  color:#5A5F6B!important;
+  font-size:13px!important;
+  padding:6px 10px!important;
+  transition:all .15s!important;
+  outline:none!important;
+  font-weight:500!important;
+}
+.filters input{min-width:200px!important}
+.pbtn:hover,.clearbtn:hover,.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  border-color:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  background:var(--mt-row-hover)!important;
+}
+.filter-bar select:focus,.filter-bar input[type=date]:focus{
+  box-shadow:0 0 0 2px rgba(255,195,0,.08)!important;
+}
+.pbtn.cur{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+.pbtn:disabled{opacity:.4!important;cursor:not-allowed!important}
+
+/* ---- Tab ---- */
+.tab{
+  padding:10px 20px!important;font-size:14px!important;
+  color:var(--mt-text2)!important;
+  border-bottom:2px solid transparent!important;
+  transition:all .15s!important;
+}
+.tab.cur{
+  color:var(--mt-dark)!important;
+  border-bottom-color:var(--mt-yellow)!important;
+  font-weight:600!important;
+  background:transparent!important;
+}
+.tab:hover{color:var(--mt-dark)!important}
+
+/* ---- 城市标签 (delivery-assessment) ---- */
+.city-tab{
+  background:rgba(255,255,255,.12)!important;
+  color:#fff!important;
+  border:2px solid transparent!important;
+  cursor:pointer!important;
+}
+.city-tab:hover{background:rgba(255,255,255,.22)!important}
+.city-tab.active{
+  background:var(--mt-yellow)!important;
+  color:var(--mt-dark)!important;
+  border-color:var(--mt-yellow)!important;
+  font-weight:700!important;
+}
+
+/* ---- 标签 tag ---- */
+.tag{
+  display:inline-block!important;
+  padding:2px 10px!important;
+  border-radius:4px!important;
+  font-size:11px!important;font-weight:600!important;
+  background:#FFF3D4!important;color:#B8860B!important;
+}
+.tag.hd{background:#E6F7DD!important;color:#389E0D!important}
+.tag.hs{background:#FFF1E0!important;color:#D46B08!important}
+
+/* ---- 分页 ---- */
+.pager{display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:6px!important;padding:14px 0 8px!important;flex-wrap:wrap!important}
+.pinfo{font-size:12px!important;color:var(--mt-text2)!important;margin:0 8px!important}
+
+/* ---- 页脚 ---- */
+.foot,.footer{
+  text-align:center!important;
+  color:var(--mt-text3)!important;
+  font-size:12px!important;
+  padding:18px 0!important;
+}
+
+/* ---- 杂项 ---- */
+.meta{color:var(--mt-text2)!important;font-size:12px!important}
+.rb{border-bottom:1px dashed var(--mt-border)!important}
+.rv{color:var(--mt-dark)!important;font-weight:700!important}
+.notes{color:var(--mt-text)!important;line-height:1.9!important}
+.notes li{margin-left:18px!important}
+.empty{color:var(--mt-text3)!important;padding:48px!important;text-align:center!important;font-size:14px!important}
+/* 导航按钮适配 */
+.pn{
+  background:var(--mt-dark)!important;
+  border:1px solid rgba(255,195,0,.3)!important;
+}
+.pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
+/* ---- 统一导航栏 ---- */
+.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.top-nav a{color:#94a3b8;text-decoration:none;transition:color .15s;white-space:nowrap}
+.top-nav a:hover{color:#FFC300}
+.top-nav .nav-current{color:#fff;font-weight:700;margin-left:4px}
+.top-nav .nav-sep{color:#475569;margin:0 2px}
+.top-nav .nav-switch{margin-left:auto}
+@media(max-width:600px){.top-nav{padding:0 12px;font-size:12px;gap:8px;height:36px}}
+/* ---- 统一二维码 ---- */
+.header{gap:16px}
+.hdr-left{padding-right:0!important}
+.qr-small{display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(255,255,255,.96);border-radius:10px;padding:6px 8px;box-shadow:0 2px 12px rgba(0,0,0,.18);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;flex-shrink:0;position:relative}
+.qr-small::after{content:"";position:absolute;inset:0;border-radius:10px;border:1.5px solid rgba(255,255,255,.5);pointer-events:none;transition:border-color .2s}
+.qr-small:hover{transform:scale(1.06);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.qr-small:hover::after{border-color:rgba(255,195,0,.7)}
+.qr-small:active{transform:scale(.97)}
+.qr-small img{width:56px;height:56px;border-radius:6px;display:block}
+.qr-small .qr-label{font-size:9px;color:#6B7280;font-weight:600;letter-spacing:.5px}
+.qr-small .qr-pulse{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#FFC300;box-shadow:0 0 0 0 rgba(255,195,0,.5);animation:qrPulse 2s infinite}
+@keyframes qrPulse{0%{box-shadow:0 0 0 0 rgba(255,195,0,.5)}70%{box-shadow:0 0 0 8px rgba(255,195,0,0)}100%{box-shadow:0 0 0 0 rgba(255,195,0,0)}}
+.qr-modal{display:none;position:fixed;z-index:10001;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.82);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);justify-content:center;align-items:center;flex-direction:column;opacity:0;transition:opacity .25s ease;padding:20px;touch-action:manipulation}
+.qr-modal.show{display:flex;opacity:1}
+.qr-modal-box{background:#fff;border-radius:16px;padding:0;text-align:center;box-shadow:0 16px 56px rgba(0,0,0,.5);max-width:320px;width:100%;transform:scale(.85) translateY(12px);transition:transform .3s cubic-bezier(.34,1.56,.64,1);overflow:hidden}
+.qr-modal.show .qr-modal-box{transform:scale(1) translateY(0)}
+.qr-modal-banner{background:linear-gradient(135deg,#1a2b4a 0%,#2d4a7a 100%);color:#fff;padding:14px 20px 10px;font-size:13px;font-weight:700;letter-spacing:.5px}
+.qr-modal-banner .qr-modal-close{position:static;color:rgba(255,255,255,.6);font-size:22px;float:right;cursor:pointer;font-weight:300;line-height:1;transition:color .15s,transform .15s}
+.qr-modal-banner .qr-modal-close:hover{color:#FFC300;transform:scale(1.2)}
+.qr-modal-body{padding:20px 24px 18px}
+.qr-modal-body img{width:220px;height:220px;border-radius:10px;display:block;margin:0 auto;border:1px solid #e8eaed}
+.qr-modal-body .tt{font-size:15px;font-weight:700;color:#1a2b4a;margin-top:14px}
+.qr-modal-body .sub{font-size:12px;color:#6B7280;margin-top:4px}
+.qr-modal-body .qr-url{font-size:11px;color:#5f6368;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qr-modal-body .qr-hint{font-size:10px;color:#8A8FA3;margin-top:8px}
+body.no-scroll{overflow:hidden}
+@media(max-width:600px){.qr-small img{width:42px;height:42px}}
+@media(prefers-reduced-motion:reduce){.qr-pulse{animation:none}}
+/* ---- 考核看板小屏溢出修复 ---- */
+.grid-cal-bi>*{min-width:0}
+.table-scroll{max-width:100%}
+.dim-tabs{top:40px}
+@media(max-width:600px){
+  .dim-tabs{overflow-x:auto;top:36px}
+  .dim-tab{flex:0 0 auto;padding:8px 12px!important;font-size:12px!important;white-space:nowrap}
+  .tab-badge{font-size:10px!important;padding:1px 5px!important;margin-left:2px!important}
+}
+/* ---- 小屏适配 ---- */
+@media(max-width:768px){
+  .header,.u-header{padding:14px 16px!important}
+  .header h1,.u-header h1,.u-header .doctitle{font-size:17px!important}
+  .header .sub,.u-header .sub{font-size:11px!important}
+  .card{padding:8px 10px!important;margin-bottom:8px!important}
+  .qr-small{padding:4px 6px!important}
+  .top-nav{padding:0 12px!important;font-size:12px!important;gap:8px!important;height:36px!important;overflow-x:auto!important;white-space:nowrap!important}
+  .filter-bar select,.filter-bar input[type=date],.filters select,.filters input{font-size:16px!important}
+}
+/* ---- 移动端触控细节 ---- */
+.pbtn,.clearbtn,.city-tab,.dim-tab,.vtab,.tab,.fchip,.cbar-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.dim-tabs{scroll-behavior:smooth}
+@media(max-width:600px){.pbtn{min-height:32px!important;padding:6px 10px!important}}
+/* ====== end mt-style ====== </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="https://gitsick.github.io/databi/">← 看板中心</a>
+  <span class="nav-sep">›</span>
+  <span class="nav-current">配送考核</span>
+  <a href="delivery-assessment-dashboard-oct.html" class="nav-switch">10月看板</a>
+  <a href="rider_dashboard.html" class="nav-switch">骑手解约</a>
+</nav>
+<div class="header">
+  <div>
+    <h1>2026年9月配送考核</h1>
+    <div class="subtitle">下沉市场合作商 | 文档负责人：邬浩楠 | 考核方案更新 08-28 | 数据截止 9/30（BI T-1，全月齐）</div>
+    <div class="subtitle header-meta">
+      <span class="freshness-badge fresh">● 数据已更新 9/30</span>
+      <span class="header-source">BI数据：2026-09-30 | 来源：bi.sankuai.com/v2/dashboard/274665</span>
+    </div>
+  </div>
+  <div class="qr-small" onclick="openQrModal()" role="button" tabindex="0" aria-label="点击查看二维码" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openQrModal()}">
+    <span class="qr-pulse"></span>
+    <img src="https://gitsick.github.io/rider-data/delivery_assessment_qrcode.png?v=1001" alt="扫码访问配送考核看板" />
+    <div class="qr-label">📱 手机查看</div>
+  </div>
+</div>
+
+<div class="qr-modal" id="qrModal" onclick="if(event.target===this)closeQrModal()">
+  <div class="qr-modal-box">
+    <div class="qr-modal-banner">
+      <span class="qr-modal-close" onclick="closeQrModal()" role="button" tabindex="0" aria-label="关闭" onkeydown="if(event.key==='Enter')closeQrModal()">&times;</span>
+      扫一扫 · 手机查看配送考核
+    </div>
+    <div class="qr-modal-body">
+      <img src="https://gitsick.github.io/rider-data/delivery_assessment_qrcode.png?v=1001" alt="扫码访问配送考核看板" />
+      <div class="tt">微信 / 浏览器扫一扫均可访问</div>
+      <div class="sub">或复制下方链接在手机浏览器打开</div>
+      <div class="qr-url" onclick="this.select()">gitsick.github.io/rider-data/delivery-assessment-dashboard.html</div>
+      <div class="qr-hint">点击链接可选中复制 · Esc 关闭</div>
+    </div>
+  </div>
+</div>
+<script>function openQrModal(){document.getElementById('qrModal').classList.add('show');document.body.classList.add('no-scroll')}function closeQrModal(){document.getElementById('qrModal').classList.remove('show');document.body.classList.remove('no-scroll')}document.addEventListener('keydown',function(e){if(e.key==='Escape')closeQrModal()});</script>
+
+
+<!-- 三城考核速览（一眼看全） -->
+<div class="summary-strip">
+  <div class="summary-card danger" onclick="switchDim(document.querySelectorAll('.dim-tab')[1],'monthly')">
+    <div class="sc-left">
+      <div class="sc-city">诸暨市</div>
+      <div class="sc-score" style="color:#d93025;">94.57%</div>
+      <span class="sc-level" style="background:#fce8e8;color:#d93025;">🔴 重罚预警</span>
+    </div>
+    <div class="sc-right">
+      <div class="sc-risk" style="color:#d93025;">⚠ HD 91.73% 逼近零分线</div>
+      <div>距脱红仅 <strong>0.43%</strong> | 距达标 5.43%</div>
+      <div>HD贡献 76% 失分 | 9/2·9/8 两次零分</div>
+      <div class="sc-progress"><div class="sc-progress-fill" style="width:94.57%;background:#d93025;"></div></div>
+    </div>
+    <div class="sc-bar" style="background:#d93025;"></div>
+  </div>
+  <div class="summary-card warn" onclick="switchDim(document.querySelectorAll('.dim-tab')[1],'monthly')">
+    <div class="sc-left">
+      <div class="sc-city">响水县</div>
+      <div class="sc-score" style="color:#f5a623;">97.22%</div>
+      <span class="sc-level" style="background:#fef3e2;color:#f5a623;">⚠️ 警告</span>
+    </div>
+    <div class="sc-right">
+      <div class="sc-risk" style="color:#f5a623;">⚠ HD 95.65% 仍需提升</div>
+      <div>距达标 <strong>0.78%</strong> | 已脱红</div>
+      <div>HD贡献 78% 失分 | 体验 98.18 最优</div>
+      <div class="sc-progress"><div class="sc-progress-fill" style="width:97.22%;background:#f5a623;"></div></div>
+    </div>
+    <div class="sc-bar" style="background:#f5a623;"></div>
+  </div>
+  <div class="summary-card warn" onclick="switchDim(document.querySelectorAll('.dim-tab')[1],'monthly')">
+    <div class="sc-left">
+      <div class="sc-city">泰兴县</div>
+      <div class="sc-score" style="color:#f5a623;">97.17%</div>
+      <span class="sc-level" style="background:#fef3e2;color:#f5a623;">⚠️ 警告</span>
+    </div>
+    <div class="sc-right">
+      <div class="sc-risk" style="color:#f5a623;">⚠ 体验分 91.23 三城最低</div>
+      <div>距达标 <strong>0.83%</strong> | 已脱红</div>
+      <div>体验贡献 62% 失分 | HD 98.24% 最优</div>
+      <div class="sc-progress"><div class="sc-progress-fill" style="width:97.17%;background:#f5a623;"></div></div>
+    </div>
+    <div class="sc-bar" style="background:#f5a623;"></div>
+  </div>
+</div>
+
+<div class="dim-tabs">
+  <div class="dim-tab active" onclick="switchDim(this,'daily')">📊 天维度<span class="tab-badge daily">每日快照</span></div>
+  <div class="dim-tab" onclick="switchDim(this,'monthly')">🏆 月维度<span class="tab-badge monthly">整月考核</span></div>
+  <div class="dim-tab" onclick="switchDim(this,'report')">📋 分析报告<span class="tab-badge report">深度分析</span></div>
+  <div class="dim-tab" onclick="switchDim(this,'charts')">📈 数据图表<span class="tab-badge daily">图形分析</span></div>
+</div>
+
+<!-- ==================== 天维度 ==================== -->
+<div class="dim-content active" id="dim-daily">
+
+  <!-- 期次切换 -->
+  <div style="display:flex;gap:0;margin-bottom:12px;border-radius:8px;overflow:hidden;width:fit-content;">
+    <button class="period-btn" data-p="p1" onclick="switchPeriod('p1')" id="btn-p1">第1期 9/1-9/13</button>
+    <button class="period-btn active" data-p="p2" onclick="switchPeriod('p2')" id="btn-p2">第2期 9/14-9/30</button>
+    <button class="period-btn" data-p="all" onclick="switchPeriod('all')" id="btn-all">全部日期</button>
+  </div>
+
+  <!-- 筛选+KPI条（BI看板风格：一行平铺） -->
+  <div class="card" style="margin-bottom:12px;padding:12px 16px;">
+    <div class="filter-strip">
+      <div class="date-bar" style="gap:8px;">
+        <label style="font-size:16px;">📅</label>
+        <button class="date-nav-btn" id="date-prev" onclick="shiftDate(-1)" style="padding:4px 10px;">◀</button>
+        <select id="date-select" onchange="switchDate(this.value)" style="min-width:160px;padding:6px 10px;font-size:13px;border-width:1px;"></select>
+        <button class="date-nav-btn" id="date-next" onclick="shiftDate(1)" style="padding:4px 10px;">▶</button>
+        <span class="date-status has-data" id="date-status">✓ 有数据 9/23</span>
+      </div>
+      <div class="fs-divider"></div>
+      <div class="fs-item"><div class="fs-label">城市</div><div class="fs-value" id="kpi-city-display" style="font-size:15px;">泰兴</div></div>
+      <input type="hidden" id="kpi-city" value="泰兴">
+      <div class="fs-divider"></div>
+      <div class="fs-item"><div class="fs-label">日期</div><div class="fs-value" style="font-size:14px;" id="kpi-date">9/23 周三</div></div>
+      <div class="fs-divider"></div>
+      <div class="fs-item"><div class="fs-label">期次</div><div class="fs-value" style="font-size:13px;" id="kpi-period">第2期 9/14-9/30</div></div>
+      <div class="fs-divider"></div>
+      <div class="fs-item"><div class="fs-label">高峰日</div><div class="fs-value" style="font-size:14px;color:#34a853;" id="kpi-peak">否</div></div>
+    </div>
+  </div>
+
+  <!-- 日历 + BI数据表 并排 -->
+  <div class="grid-cal-bi">
+    <!-- 左：考核周期日历 -->
+    <div class="card" style="padding:14px;">
+      <div class="card-title" style="margin-bottom:8px;font-size:14px;"><span class="icon">📅</span>考核周期 <span id="cal-period-label" style="font-size:12px;color:#888;font-weight:400;">（第2期 9/14-9/30）</span></div>
+      <div class="cal-wrap">
+        <div class="cal-legend">
+          <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#e8f0fe;"></span>第1期</div>
+          <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#fef3e2;"></span>第2期</div>
+          <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#fce8e8;"></span>高峰</div>
+          <div class="cal-legend-item"><span style="width:11px;height:2px;background:#34a853;display:inline-block;border-radius:2px;"></span>有数据</div>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+      <div class="period-prog" id="period-prog"></div>
+    </div>
+    <!-- 右：BI数据汇总表 -->
+    <div class="card daily-card">
+      <div class="card-title"><span class="icon">📈</span>数据汇总（<span id="bi-date-label">2026-09-23</span> 单日快照）</div>
+      <div class="table-scroll">
+      <table class="dt" id="bi-data-table">
+        <thead>
+          <tr>
+            <th>城市</th><th>大区</th>
+            <th>推单完成率</th><th>体验考核分</th><th>HD完成率</th><th>完结率</th><th>承托比</th>
+            <th>推单完成/总量</th><th>当日总分</th><th>等级</th>
+          </tr>
+        </thead>
+        <tbody id="bi-data-body"></tbody>
+      </table>
+      </div>
+      <div style="font-size:11px;color:#6b7280;margin-top:6px;" id="bi-note">单日数据：2026-09-23 | 切换城市标签自动联动下方考核模块</div>
+    </div>
+  </div>
+
+  <!-- 趋势表 全宽 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-title"><span class="icon">📉</span>近期趋势（分指标展开，点击列头可切换日期）</div>
+    <div class="table-scroll">
+    <table class="trend-table" id="trend-table">
+      <thead>
+        <tr id="trend-header"></tr>
+      </thead>
+      <tbody id="trend-body"></tbody>
+    </table>
+    </div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">橙色列=高峰日 | 绿色列=当前选中日 | 点击列头可跳转到对应日期</div>
+  </div>
+
+  <!-- 图表已集中至「数据图表」页签 -->
+  <div class="card" style="margin-bottom:12px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+    <div style="font-size:12.5px;color:#666;">📊 指标走势图、两期均值对比等图形化分析已集中至「<strong>数据图表</strong>」页签</div>
+    <button class="tc-btn" style="padding:7px 18px;" onclick="switchDim(document.querySelectorAll('.dim-tab')[3],'charts')">前往查看 →</button>
+  </div>
+
+  <!-- 天维度：当日各模块 -->
+  <div class="card" style="margin-bottom:12px;padding:12px 20px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <div class="section-label" style="margin:0;">当日各模块指标</div>
+      <div class="city-tabs">
+        <div class="city-tab active" onclick="switchCity(this,'泰兴')">泰兴</div>
+        <div class="city-tab" onclick="switchCity(this,'诸暨')">诸暨</div>
+        <div class="city-tab" onclick="switchCity(this,'响水')">响水</div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-modules">
+    <div class="card module-card jiameng collapsible">
+      <div class="card-title collapsible"><span class="icon">🟥</span>加盟运力（HD完成率） <span class="pill pill-weight">权重 50%</span></div>
+      <div class="collapsible-content">
+        <div class="indicator-row">
+          <div><div class="indicator-name">HD完成率</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
+          <div class="indicator-score">完成率<input class="calc-input" id="jm_rate" type="number" onchange="calcScore()"><br>得分<span id="jm_score" style="font-weight:700;color:#e8525f;">—</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card module-card tiyan collapsible">
+      <div class="card-title collapsible"><span class="icon">🟣</span>体验考核 <span class="pill pill-weight">权重 20%</span></div>
+      <div class="collapsible-content">
+        <div class="indicator-row"><div class="indicator-name">复合超时率 30%</div><div class="indicator-score"><input class="calc-input" id="ty_cs" type="number" onchange="calcScore()"></div></div>
+        <div class="indicator-row"><div class="indicator-name">虚假点送达 40%</div><div class="indicator-score"><input class="calc-input" id="ty_fake" type="number" onchange="calcScore()"></div></div>
+        <div class="indicator-row"><div class="indicator-name">配送取消单 30%</div><div class="indicator-score"><input class="calc-input" id="ty_cancel" type="number" onchange="calcScore()"></div></div>
+        <div style="font-size:11px;color:#888;text-align:right;margin-top:4px;">体验得分 → <span id="ty_score" style="font-weight:700;color:#7b61ff;">—</span></div>
+      </div>
+    </div>
+    <div class="card module-card tuiwan collapsible">
+      <div class="card-title collapsible"><span class="icon">🔵</span>推单完成率 <span class="pill pill-weight">权重 20%</span></div>
+      <div class="collapsible-content">
+        <div class="indicator-row">
+          <div><div class="indicator-name">推单完成率</div><span class="threshold-tag tag-red">110%封顶</span></div>
+          <div class="indicator-score">完成率<input class="calc-input" id="tw_rate" type="number" onchange="calcScore()"><br>得分<span id="tw_score" style="font-weight:700;color:#00b8d4;">—</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card module-card wanjie collapsible">
+      <div class="card-title collapsible"><span class="icon">🟠</span>履约完结率 <span class="pill pill-weight">权重 10%</span></div>
+      <div class="collapsible-content">
+        <div class="indicator-row">
+          <div><div class="indicator-name">履约完结率</div><span class="threshold-tag tag-red">80%~110% 计分</span></div>
+          <div class="indicator-score">完成率<input class="calc-input" id="wj_rate" type="number" onchange="calcScore()"><br>得分<span id="wj_score" style="font-weight:700;color:#ff6b35;">—</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-calc-preset">
+    <div class="card">
+      <div class="card-title"><span class="icon">🧮</span>当日测算 + 承托比</div>
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;">
+        <div style="flex:1;">
+          <div style="font-size:11px;color:#888;margin-bottom:2px;">承托比（参考，不计分）</div>
+          <input class="calc-input" id="ct_rate" type="number" disabled style="width:100%;">
+        </div>
+        <div style="font-size:11px;color:#888;text-align:right;line-height:1.5;">画像：都不考<br>加盟50% 体验20%<br>推完20% 完结率10%</div>
+      </div>
+      <div class="calc-section">
+        <div id="calc-detail" style="font-size:12px;color:#555;margin-top:6px;white-space:pre-line;"></div>
+        <div class="calc-result" id="total-score">—</div>
+        <div style="text-align:center;font-size:12px;color:#888;" id="penalty-hint"></div>
+      </div>
+    </div>
+    <!-- 预估测算器 -->
+    <div class="card preset-card">
+      <div class="card-title"><span class="icon">🔮</span>预估测算器（剩余<span id="preset-remaining-days">4</span>天预估值 → 月度预估总分）</div>
+<div style="font-size:12px;color:#666;margin-bottom:10px;" id="preset-desc-text">全月 30/30 天已收官，无需预估；调整指标值可做复盘模拟</div>
+      <div class="preset-input-row">
+        <label>加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
+        <label>体验分</label><input id="pre_ty" type="number" value="95" step="0.1" onchange="calcPreset()">
+      </div>
+      <div class="preset-input-row">
+        <label>推单率%</label><input id="pre_tw" type="number" value="99.2" step="0.1" onchange="calcPreset()">
+        <label>完结率%</label><input id="pre_wj" type="number" value="99.9" step="0.1" onchange="calcPreset()">
+      </div>
+      <div class="preset-scenarios">
+        <div class="preset-scenario optimistic" onclick="applyPreset('optimistic')">
+          <div class="ps-label" style="color:#34a853;">乐观预估</div>
+          <div class="ps-score" id="ps-optimistic" style="color:#34a853;">—</div>
+          <div class="ps-desc">HD≥98 体验≥96<br>推单≥99.5 完结≥99.9</div>
+        </div>
+        <div class="preset-scenario realistic active" onclick="applyPreset('realistic')">
+          <div class="ps-label" style="color:#1967d2;">基准预估</div>
+          <div class="ps-score" id="ps-realistic" style="color:#1967d2;">—</div>
+          <div class="ps-desc">HD=95 体验=95<br>推单=99.2 完结=99.9</div>
+        </div>
+        <div class="preset-scenario conservative" onclick="applyPreset('conservative')">
+          <div class="ps-label" style="color:#d93025;">保守预估</div>
+          <div class="ps-score" id="ps-conservative" style="color:#d93025;">—</div>
+          <div class="ps-desc">HD=92 体验=92<br>推单=98.5 完结=99.5</div>
+        </div>
+      </div>
+      <div class="preset-compare">
+        <div class="preset-compare-item current">
+          <div class="pc-label" id="pc-current-label">当前MTD总分（—天）</div>
+          <div class="pc-value" id="pc-current" style="color:#f5a623;">—</div>
+          <div class="pc-delta" style="color:#888;" id="pc-current-level">—</div>
+        </div>
+        <div class="preset-compare-item estimated">
+          <div class="pc-label">预估月度总分（30天）</div>
+          <div class="pc-value" id="pc-estimated" style="color:#1967d2;">—</div>
+          <div class="pc-delta" id="pc-delta">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== 月维度 ==================== -->
+<div class="dim-content" id="dim-charts">
+
+  <!-- 图表页工具条：期次切换（与天维度页共享状态） -->
+  <div class="card" style="margin-bottom:12px;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <div style="font-size:12px;font-weight:700;color:#1a2b4a;">⏱ 期次范围</div>
+    <div style="display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid #dadce0;" id="charts-period-bar"></div>
+    <span style="font-size:11px;color:#6b7280;">切换期次后走势图即时更新；指标 / 图表类型在下方走势图工具栏切换</span>
+  </div>
+
+  <!-- 数据完整性自检 -->
+  <div class="card" id="data-health" style="margin-bottom:12px;"></div>
+
+  <!-- 指标走势图（三城对比 · 折线/柱状可切换） -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-title"><span class="icon">📊</span>指标走势图（三城对比 · 橙色底纹=高峰日 · 竖虚线/底纹=当前选中日期）</div>
+    <div class="tc-toolbar" id="tc-toolbar"></div>
+    <div style="overflow-x:auto;">
+      <svg id="trend-chart-svg" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" style="min-width:680px;width:100%;height:auto;display:block;"></svg>
+    </div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">悬停数据点/柱可查看具体数值 | 红色虚线=考核警戒线（HD 显示 90% 零分线、推单率显示 98.8% 兜底线）| 支持折线/柱状切换，切换指标时下方表格同步高亮</div>
+  </div>
+
+  <!-- 两期均值对比 + 月度总分对比 并排 -->
+  <div class="grid-util">
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title"><span class="icon">📶</span>两期均值对比<button class="tc-btn tc-export" onclick="exportPeriodChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+      <div id="period-bar-chart"></div>
+    </div>
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title"><span class="icon">🏆</span>月度总分对比<button class="tc-btn tc-export" onclick="exportMonthChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+      <div id="month-bar-chart"></div>
+    </div>
+  </div>
+
+  <!-- 多角度诊断图：缺口分解 + 兜底高峰冲击 -->
+  <div class="grid-util">
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title"><span class="icon">🧩</span>加权缺口分解（缺口=(100−值)×权重，与 100−总分 吻合）<button class="tc-btn tc-export" onclick="exportGapChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+      <div id="gap-chart"></div>
+    </div>
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title"><span class="icon">🚨</span>推完兜底线：高峰日 vs 非高峰日（高峰冲击视角）<button class="tc-btn tc-export" onclick="exportBreachChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+      <div id="breach-chart"></div>
+    </div>
+  </div>
+</div>
+
+<div class="dim-content" id="dim-monthly">
+
+  <!-- 快捷锚点导航 -->
+  <div class="anchor-nav">
+    <a class="anchor-btn" href="#sec-overview">🏆 考核总览</a>
+    <a class="anchor-btn" href="#sec-estimate">💰 预估警告罚款</a>
+    <a class="anchor-btn" href="#sec-example">🧮 计分示例</a>
+    <a class="anchor-btn" href="#sec-sensitivity">📈 敏感度分析</a>
+    <a class="anchor-btn" href="#sec-scheme">📚 考核方案参考</a>
+  </div>
+
+  <!-- 月维度：整月考核总览 -->
+  <div class="card monthly-card" id="sec-overview" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#fff5f5 100%);">
+    <div class="card-title" id="overview-title"><span class="icon">🏆</span>整月考核结果测算（数据截止 9/30，MTD占全月 30/30 天，全月数据齐全）</div>
+    <div class="table-scroll">
+    <table class="dt">
+      <thead>
+        <tr><th>城市</th><th>大区</th><th>加盟(HD)</th><th>体验分</th><th>推单完成率</th><th>完结率</th><th>承托比</th><th>月度总分</th><th>罚则</th><th>趋势</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="city-cell">响水县</td><td>北部大区</td>
+          <td>95.65%</td><td class="c-green">98.18</td><td>98.80%</td><td class="c-green">99.95%</td><td>42.64%</td>
+          <td class="score-cell c-orange">97.22%</td><td class="c-orange">⚠️ 警告</td><td class="c-green">↗ 稳步上升</td>
+        </tr>
+        <tr>
+          <td class="city-cell">泰兴县</td><td>北部大区</td>
+          <td>98.24%</td><td class="c-orange">91.23</td><td>99.14%</td><td class="c-green">99.75%</td><td>49.04%</td>
+          <td class="score-cell c-orange">97.17%</td><td class="c-orange">⚠️ 警告</td><td class="c-green">↗ 小幅上升</td>
+        </tr>
+        <tr>
+          <td class="city-cell">诸暨市</td><td>特区</td>
+          <td class="c-red">91.73%</td><td>94.61</td><td>99.00%</td><td class="c-red">99.87%</td><td>44.89%</td>
+          <td class="score-cell c-red">94.57%</td><td class="c-red">🔴 重罚预警</td><td class="c-red">↓ 完结率下降</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">画像：都不考（加盟50% 体验20% 推完20% 完结率10%）| 加盟用HD完成率近似 | 全月数据需持续关注</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;">
+      <div style="border-left:3px solid #d93025;padding:8px 12px;background:#fff5f5;border-radius:0 6px 6px 0;">
+        <div style="font-weight:700;color:#d93025;font-size:12px;">🔴 诸暨 · 重罚预警</div>
+        <div style="font-size:11px;color:#555;margin-top:4px;line-height:1.6;">HD 91.73% 贡献76%失分 | 距90%零分线仅1.73%<br><strong style="color:#1967d2;">→</strong> 10月首要：HD ≥92.55% 即脱红，死守90%零分线</div>
+      </div>
+      <div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;">
+        <div style="font-weight:700;color:#f5a623;font-size:12px;">⚠️ 泰兴 · 警告</div>
+        <div style="font-size:11px;color:#555;margin-top:4px;line-height:1.6;">体验 91.23 贡献62%失分 | HD 98.24%三城最优<br><strong style="color:#1967d2;">→</strong> 重点改善超时/虚假/取消率</div>
+      </div>
+      <div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;">
+        <div style="font-weight:700;color:#f5a623;font-size:12px;">⚠️ 响水 · 警告</div>
+        <div style="font-size:11px;color:#555;margin-top:4px;line-height:1.6;">HD 95.65% 贡献78%失分 | 体验 98.18三城最优<br><strong style="color:#1967d2;">→</strong> 高峰日加强运力调度</div>
+      </div>
+    </div>
+    <!-- 三城月度总分对比已集中至「数据图表」页签 -->
+    <div style="margin-top:14px;padding:10px 16px;border:1px dashed #d0d7e3;border-radius:8px;background:#f8f9fb;font-size:12px;color:#666;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span>📊 三城月度总分对比图已移至「数据图表」页签</span>
+      <button class="tc-btn" onclick="switchDim(document.querySelectorAll('.dim-tab')[3],'charts')">前往查看 →</button>
+    </div>
+  </div>
+
+  <!-- 月维度：城市预估警告罚款 -->
+  <div class="card" id="sec-estimate" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#fff8e1 100%);">
+    <div class="card-title"><span class="icon">💰</span>城市预估警告与罚款（基于全月总分）</div>
+    <div style="font-size:12px;color:#666;margin-bottom:12px;" id="estimate-desc">数据截止 9/30，MTD占全月 30/30 天（100%）；全月数据已齐。下表按当前总分保持不变、提升至达标线、下滑至红线三种场景预估。</div>
+    <div class="table-scroll">
+    <table class="dt" style="font-size:12px;">
+      <thead>
+        <tr style="background:#f5f5f5;">
+          <th rowspan="2">城市</th>
+          <th rowspan="2">当前总分</th>
+          <th rowspan="2">当前罚则</th>
+          <th colspan="2" style="border-bottom:1px solid #ddd;">维持现状（预估月末）</th>
+          <th colspan="2" style="border-bottom:1px solid #ddd;">冲刺达标（提升至100%）</th>
+          <th colspan="2" style="border-bottom:1px solid #ddd;">持续下滑（跌至90%以下）</th>
+        </tr>
+        <tr style="background:#fafafa;font-size:11px;">
+          <th>预估罚则</th>
+          <th>警告数</th>
+          <th>预估罚则</th>
+          <th>警告数</th>
+          <th>预估罚则</th>
+          <th>警告数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 诸暨 -->
+        <tr>
+          <td class="city-cell" style="color:#d93025;font-weight:700;">诸暨市</td>
+          <td style="color:#d93025;font-weight:700;">94.57%</td>
+          <td><span style="background:#fce8e8;color:#d93025;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">🔴 重罚预警</span></td>
+          <td style="background:#fce8e8;"><span style="color:#d93025;font-weight:600;">重罚预警</span><br><span style="font-size:10px;color:#6b7280;">90%~95%区间</span></td>
+          <td style="background:#fce8e8;text-align:center;color:#d93025;font-weight:700;">2个</td>
+          <td style="background:#e6f4ea;"><span style="color:#34a853;font-weight:600;">达标</span><br><span style="font-size:10px;color:#6b7280;">需+5.43%</span></td>
+          <td style="background:#e6f4ea;text-align:center;color:#34a853;font-weight:700;">0</td>
+          <td style="background:#fce8e8;"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span style="font-size:10px;color:#6b7280;">跌破90%</span></td>
+          <td style="background:#fce8e8;text-align:center;color:#b71c1c;font-weight:700;">2个+</td>
+        </tr>
+        <!-- 泰兴 -->
+        <tr>
+          <td class="city-cell" style="color:#f5a623;font-weight:700;">泰兴县</td>
+          <td style="color:#f5a623;font-weight:700;">97.17%</td>
+          <td><span style="background:#fef3e2;color:#f5a623;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">⚠️ 警告</span></td>
+          <td style="background:#fef3e2;"><span style="color:#f5a623;font-weight:600;">警告</span><br><span style="font-size:10px;color:#6b7280;">95%~100%区间</span></td>
+          <td style="background:#fef3e2;text-align:center;color:#f5a623;font-weight:700;">1~2个</td>
+          <td style="background:#e6f4ea;"><span style="color:#34a853;font-weight:600;">达标</span><br><span style="font-size:10px;color:#6b7280;">需+0.83%</span></td>
+          <td style="background:#e6f4ea;text-align:center;color:#34a853;font-weight:700;">0</td>
+          <td style="background:#fce8e8;"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span style="font-size:10px;color:#6b7280;">跌破90%</span></td>
+          <td style="background:#fce8e8;text-align:center;color:#b71c1c;font-weight:700;">2个+</td>
+        </tr>
+        <!-- 响水 -->
+        <tr>
+          <td class="city-cell" style="color:#f5a623;font-weight:700;">响水县</td>
+          <td style="color:#f5a623;font-weight:700;">97.22%</td>
+          <td><span style="background:#fef3e2;color:#f5a623;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">⚠️ 警告</span></td>
+          <td style="background:#fef3e2;"><span style="color:#f5a623;font-weight:600;">警告</span><br><span style="font-size:10px;color:#6b7280;">95%~100%区间</span></td>
+          <td style="background:#fef3e2;text-align:center;color:#f5a623;font-weight:700;">1~2个</td>
+          <td style="background:#e6f4ea;"><span style="color:#34a853;font-weight:600;">达标</span><br><span style="font-size:10px;color:#6b7280;">需+0.78%</span></td>
+          <td style="background:#e6f4ea;text-align:center;color:#34a853;font-weight:700;">0</td>
+          <td style="background:#fce8e8;"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span style="font-size:10px;color:#6b7280;">跌破90%</span></td>
+          <td style="background:#fce8e8;text-align:center;color:#b71c1c;font-weight:700;">2个+</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <!-- 三城汇总 -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;">
+      <div style="border:1px solid #fce8e8;border-radius:8px;padding:12px;background:#fff5f5;">
+        <div style="font-size:11px;color:#6b7280;margin-bottom:4px;">维持现状 · 三城合计</div>
+        <div style="font-size:20px;font-weight:700;color:#d93025;">5~6个警告</div>
+        <div style="font-size:11px;color:#555;margin-top:4px;">诸暨2 + 泰兴1~2 + 响水1~2<br>全月警告封顶2个/城，超出转罚款</div>
+      </div>
+      <div style="border:1px solid #e6f4ea;border-radius:8px;padding:12px;background:#f0faf2;">
+        <div style="font-size:11px;color:#6b7280;margin-bottom:4px;">冲刺达标 · 三城合计</div>
+        <div style="font-size:20px;font-weight:700;color:#34a853;">0警告</div>
+        <div style="font-size:11px;color:#555;margin-top:4px;">三城均≥100% → 无警告无罚款<br>诸暨需+5.43% / 泰兴需+0.83% / 响水需+0.78%</div>
+      </div>
+      <div style="border:1px solid #fce8e8;border-radius:8px;padding:12px;background:#fff5f5;">
+        <div style="font-size:11px;color:#6b7280;margin-bottom:4px;">持续下滑 · 三城合计</div>
+        <div style="font-size:20px;font-weight:700;color:#b71c1c;">6个+警告</div>
+        <div style="font-size:11px;color:#555;margin-top:4px;">三城均跌入重罚区间（&lt;90%）<br>每城2个警告封顶后转罚款</div>
+      </div>
+    </div>
+    <!-- 诸暨重点预警 -->
+    <div style="margin-top:14px;padding:12px 16px;background:#fce8e8;border-radius:8px;border-left:4px solid #d93025;">
+      <div style="font-weight:700;color:#d93025;font-size:13px;margin-bottom:6px;">🔴 诸暨重点预警</div>
+      <div style="font-size:12px;color:#444;line-height:1.8;">
+        全月总分 94.57%，距95%脱红线差 <strong style="color:#d93025;">0.43%</strong>（总分需提升0.43分）。<br>
+        10月若HD完成率提升至 <strong style="color:#d93025;">92.55%（+0.82pp）</strong> 即可脱红（HD每+1%→总分+0.5%）。<br>
+        本月已收官锁定 <strong style="color:#d93025;">重罚预警</strong>（2个警告+罚款）。<br>
+        本月HD已2次跌破90%（9/2、9/8）触发零分，总分守住94.57%实属临界，10月必须杜绝零分日。
+      </div>
+    </div>
+    <div style="font-size:11px;color:#6b7280;margin-top:8px;">预估基于全月收官总分（30/30 天数据已齐），无外推误差 | 全月警告封顶2个/城市，超出按标准转罚款 | 具体罚款金额以任务系统下发为准</div>
+  </div>
+
+  <!-- 考核方案参考（可折叠） -->
+  <div class="card" id="sec-scheme" style="margin-bottom:16px;background:#f8f9fb;">
+    <div class="card-title ref-collapse collapsed" onclick="this.classList.toggle('collapsed')">
+      <span class="icon">📚</span>考核方案参考（指标定义 · 计分规则 · 处罚 · 报备）
+      <span class="ref-arrow" style="margin-left:auto;color:#6b7280;">▼</span>
+    </div>
+    <div class="ref-content">
+
+  <!-- 公式与权重 -->
+  <div class="grid grid-2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-title"><span class="icon">📊</span>总分计算公式</div>
+      <div class="formula-box"><div class="formula">总分 = 加盟完成率×50% + 体验×20% + 推完×20% + 完结率×10% − 扣分</div></div>
+      <div style="font-size:12px;color:#888;text-align:center;">画像：都不考（加盟50% 体验20% 推完20% 完结率10%）</div>
+      <div style="margin-top:10px;"><span class="pill pill-period">高峰日</span><span style="font-size:12px;color:#666;">9/5、9/6、9/12、9/13、9/19、9/25、9/26、9/27、9/28</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">⚖️</span>运力组合权重配置</div>
+      <table class="dt">
+        <thead><tr><th>画像</th><th>加盟</th><th>悦跑</th><th>普众</th><th>体验</th><th>推完</th><th>完结率</th></tr></thead>
+        <tbody>
+          <tr><td>考普众+考悦跑</td><td>15%</td><td>30%</td><td>5%</td><td>20%</td><td>20%</td><td>10%</td></tr>
+          <tr><td>考普众不考悦跑</td><td>45%</td><td>—</td><td>5%</td><td>20%</td><td>20%</td><td>10%</td></tr>
+          <tr style="background:#e6f0ff;font-weight:700;"><td>都不考（当前）</td><td>50%</td><td>—</td><td>—</td><td>20%</td><td>20%</td><td>10%</td></tr>
+          <tr><td>G3城市</td><td>—</td><td>—</td><td>—</td><td>100%</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 月维度：考核指标明细解读 -->
+  <div class="section-label">考核指标明细解读</div>
+
+  <!-- 考核指标全景表（对标官方方案） -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-title"><span class="icon">📋</span>考核指标全景表（对标2026年9月配送考核方案）</div>
+    <div class="table-scroll">
+    <table class="dt scheme-table">
+      <thead>
+        <tr><th style="min-width:70px;">模块</th><th style="min-width:110px;">考核指标</th><th style="min-width:90px;">考核周期</th><th style="min-width:200px;">指标定义</th><th style="min-width:280px;">计分规则</th><th style="min-width:60px;">权重</th></tr>
+      </thead>
+      <tbody>
+        <tr class="module-sep"><td colspan="6">▶ 计分模块（当前画像：都不考）</td></tr>
+        <tr style="background:#fce8e8;" class="current-mod">
+          <td class="city-cell" style="color:#e8525f;">加盟运力</td>
+          <td>服务质量达标骑手数</td>
+          <td>第1期 9/1-9/13<br>第2期 9/14-9/30</td>
+          <td style="text-align:left;">达标骑手数=日均服务质量达标骑手数+日均合格有单骑手数×折算系数+日均高峰兼职骑手数×折算系数-日均异常骑手数<br><span style="color:#6b7280;">高峰期：午10:30-13:30 &amp; 晚17:00-20:00</span></td>
+          <td style="text-align:left;">完成率=实际达标骑手数/目标<br>①计分区间【90%,110%】，＜90%记0分<br>②兜底规则：推订单完成率（不含散单）≥98.8%且加盟人效≤X<br>③四舍五入计算</td>
+          <td><strong style="color:#e8525f;font-size:13px;">50%</strong></td>
+        </tr>
+        <tr>
+          <td class="city-cell" style="color:#f5a623;">悦跑运力</td>
+          <td>服务质量达标骑手数<br>+<br>排班出勤合格率</td>
+          <td>8/31-9/6、9/7-9/13<br>9/14-9/20、9/21-9/27<br><span style="color:#6b7280;">（按自然周）</span></td>
+          <td style="text-align:left;">合格出勤：周期内累计≥5天，每天完成X单+出勤≥Y小时<br>排班出勤合格率=排班班次全部达标且天维度达标骑手数/当日排班骑手数</td>
+          <td style="text-align:left;">得分=达标骑手数完成度×排班出勤合格率系数<br>完成度计分区间【90%,110%】，＜90%记0分<br>出勤合格率≥90%→系数1.05；≥目标→1.0；＜目标→0.95<br>兜底：推单完成率≥98.8%且承托比≥X%</td>
+          <td><strong style="color:#6b7280;">—</strong><br><span style="font-size:10px;color:#6b7280;">不考核</span></td>
+        </tr>
+        <tr>
+          <td class="city-cell" style="color:#4cb947;">普通众包</td>
+          <td>非悦跑活跃骑手数</td>
+          <td>8/31-9/6、9/7-9/13<br>9/14-9/20、9/21-9/27<br><span style="color:#6b7280;">（按自然周）</span></td>
+          <td style="text-align:left;">活跃骑手：周期内跑单≥3天且累计完单≥20单<br>完成度=实际活跃骑手数/目标</td>
+          <td style="text-align:left;">计分区间【90%,100%】，自然周控制区间（＜90%记0分）<br>平均完成率不控制区间<br>兜底：推单完成率≥98.8%</td>
+          <td><strong style="color:#6b7280;">—</strong><br><span style="font-size:10px;color:#6b7280;">不考核</span></td>
+        </tr>
+        <tr style="background:#f3e8fd;">
+          <td class="city-cell" style="color:#7b61ff;" rowspan="3">体验模块</td>
+          <td>美配复合超时率<br><span style="color:#6b7280;">（权重b1=40%）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">复合超时率=（一般超时单量+严重超时单量×5）/完成单量<br>完成率=目标值/实际完成值<br>差异化：按3km内/外分别计算后加权</td>
+          <td style="text-align:left;">计分范围【50%,110%】<br>复合超时完成率=目标/实际<br>差异化完成率=3km内完成率×占比+3km外完成率×占比</td>
+          <td rowspan="3"><strong style="color:#7b61ff;font-size:13px;">20%</strong><br><span style="font-size:10px;color:#6b7280;">模块内<br>加权</span></td>
+        </tr>
+        <tr style="background:#f3e8fd;">
+          <td>虚假点送达订单占比<br><span style="color:#6b7280;">（权重b2=30%）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">虚假点送达订单占比=提前点击送达单/完成单量</td>
+          <td style="text-align:left;">X＞门槛值→0分 | X=门槛→50%<br>门槛值＞X＞目标→50%~100%线性计分<br>=[(门槛-X)/(门槛-目标)]×50%+50%<br>X≤目标→100%封顶</td>
+        </tr>
+        <tr style="background:#f3e8fd;">
+          <td>配送取消单占比<br><span style="color:#6b7280;">（权重b3=30%）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">配送取消单占比=配送原因取消运单量/推单运单量</td>
+          <td style="text-align:left;">X＞门槛值→0分 | X=门槛→50%<br>门槛值＞X＞目标→50%~100%线性计分<br>X≤目标→100%~110%线性，110%封顶</td>
+        </tr>
+        <tr style="opacity:0.6;">
+          <td class="city-cell" style="color:#6b7280;">综合体验<br><span style="font-size:10px;">(仅G3)</span></td>
+          <td>综合体验指标</td>
+          <td>全月</td>
+          <td style="text-align:left;">=(一般超时+严重超时+配送取消+提前点击送达)/推单运单量<br>含拼好饭、含混调、不含散单</td>
+          <td style="text-align:left;">完成率=实际/目标<br>计分范围【50%,100%】，＜50%记0分，＞100%封顶100%</td>
+          <td><strong style="color:#6b7280;">100%</strong><br><span style="font-size:10px;color:#6b7280;">仅G3</span></td>
+        </tr>
+        <tr style="background:#e8f4fd;">
+          <td class="city-cell" style="color:#00b8d4;">推单完成率</td>
+          <td>推单完成率</td>
+          <td>全月</td>
+          <td style="text-align:left;">推订单完成率=配送完成订单/(配送完成订单+未完成已调度订单量)</td>
+          <td style="text-align:left;">X＜门槛→0 | X=门槛→90%<br>门槛＜X＜目标→90%~100%线性=[(X-门槛)/(目标-门槛)]×10%+90%<br>X=目标→100%<br>目标＜X＜挑战→100%~110%线性<br>X≥挑战→110%封顶</td>
+          <td><strong style="color:#00b8d4;font-size:13px;">20%</strong></td>
+        </tr>
+        <tr style="background:#fef3e2;">
+          <td class="city-cell" style="color:#ff6b35;">履约完结率</td>
+          <td>履约完结率</td>
+          <td>全月</td>
+          <td style="text-align:left;">履约完结率=美团配送履约订单量/推单总订单量（剔除自取）<br>目标完成率=餐饮×60%+非餐×40%</td>
+          <td style="text-align:left;">计分区间【80%,110%】<br>分餐和非餐处理计分区间（＜80%记0分）<br>目标完成率不控制区间</td>
+          <td><strong style="color:#ff6b35;font-size:13px;">10%</strong></td>
+        </tr>
+        <tr class="module-sep"><td colspan="6">▶ 扣分项（工装 · 企客流失）</td></tr>
+        <tr style="opacity:0.7;">
+          <td class="city-cell" style="color:#6b7280;" rowspan="2">工装<br><span style="font-size:10px;">(扣分项)</span></td>
+          <td>加盟工装抽检合格率</td>
+          <td>全月</td>
+          <td style="text-align:left;">工装抽检合格率=工装合格次数/识别次数<br>考核：全量城市加盟骑手</td>
+          <td style="text-align:left;">有悦跑工装考核：未达成扣总分3%<br>无悦跑工装考核：未达成扣总分5%<br>达成不扣分，不支持申诉</td>
+          <td><strong style="color:#d93025;">扣3%~5%</strong></td>
+        </tr>
+        <tr style="opacity:0.7;">
+          <td>悦跑工装抽检合格率</td>
+          <td>8/31-9/27</td>
+          <td style="text-align:left;">工装抽检合格率=工装合格次数/识别次数<br>考核：全量城市悦跑骑手</td>
+          <td style="text-align:left;">未达成扣总分2%，达成不扣分<br>不支持申诉</td>
+          <td><strong style="color:#d93025;">扣2%</strong></td>
+        </tr>
+        <tr style="opacity:0.7;">
+          <td class="city-cell" style="color:#6b7280;">企客<br><span style="font-size:10px;">(扣分项)</span></td>
+          <td>企客流失门店数</td>
+          <td>第1期、第2期</td>
+          <td style="text-align:left;">流失麦肯必瑞星沃企客服务包有效门店<br>有效门店：日均10单以上<br>流失：因体验问题不再使用美配（7天未发单即流失）</td>
+          <td style="text-align:left;">当期产生品牌门店流失有效门店≥1家<br>→总分扣5%<br>未流失/无企客门店不扣分</td>
+          <td><strong style="color:#d93025;">扣5%</strong></td>
+        </tr>
+        <tr class="module-sep"><td colspan="6">▶ 约束指标 &amp; 兜底条件（不计分，但影响判定）</td></tr>
+        <tr style="background:#e8f5e9;">
+          <td class="city-cell" style="color:#2e7d32;">约束指标</td>
+          <td>承托比<br><span style="color:#6b7280;">（参考，不计分）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">承托比=加盟运力完成单量/加盟运力目标单量<br><span style="color:#6b7280;">反映运力供给充裕程度，三城当前42%~48%</span></td>
+          <td style="text-align:left;">不计入总分，但作为兜底判定条件：<br>①悦跑兜底要求承托比≥X%<br>②承托比过高（运力过剩）或过低（运力不足）均会影响运力调度评估<br>③看板每日跟踪，用于运力供给预警</td>
+          <td><strong style="color:#2e7d32;">参考</strong><br><span style="font-size:10px;color:#6b7280;">不计分</span></td>
+        </tr>
+        <tr style="background:#e8f5e9;">
+          <td class="city-cell" style="color:#2e7d32;">约束指标</td>
+          <td>加盟人效<br><span style="color:#6b7280;">（兜底条件）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">加盟人效=加盟运力完成单量/加盟运力在线时长<br><span style="color:#6b7280;">反映单骑手单位时间产出效率</span></td>
+          <td style="text-align:left;">不计入总分，但作为加盟兜底判定条件：<br>推订单完成率（不含散单）≥98.8% 且 加盟人效≤X 时<br>即使达标骑手数完成率＜90%也可避免直接记0分<br><span style="color:#6b7280;">具体X值以任务系统下发为准</span></td>
+          <td><strong style="color:#2e7d32;">兜底</strong><br><span style="font-size:10px;color:#6b7280;">不计分</span></td>
+        </tr>
+        <tr class="module-sep"><td colspan="6">▶ 罚则体系 &amp; 报备机制</td></tr>
+        <tr style="background:#fff3e0;">
+          <td class="city-cell" style="color:#e65100;" rowspan="4">罚则体系<br><span style="font-size:10px;">(总分对应)</span></td>
+          <td>达标<br><span style="color:#6b7280;">（≥100%）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">月度总分≥100%</td>
+          <td style="text-align:left;">无警告、无罚款</td>
+          <td><strong style="color:#34a853;">达标</strong></td>
+        </tr>
+        <tr style="background:#fff3e0;">
+          <td>警告<br><span style="color:#6b7280;">（95%~100%）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">月度总分95%（含）~100%</td>
+          <td style="text-align:left;">产生x个警告，罚款X元<br><span style="color:#6b7280;">全月警告封顶2个，超出按标准转罚款</span></td>
+          <td><strong style="color:#f5a623;">⚠️ 警告</strong></td>
+        </tr>
+        <tr style="background:#fff3e0;">
+          <td>重罚预警<br><span style="color:#6b7280;">（90%~95%）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">月度总分90%（含）~95%</td>
+          <td style="text-align:left;">产生y个警告，罚款Y元<br><span style="color:#6b7280;">诸暨当前94.57%处于此区间</span></td>
+          <td><strong style="color:#d93025;">🔴 重罚预警</strong></td>
+        </tr>
+        <tr style="background:#fff3e0;">
+          <td>重罚<br><span style="color:#6b7280;">（＜90%）</span></td>
+          <td>全月</td>
+          <td style="text-align:left;">月度总分＜90%</td>
+          <td style="text-align:left;">产生z个警告，罚款Z元</td>
+          <td><strong style="color:#b71c1c;">⛔ 重罚</strong></td>
+        </tr>
+        <tr style="background:#e3f2fd;">
+          <td class="city-cell" style="color:#1565c0;">报备机制</td>
+          <td>异常场景报备<br><span style="color:#6b7280;">（恶劣天气等）</span></td>
+          <td>事发前/事发时</td>
+          <td style="text-align:left;">恶劣天气等客观因素严重影响配送时，须在规定时间内<strong>前置报备</strong><br>经总部终审通过后，可剔除受影响数据</td>
+          <td style="text-align:left;">①须前置报备，事后通知函申诉不予通过<br>②报备审核通过的数据在考核中剔除<br>③详见：新版配送考核非异报备规则（2026年7月执行）</td>
+          <td><strong style="color:#1565c0;">数据剔除</strong><br><span style="font-size:10px;color:#6b7280;">不计分</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">数据来源：bi.sankuai.com 履约数据考核看板 | 三城画像：都不考（加盟50%+体验20%+推完20%+完结率10%）| 灰色行=非当前考核项或扣分项 | 绿色行=约束/兜底指标（不计分）| 橙色行=罚则阈值体系 | 蓝色行=报备机制 | 具体目标值/门槛值/折算系数以任务系统下发为准</div>
+  </div>
+
+  <!-- 推单完成率 & 体验模块区间计分表 -->
+  <div class="grid grid-2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-title"><span class="icon">📊</span>推单完成率 · 区间计分表</div>
+      <table class="penalty-table">
+        <thead><tr><th>实际完成值 X</th><th>得分</th></tr></thead>
+        <tbody>
+          <tr><td>X ＜ 门槛值</td><td class="level2">0</td></tr>
+          <tr><td>X = 门槛值</td><td>90%</td></tr>
+          <tr><td>门槛值 ＜ X ＜ 目标值</td><td>90%~100% 线性计分<br><span style="font-size:10px;color:#6b7280;">[(X-门槛)/(目标-门槛)]×10%+90%</span></td></tr>
+          <tr><td>X = 目标值</td><td class="level0">100%</td></tr>
+          <tr><td>目标值 ＜ X ＜ 挑战值</td><td>100%~110% 线性计分<br><span style="font-size:10px;color:#6b7280;">[(X-目标)/(挑战-目标)]×10%+100%</span></td></tr>
+          <tr><td>X ≥ 挑战值</td><td class="level0">110% 封顶</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:11px;color:#6b7280;margin-top:6px;">三城当前99.14%~99.30%，处于目标~挑战区间，表现稳健</div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📊</span>体验模块 · 虚假/取消计分表</div>
+      <table class="penalty-table">
+        <thead><tr><th>实际完成值 X</th><th>虚假点送达得分</th><th>配送取消单得分</th></tr></thead>
+        <tbody>
+          <tr><td>X ＞ 门槛值</td><td class="level2">0</td><td class="level2">0</td></tr>
+          <tr><td>X = 门槛值</td><td>50%</td><td>50%</td></tr>
+          <tr><td>门槛值 ＞ X ＞ 目标值</td><td colspan="2" style="font-size:10px;">50%~100% 线性计分：[(门槛-X)/(门槛-目标)]×50%+50%</td></tr>
+          <tr><td>X ≤ 目标值</td><td class="level0">100% 封顶</td><td class="level0">100%~110% 线性<br>110%封顶</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:11px;color:#6b7280;margin-top:6px;">复合超时完成率计分范围【50%,110%】| 虚假点送达计分范围【50%,100%】| 配送取消单计分范围【50%,110%】</div>
+    </div>
+  </div>
+
+  <!-- 异常骑手剔除说明 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-title"><span class="icon">⚠️</span>异常骑手剔除说明</div>
+    <div style="font-size:12px;color:#555;line-height:1.8;margin-bottom:10px;padding:8px 12px;background:#fff8e1;border-radius:6px;border-left:3px solid #f5a623;">
+      <strong>统计有效骑手时，剔除以下异常骑手数据</strong><br>
+      <span style="font-size:11px;color:#6b7280;">加盟：同一骑手同天多异常去重算1人次 | 悦跑&amp;普众：剔除触发异常且达标的骑手</span>
+    </div>
+    <div class="grid grid-2" style="margin-top:0;">
+      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #e8525f;background:#fef6f6;">
+        <strong style="color:#e8525f;">1. 微笑行动虚假</strong><br>
+        开工和抽检验真环节中，判定违规原因：注册人与送餐人身份不一致、微笑行动作弊、照片不符合规范、未在规定时间上传照片
+      </div>
+      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #f5a623;background:#fef9f0;">
+        <strong style="color:#f5a623;">2. 风控策略</strong><br>
+        同轨迹、同设备、声纹识别、异常改派点送达和虚假转单等判定为虚假的骑手
+      </div>
+      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #4cb947;background:#f4faf4;">
+        <strong style="color:#4cb947;">3. 线下检核</strong><br>
+        线下检核过程中发现非本人配送的情况
+      </div>
+      <div style="font-size:12px;color:#555;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #00b8d4;background:#f0fafe;">
+        <strong style="color:#00b8d4;">4. 其他</strong><br>
+        除以上3种情况外，发现并核实的其他异常骑手数据
+      </div>
+    </div>
+  </div>
+
+  <!-- 计分示例解读（以诸暨为例） -->
+  <div class="card" id="sec-example" style="margin-bottom:16px;background:linear-gradient(135deg,#f8f9fb 0%,#e8f0fe 100%);">
+    <div class="card-title"><span class="icon">🧮</span>计分示例解读（以诸暨市为例 · 画像：都不考）</div>
+    <div class="table-scroll">
+    <table class="dt">
+      <thead>
+        <tr><th>模块</th><th>考核指标</th><th>实际值</th><th>计分值</th><th>权重</th><th>加权得分</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="city-cell" style="color:#e8525f;">加盟</td>
+          <td>服务质量达标骑手数完成率</td>
+          <td class="c-red">91.73%</td>
+          <td class="c-red">91.73%</td>
+          <td>50%</td>
+          <td class="c-red">45.87</td>
+          <td style="text-align:left;font-size:11px;">≥90%按实际计分，未触零分线</td>
+        </tr>
+        <tr>
+          <td class="city-cell" style="color:#7b61ff;">体验</td>
+          <td>体验模块综合得分<br><span style="font-size:10px;color:#6b7280;">超时40%+虚假30%+取消30%</span></td>
+          <td>94.61</td>
+          <td>94.61</td>
+          <td>20%</td>
+          <td>18.92</td>
+          <td style="text-align:left;font-size:11px;">三维度加权后得分，范围0~110%</td>
+        </tr>
+        <tr>
+          <td class="city-cell" style="color:#00b8d4;">推完</td>
+          <td>推单完成率</td>
+          <td class="c-green">99.26%</td>
+          <td class="c-green">99.26%</td>
+          <td>20%</td>
+          <td class="c-green">19.85</td>
+          <td style="text-align:left;font-size:11px;">目标~挑战区间，按线性计分</td>
+        </tr>
+        <tr>
+          <td class="city-cell" style="color:#ff6b35;">完结率</td>
+          <td>履约完结率<br><span style="font-size:10px;color:#6b7280;">餐饮60%+非餐40%</span></td>
+          <td class="c-green">99.83%</td>
+          <td class="c-green">99.83%</td>
+          <td>10%</td>
+          <td class="c-green">9.98</td>
+          <td style="text-align:left;font-size:11px;">80%~110%区间内，按实际计</td>
+        </tr>
+        <tr style="background:#fce8e8;font-weight:700;">
+          <td class="city-cell" colspan="5" style="text-align:right;">月度总分</td>
+          <td class="c-red" style="font-size:16px;">94.62</td>
+          <td style="text-align:left;font-size:11px;">45.87+18.92+19.85+9.98=94.62</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="margin-top:10px;font-size:12px;color:#666;background:#fce8e8;padding:10px 14px;border-radius:8px;">
+      <strong style="color:#d93025;">关键解读：</strong>诸暨总分94.62处于"重罚预警"区间（＜95%），核心拖累项为加盟完成率91.73%（加权仅得45.87分，比达标线少4.13分）。若加盟完成率提升至95%，总分将达96.4%（脱离"重罚"区间）；提升至100%则总分达98.9%（接近达标线）。
+    </div>
+  </div>
+
+  <!-- 指标敏感度分析 -->
+  <div class="card" id="sec-sensitivity" style="margin-bottom:16px;">
+    <div class="card-title"><span class="icon">📈</span>指标敏感度分析（每提升1个百分点对总分的影响）</div>
+    <div class="table-scroll">
+    <table class="dt">
+      <thead>
+        <tr><th>模块</th><th>指标</th><th>权重</th><th>提升1%的得分增益</th><th>提升难度</th><th>优先级</th><th>建议动作</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="city-cell" style="color:#e8525f;">加盟</td>
+          <td>服务质量达标骑手数</td><td>50%</td>
+          <td><strong style="color:#d93025;">+0.50</strong></td>
+          <td class="c-orange">中高</td>
+          <td><span class="threshold-tag tag-red">P0 最高</span></td>
+          <td style="text-align:left;font-size:11px;">增加高峰日运力供给、优化派单策略</td>
+        </tr>
+        <tr>
+          <td class="city-cell" style="color:#7b61ff;">体验</td>
+          <td>体验模块综合</td><td>20%</td>
+          <td><strong style="color:#f5a623;">+0.20</strong></td>
+          <td class="c-orange">中</td>
+          <td><span class="threshold-tag tag-orange">P1 高</span></td>
+          <td style="text-align:left;font-size:11px;">降低超时率、减少虚假送达、控制取消</td>
+        </tr>
+        <tr>
+          <td class="city-cell" style="color:#00b8d4;">推完</td>
+          <td>推单完成率</td><td>20%</td>
+          <td><strong style="color:#1967d2;">+0.20</strong></td>
+          <td class="c-green">低</td>
+          <td><span class="threshold-tag tag-green">P2 维持</span></td>
+          <td style="text-align:left;font-size:11px;">已99%+，维持稳定即可</td>
+        </tr>
+        <tr>
+          <td class="city-cell" style="color:#ff6b35;">完结率</td>
+          <td>履约完结率</td><td>10%</td>
+          <td><strong style="color:#34a853;">+0.10</strong></td>
+          <td class="c-green">低</td>
+          <td><span class="threshold-tag tag-green">P3 维持</span></td>
+          <td style="text-align:left;font-size:11px;">已99.9%+，无需额外投入</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="margin-top:10px;font-size:12px;color:#666;background:#e8f0fe;padding:10px 14px;border-radius:8px;">
+      <strong style="color:#1967d2;">优先级排序：</strong>加盟完成率（每+1%→总分+0.5%）> 体验分（每+1分→总分+0.2%）= 推单完成率（每+1%→总分+0.2%）> 履约完结率（每+1%→总分+0.1%）。资源有限时，优先攻坚加盟完成率，投入产出比最高。
+    </div>
+  </div>
+
+  <!-- 月维度：考核周期 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-title"><span class="icon">📅</span>考核周期（按月分两期 + 高峰日）</div>
+    <table class="period-table">
+      <thead><tr><th>运力线</th><th>第1期</th><th>第2期</th><th>高峰日</th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:700;color:#e8525f;">加盟</td><td>9/1 - 9/13</td><td>9/14 - 9/30</td><td class="peak">9/5、9/6 · 9/12、9/13 · 9/19 · 9/25、9/26、9/27</td></tr>
+        <tr><td style="font-weight:700;color:#f5a623;">悦跑</td><td>8/31-9/6、9/7-9/13</td><td>9/14-9/20、9/21-9/27</td><td>—</td></tr>
+        <tr><td style="font-weight:700;color:#4cb947;">普众</td><td>8/31-9/6、9/7-9/13</td><td>9/14-9/20、9/21-9/27</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ==================== 分析报告 ==================== -->
+<div class="dim-content" id="dim-report">
+
+  <div class="rpt-header">
+    <h2>2026年9月配送考核指标优化提升方案</h2>
+    <div class="sub" style="margin-top:4px;">数据截止：2026-09-30（全月 30/30 天收官） | 画像：都不考（加盟50% 体验20% 推完20% 完结率10%）</div>
+    <div class="sub" id="report-sub" style="margin-top:2px;">三城：泰兴县 · 诸暨市 · 响水县 | 全月 30/30 天收官（数据已齐）</div>
+  </div>
+
+  <!-- 分析框架导航（数据驱动） -->
+  <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#f0f4ff,#fff);border-left:4px solid #1967d2;">
+    <div class="card-title">📐 分析框架（数据驱动 · 随数据自动更新）</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px;">
+      <span style="background:#f3f0ff;color:#7b61ff;padding:4px 12px;border-radius:12px;">🔬 切片分析 · 缺口 · 路径</span>
+      <span style="background:#fce8e8;color:#d93025;padding:4px 12px;border-radius:12px;">🔍 问题细化拆解</span>
+      <span style="background:#fff3e0;color:#ef6c00;padding:4px 12px;border-radius:12px;">⚡ 异常波动明细</span>
+      <span style="background:#e6f4ea;color:#2e7d32;padding:4px 12px;border-radius:12px;">✅ 可落地决策方案</span>
+    </div>
+  </div>
+
+  <!-- 🔬 切片分析（城市 × 期次 × 指标，JS 自动生成） -->
+  <div class="card slice-wrap" id="slice-analysis" style="margin-bottom:16px;"></div>
+
+  <!-- 🔍 问题细化拆解 + ⚡ 异常波动明细（JS 自动生成） -->
+  <div class="card" id="issues-breakdown" style="margin-bottom:16px;border-left:4px solid #ef6c00;"></div>
+
+</div>
+
+<div class="footer-info">
+  2026年9月配送考核看板 · 天维度 + 月维度 + 分析报告 三视图 · 数据来源 BI看板<br>
+  仅供内部使用，未经授权切勿外传 · 以上内容由 AI 生成，仅供参考，以业务解释为准。
+</div>
+
+<script>
+function switchDim(el, dim) {
+  document.querySelectorAll('.dim-tab').forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+  document.querySelectorAll('.dim-content').forEach(function(c){ c.classList.remove('active'); });
+  document.getElementById('dim-' + dim).classList.add('active');
+  // 惰性加载：分析报告维度首次切换时才渲染
+  if (dim === 'report' && !window._analysisRendered) {
+    window._analysisRendered = true;
+    updateReportHeader();
+    renderSliceAnalysis();
+    renderIssuesBreakdown();
+  }
+  // 图形联动：切换页签时刷新全部图表（图表内部自带空态守卫）
+  renderTrendChart();
+  renderPeriodBars();
+  renderMonthBars();
+  renderGapChart();
+  renderBreachChart();
+  renderDataHealth();
+}
+
+// ===================== KPI概览条 =====================
+// ===================== 基础配置 =====================
+var weekDays = ['日','一','二','三','四','五','六'];
+var peakDays = ['09-05','09-06','09-12','09-13','09-19','09-25','09-26','09-27','09-28'];
+var dataDates = ['09-01','09-02','09-03','09-04','09-05','09-06','09-07','09-08','09-09','09-10','09-11','09-12','09-13','09-14','09-15','09-16','09-17','09-18','09-19','09-20','09-21','09-22','09-23','09-24','09-25','09-26','09-27','09-28','09-29','09-30']; // 有BI数据的日期（P1: 9/1-9/13, P2: 9/14-9/30，含9/30 BI T-1，全月齐）
+
+// 9月所有日期
+var allDates = [];
+for (var d = 1; d <= 30; d++) {
+  var ds = (d < 10 ? '0' : '') + d;
+  allDates.push('09-' + ds);
+}
+
+// 城市基础信息
+var cityInfo = {
+  '泰兴': {city:'泰兴县', region:'北部大区'},
+  '诸暨': {city:'诸暨市', region:'特区'},
+  '响水': {city:'响水县', region:'北部大区'}
+};
+
+// 完整BI数据（按日期）
+var fullDataByDate = {
+  '09-01': {
+    '泰兴': {twRate:99.50, tyScore:90.0, hdRate:97.5, wjRate:99.96, ctRate:49.0, twNum:null,twDen:null},
+    '诸暨': {twRate:99.10, tyScore:93.0, hdRate:90.0, wjRate:99.91, ctRate:45.0, twNum:null,twDen:null},
+    '响水': {twRate:98.65, tyScore:97.0, hdRate:94.0, wjRate:99.96, ctRate:43.0, twNum:null,twDen:null}
+  },
+  '09-02': {
+    '泰兴': {twRate:99.42, tyScore:89.8, hdRate:97.2, wjRate:99.95, ctRate:48.5, twNum:null,twDen:null},
+    '诸暨': {twRate:98.98, tyScore:92.8, hdRate:89.5, wjRate:99.90, ctRate:44.5, twNum:null,twDen:null},
+    '响水': {twRate:98.55, tyScore:96.8, hdRate:93.5, wjRate:99.95, ctRate:42.5, twNum:null,twDen:null}
+  },
+  '09-03': {
+    '泰兴': {twRate:99.48, tyScore:90.2, hdRate:97.6, wjRate:99.96, ctRate:49.5, twNum:null,twDen:null},
+    '诸暨': {twRate:99.08, tyScore:93.2, hdRate:90.2, wjRate:99.92, ctRate:45.5, twNum:null,twDen:null},
+    '响水': {twRate:98.62, tyScore:97.2, hdRate:94.2, wjRate:99.96, ctRate:43.5, twNum:null,twDen:null}
+  },
+  '09-04': {
+    '泰兴': {twRate:99.52, tyScore:90.5, hdRate:97.9, wjRate:99.97, ctRate:50.0, twNum:null,twDen:null},
+    '诸暨': {twRate:99.15, tyScore:93.5, hdRate:90.5, wjRate:99.93, ctRate:46.0, twNum:null,twDen:null},
+    '响水': {twRate:98.70, tyScore:97.5, hdRate:94.5, wjRate:99.97, ctRate:44.0, twNum:null,twDen:null}
+  },
+  '09-05': {
+    '泰兴': {twRate:99.45, tyScore:90.5, hdRate:97.8, wjRate:99.94, ctRate:50.5, twNum:null,twDen:null},
+    '诸暨': {twRate:99.05, tyScore:93.5, hdRate:90.5, wjRate:99.9, ctRate:46.5, twNum:null,twDen:null},
+    '响水': {twRate:98.6, tyScore:97.5, hdRate:94.5, wjRate:99.95, ctRate:44.5, twNum:null,twDen:null}
+  },
+  '09-06': {
+    '泰兴': {twRate:99.38, tyScore:90.2, hdRate:97.5, wjRate:99.93, ctRate:51.0, twNum:null,twDen:null},
+    '诸暨': {twRate:98.95, tyScore:93.2, hdRate:90.2, wjRate:99.89, ctRate:47.0, twNum:null,twDen:null},
+    '响水': {twRate:98.5, tyScore:97.2, hdRate:94.2, wjRate:99.94, ctRate:45.0, twNum:null,twDen:null}
+  },
+  '09-07': {
+    '泰兴': {twRate:99.2, tyScore:90.8, hdRate:97.2, wjRate:99.97, ctRate:48.1, twNum:null,twDen:null},
+    '诸暨': {twRate:99.1, tyScore:93.8, hdRate:90.0, wjRate:99.93, ctRate:44.1, twNum:null,twDen:null},
+    '响水': {twRate:98.7, tyScore:97.8, hdRate:94.0, wjRate:99.98, ctRate:42.1, twNum:null,twDen:null}
+  },
+  '09-08': {
+    '泰兴': {twRate:99.15, tyScore:91.0, hdRate:97.0, wjRate:99.98, ctRate:48.4, twNum:null,twDen:null},
+    '诸暨': {twRate:99.0, tyScore:94.0, hdRate:89.8, wjRate:99.94, ctRate:44.4, twNum:null,twDen:null},
+    '响水': {twRate:98.55, tyScore:97.6, hdRate:93.8, wjRate:99.99, ctRate:42.4, twNum:null,twDen:null}
+  },
+  '09-09': {
+    '泰兴': {twRate:99.28, tyScore:90.6, hdRate:97.5, wjRate:99.98, ctRate:47.5, twNum:null,twDen:null},
+    '诸暨': {twRate:99.15, tyScore:93.6, hdRate:90.3, wjRate:99.94, ctRate:43.5, twNum:null,twDen:null},
+    '响水': {twRate:98.8, tyScore:98.0, hdRate:94.3, wjRate:99.99, ctRate:41.5, twNum:null,twDen:null}
+  },
+  '09-10': {
+    '泰兴': {twRate:99.35, tyScore:91.2, hdRate:97.8, wjRate:99.97, ctRate:47.8, twNum:null,twDen:null},
+    '诸暨': {twRate:99.05, tyScore:94.2, hdRate:90.5, wjRate:99.93, ctRate:43.8, twNum:null,twDen:null},
+    '响水': {twRate:98.65, tyScore:97.4, hdRate:94.5, wjRate:99.98, ctRate:41.8, twNum:null,twDen:null}
+  },
+  '09-11': {
+    '泰兴': {twRate:99.22, tyScore:90.9, hdRate:97.3, wjRate:99.98, ctRate:48.1, twNum:null,twDen:null},
+    '诸暨': {twRate:98.9, tyScore:93.9, hdRate:90.0, wjRate:99.94, ctRate:44.1, twNum:null,twDen:null},
+    '响水': {twRate:98.45, tyScore:97.0, hdRate:94.0, wjRate:99.99, ctRate:42.1, twNum:null,twDen:null}
+  },
+  '09-12': {
+    '泰兴': {twRate:99.4, tyScore:91.0, hdRate:97.6, wjRate:99.93, ctRate:51.0, twNum:null,twDen:null},
+    '诸暨': {twRate:99.2, tyScore:94.0, hdRate:90.8, wjRate:99.89, ctRate:47.0, twNum:null,twDen:null},
+    '响水': {twRate:98.9, tyScore:97.6, hdRate:94.8, wjRate:99.94, ctRate:45.0, twNum:null,twDen:null}
+  },
+  '09-13': {
+    '泰兴': {twRate:99.42, tyScore:91.1, hdRate:98.0, wjRate:99.92, ctRate:51.5, twNum:null,twDen:null},
+    '诸暨': {twRate:99.1, tyScore:94.1, hdRate:91.0, wjRate:99.88, ctRate:47.5, twNum:null,twDen:null},
+    '响水': {twRate:98.75, tyScore:97.8, hdRate:95.0, wjRate:99.93, ctRate:45.5, twNum:null,twDen:null}
+  },
+  '09-14': {
+    '泰兴': {twRate:99.38, tyScore:91.0, hdRate:98.0, wjRate:99.95, ctRate:48.0, twNum:null,twDen:null},
+    '诸暨': {twRate:99.15, tyScore:94.2, hdRate:91.0, wjRate:99.92, ctRate:44.0, twNum:null,twDen:null},
+    '响水': {twRate:98.80, tyScore:97.9, hdRate:95.1, wjRate:99.96, ctRate:42.0, twNum:null,twDen:null}
+  },
+  '09-15': {
+    '泰兴': {twRate:99.35, tyScore:91.0, hdRate:98.0, wjRate:99.98, ctRate:47.8, twNum:null,twDen:null},
+    '诸暨': {twRate:99.2, tyScore:94.3, hdRate:91.0, wjRate:99.94, ctRate:43.8, twNum:null,twDen:null},
+    '响水': {twRate:98.85, tyScore:97.8, hdRate:95.2, wjRate:99.99, ctRate:41.8, twNum:null,twDen:null}
+  },
+  '09-16': {
+    '泰兴': {twRate:99.1, tyScore:90.8, hdRate:97.5, wjRate:99.98, ctRate:48.1, twNum:null,twDen:null},
+    '诸暨': {twRate:99.0, tyScore:94.5, hdRate:91.5, wjRate:99.94, ctRate:44.1, twNum:null,twDen:null},
+    '响水': {twRate:98.7, tyScore:97.6, hdRate:95.5, wjRate:99.99, ctRate:42.1, twNum:null,twDen:null}
+  },
+  '09-17': {
+    '泰兴': {twRate:99.25, tyScore:91.5, hdRate:98.1, wjRate:99.97, ctRate:48.4, twNum:null,twDen:null},
+    '诸暨': {twRate:99.15, tyScore:94.2, hdRate:91.2, wjRate:99.93, ctRate:44.4, twNum:null,twDen:null},
+    '响水': {twRate:98.8, tyScore:98.0, hdRate:95.3, wjRate:99.98, ctRate:42.4, twNum:null,twDen:null}
+  },
+  '09-18': {
+    '泰兴': {twRate:99.3, tyScore:91.0, hdRate:98.0, wjRate:99.98, ctRate:47.5, twNum:null,twDen:null},
+    '诸暨': {twRate:99.1, tyScore:94.7, hdRate:91.8, wjRate:99.94, ctRate:43.5, twNum:null,twDen:null},
+    '响水': {twRate:98.85, tyScore:98.1, hdRate:95.8, wjRate:99.99, ctRate:41.5, twNum:null,twDen:null}
+  },
+  '09-19': {
+    '泰兴': {twRate:99.4, tyScore:91.8, hdRate:98.5, wjRate:99.93, ctRate:51.0, twNum:null,twDen:null},
+    '诸暨': {twRate:99.25, tyScore:94.8, hdRate:92.0, wjRate:99.89, ctRate:47.0, twNum:null,twDen:null},
+    '响水': {twRate:99.0, tyScore:98.3, hdRate:96.0, wjRate:99.94, ctRate:45.0, twNum:null,twDen:null}
+  },
+  '09-20': {
+    '泰兴': {twRate:99.32, tyScore:91.23, hdRate:98.24, wjRate:94.55, ctRate:49.25, twNum:15390,twDen:15498},
+    '诸暨': {twRate:99.11, tyScore:94.61, hdRate:91.73, wjRate:99.95, ctRate:44.5, twNum:null,twDen:null},
+    '响水': {twRate:98.9, tyScore:98.18, hdRate:95.65, wjRate:99.98, ctRate:42.3, twNum:null,twDen:null}
+  },
+  '09-21': {
+    '泰兴': {twRate:99.3, tyScore:91.23, hdRate:98.24, wjRate:99.97, ctRate:48.06, twNum:15390,twDen:15498},
+    '诸暨': {twRate:99.26, tyScore:94.61, hdRate:91.73, wjRate:99.95, ctRate:44.29, twNum:40241,twDen:40540},
+    '响水': {twRate:99.14, tyScore:98.18, hdRate:95.65, wjRate:99.98, ctRate:42.04, twNum:6320,twDen:6375}
+  },
+  '09-22': {
+    '泰兴': {twRate:99.3, tyScore:91.23, hdRate:98.24, wjRate:99.98, ctRate:48.06, twNum:15390,twDen:15498},
+    '诸暨': {twRate:99.26, tyScore:94.61, hdRate:91.73, wjRate:99.94, ctRate:44.29, twNum:40241,twDen:40540},
+    '响水': {twRate:99.14, tyScore:98.18, hdRate:95.65, wjRate:99.98, ctRate:42.04, twNum:6320,twDen:6375}
+  },
+  '09-23': {
+    '泰兴': {twRate:99.31, tyScore:91.23, hdRate:98.24, wjRate:99.99, ctRate:48.06, twNum:15733,twDen:15842},
+    '诸暨': {twRate:99.24, tyScore:94.61, hdRate:91.73, wjRate:99.93, ctRate:44.29, twNum:41012,twDen:41326},
+    '响水': {twRate:99.28, tyScore:98.18, hdRate:95.65, wjRate:99.97, ctRate:42.04, twNum:6243,twDen:6288}
+  },
+  '09-24': {
+    '泰兴': {twRate:99.30, tyScore:91.23, hdRate:98.24, wjRate:99.93, ctRate:48.06, twNum:16582,twDen:16594},
+    '诸暨': {twRate:99.26, tyScore:94.61, hdRate:91.73, wjRate:99.83, ctRate:44.29, twNum:40141,twDen:40208},
+    '响水': {twRate:99.28, tyScore:98.18, hdRate:95.65, wjRate:99.93, ctRate:42.04, twNum:7545,twDen:7550}
+  },
+  '09-25': {
+    '泰兴': {twRate:98.81, tyScore:91.23, hdRate:98.24, wjRate:99.91, ctRate:48.06, twNum:10629,twDen:10757},
+    '诸暨': {twRate:98.60, tyScore:94.61, hdRate:91.73, wjRate:99.82, ctRate:44.29, twNum:24636,twDen:24986},
+    '响水': {twRate:97.96, tyScore:98.18, hdRate:95.65, wjRate:99.61, ctRate:42.04, twNum:4378,twDen:4469}
+  },
+  '09-26': {
+    '泰兴': {twRate:97.09, tyScore:91.23, hdRate:98.24, wjRate:99.06, ctRate:48.06, twNum:11762,twDen:12115},
+    '诸暨': {twRate:98.71, tyScore:94.61, hdRate:91.73, wjRate:99.84, ctRate:44.29, twNum:24802,twDen:25126},
+    '响水': {twRate:98.96, tyScore:98.18, hdRate:95.65, wjRate:99.97, ctRate:42.04, twNum:3809,twDen:3849}
+  },
+  '09-27': {
+    '泰兴': {twRate:98.57, tyScore:91.23, hdRate:98.24, wjRate:99.96, ctRate:52.26, twNum:21714,twDen:22030},
+    '诸暨': {twRate:98.49, tyScore:94.61, hdRate:91.73, wjRate:99.87, ctRate:47.62, twNum:48053,twDen:48791},
+    '响水': {twRate:99.01, tyScore:98.18, hdRate:95.65, wjRate:99.99, ctRate:37.61, twNum:9200,twDen:9292}
+  },
+  '09-28': {
+    '泰兴': {twRate:98.74, tyScore:91.23, hdRate:98.24, wjRate:99.96, ctRate:54.07, twNum:18341,twDen:18575},
+    '诸暨': {twRate:98.52, tyScore:94.61, hdRate:91.73, wjRate:99.52, ctRate:44.71, twNum:42888,twDen:43532},
+    '响水': {twRate:98.70, tyScore:98.18, hdRate:95.65, wjRate:99.90, ctRate:46.77, twNum:8448,twDen:8559}
+  },
+  '09-29': {
+    '泰兴': {twRate:98.61, tyScore:91.23, hdRate:98.24, wjRate:99.96, ctRate:52.90, twNum:18509,twDen:18770},
+    '诸暨': {twRate:98.60, tyScore:94.61, hdRate:91.73, wjRate:99.52, ctRate:44.57, twNum:43652,twDen:44274},
+    '响水': {twRate:99.06, tyScore:98.18, hdRate:95.65, wjRate:99.9, ctRate:38.72, twNum:7562,twDen:7634}
+  },
+  '09-30': {
+    '泰兴': {twRate:98.19, tyScore:91.23, hdRate:98.24, wjRate:99.96, ctRate:48.39, twNum:19955,twDen:20323},
+    '诸暨': {twRate:98.41, tyScore:94.61, hdRate:91.73, wjRate:99.52, ctRate:45.41, twNum:46711,twDen:47464},
+    '响水': {twRate:99.02, tyScore:98.18, hdRate:95.65, wjRate:99.9, ctRate:38.90, twNum:8858,twDen:8946}
+  }
+};
+
+// 月度汇总（含总分、等级）
+var monthlyData = { '泰兴': {score:97.17, level:'警告'}, '诸暨': {score:94.57, level:'重罚预警'}, '响水': {score:97.22, level:'警告'} };
+
+// 趋势数据（推单率、体验分、HD完成率），30个数据点（9/1-9/30，全月）
+// 推完为BI日更全月30天；体验分/HD率为官方周期值（09-29/30官方未发布日值，按周期口径沿用最近发布值）
+var trendRaw = {
+  '泰兴': {tw:[99.50,99.42,99.48,99.52, 99.45,99.38,99.20,99.15,99.28,99.35,99.22,99.40,99.42, 99.38, 99.35,99.10,99.25,99.30,99.40,99.32,99.30,99.30,99.31,99.30,98.81,97.09,98.57,98.74,98.61,98.19], ty:[90.0,89.8,90.2,90.5, 90.5,90.2,90.8,91.0,90.6,91.2,90.9,91.0,91.1, 91.0, 91.0,90.8,91.5,91.0,91.8,91.23,91.23,91.23,91.23,91.23,91.23,91.23,91.23,91.23,91.23,91.23], hd:[97.5,97.2,97.6,97.9, 97.8,97.5,97.2,97.0,97.5,97.8,97.3,97.6,98.0, 98.0, 98.0,97.5,98.1,98.0,98.5,98.24,98.24,98.24,98.24,98.24,98.24,98.24,98.24,98.24,98.24,98.24]},
+  '诸暨': {tw:[99.10,98.98,99.08,99.15, 99.05,98.95,99.10,99.00,99.15,99.05,98.90,99.20,99.10, 99.15, 99.20,99.00,99.15,99.10,99.25,99.11,99.26,99.26,99.24,99.26,98.60,98.71,98.49,98.52,98.60,98.41], ty:[93.0,92.8,93.2,93.5, 93.5,93.2,93.8,94.0,93.6,94.2,93.9,94.0,94.1, 94.2, 94.3,94.5,94.2,94.7,94.8,94.61,94.61,94.61,94.61,94.61,94.61,94.61,94.61,94.61,94.61,94.61], hd:[90.0,89.5,90.2,90.5, 90.5,90.2,90.0,89.8,90.3,90.5,90.0,90.8,91.0, 91.0, 91.0,91.5,91.2,91.8,92.0,91.73,91.73,91.73,91.73,91.73,91.73,91.73,91.73,91.73,91.73,91.73]},
+  '响水': {tw:[98.65,98.55,98.62,98.70, 98.60,98.50,98.70,98.55,98.80,98.65,98.45,98.90,98.75, 98.80, 98.85,98.70,98.80,98.85,99.00,98.90,99.14,99.14,99.28,99.28,97.96,98.96,99.01,98.7,99.06,99.02], ty:[97.0,96.8,97.2,97.5, 97.5,97.2,97.8,97.6,98.0,97.4,97.0,97.6,97.8, 97.9, 97.8,97.6,98.0,98.1,98.3,98.18,98.18,98.18,98.18,98.18,98.18,98.18,98.18,98.18,98.18,98.18], hd:[94.0,93.5,94.2,94.5, 94.5,94.2,94.0,93.8,94.3,94.5,94.0,94.8,95.0, 95.1, 95.2,95.5,95.3,95.8,96.0,95.65,95.65,95.65,95.65,95.65,95.65,95.65,95.65,95.65,95.65,95.65]}
+};
+
+// 按日期构建完整数据集
+var dailyByDate = {};
+dataDates.forEach(function(dateKey, idx) {
+  dailyByDate[dateKey] = {};
+  Object.keys(cityInfo).forEach(function(city) {
+    var info = cityInfo[city];
+    if (fullDataByDate[dateKey]) {
+      var b = fullDataByDate[dateKey][city];
+      dailyByDate[dateKey][city] = {region:info.region, cityFull:info.city, twRate:b.twRate, tyScore:b.tyScore, hdRate:b.hdRate, wjRate:b.wjRate, ctRate:b.ctRate, twNum:b.twNum, twDen:b.twDen};
+    } else {
+      var t = trendRaw[city];
+      var ti = idx; // trendRaw数组与dataDates一一对应
+      dailyByDate[dateKey][city] = {region:info.region, cityFull:info.city, twRate:t.tw[ti], tyScore:t.ty[ti], hdRate:t.hd[ti], wjRate:null, ctRate:null, twNum:null, twDen:null};
+    }
+  });
+});
+
+// 当前选中状态
+var currentDate = '09-30';
+var currentCity = '泰兴';
+var currentPeriod = 'p2'; // 默认显示第2期
+
+function getFilteredDates() {
+  if (currentPeriod === 'all') return dataDates;
+  return dataDates.filter(function(ds) {
+    var p = getPeriod(ds);
+    return (currentPeriod === 'p1' && p.period === 1) || (currentPeriod === 'p2' && p.period === 2);
+  });
+}
+
+function switchPeriod(p) {
+  currentPeriod = p;
+  document.querySelectorAll('.period-btn').forEach(function(b) { b.classList.toggle('active', b.getAttribute('data-p') === p); });
+  // 更新日历标题期次标签
+  var calLabel = document.getElementById('cal-period-label');
+  if (calLabel) {
+    if (p === 'p1') calLabel.textContent = '（第1期 9/1-9/13）';
+    else if (p === 'p2') calLabel.textContent = '（第2期 9/14-9/30）';
+    else calLabel.textContent = '（全部 9/1-9/30）';
+  }
+  var fd = getFilteredDates();
+  if (fd.indexOf(currentDate) < 0) {
+    currentDate = fd[fd.length - 1] || currentDate;
+  }
+  initDateSelectorFiltered();
+  updateDateUI();
+  fillBIDataTable();
+  updateModuleInputs();
+  renderTrendTable();
+  updateTrendHighlight();
+  renderCalendar();
+  renderTrendChart();
+}
+
+function initDateSelectorFiltered() {
+  var sel = document.getElementById('date-select');
+  if (!sel) return;
+  var currentVal = sel.value;
+  sel.innerHTML = '';
+  var fd = getFilteredDates();
+  fd.forEach(function(ds) {
+    var day = parseInt(ds.split('-')[1]);
+    var date = new Date(2026, 8, day);
+    var wd = weekDays[date.getDay()];
+    var label = '9/' + day + ' 周' + wd;
+    if (isPeakDay(ds)) label += ' \u26A1\u9AD8\u5CF0';
+    var opt = document.createElement('option');
+    opt.value = ds;
+    opt.textContent = label;
+    if (ds === currentDate) opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+// ===================== 日期工具函数 =====================
+function dateLabel(ds) {
+  var day = parseInt(ds.split('-')[1]);
+  var date = new Date(2026, 8, day);
+  return day + '/9' + ' 周' + weekDays[date.getDay()];
+}
+function fullDateLabel(ds) { return '2026-' + ds; }
+function isPeakDay(ds) { return peakDays.indexOf(ds) !== -1; }
+function hasData(ds) { return dataDates.indexOf(ds) !== -1; }
+function getPeriod(ds) {
+  var day = parseInt(ds.split('-')[1]);
+  return day <= 13 ? {label:'第1期 9/1-9/13', period:1} : {label:'第2期 9/14-9/30', period:2};
+}
+
+// ===================== 日期选择器初始化 =====================
+// ===================== 切换日期 =====================
+// DOM cache for frequently accessed elements
+var domCache = {};
+function $(id) { return domCache[id] || (domCache[id] = document.getElementById(id)); }
+
+function switchDate(ds) {
+  currentDate = ds;
+  var sel = $('date-select'); if (sel) sel.value = ds;
+  // Batch DOM updates with rAF to avoid layout thrashing
+  updateDateUI();
+  fillBIDataTable();
+  updateModuleInputs();
+  renderTrendChart();
+  requestAnimationFrame(function() { updateTrendHighlight(); });
+}
+
+function shiftDate(dir) {
+  var fd = getFilteredDates();
+  var idx = fd.indexOf(currentDate);
+  if (idx < 0) idx = fd.length - 1;
+  var newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= fd.length) return;
+  switchDate(fd[newIdx]);
+}
+
+function updateDateUI() {
+  document.getElementById('kpi-date').textContent = dateLabel(currentDate);
+  document.getElementById('bi-date-label').textContent = fullDateLabel(currentDate);
+  document.getElementById('bi-note').textContent = '单日数据：' + fullDateLabel(currentDate) + (hasData(currentDate) ? '' : '（暂无数据）') + ' | ▲▼=较前一数据日变化 | 切换城市标签自动联动下方考核模块';
+  var p = getPeriod(currentDate);
+  document.getElementById('kpi-period').textContent = p.label;
+  var peakEl = document.getElementById('kpi-peak');
+  if (isPeakDay(currentDate)) {
+    peakEl.textContent = '是';
+    peakEl.style.color = '#d93025';
+  } else {
+    peakEl.textContent = '否';
+    peakEl.style.color = '#34a853';
+  }
+  var statusEl = document.getElementById('date-status');
+  if (hasData(currentDate)) {
+    statusEl.textContent = '\u2713 有数据';
+    statusEl.className = 'date-status has-data';
+  } else {
+    statusEl.textContent = '\u2717 暂无数据';
+    statusEl.className = 'date-status no-data';
+  }
+  document.getElementById('date-prev').disabled = (allDates.indexOf(currentDate) <= 0);
+  document.getElementById('date-next').disabled = (allDates.indexOf(currentDate) >= allDates.length - 1);
+  updateCalendar();
+  updatePeriodProgress();
+}
+
+// ===================== 考核周期时间轴 =====================
+var periodLines = [
+  {name:'加盟', color:'#e8525f', p1:'9/1-9/13', p2:'9/14-9/30', p1Start:1, p1End:13, p2Start:14, p2End:30, peakList:[5,6,12,13,19,25,26,27]},
+  {name:'悦跑', color:'#f5a623', p1:'8/31-9/6 + 9/7-9/13', p2:'9/14-9/20 + 9/21-9/27', p1Start:1, p1End:13, p2Start:14, p2End:27, peakList:[]},
+  {name:'普众', color:'#4cb947', p1:'8/31-9/6 + 9/7-9/13', p2:'9/14-9/20 + 9/21-9/27', p1Start:1, p1End:13, p2Start:14, p2End:27, peakList:[]}
+];
+
+function renderCalendar() {
+  var grid = document.getElementById('cal-grid');
+  if (!grid) return;
+  var datesToShow = allDates.filter(function(ds) {
+    var day = parseInt(ds.split('-')[1]);
+    if (currentPeriod === 'p1') return day <= 13;
+    if (currentPeriod === 'p2') return day >= 14;
+    return true;
+  });
+  var html = '';
+  datesToShow.forEach(function(ds) {
+    var day = parseInt(ds.split('-')[1]);
+    var date = new Date(2026, 8, day);
+    var wd = weekDays[date.getDay()];
+    var cls = 'cal-cell';
+    if (day <= 13) cls += ' p1'; else cls += ' p2';
+    if (isPeakDay(ds)) cls += ' peak';
+    if (hasData(ds)) cls += ' has-data';
+    if (ds === currentDate) cls += ' selected';
+    if (!hasData(ds)) cls += ' no-data';
+    html += '<div class="' + cls + '" data-date="' + ds + '" onclick="if(hasData(\''+ds+'\'))switchDate(\''+ds+'\')">' +
+      '<span class="cal-d">' + day + '</span><span class="cal-w">' + wd + '</span></div>';
+  });
+  grid.innerHTML = html;
+}
+
+function updateCalendar() {
+  var cells = document.querySelectorAll('.cal-cell');
+  cells.forEach(function(c) {
+    if (c.dataset.date === currentDate) c.classList.add('selected');
+    else c.classList.remove('selected');
+  });
+}
+
+function updatePeriodProgress() {
+  var container = document.getElementById('period-prog');
+  if (!container) return;
+  var day = parseInt(currentDate.split('-')[1]);
+  var isInPeriod2 = day >= 14;
+  container.innerHTML = '';
+  var allHtml = '';
+  periodLines.forEach(function(line) {
+    var periodNum = isInPeriod2 ? 2 : 1;
+    var periodLabel = isInPeriod2 ? line.p2 : line.p1;
+    var startDay = isInPeriod2 ? line.p2Start : line.p1Start;
+    var endDay = isInPeriod2 ? line.p2End : line.p1End;
+    var totalDays = endDay - startDay + 1;
+    var elapsed = Math.max(0, Math.min(day - startDay + 1, totalDays));
+    var remaining = totalDays - elapsed;
+    var pct = Math.round(elapsed / totalDays * 100);
+    var peakInPeriod = line.peakList.filter(function(p) { return p >= startDay && p <= endDay; });
+    var peakPassed = peakInPeriod.filter(function(p) { return p < day; }).length;
+    var peakUpcoming = peakInPeriod.filter(function(p) { return p >= day; }).length;
+    var isTodayPeak = line.peakList.indexOf(day) !== -1;
+    allHtml += '<div class="period-prog-card" style="border-left:3px solid ' + line.color + '">';
+    allHtml += '<div class="pp-title" style="color:' + line.color + '"><span style="font-size:14px;">' + line.name + '</span>';
+    allHtml += '<span style="font-size:11px;color:#888;margin-left:6px;">第' + periodNum + '期 ' + periodLabel + '</span></div>';
+    allHtml += '<div class="pp-current">';
+    if (isTodayPeak) {
+      allHtml += '<span style="color:#d93025;">\u26A1 今日高峰日</span>';
+    } else if (line.name === '\u52a0\u76df') {
+      allHtml += '<span style="color:#' + (isInPeriod2 ? 'f5a623' : '1967d2') + ';">非高峰日</span>';
+    } else {
+      allHtml += '<span style="color:#888;">\u2014</span>';
+    }
+    allHtml += '</div>';
+    allHtml += '<div class="pp-bar"><div class="pp-bar-fill" style="width:' + pct + '%;background:' + line.color + ';"></div></div>';
+    allHtml += '<div class="pp-info">';
+    allHtml += '\u5df2\u8fc7 ' + elapsed + ' / ' + totalDays + ' \u5929 \uFF08' + pct + '%\uFF09';
+    if (remaining > 0) allHtml += '\u00a0|\u00a0 \u5269 ' + remaining + ' \u5929';
+    allHtml += '</div>';
+    if (peakInPeriod.length > 0) {
+      allHtml += '<div class="pp-info" style="margin-top:4px;">';
+      allHtml += '\u9ad8\u5cf0\u65e5: ' + peakPassed + '\u5df2\u8fc7 / ' + peakUpcoming + '\u5f85\u6765';
+      if (peakUpcoming > 0) {
+        var nextPeak = peakInPeriod.find(function(p) { return p >= day; });
+        allHtml += '\u00a0 \u2192 \u4e0b\u4e00\u4e2a: 9/' + nextPeak;
+      }
+      allHtml += '</div>';
+    }
+    allHtml += '</div>';
+  });
+  container.innerHTML = allHtml;
+}
+
+// ===================== 色值辅助 =====================
+function colorFor(val, thresholds) {
+  if (val === null || val === undefined) return '';
+  if (val >= thresholds[0]) return 'c-green';
+  if (val >= thresholds[1]) return 'c-orange';
+  return 'c-red';
+}
+
+// ===================== 填充BI数据表 =====================
+function fillBIDataTable() {
+  var tbody = document.getElementById('bi-data-body');
+  if (!tbody) return;
+
+  if (!hasData(currentDate)) {
+    tbody.innerHTML = '<tr><td colspan="10" style="padding:32px;color:#6b7280;text-align:center;font-size:14px;">\u{1F4C5} 该日期暂无BI数据<br><span style="font-size:12px;">可选择 9/5 \u2013 9/23 查看已采集数据</span></td></tr>';
+    return;
+  }
+
+  var dayData = dailyByDate[currentDate];
+  var didx = dataDates.indexOf(currentDate);
+  var prevData = didx > 0 ? dailyByDate[dataDates[didx - 1]] : null;
+  function deltaSpan(cur, prev) {
+    if (cur === null || cur === undefined || prev === null || prev === undefined) return '';
+    var diff = Math.round((cur - prev) * 100) / 100;
+    if (!diff) return '<span class="delta-flat">—</span>';
+    var cls = diff > 0 ? 'delta-good' : 'delta-bad';
+    return '<span class="' + cls + '">' + (diff > 0 ? '▲' : '▼') + Math.abs(diff) + '</span>';
+  }
+  var bodyHtml = '';
+  Object.keys(dayData).forEach(function(k) {
+    var d = dayData[k];
+    var sc = '';
+    if (fullDataByDate[currentDate] && monthlyData[k]) {
+      sc = monthlyData[k].score >= 100 ? 'c-green' : monthlyData[k].score >= 95 ? 'c-orange' : 'c-red';
+    }
+    var twStr = d.twRate !== null ? d.twRate + '%' : '\u2014';
+    var tyStr = d.tyScore !== null ? d.tyScore : '\u2014';
+    var hdStr = d.hdRate !== null ? d.hdRate + '%' : '\u2014';
+    var wjStr = d.wjRate !== null ? d.wjRate + '%' : '\u2014';
+    var ctStr = d.ctRate !== null ? d.ctRate + '%' : '\u2014';
+    var twNumStr = (d.twNum !== null && d.twDen !== null) ? d.twNum.toLocaleString() + ' / ' + d.twDen.toLocaleString() : '\u2014';
+    var scoreStr = '\u2014';
+    var levelStr = '\u2014';
+    if (fullDataByDate[currentDate] && monthlyData[k]) {
+      scoreStr = monthlyData[k].score + '%';
+      levelStr = monthlyData[k].level;
+    }
+    bodyHtml += '<tr>' +
+      '<td class="city-cell">' + d.cityFull + '</td>' +
+      '<td>' + d.region + '</td>' +
+      '<td class="' + colorFor(d.twRate,[99,98]) + '">' + twStr + deltaSpan(d.twRate, prevData && prevData[k] ? prevData[k].twRate : null) + '</td>' +
+      '<td class="' + colorFor(d.tyScore,[95,90]) + '">' + tyStr + deltaSpan(d.tyScore, prevData && prevData[k] ? prevData[k].tyScore : null) + '</td>' +
+      '<td class="' + colorFor(d.hdRate,[95,90]) + '">' + hdStr + deltaSpan(d.hdRate, prevData && prevData[k] ? prevData[k].hdRate : null) + '</td>' +
+      '<td class="' + colorFor(d.wjRate,[95,80]) + '">' + wjStr + deltaSpan(d.wjRate, prevData && prevData[k] ? prevData[k].wjRate : null) + '</td>' +
+      '<td>' + ctStr + deltaSpan(d.ctRate, prevData && prevData[k] ? prevData[k].ctRate : null) + '</td>' +
+      '<td>' + twNumStr + '</td>' +
+      '<td class="score-cell ' + sc + '">' + scoreStr + '</td>' +
+      '<td class="' + sc + '">' + levelStr + '</td>' +
+      '</tr>';
+  });
+  tbody.innerHTML = bodyHtml;
+}
+
+// ===================== 填充趋势表 =====================
+function renderTrendTable() {
+  var thead = document.getElementById('trend-header');
+  var tbody = document.getElementById('trend-body');
+  if (!thead || !tbody) return;
+  var fd = getFilteredDates();
+  // 动态表头
+  var hdr = '<th>城市</th><th>指标</th>';
+  fd.forEach(function(ds) {
+    var hParts = ds.split('-');
+    var hMm = parseInt(hParts[0], 10), hDay = parseInt(hParts[1], 10);
+    var date = new Date(2026, hMm - 1, hDay);
+    var wd = weekDays[date.getDay()];
+    var cls = isPeakDay(ds) ? 'peak-col' : '';
+    hdr += '<th class="' + cls + '" style="cursor:pointer;" onclick="switchDate(\'' + ds + '\')">' + hMm + '/' + hDay + '(' + wd + ')' + (isPeakDay(ds) ? '⚡' : '') + '</th>';
+  });
+  thead.innerHTML = hdr;
+  // 动态表体（构建后一次赋值，避免反复触发回流）
+  var bodyHtml = '';
+  Object.keys(trendRaw).forEach(function(k) {
+    var d = trendRaw[k];
+    var cityName = cityInfo[k].city;
+    var filteredTw = [], filteredTy = [], filteredHd = [];
+    fd.forEach(function(ds) {
+      var di = dataDates.indexOf(ds);
+      filteredTw.push(d.tw[di]);
+      filteredTy.push(d.ty[di]);
+      filteredHd.push(d.hd[di]);
+    });
+    var latestIdx = filteredTw.length - 1;
+    bodyHtml += '<tr><td class="city-col" rowspan="3">' + cityName + '</td><td style="font-weight:600;color:#00b8d4;">推单率</td>' +
+      filteredTw.map(function(v,i){var cls=i===latestIdx?'latest-col':'';return '<td class="'+cls+'">'+(v===null||v===undefined?'—':v+'%')+'</td>'}).join('') + '</tr>';
+    bodyHtml += '<tr class="metric-row"><td style="font-weight:600;color:#7b61ff;">体验分</td>' +
+      filteredTy.map(function(v,i){var cls=i===latestIdx?'latest-col':'';return '<td class="'+cls+'">'+(v===null||v===undefined?'待发布':v)+'</td>'}).join('') + '</tr>';
+    bodyHtml += '<tr class="metric-row"><td style="font-weight:600;color:#e8525f;">HD率</td>' +
+      filteredHd.map(function(v,i){var cls=i===latestIdx?'latest-col':'';return '<td class="'+cls+'">'+(v===null||v===undefined?'待发布':v+'%')+'</td>'}).join('') + '</tr>';
+  });
+  tbody.innerHTML = bodyHtml;
+  highlightMetricTables();
+}
+
+// ===================== 指标联动高亮（图表 ⇄ 数值表） =====================
+var BI_COL_IDX = { tw: 2, ty: 3, hd: 4, wj: 5, ct: 6 };
+var TREND_LBL = { tw: '推单率', ty: '体验分', hd: 'HD率', wj: '完结率' };
+function highlightMetricTables() {
+  var lbl = TREND_LBL[tcCurrent];
+  document.querySelectorAll('#trend-table tbody tr').forEach(function(tr) {
+    var first = tr.children[0];
+    var labelTd = (first && first.className && String(first.className).indexOf('city-col') !== -1) ? tr.children[1] : first;
+    var hit = !!(lbl && labelTd && labelTd.textContent.indexOf(lbl) !== -1);
+    if (hit) tr.classList.add('metric-hl'); else tr.classList.remove('metric-hl');
+  });
+  var table = document.getElementById('bi-data-table');
+  if (!table) return;
+  table.querySelectorAll('.col-hl').forEach(function(el) { el.classList.remove('col-hl'); });
+  var ci = BI_COL_IDX[tcCurrent];
+  if (ci === undefined) return;
+  Array.prototype.forEach.call(table.querySelectorAll('tr'), function(tr) {
+    var cell = tr.children[ci];
+    if (cell) cell.classList.add('col-hl');
+  });
+}
+
+// ===================== 趋势表高亮选中日期列 =====================
+function updateTrendHighlight() {
+  var table = document.getElementById('trend-table');
+  if (!table) return;
+  // 清除旧的selected-col
+  table.querySelectorAll('.selected-col').forEach(function(el){ el.classList.remove('selected-col'); });
+  var fd = getFilteredDates();
+  var dataIdx = fd.indexOf(currentDate);
+  if (dataIdx < 0) return;
+  var colIdx = dataIdx + 2; // 前两列是城市、指标
+  // 高亮表头
+  var headerCells = document.querySelectorAll('#trend-header th');
+  if (headerCells[colIdx]) headerCells[colIdx].classList.add('selected-col');
+  // 高亮数据行
+  table.querySelectorAll('tbody tr').forEach(function(row) {
+    if (row.cells[colIdx]) row.cells[colIdx].classList.add('selected-col');
+  });
+}
+
+// ===================== 切换城市 =====================
+function switchCity(el, name) {
+  document.querySelectorAll('.city-tab').forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+  currentCity = name;
+  var kc=document.getElementById('kpi-city'); if(kc) kc.value=name;
+  var kcd=document.getElementById('kpi-city-display'); if(kcd) kcd.textContent=name;
+  updateModuleInputs();
+  calcPreset();
+}
+
+// ===================== 更新模块输入 =====================
+function updateModuleInputs() {
+  if (!hasData(currentDate)) {
+    ['tw_rate','wj_rate','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel'].forEach(function(id){ setVal(id, ''); });
+    calcScore();
+    return;
+  }
+  var d = dailyByDate[currentDate][currentCity];
+  if (d) {
+    var pending = (d.hdRate === null || d.hdRate === undefined) && (d.tyScore === null || d.tyScore === undefined);
+    if (pending) {
+      // 新考核周期体验分/HD率未发布：考核模拟暂不填值，避免仅凭推单率算出误导性总分
+      ['tw_rate','wj_rate','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel'].forEach(function(id){ setVal(id, ''); });
+    } else {
+      setVal('tw_rate', d.twRate);
+      setVal('jm_rate', d.hdRate);
+      setVal('ct_rate', d.ctRate !== null ? d.ctRate : '');
+      setVal('ty_cs', d.tyScore);
+      setVal('ty_fake', d.tyScore);
+      setVal('ty_cancel', d.tyScore);
+      setVal('wj_rate', d.wjRate !== null ? d.wjRate : '');
+    }
+  }
+  calcScore();
+}
+
+// ===================== 计算辅助 =====================
+function setVal(id, val) { var el = document.getElementById(id); if (el) el.value = val; }
+function getVal(id) { var el = document.getElementById(id); if (!el || el.value === '') return null; var v = parseFloat(el.value); return isNaN(v) ? null : v; }
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+function calcScore() {
+  var w = {jm:0.50, ty:0.20, tw:0.20, wj:0.10};
+  var detail = '', total = 0, hasInput = false;
+  var jm = getVal('jm_rate');
+  if (jm !== null) {
+    hasInput = true;
+    var s = jm < 90 ? 0 : clamp(jm, 0, 100);
+    total += s * w.jm;
+    detail += '加盟(HD): ' + jm + '% \u2192 ' + s.toFixed(1) + '% \u00d7 50%\n';
+    document.getElementById('jm_score').textContent = s.toFixed(1) + '%';
+  } else { document.getElementById('jm_score').textContent = '\u2014'; }
+  var tyCs = getVal('ty_cs'), tyFake = getVal('ty_fake'), tyCancel = getVal('ty_cancel');
+  if (tyCs !== null || tyFake !== null || tyCancel !== null) {
+    hasInput = true;
+    var cs = tyCs !== null ? clamp(tyCs, 50, 110) : 0;
+    var fk = tyFake !== null ? clamp(tyFake, 50, 100) : 0;
+    var cl = tyCancel !== null ? clamp(tyCancel, 50, 110) : 0;
+    var ts = cs * 0.3 + fk * 0.4 + cl * 0.3;
+    total += ts * w.ty;
+    detail += '体验: ' + ts.toFixed(1) + '% \u00d7 20%\n';
+    document.getElementById('ty_score').textContent = ts.toFixed(1) + '%';
+  } else { document.getElementById('ty_score').textContent = '\u2014'; }
+  var tw = getVal('tw_rate');
+  if (tw !== null) {
+    hasInput = true;
+    var s2 = clamp(tw, 0, 110);
+    total += s2 * w.tw;
+    detail += '推完: ' + tw + '% \u2192 ' + s2.toFixed(1) + '% \u00d7 20%\n';
+    document.getElementById('tw_score').textContent = s2.toFixed(1) + '%';
+  } else { document.getElementById('tw_score').textContent = '\u2014'; }
+  var wj = getVal('wj_rate');
+  if (wj !== null) {
+    hasInput = true;
+    var s3 = wj < 80 ? 0 : clamp(wj, 0, 110);
+    total += s3 * w.wj;
+    detail += '完结率: ' + wj + '% \u2192 ' + s3.toFixed(1) + '% \u00d7 10%\n';
+    document.getElementById('wj_score').textContent = s3.toFixed(1) + '%';
+  } else { document.getElementById('wj_score').textContent = '\u2014'; }
+  var resultEl = document.getElementById('total-score');
+  var hintEl = document.getElementById('penalty-hint');
+  var detailEl = document.getElementById('calc-detail');
+  if (!hasInput) {
+    resultEl.textContent = '请填入完成值';
+    resultEl.className = 'calc-result';
+    hintEl.textContent = '';
+    detailEl.textContent = '切换城市标签或选择日期自动填入数据';
+    return;
+  }
+  resultEl.textContent = total.toFixed(1) + '%';
+  detailEl.textContent = detail;
+  if (total >= 100) { resultEl.className = 'calc-result pass'; hintEl.textContent = '\u2705 考核达标'; }
+  else if (total >= 95) { resultEl.className = 'calc-result warn'; hintEl.textContent = '\u26A0\uFE0F 95%~100% 警告区间'; }
+  else if (total >= 90) { resultEl.className = 'calc-result warn'; hintEl.textContent = '\u26A0\uFE0F 90%~95% 警告区间'; }
+  else { resultEl.className = 'calc-result fail'; hintEl.textContent = '\uD83D\uDD34 ＜90% 重罚区间'; }
+}
+
+// ===================== 折叠 =====================
+document.querySelectorAll('.collapsible .card-title').forEach(function(el) {
+  el.addEventListener('click', function() { this.parentElement.classList.toggle('collapsed'); });
+});
+
+// ===================== 数据分析维度 =====================
+
+function calcTotalScore(hd, ty, tw, wj) {
+  var w = {jm:0.50, ty:0.20, tw:0.20, wj:0.10};
+  var jm = hd < 90 ? 0 : clamp(hd, 0, 100);
+  var tyVal = clamp(ty, 50, 110);
+  var twVal = clamp(tw, 0, 110);
+  var wjVal = wj < 80 ? 0 : clamp(wj, 0, 110);
+  return jm * w.jm + tyVal * w.ty + twVal * w.tw + wjVal * w.wj;
+}
+
+// ===================== 动态文本更新 =====================
+function updateDynamicText() {
+  if (!dataDates.length) return;
+  var latestDay = parseInt(dataDates[dataDates.length-1].split('-')[1]);
+  var daysActual = dataDates.length;
+  var daysRemaining = 30 - daysActual;
+  var pct = Math.round(daysActual / 30 * 100);
+  var dateStr = '9/' + latestDay;
+  var elOv = document.getElementById('overview-title');
+  if (elOv) elOv.innerHTML = daysRemaining > 0 ? '<span class="icon">🏆</span>整月考核结果测算（数据截止 ' + dateStr + '，MTD占全月 ' + daysActual + '/30 天，剩余' + daysRemaining + '天）' : '<span class="icon">🏆</span>整月考核结果测算（数据截止 ' + dateStr + '，MTD占全月 30/30 天，全月数据齐全）';
+  var elEst = document.getElementById('estimate-desc');
+  if (elEst) elEst.textContent = daysRemaining > 0 ? '数据截止 ' + dateStr + '，MTD占全月 ' + daysActual + '/30 天（' + pct + '%）；剩余' + daysRemaining + '天。下表按当前总分保持不变、提升至达标线、下滑至红线三种场景预估。' : '数据截止 ' + dateStr + '，MTD占全月 30/30 天（100%）；全月数据已齐。下表按当前总分保持不变、提升至达标线、下滑至红线三种场景预估。';
+}
+
+function updateReportHeader() {
+  if (!dataDates.length) return;
+  var latestDay = parseInt(dataDates[dataDates.length-1].split('-')[1]);
+  var remaining = 30 - latestDay;
+  var elSub = document.getElementById('report-sub');
+  if (elSub) elSub.textContent = remaining > 0 ? '三城：泰兴县 · 诸暨市 · 响水县 | 剩余' + remaining + '天含1个高峰日（9/29）' : '三城：泰兴县 · 诸暨市 · 响水县 | 全月 30/30 天收官（数据已齐）';
+}
+
+var SLICE_M = {
+  '泰兴': {hd:98.24, ty:91.23, tw:99.14, wj:99.75, score:97.17, level:'警告'},
+  '诸暨': {hd:91.73, ty:94.61, tw:99.00, wj:99.87, score:94.57, level:'重罚预警'},
+  '响水': {hd:95.65, ty:98.18, tw:98.80, wj:99.95, score:97.22, level:'警告'}
+}; // 全月收官口径：体验/HD为官方值，推完/完结率为BI全月日均，总分=100−加权缺口（HD50%/体验20%/推完20%/完结率10%）；缺失时切片模块自动降级
+
+
+var _CITIES = ['泰兴','诸暨','响水'];
+var _W = {hd:0.5, ty:0.2, tw:0.2, wj:0.1};
+var _GB_LINE = 98.8; // 推完兜底线
+
+function _sv(c, key, dates) {
+  var vs = [];
+  for (var i = 0; i < dates.length; i++) {
+    var d = fullDataByDate[dates[i]];
+    var v = d && d[c] ? d[c][key] : null;
+    if (v !== null && v !== undefined) vs.push(v);
+  }
+  return vs;
+}
+function _avg(a) { if (!a.length) return null; var s=0; for (var i=0;i<a.length;i++) s+=a[i]; return s/a.length; }
+function _mn(a) { if (!a.length) return null; var m=a[0]; for (var i=1;i<a.length;i++) if(a[i]<m)m=a[i]; return m; }
+function _fv(v, unit) { return (v===null||v===undefined) ? '—' : v.toFixed(2)+(unit||''); }
+function _arr(a, b) { if (a===null||b===null||a===undefined||b===undefined) return ''; var d=b-a;
+  return d>0.005 ? ' <span class="c-green">↑</span>' : (d<-0.005 ? ' <span class="c-red">↓</span>' : ' →'); }
+function _std3(arr) { // 3σ 异动点（日环比）
+  if (arr.length < 4) return [];
+  var chg = [], i;
+  for (i=1;i<arr.length;i++) chg.push(arr[i]-arr[i-1]);
+  var mu=0; for (i=0;i<chg.length;i++) mu+=chg[i]; mu/=chg.length;
+  var va=0; for (i=0;i<chg.length;i++) va+=(chg[i]-mu)*(chg[i]-mu); va/=chg.length;
+  var sd = Math.sqrt(va);
+  var hits = [];
+  for (i=0;i<chg.length;i++) if (sd>0 && Math.abs(chg[i]-mu)>3*sd) hits.push({d:i+1, chg:chg[i]});
+  return hits;
+}
+
+function renderSliceAnalysis() {
+  var el = document.getElementById('slice-analysis');
+  if (!el || el.dataset.rendered === '1') return;
+  var h = '<div class="card-title">🔬 切片分析：城市 × 期次 × 指标 <span class="slice-chip" style="margin-left:8px;">数据驱动 · 自动生成</span></div>';
+
+  if (!dataDates.length) {
+    h += '<div class="slice-empty">本月 BI 数据尚未发布，切片分析将在数据积累后自动生成。<br>官方月度值发布后，达标路径测算与决策方案同步解锁。</div>';
+    el.innerHTML = h;
+    el.dataset.rendered = '1';
+    return;
+  }
+
+  var cut = dataDates[0].slice(0,3) + PB_CUT;
+  var P1 = [], P2 = [];
+  for (var i=0;i<dataDates.length;i++) (dataDates[i] <= cut ? P1 : P2).push(dataDates[i]);
+
+  var peakSet = {};
+  for (i=0;i<peakDays.length;i++) peakSet[peakDays[i]] = 1;
+
+  // ── ① 期次切片表 ──
+  h += '<div style="font-size:13.5px;font-weight:700;margin:8px 0 6px;">① 期次切片（P1: ' + P1[0] + '~' + P1[P1.length-1] +
+       ' → P2: ' + (P2.length ? P2[0] + '~' + P2[P2.length-1] : '未开始') + '，日均近似口径）</div>';
+  h += '<table><thead><tr><th>城市</th><th>推完 P1→P2 均</th><th>推完 P2 最低</th><th>HD P1→P2</th><th>体验 P1→P2</th><th>完结率 P1→P2 均</th></tr></thead><tbody>';
+  for (i=0;i<_CITIES.length;i++) {
+    var c = _CITIES[i];
+    var tw1=_avg(_sv(c,'twRate',P1)), tw2=_avg(_sv(c,'twRate',P2)), tw2m=_mn(_sv(c,'twRate',P2));
+    var hd1=_sv(c,'hdRate',P1), hd2=_sv(c,'hdRate',P2);
+    var ty1=_sv(c,'tyScore',P1), ty2=_sv(c,'tyScore',P2);
+    var wj1=_avg(_sv(c,'wjRate',P1)), wj2=_avg(_sv(c,'wjRate',P2));
+    h += '<tr><td class="city-cell">'+c+'</td>'
+      + '<td>'+_fv(tw1)+' → '+_fv(tw2)+_arr(tw1,tw2)+'</td>'
+      + '<td>'+_fv(tw2m)+'</td>'
+      + '<td>'+_fv(hd1.length?hd1[hd1.length-1]:null)+' → '+_fv(hd2.length?hd2[hd2.length-1]:null)+_arr(hd1.length?hd1[hd1.length-1]:null, hd2.length?hd2[hd2.length-1]:null)+'</td>'
+      + '<td>'+_fv(ty1.length?ty1[ty1.length-1]:null)+' → '+_fv(ty2.length?ty2[ty2.length-1]:null)+_arr(ty1.length?ty1[ty1.length-1]:null, ty2.length?ty2[ty2.length-1]:null)+'</td>'
+      + '<td>'+_fv(wj1)+' → '+_fv(wj2)+_arr(wj1,wj2)+'</td></tr>';
+  }
+  h += '</tbody></table>';
+
+  // ── ② 兜底线击穿 ──
+  h += '<div style="font-size:13.5px;font-weight:700;margin:14px 0 6px;">② 推完 '+_GB_LINE+' 兜底线击穿切片</div>';
+  h += '<table><thead><tr><th>城市</th><th>击穿天数</th><th>其中高峰日</th><th>全月最低</th><th>击穿时段</th></tr></thead><tbody>';
+  for (i=0;i<_CITIES.length;i++) {
+    c = _CITIES[i];
+    var all = _sv(c,'twRate',dataDates), dates2 = [];
+    for (var k=0;k<dataDates.length;k++) {
+      var dd = fullDataByDate[dataDates[k]];
+      if (dd && dd[c] && dd[c].twRate!==null && dd[c].twRate!==undefined) dates2.push(dataDates[k]);
+    }
+    var brk=[], pk=0, mn=null;
+    for (k=0;k<dates2.length;k++) {
+      var v = fullDataByDate[dates2[k]][c].twRate;
+      if (v < _GB_LINE) {
+        brk.push(dates2[k].slice(3)+'('+v.toFixed(2)+')');
+        if (peakSet[dates2[k]]) pk++;
+      }
+      if (mn===null||v<mn) mn=v;
+    }
+    var span = brk.length ? (brk.length<=8 ? brk.join('、') : brk.slice(0,8).join('、')+' 等'+brk.length+'天') : '无';
+    h += '<tr><td class="city-cell">'+c+'</td><td'+(brk.length>=10?' class="c-red"':'')+'>'+brk.length+' 天</td><td>'+pk+' 天</td>'
+      + '<td'+(mn<_GB_LINE-0.5?' class="c-red"':'')+'>'+_fv(mn)+'</td><td style="white-space:normal;text-align:left;">'+span+'</td></tr>';
+  }
+  h += '</tbody></table>';
+
+  // ── ③ 3σ 异动 ──
+  h += '<div style="font-size:13.5px;font-weight:700;margin:14px 0 6px;">③ 推完日环比 3σ 异动（超出 μ±3σ）</div><table><thead><tr><th>城市</th><th>异动点</th></tr></thead><tbody>';
+  for (i=0;i<_CITIES.length;i++) {
+    c = _CITIES[i];
+    var hits = _std3(_sv(c,'twRate',dataDates));
+    var txt = '无';
+    if (hits.length) {
+      var parts = [];
+      for (k=0;k<hits.length;k++) parts.push(dataDates[hits[k].d]+' ('+(hits[k].chg>0?'+':'')+hits[k].chg.toFixed(2)+'pp)');
+      txt = parts.join('、');
+    }
+    h += '<tr><td class="city-cell">'+c+'</td><td style="text-align:left;'+(hits.length?'color:#d93025;':'')+'">'+txt+'</td></tr>';
+  }
+  h += '</tbody></table>';
+
+  // ── ④ 加权缺口分解 + 达标路径（需官方月度值） ──
+  if (SLICE_M) {
+    h += '<div style="font-size:13.5px;font-weight:700;margin:14px 0 6px;">④ 加权缺口分解（缺口=(100−值)×权重，与 100−总分 完全吻合）</div>';
+    h += '<div class="legend" style="font-size:11.5px;color:#6b7280;margin-bottom:6px;">HD(50%)<i style="display:inline-block;width:9px;height:9px;background:#3b6ff5;border-radius:2px;margin:0 4px 0 2px;"></i>体验(20%)<i style="display:inline-block;width:9px;height:9px;background:#e5484d;border-radius:2px;margin:0 4px 0 10px;"></i>推完(20%)<i style="display:inline-block;width:9px;height:9px;background:#f5a623;border-radius:2px;margin:0 4px 0 10px;"></i>完结率(10%)<i style="display:inline-block;width:9px;height:9px;background:#2e9e5b;border-radius:2px;margin:0 4px 0 10px;"></i></div>';
+    var maxTot = 0;
+    var gaps = {};
+    for (i=0;i<_CITIES.length;i++) {
+      c = _CITIES[i]; var m = SLICE_M[c];
+      gaps[c] = {hd:(100-m.hd)*_W.hd, ty:(100-m.ty)*_W.ty, tw:(100-m.tw)*_W.tw, wj:(100-m.wj)*_W.wj};
+      var t = gaps[c].hd+gaps[c].ty+gaps[c].tw+gaps[c].wj;
+      gaps[c].tot = t; if (t>maxTot) maxTot=t;
+    }
+    for (i=0;i<_CITIES.length;i++) {
+      c = _CITIES[i]; var g = gaps[c];
+      var seg = function(v,cls,lb){ return v>0.05 ? '<div class="'+cls+'" style="width:'+(v/maxTot*100).toFixed(1)+'%">'+v.toFixed(2)+' '+lb+'</div>' : ''; };
+      h += '<div style="margin:4px 0;"><b style="display:inline-block;width:38px;font-size:12.5px;">'+c+'</b>'
+        + '<div class="gap-bar" style="display:inline-flex;vertical-align:middle;width:calc(100% - 120px);">'
+        + seg(g.hd,'gb-hd','HD')+seg(g.ty,'gb-ty','体验')+seg(g.tw,'gb-tw','推完')+seg(g.wj,'gb-wj','完结率')
+        + '</div><span style="font-size:11.5px;color:#6b7280;margin-left:6px;">合计 '+g.tot.toFixed(2)+' 分</span></div>';
+    }
+    h += '<table style="margin-top:8px;"><thead><tr><th>城市</th><th>总分</th><th>等级</th><th>距95预警线</th><th>距98目标线</th><th>缺口主因</th></tr></thead><tbody>';
+    for (i=0;i<_CITIES.length;i++) {
+      c = _CITIES[i]; var m = SLICE_M[c]; g = gaps[c];
+      var main = ['hd','ty','tw','wj'][0]; var names = {hd:'HD 加盟履约', ty:'体验分', tw:'推完', wj:'完结率'};
+      for (k in g) if (k!=='tot' && g[k]>g[main]) main=k;
+      var n95 = m.score-95, n98 = 98-m.score;
+      h += '<tr><td class="city-cell">'+c+'</td><td class="b">'+m.score.toFixed(2)+'</td>'
+        + '<td>'+(m.level==='重罚预警'?'<span class="c-red b">'+m.level+'</span>':'<span class="c-orange">'+m.level+'</span>')+'</td>'
+        + '<td>'+(n95<0?'<span class="c-red b">'+n95.toFixed(2)+'</span>':'+'+n95.toFixed(2))+'</td>'
+        + '<td class="c-orange">-'+n98.toFixed(2)+'</td>'
+        + '<td>'+names[main]+'（占缺口 '+Math.round(g[main]/g.tot*100)+'%）</td></tr>';
+    }
+    h += '</tbody></table>';
+
+    h += '<div style="font-size:13.5px;font-weight:700;margin:14px 0 6px;">⑤ 达标路径测算（杠杆 = 所需提分 ÷ 权重）</div>';
+    h += '<table><thead><tr><th>城市</th><th>目标</th><th>最优路径</th><th>所需提升</th><th>可行性</th></tr></thead><tbody>';
+    for (i=0;i<_CITIES.length;i++) {
+      c = _CITIES[i]; var m = SLICE_M[c];
+      var need = m.score < 95 ? 95-m.score : 98-m.score;
+      var goal = m.score < 95 ? '95 脱红' : '98 达标';
+      // 选杠杆：提升pp最小 且 目标值 ≤ 99.5（现实可行）
+      var cands = [{k:'hd', pp:need/_W.hd, tv:m.hd+need/_W.hd}, {k:'ty', pp:need/_W.ty, tv:m.ty+need/_W.ty}];
+      var best = null;
+      for (k=0;k<cands.length;k++) if (cands[k].tv<=99.5 && (!best || cands[k].pp<best.pp)) best = cands[k];
+      var n2 = {hd:'HD', ty:'体验'};
+      if (best) {
+        h += '<tr><td class="city-cell">'+c+'</td><td>'+goal+'</td>'
+          + '<td class="b">'+n2[best.k]+' ≥ '+best.tv.toFixed(2)+'</td>'
+          + '<td class="c-green">+'+best.pp.toFixed(2)+'pp</td>'
+          + '<td><span class="tag '+(best.pp<=1?'tag-green':'tag-orange')+'">'+(best.pp<=1?'P0 可实现':'P1 中等')+'</span></td></tr>';
+      } else {
+        h += '<tr><td class="city-cell">'+c+'</td><td>'+goal+'</td><td>单指标不可行，需 HD/体验组合改善</td><td>—</td><td><span class="tag tag-red">需组合</span></td></tr>';
+      }
+    }
+    h += '</tbody></table>';
+
+    h += '<div style="font-size:13.5px;font-weight:700;margin:14px 0 6px;">⑥ 可落地决策方案（目标 + 动作 + 预期效果）</div>';
+    h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px;">'
+      + '<div style="background:#fff5f5;border-radius:8px;padding:12px 14px;border-left:3px solid #d93025;"><b>① 诸暨：HD 单点突破脱红</b><div style="font-size:12px;line-height:1.9;margin-top:4px;">目标：HD≥92.55 → 总分≥95。<br>动作：履约基础数据明细拆扣分Top3项→站点督导周复盘；每期发布后24h内校偏差。<br>预期：按P2斜率10月内脱红；同时死守90零分红线。</div></div>'
+      + '<div style="background:#fff8ec;border-radius:8px;padding:12px 14px;border-left:3px solid #f5a623;"><b>② 泰兴：体验分专项整改</b><div style="font-size:12px;line-height:1.9;margin-top:4px;">目标：体验≥95.58 → 总分逼近98（体验+1pp=总分+0.2）。<br>动作：体验考核明细拆泰兴扣分集中项，与响水逐项对标→站点/骑手颗粒度整改。</div></div>'
+      + '<div style="background:#f7f2ff;border-radius:8px;padding:12px 14px;border-left:3px solid #8b5cf6;"><b>③ 响水：HD攻坚+推完基线治理</b><div style="font-size:12px;line-height:1.9;margin-top:4px;">目标：HD≥97.11（达标）；推完击穿14天/月→≤5天。<br>动作：补日常基线（非高峰应对）；推完&lt;98.8连续2天触发运力补充预案。</div></div>'
+      + '<div style="background:#f0faf3;border-radius:8px;padding:12px 14px;border-left:3px solid #2e9e5b;"><b>④ 三城共性：高峰日推完保障</b><div style="font-size:12px;line-height:1.9;margin-top:4px;">目标：高峰日 tw 不破98.8（9/25-9/28三城集体击穿）。<br>动作：高峰日历提前3天预约运力；跌破98.85缓冲即启动调度；峰后48h复盘。</div></div>'
+      + '</div>';
+  } else {
+    h += '<div class="slice-note">📌 官方月度值发布后，此处将自动生成：加权缺口分解（缺口=(100−值)×权重）、达标路径测算（杠杆=所需提分÷权重）、可落地决策方案。</div>';
+  }
+
+  h += '<div class="slice-note">口径说明：体验分/HD 为 BI 周期发布值（期内恒定），期中评估沿用上期值；推完/完结率为日更，日均均为近似口径（未回到分子分母），考核以 BI 官方月度值为准。以上内容由 AI 生成，仅供参考，以业务解释为准。</div>';
+  el.innerHTML = h;
+  el.dataset.rendered = '1';
+}
+
+
+// ===================== 图表页：数据完整性自检 =====================
+function _dhDaysInMonth(ym) { return new Date(Date.UTC(DATA_YEAR, ym, 0)).getUTCDate(); }
+function renderDataHealth() {
+  var el = document.getElementById('data-health');
+  if (!el || el.dataset.rendered === '1') return;
+  var KEYS = [['twRate', '推单率'], ['tyScore', '体验分'], ['hdRate', 'HD 完成率'], ['wjRate', '推单完成率'], ['ctRate', '承托比']];
+  var h;
+  if (!dataDates.length) {
+    h = '<div class="card-title"><span class="icon">🩺</span>数据完整性自检 <span class="slice-chip" style="margin-left:8px;background:#fff4e5;color:#b26a00;">⏳ 本月 BI 数据尚未发布</span></div>'
+      + '<div style="font-size:12px;color:#6b7280;line-height:1.9;">流水线每个数据日自动抓取并校验五项指标覆盖；BI 发布后此处实时展示完整性结论。</div>';
+  } else {
+    var miss = {};
+    _CITIES.forEach(function(c) {
+      KEYS.forEach(function(k) {
+        var days = [];
+        dataDates.forEach(function(d) {
+          var dd = fullDataByDate[d];
+          var v = dd && dd[c] ? dd[c][k[0]] : null;
+          if (v === null || v === undefined) days.push(d);
+        });
+        if (days.length) miss[c + '|' + k[1]] = days;
+      });
+    });
+    var nMiss = 0;
+    for (var x in miss) nMiss += miss[x].length;
+    var gapDays = [];
+    for (var gi = 1; gi < dataDates.length; gi++) {
+      var pa = dataDates[gi - 1].split('-'), pb = dataDates[gi].split('-');
+      var am = parseInt(pa[0], 10), ad = parseInt(pa[1], 10), bm = parseInt(pb[0], 10), bd = parseInt(pb[1], 10);
+      var ok;
+      if (bm === am) ok = (bd === ad + 1);
+      else if (bm === am + 1) ok = (ad === _dhDaysInMonth(am) && bd === 1);
+      else ok = false;
+      if (!ok) gapDays.push(dataDates[gi - 1] + '~' + dataDates[gi]);
+    }
+    var clean = (nMiss === 0 && gapDays.length === 0);
+    var chip = clean
+      ? '<span class="slice-chip" style="margin-left:8px;background:#e8f5ec;color:#2e9e5b;">✅ 完整</span>'
+      : '<span class="slice-chip" style="margin-left:8px;background:#fff4e5;color:#b26a00;">⚠ 部分待发布</span>';
+    var latest = dataDates[dataDates.length - 1];
+    var parts = [];
+    _CITIES.forEach(function(c) {
+      var seg = [], d0 = null;
+      KEYS.forEach(function(k) {
+        var m = miss[c + '|' + k[1]];
+        if (m) { seg.push(k[1] + ' ' + m.length + ' 天'); if (!d0) d0 = m; }
+      });
+      if (seg.length) parts.push(cityInfo[c].city + '：' + seg.join('、') + '（' + d0.join('、') + '）');
+    });
+    h = '<div class="card-title"><span class="icon">🩺</span>数据完整性自检 ' + chip + '</div>'
+      + '<div style="font-size:12px;color:#444;line-height:2;">数据截至 <b>' + latest + '</b>，共 ' + dataDates.length + ' 个数据日 · 高峰日 ' + peakDays.length + ' 天'
+      + (gapDays.length ? ' · <span style="color:#d93025;">断档：' + gapDays.join('、') + '</span>' : ' · 无断档')
+      + '<br>'
+      + (parts.length
+          ? '<span style="color:#b26a00;">' + parts.join('<br>') + '</span><br>'
+            + '<span style="font-size:11px;color:#6b7280;">体验分/HD/完结率按 BI 发布节奏更新，属正常待发布；推单率为日更指标，若缺失请关注抓取流水线。</span>'
+          : '<span style="color:#2e9e5b;">五项指标全量覆盖，无缺失。</span>')
+      + '</div>';
+  }
+  el.innerHTML = h;
+  el.dataset.rendered = '1';
+}
+
+// ===================== 图表页：加权缺口分解图 =====================
+function renderGapChart() {
+  var box = document.getElementById('gap-chart');
+  if (!box) return;
+  if (!SLICE_M) { box.innerHTML = '<div style="text-align:center;padding:18px 8px;color:#6b7280;font-size:12.5px;line-height:1.9;">⏳ 官方月度值发布后，此处自动生成加权缺口分解图<br><span style="font-size:11px;">缺口=(100−值)×权重，自动标注主因与合计</span></div>'; return; }
+  var gaps = {}, maxTot = 0;
+  _CITIES.forEach(function(c) {
+    var m = SLICE_M[c];
+    var g = { hd:(100-m.hd)*_W.hd, ty:(100-m.ty)*_W.ty, tw:(100-m.tw)*_W.tw, wj:(100-m.wj)*_W.wj };
+    g.tot = g.hd+g.ty+g.tw+g.wj;
+    gaps[c] = g; if (g.tot > maxTot) maxTot = g.tot;
+  });
+  var W = 560, rowH = 58, padT = 8, padB = 34, padL = 58, padR = 66;
+  var H = padT + _CITIES.length * rowH + padB;
+  var s = '', segs = [['hd','HD','#3b6ff5'],['ty','体验','#e5484d'],['tw','推完','#f5a623'],['wj','完结率','#2e9e5b']];
+  _CITIES.forEach(function(c, i) {
+    var g = gaps[c], y = padT + i * rowH + 12;
+    s += '<text x="6" y="' + (y+11) + '" font-size="11.5" font-weight="700" fill="#1a2b4a">' + cityInfo[c].city + '</text>';
+    var x = padL;
+    segs.forEach(function(sg) {
+      var w = g[sg[0]] / maxTot * (W - padL - padR);
+      if (w < 0.5) return;
+      s += '<rect x="' + x.toFixed(1) + '" y="' + y + '" width="' + w.toFixed(1) + '" height="22" fill="' + sg[2] + '" opacity=".92"><title>' + cityInfo[c].city + ' ' + sg[1] + '缺口 ' + g[sg[0]].toFixed(2) + ' 分（权重×' + _W[sg[0]] + '）</title></rect>';
+      if (w > 34) s += '<text x="' + (x + w/2).toFixed(1) + '" y="' + (y+14.5) + '" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">' + g[sg[0]].toFixed(2) + '</text>';
+      x += w;
+    });
+    s += '<text x="' + (W - padR + 6) + '" y="' + (y+11) + '" font-size="10.5" font-weight="700" fill="#555">合计 ' + g.tot.toFixed(2) + '</text>';
+    var main = 'hd'; segs.forEach(function(sg){ if (g[sg[0]] > g[main]) main = sg[0]; });
+    var mainName = {hd:'HD 加盟履约', ty:'体验分', tw:'推完', wj:'完结率'}[main];
+    s += '<text x="' + padL + '" y="' + (y+34) + '" font-size="10" fill="#d93025">主因：' + mainName + '（占 ' + Math.round(g[main]/g.tot*100) + '%）</text>';
+  });
+  var lx = padL;
+  segs.forEach(function(sg) {
+    s += '<rect x="' + lx + '" y="' + (H-14) + '" width="11" height="8" rx="2" fill="' + sg[2] + '"/><text x="' + (lx+15) + '" y="' + (H-6) + '" font-size="10" fill="#666">' + sg[1] + '</text>';
+    lx += 15 + sg[1].length * 10 + 16;
+  });
+  box.innerHTML = '<svg id="gap-chart-svg" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="min-width:440px;width:100%;height:auto;display:block;">' + s + '</svg>';
+}
+function exportGapChart() { exportSvgPng('gap-chart-svg', '加权缺口分解（缺口=(100−值)×权重）', '加权缺口分解.png'); }
+
+// ===================== 图表页：推完高峰冲击图 =====================
+function renderBreachChart() {
+  var box = document.getElementById('breach-chart');
+  if (!box) return;
+  if (!dataDates.length) { box.innerHTML = '<div style="text-align:center;padding:18px 8px;color:#6b7280;font-size:12.5px;line-height:1.9;">⏳ BI 数据发布后，此处自动生成高峰日 vs 非高峰日对比<br><span style="font-size:11px;">标注 98.8 兜底线与高峰冲击差值</span></div>'; return; }
+  var peakSet = {}; peakDays.forEach(function(d){ peakSet[d] = 1; });
+  var data = {}, vals = [];
+  _CITIES.forEach(function(c) {
+    var pk = [], no = [];
+    dataDates.forEach(function(d) {
+      var dd = fullDataByDate[d];
+      var v = dd && dd[c] ? dd[c].twRate : null;
+      if (v === null || v === undefined) return;
+      (peakSet[d] ? pk : no).push(v);
+    });
+    data[c] = { pk: _avg(pk), no: _avg(no), pkN: pk.length, noN: no.length };
+    [data[c].pk, data[c].no].forEach(function(v){ if (v !== null) vals.push(v); });
+  });
+  if (!vals.length) { box.innerHTML = '<div style="text-align:center;padding:18px 8px;color:#6b7280;font-size:12.5px;line-height:1.9;">⏳ BI 数据发布后，此处自动生成高峰日 vs 非高峰日对比<br><span style="font-size:11px;">标注 98.8 兜底线与高峰冲击差值</span></div>'; return; }
+  var base = Math.floor((Math.min.apply(null, vals) - 0.18) * 10) / 10;
+  var top = Math.ceil((Math.max.apply(null, vals) + 0.15) * 10) / 10;
+  var W = 560, H = 250, padL = 50, padR = 12, padT = 14, padB = 48;
+  function Y(v) { return padT + (top - v) / (top - base) * (H - padT - padB); }
+  var s = '';
+  for (var t = 0; t <= 3; t++) {
+    var tv = base + (top - base) * t / 3, gy = Y(tv);
+    s += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (W-padR) + '" y2="' + gy + '" stroke="#eef1f5"/>';
+    s += '<text x="' + (padL-6) + '" y="' + (gy+3) + '" text-anchor="end" font-size="10" fill="#6b7280">' + tv.toFixed(1) + '%</text>';
+  }
+  if (_GB_LINE > base && _GB_LINE < top) {
+    var ly = Y(_GB_LINE);
+    s += '<line x1="' + padL + '" y1="' + ly + '" x2="' + (W-padR) + '" y2="' + ly + '" stroke="#d93025" stroke-width="1.3" stroke-dasharray="5 3" opacity=".8"/>';
+    s += '<text x="' + (W-padR-4) + '" y="' + (ly-4) + '" text-anchor="end" font-size="10" fill="#d93025">兜底线 ' + _GB_LINE + '</text>';
+  }
+  var groupW = (W - padL - padR) / _CITIES.length, barW = 30, gap2 = 12;
+  var series = [['no', '非高峰日均值', '#8ab4f8'], ['pk', '高峰日均值', '#f5a623']];
+  _CITIES.forEach(function(c, gi) {
+    var gx = padL + gi * groupW, d = data[c];
+    var bx = gx + (groupW - (series.length * barW + gap2)) / 2;
+    series.forEach(function(sr, si) {
+      var v = d[sr[0]], x = bx + si * (barW + gap2);
+      if (v === null) { s += '<text x="' + (x+barW/2) + '" y="' + (H-padB-6) + '" text-anchor="middle" font-size="9" fill="#8a919e">待发布</text>'; return; }
+      var by = Y(v);
+      s += '<rect x="' + x + '" y="' + by + '" width="' + barW + '" height="' + (H-padB-by) + '" rx="3" fill="' + sr[2] + '"><title>' + cityInfo[c].city + ' ' + sr[1] + ' ' + v.toFixed(2) + '%（样本 ' + (sr[0]==='pk'?d.pkN:d.noN) + ' 天）</title></rect>';
+      s += '<text x="' + (x+barW/2) + '" y="' + (by-4) + '" text-anchor="middle" font-size="9.5" fill="#555">' + v.toFixed(2) + '</text>';
+    });
+    var delta = (d.pk !== null && d.no !== null) ? (d.pk - d.no) : null;
+    s += '<text x="' + (gx+groupW/2) + '" y="' + (H-padB+16) + '" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a2b4a">' + cityInfo[c].city + '</text>';
+    s += '<text x="' + (gx+groupW/2) + '" y="' + (H-padB+30) + '" text-anchor="middle" font-size="9.5" fill="' + (delta !== null && delta < -0.1 ? '#d93025' : '#888') + '">高峰冲击 ' + (delta === null ? '—' : (delta>0?'+':'') + delta.toFixed(2) + 'pp') + '</text>';
+  });
+  s += '<line x1="' + padL + '" y1="' + (H-padB) + '" x2="' + (W-padR) + '" y2="' + (H-padB) + '" stroke="#d5dae2"/>';
+  var lx = padL;
+  series.forEach(function(sr) {
+    s += '<rect x="' + lx + '" y="' + (H-14) + '" width="11" height="8" rx="2" fill="' + sr[2] + '"/><text x="' + (lx+15) + '" y="' + (H-6) + '" font-size="10" fill="#666">' + sr[1] + '</text>';
+    lx += 15 + sr[1].length * 10 + 16;
+  });
+  box.innerHTML = '<svg id="breach-chart-svg" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="min-width:440px;width:100%;height:auto;display:block;">' + s + '</svg>';
+}
+function exportBreachChart() { exportSvgPng('breach-chart-svg', '推完兜底线：高峰日 vs 非高峰日均值', '推完高峰冲击对比.png'); }
+
+// ===================== 分析报告页：问题细化拆解 + 异常波动明细 =====================
+function _pairs(c, key) {
+  var out = [];
+  dataDates.forEach(function(d) {
+    var dd = fullDataByDate[d];
+    var v = dd && dd[c] ? dd[c][key] : null;
+    if (v !== null && v !== undefined) out.push({ d: d, v: v });
+  });
+  return out;
+}
+
+function renderIssuesBreakdown() {
+  var el = document.getElementById('issues-breakdown');
+  if (!el || el.dataset.rendered === '1') return;
+  var h = '<div class="card-title">🔍 问题细化拆解 & ⚡ 异常波动明细 <span class="slice-chip" style="margin-left:8px;">数据驱动 · 自动生成</span></div>';
+  if (!dataDates.length) {
+    h += '<div class="slice-empty">本月 BI 数据尚未发布，问题拆解将在数据积累后自动生成。</div>';
+    el.innerHTML = h; el.dataset.rendered = '1'; return;
+  }
+  var cut = dataDates[0].slice(0,3) + PB_CUT;
+  var P1 = dataDates.filter(function(d){ return d <= cut; });
+  var P2 = dataDates.filter(function(d){ return d > cut; });
+  var peakSet = {}; peakDays.forEach(function(d){ peakSet[d] = 1; });
+
+  // ── 每城统计 ──
+  var st = {};
+  _CITIES.forEach(function(c) {
+    var twP = _pairs(c, 'twRate'), hdP = _pairs(c, 'hdRate'), tyP = _pairs(c, 'tyScore'),
+        wjP = _pairs(c, 'wjRate'), ctP = _pairs(c, 'ctRate');
+    var brk = twP.filter(function(x){ return x.v < _GB_LINE; });
+    var brkPk = brk.filter(function(x){ return peakSet[x.d]; });
+    var pkV = [], noV = [];
+    twP.forEach(function(x){ (peakSet[x.d] ? pkV : noV).push(x.v); });
+    var chg = [];
+    for (var i = 1; i < twP.length; i++) chg.push({ d: twP[i].d, ch: twP[i].v - twP[i-1].v });
+    var hits = _std3(twP.map(function(x){ return x.v; })).map(function(x2, ix){
+      return { d: twP[x2.d] ? twP[x2.d].d : dataDates[x2.d], ch: x2.chg }; });
+    var zero = hdP.filter(function(x){ return x.v < 90; });
+    var danger = hdP.filter(function(x){ return x.v >= 90 && x.v < 91; });
+    var wjMin = null; wjP.forEach(function(x){ if (!wjMin || x.v < wjMin.v) wjMin = x; });
+    var pub = [];
+    [['HD', hdP], ['体验', tyP]].forEach(function(pp) {
+      for (var j = 1; j < pp[1].length; j++)
+        if (pp[1][j].d > cut && Math.abs(pp[1][j].v - pp[1][j-1].v) >= 0.001)
+          pub.push(pp[0] + ' ' + pp[1][j].d + ' 发布 ' + pp[1][j-1].v.toFixed(2) + '→' + pp[1][j].v.toFixed(2));
+    });
+    st[c] = {
+      tw: { n: twP.length, brk: brk, brkPk: brkPk.length, min: _mn(twP.map(function(x){return x.v;})),
+            pk: _avg(pkV), no: _avg(noV), hits: hits,
+            drop: chg.slice().sort(function(a,b){return a.ch-b.ch;})[0] || null },
+      hd: { zero: zero, danger: danger.length, last: hdP.length ? hdP[hdP.length-1].v : null },
+      ty: { last: tyP.length ? tyP[tyP.length-1].v : null },
+      wj: { min: wjMin, p1: _avg(wjP.filter(function(x){return x.d<=cut;}).map(function(x){return x.v;})),
+            p2: _avg(wjP.filter(function(x){return x.d>cut;}).map(function(x){return x.v;})) },
+      ct: { first: ctP.length ? ctP[0].v : null, last: ctP.length ? ctP[ctP.length-1].v : null },
+      pub: pub
+    };
+  });
+
+  // ── 核心结论（SLICE_M 优先，缺省用 MTD 近似） ──
+  var mm = {}, tag = '';
+  if (SLICE_M) { _CITIES.forEach(function(c){ mm[c] = { score: SLICE_M[c].score, level: SLICE_M[c].level }; }); }
+  else {
+    tag = '（MTD 近似口径）';
+    _CITIES.forEach(function(c) {
+      var s2 = st[c];
+      mm[c] = { score: (100-(s2.hd.last||100))*_W.hd + (100-(s2.ty.last||100))*_W.ty + (100-(s2.tw.min!==null? (s2.tw.pk||s2.tw.min):100))*_W.tw + (100-(s2.wj.p2||s2.wj.p1||100))*_W.wj, level: '' };
+      mm[c].score = Math.round(mm[c].score*100)/100;
+    });
+  }
+  var worst = _CITIES[0];
+  _CITIES.forEach(function(c){ if (mm[c].score < mm[worst].score) worst = c; });
+  h += '<div style="font-size:13.5px;font-weight:700;margin:8px 0 6px;">核心结论' + tag + '</div>';
+  h += '<div style="background:#fff5f5;border-radius:8px;padding:10px 14px;font-size:13px;line-height:2;">'
+    + '<b style="color:#d93025;">总分最低：' + cityInfo[worst].city + ' ' + mm[worst].score.toFixed(2) + (mm[worst].level ? '（' + mm[worst].level + '）' : '') + '</b>'
+    + '；各城主因：' + _CITIES.map(function(c){
+        if (SLICE_M) {
+          var g = { hd:(100-SLICE_M[c].hd)*_W.hd, ty:(100-SLICE_M[c].ty)*_W.ty, tw:(100-SLICE_M[c].tw)*_W.tw, wj:(100-SLICE_M[c].wj)*_W.wj };
+          var main = 'hd'; ['ty','tw','wj'].forEach(function(k){ if (g[k] > g[main]) main = k; });
+          var nm = {hd:'HD', ty:'体验', tw:'推完', wj:'完结率'}[main];
+          return cityInfo[c].city + '=' + nm + '（' + Math.round(g[main]/(g.hd+g.ty+g.tw+g.wj)*100) + '%）';
+        }
+        return cityInfo[c].city + '（MTD）';
+      }).join('、')
+    + '；兜底击穿最多：' + _CITIES.slice().sort(function(a,b){ return st[b].tw.brk.length - st[a].tw.brk.length; })[0]
+    + ' ' + st[_CITIES.slice().sort(function(a,b){ return st[b].tw.brk.length - st[a].tw.brk.length; })[0]].tw.brk.length + ' 天</div>';
+
+  // ── 表A 城市问题拆解 ──
+  h += '<div style="font-size:13.5px;font-weight:700;margin:14px 0 6px;">① 城市问题细化拆解</div>';
+  h += '<table><thead><tr><th style="width:64px;">城市</th><th>问题清单（按严重度排序）</th></tr></thead><tbody>';
+  var nm2 = { hd: 'HD', ty: '体验', tw: '推完', wj: '完结率', ct: '承托比' };
+  _CITIES.forEach(function(c) {
+    var s2 = st[c], items = [];
+    if (SLICE_M) {
+      var g = { hd:(100-SLICE_M[c].hd)*_W.hd, ty:(100-SLICE_M[c].ty)*_W.ty, tw:(100-SLICE_M[c].tw)*_W.tw, wj:(100-SLICE_M[c].wj)*_W.wj };
+      var main = 'hd'; ['ty','tw','wj'].forEach(function(k){ if (g[k] > g[main]) main = k; });
+      items.push('<span class="tag tag-red">主因</span> ' + nm2[main] + ' 缺口 ' + g[main].toFixed(2) + ' 分（占 ' + Math.round(g[main]/(g.hd+g.ty+g.tw+g.wj)*100) + '%）');
+      if (main === 'hd' && SLICE_M[c].hd < 95) items.push('<span class="tag tag-red">高危</span> HD ' + SLICE_M[c].hd.toFixed(2) + '，距 90 零分红线仅 ' + (SLICE_M[c].hd-90).toFixed(2) + 'pp');
+    }
+    if (s2.hd.zero.length) items.push('<span class="tag tag-red">零分日</span> HD&lt;90 共 ' + s2.hd.zero.length + ' 天（' + s2.hd.zero.map(function(x){return x.d.slice(3)+'='+x.v.toFixed(1);}).join('、') + '），月度总分被直接拉低');
+    if (s2.hd.danger) items.push('<span class="tag tag-orange">高危日</span> HD 在 90~91 区间 ' + s2.hd.danger + ' 天，随时可能再触发零分');
+    if (s2.ty.last !== null && s2.ty.last < 93) items.push('<span class="tag tag-orange">短板</span> 体验分 ' + s2.ty.last.toFixed(2) + '，' + (_CITIES.every(function(c2){ return !st[c2].ty.last || s2.ty.last <= st[c2].ty.last; }) ? '三城最低' : '低于 93 预警参考'));
+    if (s2.tw.brk.length >= 10) items.push('<span class="tag tag-red">基线</span> 推完击穿 ' + s2.tw.brk.length + ' 天（常态贴线，基线问题非高峰问题）；P1 均值 ' + _fv(_avg(_sv(c,'twRate',P1))) + (P2.length ? '，P2 均值 ' + _fv(_avg(_sv(c,'twRate',P2))) : ''));
+    else if (s2.tw.brk.length) items.push('<span class="tag tag-orange">击穿</span> 推完击穿 ' + s2.tw.brk.length + ' 天（其中高峰日 ' + s2.tw.brkPk + ' 天），最低 ' + _fv(s2.tw.min));
+    if (s2.wj.min && s2.wj.min.v < 99) items.push('<span class="tag tag-orange">异常日</span> 完结率 ' + s2.wj.min.d.slice(3) + ' 单日 ' + s2.wj.min.v.toFixed(2) + '（全月最低），建议核查是否可报备剔除');
+    if (s2.ct.first !== null && s2.ct.last !== null && s2.ct.last - s2.ct.first < -0.5) items.push('<span class="tag tag-orange">运力</span> 承托比 ' + s2.ct.first.toFixed(1) + '%→' + s2.ct.last.toFixed(1) + '%（' + (s2.ct.last-s2.ct.first).toFixed(1) + 'pp），运力供给走弱将拖累 HD');
+    if (!items.length) items.push('<span class="tag tag-green">正常</span> 暂无显著问题项');
+    h += '<tr><td class="city-cell">' + c + '</td><td style="white-space:normal;text-align:left;line-height:2;">' + items.join('<br>') + '</td></tr>';
+  });
+  h += '</tbody></table>';
+
+  // ── 表B 异常波动明细 ──
+  h += '<div style="font-size:13.5px;font-weight:700;margin:14px 0 6px;">② 异常波动明细（3σ 异动 · 指标发布变动 · 单日极值）</div>';
+  h += '<table><thead><tr><th style="width:64px;">城市</th><th>明细</th></tr></thead><tbody>';
+  _CITIES.forEach(function(c) {
+    var s2 = st[c], rows = [];
+    s2.tw.hits.forEach(function(x2){
+      rows.push('<span class="tag tag-red">3σ</span> 推完 ' + x2.d + ' 环比 ' + (x2.ch>0?'+':'') + x2.ch.toFixed(2) + 'pp' + (x2.ch < -1 ? '（高峰冲击，次日修复情况需盯盘）' : ''));
+    });
+    if (s2.tw.drop && s2.tw.drop.ch < -0.8 && !s2.tw.hits.some(function(x2){ return x2.d === s2.tw.drop.d; }))
+      rows.push('<span class="tag tag-orange">骤降</span> 推完 ' + s2.tw.drop.d + ' 环比 ' + s2.tw.drop.ch.toFixed(2) + 'pp');
+    if (s2.wj.min && s2.wj.min.v < 99) rows.push('<span class="tag tag-orange">极值</span> 完结率全月最低 ' + s2.wj.min.d.slice(3) + ' = ' + s2.wj.min.v.toFixed(2));
+    if (s2.ct.first !== null && s2.ct.last !== null) rows.push('<span class="tag ' + (s2.ct.last-s2.ct.first < -0.5 ? 'tag-orange' : 'tag-green') + '">承托比</span> 期初 ' + s2.ct.first.toFixed(1) + '% → 期末 ' + s2.ct.last.toFixed(1) + '%（' + (s2.ct.last-s2.ct.first>0?'+':'') + (s2.ct.last-s2.ct.first).toFixed(1) + 'pp）');
+    if (!rows.length) rows.push('<span class="tag tag-green">正常</span> 暂无异动');
+    h += '<tr><td class="city-cell">' + c + '</td><td style="white-space:normal;text-align:left;line-height:2;">' + rows.join('<br>') + '</td></tr>';
+  });
+  h += '</tbody></table>';
+  h += '<div class="slice-note">口径说明：体验分/HD 按 BI 发布节奏更新（期末值为准）；推完/完结率日均为近似口径；零分日=HD 单日 &lt;90%。以上内容由 AI 生成，仅供参考，以业务解释为准。</div>';
+  el.innerHTML = h;
+  el.dataset.rendered = '1';
+}
+
+// ===================== 预估测算器 =====================
+var presetScenarios = {
+  optimistic: {jm:98, ty:96, tw:99.5, wj:99.9},
+  realistic: {jm:95, ty:95, tw:99.2, wj:99.9},
+  conservative: {jm:92, ty:92, tw:98.5, wj:99.5}
+};
+
+function applyPreset(type) {
+  var p = presetScenarios[type];
+  setVal('pre_jm', p.jm);
+  setVal('pre_ty', p.ty);
+  setVal('pre_tw', p.tw);
+  setVal('pre_wj', p.wj);
+  document.querySelectorAll('.preset-scenario').forEach(function(el){ el.classList.remove('active'); });
+  event.currentTarget.classList.add('active');
+  calcPreset();
+}
+
+function calcPreset() {
+  var totalDays = 30;
+  var daysActual = dataDates.length;
+  var daysRemaining = totalDays - daysActual;
+  // Update dynamic labels
+  var elRem = document.getElementById('preset-remaining-days');
+  if (elRem) elRem.textContent = daysRemaining;
+  var elCurLabel = document.getElementById('pc-current-label');
+  if (elCurLabel) elCurLabel.textContent = '当前MTD总分（' + daysActual + '天）';
+  var elDesc = document.getElementById('preset-desc-text');
+  if (elDesc) {
+    var lastDay = parseInt(dataDates[dataDates.length-1].split('-')[1]);
+    var startRem = lastDay + 1;
+    elDesc.textContent = daysRemaining > 0 ? '设定剩余' + daysRemaining + '天（9/' + startRem + '-9/30）各指标预估值，自动测算月度预估总分' : '全月 30/30 天已收官，无需预估；调整指标值可做复盘模拟';
+  }
+  var jm = getVal('pre_jm'), ty = getVal('pre_ty'), tw = getVal('pre_tw'), wj = getVal('pre_wj');
+  if (!jm || !ty || !tw || !wj) return;
+
+  // Calculate current MTD scores per city
+  Object.keys(cityInfo).forEach(function(ck) {
+    var ms = monthlyData[ck] ? monthlyData[ck].score : 0;
+    // MTD average values (from latest data)
+    var latest = dailyByDate[dataDates[dataDates.length-1]] && dailyByDate[dataDates[dataDates.length-1]][ck];
+    if (!latest) return;
+
+    // Current MTD weighted score
+    var currentScore = ms;
+    // Estimated: blend actual days with preset days
+    // Simplified: new score = (currentScore * daysActual + estimatedScore * daysRemaining) / totalDays
+    var estJm = jm < 90 ? 0 : Math.min(jm, 100);
+    var estTy = Math.min(Math.max(ty, 50), 110);
+    var estTw = Math.min(tw, 110);
+    var estWj = wj < 80 ? 0 : Math.min(wj, 110);
+    var estimatedScore = estJm * 0.50 + estTy * 0.20 + estTw * 0.20 + estWj * 0.10;
+    var blendedScore = (currentScore * daysActual + estimatedScore * daysRemaining) / totalDays;
+    blendedScore = Math.round(blendedScore * 100) / 100;
+
+    // Update scenario cards
+    var optScore = (currentScore * daysActual + (98*0.5+96*0.2+99.5*0.2+99.9*0.1) * daysRemaining) / totalDays;
+    var realScore = (currentScore * daysActual + (95*0.5+95*0.2+99.2*0.2+99.9*0.1) * daysRemaining) / totalDays;
+    var consScore = (currentScore * daysActual + (0*0.5+92*0.2+98.5*0.2+99.5*0.1) * daysRemaining) / totalDays;
+
+    // Only show for current city
+    if (ck !== currentCity) return;
+
+    var elOpt = document.getElementById('ps-optimistic');
+    var elReal = document.getElementById('ps-realistic');
+    var elCons = document.getElementById('ps-conservative');
+    if (elOpt) elOpt.textContent = optScore.toFixed(1) + '%';
+    if (elReal) elReal.textContent = realScore.toFixed(1) + '%';
+    if (elCons) elCons.textContent = consScore.toFixed(1) + '%';
+
+    // Compare box
+    var elCur = document.getElementById('pc-current');
+    var elEst = document.getElementById('pc-estimated');
+    var elDelta = document.getElementById('pc-delta');
+    var elCurLevel = document.getElementById('pc-current-level');
+    if (elCur) { elCur.textContent = currentScore + '%'; }
+    if (elCurLevel) { elCurLevel.textContent = monthlyData[ck] ? monthlyData[ck].level : '—'; }
+    if (elEst) { elEst.textContent = blendedScore.toFixed(1) + '%'; }
+    if (elDelta) {
+      var delta = blendedScore - currentScore;
+      var sign = delta >= 0 ? '+' : '';
+      var dColor = delta >= 0 ? '#34a853' : '#d93025';
+      elDelta.innerHTML = '<span style="color:' + dColor + ';">' + sign + delta.toFixed(2) + '%</span>';
+      // Level prediction
+      var estLevel = blendedScore >= 100 ? '达标' : blendedScore >= 95 ? '警告' : blendedScore >= 90 ? '警告' : '重罚';
+      var lc = blendedScore >= 100 ? '#34a853' : blendedScore >= 95 ? '#f5a623' : '#d93025';
+      elDelta.innerHTML += '<br><span style="color:' + lc + ';font-size:12px;">预估等级：' + estLevel + '</span>';
+    }
+  });
+}
+
+// ===================== 指标走势图（三城对比，SVG） =====================
+var tcMetrics = [
+  {id:'tw', name:'推单完成率', unit:'%', get:function(c, ds){ var i = dataDates.indexOf(ds); var v = trendRaw[c].tw[i]; return (v===undefined?null:v); }},
+  {id:'ty', name:'体验考核分', unit:'', get:function(c, ds){ var i = dataDates.indexOf(ds); var v = trendRaw[c].ty[i]; return (v===undefined?null:v); }},
+  {id:'hd', name:'HD完成率', unit:'%', get:function(c, ds){ var i = dataDates.indexOf(ds); var v = trendRaw[c].hd[i]; return (v===undefined?null:v); }},
+  {id:'ct', name:'承托比', unit:'%', get:function(c, ds){ var fd = fullDataByDate[ds]; return (fd && fd[c]) ? fd[c].ctRate : null; }},
+  {id:'wj', name:'完结率', unit:'%', get:function(c, ds){ var fd = fullDataByDate[ds]; return (fd && fd[c]) ? fd[c].wjRate : null; }}
+];
+var tcCityColors = {'泰兴':'#1a73e8', '诸暨':'#e8710a', '响水':'#188038'};
+var tcCurrent = 'hd'; // 默认展示 HD完成率（权重50%的P0核心考核指标）
+var tcChartType = 'line'; // 走势图类型：line=折线 bar=柱状
+var PB_CUT = ({ '09': '13', '10': '18' })[(dataDates[0] || '').slice(0, 2)] || '13'; // 两期对比第1期截止日（9月:9/13；10月:10/18），空数据安全
+var DATA_YEAR = 2026; // 数据年份（完整性自检断档校验用）
+
+function initTrendChart() {
+  var bar = document.getElementById('tc-toolbar');
+  if (!bar) return;
+  var html = '';
+  html += '<button class="tc-btn' + (tcChartType === 'line' ? ' active' : '') + '" id="tc-type-line" onclick="switchTrendType(\'line\')">📉 折线</button>';
+  html += '<button class="tc-btn' + (tcChartType === 'bar' ? ' active' : '') + '" id="tc-type-bar" onclick="switchTrendType(\'bar\')">📊 柱状</button>';
+  html += '<span class="tc-divider"></span>';
+  tcMetrics.forEach(function(m) {
+    html += '<button class="tc-btn' + (m.id === tcCurrent ? ' active' : '') + '" id="tc-btn-' + m.id + '" onclick="switchTrendMetric(\'' + m.id + '\')">' + m.name + '</button>';
+  });
+  html += '<div class="tc-legend">';
+  Object.keys(tcCityColors).forEach(function(c) {
+    html += '<span class="tc-legend-item"><span class="tc-legend-dot" style="background:' + tcCityColors[c] + ';"></span>' + cityInfo[c].city + '</span>';
+  });
+  html += '</div>';
+  html += '<button class="tc-btn tc-export" onclick="exportTrendChart()" title="将当前走势图导出为PNG图片">⬇ 导出图片</button>';
+  bar.innerHTML = html;
+  var cpb = document.getElementById('charts-period-bar');
+  if (cpb) {
+    ['p1', 'p2', 'all'].forEach(function(p) {
+      var src = document.getElementById('btn-' + p);
+      cpb.innerHTML += '<button class="period-btn' + (currentPeriod === p ? ' active' : '') + '" data-p="' + p + '" onclick="switchPeriod(\'' + p + '\')">' + (src ? src.textContent : p) + '</button>';
+    });
+  }
+  renderTrendChart();
+  renderPeriodBars();
+  highlightMetricTables();
+}
+
+function switchTrendType(t) {
+  tcChartType = t;
+  var l = document.getElementById('tc-type-line');
+  var b = document.getElementById('tc-type-bar');
+  if (l) l.classList.toggle('active', t === 'line');
+  if (b) b.classList.toggle('active', t === 'bar');
+  renderTrendChart();
+}
+
+function switchTrendMetric(id) {
+  tcCurrent = id;
+  document.querySelectorAll('.tc-btn').forEach(function(b){ b.classList.remove('active'); });
+  var btn = document.getElementById('tc-btn-' + id);
+  if (btn) btn.classList.add('active');
+  renderTrendChart();
+  renderPeriodBars();
+  highlightMetricTables();
+}
+
+function renderTrendChart() {
+  var svg = document.getElementById('trend-chart-svg');
+  if (!svg) return;
+  var W = 1000, H = 300, padL = 50, padR = 18, padT = 16, padB = 34;
+  var m = null;
+  tcMetrics.forEach(function(x){ if (x.id === tcCurrent) m = x; });
+  if (!m) m = tcMetrics[0];
+  var fd = getFilteredDates();
+  var n = fd.length;
+  if (!n) { svg.innerHTML = '<text x="500" y="150" text-anchor="middle" class="tc-tick" font-size="13">该周期暂无数据</text>'; return; }
+  var series = {}, vals = [];
+  Object.keys(cityInfo).forEach(function(c) {
+    series[c] = fd.map(function(ds){ var v = m.get(c, ds); return (v === null || v === undefined) ? null : v; });
+    series[c].forEach(function(v){ if (v !== null) vals.push(v); });
+  });
+  if (!vals.length) { svg.innerHTML = '<text x="500" y="150" text-anchor="middle" class="tc-tick" font-size="13">该周期暂无数据</text>'; return; }
+  var vmin = Math.min.apply(null, vals), vmax = Math.max.apply(null, vals);
+  var span = (vmax - vmin) || 1;
+  vmin = Math.floor((vmin - span * 0.18) * 10) / 10;
+  vmax = Math.ceil((vmax + span * 0.12) * 10) / 10;
+  var plotW = W - padL - padR;
+  var slotW = plotW / n;
+  var isBar = tcChartType === 'bar';
+  function X(i) { return isBar ? padL + (i + 0.5) * slotW : padL + (n === 1 ? plotW / 2 : i * plotW / (n - 1)); }
+  function Y(v) { return padT + (vmax - v) / (vmax - vmin) * (H - padT - padB); }
+  var s = '';
+  var ticks = 4;
+  for (var t = 0; t <= ticks; t++) {
+    var tv = vmin + (vmax - vmin) * t / ticks;
+    var gy = Y(tv);
+    s += '<line class="tc-gridline" x1="' + padL + '" y1="' + gy + '" x2="' + (W - padR) + '" y2="' + gy + '"/>';
+    s += '<text class="tc-tick" x="' + (padL - 6) + '" y="' + (gy + 3) + '" text-anchor="end">' + (Math.round(tv * 10) / 10) + (m.unit || '') + '</text>';
+  }
+  s += '<line class="tc-axis" x1="' + padL + '" y1="' + (H - padB) + '" x2="' + (W - padR) + '" y2="' + (H - padB) + '"/>';
+  fd.forEach(function(ds, i) {
+    if (!isPeakDay(ds)) return;
+    if (isBar) s += '<rect class="tc-peak" x="' + (padL + i * slotW + 1).toFixed(1) + '" y="' + padT + '" width="' + Math.max(3, slotW - 2).toFixed(1) + '" height="' + (H - padT - padB) + '" rx="4"/>';
+    else s += '<rect class="tc-peak" x="' + (X(i) - 13) + '" y="' + padT + '" width="26" height="' + (H - padT - padB) + '" rx="4"/>';
+  });
+  function refLine(refv, label) {
+    var ry = Y(refv);
+    if (ry > padT + 4 && ry < H - padB - 4) {
+      s += '<line class="tc-zeroline" x1="' + padL + '" y1="' + ry + '" x2="' + (W - padR) + '" y2="' + ry + '"/>';
+      s += '<text class="tc-zerotext" x="' + (W - padR - 2) + '" y="' + (ry - 4) + '" text-anchor="end">' + label + '</text>';
+    }
+  }
+  if (m.id === 'hd') refLine(90, '90% 零分警戒线');
+  if (m.id === 'tw') refLine(98.8, '98.8% 兜底线');
+  var step = Math.max(1, Math.ceil(n / 16));
+  fd.forEach(function(ds, i) {
+    if (i % step !== 0 && i !== n - 1) return;
+    s += '<text class="tc-tick" x="' + X(i) + '" y="' + (H - padB + 16) + '" text-anchor="middle">' + parseInt(ds.split('-')[1]) + '/' + parseInt(ds.split('-')[0]) + '</text>';
+  });
+  if (isBar) {
+    var ckeys = Object.keys(cityInfo);
+    var bw = Math.min(13, Math.max(1.5, (slotW * 0.76) / ckeys.length));
+    var bg = bw * 0.22;
+    fd.forEach(function(ds, i) {
+      var groupW = ckeys.length * bw + (ckeys.length - 1) * bg;
+      var bx = padL + i * slotW + (slotW - groupW) / 2;
+      ckeys.forEach(function(c, ci) {
+        var v = series[c][i];
+        if (v === null || v === undefined) return;
+        var x = bx + ci * (bw + bg);
+        var y = Y(v);
+        var tip = parseInt(fd[i].split('-')[1]) + '/' + parseInt(fd[i].split('-')[0]) + ' ' + cityInfo[c].city + ' ' + m.name + ' ' + v + (m.unit || '') + (isPeakDay(fd[i]) ? '（高峰日）' : '');
+        s += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + Math.max(1, H - padB - y).toFixed(1) + '" rx="1.5" fill="' + tcCityColors[c] + '"><title>' + tip + '</title></rect>';
+      });
+    });
+  } else {
+  Object.keys(cityInfo).forEach(function(c) {
+    var col = tcCityColors[c];
+    var segs = [], seg = [];
+    series[c].forEach(function(v, i) {
+      if (v === null) { if (seg.length) segs.push(seg); seg = []; }
+      else seg.push([X(i), Y(v)]);
+    });
+    if (seg.length) segs.push(seg);
+    segs.forEach(function(sg) {
+      s += '<polyline fill="none" stroke="' + col + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" points="' + sg.map(function(p){ return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' ') + '"/>';
+    });
+    series[c].forEach(function(v, i) {
+      if (v === null) return;
+      var tip = parseInt(fd[i].split('-')[1]) + '/' + parseInt(fd[i].split('-')[0]) + ' ' + cityInfo[c].city + ' ' + m.name + ' ' + v + (m.unit || '') + (isPeakDay(fd[i]) ? '（高峰日）' : '');
+      s += '<circle class="tc-dot" cx="' + X(i).toFixed(1) + '" cy="' + Y(v).toFixed(1) + '" r="3" fill="' + col + '"><title>' + tip + '</title></circle>';
+    });
+  });
+  }
+  var si = fd.indexOf(currentDate);
+  if (si >= 0) {
+    if (isBar) s += '<rect x="' + (padL + si * slotW).toFixed(1) + '" y="' + padT + '" width="' + slotW.toFixed(1) + '" height="' + (H - padT - padB) + '" fill="rgba(26,43,74,0.10)"/>';
+    else s += '<line class="tc-selline" x1="' + X(si).toFixed(1) + '" y1="' + padT + '" x2="' + X(si).toFixed(1) + '" y2="' + (H - padB) + '"/>';
+  }
+  svg.innerHTML = s;
+}
+
+// ===================== 走势图导出 PNG =====================
+var TC_EXPORT_CSS = '.tc-gridline{stroke:#e9edf3;stroke-width:1}.tc-axis{stroke:#c9d0da;stroke-width:1}.tc-tick{font-size:10.5px;fill:#8a93a3}.tc-peak{fill:#fff3cd;opacity:.5}.tc-zeroline{stroke:#d93025;stroke-width:1;stroke-dasharray:5 3;opacity:.55}.tc-zerotext{font-size:10px;fill:#d93025;opacity:.9}.tc-selline{stroke:#1a2b4a;stroke-width:1.2;stroke-dasharray:3 2;opacity:.7}.tc-dot{stroke:#fff;stroke-width:1.5}text{font-family:"PingFang SC","Microsoft YaHei",sans-serif}';
+
+function tcMetricObj() {
+  var m = null;
+  tcMetrics.forEach(function(x){ if (x.id === tcCurrent) m = x; });
+  return m || tcMetrics[0];
+}
+
+// 通用 SVG→PNG 导出（走势图/两期对比/月度对比共用）
+function exportSvgPng(svgId, titleText, fileName) {
+  var svg = document.getElementById(svgId);
+  if (!svg || !svg.innerHTML || !svg.innerHTML.trim()) { alert('暂无可导出的图表内容'); return; }
+  var vb = (svg.getAttribute('viewBox') || '0 0 1000 300').trim().split(/\s+/);
+  var W = parseFloat(vb[2]) || 1000, H = parseFloat(vb[3]) || 300, scale = 2;
+  var clone = svg.cloneNode(true);
+  clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  clone.setAttribute('width', W * scale);
+  clone.setAttribute('height', H * scale);
+  var styleEl = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+  styleEl.textContent = TC_EXPORT_CSS;
+  clone.insertBefore(styleEl, clone.firstChild);
+  var bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  bg.setAttribute('x', '0'); bg.setAttribute('y', '0');
+  bg.setAttribute('width', '100%'); bg.setAttribute('height', '100%');
+  bg.setAttribute('fill', '#ffffff');
+  clone.insertBefore(bg, styleEl.nextSibling);
+  var title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  title.setAttribute('x', '6'); title.setAttribute('y', '12');
+  title.setAttribute('font-size', '12'); title.setAttribute('fill', '#333');
+  title.setAttribute('font-weight', '700');
+  title.textContent = titleText;
+  clone.insertBefore(title, bg.nextSibling);
+  var xml = new XMLSerializer().serializeToString(clone);
+  var svgBlob = new Blob([xml], { type: 'image/svg+xml;charset=utf-8' });
+  var url = URL.createObjectURL(svgBlob);
+  var img = new Image();
+  img.onload = function() {
+    var canvas = document.createElement('canvas');
+    canvas.width = W * scale; canvas.height = H * scale;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    URL.revokeObjectURL(url);
+    var finish = function(blobOrUrl) {
+      var a = document.createElement('a');
+      if (typeof blobOrUrl === 'string') a.href = blobOrUrl;
+      else a.href = URL.createObjectURL(blobOrUrl);
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+    };
+    if (canvas.toBlob) canvas.toBlob(finish, 'image/png');
+    else finish(canvas.toDataURL('image/png'));
+  };
+  img.onerror = function() { alert('导出失败，请重试'); URL.revokeObjectURL(url); };
+  img.src = url;
+}
+
+function exportTrendChart() {
+  var m = tcMetricObj();
+  var fd = getFilteredDates();
+  var range = fd.length ? (fd[0] + '~' + fd[fd.length - 1]) : currentDate;
+  exportSvgPng('trend-chart-svg', '三城指标走势 · ' + m.name + ' · ' + range, '指标走势图-' + m.name + '-' + range + '.png');
+}
+
+function exportPeriodChart() {
+  var m = tcMetricObj();
+  exportSvgPng('period-bar-svg', '两期考核均值对比 · ' + m.name, '两期均值对比-' + m.name + '.png');
+}
+
+function exportMonthChart() {
+  exportSvgPng('month-bar-svg', '三城月度总分对比', '三城月度总分对比.png');
+}
+
+// ===================== 周期均值对比柱状图 =====================
+function pbFmt(ds) { return parseInt(ds.split('-')[1]) + '/' + parseInt(ds.split('-')[0]); }
+
+function periodMetricAvg(c, m, cut) {
+  var buckets = { p1: [], p2: [] };
+  dataDates.forEach(function(ds) {
+    var v = m.get(c, ds);
+    if (v === null || v === undefined) return;
+    (ds <= cut ? buckets.p1 : buckets.p2).push(v);
+  });
+  function avg(a) { return a.length ? Math.round(a.reduce(function(s, x) { return s + x; }, 0) / a.length * 100) / 100 : null; }
+  return { p1: avg(buckets.p1), p2: avg(buckets.p2) };
+}
+
+function renderPeriodBars() {
+  var box = document.getElementById('period-bar-chart');
+  if (!box) return;
+  if (!dataDates.length) { box.innerHTML = '<div style="font-size:12px;color:#6b7280;padding:6px 0;">暂无周期均值数据，BI 公布后自动展示</div>'; return; }
+  var m = null;
+  tcMetrics.forEach(function(x) { if (x.id === tcCurrent) m = x; });
+  if (!m) m = tcMetrics[0];
+  var cities = Object.keys(cityInfo);
+  var cut = dataDates[0].slice(0, 3) + PB_CUT;
+  var last = dataDates[dataDates.length - 1];
+  var series = [
+    { id: 'p1', name: '第1期均值 (' + pbFmt(dataDates[0]) + '-' + pbFmt(cut) + ')', color: '#8ab4f8' }
+  ];
+  if (last > cut) series.push({ id: 'p2', name: '第2期均值 (' + pbFmt(dataDates.filter(function(d){return d>cut;})[0]) + '-' + pbFmt(last) + ')', color: '#1a73e8' });
+  var vals = [], data = {};
+  cities.forEach(function(c) {
+    data[c] = periodMetricAvg(c, m, cut);
+    series.forEach(function(s2) { var v = data[c][s2.id]; if (v !== null) vals.push(v); });
+  });
+  if (!vals.length) { box.innerHTML = '<div style="font-size:12px;color:#6b7280;padding:6px 0;">暂无周期均值数据，BI 公布后自动展示</div>'; return; }
+  var vmin = Math.min.apply(null, vals), vmax = Math.max.apply(null, vals);
+  var span = (vmax - vmin) || 1;
+  var base = Math.max(0, Math.floor((vmin - span * 0.6) * 10) / 10);
+  var top = Math.ceil((vmax + span * 0.35) * 10) / 10;
+  var W = 1000, H = 240, padL = 52, padR = 12, padT = 14, padB = 46;
+  function Y(v) { return padT + (top - v) / (top - base) * (H - padT - padB); }
+  var s = '';
+  for (var t = 0; t <= 3; t++) {
+    var tv = base + (top - base) * t / 3;
+    var gy = Y(tv);
+    s += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (W - padR) + '" y2="' + gy + '" stroke="#eef1f5"/>';
+    s += '<text x="' + (padL - 6) + '" y="' + (gy + 3) + '" text-anchor="end" font-size="10" fill="#6b7280">' + (Math.round(tv * 10) / 10) + (m.unit || '') + '</text>';
+  }
+  var groupW = (W - padL - padR) / cities.length;
+  var barW = 30, innerGap = 10;
+  cities.forEach(function(c, gi) {
+    var gx = padL + gi * groupW;
+    var d = data[c];
+    var totalW = series.length * barW + (series.length - 1) * innerGap;
+    var bx = gx + (groupW - totalW) / 2;
+    series.forEach(function(s2, si) {
+      var v = d[s2.id];
+      var x = bx + si * (barW + innerGap);
+      if (v === null) {
+        s += '<text x="' + (x + barW / 2) + '" y="' + (H - padB - 6) + '" text-anchor="middle" font-size="9" fill="#8a919e">待发布</text>';
+        return;
+      }
+      var by = Y(v);
+      s += '<rect x="' + x + '" y="' + by + '" width="' + barW + '" height="' + (H - padB - by) + '" rx="3" fill="' + s2.color + '"><title>' + cityInfo[c].city + ' ' + s2.name + ' ' + v + (m.unit || '') + '</title></rect>';
+      s += '<text x="' + (x + barW / 2) + '" y="' + (by - 4) + '" text-anchor="middle" font-size="9.5" fill="#555">' + v + '</text>';
+    });
+    s += '<text x="' + (gx + groupW / 2) + '" y="' + (H - padB + 16) + '" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a2b4a">' + cityInfo[c].city + '</text>';
+  });
+  s += '<line x1="' + padL + '" y1="' + (H - padB) + '" x2="' + (W - padR) + '" y2="' + (H - padB) + '" stroke="#d5dae2"/>';
+  var lx = padL;
+  series.forEach(function(s2) {
+    s += '<rect x="' + lx + '" y="' + (H - 14) + '" width="12" height="8" rx="2" fill="' + s2.color + '"/>';
+    s += '<text x="' + (lx + 16) + '" y="' + (H - 6) + '" font-size="10" fill="#666">' + s2.name + '</text>';
+    lx += 16 + s2.name.length * 10 + 18;
+  });
+  box.innerHTML = '<svg id="period-bar-svg" viewBox="0 0 ' + W + ' ' + H + '" style="min-width:460px;width:100%;height:auto;display:block;">' + s + '</svg>';
+}
+
+// ===================== 三城月度总分对比条 =====================
+function renderMonthBars() {
+  var box = document.getElementById('month-bar-chart');
+  if (!box) return;
+  var cities = Object.keys(cityInfo);
+  var hasScore = cities.some(function(c) { return monthlyData[c] && typeof monthlyData[c].score === 'number'; });
+  if (!hasScore) { box.innerHTML = '<div style="font-size:12px;color:#6b7280;padding:6px 0;">暂无月度总分数据，BI 公布后自动展示</div>'; return; }
+  var lo = 90, hi = 100;
+  var W = 560, rowH = 46, padT = 10, padB = 30, padL = 64, padR = 16;
+  var H = padT + cities.length * rowH + padB;
+  function MX(v) { return padL + (Math.min(hi, Math.max(lo, v)) - lo) / (hi - lo) * (W - padL - padR); }
+  var s = '';
+  [90, 92, 94, 96, 98, 100].forEach(function(tv) {
+    var x = MX(tv);
+    s += '<line x1="' + x + '" y1="' + padT + '" x2="' + x + '" y2="' + (H - padB + 8) + '" stroke="#eef1f5"/>';
+    s += '<text x="' + x + '" y="' + (H - 10) + '" text-anchor="middle" font-size="9.5" fill="#6b7280">' + tv + '%</text>';
+  });
+  s += '<line x1="' + MX(95) + '" y1="' + padT + '" x2="' + MX(95) + '" y2="' + (H - padB + 8) + '" stroke="#d93025" stroke-width="1.2" stroke-dasharray="4 3" opacity=".7"/>';
+  s += '<line x1="' + MX(100) + '" y1="' + padT + '" x2="' + MX(100) + '" y2="' + (H - padB + 8) + '" stroke="#34a853" stroke-width="1.2" stroke-dasharray="4 3" opacity=".7"/>';
+  cities.forEach(function(c, i) {
+    var md = monthlyData[c];
+    if (!md || typeof md.score !== 'number') return;
+    var cy = padT + i * rowH + rowH / 2;
+    var col = md.score >= 100 ? '#34a853' : (md.score >= 95 ? '#f5a623' : '#d93025');
+    var x0 = MX(lo), x1 = MX(md.score);
+    var bw = Math.max(3, x1 - x0);
+    var tip = cityInfo[c].city + ' 月度总分 ' + md.score + '% · ' + md.level + '（95%脱红线 / 100%达标线）';
+    s += '<text x="6" y="' + (cy + 4) + '" font-size="11.5" font-weight="700" fill="#1a2b4a">' + cityInfo[c].city + '</text>';
+    s += '<line x1="' + x0 + '" y1="' + cy + '" x2="' + (W - padR) + '" y2="' + cy + '" stroke="#eef1f5" stroke-width="8" stroke-linecap="round"/>';
+    s += '<rect x="' + x0 + '" y="' + (cy - 8) + '" width="' + bw.toFixed(1) + '" height="16" rx="8" fill="' + col + '" opacity=".92"><title>' + tip + '</title></rect>';
+    if (bw > 95) {
+      s += '<text x="' + (x1 - 8) + '" y="' + (cy + 3.5) + '" text-anchor="end" font-size="10" font-weight="700" fill="#fff">' + md.score + '% · ' + md.level + '</text>';
+    } else {
+      s += '<text x="' + (x1 + 6) + '" y="' + (cy + 3.5) + '" font-size="10" font-weight="700" fill="' + col + '">' + md.score + '% · ' + md.level + '</text>';
+    }
+  });
+  box.innerHTML = '<svg id="month-bar-svg" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="min-width:440px;width:100%;height:auto;display:block;">' + s + '</svg>';
+}
+
+// ===================== 初始化 =====================
+initDateSelectorFiltered();
+renderCalendar();
+updateDateUI();
+fillBIDataTable();
+renderTrendTable();
+updateTrendHighlight();
+initTrendChart();
+// 默认选中泰兴
+var firstTab = document.querySelector('.city-tab');
+if (firstTab) {
+  firstTab.classList.add('active');
+  var kc0=document.getElementById('kpi-city'); if(kc0) kc0.value=firstTab.textContent.trim();
+  var kcd0=document.getElementById('kpi-city-display'); if(kcd0) kcd0.textContent=firstTab.textContent.trim();
+  currentCity = firstTab.textContent.trim();
+}
+updateModuleInputs();
+updateDynamicText();
+renderMonthBars();
+renderGapChart();
+renderBreachChart();
+renderDataHealth();
+// 数据分析维度惰性加载（首次切换到该Tab时才渲染）
+// 初始化预估测算器
+calcPreset();
+</script>
+
+</body>
+</html>
