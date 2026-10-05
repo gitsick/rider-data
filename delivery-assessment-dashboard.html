@@ -582,6 +582,15 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <a href="delivery-assessment-dashboard-oct.html" class="nav-switch">10月看板</a>
   <a href="rider_dashboard.html" class="nav-switch">骑手解约</a>
 </nav>
+
+<!-- SKA_ENH_BAR_START -->
+<div class="city-tabs-bar" id="city-bar">
+  <span class="bar-label">🏙 城市切换</span>
+  <div class="city-tab" onclick="switchCity(this,'泰兴')">泰兴</div><span class="bar-score" data-city="泰兴"></span>
+  <div class="city-tab" onclick="switchCity(this,'诸暨')">诸暨</div><span class="bar-score" data-city="诸暨"></span>
+  <div class="city-tab" onclick="switchCity(this,'响水')">响水</div><span class="bar-score" data-city="响水"></span>
+</div>
+<!-- SKA_ENH_BAR_END -->
 <div class="header">
   <div>
     <h1>2026年9月配送考核看板</h1>
@@ -3658,6 +3667,33 @@ if (typeof renderMtdEval==='function'){try{['renderMtdEval','renderQkkaSka','ren
   if(document.readyState==='complete'){ __a11yKeys(); }
   else{ window.addEventListener('load', __a11yKeys); }
 })();
+</script>
+/* SKA_ENH_CSS_START */
+.city-tabs-bar{position:sticky;top:40px;z-index:120;background:rgba(26,43,74,.97);box-shadow:0 2px 10px rgba(0,0,0,.28);padding:8px 18px;display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap;}
+.city-tabs-bar .bar-label{color:#ffd75e;font-size:12.5px;font-weight:700;letter-spacing:1px;margin-right:4px;}
+.city-tabs-bar .city-tab{background:#fff;color:#1a2b4a;border:1.5px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.22);min-width:64px;text-align:center;}
+.city-tabs-bar .city-tab:hover{background:#fff8e1;color:#1a2b4a;border-color:#FFC300;}
+.city-tabs-bar .city-tab.active{background:#FFC300;color:#1a2b4a;border-color:#FFC300;}
+.city-tabs-bar .bar-score{font-size:11px;font-weight:700;color:#9aa0a6;padding:0 6px 0 0;min-width:56px;text-align:left;}
+@media(max-width:700px){.city-tabs-bar{padding:6px 10px;gap:6px}.city-tabs-bar .city-tab{min-width:52px;padding:5px 10px}.city-tabs-bar .bar-score{min-width:48px;font-size:10px}.bar-label{font-size:11px!important}}
+/* 原位城市按钮对比度增强：非激活深字+可见描边+轻投影 */
+.city-tab{color:#1a2b4a!important;border:1.5px solid #b9c0ca!important;box-shadow:0 1px 3px rgba(0,0,0,.10);}
+.city-tab.active{color:#1a2b4a!important;border-color:#FFC300!important;}
+/* SKA_ENH_CSS_END */
+<script>
+/* SKA_ENH_JS_START */
+function cityBarScores(){
+  try{
+    var m=(typeof MTD_EVAL!=='undefined'&&MTD_EVAL&&MTD_EVAL.cities)?MTD_EVAL.cities:null; if(!m)return;
+    document.querySelectorAll('#city-bar .bar-score').forEach(function(el){
+      var c=el.getAttribute('data-city'); var v=m[c]&&m[c].score;
+      if(v!=null){ el.textContent=(v>=95?'✓ ':'⚠ ')+Number(v).toFixed(2); el.style.color=(v>=95?'#7ee2a8':'#ff9b9b'); }
+      else { el.textContent='待数据'; }
+    });
+  }catch(e){}
+}
+window.addEventListener('load', function(){ cityBarScores(); });
+/* SKA_ENH_JS_END */
 </script>
 </body>
 </html>
