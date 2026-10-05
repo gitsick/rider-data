@@ -586,6 +586,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 <!-- SKA_ENH_BAR_START -->
 <div class="city-tabs-bar" id="city-bar">
   <span class="bar-label">🏙 城市切换</span>
+  <span class="bar-status" id="bar-status"></span>
   <div class="city-tab" onclick="switchCity(this,'泰兴')">泰兴</div><span class="bar-score" data-city="泰兴"></span>
   <div class="city-tab" onclick="switchCity(this,'诸暨')">诸暨</div><span class="bar-score" data-city="诸暨"></span>
   <div class="city-tab" onclick="switchCity(this,'响水')">响水</div><span class="bar-score" data-city="响水"></span>
@@ -766,11 +767,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div class="card" style="margin-bottom:12px;padding:12px 20px;">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
       <div class="section-label" style="margin:0;">📊 当日各模块指标</div>
-      <div class="city-tabs">
-        <div class="city-tab active" onclick="switchCity(this,'泰兴')">泰兴</div>
-        <div class="city-tab" onclick="switchCity(this,'诸暨')">诸暨</div>
-        <div class="city-tab" onclick="switchCity(this,'响水')">响水</div>
-      </div>
+      
     </div>
   </div>
   <div class="grid-modules gm3">
@@ -4478,6 +4475,9 @@ if (typeof renderMtdEval==='function'){try{['renderMtdEval','renderQkkaSka','ren
 .city-tabs-bar .city-tab.active{background:#FFC300;color:#1a2b4a;border-color:#FFC300;}
 .city-tabs-bar .bar-score{font-size:11px;font-weight:700;color:#9aa0a6;padding:0 6px 0 0;min-width:56px;text-align:left;}
 @media(max-width:700px){.city-tabs-bar{padding:6px 10px;gap:6px}.city-tabs-bar .city-tab{min-width:52px;padding:5px 10px}.city-tabs-bar .bar-score{min-width:48px;font-size:10px}.bar-label{font-size:11px!important}}
+.city-tabs-bar{justify-content:flex-start;}
+.bar-status{color:#e8eaed;font-size:12.5px;margin-right:auto;padding-left:8px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52%;}
+@media(max-width:900px){.bar-status{display:none}}
 /* 原位城市按钮对比度增强：非激活深字+可见描边+轻投影 */
 .city-tab{color:#1a2b4a!important;border:1.5px solid #b9c0ca!important;box-shadow:0 1px 3px rgba(0,0,0,.10);}
 .city-tab.active{color:#1a2b4a!important;border-color:#FFC300!important;}
@@ -4581,7 +4581,24 @@ function renderSkaWeekly(){
   h+='<div class="slice-note" style="margin-top:8px;">注：泰兴/响水按17805日粒度日更；诸暨企客KA数据权限申请中，开通后自动补全。周维度达标为按天聚合的提前预判，门店月度赔付以自然月累计按《SKA赔付规则》核算。</div>';
   el.innerHTML=h; el.dataset.rendered='1';
 }
-window.addEventListener('load', function(){ renderSkaRules(); renderSkaWeekly(); cityBarScores(); });
+function cityBarStatus(){
+  try{
+    var el=document.getElementById('bar-status'); if(!el)return;
+    var c=(typeof currentCity!=='undefined')?currentCity:'';
+    var m=(typeof MTD_EVAL!=='undefined'&&MTD_EVAL&&MTD_EVAL.cities&&MTD_EVAL.cities[c])?MTD_EVAL.cities[c]:null;
+    if(!m){ el.innerHTML=c?('当前：<b style="color:#e8eaed;">'+c+'</b><span style="color:#9fb0c8;"> ｜ 评估数据待发布</span>'):''; return; }
+    var sc=(m.score!=null)?Number(m.score).toFixed(2):'—';
+    var mm=m.mainMod?m.mainMod:'—', mg=(m.mainGap!=null)?Number(m.mainGap).toFixed(2):'—';
+    var col=(m.score!=null&&m.score>=95)?'#7ee2a8':'#ff9b9b';
+    el.innerHTML='当前：<b style="color:'+col+';">'+c+' '+sc+'</b><span style="color:#9fb0c8;"> ｜ 主失分：'+mm+'（-'+mg+'）</span>';
+  }catch(e){}
+}
+if(typeof window.switchCity==='function' && !window.__switchCityWrapped){
+  var __origSwitch=window.switchCity;
+  window.switchCity=function(el,name){ __origSwitch(el,name); try{cityBarStatus();}catch(e){} };
+  window.__switchCityWrapped=true;
+}
+window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); renderSkaWeekly(); cityBarScores(); });
 /* SKA_ENH_JS_END */
 </script>
 </body>
