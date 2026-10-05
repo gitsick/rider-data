@@ -1529,6 +1529,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <span style="background:#fff3e0;color:#ef6c00;padding:4px 12px;border-radius:12px;">⚡ 异常波动明细</span>
       <span style="background:#e6f4ea;color:#2e7d32;padding:4px 12px;border-radius:12px;">✅ 可落地决策方案</span>
       <span style="background:#e8f0fe;color:#1967d2;padding:4px 12px;border-radius:12px;">🎯 未达成指标 · 措施与月末预判</span>
+      <span style="background:#fef7e0;color:#b06000;padding:4px 12px;border-radius:12px;">🧩 企客计分评估</span>
     </div>
   </div>
 
@@ -1539,6 +1540,8 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div class="card" id="issues-breakdown" style="margin-bottom:16px;border-left:4px solid #ef6c00;"></div>
   <!-- 🎯 未达成指标 · 落地措施与月末预判（数据驱动，JS 自动生成） -->
   <div class="card" id="unmet-actions" style="margin-bottom:16px;border-left:4px solid #1967d2;"></div>
+  <!-- 🧩 企客模块 · 方案计分规则评估（门店级日粒度，JS 自动生成） -->
+  <div class="card" id="qike-score" style="margin-bottom:16px;border-left:4px solid #b06000;"></div>
 
 <div class="section-label">🧮 预估测算</div>
 <div class="card preset-card">
@@ -1760,6 +1763,7 @@ function switchDim(el, dim) {
     renderSliceAnalysis();
     renderIssuesBreakdown();
     renderUnmetActions();
+    renderQikeScore();
   }
   // 图形联动：切换页签时刷新全部图表（图表内部自带空态守卫）
   renderTrendChart();
@@ -3539,6 +3543,55 @@ function renderUnmetActions() {
   h += '<div class="slice-note">战略建议：① 悦跑权重最高（30%），周维度0分机制下「保周周≥90%」优先级高于一切单日冲刺；② 期1剩余周争取1.05系数放大达标收益；③ SKA品牌门店以「单量稀少门店」为治理重点，避免低单量自然破线；④ 工装/企客等扣分项在月内止损即可，不占用运力主线资源。</div>';
   el.innerHTML = h; el.dataset.rendered = '1';
 }
+
+/* QIKE_SCORE_START */
+var QIKE_EVAL = {"date":"20261004","cities":{"泰兴":{"effSep":4,"effHealth":[{"name":"星巴克专星送(泰州泰兴吾悦广场店)","brand":"星巴克","octAvg":118.2,"activeDays":4},{"name":"星巴克专星送(泰州泰兴鼓楼新天地店)","brand":"星巴克","octAvg":105.8,"activeDays":4},{"name":"星巴克专星送（泰州泰兴黄桥大梦想城店）","brand":"星巴克","octAvg":52.5,"activeDays":4},{"name":"星巴克专星送(泰州泰兴万达店)","brand":"星巴克","octAvg":23.5,"activeDays":4}],"churn":[],"newSign":[],"watch":[{"name":"星巴克-泰州泰兴鼓楼新天地店","brand":"星巴克","sepOrders":8.0,"avgDaily":0.3,"last":"20260930","wasEff":false},{"name":"星巴克-泰州泰兴吾悦广场店","brand":"星巴克","sepOrders":2.0,"avgDaily":0.1,"last":"20260910","wasEff":false},{"name":"无锡肯德基有限公司泰兴吾悦KFC（WXI192）","brand":"肯德基","sepOrders":2.0,"avgDaily":0.1,"last":"20260927","wasEff":false},{"name":"无锡市肯德基有限公司泰兴金凤店（WXI012）","brand":"肯德基","sepOrders":1.0,"avgDaily":0.0,"last":"20260926","wasEff":false},{"name":"上海必胜客有限公司泰兴万达（PSH878）","brand":"肯德基","sepOrders":1.0,"avgDaily":0.0,"last":"20260926","wasEff":false}],"sepActive":10,"octActive":5},"响水":{"effSep":1,"effHealth":[{"name":"星巴克专星送（盐城响水爱琴海购物公园店）","brand":"星巴克","octAvg":104.8,"activeDays":4}],"churn":[],"newSign":[],"watch":[{"name":"苏州肯德基有限公司响水盛都（SU1035）","brand":"肯德基","sepOrders":5.0,"avgDaily":0.2,"last":"20260926","wasEff":false},{"name":"苏州肯德基有限公司黄海路（SZH166）","brand":"肯德基","sepOrders":4.0,"avgDaily":0.1,"last":"20260914","wasEff":false}],"sepActive":4,"octActive":2},"诸暨":{"noData":true,"note":"数据权限申请中（维值6176），开通后自动回补并重算"}}};
+function qkOntimeTxt(c) {
+  try {
+    var v = (typeof MTD_EVAL !== 'undefined' && MTD_EVAL && MTD_EVAL.cities && MTD_EVAL.cities[c]) ? MTD_EVAL.cities[c] : null;
+    return (v && v.qkOntime != null) ? Number(v.qkOntime).toFixed(2) + '%' : '待数据';
+  } catch (e) { return '待数据'; }
+}
+function renderQikeScore() {
+  var el = document.getElementById('qike-score');
+  if (!el || el.dataset.rendered === '1') return;
+  var E = QIKE_EVAL, h = '';
+  h += '<div class="card-title">🧩 企客模块 · 方案计分规则评估 <span class="slice-chip" style="margin-left:8px;">门店级日粒度 · 麦肯必瑞星沃服务包口径 · 数据截至 10-04</span></div>';
+  h += '<div class="slice-note" style="margin-bottom:10px;">评估口径（10月方案原文）：有效门店=日均10单以上门店（含新签），口径=麦肯必瑞星沃企客服务包；流失仅限因体验问题不再使用美配（停业/低单未发单不算），流失日=美配首次未发单日，7天未发单即流失。看板日常展示的「企客KA当日有单门店」为当日口径、逐日波动（泰兴 58→63），<b>不能用于流失认定</b>——本卡按门店级日粒度数据核算。</div>';
+  // 一、规则 → 数据对照
+  h += '<div style="font-weight:600;font-size:13px;margin:6px 0;">① 计分规则 → 数据对照与扣/加分预判</div>';
+  h += '<table class="data-table" style="font-size:12px;"><thead><tr><th>规则</th><th>方案要求</th><th>当前数据核验</th><th>预判</th></tr></thead><tbody>';
+  h += '<tr><td>有效门店基数</td><td>日均10单以上（含新签）</td><td>泰兴 <b>4家</b>（星巴克专星送×4）、响水 <b>1家</b>（星巴克爱琴海），按9月整月门店级核算</td><td>基准</td></tr>';
+  h += '<tr><td>流失认定</td><td>仅限体验问题停用美配；停业/低单未发单不算；7天未发单即流失</td><td>9月有效门店 10月MTD 全部正常发单（泰兴4家日均 23.5~118.2 单、响水1家 104.8 单），无一家用满7天未发单</td><td><b style="color:#188038;">0家流失</b></td></tr>';
+  h += '<tr><td>流失扣分</td><td>流失≥1家 扣3%（原5%）</td><td>无确认流失</td><td><b style="color:#188038;">不扣分</b></td></tr>';
+  h += '<tr><td>新签加分</td><td>新签1家 +2%，封顶 +3%</td><td>10月MTD暂无六品牌新签（9月未出现、10月首次发单=0家）</td><td><b style="color:#6b7280;">+0</b>，新签落地请及时报备</td></tr>';
+  h += '<tr><td>门店体验达标扣分</td><td>扣2%分档：门店≤3家未达标≥1家，或门店>3家未达标≥2家</td><td>企客准时率：响水 <b>' + qkOntimeTxt('响水') + '</b>、泰兴 <b>' + qkOntimeTxt('泰兴') + '</b>；泰兴低于100%，需核到门店级体验明细定位未达标门店</td><td><b style="color:#ef6c00;">泰兴存扣2%风险</b>，响水暂安全</td></tr>';
+  h += '</tbody></table>';
+  // 二、有效门店健康度
+  h += '<div style="font-weight:600;font-size:13px;margin:12px 0 6px;">② 有效门店 10月健康度（守住即为守住不扣分）</div>';
+  h += '<table class="data-table" style="font-size:12px;"><thead><tr><th>城市</th><th>门店</th><th>10月日均单量</th><th>活跃天数</th><th>状态</th></tr></thead><tbody>';
+  ['泰兴', '响水'].forEach(function (c) {
+    (E.cities[c].effHealth || []).forEach(function (s) {
+      var ok = s.octAvg >= 10;
+      h += '<tr><td>' + c + '</td><td>' + s.name + '</td><td>' + s.octAvg + '</td><td>' + s.activeDays + '/4</td><td style="color:' + (ok ? '#188038' : '#d93025') + ';">' + (ok ? '✅ 正常（≥10单/日）' : '⚠️ 低于10单/日，有效门店资格存险') + '</td></tr>';
+    });
+  });
+  h += '</tbody></table>';
+  // 三、观察名单
+  h += '<div style="font-weight:600;font-size:13px;margin:12px 0 6px;">③ 观察名单（低单/停用 · 按方案<b>不触发流失扣分</b>，建议地推核实原因防体验型流失）</div>';
+  h += '<table class="data-table" style="font-size:12px;"><thead><tr><th>城市</th><th>门店</th><th>品牌</th><th>9月单量</th><th>9月日均</th><th>最后发单</th><th>判定</th></tr></thead><tbody>';
+  ['泰兴', '响水'].forEach(function (c) {
+    (E.cities[c].watch || []).forEach(function (w) {
+      var late = w.last && w.last <= '20260923';
+      h += '<tr><td>' + c + '</td><td>' + w.name + '</td><td>' + w.brand + '</td><td>' + w.sepOrders + '</td><td>' + (w.avgDaily != null ? w.avgDaily : '-') + '</td><td>' + (w.last ? w.last.slice(4, 6) + '-' + w.last.slice(6) : '-') + '</td><td>' + (late ? '<span style="color:#ef6c00;">低单后停发' + (w.last.slice(4,6)) + '月起</span>' : '月末阶段停发') + ' · 不算流失</td></tr>';
+    });
+  });
+  h += '</tbody></table>';
+  // 四、诸暨与结论
+  h += '<div class="slice-note" style="margin-top:10px;"><b>诸暨</b>：企客KA门店级数据暂无查看权限（权限申请跟进中），开通后将自动回补 9月+10月 并重算本卡。<b>小结</b>：按方案口径，当前企客模块扣分预判 <b style="color:#188038;">0分</b>、加分预判 +0；主要风险点为 ①泰兴门店体验达标率（97.93%）可能触发扣2%档 ②观察名单中肯德基/必胜客门店若属体验问题停用，10月内满7天未发单将转为流失扣3%——建议一周内核实各观察门店停用原因。</div>';
+  el.innerHTML = h; el.dataset.rendered = '1';
+}
+/* QIKE_SCORE_END */
 
 // ===================== 分析报告页：问题细化拆解 + 异常波动明细 =====================
 function _pairs(c, key) {
