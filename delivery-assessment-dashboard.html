@@ -579,19 +579,12 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <a href="https://gitsick.github.io/databi/">← 看板中心</a>
   <span class="nav-sep">›</span>
   <span class="nav-current">9月看板</span>
+  <span class="nav-cities" id="city-bar"><div class="city-tab" onclick="switchCity(this,'泰兴')">泰兴</div><span class="bar-score" data-city="泰兴"></span><div class="city-tab" onclick="switchCity(this,'诸暨')">诸暨</div><span class="bar-score" data-city="诸暨"></span><div class="city-tab" onclick="switchCity(this,'响水')">响水</div><span class="bar-score" data-city="响水"></span></span>
+  <span class="bar-status" id="bar-status"></span>
   <a href="delivery-assessment-dashboard-oct.html" class="nav-switch">10月看板</a>
   <a href="rider_dashboard.html" class="nav-switch">骑手解约</a>
 </nav>
 
-<!-- SKA_ENH_BAR_START -->
-<div class="city-tabs-bar" id="city-bar">
-  <span class="bar-label">🏙 城市切换</span>
-  <span class="bar-status" id="bar-status"></span>
-  <div class="city-tab" onclick="switchCity(this,'泰兴')">泰兴</div><span class="bar-score" data-city="泰兴"></span>
-  <div class="city-tab" onclick="switchCity(this,'诸暨')">诸暨</div><span class="bar-score" data-city="诸暨"></span>
-  <div class="city-tab" onclick="switchCity(this,'响水')">响水</div><span class="bar-score" data-city="响水"></span>
-</div>
-<!-- SKA_ENH_BAR_END -->
 <div class="header">
   <div>
     <h1>2026年9月配送考核看板</h1>
@@ -3667,19 +3660,20 @@ if (typeof renderMtdEval==='function'){try{['renderMtdEval','renderQkkaSka','ren
 </script>
 <style>
 /* SKA_ENH_CSS_START */
-.city-tabs-bar{position:sticky;top:40px;z-index:120;background:rgba(26,43,74,.97);box-shadow:0 2px 10px rgba(0,0,0,.28);padding:8px 18px;display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap;}
-.city-tabs-bar .bar-label{color:#ffd75e;font-size:12.5px;font-weight:700;letter-spacing:1px;margin-right:4px;}
-.city-tabs-bar .city-tab{background:#fff;color:#1a2b4a;border:1.5px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.22);min-width:64px;text-align:center;}
-.city-tabs-bar .city-tab:hover{background:#fff8e1;color:#1a2b4a;border-color:#FFC300;}
-.city-tabs-bar .city-tab.active{background:#FFC300;color:#1a2b4a;border-color:#FFC300;}
-.city-tabs-bar .bar-score{font-size:11px;font-weight:700;color:#9aa0a6;padding:0 6px 0 0;min-width:56px;text-align:left;}
-@media(max-width:700px){.city-tabs-bar{padding:6px 10px;gap:6px}.city-tabs-bar .city-tab{min-width:52px;padding:5px 10px}.city-tabs-bar .bar-score{min-width:48px;font-size:10px}.bar-label{font-size:11px!important}}
-.city-tabs-bar{justify-content:flex-start;}
-.bar-status{color:#e8eaed;font-size:12.5px;margin-right:auto;padding-left:8px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52%;}
 @media(max-width:640px){.bar-status{display:none}}
 /* 原位城市按钮对比度增强：非激活深字+可见描边+轻投影 */
 .city-tab{color:#1a2b4a!important;border:1.5px solid #b9c0ca!important;box-shadow:0 1px 3px rgba(0,0,0,.10);}
 .city-tab.active{color:#1a2b4a!important;border-color:#FFC300!important;}
+
+/* 城市切换并入顶栏 */
+.top-nav .nav-cities{display:flex;align-items:center;gap:6px;margin-left:14px}
+.top-nav .city-tab{min-width:56px;padding:3px 12px!important;font-size:12.5px!important;text-align:center;cursor:pointer;user-select:none;flex-shrink:0}
+.top-nav .city-tab:hover{background:#fff8e1!important;border-color:#FFC300!important}
+.top-nav .city-tab.active{background:#FFC300!important;color:#1a2b4a!important;border-color:#FFC300!important;font-weight:700}
+.top-nav .bar-score{font-size:11px;font-weight:700;color:#9aa0a6;min-width:52px;text-align:left;flex-shrink:0}
+.top-nav .bar-status{flex:1 1 auto;min-width:0;color:#e8eaed;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 10px}
+@media(max-width:880px){.top-nav .bar-score{display:none}.top-nav .nav-cities{gap:4px;margin-left:8px}}
+@media(max-width:640px){.top-nav .bar-status{display:none}.top-nav .city-tab{min-width:40px;padding:2px 8px!important;font-size:12px!important}}
 /* SKA_ENH_CSS_END */
 </style>
 <script>
