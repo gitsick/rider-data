@@ -3746,6 +3746,58 @@ window.addEventListener('load', function(){ cityBarStatus(); cityBarScores(); })
   else { window.addEventListener('load', initActive); }
 })();
 /* CITY_UX_END */
+
+/* CITY_ROW_HL_START 模块间联动：当前城市行高亮 */
+(function(){
+  if (window.__cityRowHl) return;
+  window.__cityRowHl = true;
+  var HL = 'rgba(255,193,7,.13)', HL_EDGE = 'rgba(255,193,7,.55)';
+  var CONTAINERS = ['mod-ov-body', 'mtd-eval-body', 'qk-monthly-tbody', 'ska-week-card', 'bi-data-body'];
+  function fullName(c) {
+    try { return cityInfo[c] && cityInfo[c].city ? cityInfo[c].city : c; } catch (e) { return c; }
+  }
+  window.highlightCityRows = function() {
+    try {
+      var c = (typeof currentCity !== 'undefined') ? currentCity : null;
+      if (!c) return;
+      var full = fullName(c), short = c;
+      CONTAINERS.forEach(function(id) {
+        var box = document.getElementById(id); if (!box) return;
+        box.querySelectorAll('tr').forEach(function(tr) {
+          if (tr.title && tr.title.indexOf('当前选中城市') === 0) {
+            tr.style.background = ''; tr.style.boxShadow = ''; tr.title = '';
+          }
+        });
+        box.querySelectorAll('tr').forEach(function(tr) {
+          var txt = tr.textContent || '';
+          if (txt.indexOf(full) === -1 && txt.indexOf(short) === -1) return;
+          if (tr.tagName !== 'TR' || tr.parentElement.tagName === 'THEAD') return;
+          var isRow = tr.children.length > 0 && tr.textContent.replace(/[^\u4e00-\u9fa5]/g, '').indexOf(full) >= 0
+                   || tr.textContent.replace(/[^\u4e00-\u9fa5]/g, '').indexOf(short) >= 0;
+          if (!isRow) return;
+          tr.style.background = HL;
+          tr.style.boxShadow = 'inset 3px 0 0 ' + HL_EDGE;
+          tr.title = '当前选中城市：' + full;
+        });
+      });
+    } catch (e) {}
+  };
+  // 包装切换入口：城市/日期/期次切换后重刷高亮
+  ['switchCity', 'switchDate', 'switchPeriod'].forEach(function(fn) {
+    if (typeof window[fn] !== 'function' || window['__hlWrap_' + fn]) return;
+    var orig = window[fn];
+    window[fn] = function() {
+      var r = orig.apply(this, arguments);
+      try { setTimeout(window.highlightCityRows, 60); } catch (e) {}
+      return r;
+    };
+    window['__hlWrap_' + fn] = true;
+  });
+  function boot(){ try { window.highlightCityRows(); } catch (e) {} }
+  if (document.readyState === 'complete') setTimeout(boot, 100);
+  else window.addEventListener('load', function(){ setTimeout(boot, 100); });
+})();
+/* CITY_ROW_HL_END */
 /* SKA_ENH_JS_END */
 </script>
 </body>
