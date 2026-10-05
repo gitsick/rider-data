@@ -582,6 +582,15 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <a href="delivery-assessment-dashboard.html" class="nav-switch">9月看板</a>
   <a href="rider_dashboard.html" class="nav-switch">骑手解约</a>
 </nav>
+
+<!-- SKA_ENH_BAR_START -->
+<div class="city-tabs-bar" id="city-bar">
+  <span class="bar-label">🏙 城市切换</span>
+  <div class="city-tab" onclick="switchCity(this,'泰兴')">泰兴</div><span class="bar-score" data-city="泰兴"></span>
+  <div class="city-tab" onclick="switchCity(this,'诸暨')">诸暨</div><span class="bar-score" data-city="诸暨"></span>
+  <div class="city-tab" onclick="switchCity(this,'响水')">响水</div><span class="bar-score" data-city="响水"></span>
+</div>
+<!-- SKA_ENH_BAR_END -->
 <div class="header">
   <div>
     <h1>2026年10月配送考核看板</h1>
@@ -855,6 +864,10 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div style="margin-top:6px;font-size:11px;color:#6b7280;">完整品牌履约评估预警见「月维度」页签；数据来源：品牌x商家x履约站-履约明细（ID 17805）</div>
   </div>
 </div>
+<!-- SKA_ENH_RULES_START -->
+<div class="section-label">🤝 企客SKA · 考核制度总览（切店 · 达标 · 赔付）</div>
+<div class="card" id="ska-rules-card" style="margin-bottom:16px;border-left:4px solid #7b61ff;"></div>
+<!-- SKA_ENH_RULES_END -->
 <div class="section-label">🤝 企客SKA · 天维度明细与趋势</div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
   <div class="card-title"><span class="icon">📈</span> 企客SKA · 月底天维度（品牌×城市 每日准时率明细 · 门店对应校验）</div>
@@ -1455,6 +1468,10 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
   </div>
 
+<!-- SKA_ENH_WEEK_START -->
+<div class="section-label">🤝 企客SKA · 考核周期维度（自然周达标 · 期1/期2）</div>
+<div class="card" id="ska-week-card" style="margin-bottom:16px;border-left:4px solid #1967d2;"></div>
+<!-- SKA_ENH_WEEK_END -->
 <div class="section-label">🤝 企客SKA · 月维度评估与赔付</div>
 <div class="card" id="qk-monthly-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f0ff 100%);">
   <div class="card-title">🤝 企客（SKA）· 月度模块（扣分项） <a class="anchor-btn" href="#sec-qkka" style="float:right;">查看完整评估预警 ▸</a></div>
@@ -4451,6 +4468,118 @@ if (typeof renderMtdEval==='function'){try{['renderMtdEval','renderQkkaSka','ren
   if(document.readyState==='complete'){ __a11yKeys(); }
   else{ window.addEventListener('load', __a11yKeys); }
 })();
+</script>
+/* SKA_ENH_CSS_START */
+.city-tabs-bar{position:sticky;top:0;z-index:120;background:rgba(26,43,74,.97);box-shadow:0 2px 10px rgba(0,0,0,.28);padding:8px 18px;display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap;}
+.city-tabs-bar .bar-label{color:#ffd75e;font-size:12.5px;font-weight:700;letter-spacing:1px;margin-right:4px;}
+.city-tabs-bar .city-tab{background:#fff;color:#1a2b4a;border:1.5px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.22);min-width:64px;text-align:center;}
+.city-tabs-bar .city-tab:hover{background:#fff8e1;color:#1a2b4a;border-color:#FFC300;}
+.city-tabs-bar .city-tab.active{background:#FFC300;color:#1a2b4a;border-color:#FFC300;}
+.city-tabs-bar .bar-score{font-size:11px;font-weight:700;color:#9aa0a6;padding:0 6px 0 0;min-width:56px;text-align:left;}
+/* 原位城市按钮对比度增强：非激活深字+可见描边+轻投影 */
+.city-tab{color:#1a2b4a!important;border:1.5px solid #b9c0ca!important;box-shadow:0 1px 3px rgba(0,0,0,.10);}
+.city-tab.active{color:#1a2b4a!important;border-color:#FFC300!important;}
+/* SKA_ENH_CSS_END */
+<script>
+/* SKA_ENH_JS_START */
+function cityBarScores(){
+  try{
+    var m=(typeof MTD_EVAL!=='undefined'&&MTD_EVAL&&MTD_EVAL.cities)?MTD_EVAL.cities:null; if(!m)return;
+    document.querySelectorAll('#city-bar .bar-score').forEach(function(el){
+      var c=el.getAttribute('data-city'); var v=m[c]&&m[c].score;
+      if(v!=null){ el.textContent=(v>=95?'✓ ':'⚠ ')+Number(v).toFixed(2); el.style.color=(v>=95?'#7ee2a8':'#ff9b9b'); }
+      else { el.textContent='待数据'; }
+    });
+  }catch(e){}
+}
+function renderSkaRules(){
+  var el=document.getElementById('ska-rules-card'); if(!el||el.dataset.rendered==='1')return;
+  var h='';
+  h+='<div class="card-title">🤝 SKA 考核制度总览 <span class="slice-chip" style="margin-left:8px;">来源：学城《SKA考核指标口径和看板》《下沉SKA品牌KPI赔付规则》</span></div>';
+  h+='<div style="font-size:11px;margin-bottom:8px;"><a href="https://km.sankuai.com/collabpage/2741734785" target="_blank" rel="noopener" style="color:#1967d2;">📖 SKA考核指标口径和看板</a> ｜ <a href="https://km.sankuai.com/collabpage/2772140471" target="_blank" rel="noopener" style="color:#1967d2;">📖 SKA品牌KPI赔付规则（合作商版，2026-07-01起）</a></div>';
+  h+='<div style="font-weight:600;font-size:13px;margin:4px 0 6px;">① 品牌切店标准（预警→整改→流失）</div>';
+  h+='<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>品牌</th><th>考核周期</th><th>切店 / 流失规则</th></tr></thead><tbody>'
+   +'<tr><td>麦当劳</td><td>自然月</td><td>完成率&gt;95%、准时率&gt;90%、客诉率&lt;1% 三项均达标；任一未达标该月不达标→次月进整改期；<b style="color:#d93025;">连续两月未达标→门店流失</b></td></tr>'
+   +'<tr><td>肯德基 / 必胜客</td><td>周维度（5周评估）</td><td><b>5周内3周KPI达标=「已改善」</b>；5周内3周不达标→1+x切店</td></tr>'
+   +'<tr><td>瑞幸</td><td>周维度（1+1）</td><td>触发预警后给两周改善期，两周内不达标→切出；<b style="color:#d93025;">90天内二次预警也切出</b></td></tr>'
+   +'</tbody></table></div>';
+  h+='<div style="font-weight:600;font-size:13px;margin:12px 0 6px;">② 门店体验达标标准（合作商月度门店体验达标考核）</div>';
+  h+='<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>品牌</th><th>体验目标（指标口径）</th><th>达标判定</th></tr></thead><tbody>'
+   +'<tr><td>麦当劳</td><td>完成率&gt;95% · 准时率&gt;90% · 客诉率&lt;1%</td><td><b>三项均达标</b></td></tr>'
+   +'<tr><td>肯德基</td><td>准时率≥90%且妥投≤4% · 系统停单≤0.2% · 迟到投诉≤0.5%</td><td><b>三项中两项达标</b></td></tr>'
+   +'<tr><td>必胜客</td><td>剔除15分钟出餐后准时率≥90%且妥投≤4% · 系统停单≤0.2% · 剔除后迟到投诉≤0.5%</td><td><b>三项中两项达标</b></td></tr>'
+   +'<tr><td>瑞幸</td><td>超时率周≤0.1%或超时单≤3单 · 重大客诉=0 · 客诉率&lt;1.5% · 提前点客诉月&lt;2条（新增：取消率周≤1%、标准履约率周≥98%，剔除校园店）</td><td><b>四项均达标</b></td></tr>'
+   +'<tr><td>星巴克</td><td>准时率≥95%（单产低，商考仅看准时率）</td><td>达标即通过</td></tr>'
+   +'<tr><td>沃尔玛</td><td>准时率≥97% · 客诉率&lt;0.04%</td><td>两项均达标</td></tr>'
+   +'</tbody></table></div>';
+  h+='<div style="font-weight:600;font-size:13px;margin:12px 0 6px;">③ 准时率赔付线与罚金速查（罚款对象为合作商，严禁转嫁骑手）</div>';
+  h+='<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>品牌</th><th>赔付触发线</th><th>罚金规则</th></tr></thead><tbody>'
+   +'<tr><td>瑞幸</td><td>门店月准时率&lt;99%</td><td rowspan="4" style="vertical-align:middle;">按门店月完单量区间分档：250元（0-500单）→ 每加500单加250元 → 5000-6000单罚3000元 → 10000-20000单罚7000元 → 20000单以上罚10000元</td></tr>'
+   +'<tr><td>麦当劳 / 肯德基 / 必胜客</td><td>门店月准时率&lt;90%（肯德基另设送达违规率&gt;4%、必胜客&gt;2%红线）</td></tr>'
+   +'<tr><td>星巴克</td><td>门店月准点率&lt;93%</td></tr>'
+   +'<tr><td>沃尔玛</td><td>按时段分档：95%~97%罚1500 · 93%~95%罚3000 · 90%~93%罚5000 · &lt;90%罚10000</td></tr>'
+   +'</tbody></table></div>';
+  h+='<div class="slice-note" style="margin-top:8px;">客诉率按月完单量区间+客诉率档位罚 200~2550 元（星巴克按14类骑手责任场景有客诉即罚）；肯德基迟到投诉率&gt;0.5%、必胜客&gt;0.25%（剔除出餐&gt;15/13分钟订单）按完单量罚 150~6000 元；肯德基/必胜客配送原因取消率按完单量区间分档罚 0~2000 元。赔付与预警/流失口径不完全一致，日常追踪以《SKA考核指标口径和看板》为准。</div>';
+  el.innerHTML=h; el.dataset.rendered='1';
+}
+function renderSkaWeekly(){
+  var el=document.getElementById('ska-week-card'); if(!el||el.dataset.rendered==='1')return;
+  if(typeof SKA_DAILY==='undefined'||!SKA_DAILY||!SKA_DAILY.rows){ el.innerHTML='<div style="font-size:12px;color:#6b7280;">⏳ SKA 天维度数据待流水线生成</div>'; return; }
+  var L=SKA_STORES&&SKA_STORES.lines?SKA_STORES.lines:{}, W=SKA_STORES&&SKA_STORES.warnlines?SKA_STORES.warnlines:{};
+  var WN=['09-28~10-04','10-05~10-11','10-12~10-18','10-19~10-25','10-26~11-01'];
+  var WP=['期1','期1','期1','期2','期2'];
+  function wk(d){var n=parseInt(d,10);
+    if(n>=20260928&&n<=20261004)return 0; if(n>=20261005&&n<=20261011)return 1;
+    if(n>=20261012&&n<=20261018)return 2; if(n>=20261019&&n<=20261025)return 3;
+    if(n>=20261026&&n<=20261101)return 4; return -1;}
+  var agg={};
+  SKA_DAILY.rows.forEach(function(r){var w=wk(r.d); if(w<0)return;
+    var k=r.city+'|'+r.b+'|'+w; var o=agg[k]||(agg[k]={done:0,ont:0,below:0,days:0});
+    o.done+=r.done||0; o.ont+=r.ont||0; o.days++;
+    var ln=L[r.b]!=null?L[r.b]:90; if(r.done>0&&(r.ont/(r.done))*100<ln)o.below++;});
+  var cities=['泰兴','诸暨','响水'];
+  var h='<div class="card-title">📅 SKA 考核周期维度 · 自然周达标（期1=9/28-10/18 周×1.05系数 · 期2=10/19起新口径）</div>';
+  h+='<div style="font-size:11px;color:#6b7280;margin-bottom:8px;">聚合口径：周准时率=Σ准时单/Σ完成单（单量加权）；单元格色：绿=达品牌预警线 · 橙=赔付线与预警线之间 · 红=低于赔付线（赔付风险）。肯德基/必胜客按「5周3达标」周维度评估，瑞幸按「1+1」周预警，麦当劳按自然月累计。</div>';
+  cities.forEach(function(c){
+    h+='<div style="font-weight:700;font-size:13px;margin:10px 0 4px;color:#1a2b4a;">'+ (c==='泰兴'?'泰兴县':c==='诸暨'?'诸暨市':'响水县') +'</div>';
+    h+='<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>品牌</th>';
+    for(var i=0;i<5;i++) h+='<th>'+WN[i]+'<br><span style="font-weight:400;font-size:10px;color:#c9d3e0;">'+WP[i]+'</span></th>';
+    h+='<th>周期评估进度</th></tr></thead><tbody>';
+    var brands=(SKA_STORES&&SKA_STORES.brands)?SKA_STORES.brands:['麦当劳','肯德基','必胜客','瑞幸','星巴克','沃尔玛'];
+    brands.forEach(function(b){
+      var ln=L[b]!=null?L[b]:90, wn=W[b]!=null?W[b]:ln;
+      h+='<tr><td style="font-weight:600;">'+b+'<br><span style="font-size:10px;color:#6b7280;">赔付'+ln+'% / 预警'+wn+'%</span></td>';
+      var met=0, has=0, monD=0, monO=0;
+      for(var w=0;w<5;w++){
+        var o=agg[c+'|'+b+'|'+w];
+        if(o&&o.done>0){ has++;
+          var rt=o.ont/o.done*100; if(rt>=wn)met++;
+          monD+=o.done; monO+=o.ont;
+          var col=rt>=wn?'#188038':(rt>=ln?'#ef6c00':'#d93025');
+          var tag=rt<ln?' ⚠':'';
+          h+='<td style="color:'+col+';font-weight:700;">'+rt.toFixed(1)+'%'+tag+'<br><span style="font-weight:400;font-size:10px;color:#6b7280;">'+o.done+'单 · 低于线'+o.below+'天</span></td>';
+        } else {
+          var future=(b!=='x'); // W2起待采集
+          h+='<td style="color:#c0c6cf;">—<br><span style="font-size:10px;">待采集</span></td>';
+        }
+      }
+      var prog='';
+      if(monD>0){
+        var monR=monO/monD*100;
+        if(b==='肯德基'||b==='必胜客') prog='已达标 <b>'+met+'</b>/3 周（5周评估）· 月累计 '+monR.toFixed(1)+'%';
+        else if(b==='瑞幸') prog=(met===has&&has>0?'周周达标 ✓':'有周未达99%，按1+1进入两周改善期')+' · 月累计 '+monR.toFixed(1)+'%';
+        else if(b==='麦当劳') prog='自然月累计 '+monR.toFixed(1)+'%（达标线90%，另需完成率>95%/客诉率<1%）';
+        else prog='达标周数 <b>'+met+'</b>/'+has+' · 月累计 '+monR.toFixed(1)+'%';
+      } else prog= c==='诸暨' ? '数据权限申请中' : '本周期暂无数据';
+      h+='<td style="font-size:11px;color:#1a2b4a;">'+prog+'</td></tr>';
+    });
+    h+='</tbody></table></div>';
+  });
+  h+='<div class="slice-note" style="margin-top:8px;">注：泰兴/响水按17805日粒度日更；诸暨企客KA数据权限申请中，开通后自动补全。周维度达标为按天聚合的提前预判，门店月度赔付以自然月累计按《SKA赔付规则》核算。</div>';
+  el.innerHTML=h; el.dataset.rendered='1';
+}
+window.addEventListener('load', function(){ renderSkaRules(); renderSkaWeekly(); cityBarScores(); });
+/* SKA_ENH_JS_END */
 </script>
 </body>
 </html>
