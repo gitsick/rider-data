@@ -1549,21 +1549,25 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <label>推单率%</label><input id="pre_tw" type="number" value="99.2" step="0.1" onchange="calcPreset()">
         <label>完结率%</label><input id="pre_wj" type="number" value="99.9" step="0.1" onchange="calcPreset()">
       </div>
+      <div class="preset-input-row">
+        <label title="悦跑周均完成度，＜90%按该周记0近似">悦跑周均%</label><input id="pre_ym" type="number" value="96" step="0.1" onchange="calcPreset()">
+        <label title="普众活跃骑手完成度，目标待任务下发，默认按100">普众%</label><input id="pre_pz" type="number" value="100" step="0.1" onchange="calcPreset()">
+      </div>
       <div class="preset-scenarios">
         <div class="preset-scenario optimistic" onclick="applyPreset('optimistic')">
           <div class="ps-label" style="color:#34a853;">乐观预估</div>
           <div class="ps-score" id="ps-optimistic" style="color:#34a853;">—</div>
-          <div class="ps-desc">HD≥98 体验≥96<br>推单≥99.5 完结≥99.9</div>
+          <div class="ps-desc">HD≥98 悦跑≥100 普众=100<br>体验≥96 推单≥99.5 完结≥99.9</div>
         </div>
         <div class="preset-scenario realistic active" onclick="applyPreset('realistic')">
           <div class="ps-label" style="color:#1967d2;">基准预估</div>
           <div class="ps-score" id="ps-realistic" style="color:#1967d2;">—</div>
-          <div class="ps-desc">HD=95 体验=95<br>推单=99.2 完结=99.9</div>
+          <div class="ps-desc">HD=95 悦跑=96 普众=100<br>体验=95 推单=99.2 完结=99.9</div>
         </div>
         <div class="preset-scenario conservative" onclick="applyPreset('conservative')">
           <div class="ps-label" style="color:#d93025;">保守预估</div>
           <div class="ps-score" id="ps-conservative" style="color:#d93025;">—</div>
-          <div class="ps-desc">HD=92 体验=92<br>推单=98.5 完结=99.5</div>
+          <div class="ps-desc">HD=92 悦跑=88（周记0）<br>体验=92 推单=98.5 完结=99.5</div>
         </div>
       </div>
       <div class="preset-compare">
@@ -3020,17 +3024,7 @@ document.querySelectorAll('.collapsible .card-title').forEach(function(el) {
 });
 
 // ===================== 数据分析维度 =====================
-
-function calcTotalScore(hd, ty, tw, wj) {
-  // 10月都考画像：悦跑接入后按已接入权重归一化（÷0.95）；普众目标下发后再加 0.05。
-  // 悦跑加权缺口由 MTD 近似口径单独计算（平均完成度×出勤系数，不设90%下限控制区间）。
-  var w = {jm:0.15, ty:0.20, tw:0.20, wj:0.10};
-  var jm = hd < 90 ? 0 : clamp(hd, 0, 100);
-  var tyVal = clamp(ty, 50, 110);
-  var twVal = clamp(tw, 0, 110);
-  var wjVal = wj < 80 ? 0 : clamp(wj, 0, 110);
-  return (jm * w.jm + tyVal * w.ty + twVal * w.tw + wjVal * w.wj) / 0.95;
-}
+// （总分计算统一由月度评估数据源提供，页面不再重复实现公式，避免口径漂移）
 
 // ===================== 动态文本更新 =====================
 function updateDynamicText() {
@@ -3467,19 +3461,12 @@ function renderIssuesBreakdown() {
   var mm = {}, tag = '';
   if (SLICE_M) { _CITIES.forEach(function(c){ mm[c] = { score: SLICE_M[c].score, level: SLICE_M[c].level }; }); }
   else {
-    tag = '（MTD 近似口径）';
+    tag = '（MTD 近似口径，与月度评估同源）';
+    var _meC = (typeof MTD_EVAL !== 'undefined' && MTD_EVAL && MTD_EVAL.cities) ? MTD_EVAL.cities : {};
     _CITIES.forEach(function(c) {
-      var s2 = st[c];
-      var gap4 = (100-(s2.hd.last||100))*_W.hd + (100-(s2.ty.last||100))*_W.ty + (100-(s2.tw.min!==null? (s2.tw.pk||s2.tw.min):100))*_W.tw + (100-(s2.wj.p2||s2.wj.p1||100))*_W.wj;
-      var div = 0.65; // 已接入权重归一化：悦跑接入后 0.95，普众目标下发后再加 0.05
-      var ymAvg = _avg(_sv(c, 'ymRate', dataDates));
-      if (ymAvg !== null) {
-        var coef = parseFloat((document.getElementById('ym_coef')||{}).value || '1');
-        gap4 += (100 - clamp(ymAvg, 0, 110) * coef) * 0.30; // 悦跑平均完成度不设90%下限控制区间
-        div = 0.95;
-      }
-      mm[c] = { score: gap4 / div, level: '' };
-      mm[c].score = Math.round(mm[c].score*100)/100;
+      var v = _meC[c];
+      mm[c] = { score: (v && v.score != null) ? v.score : 100, level: '',
+                main: v ? v.mainMod : null, mainGap: v ? v.mainGap : null };
     });
   }
   var worst = _CITIES[0];
@@ -3494,7 +3481,8 @@ function renderIssuesBreakdown() {
           var nm = {hd:'HD', ty:'体验', tw:'推完', wj:'完结率'}[main];
           return cityInfo[c].city + '=' + nm + '（' + Math.round(g[main]/(g.hd+g.ty+g.tw+g.wj)*100) + '%）';
         }
-        return cityInfo[c].city + '（MTD）';
+        var _mv = (typeof MTD_EVAL !== 'undefined' && MTD_EVAL && MTD_EVAL.cities) ? MTD_EVAL.cities[c] : null;
+        return cityInfo[c].city + '=' + (_mv && _mv.mainMod ? _mv.mainMod + '（缺 ' + _mv.mainGap + ' 分）' : '—');
       }).join('、')
     + '；兜底击穿最多：' + _CITIES.slice().sort(function(a,b){ return st[b].tw.brk.length - st[a].tw.brk.length; })[0]
     + ' ' + st[_CITIES.slice().sort(function(a,b){ return st[b].tw.brk.length - st[a].tw.brk.length; })[0]].tw.brk.length + ' 天</div>';
@@ -3550,11 +3538,11 @@ function renderIssuesBreakdown() {
   el.dataset.rendered = '1';
 }
 
-// ===================== 预估测算器 =====================
+// ===================== 预估测算器（10月都考画像：加盟15% 悦跑30% 普众5% 体验20% 推完20% 完结10%） =====================
 var presetScenarios = {
-  optimistic: {jm:98, ty:96, tw:99.5, wj:99.9},
-  realistic: {jm:95, ty:95, tw:99.2, wj:99.9},
-  conservative: {jm:92, ty:92, tw:98.5, wj:99.5}
+  optimistic: {jm:98, ty:96, tw:99.5, wj:99.9, ym:100, pz:100},
+  realistic: {jm:95, ty:95, tw:99.2, wj:99.9, ym:96, pz:100},
+  conservative: {jm:92, ty:92, tw:98.5, wj:99.5, ym:88, pz:100}
 };
 
 function applyPreset(type) {
@@ -3563,6 +3551,8 @@ function applyPreset(type) {
   setVal('pre_ty', p.ty);
   setVal('pre_tw', p.tw);
   setVal('pre_wj', p.wj);
+  setVal('pre_ym', p.ym);
+  setVal('pre_pz', p.pz);
   document.querySelectorAll('.preset-scenario').forEach(function(el){ el.classList.remove('active'); });
   event.currentTarget.classList.add('active');
   calcPreset();
@@ -3581,10 +3571,11 @@ function calcPreset() {
   if (elDesc) {
     var lastDay = parseInt(dataDates[dataDates.length-1].split('-')[1]);
     var startRem = lastDay + 1;
-    elDesc.textContent = '设定剩余' + daysRemaining + '天（9/' + startRem + '-9/30）各指标预估值，自动测算月度预估总分';
+    elDesc.textContent = '设定剩余' + daysRemaining + '天（10/' + startRem + '-10/31）各指标预估值，自动测算月度预估总分（10月都考画像）';
   }
   var jm = getVal('pre_jm'), ty = getVal('pre_ty'), tw = getVal('pre_tw'), wj = getVal('pre_wj');
-  if (!jm || !ty || !tw || !wj) return;
+  var ym = getVal('pre_ym'), pz = getVal('pre_pz');
+  if (!jm || !ty || !tw || !wj || !ym || !pz) return;
 
   // Calculate current MTD scores per city
   Object.keys(cityInfo).forEach(function(ck) {
@@ -3598,17 +3589,19 @@ function calcPreset() {
     // Estimated: blend actual days with preset days
     // Simplified: new score = (currentScore * daysActual + estimatedScore * daysRemaining) / totalDays
     var estJm = jm < 90 ? 0 : Math.min(jm, 100);
-    var estTy = Math.min(Math.max(ty, 50), 110);
+    var estTy = ty < 50 ? 0 : Math.min(ty, 100);
     var estTw = Math.min(tw, 110);
     var estWj = wj < 80 ? 0 : Math.min(wj, 110);
-    var estimatedScore = estJm * 0.50 + estTy * 0.20 + estTw * 0.20 + estWj * 0.10;
+    var estYm = ym < 90 ? 0 : Math.min(ym, 110);  // 悦跑：周均完成度近似（＜90%按该周记0）
+    var estPz = pz < 90 ? 0 : Math.min(pz, 100);
+    var estimatedScore = estJm * 0.15 + estYm * 0.30 + estPz * 0.05 + estTy * 0.20 + estTw * 0.20 + estWj * 0.10;
     var blendedScore = (currentScore * daysActual + estimatedScore * daysRemaining) / totalDays;
     blendedScore = Math.round(blendedScore * 100) / 100;
 
     // Update scenario cards
-    var optScore = (currentScore * daysActual + (98*0.5+96*0.2+99.5*0.2+99.9*0.1) * daysRemaining) / totalDays;
-    var realScore = (currentScore * daysActual + (95*0.5+95*0.2+99.2*0.2+99.9*0.1) * daysRemaining) / totalDays;
-    var consScore = (currentScore * daysActual + (0*0.5+92*0.2+98.5*0.2+99.5*0.1) * daysRemaining) / totalDays;
+    var optScore = (currentScore * daysActual + (98*0.15+100*0.30+100*0.05+96*0.20+99.5*0.20+99.9*0.10) * daysRemaining) / totalDays;
+    var realScore = (currentScore * daysActual + (95*0.15+96*0.30+100*0.05+95*0.20+99.2*0.20+99.9*0.10) * daysRemaining) / totalDays;
+    var consScore = (currentScore * daysActual + (92*0.15+0*0.30+100*0.05+92*0.20+98.5*0.20+99.5*0.10) * daysRemaining) / totalDays;
 
     // Only show for current city
     if (ck !== currentCity) return;
