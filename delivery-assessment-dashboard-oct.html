@@ -860,10 +860,9 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div id="ska-store-detail-body"><div style="font-size:12px;color:#9aa0a6;padding:8px 0;">⏳ 门店明细生成中…</div></div>
   </div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
-  <div class="card-title"><span class="icon">📈</span> 企客SKA · 月底天维度（品牌×城市 每日准时率明细 · 门店对应校验）</div>
+  <div class="card-title"><span class="icon">📈</span> 企客SKA · 天维度（日期 × 城市 × 品牌 · 配送单量 / 有效门店 / 准时率）</div>
   <div style="font-size:11px;margin-bottom:8px;"><a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度数据源：企客KA履约监控（BI 253744）</a></div>
   <div id="ska-daily-box"></div>
-  <div id="ska-check-box"></div>
 </div>
 
 
@@ -2016,71 +2015,55 @@ function renderSkaStores() {
   var box = document.getElementById('ska-stores-body');
   if (!box) return;
   if (typeof SKA_STORES === 'undefined' || !SKA_STORES || !SKA_STORES.months) { box.innerHTML = ''; return; }
-  var mkeys = [skaMonthKey()].filter(function(k) { return SKA_STORES.months[k]; });
-  var h = '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #dbe4f0;">'
-    + '<div style="font-size:12.5px;font-weight:700;color:#b71c1c;margin-bottom:4px;">🔍 商家门店考核值与赔付预结果（' + skaMonthKey() + ' · 仅SKA考核门店）</div>'
-    + '<div style="font-size:11px;color:#6b7280;margin-bottom:4px;">门店明细默认收起，点开可查看每家门店的考核值、预警与赔付预结果（仅当月SKA考核门店；同一门店保留最新一次评估快照）。</div>';
-  var risk = SKA_STORES.risk || {};
-  var rk = Object.keys(risk).filter(function(k) { return k === skaMonthKey(); });
-  if (rk.length) {
-    h += '<div style="background:#fce8e8;border-left:4px solid #d93025;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#b71c1c;"><b>⚠ 门店赔付风险汇总：</b>'
-      + rk.map(function(k){var v=risk[k];return '<b>'+k+'</b>（'+v.stores+'家 · 预估¥'+v.amt+'）';}).join('；')
-      + '<div style="font-size:10.5px;color:#8a6d6d;margin-top:2px;">按当前周期门店准时率与配送原因取消率（肯/必）预判月末赔付；口径=SKA赔付规则，以官方核算为准。</div></div>';
-  } else {
-    h += '<div style="background:#e6f4ea;border-left:4px solid #34a853;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#188038;"><b>✓ 已纳入门店的六品牌准时率均在赔付线以上</b>（按门店月维度预判，无赔付风险）。</div>';
-  }
-  var wn = SKA_STORES.warn || {};
-  var wk = Object.keys(wn).filter(function(k) { return k === skaMonthKey(); });
-  if (wk.length) {
-    h += '<div style="background:#fef3e0;border-left:4px solid #e37400;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#a15c00;"><b>⚠ 门店预警汇总（品牌预警标准·体验目标准时率分量）：</b>'
-      + wk.map(function(k){return '<b>'+k+'</b>（'+wn[k]+'家）';}).join('；')
-      + '<div style="font-size:10.5px;color:#9c7b4a;margin-top:2px;">预警线：麦当劳/肯德基/必胜客90% · 瑞幸99%（周口径）· 星巴克95% · 沃尔玛97%；预警≠赔付：低于赔付线才会扣罚；妥投/停单/迟到投诉/客诉/超时率分量待数据源开放后接入。</div></div>';
-  }
-  mkeys.forEach(function(mk, mi) {
-    var m = SKA_STORES.months[mk];
-    var label = m.label || mk;
-    var open = '';
-    h += '<details style="margin-top:6px;"' + open + '><summary style="cursor:pointer;font-size:12px;font-weight:700;color:#1967d2;">📅 ' + label + ' · 点开查看门店明细</summary><div style="margin-top:4px;">';
-    Object.keys(m.cities || {}).forEach(function(c) {
-      var brands = m.cities[c] || {};
-      var bk = Object.keys(brands);
-      if (!bk.length) return;
-      h += '<div style="font-size:12px;font-weight:700;color:#1967d2;margin:8px 0 4px;">' + c + '</div>';
-      h += '<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>SKA品牌</th><th>商家门店</th><th>配送单量</th><th>准时率（考核值）</th><th title="有单天数/其中低于赔付线天数（来自门店×天明细）">有单天数</th><th>预警（体验目标）</th><th>配送原因取消率</th><th>评估值/预结果</th></tr></thead><tbody>';
-      bk.forEach(function(b) {
-        var dStores = skaDedupeStores(brands[b]);
-        dStores.forEach(function(s, i) {
-          var col = s.amt > 0 ? '#d93025' : '#34a853';
-          h += '<tr>' + (i === 0 ? '<td rowspan="' + dStores.length + '"><b>' + b + '</b></td>' : '')
-            + '<td>' + s.store + '</td><td>' + s.done + '</td>'
-            + '<td style="color:' + col + ';font-weight:600;">' + (s.rate != null ? Number(s.rate).toFixed(2) + '%' : '—') + '</td>'
-            + '<td style="font-size:10.5px;">' + (s.days != null ? (s.days + '天' + (s.baddays ? ' / <span style="color:#d93025;font-weight:600;">' + s.baddays + '天低线</span>' : '')) : '—') + '</td>'
-            + '<td>' + (s.warn != null
-              ? (s.warn ? '<span style="color:#e37400;font-weight:600;">⚠ 预警(<' + s.wline + '%)</span>'
-                        : '<span style="color:#34a853;">✓ 达标</span>')
-              : '—') + '</td>'
-            + '<td>' + (s.cancel != null
-              ? (s.camt > 0 ? '<span style="color:#d93025;font-weight:600;">' + Number(s.cancel).toFixed(3) + '%（罚¥' + s.camt + '）</span>'
-                            : Number(s.cancel).toFixed(3) + '%')
-              : '—') + '</td>'
-            + '<td style="color:' + col + ';">' + s.pred + '</td></tr>';
-        });
+  var mk = skaMonthKey();
+  var m = SKA_STORES.months[mk];
+  if (!m) { box.innerHTML = '<div style="font-size:11px;color:#6b7280;margin-top:8px;">当月（' + mk + '）门店月维度数据待刷新。</div>'; return; }
+  var L = SKA_STORES.lines || {}, W = SKA_STORES.warnlines || {};
+  var rowsArr = [], totDone = 0, totPay = 0, payN = 0, warnN = 0, storeN = 0;
+  Object.keys(m.cities || {}).forEach(function(c) {
+    var brands = m.cities[c] || {};
+    Object.keys(brands).forEach(function(b) {
+      var stores = skaDedupeStores(brands[b] || []);
+      if (!stores.length) return;
+      var done = 0, wsum = 0, amt = 0, warn = 0, pay = 0;
+      stores.forEach(function(st) {
+        done += st.done || 0; wsum += (st.rate || 0) * (st.done || 0); amt += st.amt || 0;
+        if ((st.amt || 0) > 0) { pay++; } else if (st.warn) { warn++; }
       });
-      h += '</tbody></table></div>';
+      var rate = done > 0 ? wsum / done : null;
+      rowsArr.push({ c: c, b: b, n: stores.length, done: done, rate: rate, amt: amt, warn: warn, pay: pay, line: L[b] != null ? L[b] : 90, wline: W[b] != null ? W[b] : (L[b] != null ? L[b] : 90) });
+      totDone += done; totPay += amt; payN += pay; warnN += warn; storeN += stores.length;
     });
-    h += '</div></details>';
   });
-  h += '<details style="margin-top:6px;"><summary style="cursor:pointer;font-size:12px;font-weight:700;color:#6b7280;">📖 SKA赔付规则速查（完单量分档）</summary>'
-    + '<div style="font-size:11px;color:#6b7280;line-height:1.9;margin-top:4px;">'
-    + '<b>准时率赔付线</b>：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90%（肯德基/必胜客另设提前点率红线4%/2%）；<b>沃尔玛按区间</b>：[95%,97%)罚1500元 · [93%,95%)罚3000元 · [90%,93%)罚5000元 · <90%罚10000元。'
-    + '<b>肯德基/必胜客配送原因取消率</b>（服务商删单，按月完单量分档）：0-1000单 ≤0.10%免罚，0.10-0.15%罚90元 · 0.15-0.30%罚315元 · 0.30-0.50%罚630元 · 0.50-1.00%罚1260元 · >1.00%罚2160元；1000-3000单 0.03-0.06%罚150元 · 0.06-0.10%罚500元 · 0.10-0.20%罚900元 · >0.20%罚1800元；>3000单 0.01-0.03%罚100元 · 0.03-0.06%罚300元 · 0.06-0.10%罚600元 · 0.10-0.20%罚1200元 · >0.20%罚2000元。'
-    + '<br><b>其余品牌按门店月完单量分档</b>：（0-500】单罚250元，每+500单加250元至（5000】；5000-6000单罚3000元…8000-10000单罚5000元；10000-20000单罚7000元；20000单以上罚10000元。赔付对象为合作商，严禁转嫁骑手。</div></details>'
-    + '<div style="font-size:10.5px;color:#6b7280;margin-top:4px;">口径：门店月维度=数据源日粒度履约明细（17805 品牌x商家x履约站-履约明细）按月聚合；考核值=客户考核准时率；配送原因取消率=配送原因取消单量/配送完成运单量（肯德基/必胜客参与扣罚预判，其余品牌不扣罚展示—）；预结果=按《下沉SKA品牌KPI赔付规则》预估（准时率+取消率合计），以官方核算为准；<span style="color:#e37400;">预警列=学城《SKA考核指标口径和看板》【品牌预警标准】体验目标的准时率分量（麦当劳/肯/必90% · 瑞幸99%周口径 · 星巴克95% · 沃尔玛97%），妥投/停单/迟到投诉/客诉/超时率分量源明细暂无字段，待数据源开放后接入</span>；诸暨瑞幸取自 SKA体验看板269707（2026-02最新可用月，官方2026-03起未更新）。</div>'
-    + '</div>';
+  rowsArr.sort(function(a, b) { if (a.c !== b.c) return a.c < b.c ? -1 : 1; return a.done > b.done ? -1 : 1; });
+  var h = '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #dbe4f0;">'
+    + '<div style="font-size:12.5px;font-weight:700;color:#b71c1c;margin-bottom:4px;">🔍 城市 × 品牌 · 月配送单量与考核指标（' + mk + ' · 仅SKA考核门店）</div>'
+    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">考核准时率=门店单量加权；门店级明细（配送单量 / 准时率 / 预计赔付）见「天维度 · 考核门店明细」卡，此处不再重复展开。</div>';
+  if (totPay > 0) {
+    h += '<div style="background:#fce8e8;border-left:4px solid #d93025;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#b71c1c;"><b>⚠ 月度赔付预判：</b>预计赔付合计 <b>¥' + totPay + '</b>（' + payN + ' 家门店）· 预警 ' + warnN + ' 家 · 考核门店 ' + storeN + ' 家<span style="font-size:10.5px;color:#8a6d6d;display:block;margin-top:2px;">按门店月维度准时率与配送原因取消率（肯/必）预判；口径=SKA赔付规则，以官方核算为准。</span></div>';
+  } else {
+    h += '<div style="background:#e6f4ea;border-left:4px solid #34a853;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#188038;"><b>✓ 已纳入门店准时率均在赔付线以上</b>（无赔付风险）· 预警 ' + warnN + ' 家 · 考核门店 ' + storeN + ' 家</div>';
+  }
+  h += '<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>考核门店</th><th>月配送单量</th><th>考核准时率</th><th>赔付线</th><th>预警线</th><th>预警门店</th><th>预计赔付</th><th>达标情况</th></tr></thead><tbody>';
+  rowsArr.forEach(function(r) {
+    var col = r.rate == null ? '#6b7280' : (r.rate < r.line ? '#d93025' : (r.rate < r.wline ? '#e37400' : '#188038'));
+    var okN = r.n - r.pay - r.warn;
+    var status = '';
+    if (r.pay) status += '<span style="color:#d93025;font-weight:700;">赔付 ' + r.pay + ' 家</span> · ';
+    if (r.warn) status += '<span style="color:#e37400;font-weight:600;">预警 ' + r.warn + ' 家</span> · ';
+    status += '<span style="color:#188038;">达标 ' + okN + ' 家</span>';
+    h += '<tr><td><b>' + cityFull(r.c) + '</b></td><td>' + r.b + '</td><td>' + r.n + ' 家</td><td><b>' + r.done + '</b></td>'
+      + '<td style="color:' + col + ';font-weight:700;">' + (r.rate != null ? r.rate.toFixed(2) + '%' : '—') + '</td>'
+      + '<td>' + r.line + '%</td><td>' + r.wline + '%</td>'
+      + '<td>' + (r.warn ? '<span style="color:#e37400;font-weight:700;">' + r.warn + ' 家</span>' : '0') + '</td>'
+      + '<td>' + (r.amt ? '<span style="color:#d93025;font-weight:700;">¥' + r.amt + '</span>' : '—') + '</td>'
+      + '<td style="font-size:10.5px;">' + status + '</td></tr>';
+  });
+  h += '</tbody></table></div>';
+  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:4px;">口径：门店月维度=17805日粒度明细按月聚合；赔付线：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90% · 沃尔玛95%（肯/必另设配送原因取消率分档扣罚）；预警线：麦当劳/肯/必90% · 瑞幸99%（周口径）· 星巴克95% · 沃尔玛97%；预计赔付按《下沉SKA品牌KPI赔付规则》预估，以官方核算为准；同一门店保留最新一次评估快照；<a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a>。</div></div>';
   box.innerHTML = h;
 }
 
-// ===================== SKA 天维度明细 + 分析报告 + 数据图表（卡片纵排，随整板布局） =====================
 function _skaRateCol(rate, b) {
   var line = (SKA_DAILY.lines || {})[b] || 90;
   var wl = (SKA_DAILY.warnlines || {})[b] || line;
@@ -2218,77 +2201,35 @@ function renderSkaDaily() {
     box.innerHTML = '<div style="font-size:12px;color:#6b7280;padding:8px 0;">天维度明细待每日流水线刷新后展示。</div>';
     return;
   }
-  var bord = Object.keys(SKA_DAILY.lines || {});
-  var rows = SKA_DAILY.rows.filter(function(r) { return r.d.indexOf(skaMonthPrefix()) === 0; }).slice().sort(function(a, b) {
+  // 仅当月 + 仅SKA考核（城市×品牌）
+  var skaCB = {};
+  try {
+    var mm = SKA_STORES.months[skaMonthKey()] || {};
+    Object.keys(mm.cities || {}).forEach(function(c) {
+      Object.keys(mm.cities[c] || {}).forEach(function(b) { skaCB[c + '|' + b] = 1; });
+    });
+  } catch (e) {}
+  var hasSka = Object.keys(skaCB).length > 0;
+  var rows = SKA_DAILY.rows.filter(function(r) {
+    return r.d.indexOf(skaMonthPrefix()) === 0 && (!hasSka || skaCB[r.city + '|' + r.b]);
+  }).slice().sort(function(a, b) {
     if (a.d !== b.d) return a.d < b.d ? 1 : -1;
     if (a.city !== b.city) return a.city < b.city ? -1 : 1;
-    return bord.indexOf(a.b) - bord.indexOf(b.b);
+    return a.b < b.b ? -1 : (a.b > b.b ? 1 : 0);
   });
-  var h = '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin:10px 0 2px;">📈 SKA 天维度履约趋势（门店×天明细聚合，随每日流水线自动刷新）</div>'
-    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">准时率=客户考核准时运单量/配送完成运单量（当日城市×品牌汇总）；<span style="color:#d93025;">红=低于赔付考核线</span>，<span style="color:#e37400;">橙=低于体验预警线</span>；配送原因取消率仅肯德基/必胜客参与扣罚。</div>'
-    + '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>日期</th><th>城市</th><th>品牌</th><th>配送单量</th><th>准时率</th><th>有单门店</th><th>低于赔付线门店</th><th>配送原因取消率</th></tr></thead><tbody>';
+  var h = '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin:10px 0 2px;">📈 天维度 · 日期 × 城市 × 品牌（配送单量 / 有效门店 / 准时率）</div>'
+    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">仅展示当月SKA考核门店（城市×品牌）；有效门店=当日有配送完成订单的门店数；<span style="color:#d93025;">红=低于赔付线</span>，<span style="color:#e37400;">橙=低于预警线</span>；门店级配送单量与赔付预判见上方「考核门店明细」卡。</div>'
+    + '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>日期</th><th>城市</th><th>品牌</th><th>配送单量</th><th>有效门店</th><th>准时率</th><th>低于赔付线门店</th></tr></thead><tbody>';
   rows.forEach(function(r) {
     var col = _skaRateCol(r.rate, r.b);
     var dshow = r.d.slice(4, 6) + '-' + r.d.slice(6, 8);
-    h += '<tr><td>' + dshow + '</td><td>' + cityFull(r.city) + '</td><td>' + r.b + '</td><td>' + r.done + '</td>'
+    h += '<tr><td>' + dshow + '</td><td>' + cityFull(r.city) + '</td><td>' + r.b + '</td><td><b>' + r.done + '</b></td>'
+      + '<td>' + r.pois + '</td>'
       + '<td style="color:' + col + ';font-weight:700;">' + Number(r.rate).toFixed(2) + '%</td>'
-      + '<td>' + r.pois + '</td><td>' + (r.bad ? '<span style="color:#d93025;font-weight:700;">' + r.bad + '</span>' : '0') + '</td>'
-      + '<td>' + (r.cancel != null ? Number(r.cancel).toFixed(3) + '%' : '—') + '</td></tr>';
+      + '<td>' + (r.bad ? '<span style="color:#d93025;font-weight:700;">' + r.bad + '</span>' : '0') + '</td></tr>';
   });
   h += '</tbody></table></div>';
-  box.innerHTML = h;
-  try { renderSkaCheck(); } catch (e) {}
-}
-
-// ===================== SKA 月底天维度 × 月维度 门店一一对应校验 =====================
-function renderSkaCheck() {
-  var box = document.getElementById('ska-check-box');
-  if (!box) return;
-  if (typeof SKA_DAILY === 'undefined' || !SKA_DAILY || !SKA_DAILY.rows || !SKA_DAILY.rows.length
-    || typeof SKA_STORES === 'undefined' || !SKA_STORES || !SKA_STORES.months) { box.innerHTML = ''; return; }
-  var mRows = SKA_DAILY.rows.filter(function(r) { return r.d.indexOf(skaMonthPrefix()) === 0; });
-  var latestD = mRows.reduce(function(m, r) { return r.d > m ? r.d : m; }, '0');
-  var dayRows = mRows.filter(function(r) { return r.d === latestD; });
-  if (!dayRows.length) { box.innerHTML = ''; return; }
-  var mkeys = Object.keys(SKA_STORES.months).sort().reverse();
-  var dshow = latestD.slice(4, 6) + '-' + latestD.slice(6, 8);
-  var h = '<div style="margin-top:12px;padding-top:10px;border-top:1px dashed #dbe4f0;">'
-    + '<div style="font-size:12.5px;font-weight:700;color:#188038;margin-bottom:2px;">🧾 月底天维度 × 月维度 · 门店一一对应校验（企客KA）</div>'
-    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">两维度同源（17805 品牌x商家x履约站-履约明细，天维度入口 BI 253744）：月维度门店按自然月聚合，天维度为当日有单门店；校验最新数据日 <b>' + dshow + '</b> 的有单门店与月维度门店名单一一对应，并勾稽两维度单量。</div>'
-    + '<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>月维度门店</th><th>天维度有单门店（' + dshow + '）</th><th>门店对应</th><th>月维度单量</th><th>天维度累计单量</th><th>单量勾稽</th></tr></thead><tbody>';
-  var allOk = true;
-  dayRows.forEach(function(r) {
-    var mk = null;
-    for (var i = 0; i < mkeys.length; i++) {
-      var mm = mkeys[i];
-      if (mm !== skaMonthKey()) continue;
-      var cs = SKA_STORES.months[mm].cities || {};
-      if (cs[r.city] && cs[r.city][r.b]) { mk = mm; break; }
-    }
-    var mp = latestD.slice(0, 6);
-    var dailyDone = mRows.reduce(function(s, x) { return (x.d.slice(0, 6) === mp && x.city === r.city && x.b === r.b) ? s + (x.done || 0) : s; }, 0);
-    if (!mk) {
-      allOk = false;
-      h += '<tr><td>' + cityFull(r.city) + '</td><td>' + r.b + '</td><td colspan="2" style="color:#9aa0a6;">月维度暂无该品牌门店</td>'
-        + '<td style="color:#d93025;font-weight:700;">⚠ 天维度有单 ' + r.pois + ' 家未入月维度</td><td>—</td><td>' + dailyDone + '</td><td style="color:#d93025;font-weight:700;">⚠ 差异</td></tr>';
-      return;
-    }
-    var stores = skaDedupeStores(SKA_STORES.months[mk].cities[r.city][r.b] || []);
-    var mCount = stores.length;
-    var mDone = stores.reduce(function(s, x) { return s + (x.done || 0); }, 0);
-    var okStore = r.pois === mCount, okDone = dailyDone === mDone;
-    if (!okStore || !okDone) allOk = false;
-    h += '<tr><td>' + cityFull(r.city) + '</td><td>' + r.b + '</td>'
-      + '<td><b>' + mCount + '</b> 家</td><td>' + r.pois + ' 家</td>'
-      + '<td>' + (okStore ? '<span style="color:#188038;font-weight:700;">✓ 一一对应</span>' : (r.pois < mCount ? '<span style="color:#e37400;font-weight:700;">✓ 名单一致 · 当日无单 ' + (mCount - r.pois) + ' 家</span>' : '<span style="color:#d93025;font-weight:700;">⚠ 天维度多 ' + (r.pois - mCount) + ' 家</span>')) + '</td>'
-      + '<td>' + mDone + '</td><td>' + dailyDone + '</td>'
-      + '<td>' + (okDone ? '<span style="color:#188038;font-weight:700;">✓ 平</span>' : '<span style="color:#d93025;font-weight:700;">⚠ 差 ' + Math.abs(mDone - dailyDone) + ' 单</span>') + '</td></tr>';
-  });
-  h += '</tbody></table></div>';
-  h += '<div style="font-size:11px;margin-top:4px;font-weight:700;' + (allOk ? 'color:#188038;' : 'color:#b35f00;') + '">'
-    + (allOk ? '✓ 校验结论：月底天维度企客KA有单门店与月维度门店一一对应，两维度单量勾稽一致。' : '⚠ 存在差异项，见上表标红/标橙行（当日无单门店属正常对应；标红差异需关注数据抓取时点）。') + '</div>';
-  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:2px;">说明：诸暨瑞幸月维度取自官方 SKA 看板 269707（2026-02 最新可用月），该源无天维度明细，不参与本校验；月维度门店名单明细见上方「月维度」卡片。</div>'
-    + '</div>';
+  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:4px;">数据源：<a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">企客KA履约监控（BI 253744）</a>（17805 明细日聚合），随每日流水线自动刷新；准时率=客户考核准时运单量/配送完成运单量（当日城市×品牌汇总）。</div>';
   box.innerHTML = h;
 }
 
@@ -4677,6 +4618,45 @@ function renderSkaWeekly(){
   var el=document.getElementById('ska-week-card'); if(!el||el.dataset.rendered==='1')return;
   if(typeof SKA_DAILY==='undefined'||!SKA_DAILY||!SKA_DAILY.rows){ el.innerHTML='<div style="font-size:12px;color:#6b7280;">⏳ SKA 天维度数据待流水线生成</div>'; return; }
   var L=SKA_STORES&&SKA_STORES.lines?SKA_STORES.lines:{}, W=SKA_STORES&&SKA_STORES.warnlines?SKA_STORES.warnlines:{};
+  var h='<div class="card-title">🤝 企客SKA · 评估与赔付（门店级 · 城市 / 品牌 / 门店 / 预计赔付 / 预警 / 达标）</div>';
+  h+='<div style="font-size:11px;color:#6b7280;margin-bottom:8px;">按门店月维度评估（当月SKA考核门店，风险优先排序）；预计赔付=按《SKA赔付规则》预判金额（以官方核算为准）；预警=低于品牌预警线（体验目标准时率分量）；赔付线：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90% · 沃尔玛95%。</div>';
+  var mk=skaMonthKey();
+  var m=(typeof SKA_STORES!=='undefined'&&SKA_STORES&&SKA_STORES.months)?SKA_STORES.months[mk]:null;
+  if(m){
+    var rowsArr=[];
+    Object.keys(m.cities||{}).forEach(function(c){ Object.keys(m.cities[c]||{}).forEach(function(b){
+      skaDedupeStores(m.cities[c][b]||[]).forEach(function(st){ rowsArr.push({c:c,b:b,s:st}); });
+    });});
+    rowsArr.sort(function(a,b){
+      function tier(x){ return (x.amt||0)>0?0:(x.warn?1:2); }
+      var ta=tier(a.s), tb=tier(b.s);
+      if(ta!==tb) return ta-tb;
+      if(a.c!==b.c) return a.c<b.c?-1:1;
+      return (a.s.rate||0)<(b.s.rate||0)?-1:1;
+    });
+    var payN=0,warnN=0,okN=0,totAmt=0;
+    rowsArr.forEach(function(x){ if((x.s.amt||0)>0){payN++;totAmt+=x.s.amt||0;} else if(x.s.warn){warnN++;} else {okN++;} });
+    h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0;">'
+      +'<div style="flex:1;min-width:130px;background:#fce8e8;border:1px solid #f3c2c2;border-radius:10px;padding:8px 12px;"><div style="font-size:10.5px;color:#b71c1c;">预计赔付</div><div style="font-size:17px;font-weight:800;color:#d93025;">¥'+totAmt+'</div><div style="font-size:10.5px;color:#b71c1c;">'+payN+' 家门店</div></div>'
+      +'<div style="flex:1;min-width:130px;background:#fef3e0;border:1px solid #f5d9a8;border-radius:10px;padding:8px 12px;"><div style="font-size:10.5px;color:#a15c00;">预警（体验目标）</div><div style="font-size:17px;font-weight:800;color:#e37400;">'+warnN+' 家</div><div style="font-size:10.5px;color:#a15c00;">低于预警线 · 未到赔付</div></div>'
+      +'<div style="flex:1;min-width:130px;background:#e6f4ea;border:1px solid #bfe3c8;border-radius:10px;padding:8px 12px;"><div style="font-size:10.5px;color:#188038;">达标</div><div style="font-size:17px;font-weight:800;color:#188038;">'+okN+' 家</div><div style="font-size:10.5px;color:#188038;">考核门店 '+(payN+warnN+okN)+' 家</div></div>'
+      +'</div>';
+    h+='<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>月配送单量</th><th>准时率</th><th>预计赔付</th><th>预警</th><th>达标情况</th></tr></thead><tbody>';
+    rowsArr.forEach(function(x){
+      var s0=x.s;
+      var st=(s0.amt||0)>0?'赔付':(s0.warn?'预警':'达标');
+      var col=st==='赔付'?'#d93025':(st==='预警'?'#e37400':'#188038');
+      h+='<tr><td>'+cityFull(x.c)+'</td><td>'+x.b+'</td><td style="font-size:10.5px;">'+(s0.store||'—')+'</td><td>'+(s0.done||0)+'</td>'
+        +'<td style="color:'+col+';font-weight:700;">'+(s0.rate!=null?Number(s0.rate).toFixed(2)+'%':'—')+'</td>'
+        +'<td>'+((s0.amt||0)>0?'<span style="color:#d93025;font-weight:700;">¥'+s0.amt+'</span>':(s0.pred||'—'))+'</td>'
+        +'<td>'+(s0.warn?'<span style="color:#e37400;font-weight:700;">⚠ &lt;'+(s0.wline||'—')+'%</span>':'—')+'</td>'
+        +'<td style="color:'+col+';font-weight:600;">'+(st==='赔付'?'✗ 未达标（触发赔付）':(st==='预警'?'△ 预警（未达标）':'✓ 达标'))+'</td></tr>';
+    });
+    h+='</tbody></table></div>';
+  } else {
+    h+='<div style="font-size:12px;color:#6b7280;">当月（'+mk+'）门店月维度数据待刷新。</div>';
+  }
+  h+='<details style="margin-top:10px;"><summary style="cursor:pointer;font-size:12px;font-weight:700;color:#1967d2;">📅 自然周达标明细（期1=9/28-10/18 周×1.05系数 · 期2=10/19起新口径）— 点开查看</summary><div style="margin-top:6px;">';
   var WN=['09-28~10-04','10-05~10-11','10-12~10-18','10-19~10-25','10-26~11-01'];
   var WP=['期1','期1','期1','期2','期2'];
   function wk(d){var n=parseInt(d,10);
@@ -4689,8 +4669,6 @@ function renderSkaWeekly(){
     o.done+=r.done||0; o.ont+=r.ont||0; o.days++;
     var ln=L[r.b]!=null?L[r.b]:90; if(r.done>0&&(r.ont/(r.done))*100<ln)o.below++;});
   var cities=['泰兴','诸暨','响水'];
-  var h='<div class="card-title">📅 SKA 考核周期维度 · 自然周达标（期1=9/28-10/18 周×1.05系数 · 期2=10/19起新口径）</div>';
-  h+='<div style="font-size:11px;color:#6b7280;margin-bottom:8px;">聚合口径：周准时率=Σ准时单/Σ完成单（单量加权）；单元格色：绿=达品牌预警线 · 橙=赔付线与预警线之间 · 红=低于赔付线（赔付风险）。肯德基/必胜客按「5周3达标」周维度评估，瑞幸按「1+1」周预警，麦当劳按自然月累计。</div>';
   cities.forEach(function(c){
     h+='<div style="font-weight:700;font-size:13px;margin:10px 0 4px;color:#1a2b4a;">'+ (c==='泰兴'?'泰兴县':c==='诸暨'?'诸暨市':'响水县') +'</div>';
     h+='<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>品牌</th>';
@@ -4710,7 +4688,6 @@ function renderSkaWeekly(){
           var tag=rt<ln?' ⚠':'';
           h+='<td title="品牌预警线'+wn+'% / 赔付线'+ln+'%；低于赔付线月末按《SKA赔付规则》按门店月完单量分档扣罚，本卡为按天聚合的提前预判" style="color:'+col+';font-weight:700;">'+rt.toFixed(1)+'%'+tag+'<br><span style="font-weight:400;font-size:10px;color:#6b7280;">'+o.done+'单 · 低于线'+o.below+'天</span></td>';
         } else {
-          var future=(b!=='x'); // W2起待采集
           h+='<td style="color:#c0c6cf;">—<br><span style="font-size:10px;">待采集</span></td>';
         }
       }
@@ -4726,6 +4703,7 @@ function renderSkaWeekly(){
     });
     h+='</tbody></table></div>';
   });
+  h+='</div></details>';
   h+='<div class="slice-note" style="margin-top:8px;">注：泰兴/响水按17805日粒度日更；诸暨企客KA数据权限申请中，开通后自动补全。周维度达标为按天聚合的提前预判，门店月度赔付以自然月累计按《SKA赔付规则》核算。</div>';
   el.innerHTML=h; el.dataset.rendered='1';
 }
@@ -4871,7 +4849,7 @@ window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); r
     {k:'当日测算 + 承托比', dim:'daily', chips:[['🔮 月度预估','monthly','sec-estimate']]},
     {k:'考核周期', dim:'daily', chips:[['📅 月度周期','monthly','sec-period']]},
     {k:'扣分项模块', dim:'daily', chips:[['📅 月度评估','monthly','qk-monthly-card'],['📋 评估报告','report','qike-score']]},
-    {k:'企客SKA · 月底天维度', dim:'daily', chips:[['📈 趋势图','charts','chart-ska'],['📅 周达标','report','ska-week-card'],['🤝 制度','report','ska-rules-card']]},
+    {k:'企客SKA · 天维度', dim:'daily', chips:[['📈 趋势图','charts','chart-ska'],['📅 周达标','report','ska-week-card'],['🤝 制度','report','ska-rules-card']]},
     /* —— 月维度 → —— */
     {k:'整月考核结果测算', dim:'monthly', chips:[['📈 月度对比','charts','chart-month'],['📋 报告','report','slice-analysis'],['📅 天维度','daily','']]},
     {k:'城市预估警告', dim:'monthly', chips:[['🔮 测算器','report','preset-card']]},
@@ -4886,7 +4864,7 @@ window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); r
     {k:'切片分析：城市 × 期次 × 指标', dim:'report', chips:[['📶 两期对比','charts','chart-period'],['📈 走势','charts','chart-trend'],['🏆 月度','monthly','sec-overview']]},
     {k:'未达成指标 · 落地措施', dim:'report', chips:[['🏆 月度结果','monthly','sec-overview'],['📊 走势','charts','chart-trend']]},
     {k:'企客模块 · 方案计分规则评估', dim:'report', chips:[['📅 天维度','daily','qk-daily-card'],['📅 月度评估','monthly','qk-monthly-card'],['📈 趋势','charts','chart-ska']]},
-    {k:'SKA 考核周期维度', dim:'report', chips:[['📈 趋势','charts','chart-ska'],['📅 月度','monthly','ska-month-card']]},
+    {k:'企客SKA · 评估与赔付', dim:'report', chips:[['📈 趋势','charts','chart-ska'],['📅 月度','monthly','ska-month-card']]},
     {k:'SKA 考核制度总览', dim:'report', chips:[['📅 月度赔付','monthly','ska-month-card'],['📅 天维度','daily','qk-daily-card']]},
     {k:'预估测算器', dim:'report', chips:[['💰 预估警告','monthly','sec-estimate'],['📈 月度对比','charts','chart-month']]},
     {k:'问题细化拆解', dim:'report', chips:[['📊 走势','charts','chart-trend'],['🏆 月度','monthly','sec-overview']]},
