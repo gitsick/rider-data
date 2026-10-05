@@ -1970,14 +1970,20 @@ function renderSkaSix() {
   if (!box) return;
   if (typeof SKA_SIX === 'undefined' || !SKA_SIX || !SKA_SIX.brands) { box.innerHTML = ''; return; }
   var cities = ['泰兴', '诸暨', '响水'];
+  var mk = skaMonthKey();
+  var emptyBrands = [], dataBrands = [];
+  SKA_SIX.brands.forEach(function(b) {
+    var has = cities.some(function(c) { return (SKA_SIX.cities[c] || {})[b]; });
+    (has ? dataBrands : emptyBrands).push(b);
+  });
   var h = '<div style="margin-top:12px;padding-top:10px;border-top:1px dashed #dbe4f0;">'
-    + '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin-bottom:2px;">🏬 SKA 六品牌商家门店数据（麦当劳 · 肯德基 · 必胜客 · 瑞幸 · 星巴克 · 沃尔玛）</div>'
-    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">优先取企客KA当月数据（17805），缺口由 SKA体验看板（269707）门店维度补齐；数据随每日抓取自动更新。</div>';
+    + '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin-bottom:2px;">🏬 SKA 六品牌商家门店数据（' + dataBrands.join(' · ') + '）</div>'
+    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">优先取企客KA当月数据（17805），缺口由 SKA体验看板（269707）门店维度补齐；门店数旁标注当月SKA考核家数（详见下方城市×品牌汇总）；数据随每日抓取自动更新。</div>';
   h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>品牌</th><th>赔付线/预警线</th>';
   cities.forEach(function(c) { h += '<th>' + cityFull(c) + '</th>'; });
   h += '</tr></thead><tbody>';
   var anyData = false;
-  SKA_SIX.brands.forEach(function(b) {
+  dataBrands.forEach(function(b) {
     var line = SKA_SIX.lines[b];
     var wline = (SKA_SIX.warnlines || {})[b];
     h += '<tr><td><b>' + b + '</b></td><td>' + (line != null ? line + '%' : '—')
@@ -1991,18 +1997,27 @@ function renderSkaSix() {
       var okTxt = (e.okStores != null && e.stores != null) ? '（达标' + e.okStores + '/' + e.stores + '）' : '';
       var dt = e.date ? (String(e.date).slice(4, 6) + '-' + String(e.date).slice(6, 8)) : '';
       var src = (e.src === '269707') ? 'SKA看板' : '企客KA';
+      var skaN = null;
+      try {
+        var mm = SKA_STORES.months[mk];
+        if (mm && mm.cities[c] && mm.cities[c][b]) skaN = skaDedupeStores(mm.cities[c][b]).length;
+      } catch (err) {}
       h += '<td style="color:' + col + ';font-weight:600;">' + e.stores + '店 · 准时率' + ot + okTxt
         + (e.hit ? ' ⚠赔付预警' : '')
         + (e.warn ? (e.hit ? ' · ' : ' ') + '⚠体验预警(<' + e.wline + '%)' : '')
+        + (skaN != null ? '<div style="font-size:10px;color:#1967d2;font-weight:400;">SKA考核 ' + skaN + ' 家</div>' : '')
         + '<div style="font-size:10px;color:#6b7280;font-weight:400;">' + dt + ' · ' + src + '</div></td>';
     });
     h += '</tr>';
   });
+  if (emptyBrands.length) {
+    h += '<tr><td colspan="5" style="color:#9aa0a6;font-size:10.5px;background:#fafbfc;padding:6px 10px;">' + emptyBrands.join(' · ') + '：当月暂无入驻门店（有入驻后自动展示）</td></tr>';
+  }
   h += '</tbody></table></div>';
   if (!anyData) {
     h += '<div style="font-size:11px;color:#6b7280;margin-top:4px;">六品牌暂无可展示门店数据（官方 SKA 看板 269707 近期无新增；接入后自动更新）。</div>';
   } else {
-    h += '<div style="font-size:11px;color:#6b7280;margin-top:4px;">口径说明：门店“达标/不达标”为官方 SKA 看板口径；赔付线：瑞幸99% / 星巴克93% / 肯德基·必胜客·麦当劳90% / 沃尔玛95%；<span style="color:#e37400;">预警线（品牌预警标准·体验目标准时率分量）：麦当劳/肯德基/必胜客90% · 瑞幸99%（周口径）· 星巴克95% · 沃尔玛97%</span>，体验目标中的妥投/停单/迟到投诉/客诉/超时率分量待数据源开放后接入；标注日期为数据归属日（269707 官方看板 2026-03 起暂无新增数据，显示为最新可用月，上线后自动更新）；“百胜门店调拨”归口肯德基。</div>';
+    h += '<div style="font-size:11px;color:#6b7280;margin-top:4px;">口径说明：门店“达标/不达标”为官方 SKA 看板口径；标注日期为数据归属日（269707 官方看板 2026-03 起暂无新增，显示最新可用月）；赔付线/预警线与各品牌体验目标全表见下方「城市×品牌 · 月配送单量与考核指标」；“百胜门店调拨”归口肯德基。</div>';
   }
   h += '<div id="ska-stores-body"></div>';
   h += '</div>';
@@ -2036,7 +2051,7 @@ function renderSkaStores() {
     });
   });
   rowsArr.sort(function(a, b) { if (a.c !== b.c) return a.c < b.c ? -1 : 1; return a.done > b.done ? -1 : 1; });
-  var h = '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #dbe4f0;">'
+  var h = skaDataCheckHtml() + '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #dbe4f0;">'
     + '<div style="font-size:12.5px;font-weight:700;color:#b71c1c;margin-bottom:4px;">🔍 城市 × 品牌 · 月配送单量与考核指标（' + mk + ' · 仅SKA考核门店）</div>'
     + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">考核准时率=门店单量加权；门店级明细（配送单量 / 准时率 / 预计赔付）见「天维度 · 考核门店明细」卡，此处不再重复展开。</div>';
   if (totPay > 0) {
@@ -2060,6 +2075,16 @@ function renderSkaStores() {
       + '<td style="font-size:10.5px;">' + status + '</td></tr>';
   });
   h += '</tbody></table></div>';
+  h += '<div style="font-size:12.5px;font-weight:700;color:#1a2b4a;margin:12px 0 4px;">🎯 SKA各品牌考核 · 体验目标指标（达标判定速览）</div>'
+  + '<div class="table-scroll"><table class="dt" style="font-size:10.5px;"><thead><tr><th>品牌</th><th>考核周期</th><th>赔付线</th><th>预警线</th><th>体验目标（达标判定）</th></tr></thead><tbody>'
+  + '<tr><td><b>麦当劳</b></td><td>自然月</td><td>&lt;90%</td><td>90%</td><td>完成率&gt;95% · 准时率&gt;90% · 客诉率&lt;1% → <b>三项均达标</b>（连续两月未达标→门店流失）</td></tr>'
+  + '<tr><td><b>肯德基</b></td><td>周维度（5周评估）</td><td>&lt;90%</td><td>90%</td><td>准时率≥90%且妥投≤4% · 系统停单≤0.2% · 迟到投诉≤0.5% → <b>三项中两项达标</b>（5周内3周达标=已改善）</td></tr>'
+  + '<tr><td><b>必胜客</b></td><td>周维度（5周评估）</td><td>&lt;90%（提前点率红线2%）</td><td>90%</td><td>剔除15分钟出餐后准时率≥90%且妥投≤4% · 系统停单≤0.2% · 剔除后迟到投诉≤0.5% → <b>三项中两项达标</b></td></tr>'
+  + '<tr><td><b>瑞幸</b></td><td>周维度（1+1）</td><td>&lt;99%</td><td>99%</td><td>超时率周≤0.1%或超时单≤3单 · 重大客诉=0 · 客诉率&lt;1.5% · 提前点客诉月&lt;2条 · 取消率周≤1% · 标准履约率周≥98%（剔除校园店）→ <b>四项均达标</b>（预警后两周改善期，90天内二次预警→切出）</td></tr>'
+  + '<tr><td><b>星巴克</b></td><td>自然月</td><td>&lt;93%</td><td>95%</td><td>准时率≥95%（单产低，商考仅看准时率）→ <b>达标即通过</b></td></tr>'
+  + '<tr><td><b>沃尔玛</b></td><td>自然月</td><td>&lt;90%罚1万 · 区间分档</td><td>97%</td><td>准时率≥97% · 客诉率&lt;0.04% → <b>两项均达标</b></td></tr>'
+  + '</tbody></table></div>'
+  + '<div style="font-size:10.5px;color:#6b7280;margin-top:2px;">体验目标中妥投/停单/迟到投诉/客诉/超时率分量待数据源开放后接入；切店/流失与罚金细则见「分析报告」页签 · SKA考核制度总览。</div>';
   h += '<div style="font-size:10.5px;color:#6b7280;margin-top:4px;">口径：门店月维度=17805日粒度明细按月聚合；赔付线：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90% · 沃尔玛95%（肯/必另设配送原因取消率分档扣罚）；预警线：麦当劳/肯/必90% · 瑞幸99%（周口径）· 星巴克95% · 沃尔玛97%；预计赔付按《下沉SKA品牌KPI赔付规则》预估，以官方核算为准；同一门店保留最新一次评估快照；<a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a>。</div></div>';
   box.innerHTML = h;
 }
@@ -2194,6 +2219,50 @@ function renderSkaStoreDetail() {
 /* SKA_STORE_DETAIL_END */
 
 function cityFull(c){var m={'泰兴':'泰兴县','诸暨':'诸暨市','响水':'响水县'};return m[c]||c;}
+// ===================== SKA 数据日期×考核月一致性检核 =====================
+function skaDataCheckHtml(){
+  try{
+    var mk = skaMonthKey(), mp = skaMonthPrefix();
+    var items = [];
+    items.push(['考核月', mk, true, '']);
+    var rows = (typeof SKA_DAILY !== 'undefined' && SKA_DAILY && SKA_DAILY.rows) ? SKA_DAILY.rows : [];
+    var months = {}, latest = '0';
+    rows.forEach(function(r){ var d = r.d || ''; if (!d) return; months[d.slice(0,6)] = (months[d.slice(0,6)]||0)+1; if (d > latest) latest = d; });
+    var curOK = months[mp] > 0;
+    items.push(['天维度数据归属月', Object.keys(months).sort().map(function(m){ return m + '·' + months[m] + '行'; }).join(' / ') || '—', curOK, curOK ? '含当月' : '⚠ 无当月数据']);
+    var lOK = latest.slice(0,6) === mp;
+    items.push(['天维度最新数据日', latest !== '0' ? latest.slice(4,6) + '-' + latest.slice(6,8) : '—', lOK, lOK ? '' : '⚠ 不在考核月内']);
+    var cd = (typeof currentDate !== 'undefined') ? currentDate : '';
+    var cdOk = !!cd && ('2026' + cd.slice(0,2)) === mp;
+    items.push(['页面单日数据日', cd ? '2026-' + cd : '—', cdOk, cdOk ? '' : '⚠ 与考核月不一致']);
+    var sm = Object.keys((typeof SKA_STORES !== 'undefined' && SKA_STORES && SKA_STORES.months) || {});
+    items.push(['门店月维度快照', sm.join(' / ') || '—', sm.indexOf(mk) >= 0, sm.indexOf(mk) >= 0 ? '含考核月' : '⚠ 缺考核月快照']);
+    var stale = [];
+    try{
+      var sc = (typeof SKA_SIX !== 'undefined' && SKA_SIX && SKA_SIX.cities) || {};
+      Object.keys(sc).forEach(function(c){ Object.keys(sc[c]).forEach(function(b){
+        var e = sc[c][b];
+        if (e && e.src === '269707' && e.date && String(e.date).slice(0,6) !== mp) stale.push(cityFull(c) + '·' + b + '（' + String(e.date).slice(0,4) + '-' + String(e.date).slice(4,6) + '）');
+      })});
+    }catch(e){}
+    items.push(['品牌看板补充源', stale.length ? stale.join('、') : '均为当月', true, stale.length ? '⚠ 历史可用月：官方2026-03起未更新' : '']);
+    var warnN = items.filter(function(x){ return x[3].indexOf('⚠') === 0; }).length;
+    var hardBad = items.some(function(x){ return !x[2]; });
+    var allOk = !hardBad && warnN === 0;
+    var bg = hardBad ? '#fce8e8' : (warnN ? '#fef7e6' : '#f1f8f4');
+    var bd = hardBad ? '#f3c2c2' : (warnN ? '#f0dcb0' : '#cfe8d6');
+    function chip(t, c){ return '<span style="display:inline-block;padding:1px 8px;border-radius:10px;font-size:10.5px;font-weight:600;background:' + c + '14;color:' + c + ';border:1px solid ' + c + '44;margin:1px 4px 1px 0;white-space:nowrap;">' + t + '</span>'; }
+    var h = '<div style="background:' + bg + ';border:1px solid ' + bd + ';border-radius:8px;padding:6px 10px;margin:8px 0;font-size:11px;color:#374151;line-height:2;">'
+      + '<b style="color:' + (hardBad ? '#d93025' : (warnN ? '#a15c00' : '#188038')) + ';">🗓 数据日期×考核月一致性检核</b>　'
+      + items.map(function(x){
+          var c = !x[2] ? '#d93025' : ((x[3] && x[3].indexOf('⚠') === 0) ? '#e37400' : '#188038');
+          return chip(x[0] + ' ' + x[1] + (x[3] ? ' · ' + x[3] : ''), c);
+        }).join('')
+      + '</div>';
+    return h;
+  }catch(e){ return ''; }
+}
+
 function renderSkaDaily() {
   var box = document.getElementById('ska-daily-box');
   if (!box) return;
@@ -2217,7 +2286,7 @@ function renderSkaDaily() {
     if (a.city !== b.city) return a.city < b.city ? -1 : 1;
     return a.b < b.b ? -1 : (a.b > b.b ? 1 : 0);
   });
-  var h = '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin:10px 0 2px;">📈 天维度 · 日期 × 城市 × 品牌（配送单量 / 有效门店 / 准时率）</div>'
+  var h = skaDataCheckHtml() + '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin:10px 0 2px;">📈 天维度 · 日期 × 城市 × 品牌（配送单量 / 有效门店 / 准时率）</div>'
     + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">仅展示当月SKA考核门店（城市×品牌）；有效门店=当日有配送完成订单的门店数；<span style="color:#d93025;">红=低于赔付线</span>，<span style="color:#e37400;">橙=低于预警线</span>；门店级配送单量与赔付预判见上方「考核门店明细」卡。</div>'
     + '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>日期</th><th>城市</th><th>品牌</th><th>配送单量</th><th>有效门店</th><th>准时率</th><th>低于赔付线门店</th></tr></thead><tbody>';
   rows.forEach(function(r) {
@@ -4620,6 +4689,7 @@ function renderSkaWeekly(){
   var L=SKA_STORES&&SKA_STORES.lines?SKA_STORES.lines:{}, W=SKA_STORES&&SKA_STORES.warnlines?SKA_STORES.warnlines:{};
   var h='<div class="card-title">🤝 企客SKA · 评估与赔付（门店级 · 城市 / 品牌 / 门店 / 预计赔付 / 预警 / 达标）</div>';
   h+='<div style="font-size:11px;color:#6b7280;margin-bottom:8px;">按门店月维度评估（当月SKA考核门店，风险优先排序）；预计赔付=按《SKA赔付规则》预判金额（以官方核算为准）；预警=低于品牌预警线（体验目标准时率分量）；赔付线：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90% · 沃尔玛95%。</div>';
+  h+=skaDataCheckHtml();
   var mk=skaMonthKey();
   var m=(typeof SKA_STORES!=='undefined'&&SKA_STORES&&SKA_STORES.months)?SKA_STORES.months[mk]:null;
   if(m){
