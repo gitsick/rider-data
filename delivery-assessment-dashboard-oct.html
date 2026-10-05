@@ -2157,6 +2157,19 @@ function skaDedupeStores(list){
 /* SKA_MONTH_FILTER_END */
 
 
+// ===================== SKA 考核月门店明细 · 视图切换 =====================
+function skaSdView(v){
+  var c = document.getElementById('ska-sd-cards'), t = document.getElementById('ska-sd-table');
+  var bc = document.getElementById('ska-sd-btn-card'), bt = document.getElementById('ska-sd-btn-table');
+  if (!c || !t) return;
+  c.style.display = v === 'card' ? '' : 'none';
+  t.style.display = v === 'table' ? '' : 'none';
+  var on = 'cursor:pointer;border-radius:8px;padding:3px 12px;font-size:11px;font-weight:700;border:1px solid #1967d2;';
+  var off = 'cursor:pointer;border-radius:8px;padding:3px 12px;font-size:11px;font-weight:600;border:1px solid #dadce0;background:#fff;color:#5f6368;';
+  if (bc) bc.style.cssText = v === 'card' ? on + 'background:#1967d2;color:#fff;' : off;
+  if (bt) bt.style.cssText = v === 'table' ? on + 'background:#1967d2;color:#fff;' : off;
+}
+
 function renderSkaStoreDetail() {
   var box = document.getElementById('ska-store-detail-body');
   if (!box) return;
@@ -2181,7 +2194,11 @@ function renderSkaStoreDetail() {
     + '<span class="pill" style="background:#fce8e8;color:#b71c1c;">💸 预计赔付 <b>' + pay + '</b> 家 · ¥' + amt + '</span>'
     + '<span class="pill" style="background:#e6f4ea;color:#188038;">✓ 达标（≥赔付线） <b>' + (tot - pay) + '</b> 家</span>'
     + '</div>';
-  h += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:10px;">';
+  h += '<div style="display:flex;gap:6px;margin-bottom:8px;">'
+    + '<button id="ska-sd-btn-card" onclick="skaSdView(\'card\')" style="cursor:pointer;border-radius:8px;padding:3px 12px;font-size:11px;font-weight:700;border:1px solid #1967d2;background:#1967d2;color:#fff;">🏪 卡片视图</button>'
+    + '<button id="ska-sd-btn-table" onclick="skaSdView(\'table\')" style="cursor:pointer;border-radius:8px;padding:3px 12px;font-size:11px;font-weight:600;border:1px solid #dadce0;background:#fff;color:#5f6368;">📋 表格视图（全字段明细）</button>'
+    + '</div>';
+  h += '<div id="ska-sd-cards" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:10px;">';
   rows.forEach(function(x) {
     var s2 = x.s;
     var st, barCol;
@@ -2218,6 +2235,20 @@ function renderSkaStoreDetail() {
       + '</div>';
   });
   h += '</div>';
+  var th = '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>配送单量</th><th>准时率</th><th>赔付线</th><th>有单天数</th><th>低于赔付线天数</th><th>预计赔付</th></tr></thead><tbody>';
+  rows.forEach(function(x) {
+    var s2 = x.s;
+    var line = (SKA_STORES.lines || {})[x.b] != null ? SKA_STORES.lines[x.b] : 90;
+    var rc = (s2.rate != null && s2.rate < line) ? '#d93025' : '#188038';
+    th += '<tr><td>' + cityFull(x.c) + '</td><td>' + x.b + '</td><td style="font-size:10.5px;">' + s2.store + '</td><td><b>' + (s2.done || 0) + '</b></td>'
+      + '<td style="color:' + rc + ';font-weight:700;">' + (s2.rate != null ? Number(s2.rate).toFixed(2) + '%' : '—') + '</td>'
+      + '<td>' + line + '%</td>'
+      + '<td>' + (s2.days != null ? s2.days : '—') + '</td>'
+      + '<td>' + (s2.baddays ? '<span style="color:#d93025;font-weight:700;">' + s2.baddays + '</span>' : '0') + '</td>'
+      + '<td>' + ((s2.amt || 0) > 0 ? '<span style="color:#d93025;font-weight:700;">¥' + s2.amt + '</span>' : (s2.pred || '—')) + '</td></tr>';
+  });
+  th += '</tbody></table></div>';
+  h += '<div id="ska-sd-table" style="display:none;">' + th + '</div>';
   h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：门店为月内累计（MTD），随每日流水线刷新；同一门店保留最新一次评估快照（门店名多写法已归一）；灰线=赔付线（瑞幸99%/星巴克93%/麦当劳·肯德基·必胜客90%/沃尔玛95%）；日维度仅按赔付线判定（体验预警线为月度口径，见月维度/分析报告）；以官方核算为准。</div>';
   box.innerHTML = h;
 }
