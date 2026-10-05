@@ -2046,14 +2046,14 @@ function renderSkaStores() {
         if ((st.amt || 0) > 0) { pay++; } else if (st.warn) { warn++; }
       });
       var rate = done > 0 ? wsum / done : null;
-      rowsArr.push({ c: c, b: b, n: stores.length, done: done, rate: rate, amt: amt, warn: warn, pay: pay, line: L[b] != null ? L[b] : 90, wline: W[b] != null ? W[b] : (L[b] != null ? L[b] : 90) });
+      rowsArr.push({ c: c, b: b, n: stores.length, done: done, rate: rate, amt: amt, warn: warn, pay: pay, stores: stores, line: L[b] != null ? L[b] : 90, wline: W[b] != null ? W[b] : (L[b] != null ? L[b] : 90) });
       totDone += done; totPay += amt; payN += pay; warnN += warn; storeN += stores.length;
     });
   });
   rowsArr.sort(function(a, b) { if (a.c !== b.c) return a.c < b.c ? -1 : 1; return a.done > b.done ? -1 : 1; });
   var h = skaDataCheckHtml() + '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #dbe4f0;">'
     + '<div style="font-size:12.5px;font-weight:700;color:#b71c1c;margin-bottom:4px;">🔍 城市 × 品牌 · 月配送单量与考核指标（' + mk + ' · 仅SKA考核门店）</div>'
-    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">考核准时率=门店单量加权；门店级明细（配送单量 / 准时率 / 预计赔付）见「天维度 · 考核门店明细」卡，此处不再重复展开。</div>';
+    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">考核准时率=门店单量加权；各品牌行下方「└」行为<b>门店月配送单量</b>明细（门店 · 单量 · 准时率 · 预警/赔付标记）；门店卡片视图见「天维度 · 考核门店明细」，评估/赔付总表见「分析报告」页签。</div>';
   if (totPay > 0) {
     h += '<div style="background:#fce8e8;border-left:4px solid #d93025;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:12px;color:#b71c1c;"><b>⚠ 月度赔付预判：</b>预计赔付合计 <b>¥' + totPay + '</b>（' + payN + ' 家门店）· 预警 ' + warnN + ' 家 · 考核门店 ' + storeN + ' 家<span style="font-size:10.5px;color:#8a6d6d;display:block;margin-top:2px;">按门店月维度准时率与配送原因取消率（肯/必）预判；口径=SKA赔付规则，以官方核算为准。</span></div>';
   } else {
@@ -2073,6 +2073,14 @@ function renderSkaStores() {
       + '<td>' + (r.warn ? '<span style="color:#e37400;font-weight:700;">' + r.warn + ' 家</span>' : '0') + '</td>'
       + '<td>' + (r.amt ? '<span style="color:#d93025;font-weight:700;">¥' + r.amt + '</span>' : '—') + '</td>'
       + '<td style="font-size:10.5px;">' + status + '</td></tr>';
+    var detail = (r.stores || []).map(function(st) {
+      var sc = (st.amt || 0) > 0 ? '#d93025' : (st.warn ? '#e37400' : '#188038');
+      var tag = (st.amt || 0) > 0 ? ' <span style="color:#d93025;font-weight:700;">赔付¥' + st.amt + '</span>' : (st.warn ? ' <span style="color:#e37400;">⚠预警</span>' : '');
+      return '<span style="white-space:nowrap;margin-right:12px;display:inline-block;">' + skaShortName(st.store, r.b)
+        + ' <b style="color:' + sc + ';">' + (st.done || 0) + '单</b>'
+        + (st.rate != null ? ' · ' + Number(st.rate).toFixed(2) + '%' : '') + tag + '</span>';
+    }).join('');
+    h += '<tr><td colspan="10" style="background:#f8f9fb;font-size:10.5px;color:#5f6368;padding:5px 12px;line-height:2;">└ <b style="color:#1a2b4a;">门店月配送单量：</b>' + detail + '</td></tr>';
   });
   h += '</tbody></table></div>';
   h += '<div style="font-size:12.5px;font-weight:700;color:#1a2b4a;margin:12px 0 4px;">🎯 SKA各品牌考核 · 体验目标指标（达标判定速览）</div>'
@@ -2219,6 +2227,15 @@ function renderSkaStoreDetail() {
 /* SKA_STORE_DETAIL_END */
 
 function cityFull(c){var m={'泰兴':'泰兴县','诸暨':'诸暨市','响水':'响水县'};return m[c]||c;}
+// ===================== SKA 门店短名（去品牌前缀/公司前缀） =====================
+function skaShortName(name, b){
+  var n = skaNorm(name || '');
+  var i = n.indexOf(b || '');
+  if (i >= 0) n = n.slice(i + (b || '').length);
+  n = n.replace(/^有限公司/, '').replace(/^[-·]/, '');
+  return n || (name || '');
+}
+
 // ===================== SKA 数据日期×考核月一致性检核 =====================
 function skaDataCheckHtml(){
   try{
@@ -2275,7 +2292,7 @@ function renderSkaDaily() {
   try {
     var mm = SKA_STORES.months[skaMonthKey()] || {};
     Object.keys(mm.cities || {}).forEach(function(c) {
-      Object.keys(mm.cities[c] || {}).forEach(function(b) { skaCB[c + '|' + b] = 1; });
+      Object.keys(mm.cities[c] || {}).forEach(function(b) { skaCB[c + '|' + b] = skaDedupeStores(mm.cities[c][b] || []); });
     });
   } catch (e) {}
   var hasSka = Object.keys(skaCB).length > 0;
@@ -2286,13 +2303,18 @@ function renderSkaDaily() {
     if (a.city !== b.city) return a.city < b.city ? -1 : 1;
     return a.b < b.b ? -1 : (a.b > b.b ? 1 : 0);
   });
-  var h = skaDataCheckHtml() + '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin:10px 0 2px;">📈 天维度 · 日期 × 城市 × 品牌（配送单量 / 有效门店 / 准时率）</div>'
-    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">仅展示当月SKA考核门店（城市×品牌）；有效门店=当日有配送完成订单的门店数；<span style="color:#d93025;">红=低于赔付线</span>，<span style="color:#e37400;">橙=低于预警线</span>；门店级配送单量与赔付预判见上方「考核门店明细」卡。</div>'
-    + '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>日期</th><th>城市</th><th>品牌</th><th>配送单量</th><th>有效门店</th><th>准时率</th><th>低于赔付线门店</th></tr></thead><tbody>';
+  var h = skaDataCheckHtml() + '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin:10px 0 2px;">📈 天维度 · 日期 × 城市 × 品牌 × 门店（配送单量 / 有效门店 / 准时率）</div>'
+    + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">仅展示当月SKA考核门店（城市×品牌）；门店列=该城市×品牌当月SKA考核门店名单；配送单量为当日城市×品牌合计（门店级当日单量未在源明细开放）；有效门店=当日有配送完成订单的门店数；<span style="color:#d93025;">红=低于赔付线</span>，<span style="color:#e37400;">橙=低于预警线</span>；门店月累计单量与赔付预判见上方「考核门店明细」卡。</div>'
+    + '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>日期</th><th>城市</th><th>品牌</th><th>门店（SKA考核）</th><th>配送单量</th><th>有效门店</th><th>准时率</th><th>低于赔付线门店</th></tr></thead><tbody>';
   rows.forEach(function(r) {
     var col = _skaRateCol(r.rate, r.b);
     var dshow = r.d.slice(4, 6) + '-' + r.d.slice(6, 8);
-    h += '<tr><td>' + dshow + '</td><td>' + cityFull(r.city) + '</td><td>' + r.b + '</td><td><b>' + r.done + '</b></td>'
+    var cb = skaCB[r.city + '|' + r.b] || [];
+    var storeCell = cb.length
+      ? cb.map(function(st){ return skaShortName(st.store, r.b); }).join('、')
+      : '<span style="color:#9aa0a6;">—</span>';
+    h += '<tr><td>' + dshow + '</td><td>' + cityFull(r.city) + '</td><td>' + r.b + '</td>'
+      + '<td style="font-size:10px;color:#5f6368;max-width:220px;">' + storeCell + '</td><td><b>' + r.done + '</b></td>'
       + '<td>' + r.pois + '</td>'
       + '<td style="color:' + col + ';font-weight:700;">' + Number(r.rate).toFixed(2) + '%</td>'
       + '<td>' + (r.bad ? '<span style="color:#d93025;font-weight:700;">' + r.bad + '</span>' : '0') + '</td></tr>';
