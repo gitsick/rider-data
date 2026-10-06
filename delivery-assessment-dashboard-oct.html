@@ -814,6 +814,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <div class="indicator-score">完成率<input class="calc-input" id="wj_rate" type="number" onchange="calcScore()"><br>得分<span id="wj_score" style="font-weight:700;color:#ff6b35;">—</span></div>
         </div>
         <div class="mo-mtd" id="mtd-wj"></div>
+<div id="wj-split" style="margin-top:4px;"></div>
       </div>
     </div>
     <div class="card module-card puzhong collapsible">
@@ -3299,12 +3300,30 @@ function switchCity(el, name) {
   if (window.__exFillRef) { try { __exFillRef(); } catch (e) {} }
 }
 
+// ===================== 完结率餐/非餐分项参考值 =====================
+function renderWjSplit() {
+  var el = document.getElementById('wj-split');
+  if (!el) return;
+  if (typeof WJ_SPLIT === 'undefined' || !WJ_SPLIT) { el.innerHTML = ''; return; }
+  function fmt(o) {
+    if (!o || o.mix == null) return '';
+    return '餐饮 ' + o.cy.toFixed(2) + '% · 非餐 ' + o.fc.toFixed(2) + '% · 60/40加权 ' + o.mix.toFixed(2) + '%';
+  }
+  var parts = [];
+  var dd = WJ_SPLIT.daily && WJ_SPLIT.daily[currentDate];
+  if (dd) { var s = fmt(dd[currentCity]); if (s) parts.push('<div>📅 ' + currentDate + '：' + s + '</div>'); }
+  var mm = WJ_SPLIT.mtd && WJ_SPLIT.mtd[currentCity];
+  if (mm && mm.mix != null) parts.push('<div>📈 月累计：' + fmt(mm) + '</div>');
+  el.innerHTML = parts.length ? '<div style="font-size:10.5px;color:#6b7280;line-height:1.7;background:#f8f9fa;border-radius:8px;padding:6px 10px;">分项参考（明细汇总·剔除企客服务包·非官方核算口径）<br>' + parts.join('') + '</div>' : '';
+}
+
 // ===================== 更新模块输入 =====================
 function updateModuleInputs() {
   if (!hasData(currentDate)) {
     ['tw_rate','wj_rate','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel','ym_rate'].forEach(function(id){ setVal(id, ''); });
     var pzl0 = document.getElementById('pz_act'); if (pzl0) pzl0.textContent = '';
     calcScore();
+    if (typeof renderWjSplit === 'function') renderWjSplit();
     return;
   }
   var d = dailyByDate[currentDate][currentCity];
@@ -3323,6 +3342,7 @@ function updateModuleInputs() {
     if (pzl) pzl.textContent = (d.pzAct !== null && d.pzAct !== undefined) ? ('活跃骑手 ' + d.pzAct + '（完成率待任务系统目标）') : '';
   }
   calcScore();
+  if (typeof renderWjSplit === 'function') renderWjSplit();
 }
 
 // ===================== 计算辅助 =====================
@@ -5215,6 +5235,10 @@ window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); r
 /* MODULE_JUMP_END */
 
 /* SKA_ENH_JS_END */
+</script>
+<script id="wj-split-data">
+var WJ_SPLIT={"daily":{"10-01":{"响水":{"cy":99.96,"fc":99.83,"mix":99.91},"泰兴":{"cy":99.73,"fc":98.92,"mix":99.41},"诸暨":{"cy":99.31,"fc":90.96,"mix":95.97}},"10-02":{"响水":{"cy":99.99,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.89,"fc":99.59,"mix":99.77},"诸暨":{"cy":99.33,"fc":91.84,"mix":96.34}},"10-03":{"响水":{"cy":99.99,"fc":99.83,"mix":99.93},"泰兴":{"cy":99.88,"fc":99.42,"mix":99.7},"诸暨":{"cy":98.96,"fc":87.91,"mix":94.54}},"10-04":{"响水":{"cy":99.98,"fc":99.82,"mix":99.91},"泰兴":{"cy":99.83,"fc":98.6,"mix":99.34},"诸暨":{"cy":98.65,"fc":85.76,"mix":93.49}},"10-05":{"响水":{"cy":99.97,"fc":99.82,"mix":99.91},"泰兴":{"cy":99.79,"fc":99.2,"mix":99.56},"诸暨":{"cy":99.33,"fc":93.74,"mix":97.09}}},"mtd":{"响水":{"cy":99.98,"fc":99.86,"mix":99.93},"泰兴":{"cy":99.83,"fc":99.15,"mix":99.56},"诸暨":{"cy":99.11,"fc":89.86,"mix":95.41}}};
+if (typeof renderWjSplit==='function'){try{renderWjSplit();}catch(e){console.warn(e);}}
 </script>
 </body>
 </html>
