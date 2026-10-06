@@ -956,7 +956,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       </tbody>
     </table>
     </div>
-    <div style="font-size:11px;color:#6b7280;margin-top:6px;">画像：都不考（加盟50% 体验20% 推完20% 完结率10%）| 加盟用HD完成率近似 | 全月数据需持续关注</div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">方案权重按画像分档：泰兴 15/30/5 · 诸暨 45/0/5 · 响水 50/0/0（体验20 推完20 完结10；映射待业务确认） | 加盟用HD完成率近似 | 全月数据需持续关注</div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;">
       <div style="border-left:3px solid #d93025;padding:8px 12px;background:#fff5f5;border-radius:0 6px 6px 0;">
         <div style="font-weight:700;color:#d93025;font-size:12px;">🔴 诸暨 · 重罚预警</div>
@@ -1121,8 +1121,8 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   <div class="grid grid-2" style="margin-bottom:16px;">
     <div class="card">
       <div class="card-title"><span class="icon">📊</span> 总分计算公式</div>
-      <div class="formula-box"><div class="formula">总分 = 加盟完成率×50% + 体验×20% + 推完×20% + 完结率×10% − 扣分</div></div>
-      <div style="font-size:12px;color:#6b7280;text-align:center;">画像：都不考（加盟50% 体验20% 推完20% 完结率10%）</div>
+      <div class="formula-box"><div class="formula">总分 = Σ（模块得分 × 分城权重）− 扣分</div></div>
+      <div style="font-size:12px;color:#6b7280;text-align:center;">方案权重按画像分档：泰兴 15/30/5 · 诸暨 45/0/5 · 响水 50/0/0（体验20 推完20 完结10；映射待业务确认）</div>
       <div style="margin-top:10px;"><span class="pill pill-period">高峰日</span><span style="font-size:12px;color:#6b7280;">9/5、9/6、9/12、9/13、9/19、9/25、9/26、9/27（共8天）</span></div>
     </div>
     <div class="card">
@@ -1130,9 +1130,9 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <table class="dt">
         <thead><tr><th>画像</th><th>加盟</th><th>悦跑</th><th>普众</th><th>体验</th><th>推完</th><th>完结率</th></tr></thead>
         <tbody>
-          <tr><td>考普众+考悦跑</td><td>15%</td><td>30%</td><td>5%</td><td>20%</td><td>20%</td><td>10%</td></tr>
-          <tr><td>考普众不考悦跑</td><td>45%</td><td>—</td><td>5%</td><td>20%</td><td>20%</td><td>10%</td></tr>
-          <tr style="background:#e6f0ff;font-weight:700;"><td>都不考（当前）</td><td>50%</td><td>—</td><td>—</td><td>20%</td><td>20%</td><td>10%</td></tr>
+          <tr><td>画像1·考普众+考悦跑（泰兴推断适用）</td><td>15%</td><td>30%</td><td>5%</td><td>20%</td><td>20%</td><td>10%</td></tr>
+          <tr><td>画像2·考普众不考悦跑（诸暨推断适用）</td><td>45%</td><td>—</td><td>5%</td><td>20%</td><td>20%</td><td>10%</td></tr>
+          <tr><td>画像3·都不考（响水推断适用）</td><td>50%</td><td>—</td><td>—</td><td>20%</td><td>20%</td><td>10%</td></tr>
           <tr><td>G3城市</td><td>—</td><td>—</td><td>—</td><td>100%</td><td>—</td><td>—</td></tr>
         </tbody>
       </table>
@@ -1151,14 +1151,14 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <tr><th style="min-width:70px;">模块</th><th style="min-width:110px;">考核指标</th><th style="min-width:90px;">考核周期</th><th style="min-width:200px;">指标定义</th><th style="min-width:280px;">计分规则</th><th style="min-width:60px;">权重</th></tr>
       </thead>
       <tbody>
-        <tr class="module-sep"><td colspan="6">▶ 计分模块（当前画像：都不考）</td></tr>
+        <tr class="module-sep"><td colspan="6">▶ 计分模块（按城画像分档计入：泰兴·画像1 考悦跑+普众 / 诸暨·画像2 仅考普众 / 响水·画像3 均不考——推断适用）</td></tr>
         <tr style="background:#fce8e8;" class="current-mod">
           <td class="city-cell" style="color:#e8525f;">加盟运力</td>
           <td>服务质量达标骑手数</td>
           <td>第1期 9/1-9/13<br>第2期 9/14-9/30</td>
           <td style="text-align:left;">达标骑手数=日均服务质量达标骑手数+日均合格有单骑手数×折算系数+日均高峰兼职骑手数×折算系数-日均异常骑手数<br><span style="color:#6b7280;">高峰期：午10:30-13:30 &amp; 晚17:00-20:00</span></td>
           <td style="text-align:left;">完成率=实际达标骑手数/目标<br>①计分区间【90%,<strong style="color:#d93025;">100%</strong>】，＜90%记0分（100%封顶）<br>②兜底规则：推订单完成率（不含散单）≥98.8%且加盟人效≤X<br>③四舍五入计算</td>
-          <td><strong style="color:#e8525f;font-size:13px;">50%</strong></td>
+          <td><strong style="color:#e8525f;font-size:13px;">15/45/50%</strong><br><span style="font-size:10px;color:#6b7280;">按画像1/2/3</span></td>
         </tr>
         <tr>
           <td class="city-cell" style="color:#f5a623;">悦跑运力</td>
@@ -1166,7 +1166,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <td>8/31-9/6、9/7-9/13<br>9/14-9/20、9/21-9/27<br><span style="color:#6b7280;">（按自然周）</span></td>
           <td style="text-align:left;">合格出勤：周期内累计≥5天，每天完成X单+出勤≥Y小时<br>排班出勤合格率=排班班次全部达标且天维度达标骑手数/当日排班骑手数</td>
           <td style="text-align:left;">得分=达标骑手数完成度×排班出勤合格率系数<br>完成度计分区间【90%,110%】，＜90%记0分<br>出勤合格率≥90%→系数1.05；≥目标→1.0；＜目标→0.95<br>兜底：推单完成率≥98.8%且承托比≥X%</td>
-          <td><strong style="color:#6b7280;">—</strong><br><span style="font-size:10px;color:#6b7280;">不考核</span></td>
+          <td><strong style="color:#f5a623;font-size:13px;">30% / —</strong><br><span style="font-size:10px;color:#6b7280;">仅画像1（泰兴推断）考核</span></td>
         </tr>
         <tr>
           <td class="city-cell" style="color:#4cb947;">普通众包</td>
@@ -1174,7 +1174,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <td>8/31-9/6、9/7-9/13<br>9/14-9/20、9/21-9/27<br><span style="color:#6b7280;">（按自然周）</span></td>
           <td style="text-align:left;">活跃骑手：周期内跑单≥3天且累计完单≥20单<br>完成度=实际活跃骑手数/目标</td>
           <td style="text-align:left;">计分区间【90%,100%】，自然周控制区间（＜90%记0分）<br>平均完成率不控制区间<br>兜底：推单完成率≥98.8%</td>
-          <td><strong style="color:#6b7280;">—</strong><br><span style="font-size:10px;color:#6b7280;">不考核</span></td>
+          <td><strong style="color:#4cb947;font-size:13px;">5% / 5% / —</strong><br><span style="font-size:10px;color:#6b7280;">画像1/2考核，画像3不考核</span></td>
         </tr>
         <tr style="background:#f3e8fd;">
           <td class="city-cell" style="color:#7b61ff;" rowspan="3">体验模块</td>
@@ -1310,7 +1310,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       </tbody>
     </table>
     </div>
-    <div style="font-size:11px;color:#6b7280;margin-top:6px;">数据来源：bi.sankuai.com 履约数据考核看板 | 三城画像：都不考（加盟50%+体验20%+推完20%+完结率10%）| 灰色行=非当前考核项或扣分项 | 绿色行=约束/兜底指标（不计分）| 橙色行=罚则阈值体系 | 蓝色行=报备机制 | 靛蓝行=申诉机制 | 具体目标值/门槛值/折算系数以任务系统下发为准</div>
+    <div style="font-size:11px;color:#6b7280;margin-top:6px;">数据来源：bi.sankuai.com 履约数据考核看板 | 方案权重按画像分档（详见运力组合权重配置表；城→画像映射待业务确认）| 灰色行=非当前考核项或扣分项 | 绿色行=约束/兜底指标（不计分）| 橙色行=罚则阈值体系 | 蓝色行=报备机制 | 靛蓝行=申诉机制 | 具体目标值/门槛值/折算系数以任务系统下发为准</div>
   </div>
 
   <!-- 推单完成率 & 体验模块区间计分表 -->
@@ -1449,7 +1449,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
   <div class="rpt-header">
     <h2>2026年9月配送考核指标优化提升方案</h2>
-    <div class="sub" style="margin-top:4px;">数据截止：2026-09-30（全月 30/30 天收官） | 画像：都不考（加盟50% 体验20% 推完20% 完结率10%）</div>
+    <div class="sub" style="margin-top:4px;">数据截止：2026-09-30（全月 30/30 天收官） | 方案权重按画像分档：泰兴 15/30/5 · 诸暨 45/0/5 · 响水 50/0/0（体验20 推完20 完结10；映射待业务确认）</div>
     <div class="sub" id="report-sub" style="margin-top:2px;">三城：泰兴县 · 诸暨市 · 响水县 | 全月 30/30 天收官（数据已齐）</div>
   </div>
 
@@ -1515,7 +1515,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
 <div class="section-label">📐 计分模型</div>
 <div class="card" id="sec-example" style="margin-bottom:16px;background:linear-gradient(135deg,#f8f9fb 0%,#e8f0fe 100%);">
-    <div class="card-title"><span class="icon">🧮</span> 计分示例解读（以诸暨市为例 · 画像：都不考）</div>
+    <div class="card-title"><span class="icon">🧮</span> 计分示例解读（以诸暨市为例 · 9月收官快照 · 统一权重口径HD50%，供历史对照；方案权重分档见上文权重表）</div>
     <div class="table-scroll">
     <table class="dt">
       <thead>
@@ -2682,11 +2682,11 @@ var SLICE_M = {
   '泰兴': {hd:98.24, ty:91.23, tw:99.14, wj:99.75, score:97.17, level:'警告'},
   '诸暨': {hd:91.73, ty:94.61, tw:99.00, wj:99.87, score:94.57, level:'重罚预警'},
   '响水': {hd:95.65, ty:98.18, tw:98.80, wj:99.95, score:97.22, level:'警告'}
-}; // 全月收官口径：体验/HD为官方值，推完/完结率为BI全月日均，总分=100−加权缺口（HD50%/体验20%/推完20%/完结率10%）；缺失时切片模块自动降级
+}; // 全月收官口径：体验/HD为官方值，推完/完结率为BI全月日均，总分=100−加权缺口（HD50%/体验20%/推完20%/完结率10%）；缺失时切片模块自动降级。注：收官快照按当时统一HD50%口径计算，方案分档口径下的月度总分以月评估卡为准
 
 
 var _CITIES = ['泰兴','诸暨','响水'];
-var _W = {hd:0.5, ty:0.2, tw:0.2, wj:0.1};
+var _W = {hd:0.5, ty:0.2, tw:0.2, wj:0.1}; // 9月收官快照统一口径（HD50%），仅用于SLICE_M收官快照相关缺口测算；方案分档权重见CITY_PROFILE/cityW()
 var _GB_LINE = 98.8; // 推完兜底线
 
 function _sv(c, key, dates) {
@@ -3285,7 +3285,7 @@ var tcMetrics = [
   {id:'ka', name:'企客KA准时率', unit:'%', get:function(c, ds){ return _dex(ds,c,'qkKAOntime'); }}
 ];
 var tcCityColors = {'泰兴':'#1a73e8', '诸暨':'#e8710a', '响水':'#188038'};
-var tcCurrent = 'hd'; // 默认展示 HD完成率（权重50%的P0核心考核指标）
+var tcCurrent = 'hd'; // 默认展示 HD完成率（各画像下均为最大权重模块：15%~50%）
 var tcChartType = 'line'; // 走势图类型：line=折线 bar=柱状
 var PB_CUT = ({ '09': '13', '10': '18' })[(dataDates[0] || '').slice(0, 2)] || '13'; // 两期对比第1期截止日（9月:9/13；10月:10/18），空数据安全
 var DATA_YEAR = 2026; // 数据年份（完整性自检断档校验用）
