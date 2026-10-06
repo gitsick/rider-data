@@ -3386,12 +3386,12 @@ function renderYmWeekly() {
     var color = avg < 90 ? '#d93025' : (avg >= 100 ? '#188038' : '#e8710a');
     rows.push('<tr><td style="padding:2px 8px;">' + w[0] + '~' + w[1] + (partial ? '<span style="color:#6b7280;">(部分)</span>' : '') + '</td><td style="padding:2px 8px;font-weight:600;color:' + color + ';">' + avg.toFixed(2) + '%</td><td style="padding:2px 8px;color:#6b7280;">' + (nc ? '新口径不乘' : (avgCq !== null ? avgCq.toFixed(1) + '%×' + coef : '×' + coef)) + '</td><td style="padding:2px 8px;">' + sc.toFixed(1) + (avg < 90 ? '（<90%记0）' : '') + '</td></tr>');
   });
-  var html = '<div style="font-size:10.5px;color:#9aa0a6;margin-top:6px;">自然周维度（方案口径：周均<90%该周记0，周均不控制区间；第1-3周周得分=周均完成度×出勤合格率系数【周均出勤≥90%暂取1.05，目标值待任务系统】，10/19起新口径不乘系数；各周得分均值为悦跑运力月值参考；按有效/签约骑手推算，非官方达标骑手数）</div>';
+  var html = '<div style="font-size:10.5px;color:#9aa0a6;margin-top:6px;">自然周维度（方案口径：周均<90%该周记0，周均不控制区间；第1-3周周得分=周均完成度×出勤合格率系数【周均出勤≥90%暂取1.05，目标值待任务系统】，10/19起新口径不乘系数；各周得分均值为悦跑运力月值参考；按有效/签约骑手推算，非官方达标骑手数；悦跑权重按画像分档：泰兴30%、诸暨/响水不考核（映射待业务确认））</div>';
   if (rows.length) {
     html += '<table style="font-size:11px;border-collapse:collapse;margin-top:2px;">' + rows.join('') + '</table>';
     if (scores.length) {
       var m = scores.reduce(function(a, b) { return a + b; }, 0) / scores.length;
-      html += '<div style="font-size:11px;margin-top:2px;">周均得分（各周得分均值，悦跑运力月值参考）：<b>' + m.toFixed(2) + '%</b>' + '（悦跑完成度权重30%）</div>';
+      html += '<div style="font-size:11px;margin-top:2px;">周均得分（各周得分均值，悦跑运力月值参考）：<b>' + m.toFixed(2) + '%</b>' + '（' + (function(){ var _yw = (typeof cityW==='function') ? cityW().ym : 0.30; return _yw > 0 ? ('悦跑完成度权重' + Math.round(_yw*100) + '%') : '悦跑本城不考核（画像0%），周得分仅作参考'; })() + '）</div>';
     }
   }
   el.innerHTML = html;
