@@ -2079,7 +2079,8 @@ function renderSkaStores() {
       var tag = (st.amt || 0) > 0 ? ' <span style="color:#d93025;font-weight:700;">赔付¥' + st.amt + '</span>' : (st.warn ? ' <span style="color:#e37400;">⚠预警</span>' : '');
       return '<span style="white-space:nowrap;margin-right:12px;display:inline-block;">' + skaShortName(st.store, r.b)
         + ' <b style="color:' + sc + ';">' + (st.done || 0) + '单</b>'
-        + (st.rate != null ? ' · ' + Number(st.rate).toFixed(2) + '%' : '') + tag + '</span>';
+        + (st.rate != null ? ' · ' + Number(st.rate).toFixed(2) + '%' : '')
+        + (st.rate != null ? ' <span style="color:#9aa0a6;">(距线</span>' + skaGapHtml(st.rate, r.line) + '<span style="color:#9aa0a6;">)</span>' : '') + tag + '</span>';
     }).join('');
     h += '<tr><td colspan="10" style="background:#f8f9fb;font-size:10.5px;color:#5f6368;padding:5px 12px;line-height:2;">└ <b style="color:#1a2b4a;">门店月配送单量：</b>' + detail + '</td></tr>';
   });
@@ -2170,6 +2171,30 @@ function skaSdView(v){
   if (bt) bt.style.cssText = v === 'table' ? on + 'background:#1967d2;color:#fff;' : off;
 }
 
+// ===================== SKA 门店明细表格 · 排序 / 状态筛选 =====================
+function skaSdSort(idx, num, th){
+  var tb = document.querySelector('#ska-sd-table tbody'); if (!tb || !th) return;
+  var rows = [].slice.call(tb.rows);
+  var asc = th.dataset.asc !== '1';
+  rows.sort(function(a, b){
+    var x = a.cells[idx] ? a.cells[idx].dataset.v : '', y = b.cells[idx] ? b.cells[idx].dataset.v : '';
+    if (num){ x = parseFloat(x); y = parseFloat(y); if (isNaN(x)) x = -Infinity; if (isNaN(y)) y = -Infinity; }
+    else { x = x || ''; y = y || ''; }
+    var r = x < y ? -1 : (x > y ? 1 : 0);
+    return asc ? r : -r;
+  });
+  rows.forEach(function(r){ tb.appendChild(r); });
+  th.dataset.asc = asc ? '1' : '0';
+}
+function skaSdFilter(st, btn){
+  var tb = document.querySelector('#ska-sd-table tbody'); if (!tb) return;
+  [].slice.call(tb.rows).forEach(function(r){ r.style.display = (st === 'all' || r.dataset.st === st) ? '' : 'none'; });
+  var bar = document.getElementById('ska-sd-filters'); if (!bar) return;
+  var on = 'cursor:pointer;border-radius:8px;padding:2px 10px;font-size:10.5px;font-weight:700;border:1px solid #1967d2;background:#1967d2;color:#fff;';
+  var off = 'cursor:pointer;border-radius:8px;padding:2px 10px;font-size:10.5px;font-weight:600;border:1px solid #dadce0;background:#fff;color:#5f6368;';
+  [].slice.call(bar.children).forEach(function(b2){ b2.style.cssText = (btn && b2 === btn) ? on : off; });
+}
+
 function renderSkaStoreDetail() {
   var box = document.getElementById('ska-store-detail-body');
   if (!box) return;
@@ -2212,6 +2237,7 @@ function renderSkaStoreDetail() {
     var wp = Math.max(0, Math.min(100, wl));
     var rateTxt = rate == null ? '—' : rate.toFixed(2) + '%';
     var rateCol = rate == null ? '#9aa0a6' : (rate < line ? '#d93025' : '#188038');
+    var gapH = skaGapHtml(rate, line);
     h += '<div style="background:#fff;border:1px solid #e8eaed;border-left:4px solid ' + barCol + ';border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;">'
       + '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;">'
       + '<div style="font-size:12.5px;font-weight:700;color:#202124;line-height:1.4;">' + s2.store + '</div>'
@@ -2229,27 +2255,58 @@ function renderSkaStoreDetail() {
       + '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:11px;color:#5f6368;">'
       + '<span>📦 单量 <b style="color:#202124;">' + s2.done + '</b></span>'
       + '<span>🚫 取消率 ' + (s2.cancel != null ? Number(s2.cancel).toFixed(3) + '%' : '—') + '</span>'
+      + '<span>🎯 距赔付线 ' + gapH + '</span>'
       + (s2.camt > 0 ? '<span style="color:#d93025;font-weight:600;">罚 ¥' + s2.camt + '</span>' : '')
       + '</div>'
       + '<div style="margin-top:6px;font-size:11.5px;font-weight:700;color:' + barCol + ';">' + s2.pred + '</div>'
       + '</div>';
   });
   h += '</div>';
-  var th = '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>配送单量</th><th>准时率</th><th>赔付线</th><th>有单天数</th><th>低于赔付线天数</th><th>预计赔付</th></tr></thead><tbody>';
+  var nPay = 0, nWarn = 0, nOk = 0;
+  rows.forEach(function(x){ if ((x.s.amt || 0) > 0) nPay++; else if (x.s.warn) nWarn++; else nOk++; });
+  var SD_OFF = 'cursor:pointer;border-radius:8px;padding:2px 10px;font-size:10.5px;font-weight:600;border:1px solid #dadce0;background:#fff;color:#5f6368;';
+  var SD_TH = 'cursor:pointer;user-select:none;white-space:nowrap;';
+  var th = '<div id="ska-sd-filters" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;">'
+    + '<button onclick="skaSdFilter(\'all\',this)" style="' + SD_OFF + 'background:#1967d2;border-color:#1967d2;color:#fff;">全部 ' + tot + '</button>'
+    + '<button onclick="skaSdFilter(\'pay\',this)" style="' + SD_OFF + '">💸 预计赔付 ' + nPay + '</button>'
+    + '<button onclick="skaSdFilter(\'warn\',this)" style="' + SD_OFF + '">△ 预警 ' + nWarn + '</button>'
+    + '<button onclick="skaSdFilter(\'ok\',this)" style="' + SD_OFF + '">✓ 达标 ' + nOk + '</button>'
+    + '<span style="font-size:10px;color:#9aa0a6;align-self:center;margin-left:4px;">点击表头可排序</span>'
+    + '</div>';
+  th += '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr>'
+    + '<th onclick="skaSdSort(0,false,this)" style="' + SD_TH + '" title="点击排序">城市</th>'
+    + '<th onclick="skaSdSort(1,false,this)" style="' + SD_TH + '" title="点击排序">品牌</th>'
+    + '<th onclick="skaSdSort(2,false,this)" style="' + SD_TH + '" title="点击排序">门店</th>'
+    + '<th onclick="skaSdSort(3,true,this)" style="' + SD_TH + '" title="点击排序">配送单量</th>'
+    + '<th onclick="skaSdSort(4,true,this)" style="' + SD_TH + '" title="点击排序">准时率</th>'
+    + '<th onclick="skaSdSort(5,true,this)" style="' + SD_TH + '" title="点击排序 · 准时率−品牌赔付线">距赔付线</th>'
+    + '<th onclick="skaSdSort(6,true,this)" style="' + SD_TH + '" title="点击排序">赔付线</th>'
+    + '<th onclick="skaSdSort(7,true,this)" style="' + SD_TH + '" title="点击排序">有单天数</th>'
+    + '<th onclick="skaSdSort(8,true,this)" style="' + SD_TH + '" title="点击排序">低于赔付线天数</th>'
+    + '<th onclick="skaSdSort(9,true,this)" style="' + SD_TH + '" title="点击排序">预计赔付</th>'
+    + '</tr></thead><tbody>';
   rows.forEach(function(x) {
     var s2 = x.s;
     var line = (SKA_STORES.lines || {})[x.b] != null ? SKA_STORES.lines[x.b] : 90;
     var rc = (s2.rate != null && s2.rate < line) ? '#d93025' : '#188038';
-    th += '<tr><td>' + cityFull(x.c) + '</td><td>' + x.b + '</td><td style="font-size:10.5px;" title="' + (s2.store||'') + '">' + skaShortName(s2.store, x.b) + '</td><td><b>' + (s2.done || 0) + '</b></td>'
-      + '<td style="color:' + rc + ';font-weight:700;">' + (s2.rate != null ? Number(s2.rate).toFixed(2) + '%' : '—') + '</td>'
-      + '<td>' + line + '%</td>'
-      + '<td>' + (s2.days != null ? s2.days : '—') + '</td>'
-      + '<td>' + (s2.baddays ? '<span style="color:#d93025;font-weight:700;">' + s2.baddays + '</span>' : '0') + '</td>'
-      + '<td>' + ((s2.amt || 0) > 0 ? '<span style="color:#d93025;font-weight:700;">¥' + s2.amt + '</span>' : (s2.pred || '—')) + '</td></tr>';
+    var stK = (s2.amt || 0) > 0 ? 'pay' : (s2.warn ? 'warn' : 'ok');
+    var gapV = skaGapVal(s2.rate, line);
+    var gapH2 = skaGapHtml(s2.rate, line);
+    th += '<tr data-st="' + stK + '">'
+      + '<td data-v="' + x.c + '">' + cityFull(x.c) + '</td>'
+      + '<td data-v="' + x.b + '">' + x.b + '</td>'
+      + '<td data-v="' + skaShortName(s2.store, x.b) + '" style="font-size:10.5px;" title="' + (s2.store||'') + '">' + skaShortName(s2.store, x.b) + '</td>'
+      + '<td data-v="' + (s2.done || 0) + '"><b>' + (s2.done || 0) + '</b></td>'
+      + '<td data-v="' + (s2.rate == null ? '' : Number(s2.rate)) + '" style="color:' + rc + ';font-weight:700;">' + (s2.rate != null ? Number(s2.rate).toFixed(2) + '%' : '—') + '</td>'
+      + '<td data-v="' + (isNaN(gapV) ? '' : gapV.toFixed(2)) + '">' + gapH2 + '</td>'
+      + '<td data-v="' + line + '">' + line + '%</td>'
+      + '<td data-v="' + (s2.days != null ? s2.days : '') + '">' + (s2.days != null ? s2.days : '—') + '</td>'
+      + '<td data-v="' + (s2.baddays || 0) + '">' + (s2.baddays ? '<span style="color:#d93025;font-weight:700;">' + s2.baddays + '</span>' : '0') + '</td>'
+      + '<td data-v="' + (s2.amt || 0) + '">' + ((s2.amt || 0) > 0 ? '<span style="color:#d93025;font-weight:700;">¥' + s2.amt + '</span>' : (s2.pred || '—')) + '</td></tr>';
   });
   th += '</tbody></table></div>';
   h += '<div id="ska-sd-table" style="display:none;">' + th + '</div>';
-  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：门店为月内累计（MTD），随每日流水线刷新；同一门店保留最新一次评估快照（门店名多写法已归一）；灰线=赔付线（瑞幸99%/星巴克93%/麦当劳·肯德基·必胜客90%/沃尔玛95%）；日维度仅按赔付线判定（体验预警线为月度口径，见月维度/分析报告）；以官方核算为准。</div>';
+  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：门店为月内累计（MTD），随每日流水线刷新；同一门店保留最新一次评估快照（门店名多写法已归一）；灰线=赔付线（瑞幸99%/星巴克93%/麦当劳·肯德基·必胜客90%/沃尔玛95%）；距赔付线=门店准时率−品牌赔付线（负值=低于赔付线，红标）；表格视图支持点击表头排序、按赔付/预警/达标筛选；日维度仅按赔付线判定（体验预警线为月度口径，见月维度/分析报告）；以官方核算为准。</div>';
   box.innerHTML = h;
 }
 /* SKA_STORE_DETAIL_END */
@@ -2263,6 +2320,14 @@ function skaShortName(name, b){
   n = n.replace(/^有限公司/, '').replace(/^[-·]/, '');
   return n || (name || '');
 }
+// ===================== SKA 距赔付线差距（pp，负值=低于赔付线） =====================
+function skaGapHtml(rate, line){
+  if (rate == null) return '<span style="color:#9aa0a6;">—</span>';
+  var d = Number(rate) - Number(line);
+  var col = d >= 0 ? '#188038' : '#d93025';
+  return '<b style="color:' + col + ';">' + (d >= 0 ? '+' : '') + d.toFixed(2) + 'pp</b>';
+}
+function skaGapVal(rate, line){ return rate == null ? NaN : Number(rate) - Number(line); }
 
 // ===================== SKA 数据日期×考核月一致性检核 =====================
 function skaDataCheckHtml(){
@@ -4738,7 +4803,7 @@ function renderSkaWeekly(){
   if(typeof SKA_DAILY==='undefined'||!SKA_DAILY||!SKA_DAILY.rows){ el.innerHTML='<div style="font-size:12px;color:#6b7280;">⏳ SKA 天维度数据待流水线生成</div>'; return; }
   var L=SKA_STORES&&SKA_STORES.lines?SKA_STORES.lines:{}, W=SKA_STORES&&SKA_STORES.warnlines?SKA_STORES.warnlines:{};
   var h='<div class="card-title">🤝 企客SKA · 评估与赔付（门店级 · 城市 / 品牌 / 门店 / 预计赔付 / 预警 / 达标）</div>';
-  h+='<div style="font-size:11px;color:#6b7280;margin-bottom:8px;">按门店月维度评估（当月SKA考核门店，风险优先排序）；预计赔付=按《SKA赔付规则》预判金额（以官方核算为准）；预警=低于品牌预警线（体验目标准时率分量）；赔付线：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90% · 沃尔玛95%。</div>';
+  h+='<div style="font-size:11px;color:#6b7280;margin-bottom:8px;">按门店月维度评估（当月SKA考核门店，风险优先排序；表内「距赔付线」=门店准时率−品牌赔付线，负值=低于赔付线）；预计赔付=按《SKA赔付规则》预判金额（以官方核算为准）；预警=低于品牌预警线（体验目标准时率分量）；赔付线：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90% · 沃尔玛95%。</div>';
   h+=skaDataCheckHtml();
   var mk=skaMonthKey();
   var m=(typeof SKA_STORES!=='undefined'&&SKA_STORES&&SKA_STORES.months)?SKA_STORES.months[mk]:null;
@@ -4761,13 +4826,15 @@ function renderSkaWeekly(){
       +'<div style="flex:1;min-width:130px;background:#fef3e0;border:1px solid #f5d9a8;border-radius:10px;padding:8px 12px;"><div style="font-size:10.5px;color:#a15c00;">预警（体验目标）</div><div style="font-size:17px;font-weight:800;color:#e37400;">'+warnN+' 家</div><div style="font-size:10.5px;color:#a15c00;">低于预警线 · 未到赔付</div></div>'
       +'<div style="flex:1;min-width:130px;background:#e6f4ea;border:1px solid #bfe3c8;border-radius:10px;padding:8px 12px;"><div style="font-size:10.5px;color:#188038;">达标</div><div style="font-size:17px;font-weight:800;color:#188038;">'+okN+' 家</div><div style="font-size:10.5px;color:#188038;">考核门店 '+(payN+warnN+okN)+' 家</div></div>'
       +'</div>';
-    h+='<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>月配送单量</th><th>准时率</th><th>预计赔付</th><th>预警</th><th>达标情况</th></tr></thead><tbody>';
+    h+='<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>月配送单量</th><th>准时率</th><th>距赔付线</th><th>预计赔付</th><th>预警</th><th>达标情况</th></tr></thead><tbody>';
     rowsArr.forEach(function(x){
       var s0=x.s;
       var st=(s0.amt||0)>0?'赔付':(s0.warn?'预警':'达标');
       var col=st==='赔付'?'#d93025':(st==='预警'?'#e37400':'#188038');
+      var ln0=L[x.b]!=null?L[x.b]:90;
       h+='<tr><td>'+cityFull(x.c)+'</td><td>'+x.b+'</td><td style="font-size:10.5px;" title="'+(s0.store||'')+'">'+skaShortName(s0.store, x.b)+'</td><td>'+(s0.done||0)+'</td>'
         +'<td style="color:'+col+';font-weight:700;">'+(s0.rate!=null?Number(s0.rate).toFixed(2)+'%':'—')+'</td>'
+        +'<td>'+(s0.rate!=null?skaGapHtml(Number(s0.rate),ln0):'—')+'</td>'
         +'<td>'+((s0.amt||0)>0?'<span style="color:#d93025;font-weight:700;">¥'+s0.amt+'</span>':(s0.pred||'—'))+'</td>'
         +'<td>'+(s0.warn?'<span style="color:#e37400;font-weight:700;">⚠ &lt;'+(s0.wline||'—')+'%</span>':'—')+'</td>'
         +'<td style="color:'+col+';font-weight:600;">'+(st==='赔付'?'✗ 未达标（触发赔付）':(st==='预警'?'△ 预警（未达标）':'✓ 达标'))+'</td></tr>';
@@ -4844,7 +4911,7 @@ if(typeof window.switchCity==='function' && !window.__switchCityWrapped){
   window.switchCity=function(el,name){ __origSwitch(el,name); try{cityBarStatus();}catch(e){} };
   window.__switchCityWrapped=true;
 }
-window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); renderSkaWeekly(); cityBarScores(); });
+window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); renderSkaWeekly(); cityBarScores(); try { renderSkaStoreDetail(); } catch (e) {} });
 
 /* CITY_UX_START 城市切换易操作：初始激活态 + 快捷键 + 读数点击回顶 */
 (function(){
