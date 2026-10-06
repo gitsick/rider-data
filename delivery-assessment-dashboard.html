@@ -797,6 +797,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <div class="indicator-score">完成率<input class="calc-input" id="wj_rate" type="number" onchange="calcScore()"><br>得分<span id="wj_score" style="font-weight:700;color:#ff6b35;">—</span></div>
         </div>
         <div class="mo-mtd" id="mtd-wj"></div>
+<div id="wj-split" style="margin-top:4px;"></div>
       </div>
     </div>
   </div>
@@ -2458,13 +2459,31 @@ function switchCity(el, name) {
   calcPreset();
 }
 
+// ===================== 完结率餐/非餐分项参考值 =====================
+function renderWjSplit() {
+  var el = document.getElementById('wj-split');
+  if (!el) return;
+  if (typeof WJ_SPLIT === 'undefined' || !WJ_SPLIT) { el.innerHTML = ''; return; }
+  function fmt(o) {
+    if (!o || o.mix == null) return '';
+    return '餐饮 ' + o.cy.toFixed(2) + '% · 非餐 ' + o.fc.toFixed(2) + '% · 60/40加权 ' + o.mix.toFixed(2) + '%';
+  }
+  var parts = [];
+  var dd = WJ_SPLIT.daily && WJ_SPLIT.daily[currentDate];
+  if (dd) { var s = fmt(dd[currentCity]); if (s) parts.push('<div>📅 ' + currentDate + '：' + s + '</div>'); }
+  var mm = WJ_SPLIT.mtd && WJ_SPLIT.mtd[currentCity];
+  if (mm && mm.mix != null) parts.push('<div>📈 月累计：' + fmt(mm) + '</div>');
+  el.innerHTML = parts.length ? '<div style="font-size:10.5px;color:#6b7280;line-height:1.7;background:#f8f9fa;border-radius:8px;padding:6px 10px;">分项参考（明细汇总·剔除企客服务包·非官方核算口径）<br>' + parts.join('') + '</div>' : '';
+}
+
 // ===================== 更新模块输入 =====================
 function updateModuleInputs() {
   if (!hasData(currentDate)) {
     ['tw_rate','wj_rate','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel'].forEach(function(id){ setVal(id, ''); });
-    calcScore();
-    return;
-  }
+calcScore();
+if (typeof renderWjSplit === 'function') renderWjSplit();
+return;
+}
   var d = dailyByDate[currentDate][currentCity];
   if (d) {
     var pending = (d.hdRate === null || d.hdRate === undefined) && (d.tyScore === null || d.tyScore === undefined);
@@ -2482,6 +2501,7 @@ function updateModuleInputs() {
     }
   }
   calcScore();
+if (typeof renderWjSplit === 'function') renderWjSplit();
 }
 
 // ===================== 计算辅助 =====================
@@ -3810,6 +3830,10 @@ window.addEventListener('load', function(){ cityBarStatus(); cityBarScores(); })
 })();
 /* CITY_ROW_HL_END */
 /* SKA_ENH_JS_END */
+</script>
+<script id="wj-split-data">
+var WJ_SPLIT={"daily":{"09-01":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.7,"fc":98.53,"mix":99.23},"诸暨":{"cy":99.36,"fc":94.4,"mix":97.37}},"09-02":{"响水":{"cy":99.98,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.84,"fc":99.06,"mix":99.53},"诸暨":{"cy":99.26,"fc":94.31,"mix":97.28}},"09-03":{"响水":{"cy":99.97,"fc":99.78,"mix":99.89},"泰兴":{"cy":99.93,"fc":98.91,"mix":99.52},"诸暨":{"cy":99.46,"fc":95.94,"mix":98.05}},"09-04":{"响水":{"cy":99.99,"fc":99.77,"mix":99.9},"泰兴":{"cy":99.87,"fc":99.41,"mix":99.69},"诸暨":{"cy":99.27,"fc":92.96,"mix":96.74}},"09-05":{"响水":{"cy":99.99,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.9,"fc":99.03,"mix":99.55},"诸暨":{"cy":99.4,"fc":94.7,"mix":97.52}},"09-06":{"响水":{"cy":99.99,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.86,"fc":99.21,"mix":99.6},"诸暨":{"cy":99.52,"fc":95.14,"mix":97.77}},"09-07":{"响水":{"cy":100.0,"fc":99.76,"mix":99.9},"泰兴":{"cy":99.86,"fc":99.12,"mix":99.56},"诸暨":{"cy":99.63,"fc":96.83,"mix":98.51}},"09-08":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.92,"fc":99.4,"mix":99.71},"诸暨":{"cy":99.58,"fc":96.51,"mix":98.36}},"09-09":{"响水":{"cy":99.98,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.89,"fc":99.6,"mix":99.77},"诸暨":{"cy":99.61,"fc":96.87,"mix":98.51}},"09-10":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.9,"fc":98.89,"mix":99.5},"诸暨":{"cy":99.68,"fc":96.12,"mix":98.25}},"09-11":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.91,"fc":99.29,"mix":99.66},"诸暨":{"cy":99.49,"fc":94.41,"mix":97.46}},"09-12":{"响水":{"cy":99.99,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.87,"fc":99.52,"mix":99.73},"诸暨":{"cy":99.57,"fc":94.46,"mix":97.53}},"09-13":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.86,"fc":99.29,"mix":99.64},"诸暨":{"cy":99.47,"fc":94.33,"mix":97.41}},"09-14":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.95,"fc":99.4,"mix":99.73},"诸暨":{"cy":99.56,"fc":95.85,"mix":98.08}},"09-15":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.89,"fc":99.62,"mix":99.78},"诸暨":{"cy":99.67,"fc":96.02,"mix":98.21}},"09-16":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.87,"fc":99.73,"mix":99.82},"诸暨":{"cy":99.64,"fc":95.42,"mix":97.96}},"09-17":{"响水":{"cy":99.98,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.82,"fc":99.11,"mix":99.54},"诸暨":{"cy":99.64,"fc":94.95,"mix":97.76}},"09-18":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.9,"fc":99.27,"mix":99.65},"诸暨":{"cy":99.59,"fc":94.89,"mix":97.71}},"09-19":{"响水":{"cy":100.0,"fc":99.8,"mix":99.92},"泰兴":{"cy":99.66,"fc":98.93,"mix":99.37},"诸暨":{"cy":99.6,"fc":94.11,"mix":97.41}},"09-20":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.86,"fc":99.28,"mix":99.63},"诸暨":{"cy":99.58,"fc":94.6,"mix":97.58}},"09-21":{"响水":{"cy":99.93,"fc":99.75,"mix":99.86},"泰兴":{"cy":99.89,"fc":99.53,"mix":99.75},"诸暨":{"cy":99.67,"fc":95.52,"mix":98.01}},"09-22":{"响水":{"cy":100.0,"fc":100.0,"mix":100.0},"泰兴":{"cy":99.89,"fc":99.44,"mix":99.71},"诸暨":{"cy":99.66,"fc":95.79,"mix":98.11}},"09-23":{"响水":{"cy":99.98,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.87,"fc":99.18,"mix":99.59},"诸暨":{"cy":99.73,"fc":96.14,"mix":98.29}},"09-24":{"响水":{"cy":99.99,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.84,"fc":98.85,"mix":99.45},"诸暨":{"cy":99.7,"fc":95.8,"mix":98.14}},"09-25":{"响水":{"cy":99.94,"fc":97.7,"mix":99.04},"泰兴":{"cy":99.62,"fc":99.15,"mix":99.44},"诸暨":{"cy":99.41,"fc":92.4,"mix":96.61}},"09-26":{"响水":{"cy":100.0,"fc":99.79,"mix":99.92},"泰兴":{"cy":99.7,"fc":98.45,"mix":99.2},"诸暨":{"cy":99.51,"fc":93.03,"mix":96.92}},"09-27":{"响水":{"cy":99.98,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.73,"fc":98.49,"mix":99.24},"诸暨":{"cy":99.29,"fc":92.52,"mix":96.58}},"09-28":{"响水":{"cy":99.86,"fc":98.8,"mix":99.44},"泰兴":{"cy":99.34,"fc":98.55,"mix":99.02},"诸暨":{"cy":98.98,"fc":93.58,"mix":96.82}},"09-29":{"响水":{"cy":99.94,"fc":100.0,"mix":99.97},"泰兴":{"cy":99.7,"fc":98.79,"mix":99.33},"诸暨":{"cy":99.41,"fc":94.39,"mix":97.4}},"09-30":{"响水":{"cy":99.96,"fc":99.77,"mix":99.89},"泰兴":{"cy":99.74,"fc":99.3,"mix":99.56},"诸暨":{"cy":99.37,"fc":91.75,"mix":96.32}}},"mtd":{"响水":{"cy":99.98,"fc":99.79,"mix":99.91},"泰兴":{"cy":99.81,"fc":99.13,"mix":99.54},"诸暨":{"cy":99.5,"fc":94.71,"mix":97.59}}};
+if (typeof renderWjSplit==='function'){try{renderWjSplit();}catch(e){console.warn(e);}}
 </script>
 </body>
 </html>
