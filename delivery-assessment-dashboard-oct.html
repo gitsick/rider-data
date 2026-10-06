@@ -3420,7 +3420,10 @@ function updateModuleInputs() {
     if (wsRef) { setVal('wj_cy', wsRef.cy); setVal('wj_fc', wsRef.fc); } else { setVal('wj_cy', ''); setVal('wj_fc', ''); }
     setVal('ym_rate', (d.ymRate !== null && d.ymRate !== undefined) ? d.ymRate : '');
     var selC = document.getElementById('ym_coef');
-    if (selC && d.ymCq !== null && d.ymCq !== undefined) selC.value = d.ymCq >= 90 ? '1.05' : '1';
+    if (selC) {
+      var isP2 = getPeriod(currentDate).period === 2; // 第2期（10/19起）新口径：不乘出勤系数
+      selC.value = isP2 ? '1' : (d.ymCq !== null && d.ymCq !== undefined && d.ymCq >= 90 ? '1.05' : '1');
+    }
     var pzl = document.getElementById('pz_act');
     if (pzl) pzl.textContent = (d.pzAct !== null && d.pzAct !== undefined) ? ('活跃骑手 ' + d.pzAct + '（完成率待任务系统目标）') : '';
   }
