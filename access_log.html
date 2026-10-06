@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>骑手解约看板 · 访问日志</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:#F0F2F5;color:#1B1B33;padding:14px}
+.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#0f172a,#1e293b);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.top-nav a{color:#94a3b8;text-decoration:none;white-space:nowrap}.top-nav a:hover{color:#FFC300}
+.top-nav .nav-current{color:#fff;font-weight:700;margin-left:4px}.top-nav .nav-sep{color:#475569}
+.top-nav .nav-switch{margin-left:auto}
+.header{background:linear-gradient(135deg,#1B2233,#2D3447 60%,#3A4458);border-radius:8px;padding:16px 20px;margin:10px 0;position:relative}
+.header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#FFC300,#F5A623,#FFC300)}
+.header h1{color:#fff;font-size:19px}.header .sub{color:#8A8FA3;font-size:12px;margin-top:4px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px}
+.card{background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid #EAECEF;position:relative}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#FFC300}
+.card .num{font-size:22px;font-weight:800;color:#1B2233;line-height:1.1}.card .lbl{color:#8A8FA3;font-size:11px;margin-top:2px}
+.card.blue::before{background:#1890FF}.card.green::before{background:#52C41A}.card.orange::before{background:#FA8C16}
+.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.chart-section{background:#fff;border-radius:8px;padding:10px 14px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid #EAECEF}
+.chart-section .title{font-size:13px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.chart-section .title::before{content:"";display:inline-block;width:3px;height:13px;background:linear-gradient(180deg,#FFC300,#F5A623);border-radius:2px}
+.cbar-row{display:flex;align-items:center;gap:6px;font-size:11px;margin-bottom:3px}
+.cbar-row .ck{flex:0 0 80px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbar-row .cbar{flex:1;height:14px;background:#F5F6F7;border-radius:3px;overflow:hidden;position:relative}
+.cbar-row .cbar-fill{height:100%;border-radius:3px}
+.cbar-row .cv{flex:0 0 38px;text-align:right;font-weight:700}
+.cbar-empty{padding:12px 0;text-align:center;color:#B0B4C0;font-size:11px}
+.tblwrap{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid #EAECEF;margin-bottom:10px;padding:10px 14px}
+.tblwrap .title{font-size:13px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.tblwrap .title::before{content:"";display:inline-block;width:3px;height:13px;background:linear-gradient(180deg,#FFC300,#F5A623);border-radius:2px}
+.tblwrap .title .cnt{font-size:11px;color:#8A8FA3;font-weight:400;margin-left:auto}
+.tblsc{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:640px}
+th{background:#FAFBFC;color:#1B2233;font-weight:600;padding:8px 12px;text-align:left;border-bottom:2px solid #FFC300;white-space:nowrap;position:sticky;top:0}
+html.embed .top-nav{display:none}
+td{padding:7px 12px;border-bottom:1px solid #F0F1F2;white-space:nowrap}
+tr:nth-child(even) td{background:#FAFBFC}
+tr:hover td{background:#FFF8E1}
+tr.city-row td{color:#6B7280;font-size:11px}
+.empty{padding:24px;text-align:center;color:#B0B4C0}
+.foot{text-align:center;color:#B0B4C0;font-size:11px;padding:14px 0}
+@media(max-width:768px){.charts-grid{grid-template-columns:1fr}.header h1{font-size:16px}.cards{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<script>if(/[?&]embed=1/.test(location.search))document.documentElement.className+=' embed';</script>
+<nav class="top-nav"><a href="https://gitsick.github.io/databi/">← 看板中心</a><span class="nav-sep">›</span><a href="rider_dashboard.html">骑手解约</a><span class="nav-sep">›</span><span class="nav-current">访问日志</span></nav>
+<div class="wrap">
+<div class="header"><h1>骑手解约看板 · 访问日志</h1><div class="sub">统计除本人外的页面访问 · 更新时间：2026-10-06 10:13 · 每次数据刷新后自动汇总</div></div>
+<div class="cards">
+<div class="card"><div class="num">26</div><div class="lbl">总访问次数（除本人）</div></div>
+<div class="card blue"><div class="num">1</div><div class="lbl">独立 IP 数</div></div>
+<div class="card green"><div class="num">0</div><div class="lbl">今日访问</div></div>
+<div class="card orange"><div class="num">1</div><div class="lbl">覆盖省级行政区</div></div>
+</div>
+<div class="charts-grid">
+<div class="chart-section"><div class="title">来源分布 <span class="cnt">26次</span></div><div class="cbar-row"><span class="ck" title="直接打开">直接打开</span><div class="cbar"><div class="cbar-fill" style="width:100.0%;background:linear-gradient(90deg,#52C41A,#52C41Acc)"></div><span style="position:absolute;right:4px;top:0;font-size:10px;font-weight:600;color:#1B1B33">65.4%</span></div><span class="cv">17次</span></div><div class="cbar-row"><span class="ck" title="gitsick.github.io">gitsick.github.io</span><div class="cbar"><div class="cbar-fill" style="width:47.1%;background:linear-gradient(90deg,#52C41A,#52C41Acc)"></div><span style="position:absolute;right:4px;top:0;font-size:10px;font-weight:600;color:#1B1B33">30.8%</span></div><span class="cv">8次</span></div><div class="cbar-row"><span class="ck" title="微信">微信</span><div class="cbar"><div class="cbar-fill" style="width:5.9%;background:linear-gradient(90deg,#52C41A,#52C41Acc)"></div><span style="position:absolute;right:4px;top:0;font-size:10px;font-weight:600;color:#1B1B33">3.8%</span></div><span class="cv">1次</span></div></div>
+<div class="chart-section"><div class="title">每日访问（近14天）</div><div class="cbar-row"><span class="ck" title="10-04">10-04</span><div class="cbar"><div class="cbar-fill" style="width:100.0%;background:linear-gradient(90deg,#1890FF,#1890FFcc)"></div><span style="position:absolute;right:4px;top:0;font-size:10px;font-weight:600;color:#1B1B33">61.5%</span></div><span class="cv">16次</span></div><div class="cbar-row"><span class="ck" title="10-03">10-03</span><div class="cbar"><div class="cbar-fill" style="width:62.5%;background:linear-gradient(90deg,#1890FF,#1890FFcc)"></div><span style="position:absolute;right:4px;top:0;font-size:10px;font-weight:600;color:#1B1B33">38.5%</span></div><span class="cv">10次</span></div></div>
+</div>
+<div class="tblwrap"><div class="title">地区统计 <span class="cnt">按省汇总 · 含城市明细</span></div>
+<div class="tblsc"><table><thead><tr><th>地区</th><th>访问次数</th><th>独立IP</th><th>最近访问</th></tr></thead><tbody><tr class="prov-row"><td><b>未知</b></td><td>26</td><td>1</td><td>2026-10-04 16:50</td></tr></tbody></table></div></div>
+<div class="tblwrap"><div class="title">最近访问明细 <span class="cnt">最新 100 条</span></div>
+<div class="tblsc"><table><thead><tr><th>时间</th><th>来源</th><th>来自IP</th><th>地区</th><th>设备</th><th>页面</th></tr></thead><tbody><tr><td>2026-10-04 16:50</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:46</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:42</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:42</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:41</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:41</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:41</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:40</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>index.html</td></tr><tr><td>2026-10-04 16:38</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>index.html</td></tr><tr><td>2026-10-04 16:38</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:38</td><td>微信</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>手机</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 16:13</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 15:57</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 15:47</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 13:34</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>手机</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-04 13:13</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>手机</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 12:23</td><td>gitsick.github.io</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 11:29</td><td>gitsick.github.io</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 11:28</td><td>gitsick.github.io</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 10:13</td><td>gitsick.github.io</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 10:12</td><td>gitsick.github.io</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 10:12</td><td>gitsick.github.io</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 10:01</td><td>gitsick.github.io</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 10:00</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 09:34</td><td>gitsick.github.io</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr><tr><td>2026-10-03 09:24</td><td>直接打开</td><td style="font-family:monospace">127.0.0.1</td><td>未知</td><td>电脑</td><td>rider_dashboard.html</td></tr></tbody></table></div></div>
+<div class="foot">已排除本人访问 7 次 · 测试记录 0 条（不计入统计）· 页面访问日志由看板自动上报生成</div>
+</div></body></html>
