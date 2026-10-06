@@ -765,7 +765,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
   <div class="grid-modules gm3">
     <div id="mod-run" class="card module-card yuepao collapsible">
-      <div class="card-title collapsible"><span class="icon">🟠</span> 悦跑运力 <span class="pill pill-weight">权重 30%</span></div>
+      <div class="card-title collapsible"><span class="icon">🟠</span> 悦跑运力 <span class="pill pill-weight" id="pill-w-ym">权重 30%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
           <div><div class="indicator-name">达标骑手数完成度</div><span class="threshold-tag tag-red">90%~110% 计分</span></div>
@@ -799,7 +799,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       </div>
     </div>
     <div id="mod-hd" class="card module-card jiameng collapsible">
-      <div class="card-title collapsible"><span class="icon">🟥</span> 加盟运力（HD完成率） <span class="pill pill-weight">权重 15%</span></div>
+      <div class="card-title collapsible"><span class="icon">🟥</span> 加盟运力（HD完成率） <span class="pill pill-weight" id="pill-w-jm">权重 15%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
           <div><div class="indicator-name">HD完成率</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
@@ -820,7 +820,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       </div>
     </div>
     <div class="card module-card puzhong collapsible">
-      <div class="card-title collapsible"><span class="icon">🟤</span> 普通众包运力 <span class="pill pill-weight">权重 5%</span></div>
+      <div class="card-title collapsible"><span class="icon">🟤</span> 普通众包运力 <span class="pill pill-weight" id="pill-w-pz">权重 5%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
           <div><div class="indicator-name">活跃骑手数完成度</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
@@ -2758,6 +2758,24 @@ dataDates.forEach(function(dateKey, idx) {
 // 当前选中状态
 var currentDate = '10-05';
 var currentCity = '泰兴';
+// 方案权重按“画像”分档（是否考核普众/悦跑）：画像1=考核普众+悦跑、画像2=仅考核普众、画像3=都不考核；
+// 体验/推完/完结率三档均为20%/20%/10%；城市→画像映射（泰兴→画像1、诸暨→画像2、响水→画像3）为推断，方案表未列城市名，待业务确认
+var CITY_PROFILE = {
+  '泰兴': {jm:0.15, ym:0.30, pz:0.05},
+  '诸暨': {jm:0.45, ym:0,    pz:0.05},
+  '响水': {jm:0.50, ym:0,    pz:0}
+};
+function cityW() {
+  var p = CITY_PROFILE[currentCity] || {jm:0.15, ym:0.30, pz:0.05};
+  return {jm:p.jm, ym:p.ym, pz:p.pz, ty:0.20, tw:0.20, wj:0.10};
+}
+function updateWeightPills() {
+  var w = cityW();
+  var pct = function(x){ return Math.round(x*100); };
+  var pJm = document.getElementById('pill-w-jm'); if (pJm) pJm.textContent = '权重 ' + pct(w.jm) + '%';
+  var pYm = document.getElementById('pill-w-ym'); if (pYm) pYm.textContent = w.ym > 0 ? '权重 ' + pct(w.ym) + '%' : '不考核（画像）';
+  var pPz = document.getElementById('pill-w-pz'); if (pPz) pPz.textContent = w.pz > 0 ? '权重 ' + pct(w.pz) + '%' : '不考核（画像）';
+}
 var currentPeriod = 'p1'; // 默认显示第1期
 
 function getFilteredDates() {
@@ -2789,6 +2807,7 @@ function switchPeriod(p) {
 renderTrendTable();
 renderYmWeekly();
 renderYmWeeklyTrend();
+updateWeightPills();
   updateTrendHighlight();
   renderCalendar();
   renderTrendChart();
@@ -3310,6 +3329,7 @@ function switchCity(el, name) {
   document.querySelectorAll('.city-tab').forEach(function(t){ t.classList.remove('active'); });
   el.classList.add('active');
   currentCity = name;
+  updateWeightPills();
   var kc=document.getElementById('kpi-city'); if(kc) kc.value=name;
   var kcd=document.getElementById('kpi-city-display'); if(kcd) kcd.textContent=name;
   updateModuleInputs();
@@ -3426,14 +3446,15 @@ return 110;
 }
 
 function calcScore() {
-var w = {jm:0.15, ym:0.30, pz:0.05, ty:0.20, tw:0.20, wj:0.10};
+var w = cityW();
   var detail = '', total = 0, hasInput = false;
+  detail += '——权重按方案画像档：加盟' + Math.round(w.jm*100) + '% / 悦跑' + Math.round(w.ym*100) + '% / 普众' + Math.round(w.pz*100) + '% / 体验20% / 推完20% / 完结率10%（城市→画像映射待业务确认）\n';
   var jm = getVal('jm_rate');
   if (jm !== null) {
     hasInput = true;
     var s = jm < 90 ? 0 : clamp(jm, 0, 100);
     total += s * w.jm;
-    detail += '加盟(HD): ' + jm + '% \u2192 ' + s.toFixed(1) + '% \u00d7 15%\n';
+    detail += '加盟(HD): ' + jm + '% \u2192 ' + s.toFixed(1) + '% \u00d7 ' + Math.round(w.jm*100) + '%\n';
     document.getElementById('jm_score').textContent = s.toFixed(1) + '%';
   } else { document.getElementById('jm_score').textContent = '\u2014'; }
   var tyCs = getVal('ty_cs'), tyFake = getVal('ty_fake'), tyCancel = getVal('ty_cancel');
@@ -3471,21 +3492,27 @@ var w = {jm:0.15, ym:0.30, pz:0.05, ty:0.20, tw:0.20, wj:0.10};
     document.getElementById('wj_score').textContent = s3.toFixed(1) + '%';
   } else { document.getElementById('wj_score').textContent = '\u2014'; }
   var ym = getVal('ym_rate');
-  if (ym !== null) {
+  if (w.ym === 0) {
+    document.getElementById('ym_score').textContent = '\u2014';
+    if (ym !== null) detail += '悦跑: 该城市画像不考核悦跑运力（权重0，不计入）\n';
+  } else if (ym !== null) {
     hasInput = true;
     var coef = parseFloat((document.getElementById('ym_coef') || {}).value || '1');
     var sYm = ym < 90 ? 0 : clamp(ym, 0, 110);
     var ymScore = sYm * coef;
     total += ymScore * w.ym;
-    detail += '悦跑: ' + ym + '%\u00d7' + coef + ' \u2192 ' + ymScore.toFixed(1) + '% \u00d7 30%\n';
+    detail += '悦跑: ' + ym + '%\u00d7' + coef + ' \u2192 ' + ymScore.toFixed(1) + '% \u00d7 ' + Math.round(w.ym*100) + '%\n';
     document.getElementById('ym_score').textContent = ymScore.toFixed(1) + '%';
   } else { document.getElementById('ym_score').textContent = '\u2014'; }
   var pz = getVal('pz_rate');
-  if (pz !== null) {
+  if (w.pz === 0) {
+    document.getElementById('pz_score').textContent = '\u2014';
+    if (pz !== null) detail += '普众: 该城市画像不考核普众运力（权重0，不计入）\n';
+  } else if (pz !== null) {
     hasInput = true;
     var sPz = pz < 90 ? 0 : clamp(pz, 0, 100);
     total += sPz * w.pz;
-    detail += '普众: ' + pz + '% \u2192 ' + sPz.toFixed(1) + '% \u00d7 5%\n';
+    detail += '普众: ' + pz + '% \u2192 ' + sPz.toFixed(1) + '% \u00d7 ' + Math.round(w.pz*100) + '%\n';
     document.getElementById('pz_score').textContent = sPz.toFixed(1) + '%';
   } else { document.getElementById('pz_score').textContent = '\u2014'; }
   var resultEl = document.getElementById('total-score');
@@ -4289,7 +4316,8 @@ function calcPreset() {
     var estWj = wj < 80 ? 0 : Math.min(wj, 110);
     var estYm = ym < 90 ? 0 : Math.min(ym, 110);  // 悦跑：单输入近似（方案=各周得分均值：单周<90%记0、>110%封顶，平均不控制区间）
     var estPz = pz < 90 ? 0 : Math.min(pz, 100);
-    var estimatedScore = estJm * 0.15 + estYm * 0.30 + estPz * 0.05 + estTy * 0.20 + estTw * 0.20 + estWj * 0.10;
+    var wE = cityW();
+var estimatedScore = estJm * wE.jm + (wE.ym > 0 ? estYm * wE.ym : 0) + (wE.pz > 0 ? estPz * wE.pz : 0) + estTy * wE.ty + estTw * wE.tw + estWj * wE.wj;
     var blendedScore = (currentScore * daysActual + estimatedScore * daysRemaining) / totalDays;
     blendedScore = Math.round(blendedScore * 100) / 100;
 
@@ -4705,6 +4733,7 @@ fillBIDataTable();
 renderTrendTable();
 renderYmWeekly();
 renderYmWeeklyTrend();
+updateWeightPills();
 updateTrendHighlight();
 initTrendChart();
 // 默认选中泰兴
@@ -4928,7 +4957,7 @@ if (typeof renderTrendChart==='function'){try{renderTrendChart();}catch(e){}}
 </script>
 <script id="mtd-eval-data">
 var MONTH_MODE="mtd";
-var MTD_EVAL={"month": "2026-10", "date": "20261005", "mode": "mtd", "peaks": ["10-01", "10-02", "10-03", "10-04", "10-05", "10-06", "10-07", "10-11", "10-17", "10-18", "10-24", "10-25", "10-31"], "pbCut": "10-18", "cities": {"响水": {"days": 5, "twAll": 99.12, "twPk": 99.12, "twMin": 98.88, "twBrk": 0, "twP1": 99.12, "twP2": null, "twDbOk": 5, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 37.41, "ctLast": 44.51, "ymAvg": 94.74, "ymWeekWorst": 94.74, "ymcqLast": 100.0, "coef": 1.05, "ymModule": 99.48, "ymWeeks": [{"week": "09-28", "rate": 94.74, "cq": 99.1, "coef": 1.05, "score": 99.48}, {"week": "10-05", "rate": 94.74, "cq": 100.0, "coef": 1.05, "score": 99.48}], "gzLast": "90.91 / 100.0", "jmDbLast": 80, "pzLast": null, "gzYm": 90.91, "gzJm": 100.0, "qkStores": 20, "qkOntime": 99.63, "qkTotal": null, "qkOk": null, "qkka": "14家/20店/135单/99.63%", "score": 99.67, "gap": 0.33, "div": 1.0, "mainMod": "推完", "mainGap": 0.18, "hdZero": 0, "ymBrk": 0, "twBrkDb": 0}, "泰兴": {"days": 5, "twAll": 99.08, "twPk": 99.08, "twMin": 98.87, "twBrk": 0, "twP1": 99.08, "twP2": null, "twDbOk": 5, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 49.78, "ctLast": 50.59, "ymAvg": 88.39, "ymWeekWorst": 88.29, "ymcqLast": 99.12, "coef": 1.05, "ymModule": 0.0, "ymWeeks": [{"week": "09-28", "rate": 88.29, "cq": 99.0, "coef": 1.05, "score": 0.0}, {"week": "10-05", "rate": 88.79, "cq": 99.12, "coef": 1.05, "score": 0.0}], "gzLast": "86.61 / 98.99", "jmDbLast": 192, "pzLast": null, "gzYm": 86.61, "gzJm": 98.99, "qkStores": 58, "qkOntime": 96.25, "qkTotal": null, "qkOk": null, "qkka": "20家/58店/559单/96.25%", "score": 69.82, "gap": 30.18, "div": 1.0, "mainMod": "悦跑", "mainGap": 30.0, "hdZero": 0, "ymBrk": 2, "twBrkDb": 0}, "诸暨": {"days": 5, "twAll": 98.31, "twPk": 98.31, "twMin": 97.54, "twBrk": 0, "twP1": 98.31, "twP2": null, "twDbOk": 1, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 49.31, "ctLast": 45.99, "ymAvg": 84.08, "ymWeekWorst": 78.44, "ymcqLast": 98.42, "coef": 1.05, "ymModule": 0.0, "ymWeeks": [{"week": "09-28", "rate": 85.49, "cq": 96.15, "coef": 1.05, "score": 0.0}, {"week": "10-05", "rate": 78.44, "cq": 98.42, "coef": 1.05, "score": 0.0}], "gzLast": "74.76 / 98.82", "jmDbLast": 400, "pzLast": null, "gzYm": 74.76, "gzJm": 98.82, "qkStores": null, "qkOntime": null, "qkTotal": null, "qkOk": null, "qkka": null, "score": 69.66, "gap": 30.34, "div": 1.0, "mainMod": "悦跑", "mainGap": 30.0, "hdZero": 0, "ymBrk": 5, "twBrkDb": 4}}};
+var MTD_EVAL={"month": "2026-10", "date": "20261005", "mode": "mtd", "peaks": ["10-01", "10-02", "10-03", "10-04", "10-05", "10-06", "10-07", "10-11", "10-17", "10-18", "10-24", "10-25", "10-31"], "pbCut": "10-18", "cities": {"响水": {"days": 5, "twAll": 99.12, "twPk": 99.12, "twMin": 98.88, "twBrk": 0, "twP1": 99.12, "twP2": null, "twDbOk": 5, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 37.41, "ctLast": 44.51, "ymAvg": 94.74, "ymWeekWorst": 94.74, "ymcqLast": 100.0, "coef": 1.05, "ymModule": 99.48, "ymWeeks": [{"week": "09-28", "rate": 94.74, "cq": 99.1, "coef": 1.05, "score": 99.48}, {"week": "10-05", "rate": 94.74, "cq": 100.0, "coef": 1.05, "score": 99.48}], "gzLast": "90.91 / 100.0", "jmDbLast": 80, "pzLast": null, "gzYm": 90.91, "gzJm": 100.0, "qkStores": 20, "qkOntime": 99.63, "qkTotal": null, "qkOk": null, "qkka": "14家/20店/135单/99.63%", "score": 99.82, "gap": 0.18, "div": 1.0, "mainMod": "推完", "mainGap": 0.18, "hdZero": 0, "ymBrk": 0, "twBrkDb": 0}, "泰兴": {"days": 5, "twAll": 99.08, "twPk": 99.08, "twMin": 98.87, "twBrk": 0, "twP1": 99.08, "twP2": null, "twDbOk": 5, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 49.78, "ctLast": 50.59, "ymAvg": 88.39, "ymWeekWorst": 88.29, "ymcqLast": 99.12, "coef": 1.05, "ymModule": 0.0, "ymWeeks": [{"week": "09-28", "rate": 88.29, "cq": 99.0, "coef": 1.05, "score": 0.0}, {"week": "10-05", "rate": 88.79, "cq": 99.12, "coef": 1.05, "score": 0.0}], "gzLast": "86.61 / 98.99", "jmDbLast": 192, "pzLast": null, "gzYm": 86.61, "gzJm": 98.99, "qkStores": 58, "qkOntime": 96.25, "qkTotal": null, "qkOk": null, "qkka": "20家/58店/559单/96.25%", "score": 69.82, "gap": 30.18, "div": 1.0, "mainMod": "悦跑", "mainGap": 30.0, "hdZero": 0, "ymBrk": 2, "twBrkDb": 0}, "诸暨": {"days": 5, "twAll": 98.31, "twPk": 98.31, "twMin": 97.54, "twBrk": 0, "twP1": 98.31, "twP2": null, "twDbOk": 1, "hdLast": null, "tyLast": null, "wjAvg": null, "ctFirst": 49.31, "ctLast": 45.99, "ymAvg": 84.08, "ymWeekWorst": 78.44, "ymcqLast": 98.42, "coef": 1.05, "ymModule": 0.0, "ymWeeks": [{"week": "09-28", "rate": 85.49, "cq": 96.15, "coef": 1.05, "score": 0.0}, {"week": "10-05", "rate": 78.44, "cq": 98.42, "coef": 1.05, "score": 0.0}], "gzLast": "74.76 / 98.82", "jmDbLast": 400, "pzLast": null, "gzYm": 74.76, "gzJm": 98.82, "qkStores": null, "qkOntime": null, "qkTotal": null, "qkOk": null, "qkka": null, "score": 99.66, "gap": 0.34, "div": 1.0, "mainMod": "推完", "mainGap": 0.34, "hdZero": 0, "ymBrk": 5, "twBrkDb": 4}}};
 var QKKA_BRAND={"泰兴": {"date": "20261005", "brands": {"老百姓": {"stores": 8, "wb": 113, "ontime": 98.26, "ska": null, "line": null, "hit": false, "watch": false}, "古茗": {"stores": 12, "wb": 40, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "益丰大药房": {"stores": 5, "wb": 84, "ontime": 98.82, "ska": null, "line": null, "hit": false, "watch": false}, "cotticoffee": {"stores": 6, "wb": 8, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "星巴克": {"stores": 5, "wb": 344, "ontime": 96.67, "ska": "星巴克", "line": 93.0, "hit": false, "watch": false}, "锅圈食汇": {"stores": 4, "wb": 7, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "屈臣氏": {"stores": 4, "wb": 15, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "喜茶": {"stores": 4, "wb": 16, "ontime": 94.2, "ska": null, "line": null, "hit": false, "watch": true}, "1点点": {"stores": 4, "wb": 4, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "紫燕百味鸡": {"stores": 3, "wb": 3, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "百果园": {"stores": 2, "wb": 4, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "沪上阿姨": {"stores": 3, "wb": 3, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "茉莉奶白": {"stores": 4, "wb": 9, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "美团到餐": {"stores": 2, "wb": 6, "ontime": 75.0, "ska": null, "line": null, "hit": false, "watch": true}, "孩子王": {"stores": 1, "wb": 6, "ontime": 85.71, "ska": null, "line": null, "hit": false, "watch": true}, "京东酒世界": {"stores": 1, "wb": 1, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "名创优品": {"stores": 1, "wb": 18, "ontime": 81.82, "ska": null, "line": null, "hit": false, "watch": true}, "茉酸奶": {"stores": 2, "wb": 3, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "菜阿婆": {"stores": 0, "wb": 0, "ontime": null, "ska": null, "line": null, "hit": false, "watch": false}, "菜老包": {"stores": 0, "wb": 0, "ontime": null, "ska": null, "line": null, "hit": false, "watch": false}}}, "响水": {"date": "20261005", "brands": {"古茗": {"stores": 12, "wb": 40, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "小米之家": {"stores": 2, "wb": 1, "ontime": 50.0, "ska": null, "line": null, "hit": false, "watch": true}, "茉莉奶白": {"stores": 4, "wb": 9, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "星巴克": {"stores": 5, "wb": 344, "ontime": 96.67, "ska": "星巴克", "line": 93.0, "hit": false, "watch": false}, "华为": {"stores": 1, "wb": 1, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "塔斯汀超级汉堡": {"stores": 1, "wb": 2, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "茶百道": {"stores": 1, "wb": 2, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "喜茶": {"stores": 4, "wb": 16, "ontime": 94.2, "ska": null, "line": null, "hit": false, "watch": true}, "1点点": {"stores": 4, "wb": 4, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "沪上阿姨": {"stores": 3, "wb": 3, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "茉酸奶": {"stores": 2, "wb": 3, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "cotticoffee": {"stores": 6, "wb": 8, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "爷爷不泡茶": {"stores": 1, "wb": 3, "ontime": 100.0, "ska": null, "line": null, "hit": false, "watch": false}, "百胜门店调拨": {"stores": 1, "wb": 1, "ontime": 100.0, "ska": "肯德基", "line": 90.0, "hit": false, "watch": false}}}};
 var QKKA_MONTH={"泰兴": {"period": "20261001-1005", "stores": null, "ok": null, "okRatio": null, "ontimeWb": 663, "doneWb": 684, "rate": 96.93, "brands": 20, "stations": null}, "响水": {"period": "20261001-1005", "stores": null, "ok": null, "okRatio": null, "ontimeWb": 424, "doneWb": 437, "rate": 97.03, "brands": 14, "stations": null}};
 var SKA_LINES={"瑞幸": 99.0, "肯德基": 90.0, "必胜客": 90.0, "麦当劳": 90.0, "星巴克": 93.0, "沃尔玛": 95.0};
