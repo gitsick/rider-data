@@ -769,7 +769,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <div class="collapsible-content">
         <div class="indicator-row">
           <div><div class="indicator-name">达标骑手数完成度</div><span class="threshold-tag tag-red">90%~110% 计分</span></div>
-          <div class="indicator-score">完成度<input class="calc-input" id="ym_rate" type="number" onchange="calcScore()"><br>出勤系数<select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:70px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select><br>得分<span id="ym_score" style="font-weight:700;color:#e8710a;">—</span><div style="font-size:10.5px;color:#6b7280;margin-top:3px;">BI日更自动填入；出勤率≥90%自动取1.05</div></div>
+          <div class="indicator-score">完成度<input class="calc-input" id="ym_rate" type="number" onchange="calcScore()"><br>出勤系数<select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:70px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select><br>得分<span id="ym_score" style="font-weight:700;color:#e8710a;">—</span><div style="font-size:10.5px;color:#6b7280;margin-top:3px;">BI日更自动填入；出勤率≥90%自动取1.05，＜90%自动置1.00（目标值待任务系统，若低于目标应为0.95）</div></div>
         </div>
         <div style="font-size:11px;color:#6b7280;text-align:left;margin-top:4px;">得分=完成度×出勤合格率系数；完成度＜90%记0分</div>
         <div class="mo-mtd" id="mtd-ym"></div>
@@ -781,6 +781,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <div class="indicator-row"><div class="indicator-name">复合超时率 40%</div><div class="indicator-score"><input class="calc-input" id="ty_cs" type="number" onchange="calcScore()"></div></div>
         <div class="indicator-row"><div class="indicator-name">虚假点送达 30%</div><div class="indicator-score"><input class="calc-input" id="ty_fake" type="number" onchange="calcScore()"></div></div>
         <div class="indicator-row"><div class="indicator-name">配送取消单 30%</div><div class="indicator-score"><input class="calc-input" id="ty_cancel" type="number" onchange="calcScore()"></div></div>
+        <div style="font-size:10.5px;color:#9aa0a6;text-align:left;margin-top:4px;">口径注：方案正文权重为 复合超时40%/虚假30%/取消30%，但方案示例按 30%/40%/30% 计算，两处不一致——暂按正文权重（如上），待业务确认后修正</div>
         <div style="font-size:11px;color:#6b7280;text-align:right;margin-top:4px;">体验得分 → <span id="ty_score" style="font-weight:700;color:#7b61ff;">—</span></div>
         <div class="mo-mtd" id="mtd-ty"></div>
       </div>
@@ -810,8 +811,8 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <div class="card-title collapsible"><span class="icon">🔷</span> 履约完结率 <span class="pill pill-weight">权重 10%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
-          <div><div class="indicator-name">履约完结率</div><span class="threshold-tag tag-red">80%~110% 计分</span><div style="font-size:10.5px;color:#6b7280;margin-top:2px;">方案：餐饮60%+非餐40%，分餐/非餐各按【80%,110%】控制；此处为单值近似（官方公布后以官方为准）</div></div>
-          <div class="indicator-score">完成率<input class="calc-input" id="wj_rate" type="number" onchange="calcScore()"><br>得分<span id="wj_score" style="font-weight:700;color:#ff6b35;">—</span></div>
+          <div><div class="indicator-name">履约完结率（餐饮 / 非餐）</div><span class="threshold-tag tag-red">80%~110% 计分</span><div style="font-size:10.5px;color:#6b7280;margin-top:2px;">方案：餐饮60%+非餐40%，分餐/非餐各按【80%,110%】控制（＜80%该项记0），加权结果不控制区间；分项参考值随BI日更自动带入（非官方口径）</div></div>
+          <div class="indicator-score">餐饮<input class="calc-input" id="wj_cy" type="number" onchange="calcScore()" style="width:62px;"> 非餐<input class="calc-input" id="wj_fc" type="number" onchange="calcScore()" style="width:62px;"><input id="wj_rate" type="hidden"><br>得分<span id="wj_score" style="font-weight:700;color:#ff6b35;">—</span></div>
         </div>
         <div class="mo-mtd" id="mtd-wj"></div>
 <div id="wj-split" style="margin-top:4px;"></div>
@@ -3320,7 +3321,7 @@ function renderWjSplit() {
 // ===================== 更新模块输入 =====================
 function updateModuleInputs() {
   if (!hasData(currentDate)) {
-    ['tw_rate','wj_rate','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel','ym_rate'].forEach(function(id){ setVal(id, ''); });
+    ['tw_rate','wj_rate','wj_cy','wj_fc','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel','ym_rate'].forEach(function(id){ setVal(id, ''); });
     var pzl0 = document.getElementById('pz_act'); if (pzl0) pzl0.textContent = '';
     calcScore();
     if (typeof renderWjSplit === 'function') renderWjSplit();
@@ -3335,9 +3336,11 @@ function updateModuleInputs() {
     setVal('ty_fake', d.tyScore);
     setVal('ty_cancel', d.tyScore);
     setVal('wj_rate', d.wjRate !== null ? d.wjRate : '');
+    var wsRef = (typeof WJ_SPLIT !== 'undefined' && WJ_SPLIT) ? ((((WJ_SPLIT.daily || {})[currentDate] || {})[currentCity]) || ((WJ_SPLIT.mtd || {})[currentCity] || null)) : null;
+    if (wsRef) { setVal('wj_cy', wsRef.cy); setVal('wj_fc', wsRef.fc); } else { setVal('wj_cy', ''); setVal('wj_fc', ''); }
     setVal('ym_rate', (d.ymRate !== null && d.ymRate !== undefined) ? d.ymRate : '');
     var selC = document.getElementById('ym_coef');
-    if (selC && d.ymCq !== null && d.ymCq !== undefined && d.ymCq >= 90) selC.value = '1.05';
+    if (selC && d.ymCq !== null && d.ymCq !== undefined) selC.value = d.ymCq >= 90 ? '1.05' : '1';
     var pzl = document.getElementById('pz_act');
     if (pzl) pzl.textContent = (d.pzAct !== null && d.pzAct !== undefined) ? ('活跃骑手 ' + d.pzAct + '（完成率待任务系统目标）') : '';
   }
@@ -3391,12 +3394,19 @@ var w = {jm:0.15, ym:0.30, pz:0.05, ty:0.20, tw:0.20, wj:0.10};
     detail += '推完: ' + tw + '% \u2192 ' + s2.toFixed(1) + '% \u00d7 20%' + (TW_GATE == null ? '（门槛/目标/挑战待任务系统下发，暂按线性直算）' : '') + '\n';
     document.getElementById('tw_score').textContent = s2.toFixed(1) + '%';
   } else { document.getElementById('tw_score').textContent = '\u2014'; }
-  var wj = getVal('wj_rate');
-  if (wj !== null) {
+  var wjCy = getVal('wj_cy'), wjFc = getVal('wj_fc'), wj = getVal('wj_rate');
+  if (wjCy !== null || wjFc !== null) {
+    hasInput = true;
+    var fWj = function (v) { return v < 80 ? 0 : clamp(v, 0, 110); };
+    var s3 = (wjCy !== null ? fWj(wjCy) : 0) * 0.6 + (wjFc !== null ? fWj(wjFc) : 0) * 0.4;
+    total += s3 * w.wj;
+    detail += '完结率: 餐' + (wjCy !== null ? wjCy : '—') + '%/非餐' + (wjFc !== null ? wjFc : '—') + '% \u2192 ' + s3.toFixed(1) + '% \u00d7 10%\n';
+    document.getElementById('wj_score').textContent = s3.toFixed(1) + '%';
+  } else if (wj !== null) {
     hasInput = true;
     var s3 = wj < 80 ? 0 : clamp(wj, 0, 110);
     total += s3 * w.wj;
-    detail += '完结率: ' + wj + '% \u2192 ' + s3.toFixed(1) + '% \u00d7 10%\n';
+    detail += '完结率: ' + wj + '%（单值近似） \u2192 ' + s3.toFixed(1) + '% \u00d7 10%\n';
     document.getElementById('wj_score').textContent = s3.toFixed(1) + '%';
   } else { document.getElementById('wj_score').textContent = '\u2014'; }
   var ym = getVal('ym_rate');
