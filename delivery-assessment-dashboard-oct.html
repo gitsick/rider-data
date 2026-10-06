@@ -856,7 +856,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 </div>
 <div class="section-label">🤝 企客SKA · 天维度明细与趋势</div>
   <div class="card" id="ska-store-detail" style="margin-bottom:16px;border-left:4px solid #7b61ff;">
-    <div class="card-title"><span class="icon">🏪</span> 企客SKA · 考核门店明细（<span id="ska-sd-month">—</span> · 按店）</div>
+    <div class="card-title"><span class="icon">🏪</span> 企客SKA · 考核门店明细（<span id="ska-sd-month">—</span> · 按门店）</div>
     <div id="ska-store-detail-body"><div style="font-size:12px;color:#9aa0a6;padding:8px 0;">⏳ 门店明细生成中…</div></div>
   </div>
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
@@ -1949,7 +1949,7 @@ function renderQkkaSka() {
   if (hits.length) {
     h += '<div style="background:#fce8e8;border-left:4px solid #d93025;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12.5px;color:#b71c1c;"><b>⚠ 赔付预警：</b>' + hits.join('、') + ' 已低于 SKA 品牌准时率赔付线，按月度门店口径将触发扣罚，请重点保障运力与出餐衔接。</div>';
   } else {
-    h += '<div style="background:#e6f4ea;border-left:4px solid #34a853;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12.5px;color:#188038;"><b>✓ 当前 SKA 品牌准时率均在赔付线以上</b>（瑞幸99% / 星巴克93% / 肯德基·必胜客·麦当劳90% / 沃尔玛95%口径）。</div>';
+    h += '<div style="background:#e6f4ea;border-left:4px solid #34a853;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12.5px;color:#188038;"><b>✓ 当前 SKA 品牌准时率均在赔付线以上</b>（瑞幸99% / 星巴克93% / 麦当劳/肯德基/必胜客90% / 沃尔玛95%口径）。</div>';
   }
   var m = (typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) ? QKKA_MONTH : null;
   if (m) {
@@ -2032,7 +2032,7 @@ function renderSkaSix() {
   try { renderSkaStores(); } catch (e) {}
 }
 
-// ===================== SKA 门店月维度考核值 + 赔付预结果 =====================
+// ===================== SKA 门店月维度考核值 + 赔付预判 =====================
 function renderSkaStores() {
   var box = document.getElementById('ska-stores-body');
   if (!box) return;
@@ -2312,7 +2312,7 @@ function renderSkaStoreDetail() {
   });
   th += '</tbody></table></div>';
   h += '<div id="ska-sd-table" style="display:none;">' + th + '</div>';
-  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：门店为月内累计（MTD），随每日流水线刷新；同一门店保留最新一次评估快照（门店名多写法已归一）；灰线=赔付线（瑞幸99%/星巴克93%/麦当劳·肯德基·必胜客90%/沃尔玛95%）；距赔付线=门店准时率−品牌赔付线（负值=低于赔付线，红标）；表格视图支持点击表头排序、按赔付/预警/达标筛选；日维度仅按赔付线判定（体验预警线为月度口径，见月维度/分析报告）；以官方核算为准。</div>';
+  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：门店为月内累计（MTD），随每日流水线刷新；同一门店保留最新一次评估快照（门店名多写法已归一）；灰线=赔付线（瑞幸99%/星巴克93%/麦当劳/肯德基/必胜客90%/沃尔玛95%）；距赔付线=门店准时率−品牌赔付线（负值=低于赔付线，红标）；表格视图支持点击表头排序、按赔付/预警/达标筛选；日维度仅按赔付线判定（体验预警线为月度口径，见月维度/分析报告）；以官方核算为准。</div>';
   box.innerHTML = h;
 }
 /* SKA_STORE_DETAIL_END */
@@ -2458,7 +2458,7 @@ function renderSkaStoreDaily() {
       + '</tr>';
   });
   h += '</tbody></table></div>';
-  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：数据源=企客KA履约监控（BI 253744，按配送站点行聚合到门店），逐日随流水线刷新；与月度考核口径可能存在小幅差异，赔付以官方考核为准；诸暨瑞幸暂无逐日门店数据源（品牌看板补充源仅提供月度）。</div>';
+  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：数据源=企客KA履约监控（BI 253744，按配送站点行聚合到门店），已与城市×品牌日维度汇总逐日勾稽一致，逐日随流水线刷新；「有效门店」=当日有单门店；月度考核值与赔付以官方核算为准；诸暨瑞幸暂无逐日门店数据源（品牌看板补充源仅提供月度）。</div>';
   el.innerHTML = h;
 }
 
@@ -2538,7 +2538,7 @@ function renderSkaReport() {
     h += '<tr><td>' + p.mm + '</td><td style="color:#d93025;font-weight:700;">¥' + p.amt + '</td><td>' + p.n + '</td><td style="font-size:10.5px;">' + p.main + '</td></tr>';
   });
   h += '</tbody></table></div>';
-  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:4px;">口径：赔付线 瑞幸99% / 星巴克93% / 麦当劳·肯德基·必胜客90% / 沃尔玛95%；预警线 星巴克95% / 沃尔玛97%；取消率分档扣罚仅肯德基/必胜客；诸暨瑞幸月维度取自269707（2026-02最新可用月），无天维度；预结果以官方核算为准。</div>';
+  h += '<div style="font-size:10.5px;color:#6b7280;margin-top:4px;">口径：赔付线 瑞幸99% / 星巴克93% / 麦当劳/肯德基/必胜客90% / 沃尔玛95%；预警线 星巴克95% / 沃尔玛97%；取消率分档扣罚仅肯德基/必胜客；诸暨瑞幸月维度取自269707（2026-02最新可用月），无天维度；预判结果以官方核算为准。</div>';
   box.innerHTML = h;
 }
 
@@ -3923,7 +3923,7 @@ function renderQikeScore() {
   var el = document.getElementById('qike-score');
   if (!el || el.dataset.rendered === '1') return;
   var E = QIKE_EVAL, h = '';
-  h += '<div class="card-title">🧩 企客模块 · 方案计分规则评估 <span class="slice-chip" style="margin-left:8px;">门店级日粒度 · 麦肯必瑞星沃服务包口径 · 数据截至 10-04</span></div>';
+  h += '<div class="card-title">🧩 企客模块 · 方案计分规则评估 <span class="slice-chip" style="margin-left:8px;">门店级日粒度 · 麦肯必瑞星沃服务包口径 · 数据截至 ' + (typeof currentDate !== 'undefined' && currentDate ? currentDate : '—') + '</span></div>';
   h += '<div class="slice-note" style="margin-bottom:10px;">评估口径（10月方案原文）：有效门店=日均10单以上门店（含新签），口径=麦肯必瑞星沃企客服务包；流失仅限因体验问题不再使用美配（停业/低单未发单不算），流失日=美配首次未发单日，7天未发单即流失。看板日常展示的「企客KA当日有单门店」为当日口径、逐日波动（泰兴 58→63），<b>不能用于流失认定</b>——本卡按门店级日粒度数据核算。</div>';
   // 一、规则 → 数据对照
   h += '<div style="font-weight:600;font-size:13px;margin:6px 0;">① 计分规则 → 数据对照与扣/加分预判</div>';
@@ -4892,7 +4892,7 @@ function renderSkaWeekly(){
   var el=document.getElementById('ska-week-card'); if(!el||el.dataset.rendered==='1')return;
   if(typeof SKA_DAILY==='undefined'||!SKA_DAILY||!SKA_DAILY.rows){ el.innerHTML='<div style="font-size:12px;color:#6b7280;">⏳ SKA 天维度数据待流水线生成</div>'; return; }
   var L=SKA_STORES&&SKA_STORES.lines?SKA_STORES.lines:{}, W=SKA_STORES&&SKA_STORES.warnlines?SKA_STORES.warnlines:{};
-  var h='<div class="card-title">🤝 企客SKA · 评估与赔付（门店级 · 城市 / 品牌 / 门店 / 预计赔付 / 预警 / 达标）</div>';
+  var h='<div class="card-title">🤝 企客SKA · 评估与赔付（门店级 · 城市 / 品牌 / 门店 / 预计赔付 / 预警 / 达标情况）</div>';
   h+='<div style="font-size:11px;color:#6b7280;margin-bottom:8px;">按门店月维度评估（当月SKA考核门店，风险优先排序；表内「距赔付线」=门店准时率−品牌赔付线，负值=低于赔付线）；预计赔付=按《SKA赔付规则》预判金额（以官方核算为准）；预警=低于品牌预警线（体验目标准时率分量）；赔付线：瑞幸99% · 星巴克93% · 麦当劳/肯德基/必胜客90% · 沃尔玛95%。</div>';
   h+=skaDataCheckHtml();
   var mk=skaMonthKey();
