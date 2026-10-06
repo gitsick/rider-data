@@ -3350,18 +3350,19 @@ function setVal(id, val) { var el = document.getElementById(id); if (el) el.valu
 function getVal(id) { var el = document.getElementById(id); if (!el || el.value === '') return null; var v = parseFloat(el.value); return isNaN(v) ? null : v; }
 function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
+// 推单分段线性计分（方案：<门槛0；=门槛90%；门槛~目标线性90~100；=目标100%；目标~挑战线性100~110；≥挑战110）
+// 门槛/目标/挑战具体数值待任务系统下发后填入；未下发时按完成率直算（区间【0,110】）
+var TW_GATE = null, TW_TARGET = null, TW_CHALLENGE = null;
+function twScore(v) {
+if (TW_GATE == null || TW_TARGET == null || TW_CHALLENGE == null) return clamp(v, 0, 110);
+if (v < TW_GATE) return 0;
+if (v <= TW_TARGET) return 90 + (v - TW_GATE) / (TW_TARGET - TW_GATE) * 10;
+if (v <= TW_CHALLENGE) return 100 + (v - TW_TARGET) / (TW_CHALLENGE - TW_TARGET) * 10;
+return 110;
+}
+
 function calcScore() {
-  // 推单分段线性计分（方案：<门槛0；=门槛90%；门槛~目标线性90~100；=目标100%；目标~挑战线性100~110；≥挑战110）
-  // 门槛/目标/挑战具体数值待任务系统下发后填入；未下发时按完成率直算（区间【0,110】）
-  var TW_GATE = null, TW_TARGET = null, TW_CHALLENGE = null;
-  function twScore(v) {
-    if (TW_GATE == null || TW_TARGET == null || TW_CHALLENGE == null) return clamp(v, 0, 110);
-    if (v < TW_GATE) return 0;
-    if (v <= TW_TARGET) return 90 + (v - TW_GATE) / (TW_TARGET - TW_GATE) * 10;
-    if (v <= TW_CHALLENGE) return 100 + (v - TW_TARGET) / (TW_CHALLENGE - TW_TARGET) * 10;
-    return 110;
-  }
-  var w = {jm:0.15, ym:0.30, pz:0.05, ty:0.20, tw:0.20, wj:0.10};
+var w = {jm:0.15, ym:0.30, pz:0.05, ty:0.20, tw:0.20, wj:0.10};
   var detail = '', total = 0, hasInput = false;
   var jm = getVal('jm_rate');
   if (jm !== null) {
@@ -4199,7 +4200,7 @@ function calcPreset() {
     // Simplified: new score = (currentScore * daysActual + estimatedScore * daysRemaining) / totalDays
     var estJm = jm < 90 ? 0 : Math.min(jm, 100);
     var estTy = ty < 50 ? 0 : Math.min(ty, 110);
-    var estTw = Math.min(tw, 110);
+    var estTw = twScore(tw);
     var estWj = wj < 80 ? 0 : Math.min(wj, 110);
     var estYm = ym < 90 ? 0 : Math.min(ym, 110);  // 悦跑：单输入近似（方案=各周得分均值：单周<90%记0、>110%封顶，平均不控制区间）
     var estPz = pz < 90 ? 0 : Math.min(pz, 100);
