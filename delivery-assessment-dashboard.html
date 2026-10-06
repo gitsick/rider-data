@@ -817,6 +817,13 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <div style="flex:1;min-width:130px;"><div style="font-size:11px;color:#6b7280;margin-bottom:2px;">悦跑出勤系数（自动）</div><select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:80px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select></div>
         <div style="flex:1;min-width:130px;"><div style="font-size:11px;color:#6b7280;margin-bottom:2px;">普众完成度（手填，目标待任务系统）</div><input class="calc-input" id="pz_rate" type="number" onchange="calcScore()"> 得分<span id="pz_score" style="font-weight:700;">—</span></div>
       </div>
+      <div style="font-size:11px;color:#6b7280;margin:4px 0 2px;">扣分模拟（9月方案处罚规则，直接调整总分）：</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11px;color:#374151;align-items:center;">
+        <label><input type="checkbox" id="pn_jm_gz" onchange="calcScore()"> 加盟工装未达成</label>
+        <select id="pn_jm_gz_rate" onchange="calcScore()" style="font-size:11px;"><option value="3">-3%</option><option value="5">-5%（无悦跑工装考核城市）</option></select>
+        <label><input type="checkbox" id="pn_ym_gz" onchange="calcScore()"> 悦跑工装未达成 -2%</label>
+        <label>企客流失<input type="number" id="pn_ls" min="0" value="0" onchange="calcScore()" style="width:44px;">家（≥1家扣5%）</label>
+      </div>
       <div class="calc-section">
         <div id="calc-detail" style="font-size:12px;color:#6b7280;margin-top:6px;white-space:pre-line;"></div>
         <div class="calc-result" id="total-score">—</div>
@@ -1543,31 +1550,31 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <tr>
           <td class="city-cell" style="color:#00b8d4;">推完</td>
           <td>推单完成率</td>
-          <td class="c-green">99.26%</td>
-          <td class="c-green">99.26%</td>
+          <td class="c-green">99.00%</td>
+          <td class="c-green">99.00%</td>
           <td>20%</td>
-          <td class="c-green">19.85</td>
+          <td class="c-green">19.80</td>
           <td style="text-align:left;font-size:11px;">目标~挑战区间，按线性计分</td>
         </tr>
         <tr>
           <td class="city-cell" style="color:#ff6b35;">完结率</td>
           <td>履约完结率<br><span style="font-size:10px;color:#6b7280;">餐饮60%+非餐40%</span></td>
-          <td class="c-green">99.83%</td>
-          <td class="c-green">99.83%</td>
+          <td class="c-green">99.87%</td>
+          <td class="c-green">99.87%</td>
           <td>10%</td>
-          <td class="c-green">9.98</td>
+          <td class="c-green">9.99</td>
           <td style="text-align:left;font-size:11px;">80%~110%区间内，按实际计</td>
         </tr>
         <tr style="background:#fce8e8;font-weight:700;">
           <td class="city-cell" colspan="5" style="text-align:right;">月度总分</td>
-          <td class="c-red" style="font-size:16px;">94.62</td>
-          <td style="text-align:left;font-size:11px;">45.87+18.92+19.85+9.98=94.62</td>
+          <td class="c-red" style="font-size:16px;">94.57</td>
+          <td style="text-align:left;font-size:11px;">45.87+18.92+19.80+9.99≈94.57（精确加总，与收官总分一致）</td>
         </tr>
       </tbody>
     </table>
     </div>
     <div style="margin-top:10px;font-size:12px;color:#6b7280;background:#fce8e8;padding:10px 14px;border-radius:8px;">
-      <strong style="color:#d93025;">关键解读：</strong>诸暨总分94.62处于"重罚预警"区间（＜95%），核心拖累项为加盟完成率91.73%（加权仅得45.87分，比达标线少4.13分）。若加盟完成率提升至95%，总分将达96.4%（脱离"重罚"区间）；提升至100%则总分达98.9%（接近达标线）。
+      <strong style="color:#d93025;">关键解读：</strong>诸暨总分94.57处于"重罚预警"区间（＜95%），核心拖累项为加盟完成率91.73%（加权仅得45.87分，比满分50分少4.13分）。若加盟完成率提升至95%，总分将达96.2%（脱离"重罚"区间）；提升至100%则总分达98.7%（接近达标线）。
     </div>
   </div>
 <div class="card" id="sec-sensitivity" style="margin-bottom:16px;">
@@ -1710,7 +1717,7 @@ function renderModuleOverview() {
   var sc = '';
   cities.forEach(function(c) {
     var v = MTD_EVAL.cities[c];
-    var col = v.score >= 99.5 ? 'mo-ok' : (v.score >= 95 ? 'mo-warn' : 'mo-bad');
+    var col = v.score >= 100 ? 'mo-ok' : (v.score >= 95 ? 'mo-warn' : 'mo-bad');
     sc += '<div class="mo-chip"><div class="mo-city">' + cityFull(c) + '</div><div class="mo-val ' + col + '">' + (v.score != null ? v.score.toFixed(2) : '—') + '</div></div>';
   });
   h += '<div class="mod-ov-item" style="border-left-color:#f5a623;grid-column:1/-1;"><div class="mo-head"><span style="font-size:15px;">🏆</span><span class="mo-name">加权总分（Σ 模块得分×权重）</span><span class="pill pill-weight" style="margin-left:auto;">权重 100%</span></div>'
@@ -1737,7 +1744,7 @@ function renderMtdEval() {
   cities.forEach(function(c) {
     var v = MTD_EVAL.cities[c];
     if (!v) return;
-    var scCol = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
+    var scCol = v.score >= 100 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
     h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.days + '</td>'
       + '<td style="color:' + scCol + ';font-weight:700;">' + (v.score!=null ? v.score.toFixed(2) : '—') + '</td>'
       + '<td>' + (v.mainMod||'—') + (v.mainGap!=null ? '（缺'+v.mainGap+'分）' : '') + '</td>'
@@ -2622,6 +2629,12 @@ detail += '推完: ' + tw + '% \u2192 ' + s2.toFixed(1) + '% \u00d7 20%' + (TW_G
     detail += '普众: ' + pz + '% \u2192 ' + sPz.toFixed(1) + '% \u00d7 ' + Math.round(w.pz*100) + '%\n';
     document.getElementById('pz_score').textContent = sPz.toFixed(1) + '%';
   } else { document.getElementById('pz_score').textContent = '\u2014'; }
+  var ded = 0, dedTxt = '';
+  if (document.getElementById('pn_jm_gz') && document.getElementById('pn_jm_gz').checked) { var gzR = parseFloat(document.getElementById('pn_jm_gz_rate').value) || 3; ded += gzR; dedTxt += '加盟工装未达成: -' + gzR + '%\n'; }
+  if (document.getElementById('pn_ym_gz') && document.getElementById('pn_ym_gz').checked) { ded += 2; dedTxt += '悦跑工装未达成: -2%\n'; }
+  var lsN = getVal('pn_ls');
+  if (lsN !== null && lsN >= 1) { ded += 5; dedTxt += '企客流失有效门店' + lsN + '家: -5%（9月方案）\n'; }
+  if (ded > 0) { total -= ded; detail += '—— 扣分项（9月方案） ——\n' + dedTxt + '合计扣分: -' + ded + '%\n'; }
   var resultEl = document.getElementById('total-score');
   var hintEl = document.getElementById('penalty-hint');
   var detailEl = document.getElementById('calc-detail');
@@ -2636,7 +2649,7 @@ detail += '推完: ' + tw + '% \u2192 ' + s2.toFixed(1) + '% \u00d7 20%' + (TW_G
   detailEl.textContent = detail;
   if (total >= 100) { resultEl.className = 'calc-result pass'; hintEl.textContent = '\u2705 考核达标'; }
   else if (total >= 95) { resultEl.className = 'calc-result warn'; hintEl.textContent = '\u26A0\uFE0F 95%~100% 警告区间'; }
-  else if (total >= 90) { resultEl.className = 'calc-result warn'; hintEl.textContent = '\u26A0\uFE0F 90%~95% 警告区间'; }
+  else if (total >= 90) { resultEl.className = 'calc-result fail'; hintEl.textContent = '\uD83D\uDD34 90%~95% 重罚预警区间'; }
   else { resultEl.className = 'calc-result fail'; hintEl.textContent = '\uD83D\uDD34 ＜90% 重罚区间'; }
 }
 
@@ -3708,7 +3721,7 @@ var DAILY_EXTRA={"09-01": {"泰兴": {"ymRate": 94.95, "gzYm": 74.44, "gzJm": 96
     h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th title="KA/SKA评估数据源已采集天数；与横幅所示的日更数据源更新节奏不同">评估源天数</th><th>MTD近似总分</th><th>主因模块</th><th>悦跑均完成度</th><th>悦跑最差周均</th><th>企客KA最新</th><th>HD最新</th><th>体验最新</th><th>完结率均</th></tr></thead><tbody>';
     Object.keys(MTD_EVAL.cities).forEach(function(c){
       var v = MTD_EVAL.cities[c]; if (!v) return;
-      var scCol = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
+      var scCol = v.score >= 100 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
       h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.days + '</td>'
         + '<td style="color:' + scCol + ';font-weight:700;">' + _f(v.score != null ? v.score.toFixed(2) : null) + '</td>'
         + '<td>' + (v.mainMod || '—') + (v.mainGap != null ? '（缺' + v.mainGap + '分）' : '') + '</td>'
