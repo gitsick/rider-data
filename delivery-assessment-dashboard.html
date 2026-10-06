@@ -1697,7 +1697,7 @@ function renderModuleOverview() {
   var cities = Object.keys(MTD_EVAL.cities);
   function clsBy(v, lo) { if (v == null) return 'mo-na'; return v < lo ? 'mo-bad' : 'mo-ok'; }
   var mods = [
-    { icon:'🟥', name:'加盟运力（HD）', w:'权重 50%', rule:'HD完成率 90%~100% 计分，日更自动填入', get:function(v){ return v.hdLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 },
+    { icon:'🟥', name:'加盟运力（HD）', w:'权重 15/45/50%', rule:'HD完成率 90%~100% 计分，日更自动填入（权重按画像1/2/3：泰兴15%、诸暨45%、响水50%）', get:function(v){ return v.hdLast; }, fmt:function(x){ return Number(x).toFixed(1)+'%'; }, lo:90 },
     { icon:'🟣', name:'体验考核', w:'权重 20%', rule:'复合超时率 40% + 虚假点送达 30% + 配送取消单 30%', get:function(v){ return v.tyLast; }, fmt:function(x){ return (isNaN(Number(x)) ? x : Number(x).toFixed(1)); }, lo:90 },
     { icon:'🔵', name:'推单完成率', w:'权重 20%', rule:'110% 封顶；日均≥98.8% 为人效兜底线（高峰日另核）', get:function(v){ return v.twAll; }, fmt:function(x){ return x.toFixed(2)+'%'; }, lo:98.8 },
     { icon:'🔷', name:'履约完结率', w:'权重 10%', rule:'完结率 80%~110% 计分', get:function(v){ return v.wjAvg; }, fmt:function(x){ return x.toFixed(1)+'%'; }, lo:80 }
