@@ -2001,14 +2001,15 @@ function renderSkaSix() {
       anyData = true;
       var col = e.hit ? '#d93025' : (e.warn ? '#e37400' : '#34a853');
       var ot = (e.ontime != null) ? Number(e.ontime).toFixed(2) + '%' : '—';
-      var okTxt = (e.okStores != null && e.stores != null) ? '（达标' + e.okStores + '/' + e.stores + '）' : '';
-      var dt = e.date ? (String(e.date).slice(4, 6) + '-' + String(e.date).slice(6, 8)) : '';
-      var src = (e.src === '269707') ? 'SKA看板' : '企客KA';
       var skaN = null;
       try {
         var mm = SKA_STORES.months[mk];
         if (mm && mm.cities[c] && mm.cities[c][b]) skaN = skaDedupeStores(mm.cities[c][b]).length;
       } catch (err) {}
+      var okN = (e.okStores != null) ? e.okStores : skaOkStores(c, b, mk);
+      var okTxt = (okN != null) ? '（达标' + okN + '/' + ((skaN != null) ? skaN : e.stores) + '）' : '';
+      var dt = e.date ? (String(e.date).slice(4, 6) + '-' + String(e.date).slice(6, 8)) : '';
+      var src = (e.src === '269707') ? 'SKA看板' : '企客KA';
       h += '<td style="color:' + col + ';font-weight:600;">' + e.stores + '店 · 准时率' + ot + okTxt
         + (e.hit ? ' ⚠赔付预警' : '')
         + (e.warn ? (e.hit ? ' · ' : ' ') + '⚠体验预警(<' + e.wline + '%)' : '')
@@ -2112,6 +2113,7 @@ function _skaRateCol(rate, b) {
 
 /* SKA_MONTH_FILTER_START */
 function skaMonthKey(){try{return (typeof MTD_EVAL!=='undefined'&&MTD_EVAL&&MTD_EVAL.month)?MTD_EVAL.month:'2026-10';}catch(e){return '2026-10';}}
+function skaOkStores(c2,b,mk){try{var mm=SKA_STORES.months[mk];var arr=mm&&mm.cities&&mm.cities[c2]?mm.cities[c2][b]:null;if(!arr||!arr.length)return null;var line=(SKA_STORES.lines&&SKA_STORES.lines[b])||90;var ok=0;skaDedupeStores(arr).forEach(function(s2){if((s2.amt||0)<=0&&s2.rate!=null&&Number(s2.rate)>=line)ok++;});return ok;}catch(e){return null;}}
 function skaMonthPrefix(){return skaMonthKey().replace('-','');}
 function skaStoreSet(){
   try{
@@ -2263,8 +2265,8 @@ function renderSkaStoreDetail() {
       + '<span>🚫 取消率 ' + (s2.cancel != null ? Number(s2.cancel).toFixed(3) + '%' : '—') + '</span>'
       + '<span>🎯 距赔付线 ' + gapH + '</span>'
       + (s2.camt > 0 ? '<span style="color:#d93025;font-weight:600;">罚 ¥' + s2.camt + '</span>' : '')
+      + (s2.amt > 0 ? '<span style="color:#d93025;font-weight:600;">预计赔付 ¥' + s2.amt + '</span>' : '')
       + '</div>'
-      + '<div style="margin-top:6px;font-size:11.5px;font-weight:700;color:' + barCol + ';">' + s2.pred + '</div>'
       + '</div>';
   });
   h += '</div>';
@@ -2441,7 +2443,7 @@ function renderSkaStoreDaily() {
     });
   }
   h += '</div>';
-  h += '<div class="table-scroll" style="max-height:420px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>配送单量</th><th>有效门店</th><th>准时率</th><th>距赔付线</th><th>低于赔付线</th></tr></thead><tbody>';
+  h += '<div class="table-scroll" style="max-height:420px;overflow:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>配送单量</th><th>有效门店</th><th>准时率</th><th>距赔付线</th><th>低于赔付线</th></tr></thead><tbody>';
   rows.forEach(function(r){
     var ln = lines[r.b] || 90;
     var bad = isBad(r);
@@ -2496,7 +2498,7 @@ function renderSkaDaily() {
       ? cb.map(function(st){ return skaShortName(st.store, r.b); }).join('、')
       : '<span style="color:#9aa0a6;">—</span>';
     h += '<tr><td>' + dshow + '</td><td>' + cityFull(r.city) + '</td><td>' + r.b + '</td>'
-      + '<td style="font-size:10px;color:#5f6368;max-width:220px;">' + storeCell + '</td><td><b>' + r.done + '</b></td>'
+      + '<td style="font-size:10px;color:#5f6368;max-width:220px;white-space:normal;word-break:break-all;line-height:1.5;">' + storeCell + '</td><td><b>' + r.done + '</b></td>'
       + '<td>' + r.pois + '</td>'
       + '<td style="color:' + col + ';font-weight:700;">' + Number(r.rate).toFixed(2) + '%</td>'
       + '<td>' + (r.bad ? '<span style="color:#d93025;font-weight:700;">' + r.bad + '</span>' : '0') + '</td></tr>';
