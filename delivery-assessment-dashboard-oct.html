@@ -4838,8 +4838,8 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
       var se = document.getElementById('ss-score-' + cf[0].split('-')[1]);
       var le = document.getElementById('ss-level-' + cf[0].split('-')[1]);
       var pg = document.getElementById('ss-prog-' + cf[0].split('-')[1]);
-      var col = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
-      var cls = v.score >= 99.5 ? 'ok' : (v.score >= 95 ? 'warn' : 'danger');
+      var col = v.score >= 100 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
+      var cls = v.score >= 100 ? 'ok' : (v.score >= 95 ? 'warn' : 'danger');
       var lvName = v.score >= 100 ? '达标' : (v.score >= 95 ? '警告' : '重罚预警');
       var emo = lvName === '达标' ? '✅' : (lvName === '警告' ? '⚠️' : '🔴');
       if (se && v.score != null) {
@@ -4848,7 +4848,7 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
       }
       if (le) {
         le.textContent = emo + ' ' + lvName + (isMonth ? ' · 月评估' : '');
-        le.style.background = v.score >= 99.5 ? '#e6f4ea' : (v.score >= 95 ? '#fef3e2' : '#fce8e8');
+        le.style.background = v.score >= 100 ? '#e6f4ea' : (v.score >= 95 ? '#fef3e2' : '#fce8e8');
         le.style.color = col;
       }
       var _card = se ? se.closest('.summary-card') : null;
@@ -4896,7 +4896,7 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
         }
         var sc = tds[7];
         sc.textContent = v.score != null ? v.score.toFixed(2) : '—';
-        sc.style.color = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
+        sc.style.color = v.score >= 100 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
         sc.style.fontWeight = '700';
         var lv = _lv(v.score);
         var fz = tds[8];
@@ -4913,7 +4913,7 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
       var col = td.getAttribute('data-col');
       if (col === 'score') {
         td.textContent = v.score != null ? v.score.toFixed(2) : '—';
-        td.style.color = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
+        td.style.color = v.score >= 100 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
       } else if (col === 'level' || col === 'keep') {
         var lv2 = _lv(v.score);
         td.innerHTML = '<span style="color:' + lv2.c + ';font-weight:600;">' + lv2.t + '</span>';
@@ -4931,7 +4931,7 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
       var et = document.getElementById('ex-total');
       if (et) {
         et.textContent = v.score != null ? v.score.toFixed(2) : '—';
-        et.style.color = v.score >= 99.5 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
+        et.style.color = v.score >= 100 ? '#34a853' : (v.score >= 95 ? '#f5a623' : '#d93025');
       }
       var nt = document.getElementById('ex-total-note');
       if (nt) nt.textContent = '月预计（MTD 截至' + mdStr + '）· 当前城市：' + currentCity;
