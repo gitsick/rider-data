@@ -927,7 +927,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">橙色列=高峰日 | 绿色列=当前选中日 | 点击列头可跳转到对应日期</div>
   </div>
 <div class="section-label">🧩 拆解与归因</div>
-<div id="chart-month" id="chart-period" class="card" id="ym-weekly-card" style="margin-bottom:12px;">
+<div class="card" id="ym-weekly-card" style="margin-bottom:12px;">
     <div class="card-title"><span class="icon">🗓️</span> 悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制）</div>
     <div class="table-scroll" id="ym-weekly-body"><div style="text-align:center;padding:14px;color:#6b7280;font-size:12.5px;">⏳ BI数据发布后自动生成各自然周完成度</div></div>
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">完成度=悦跑服务质量达标骑手数/目标（周均口径，目标以任务系统下发为准）；任一自然周＜90%该周记0分（自然周控制），平均完成率不控制区间；第1/5周含跨月日期，按已有数据日均近似。</div>
@@ -2786,8 +2786,9 @@ function switchPeriod(p) {
   updateDateUI();
   fillBIDataTable();
   updateModuleInputs();
-  renderTrendTable();
-  renderYmWeekly();
+renderTrendTable();
+renderYmWeekly();
+renderYmWeeklyTrend();
   updateTrendHighlight();
   renderCalendar();
   renderTrendChart();
@@ -3183,20 +3184,20 @@ function copyDailySummary() {
 
 // ===================== 填充趋势表 =====================
 // ===================== 悦跑运力·自然周完成度拆解（方案口径：自然周控制区间） =====================
-var YM_WEEKS = [
+var YM_WEEKS_TREND = [
   {label:'第1周', range:'9/28-10/4', days:['10-01','10-02','10-03','10-04'], nc:false, partial:true},
   {label:'第2周', range:'10/5-10/11', days:['10-05','10-06','10-07','10-08','10-09','10-10','10-11'], nc:false},
   {label:'第3周', range:'10/12-10/18', days:['10-12','10-13','10-14','10-15','10-16','10-17','10-18'], nc:false},
   {label:'第4周', range:'10/19-10/25', days:['10-19','10-20','10-21','10-22','10-23','10-24','10-25'], nc:true},
   {label:'第5周', range:'10/26-11/1', days:['10-26','10-27','10-28','10-29','10-30','10-31'], nc:true, partial:true}
 ];
-function renderYmWeekly() {
+function renderYmWeeklyTrend() {
   var box = document.getElementById('ym-weekly-body');
   if (!box) return;
   var cities = ['泰兴','诸暨','响水'];
   var any = false;
   var h = '<table class="trend-table" style="min-width:640px;"><thead><tr><th>周次</th><th>周期</th><th>计分口径</th><th>泰兴县</th><th>诸暨市</th><th>响水县</th><th>周均判定</th></tr></thead><tbody>';
-  YM_WEEKS.forEach(function(wk) {
+  YM_WEEKS_TREND.forEach(function(wk) {
     var row = '<td style="font-weight:700;">' + wk.label + '</td><td>' + wk.range + (wk.partial ? ' <span style="font-size:10px;color:#6b7280;">(部分)</span>' : '') + '</td>' +
       '<td>' + (wk.nc ? '<span class="tag tag-orange">新口径</span>' : '<span style="font-size:11px;color:#6b7280;">完成度×出勤系数</span>') + '</td>';
     var worst = null;
@@ -4691,7 +4692,8 @@ renderCalendar();
 updateDateUI();
 fillBIDataTable();
 renderTrendTable();
-  renderYmWeekly();
+renderYmWeekly();
+renderYmWeeklyTrend();
 updateTrendHighlight();
 initTrendChart();
 // 默认选中泰兴
@@ -4909,6 +4911,7 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
   else { window.addEventListener('load', __ssFill); }
 })();
 renderYmWeekly();
+renderYmWeeklyTrend();
 if (typeof fillBIDataTable==='function'){try{fillBIDataTable();}catch(e){}}
 if (typeof renderTrendChart==='function'){try{renderTrendChart();}catch(e){}}
 </script>
