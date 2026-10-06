@@ -759,7 +759,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
   <div class="grid-modules">
     <div class="card module-card jiameng collapsible">
-      <div class="card-title collapsible"><span class="icon">🟥</span> 加盟运力（HD完成率） <span class="pill pill-weight">权重 50%</span></div>
+      <div class="card-title collapsible"><span class="icon">🟥</span> 加盟运力（HD完成率） <span class="pill pill-weight" id="pill-w-jm">权重 15%</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
           <div><div class="indicator-name">HD完成率</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
@@ -810,7 +810,12 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <div style="font-size:11px;color:#6b7280;margin-bottom:2px;">承托比（参考，不计分）</div>
           <input class="calc-input" id="ct_rate" type="number" disabled style="width:100%;">
         </div>
-        <div style="font-size:11px;color:#6b7280;text-align:right;line-height:1.5;">画像：都不考<br>加盟50% 体验20%<br>推完20% 完结率10%</div>
+        <div style="font-size:11px;color:#6b7280;text-align:right;line-height:1.5;" id="profile-note">画像档（权重）：加载中…</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:8px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:130px;"><div style="font-size:11px;color:#6b7280;margin-bottom:2px;">悦跑完成度（日值参考，自动填入）</div><input class="calc-input" id="ym_rate" type="number" onchange="calcScore()"> 得分<span id="ym_score" style="font-weight:700;">—</span></div>
+        <div style="flex:1;min-width:130px;"><div style="font-size:11px;color:#6b7280;margin-bottom:2px;">悦跑出勤系数（自动）</div><select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:80px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select></div>
+        <div style="flex:1;min-width:130px;"><div style="font-size:11px;color:#6b7280;margin-bottom:2px;">普众完成度（手填，目标待任务系统）</div><input class="calc-input" id="pz_rate" type="number" onchange="calcScore()"> 得分<span id="pz_score" style="font-weight:700;">—</span></div>
       </div>
       <div class="calc-section">
         <div id="calc-detail" style="font-size:12px;color:#6b7280;margin-top:6px;white-space:pre-line;"></div>
@@ -2032,6 +2037,23 @@ dataDates.forEach(function(dateKey, idx) {
 // 当前选中状态
 var currentDate = '09-30';
 var currentCity = '泰兴';
+// 方案权重按"画像"分档（是否考核普众/悦跑）；城市→画像映射（泰兴→画像1、诸暨→画像2、响水→画像3）为推断，待业务确认
+var CITY_PROFILE = {
+  '泰兴': {jm:0.15, ym:0.30, pz:0.05},
+  '诸暨': {jm:0.45, ym:0,    pz:0.05},
+  '响水': {jm:0.50, ym:0,    pz:0}
+};
+function cityW() {
+  var p = CITY_PROFILE[currentCity] || {jm:0.15, ym:0.30, pz:0.05};
+  return {jm:p.jm, ym:p.ym, pz:p.pz, ty:0.20, tw:0.20, wj:0.10};
+}
+function updateWeightPills() {
+  var w = cityW();
+  var pct = function(x){ return Math.round(x*100); };
+  var pJm = document.getElementById('pill-w-jm'); if (pJm) pJm.textContent = '权重 ' + pct(w.jm) + '%';
+  var note = document.getElementById('profile-note');
+  if (note) note.innerHTML = '画像档（权重）：加盟' + pct(w.jm) + '%' + (w.ym > 0 ? ' / 悦跑' + pct(w.ym) + '%' : ' / 悦跑不考核') + (w.pz > 0 ? ' / 普众' + pct(w.pz) + '%' : ' / 普众不考核') + '<br>体验20% 推完20% 完结率10%';
+}
 var currentPeriod = 'p2'; // 默认显示第2期
 
 function getFilteredDates() {
@@ -2453,6 +2475,7 @@ function switchCity(el, name) {
   document.querySelectorAll('.city-tab').forEach(function(t){ t.classList.remove('active'); });
   el.classList.add('active');
   currentCity = name;
+  updateWeightPills();
   var kc=document.getElementById('kpi-city'); if(kc) kc.value=name;
   var kcd=document.getElementById('kpi-city-display'); if(kcd) kcd.textContent=name;
   updateModuleInputs();
@@ -2480,7 +2503,7 @@ function renderWjSplit() {
 // ===================== 更新模块输入 =====================
 function updateModuleInputs() {
   if (!hasData(currentDate)) {
-    ['tw_rate','wj_rate','wj_cy','wj_fc','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel'].forEach(function(id){ setVal(id, ''); });
+    ['tw_rate','wj_rate','wj_cy','wj_fc','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel','ym_rate','ym_coef','pz_rate'].forEach(function(id){ setVal(id, ''); });
 calcScore();
 if (typeof renderWjSplit === 'function') renderWjSplit();
 return;
@@ -2490,7 +2513,7 @@ return;
     var pending = (d.hdRate === null || d.hdRate === undefined) && (d.tyScore === null || d.tyScore === undefined);
     if (pending) {
       // 新考核周期体验分/HD率未发布：考核模拟暂不填值，避免仅凭推单率算出误导性总分
-      ['tw_rate','wj_rate','wj_cy','wj_fc','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel'].forEach(function(id){ setVal(id, ''); });
+      ['tw_rate','wj_rate','wj_cy','wj_fc','jm_rate','ct_rate','ty_cs','ty_fake','ty_cancel','ym_rate','ym_coef','pz_rate'].forEach(function(id){ setVal(id, ''); });
     } else {
       setVal('tw_rate', d.twRate);
       setVal('jm_rate', d.hdRate);
@@ -2501,9 +2524,15 @@ return;
       setVal('wj_rate', d.wjRate !== null ? d.wjRate : '');
       var wsRef = (typeof WJ_SPLIT !== 'undefined' && WJ_SPLIT) ? ((((WJ_SPLIT.daily || {})[currentDate] || {})[currentCity]) || ((WJ_SPLIT.mtd || {})[currentCity] || null)) : null;
       if (wsRef) { setVal('wj_cy', wsRef.cy); setVal('wj_fc', wsRef.fc); } else { setVal('wj_cy', ''); setVal('wj_fc', ''); }
+      var exRef = (typeof DAILY_EXTRA !== 'undefined' && DAILY_EXTRA[currentDate]) ? (DAILY_EXTRA[currentDate][currentCity] || {}) : {};
+      var ymRef = (d && d.ymRate != null) ? d.ymRate : (exRef.ymRate != null ? exRef.ymRate : null);
+      var cqRef = (d && d.ymCq != null) ? d.ymCq : (exRef.ymCq != null ? exRef.ymCq : null);
+      setVal('ym_rate', ymRef !== null ? ymRef : '');
+      if (cqRef !== null && cqRef !== undefined) { var selC = document.getElementById('ym_coef'); if (selC) selC.value = cqRef >= 90 ? '1.05' : '1'; }
     }
   }
   calcScore();
+updateWeightPills();
 if (typeof renderWjSplit === 'function') renderWjSplit();
 }
 
@@ -2524,14 +2553,15 @@ function twScore(v) {
 }
 
 function calcScore() {
-  var w = {jm:0.50, ty:0.20, tw:0.20, wj:0.10};
+  var w = cityW();
   var detail = '', total = 0, hasInput = false;
+  detail += '——权重按方案画像档：加盟' + Math.round(w.jm*100) + '% / 悦跑' + Math.round(w.ym*100) + '% / 普众' + Math.round(w.pz*100) + '% / 体验20% / 推完20% / 完结率10%（城市→画像映射待业务确认）\n';
   var jm = getVal('jm_rate');
   if (jm !== null) {
     hasInput = true;
     var s = jm < 90 ? 0 : clamp(jm, 0, 100);
     total += s * w.jm;
-    detail += '加盟(HD): ' + jm + '% \u2192 ' + s.toFixed(1) + '% \u00d7 50%\n';
+    detail += '加盟(HD): ' + jm + '% \u2192 ' + s.toFixed(1) + '% \u00d7 ' + Math.round(w.jm*100) + '%\n';
     document.getElementById('jm_score').textContent = s.toFixed(1) + '%';
   } else { document.getElementById('jm_score').textContent = '\u2014'; }
   var tyCs = getVal('ty_cs'), tyFake = getVal('ty_fake'), tyCancel = getVal('ty_cancel');
@@ -2568,6 +2598,30 @@ detail += '推完: ' + tw + '% \u2192 ' + s2.toFixed(1) + '% \u00d7 20%' + (TW_G
     detail += '完结率: ' + wj + '%（单值近似） \u2192 ' + s3.toFixed(1) + '% \u00d7 10%\n';
     document.getElementById('wj_score').textContent = s3.toFixed(1) + '%';
   } else { document.getElementById('wj_score').textContent = '\u2014'; }
+  var ym = getVal('ym_rate');
+  if (w.ym === 0) {
+    document.getElementById('ym_score').textContent = '\u2014';
+    if (ym !== null) detail += '悦跑: 该城市画像不考核悦跑运力（权重0，不计入）\n';
+  } else if (ym !== null) {
+    hasInput = true;
+    var coef = parseFloat((document.getElementById('ym_coef') || {}).value || '1');
+    var sYm = ym < 90 ? 0 : clamp(ym, 0, 110);
+    var ymScore = sYm * coef;
+    total += ymScore * w.ym;
+    detail += '悦跑: ' + ym + '%\u00d7' + coef + ' \u2192 ' + ymScore.toFixed(1) + '% \u00d7 ' + Math.round(w.ym*100) + '%\n';
+    document.getElementById('ym_score').textContent = ymScore.toFixed(1) + '%';
+  } else { document.getElementById('ym_score').textContent = '\u2014'; }
+  var pz = getVal('pz_rate');
+  if (w.pz === 0) {
+    document.getElementById('pz_score').textContent = '\u2014';
+    if (pz !== null) detail += '普众: 该城市画像不考核普众运力（权重0，不计入）\n';
+  } else if (pz !== null) {
+    hasInput = true;
+    var sPz = pz < 90 ? 0 : clamp(pz, 0, 100);
+    total += sPz * w.pz;
+    detail += '普众: ' + pz + '% \u2192 ' + sPz.toFixed(1) + '% \u00d7 ' + Math.round(w.pz*100) + '%\n';
+    document.getElementById('pz_score').textContent = sPz.toFixed(1) + '%';
+  } else { document.getElementById('pz_score').textContent = '\u2014'; }
   var resultEl = document.getElementById('total-score');
   var hintEl = document.getElementById('penalty-hint');
   var detailEl = document.getElementById('calc-detail');
@@ -3164,7 +3218,11 @@ function calcPreset() {
     var estTy = Math.min(Math.max(ty, 50), 110);
     var estTw = twScore(tw);
     var estWj = wj < 80 ? 0 : Math.min(wj, 110);
-    var estimatedScore = estJm * 0.50 + estTy * 0.20 + estTw * 0.20 + estWj * 0.10;
+    var _exRef = (typeof DAILY_EXTRA !== 'undefined' && DAILY_EXTRA[dataDates[dataDates.length-1]]) ? (DAILY_EXTRA[dataDates[dataDates.length-1]][ck] || {}) : {};
+    var _ymV = (latest && latest.ymRate != null) ? latest.ymRate : (_exRef.ymRate != null ? _exRef.ymRate : null);
+    var estYm = (_ymV === null) ? 100 : (_ymV < 90 ? 0 : Math.min(_ymV, 110));
+    var estPz = 100; // 普众完成度无目标值，暂按100假设（与缺口归一化口径一致）
+    var estimatedScore = (function(){ var wE = cityW(); return estJm * wE.jm + (wE.ym > 0 ? estYm * wE.ym : 0) + (wE.pz > 0 ? estPz * wE.pz : 0) + estTy * wE.ty + estTw * wE.tw + estWj * wE.wj; })();
     var blendedScore = (currentScore * daysActual + estimatedScore * daysRemaining) / totalDays;
     blendedScore = Math.round(blendedScore * 100) / 100;
 
