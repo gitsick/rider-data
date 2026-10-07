@@ -3294,12 +3294,19 @@ function renderTrendTable() {
       filteredHd.push(d.hd[di]);
     });
     var latestIdx = filteredTw.length - 1;
+    function fmtTrendCell(arr, suffix) {
+      return arr.map(function(v, i) {
+        var cls = i === latestIdx ? 'latest-col' : '';
+        var t = (v == null) ? '<span style="color:#9aa0a6">—</span>' : v + suffix;
+        return '<td class="' + cls + '">' + t + '</td>';
+      }).join('');
+    }
     bodyHtml += '<tr><td class="city-col" rowspan="3">' + cityName + '</td><td style="font-weight:600;color:#00b8d4;">推单率</td>' +
-      filteredTw.map(function(v,i){var cls=i===latestIdx?'latest-col':'';var t=(v==null)?'<span style="color:#9aa0a6">—</span>':v+'%';return '<td class="'+cls+'">'+t+'</td>'}).join('') + '</tr>';
+      fmtTrendCell(filteredTw, '%') + '</tr>';
     bodyHtml += '<tr class="metric-row"><td style="font-weight:600;color:#7b61ff;">体验分</td>' +
-      filteredTy.map(function(v,i){var cls=i===latestIdx?'latest-col':'';var t=(v==null)?'<span style="color:#9aa0a6">—</span>':v;return '<td class="'+cls+'">'+t+'</td>'}).join('') + '</tr>';
+      fmtTrendCell(filteredTy, '') + '</tr>';
     bodyHtml += '<tr class="metric-row"><td style="font-weight:600;color:#e8525f;">HD率</td>' +
-      filteredHd.map(function(v,i){var cls=i===latestIdx?'latest-col':'';var t=(v==null)?'<span style="color:#9aa0a6">—</span>':v+'%';return '<td class="'+cls+'">'+t+'</td>'}).join('') + '</tr>';
+      fmtTrendCell(filteredHd, '%') + '</tr>';
   });
   tbody.innerHTML = bodyHtml;
   highlightMetricTables();
