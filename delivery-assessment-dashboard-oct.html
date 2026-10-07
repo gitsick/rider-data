@@ -647,6 +647,75 @@ tr.module-sep:hover td{background:#1a2b4a!important}
 /* ====== end Ch46 ====== */
 /* ====== end Ch45 ====== */
 </style>
+<style id="refit-style">
+/* ===== 2026-10 重构样式层（设计令牌 + 组件刷新；仅覆盖，不改 DOM/数据标记） ===== */
+:root{
+  --rk-navy:#1B2233; --rk-navy-2:#2D3447; --rk-ink:#1f2733;
+  --rk-gold:#FFC300; --rk-gold-soft:#fff8e1;
+  --rk-bg:#f3f5f9; --rk-card:#ffffff;
+  --rk-line:#e6eaf1; --rk-line-2:#eef1f6;
+  --rk-muted:#7c8698;
+  --rk-jm:#e8525f; --rk-ym:#f5a623; --rk-pz:#4cb947; --rk-ty:#7b61ff; --rk-tw:#00b8d4; --rk-wj:#ff6b35;
+  --rk-radius:14px; --rk-radius-s:10px;
+  --rk-shadow:0 1px 2px rgba(16,24,40,.04),0 4px 16px rgba(16,24,40,.06);
+  --rk-shadow-hover:0 2px 4px rgba(16,24,40,.06),0 10px 28px rgba(16,24,40,.10);
+}
+body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),transparent 60%),radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 55%),var(--rk-bg);}
+/* —— 顶部英雄区 —— */
+.header{border-radius:16px;border-top:none;position:relative;overflow:hidden;background:linear-gradient(135deg,#141a2a 0%,#222a40 55%,#2d3852 100%);box-shadow:0 12px 32px rgba(21,27,43,.28);}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(640px 190px at 86% -10%,rgba(255,195,0,.16),transparent 62%),radial-gradient(420px 160px at 4% 110%,rgba(0,184,212,.12),transparent 60%);pointer-events:none;}
+.header h1{letter-spacing:.02em;}
+.header .subtitle{letter-spacing:.02em;}
+.city-tab{border-radius:999px;border:1.5px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);color:#e7ebf3;padding:6px 20px;}
+.city-tab:hover{border-color:var(--rk-gold);background:rgba(255,195,0,.14);color:#fff;}
+.city-tab.active{background:linear-gradient(135deg,#FFC300,#ffb300);border-color:transparent;color:#1B2233;box-shadow:0 4px 16px rgba(255,195,0,.45);}
+/* —— 维度页签 → 浮动分段控件 —— */
+.dim-tabs{border-radius:999px;border:1px solid var(--rk-line);box-shadow:var(--rk-shadow);background:rgba(255,255,255,.88);padding:5px;gap:4px;top:48px;}
+.dim-tab{border-radius:999px;border-bottom:none;padding:11px 14px;font-size:14.5px;}
+.dim-tab.active{background:linear-gradient(135deg,#FFC300,#ffb300);box-shadow:0 4px 14px rgba(255,195,0,.38);}
+.dim-tab.active::after{display:none;}
+.dim-tab:hover:not(.active){background:#f2f6fd;}
+/* —— 卡片体系 —— */
+.card{border-radius:var(--rk-radius);border:1px solid var(--rk-line);box-shadow:var(--rk-shadow);transition:box-shadow .2s ease;}
+.card:hover{box-shadow:var(--rk-shadow-hover);}
+.card-title{border-bottom:1px solid var(--rk-line-2);letter-spacing:.01em;}
+.summary-card{border-radius:var(--rk-radius);}
+/* —— 数据表 —— */
+.dt th{background:linear-gradient(180deg,#26334e,#1B2233);font-weight:700;letter-spacing:.02em;}
+.dt td{border-color:var(--rk-line);}
+.dt tr:nth-child(even) td{background:#fbfcfe;}
+.dt tbody tr:hover td{background:#f2f7ff;}
+#bi-data-table th:first-child,#bi-data-table td:first-child{position:sticky;left:0;z-index:2;background:#fff;box-shadow:inset -1px 0 0 var(--rk-line);}
+#bi-data-table thead th:first-child{background:#26334e;}
+#bi-data-table tr:nth-child(even) td:first-child{background:#fbfcfe;}
+#bi-data-table tbody tr:hover td:first-child{background:#f2f7ff;}
+.table-scroll{border-radius:var(--rk-radius-s);}
+/* —— 指标切换 chips —— */
+.metric-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.metric-chips .mc-label{font-size:11px;color:var(--rk-muted);font-weight:700;margin-right:2px;}
+.metric-chip{padding:4px 13px;border-radius:999px;border:1px solid var(--rk-line);background:#fff;font-size:11.5px;font-weight:600;color:var(--rk-muted);cursor:pointer;transition:all .18s;user-select:none;line-height:1.5;}
+.metric-chip:hover{border-color:#F5A623;color:var(--rk-navy);background:var(--rk-gold-soft);}
+.metric-chip.active{background:var(--rk-navy);border-color:var(--rk-navy);color:#fff;box-shadow:0 2px 8px rgba(27,34,51,.25);}
+.col-off{display:none !important;}
+/* —— 模块卡与按钮 —— */
+.module-card{border-radius:var(--rk-radius);}
+.module-card .card-title{padding-bottom:9px;}
+.calc-input{border-radius:8px;border:1px solid var(--rk-line);}
+.calc-input:hover{border-color:#c9d2e0;}
+.period-btn:first-child{border-radius:999px 0 0 999px;}
+.period-btn:last-child{border-radius:0 999px 999px 0;border-right:1px solid #dadce0;}
+.period-btn.active{box-shadow:0 3px 10px rgba(255,195,0,.35);}
+/* —— 滚动条 —— */
+.table-scroll::-webkit-scrollbar-thumb,.slice-wrap::-webkit-scrollbar-thumb{background:#c4cdd9;}
+/* —— 移动端与打印 —— */
+@media(max-width:600px){
+  .dim-tabs{top:42px;padding:4px;border-radius:14px;}
+  .dim-tab{padding:9px 6px;font-size:12.5px;border-radius:11px;}
+  .metric-chip{padding:3px 10px;font-size:11px;}
+  body{padding:12px;}
+}
+@media print{.metric-chips{display:none!important;}}
+</style>
 </head>
 <body>
 
@@ -666,7 +735,7 @@ tr.module-sep:hover td{background:#1a2b4a!important}
     <div class="subtitle">下沉市场合作商 | 文档负责人：李韶雯 | 考核方案更新 09-28 | 10月考核周期 10/1-10/31</div>
     <div class="subtitle header-meta">
       <span class="freshness-badge fresh">● 10月考核进行中</span>
-      <span class="header-source" id="header-data-status">BI数据：待10月数据更新 | 来源：bi.sankuai.com/v2/dashboard/274665</span>
+      <span class="header-source" id="header-data-status">BI数据：2026-10-06 | 来源：bi.sankuai.com/v2/dashboard/274665</span>
     </div>
   </div>
   <div class="qr-small" onclick="openQrModal()" role="button" tabindex="0" aria-label="点击查看二维码" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openQrModal()}">
@@ -800,10 +869,12 @@ tr.module-sep:hover td{background:#1a2b4a!important}
     <div class="card daily-card">
       <div class="card-title"><span class="icon">📈</span> 数据汇总（<span id="bi-date-label">待数据</span> 单日快照）<span id="peak-badge" style="display:none;margin-left:8px;background:#fce8e8;color:#d93025;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">⚡ 今日高峰日 · 运力前置</span>
         <span style="margin-left:auto;display:inline-flex;gap:6px;">
+          <button class="tc-btn" style="padding:4px 12px;font-size:12px;" onclick="jumpToScheme()" title="跳转到月维度·考核方案参考区（10月方案权重/周期/计分规则/迭代点）">📚 考核方案</button>
           <button class="tc-btn" style="padding:4px 12px;font-size:12px;" onclick="exportDailyCSV()" title="导出全月每日三城明细为CSV（可用Excel打开）">⬇ 导出CSV</button>
           <button class="tc-btn" style="padding:4px 12px;font-size:12px;" onclick="copyDailySummary()" title="复制最新日三城指标摘要文本，可直接粘贴到群聊">📋 复制摘要</button>
         </span>
       </div>
+      <div class="metric-chips" id="metric-chips"><span class="mc-label">指标切换</span></div>
       <div class="table-scroll">
       <table class="dt" id="bi-data-table">
         <thead>
@@ -5590,6 +5661,77 @@ if(pp){
     Array.prototype.forEach.call(cards,function(c){c.classList.add('reveal');io.observe(c);});
   }catch(e){}
 })();
+</script>
+<script>
+/* ===== 重构层交互：指标切换 chips + 考核方案速达（只读表结构，不改数据渲染与流水线标记） ===== */
+(function(){
+  /* 列分组（与表头列序一一对应）：
+     0城市 1大区 2推单 3体验 4HD 5完结 6承托比 7悦跑完成度 8悦跑出勤 9普众 10工装 11加盟达标 12企客KA 13兜底 14推单明细 15总分 16等级 */
+  var GROUPS = [
+    {k:'core', name:'核心考核（推单/体验/HD/完结）', cols:[2,3,4,5]},
+    {k:'run',  name:'运力（承托比/悦跑/普众）',      cols:[6,7,8,9]},
+    {k:'ops',  name:'工装/达标骑手',                 cols:[10,11]},
+    {k:'qk',   name:'企客KA',                        cols:[12]},
+    {k:'db',   name:'兜底/明细',                     cols:[13,14]}
+  ];
+  var baseCols = [0,1,15,16];
+  var bar = document.getElementById('metric-chips');
+  var table = document.getElementById('bi-data-table');
+  if(!bar || !table || !table.tBodies.length) return;
+  var KEY = 'rkMetricView';
+  var mode = 'all';
+  try { mode = localStorage.getItem(KEY) || 'all'; } catch(e) {}
+
+  function makeChip(k, name){
+    var b = document.createElement('span');
+    b.className = 'metric-chip'; b.setAttribute('data-k', k); b.textContent = name;
+    b.onclick = function(){ setMode(k); };
+    return b;
+  }
+  bar.appendChild(makeChip('all', '全部'));
+  GROUPS.forEach(function(g){ bar.appendChild(makeChip(g.k, g.name)); });
+
+  function setMode(k){
+    mode = k;
+    try { localStorage.setItem(KEY, k); } catch(e) {}
+    Array.prototype.forEach.call(bar.querySelectorAll('.metric-chip'), function(c){
+      c.classList.toggle('active', c.getAttribute('data-k') === k);
+    });
+    apply();
+  }
+  function apply(){
+    var on = {};
+    baseCols.forEach(function(i){ on[i] = true; });
+    if(mode === 'all'){
+      GROUPS.forEach(function(g){ g.cols.forEach(function(i){ on[i] = true; }); });
+    } else {
+      var g = GROUPS.filter(function(x){ return x.k === mode; })[0];
+      if(g) g.cols.forEach(function(i){ on[i] = true; });
+    }
+    var rows = [table.tHead.rows[0]].concat(Array.prototype.slice.call(table.tBodies[0].rows));
+    rows.forEach(function(tr){
+      if(!tr) return;
+      for(var i = 0; i < tr.cells.length; i++){
+        tr.cells[i].classList.toggle('col-off', !on[i]);
+      }
+    });
+  }
+  /* 数据汇总表 tbody 由渲染函数按日期/城市整体重绘，观察器保证重绘后列可见性自动恢复 */
+  try {
+    new MutationObserver(function(){ apply(); })
+      .observe(table.tBodies[0], {childList:true});
+  } catch(e) {}
+  setMode(mode);
+})();
+
+function jumpToScheme(){
+  var tabs = document.querySelectorAll('.dim-tab');
+  if(tabs[1]) switchDim(tabs[1], 'monthly');
+  setTimeout(function(){
+    var t = document.getElementById('sec-scheme');
+    if(t && t.scrollIntoView) t.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 150);
+}
 </script>
 </body>
 </html>
