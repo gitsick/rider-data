@@ -1170,7 +1170,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">工装抽检合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-骑手工装（悦跑考核周期9/28-11/1）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更</td></tr>
           <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客流失 / 企客体验达标</td><td style="padding:5px 8px;border:1px solid #eef1f5;">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入监控（当前三城无门店数据，有门店自动预警）</td></tr>
           <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客KA商家履约（商家/门店日维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">readata·KA客户履约监控 → 品牌x商家x履约站-履约明细数据（ID 17805，实际指向 BI 253744），KA商家口径与企客体验明细看板一致</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（10月MTD累计截至10-01：泰兴22品牌/75店、响水13品牌/50店，覆盖门店口径；9月整月：泰兴36品牌/117店、响水22品牌/37店，有单门店口径；诸暨无维值权限待申请）</td></tr>
-          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">兜底阈值（人效X / 承托比X）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">以任务系统下发为准</td><td style="padding:5px 8px;border:1px solid #eef1f5;">⏳ 待下发后接入预警判定</td></tr>
+          <tr><td style="padding:5px 8px;border:1px solid #eef1f5;">兜底阈值（人效X / 承托比X）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">以任务系统下发为准</td><td style="padding:5px 8px;border:1px solid #eef1f5;" id="sp-hd-status">⏳ 待下发后接入预警判定</td></tr>
         </table>
       </div>
     </div>
@@ -1198,55 +1198,12 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
       <span class="icon">📚</span> 考核方案参考（指标定义 · 计分规则 · 处罚 · 报备）
       <span class="ref-arrow" style="margin-left:auto;color:#6b7280;">▼</span>
     </div>
-    <div style="margin:8px 14px 10px;padding:8px 12px;border-radius:8px;background:#fff8e1;border:1px solid #ffe082;font-size:11.5px;color:#7a5c00;line-height:1.7;">
-      ⏰ <b>时效提醒</b>：异常场景（恶劣天气等）须<b>前置报备</b>，事后通知函申诉不予受理；对处罚结果有异议，须在<b>通知函下发次日起 2 个工作日内</b>申诉，逾期默认确认处罚结果；体验模块申诉以完成前置报备为前提。
-    </div>
+    <div id="scheme-reminder" style="margin:8px 14px 10px;padding:8px 12px;border-radius:8px;background:#fff8e1;border:1px solid #ffe082;font-size:11.5px;color:#7a5c00;line-height:1.7;"></div>
     <div class="ref-content">
 
-  <!-- 10月方案迭代点 -->
-  <div class="card" style="margin-bottom:16px;border-left:4px solid #e8525f;background:linear-gradient(135deg,#fff 0%,#fef6f6 100%);">
-    <div class="card-title"><span class="icon">🆕</span> 10月方案迭代点（对比9月 · 核算前必读）</div>
-    <div class="grid grid-2" style="margin-top:0;">
-      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #f5a623;background:#fef9f0;">
-        <strong style="color:#f5a623;">悦跑 · 出勤合格率考核时间</strong><br>
-        注意悦跑排班出勤合格率考核时间：第1期9/28-10/4、10/5-10/11、10/12-10/18；第2期10/19-10/25、10/26-11/1
-      </div>
-      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #e8525f;background:#fef6f6;">
-        <strong style="color:#e8525f;">悦跑 · 达标骑手口径调整分周期</strong><br>
-        服务质量达标骑手数口径调整：新口径（排班班次全量达成）自10/19-10/25周期起生效，注意区分调整前后考核周期
-      </div>
-      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #7b61ff;background:#f7f4ff;">
-        <strong style="color:#7b61ff;">体验&amp;推完 · 剔除企客订单</strong><br>
-        体验、推完指标口径订单剔除企客麦肯必瑞订单
-      </div>
-      <div style="font-size:12px;color:#6b7280;line-height:1.8;padding:10px 14px;border-radius:8px;border-left:3px solid #00b8d4;background:#f0fafe;">
-        <strong style="color:#00b8d4;">企客 · 扣分项调整</strong><br>
-        考核指标与扣分分数均有调整：流失扣5%→3%、新增新签加分（1家+2%，最高+3%）、新增门店体验达标扣分（-2%）
-      </div>
-    </div>
-  </div>
+  <div id="scheme-iterations"></div>
 
-  <!-- 公式与权重 -->
-  <div class="grid grid-2" style="margin-bottom:16px;">
-    <div class="card">
-      <div class="card-title"><span class="icon">📊</span> 总分计算公式</div>
-      <div class="formula-box"><div class="formula">总分 = Σ（模块得分 × 分城权重）− 扣分（泰兴 15/30/5 · 诸暨 45/0/5 · 响水 50/0/0，体验20 推完20 完结10；分档以任务系统城市等级为准）</div></div>
-      <div style="font-size:12px;color:#6b7280;text-align:center;">三城权重按画像档分城取值：泰兴=都考、诸暨=不考悦跑、响水=都不考（分档以任务系统城市等级为准）</div>
-      <div style="margin-top:10px;"><span class="pill pill-period">高峰日</span><span style="font-size:12px;color:#6b7280;">10/1-10/7、10/11、10/17、10/18、10/24、10/25、10/31、11/1</span></div>
-    </div>
-    <div class="card">
-      <div class="card-title"><span class="icon">⚖️</span> 运力组合权重配置</div>
-      <table class="dt">
-        <thead><tr><th>画像</th><th>加盟</th><th>悦跑</th><th>普众</th><th>体验</th><th>推完</th><th>完结率</th></tr></thead>
-        <tbody>
-          <tr><td>画像1·都考（泰兴推断适用）</td><td>15%</td><td>30%</td><td>5%</td><td>20%</td><td>20%</td><td>10%</td></tr>
-          <tr><td>画像2·不考悦跑（诸暨推断适用）</td><td>45%</td><td>—</td><td>5%</td><td>20%</td><td>20%</td><td>10%</td></tr>
-          <tr><td>画像3·都不考（响水推断适用）</td><td>50%</td><td>—</td><td>—</td><td>20%</td><td>20%</td><td>10%</td></tr>
-          <tr><td>G3城市</td><td>—</td><td>—</td><td>—</td><td>100%</td><td>—</td><td>—</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <div id="scheme-formula" class="grid grid-2" style="margin-bottom:16px;"></div>
 
   <!-- 月维度：考核指标明细解读 -->
   <div class="section-label">📋 考核指标明细解读</div>
@@ -1266,15 +1223,15 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <td>服务质量达标骑手数</td>
           <td>第1期 10/1-10/18<br>第2期 10/19-10/31</td>
           <td style="text-align:left;">达标骑手数=日均服务质量达标骑手数+日均合格有单骑手数×折算系数+日均高峰兼职骑手数×折算系数-日均异常骑手数<br><span style="color:#6b7280;">高峰期：午10:30-13:30 &amp; 晚17:00-20:00｜开工时长=在岗时长−忙碌时长</span><br><span style="color:#6b7280;">数据查询可选T-3（查询时间越长越准确），未剔除异常骑手，以核算下发结果为准</span></td>
-          <td style="text-align:left;">完成率=实际达标骑手数/目标<br>①计分区间【90%,100%】，＜90%记0分<br>②兜底规则：推订单完成率（不含散单）≥98.8%且加盟人效≤X<br>③四舍五入计算</td>
+          <td style="text-align:left;">完成率=实际达标骑手数/目标<br>①计分区间【90%,100%】，＜90%记0分<br>②兜底规则：推订单完成率（不含散单）≥98.8%且加盟人效≤<span class="sp-rx" data-def="X">X</span><br>③四舍五入计算</td>
           <td><strong style="color:#e8525f;font-size:13px;">15/45/50%</strong><br><span style="font-size:10px;color:#6b7280;">按画像1/2/3</span></td>
         </tr>
         <tr>
           <td class="city-cell" style="color:#f5a623;">悦跑运力</td>
           <td>服务质量达标骑手数<br>+<br>排班出勤合格率</td>
           <td>9/28-10/4、10/5-10/11、10/12-10/18<br>10/19-10/25、10/26-11/1<br><span style="color:#6b7280;">（按自然周）</span><br><span id="ym-caliber-scheme" style="font-size:10.5px;color:#e65100;font-weight:700;"></span></td>
-          <td style="text-align:left;">合格出勤：周期内累计≥5天，每天完成X单+出勤≥Y小时<br>排班出勤合格率=排班班次全部达标且天维度达标骑手数/当日排班骑手数<br><span style="color:#6b7280;">（班次全部达标=当日排X个班次，各班次时长+单量要求全部无异常；天维度达标=全天达成X小时+X单）</span><br><strong style="color:#d93025;">⚠ 新口径（10/19-10/25、10/26-11/1起）：排班班次全量达成（时段在线时长、完单量），得分=完成度（不再乘出勤系数）</strong></td>
-          <td style="text-align:left;">得分=达标骑手数完成度×排班出勤合格率系数<br>完成度计分区间【90%,110%】，＜90%记0分<br>出勤合格率≥90%→系数1.05；≥目标→1.0；＜目标→0.95<br>兜底：按自然周兜底，推单完成率（不含散单）≥98.8% 且当期悦跑承托比≥X%<br><span style="color:#6b7280;">悦跑承托比=悦跑骑手承接非散单单量/美配承接非散单单量（看板-承托比）</span></td>
+          <td style="text-align:left;">合格出勤：周期内累计≥5天，每天完成<span class="sp-xd" data-def="x">x</span>单+出勤≥<span class="sp-xs" data-def="Y">Y</span>小时<br>排班出勤合格率=排班班次全部达标且天维度达标骑手数/当日排班骑手数<br><span style="color:#6b7280;">（班次全部达标=当日排X个班次，各班次时长+单量要求全部无异常；天维度达标=全天达成<span class="sp-xs" data-def="Y">Y</span>小时+<span class="sp-xd" data-def="x">x</span>单）</span><br><strong style="color:#d93025;">⚠ 新口径（10/19-10/25、10/26-11/1起）：排班班次全量达成（时段在线时长、完单量），得分=完成度（不再乘出勤系数）</strong></td>
+          <td style="text-align:left;">得分=达标骑手数完成度×排班出勤合格率系数<br>完成度计分区间【90%,110%】，＜90%记0分<br>出勤合格率≥90%→系数1.05；≥目标→1.0；＜目标→0.95<br>兜底：按自然周兜底，推单完成率（不含散单）≥98.8% 且当期悦跑承托比≥<span class="sp-ctb" data-def="X">X</span>%<br><span style="color:#6b7280;">悦跑承托比=悦跑骑手承接非散单单量/美配承接非散单单量（看板-承托比）</span></td>
           <td><strong style="color:#f5a623;font-size:13px;">30% / —</strong><br><span style="font-size:10px;color:#6b7280;">仅画像1（泰兴推断）考核 · 已接入日更</span></td>
         </tr>
         <tr>
@@ -1290,7 +1247,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <td>美配复合超时率<br><span style="color:#6b7280;">（权重b1=40%）</span></td>
           <td>全月</td>
           <td style="text-align:left;">复合超时率=（一般超时单量+严重超时单量×5）/完成单量<br><strong style="color:#d93025;">⚠ 10月新增：剔除企客麦肯必瑞订单</strong><br>完成率=目标值/实际完成值<br>差异化：按3km内/外分别计算后加权</td>
-          <td style="text-align:left;">体验模块得分范围【0,110%】（子指标按 b1/b2/b3 加权后）<br>计分范围【50%,110%】<br>复合超时完成率=目标/实际<br>差异化完成率=3km内完成率×占比+3km外完成率×占比</td>
+          <td style="text-align:left;">体验模块得分范围【0,110%】（子指标按 b1/b2/b3 加权后）<br>计分范围【50%,110%】<br>复合超时完成率=目标/实际<br>差异化完成率=3km内完成率×占比+3km外完成率×占比<br><span style="color:#6b7280;">（3km内/外拆分明细展示待与核算口径确认后接入，当前看板呈现整体口径）</span></td>
           <td rowspan="3"><strong style="color:#7b61ff;font-size:13px;">20%</strong><br><span style="font-size:10px;color:#6b7280;">模块内<br>加权</span></td>
         </tr>
         <tr style="background:#f3e8fd;">
@@ -1359,7 +1316,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <td>承托比<br><span style="color:#6b7280;">（参考，不计分）</span></td>
           <td>全月</td>
           <td style="text-align:left;">承托比=加盟运力完成单量/加盟运力目标单量<br><span style="color:#6b7280;">反映运力供给充裕程度，三城当前42%~48%</span></td>
-          <td style="text-align:left;">不计入总分，但作为兜底判定条件：<br>①悦跑兜底要求承托比≥X%<br>②承托比过高（运力过剩）或过低（运力不足）均会影响运力调度评估<br>③看板每日跟踪，用于运力供给预警</td>
+          <td style="text-align:left;">不计入总分，但作为兜底判定条件：<br>①悦跑兜底要求承托比≥<span class="sp-ctb" data-def="X">X</span>%<br>②承托比过高（运力过剩）或过低（运力不足）均会影响运力调度评估<br>③看板每日跟踪，用于运力供给预警</td>
           <td><strong style="color:#2e7d32;">参考</strong><br><span style="font-size:10px;color:#6b7280;">不计分</span></td>
         </tr>
         <tr style="background:#e8f5e9;">
@@ -1367,7 +1324,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <td>加盟人效<br><span style="color:#6b7280;">（兜底条件）</span></td>
           <td>全月</td>
           <td style="text-align:left;">加盟人效=加盟运力完成单量/加盟运力在线时长<br><span style="color:#6b7280;">反映单骑手单位时间产出效率</span></td>
-          <td style="text-align:left;">不计入总分，但作为加盟兜底判定条件：<br>推订单完成率（不含散单）≥98.8% 且 加盟人效≤X 时<br>即使达标骑手数完成率＜90%也可避免直接记0分<br><span style="color:#6b7280;">具体X值以任务系统下发为准</span></td>
+          <td style="text-align:left;">不计入总分，但作为加盟兜底判定条件：<br>推订单完成率（不含散单）≥98.8% 且 加盟人效≤<span class="sp-rx" data-def="X">X</span> 时<br>即使达标骑手数完成率＜90%也可避免直接记0分<br><span style="color:#6b7280;">具体X值以任务系统下发为准</span></td>
           <td><strong style="color:#2e7d32;">兜底</strong><br><span style="font-size:10px;color:#6b7280;">不计分</span></td>
         </tr>
         <tr class="module-sep"><td colspan="6">▶ 罚则体系（适用城市等级 E/F/G1/G2） · 报备与申诉机制</td></tr>
@@ -5477,6 +5434,30 @@ var PENALTY_CFG={
   var g=document.getElementById('cfg-tier-g3');
   if(g&&has(PENALTY_CFG.g3Fine)){
     g.textContent=g.textContent.replace('罚款A元','罚款'+PENALTY_CFG.g3Fine+'元');
+  }
+})();
+</script>
+<script id="scheme-params-data">
+/* ===== 方案参数统一配置：任务系统下发后改此处的值即可全表回填（空值回退默认占位） ===== */
+var SCHEME_PARAMS={
+  ymOrders:'x',    /* 悦跑合格出勤·每日完成单量 */
+  ymHours:'Y',     /* 悦跑合格出勤·出勤时长（小时） */
+  tuotuobi:'X',    /* 悦跑兜底·承托比（%） */
+  renxiao:'X'      /* 加盟兜底·人效 */
+};
+(function(){
+  function has(v){return v!==null&&v!==undefined&&v!=='';}
+  function set(cls,val){
+    var els=document.querySelectorAll('.'+cls);
+    for(var i=0;i<els.length;i++){els[i].textContent=has(val)?val:els[i].getAttribute('data-def');}
+  }
+  set('sp-xd',SCHEME_PARAMS.ymOrders);
+  set('sp-xs',SCHEME_PARAMS.ymHours);
+  set('sp-ctb',SCHEME_PARAMS.tuotuobi);
+  set('sp-rx',SCHEME_PARAMS.renxiao);
+  var hb=document.getElementById('sp-hd-status');
+  if(hb&&has(SCHEME_PARAMS.tuotuobi)&&has(SCHEME_PARAMS.renxiao)&&String(SCHEME_PARAMS.tuotuobi)!=='X'&&String(SCHEME_PARAMS.renxiao)!=='X'){
+    hb.textContent='✅ 已回填：人效≤'+SCHEME_PARAMS.renxiao+' · 承托比≥'+SCHEME_PARAMS.tuotuobi+'%';
   }
 })();
 </script>
