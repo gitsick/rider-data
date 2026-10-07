@@ -733,7 +733,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     </div>
     <!-- 右：BI数据汇总表 -->
     <div class="card daily-card">
-      <div class="card-title"><span class="icon">📈</span> 数据汇总（<span id="bi-date-label">待数据</span> 单日快照）
+      <div class="card-title"><span class="icon">📈</span> 数据汇总（<span id="bi-date-label">待数据</span> 单日快照）<span id="peak-badge" style="display:none;margin-left:8px;background:#fce8e8;color:#d93025;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">⚡ 今日高峰日 · 运力前置</span>
         <span style="margin-left:auto;display:inline-flex;gap:6px;">
           <button class="tc-btn" style="padding:4px 12px;font-size:12px;" onclick="exportDailyCSV()" title="导出全月每日三城明细为CSV（可用Excel打开）">⬇ 导出CSV</button>
           <button class="tc-btn" style="padding:4px 12px;font-size:12px;" onclick="copyDailySummary()" title="复制最新日三城指标摘要文本，可直接粘贴到群聊">📋 复制摘要</button>
@@ -775,7 +775,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
   <div class="grid-modules gm3">
     <div id="mod-run" class="card module-card yuepao collapsible">
-      <div class="card-title collapsible"><span class="icon">🟠</span> 悦跑运力 <span class="pill pill-weight" id="pill-w-ym">权重 30%</span></div>
+      <div class="card-title collapsible"><span class="icon">🟠</span> 悦跑运力 <span class="pill pill-weight" id="pill-w-ym">权重 30%</span> <span class="pill" id="ym-caliber-pill" style="background:#fff3e0;color:#e65100;border:1px solid #ffe0b2;font-size:10.5px;">口径判定中…</span></div>
       <div class="collapsible-content">
         <div class="indicator-row">
           <div><div class="indicator-name">达标骑手数完成度</div><span class="threshold-tag tag-red">90%~110% 计分</span></div>
@@ -871,9 +871,16 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 <div class="card" id="qk-daily-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f4ff 100%);">
   <div class="card-title">🤝 企客（SKA）· 扣分项模块 <span id="qk-daily-snap" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
   <div style="font-size:12px;line-height:1.75;color:#374151;">
-流失有效门店≥1家：扣3%（原5%）；新签履约品牌门店1家+2%（最高+3%）；门店体验达标≤3家≥1家或>3家≥2家：扣2%；体验&推完指标剔除企客麦肯必瑞订单。
+    <table style="width:100%;border-collapse:collapse;font-size:11.5px;margin:4px 0;">
+      <tr style="background:#f3e8fd;"><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">子项</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">扣/加分</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">判定条件</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">当前状态</th></tr>
+      <tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❶ 门店流失</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#d93025;">−3%</b>（原5%）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">流失有效门店≥1家（仅因体验问题流失，七天内未发单即流失）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">✅ 监控中</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❷ 门店新签</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#2e7d32;">+2%/家</b>（最高+3%）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">当月新签履约承接品牌有效门店（美配首次发单日计，含月内新签）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">⏳ 待接入（企客体验明细看板）</td></tr>
+      <tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❸ 门店体验达标</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#d93025;">−2%</b></td><td style="padding:4px 8px;border:1px solid #eef1f5;">≤3家城≥1家未达标、或>3家城≥2家未达标（口径同SKA考核指标）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">✅ 监控中</td></tr>
+    </table>
+    <div style="font-size:11.5px;color:#6b7280;">体验&amp;推完指标剔除企客麦肯必瑞订单（10月方案迭代点）。</div>
     <div style="margin-top:4px;font-size:11.5px;color:#6b7280;">🟣 诸暨：⏳ 待数据（企客KA维值权限申请中）</div>
-    <div style="margin-top:6px;font-size:11px;color:#6b7280;">完整品牌履约评估预警见「分析报告」页签；数据来源：品牌x商家x履约站-履约明细（ID 17805）</div>
+    <div style="margin-top:6px;font-size:11px;color:#6b7280;">完整品牌履约评估预警见「分析报告」页签；数据来源：企客体验明细看板（bi 269707）· 品牌 x商家x履约站-履约明细（ID 17805）</div>
+    <div id="qk-adj-summary" style="margin-top:8px;border-top:1px dashed #e8def8;padding-top:6px;font-size:11.5px;color:#374151;">当前扣/加分合计：未触发（在左侧测算卡填入流失/新签家数后自动联动）</div>
   </div>
 </div>
 <div class="section-label">🤝 企客SKA · 天维度明细与趋势</div>
@@ -938,7 +945,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
   </div>
 <div class="section-label">🧩 拆解与归因</div>
 <div class="card" id="ym-weekly-card" style="margin-bottom:12px;">
-    <div class="card-title"><span class="icon">🗓️</span> 悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制）</div>
+    <div class="card-title"><span class="icon">🗓️</span> 悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制） <span class="pill" id="ym-caliber-weekly" style="background:#fff3e0;color:#e65100;border:1px solid #ffe0b2;font-size:10.5px;">口径判定中…</span></div>
     <div class="table-scroll" id="ym-weekly-body"><div style="text-align:center;padding:14px;color:#6b7280;font-size:12.5px;">⏳ BI数据发布后自动生成各自然周完成度</div></div>
     <div style="font-size:11px;color:#6b7280;margin-top:6px;">完成度=悦跑服务质量达标骑手数/目标（周均口径，目标以任务系统下发为准）；任一自然周＜90%该周记0分（自然周控制），平均完成率不控制区间；第1/5周含跨月日期，按已有数据日均近似。</div>
   </div>
@@ -977,6 +984,10 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 
 <div class="dim-content" id="dim-monthly">
   <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">🏆 本页：月底结果与评估</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('daily')">📅 去天维度</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('report')">📋 去分析报告</a></div>
+  <div class="card" style="padding:12px 18px;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#e8f0fe 100%);" id="period-top-bar">
+    <div class="card-title" style="margin-bottom:6px;"><span class="icon">⏱</span> 期次进度 <span id="ptb-date" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
+    <div id="ptb-body"><div style="font-size:12px;color:#6b7280;">10月考核周期 10/1-10/31，共31天，含14个高峰日（含11/1）</div></div>
+  </div>
   <div class="card" style="padding:14px 18px;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
     <div class="card-title" style="margin-bottom:8px;"><span class="icon">🧭</span> 考核方案 · 六大模块指标总览 <span id="mo-mode-tag" style="font-weight:400;font-size:11.5px;color:#6b7280;margin-left:4px;"></span></div>
     <div class="mod-ov" id="mod-ov-body"><div style="font-size:12px;color:#6b7280;">数据加载中…</div></div>
@@ -1257,7 +1268,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
         <tr>
           <td class="city-cell" style="color:#f5a623;">悦跑运力</td>
           <td>服务质量达标骑手数<br>+<br>排班出勤合格率</td>
-          <td>9/28-10/4、10/5-10/11、10/12-10/18<br>10/19-10/25、10/26-11/1<br><span style="color:#6b7280;">（按自然周）</span></td>
+          <td>9/28-10/4、10/5-10/11、10/12-10/18<br>10/19-10/25、10/26-11/1<br><span style="color:#6b7280;">（按自然周）</span><br><span id="ym-caliber-scheme" style="font-size:10.5px;color:#e65100;font-weight:700;"></span></td>
           <td style="text-align:left;">合格出勤：周期内累计≥5天，每天完成X单+出勤≥Y小时<br>排班出勤合格率=排班班次全部达标且天维度达标骑手数/当日排班骑手数<br><span style="color:#6b7280;">（班次全部达标=当日排X个班次，各班次时长+单量要求全部无异常；天维度达标=全天达成X小时+X单）</span><br><strong style="color:#d93025;">⚠ 新口径（10/19-10/25、10/26-11/1起）：排班班次全量达成（时段在线时长、完单量），得分=完成度（不再乘出勤系数）</strong></td>
           <td style="text-align:left;">得分=达标骑手数完成度×排班出勤合格率系数<br>完成度计分区间【90%,110%】，＜90%记0分<br>出勤合格率≥90%→系数1.05；≥目标→1.0；＜目标→0.95<br>兜底：按自然周兜底，推单完成率（不含散单）≥98.8% 且当期悦跑承托比≥X%<br><span style="color:#6b7280;">悦跑承托比=悦跑骑手承接非散单单量/美配承接非散单单量（看板-承托比）</span></td>
           <td><strong style="color:#f5a623;font-size:13px;">30% / —</strong><br><span style="font-size:10px;color:#6b7280;">仅画像1（泰兴推断）考核 · 已接入日更</span></td>
@@ -1368,28 +1379,28 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
           <td>警告<br><span style="color:#6b7280;">（95%~100%）</span></td>
           <td>全月</td>
           <td style="text-align:left;">月度总分95%（含）~100%</td>
-          <td style="text-align:left;">产生x个警告，罚款X元<br><span style="color:#6b7280;">全月警告封顶2个，超出按标准转罚款；全月罚款=每期罚款总和+警告转化罚款（金额以任务系统为准）</span></td>
+          <td style="text-align:left;"><span id="cfg-tier-1">产生x个警告，罚款X元</span><br><span style="color:#6b7280;">全月警告封顶2个，超出按标准转罚款；全月罚款=每期罚款总和+警告转化罚款（金额以任务系统为准）</span></td>
           <td><strong style="color:#f5a623;">⚠️ 警告</strong></td>
         </tr>
         <tr style="background:#fff3e0;">
           <td>重罚预警<br><span style="color:#6b7280;">（90%~95%）</span></td>
           <td>全月</td>
           <td style="text-align:left;">月度总分90%（含）~95%</td>
-          <td style="text-align:left;">产生y个警告，罚款Y元<br><span style="color:#6b7280;">10月月预计（MTD）：泰兴、诸暨处于该区间；月末以月评估为准，详见「考核总览」卡</span></td>
+          <td style="text-align:left;"><span id="cfg-tier-2">产生y个警告，罚款Y元</span><br><span style="color:#6b7280;">10月月预计（MTD）：泰兴、诸暨处于该区间；月末以月评估为准，详见「考核总览」卡</span></td>
           <td><strong style="color:#d93025;">🔴 重罚预警</strong></td>
         </tr>
         <tr style="background:#fff3e0;">
           <td>重罚<br><span style="color:#6b7280;">（＜90%）</span></td>
           <td>全月</td>
           <td style="text-align:left;">月度总分＜90%</td>
-          <td style="text-align:left;">产生z个警告，罚款Z元</td>
+          <td style="text-align:left;"><span id="cfg-tier-3">产生z个警告，罚款Z元</span></td>
           <td><strong style="color:#b71c1c;">⛔ 重罚</strong></td>
         </tr>
         <tr style="background:#fff3e0;">
           <td>重罚（G3类城市）<br><span style="color:#6b7280;">（仅体验）</span></td>
           <td>全月</td>
           <td style="text-align:left;">G3类城市：仅考核综合体验（权重100%）</td>
-          <td style="text-align:left;">体验模块总完成率＜100% → 考核不达标，罚款A元<br>体验模块总完成率≥100% → 考核达标，无处罚<br><span style="color:#6b7280;">目标值、罚款金额详见任务系统</span></td>
+          <td style="text-align:left;"><span id="cfg-tier-g3">体验模块总完成率＜100% → 考核不达标，罚款A元</span><br>体验模块总完成率≥100% → 考核达标，无处罚<br><span style="color:#6b7280;">目标值、罚款金额详见任务系统</span></td>
           <td><strong style="color:#b71c1c;">⛔ 单指标重罚</strong></td>
         </tr>
         <tr style="background:#e3f2fd;">
@@ -2905,6 +2916,7 @@ function updateDateUI() {
     document.getElementById('kpi-period').textContent = '第1期 10/1-10/18';
     var peakEl0 = document.getElementById('kpi-peak');
     if (peakEl0) { peakEl0.textContent = '—'; peakEl0.style.color = '#6b7280'; }
+    var pb0 = document.getElementById('peak-badge'); if (pb0) pb0.style.display = 'none';
     var statusEl0 = document.getElementById('date-status');
     statusEl0.textContent = '⏳ 10月数据待更新';
     statusEl0.className = 'date-status no-data';
@@ -2928,6 +2940,8 @@ function updateDateUI() {
     peakEl.textContent = '否';
     peakEl.style.color = '#34a853';
   }
+  var pb = document.getElementById('peak-badge');
+  if (pb) pb.style.display = isPeakDay(currentDate) ? 'inline-block' : 'none';
   var statusEl = document.getElementById('date-status');
   if (hasData(currentDate)) {
     statusEl.textContent = '✓ 有数据';
@@ -3452,6 +3466,8 @@ function updateModuleInputs() {
     if (selC) {
       var isP2 = getPeriod(currentDate).period === 2; // 第2期（10/19起）新口径：不乘出勤系数
       selC.value = isP2 ? '1' : (d.ymCq !== null && d.ymCq !== undefined && d.ymCq >= 90 ? '1.05' : '1');
+      selC.disabled = isP2;
+      selC.title = isP2 ? '第2期（10/19起）新口径：得分=完成度，不再乘出勤系数' : '';
     }
     var pzl = document.getElementById('pz_act');
     if (pzl) pzl.textContent = (d.pzAct !== null && d.pzAct !== undefined) ? ('活跃骑手 ' + d.pzAct + '（完成率待任务系统目标）') : '';
@@ -3577,6 +3593,44 @@ var w = cityW();
   else if (totalAdj >= 95) { resultEl.className = 'calc-result warn'; hintEl.textContent = '\u26A0\uFE0F 95%~100% 警告区间'; }
   else if (totalAdj >= 90) { resultEl.className = 'calc-result fail'; hintEl.textContent = '\uD83D\uDD34 90%~95% 重罚预警区间'; }
   else { resultEl.className = 'calc-result fail'; hintEl.textContent = '\uD83D\uDD34 ＜90% 重罚区间'; }
+  updateQkSummary();
+}
+
+// ===================== 期次进度条（月维度置顶） =====================
+function renderPeriodTopBar() {
+  var body = document.getElementById('ptb-body');
+  if (!body) return;
+  var latest = dataDates.length ? dataDates[dataDates.length-1] : null;
+  var day = latest ? parseInt(latest.split('-')[1]) : 0;
+  var dateTag = document.getElementById('ptb-date');
+  if (dateTag) dateTag.textContent = latest ? ('数据截至 ' + dateLabel(latest)) : '';
+  if (!day) return;
+  var bar = function(pct, color) { return '<div style="height:6px;background:#eee;border-radius:3px;overflow:hidden;margin-top:4px;"><div style="height:100%;width:' + Math.min(100, pct) + '%;background:' + color + ';border-radius:3px;"></div></div>'; };
+  var fmt = function(s, e) { return Math.max(0, Math.min(day, e) - s + 1) + '/' + (e - s + 1) + ' 天'; };
+  var peakDone = peakDays.filter(function(d) { return parseInt(d.split('-')[1]) <= day; }).length;
+  var ymWeek = day <= 4 ? 1 : (day <= 11 ? 2 : (day <= 18 ? 3 : (day <= 25 ? 4 : 5)));
+  var h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;">';
+  h += '<div style="border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;font-size:11.5px;color:#374151;"><b>加盟 第1期</b> 10/1-10/18 · 已过 ' + fmt(1, 18) + bar(Math.round(Math.min(day, 18) / 18 * 100), '#e8525f') + '</div>';
+  h += '<div style="border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;font-size:11.5px;color:#374151;"><b>加盟 第2期</b> 10/19-10/31 · ' + (day >= 19 ? '已过 ' + fmt(19, 31) : '未开始') + bar(day >= 19 ? Math.round((Math.min(day, 31) - 18) / 13 * 100) : 0, '#f5a623') + '</div>';
+  h += '<div style="border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;font-size:11.5px;color:#374151;"><b>高峰日</b> 已过 ' + peakDone + '/' + peakDays.length + ' 天' + bar(Math.round(peakDone / peakDays.length * 100), '#d93025') + '</div>';
+  h += '<div style="border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;font-size:11.5px;color:#374151;"><b>悦跑/普众 自然周</b> 第' + ymWeek + '/5 周进行中（9/28-11/1 · 第4周10/19起新口径）' + bar(Math.round(ymWeek / 5 * 100), '#4cb947') + '</div>';
+  h += '</div>';
+  body.innerHTML = h;
+}
+
+// ===================== 企客扣/加分汇总（与测算输入联动） =====================
+function updateQkSummary() {
+  var el = document.getElementById('qk-adj-summary'); if (!el) return;
+  var ls = parseFloat((document.getElementById('pn_ls') || {}).value) || 0;
+  var xq = parseFloat((document.getElementById('pn_xq') || {}).value) || 0;
+  var tyBad = !!(document.getElementById('pn_qk_ty') || {}).checked;
+  var bonus = xq >= 1 ? Math.min(xq * 2, 3) : 0;
+  var rows = [];
+  rows.push('<span style="color:' + (ls >= 1 ? '#d93025;font-weight:700' : '#6b7280') + '">流失 ' + ls + ' 家 → ' + (ls >= 1 ? '-3%' : '不扣') + '</span>');
+  rows.push('<span style="color:' + (bonus > 0 ? '#2e7d32;font-weight:700' : '#6b7280') + '">新签 ' + xq + ' 家 → ' + (bonus > 0 ? '+' + bonus + '%（上限+3%）' : '不加分') + '</span>');
+  rows.push('<span style="color:' + (tyBad ? '#d93025;font-weight:700' : '#6b7280') + '">门店体验未达标 → ' + (tyBad ? '-2%' : '不扣') + '</span>');
+  var net = (ls >= 1 ? -3 : 0) + bonus + (tyBad ? -2 : 0);
+  el.innerHTML = '<b>当前扣/加分合计：</b>' + rows.join(' ｜ ') + ' ｜ <b style="color:' + (net > 0 ? '#2e7d32' : (net < 0 ? '#d93025' : '#6b7280')) + '">净影响 ' + (net > 0 ? '+' : '') + net + '%</b>（与测算卡输入联动，方案：流失≥1家-3% · 新签1家+2%最高+3% · 体验未达标-2%）';
 }
 
 // ===================== 折叠 =====================
@@ -3589,6 +3643,7 @@ document.querySelectorAll('.collapsible .card-title').forEach(function(el) {
 
 // ===================== 动态文本更新 =====================
 function updateDynamicText() {
+  renderPeriodTopBar();
   if (!dataDates.length) return;
   var latestDay = parseInt(dataDates[dataDates.length-1].split('-')[1]);
   var daysActual = dataDates.length;
@@ -4824,8 +4879,8 @@ var DAILY_EXTRA={"10-01": {"泰兴": {"ymRate": 75.68, "ymCq": 100.0, "gzYm": 69
     snap.textContent = s || '';
   }
   }
-  if (document.readyState === 'complete') { __qkCardsFill(); }
-  else { window.addEventListener('load', __qkCardsFill); }
+if (document.readyState === 'complete') { __qkCardsFill(); updateQkSummary(); }
+else { window.addEventListener('load', function() { __qkCardsFill(); updateQkSummary(); }); }
 })();
 (function(){
   function __biMonthMini(){
@@ -5397,6 +5452,47 @@ if (typeof renderWjSplit==='function'){try{renderWjSplit();}catch(e){console.war
   function upd(){t=null;var y=window.scrollY||document.documentElement.scrollTop||0;b.classList.toggle('show',y>600)}
   window.addEventListener('scroll',function(){if(t==null)t=requestAnimationFrame(upd)},{passive:true});
   b.addEventListener('click',function(){var rm=false;try{rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}window.scrollTo({top:0,behavior:rm?'auto':'smooth'})});
+})();
+</script>
+<script id="penalty-cfg-data">
+/* ===== 处罚数值参数化配置：任务系统下发后仅改本对象即可全站生效 ===== */
+var PENALTY_CFG={
+  tiers:[
+    {id:'cfg-tier-1', warn:'x', fine:'X'},
+    {id:'cfg-tier-2', warn:'y', fine:'Y'},
+    {id:'cfg-tier-3', warn:'z', fine:'Z'}
+  ],
+  g3Fine:'A'
+};
+(function(){
+  function has(v){return v!==null&&v!==undefined&&v!=='';}
+  PENALTY_CFG.tiers.forEach(function(t){
+    var el=document.getElementById(t.id);if(!el)return;
+    el.textContent='产生'+(has(t.warn)?t.warn:'x')+'个警告，罚款'+(has(t.fine)?t.fine:'X')+'元';
+  });
+  var g=document.getElementById('cfg-tier-g3');
+  if(g&&has(PENALTY_CFG.g3Fine)){
+    g.textContent=g.textContent.replace('罚款A元','罚款'+PENALTY_CFG.g3Fine+'元');
+  }
+})();
+</script>
+<script>
+/* ===== 悦跑考核口径动态标签：10/19 前旧口径（完成度×出勤系数），10/19 起新口径（纯完成度） ===== */
+(function(){
+  function isNew(d){ d=String(d||''); return d.length===5 && d>='10-19'; }
+  function update(d){
+    var pill=document.getElementById('ym-caliber-pill');
+    var wk=document.getElementById('ym-caliber-weekly');
+    var sc=document.getElementById('ym-caliber-scheme');
+    var txt,tip;
+    if(isNew(d)){ txt='⚙️ 新口径 · 得分=完成度（不乘系数）'; tip='10/19-10/25、10/26-11/1 适用新口径：合格出勤需排班班次全量达成'; }
+    else { txt='⚙️ 旧口径 · 完成度×出勤系数'; tip='第1-3周（9/28-10/18）适用旧口径；10/19 起切换新口径（纯完成度，班次全量达成）'; }
+    [pill,wk].forEach(function(el){ if(el){ el.textContent=txt; el.title=tip; }});
+    if(sc){ sc.textContent='当前适用：'+txt.replace('⚙️ ',''); sc.title=tip; }
+  }
+  update(typeof currentDate!=='undefined'?currentDate:null);
+  var _sd=window.switchDate;
+  window.switchDate=function(ds){ if(typeof _sd==='function'){ _sd(ds); } update(ds); };
 })();
 </script>
 </body>
