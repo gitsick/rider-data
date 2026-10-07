@@ -1011,6 +1011,7 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 <div class="section-label">🏆 月度测算与评估</div>
   <div class="card monthly-card" id="sec-overview" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#fff5f5 100%);">
     <div class="card-title" id="overview-title"><span class="icon">🏆</span> 整月考核结果测算（10月考核周期 10/1-10/31，共31天，含14个高峰日·含11/1）</div>
+    <div id="period-progress" style="margin:0 0 10px;font-size:11.5px;color:#374151;display:flex;align-items:center;gap:8px;flex-wrap:wrap;"></div>
     <div class="table-scroll">
     <table class="dt">
       <thead>
@@ -1196,6 +1197,9 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
     <div class="card-title ref-collapse collapsed" onclick="this.classList.toggle('collapsed')">
       <span class="icon">📚</span> 考核方案参考（指标定义 · 计分规则 · 处罚 · 报备）
       <span class="ref-arrow" style="margin-left:auto;color:#6b7280;">▼</span>
+    </div>
+    <div style="margin:8px 14px 10px;padding:8px 12px;border-radius:8px;background:#fff8e1;border:1px solid #ffe082;font-size:11.5px;color:#7a5c00;line-height:1.7;">
+      ⏰ <b>时效提醒</b>：异常场景（恶劣天气等）须<b>前置报备</b>，事后通知函申诉不予受理；对处罚结果有异议，须在<b>通知函下发次日起 2 个工作日内</b>申诉，逾期默认确认处罚结果；体验模块申诉以完成前置报备为前提。
     </div>
     <div class="ref-content">
 
@@ -5480,16 +5484,32 @@ var PENALTY_CFG={
 /* ===== 悦跑考核口径动态标签：10/19 前旧口径（完成度×出勤系数），10/19 起新口径（纯完成度） ===== */
 (function(){
   function isNew(d){ d=String(d||''); return d.length===5 && d>='10-19'; }
-  function update(d){
-    var pill=document.getElementById('ym-caliber-pill');
-    var wk=document.getElementById('ym-caliber-weekly');
-    var sc=document.getElementById('ym-caliber-scheme');
-    var txt,tip;
-    if(isNew(d)){ txt='⚙️ 新口径 · 得分=完成度（不乘系数）'; tip='10/19-10/25、10/26-11/1 适用新口径：合格出勤需排班班次全量达成'; }
-    else { txt='⚙️ 旧口径 · 完成度×出勤系数'; tip='第1-3周（9/28-10/18）适用旧口径；10/19 起切换新口径（纯完成度，班次全量达成）'; }
-    [pill,wk].forEach(function(el){ if(el){ el.textContent=txt; el.title=tip; }});
-    if(sc){ sc.textContent='当前适用：'+txt.replace('⚙️ ',''); sc.title=tip; }
+function update(d){
+var pill=document.getElementById('ym-caliber-pill');
+var wk=document.getElementById('ym-caliber-weekly');
+var sc=document.getElementById('ym-caliber-scheme');
+var txt,tip;
+if(isNew(d)){ txt='⚙️ 新口径 · 得分=完成度（不乘系数）'; tip='10/19-10/25、10/26-11/1 适用新口径：合格出勤需排班班次全量达成'; }
+else { txt='⚙️ 旧口径 · 完成度×出勤系数'; tip='第1-3周（9/28-10/18）适用旧口径；10/19 起切换新口径（纯完成度，班次全量达成）'; }
+[pill,wk].forEach(function(el){ if(el){ el.textContent=txt; el.title=tip; }});
+if(sc){ sc.textContent='当前适用：'+txt.replace('⚙️ ',''); sc.title=tip; }
+var pp=document.getElementById('period-progress');
+if(pp){
+  d=String(d||''); var p=null;
+  if(d.length===5&&d>='10-01'){
+    var day=parseInt(d.slice(3),10);
+    if(d<='10-18'){ p={label:'第1期 10/1-10/18',total:18,passed:Math.min(Math.max(day,1),18)}; }
+    else { p={label:'第2期 10/19-10/31',total:13,passed:(d>'10-31')?13:Math.min(Math.max(day-18,1),13)}; }
+    p.pct=Math.round(p.passed/p.total*100);
   }
+  pp.innerHTML=(p
+    ? '<b>'+p.label+'</b>&nbsp;·&nbsp;已过 '+p.passed+'/'+p.total+' 天'+(p.pct>=100?'（已完结）':'')+
+      '<span style="flex:1;min-width:120px;height:8px;background:#e8eaed;border-radius:4px;overflow:hidden;display:inline-block;">'+
+      '<span style="display:block;height:100%;width:'+p.pct+'%;background:linear-gradient(90deg,#fbbc04,#f29900);"></span></span>'+
+      '<b style="color:#f29900;">'+p.pct+'%</b>'
+    : '<b>10月考核周期 10/1-10/31</b>&nbsp;·&nbsp;数据日期待定');
+}
+}
   update(typeof currentDate!=='undefined'?currentDate:null);
   var _sd=window.switchDate;
   window.switchDate=function(ds){ if(typeof _sd==='function'){ _sd(ds); } update(ds); };
