@@ -571,6 +571,45 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 .qr-modal-body .qr-url{font-size:11px;color:#6b7280;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .qr-modal-body .qr-hint{font-size:10px;color:#6b7280;margin-top:8px}
 @media(max-width:600px){.qr-small img{width:42px;height:42px}.qr-small .qr-label{display:none}.qr-small{padding:4px 6px}.qr-modal-body img{width:180px;height:180px}.qr-modal-box{max-width:280px}.qr-modal-banner{font-size:12px;padding:12px 16px 8px}.qr-modal-body{padding:16px 18px 14px}.summary-card{padding:12px 14px}.summary-card .sc-score{font-size:28px}.header{padding:16px 18px!important}.header h1{font-size:18px!important}.dim-tab{padding:10px 12px!important;font-size:13px!important}}
+
+/* ====== Ch45 设计美化层：令牌化 / 排版 / 表格 / 滚动条 / 动效（与10月看板同步，增量覆盖） ====== */
+:root{
+  --pol-ink:#1B2233;
+  --pol-brand:#FFC300;
+  --pol-brand-d:#F5A623;
+  --pol-green:#188038;
+  --pol-red:#D93025;
+  --pol-blue:#1967D2;
+  --pol-gray-2:#6B7280;
+  --pol-line:#E8ECF1;
+  --pol-ease:cubic-bezier(.22,1,.36,1);
+  --pol-shadow-lift:0 6px 18px rgba(27,34,51,.10);
+}
+body{background:linear-gradient(180deg,#edf0f5 0,#F0F2F5 220px,#F0F2F5)!important}
+.score-cell,.fs-value,.mo-val,.calc-result,.ps-score,.pc-value,.num,
+.summary-card .sc-score,.indicator-score,.mo-chip .mo-val,
+.delta-good,.delta-bad,.freshness-badge{
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1;
+}
+.dt th,.trend-table th,.period-table th{letter-spacing:.03em}
+.section-label{letter-spacing:.02em}
+.card-title .icon{line-height:1;transform:translateY(1px)}
+.pill,.threshold-tag,.date-status,.freshness-badge,#dim-report .tag{border-radius:999px}
+tr:hover td.peak-col{background:#fff3cd!important}
+tr:hover td.latest-col{background:#e6f4ea!important}
+tr:hover td.selected-col{background:#d4edda!important}
+.trend-table tr:hover td.peak-col.selected-col{background:#fde68a!important}
+tr.module-sep:hover td{background:#1a2b4a!important}
+.card{transition:box-shadow .22s var(--pol-ease)}
+.module-card:hover,.summary-card:hover{box-shadow:var(--pol-shadow-lift)!important}
+.preset-scenario,.city-tab,.date-nav-btn,.cal-cell,.anchor-btn{transition-timing-function:var(--pol-ease)}
+.table-scroll::-webkit-scrollbar,.slice-wrap::-webkit-scrollbar,.cal-wrap::-webkit-scrollbar{height:8px;width:8px}
+.table-scroll::-webkit-scrollbar-thumb,.slice-wrap::-webkit-scrollbar-thumb,.cal-wrap::-webkit-scrollbar-thumb{background:#d3d9e0;border-radius:999px;border:2px solid transparent;background-clip:content-box}
+.table-scroll::-webkit-scrollbar-thumb:hover,.slice-wrap::-webkit-scrollbar-thumb:hover,.cal-wrap::-webkit-scrollbar-thumb:hover{background:#b9c2cc;border:2px solid transparent;background-clip:content-box}
+.table-scroll::-webkit-scrollbar-track,.slice-wrap::-webkit-scrollbar-track,.cal-wrap::-webkit-scrollbar-track{background:transparent}
+.table-scroll,.slice-wrap,.cal-wrap{scrollbar-width:thin;scrollbar-color:#d3d9e0 transparent}
+/* ====== end Ch45 ====== */
 </style>
 </head>
 <body>
