@@ -626,6 +626,25 @@ tr.module-sep:hover td{background:#1a2b4a!important}
 .table-scroll::-webkit-scrollbar-thumb:hover,.slice-wrap::-webkit-scrollbar-thumb:hover,.cal-wrap::-webkit-scrollbar-thumb:hover{background:#b9c2cc;border:2px solid transparent;background-clip:content-box}
 .table-scroll::-webkit-scrollbar-track,.slice-wrap::-webkit-scrollbar-track,.cal-wrap::-webkit-scrollbar-track{background:transparent}
 .table-scroll,.slice-wrap,.cal-wrap{scrollbar-width:thin;scrollbar-color:#d3d9e0 transparent}
+/* ====== Ch46 二轮美化：字色统一 / 页头光晕 / 表格容器 / 入场动效 / 打印归档 ====== */
+/* 正文字色与主色统一：消除 #1B1B33 与 #1B2233 混用 */
+:root{--mt-text:#1B2233}
+/* 页头光晕：右上角品牌色柔光，提升质感 */
+.header::before,.u-header::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(640px 220px at 88% -30%,rgba(255,195,0,.16),transparent 62%);pointer-events:none}
+/* 表格圆角容器：宽表包裹在圆角描边框内，与卡片风格一致 */
+.table-scroll{border:1px solid var(--pol-line);border-radius:10px}
+/* 卡片入场动效：渐进增强，仅由 JS 添加类，JS 失败或用户偏好减弱动效时完全可见 */
+.card.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s var(--pol-ease),transform .55s var(--pol-ease),box-shadow .22s var(--pol-ease)}
+.card.reveal.in-view{opacity:1;transform:none}
+/* 打印归档：隐藏交互件、展开全部页签、白底省墨 */
+@media print{
+  .top-nav,.dim-tabs,.anchor-nav,#back-top,.qr-small,.date-nav-btn,.cal-wrap,.city-tabs{display:none!important}
+  body{background:#fff!important;padding:0!important}
+  .card{box-shadow:none!important;border:1px solid #ddd!important;break-inside:avoid}
+  .dim-content{display:block!important}
+  .table-scroll{overflow:visible!important;border:none!important}
+}
+/* ====== end Ch46 ====== */
 /* ====== end Ch45 ====== */
 </style>
 </head>
@@ -5555,6 +5574,21 @@ if(pp){
   update(typeof currentDate!=='undefined'?currentDate:null);
   var _sd=window.switchDate;
   window.switchDate=function(ds){ if(typeof _sd==='function'){ _sd(ds); } update(ds); };
+})();
+</script>
+<script>
+/* Ch46 卡片入场动效（渐进增强）：仅当支持 IO 且用户未偏好减弱动效时启用；任何异常保持卡片完全可见 */
+(function(){
+  try{
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    if(!('IntersectionObserver' in window))return;
+    var cards=document.querySelectorAll('.card');
+    if(!cards.length)return;
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});
+    },{rootMargin:'0px 0px -6% 0px',threshold:0.02});
+    Array.prototype.forEach.call(cards,function(c){c.classList.add('reveal');io.observe(c);});
+  }catch(e){}
 })();
 </script>
 </body>
