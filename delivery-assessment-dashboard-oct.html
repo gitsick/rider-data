@@ -3607,7 +3607,7 @@ function renderPeriodTopBar() {
   if (!day) return;
   var bar = function(pct, color) { return '<div style="height:6px;background:#eee;border-radius:3px;overflow:hidden;margin-top:4px;"><div style="height:100%;width:' + Math.min(100, pct) + '%;background:' + color + ';border-radius:3px;"></div></div>'; };
   var fmt = function(s, e) { return Math.max(0, Math.min(day, e) - s + 1) + '/' + (e - s + 1) + ' 天'; };
-  var peakDone = peakDays.filter(function(d) { return parseInt(d.split('-')[1]) <= day; }).length;
+  var peakDone = peakDays.filter(function(d) { return d <= latest; }).length;
   var ymWeek = day <= 4 ? 1 : (day <= 11 ? 2 : (day <= 18 ? 3 : (day <= 25 ? 4 : 5)));
   var h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;">';
   h += '<div style="border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;font-size:11.5px;color:#374151;"><b>加盟 第1期</b> 10/1-10/18 · 已过 ' + fmt(1, 18) + bar(Math.round(Math.min(day, 18) / 18 * 100), '#e8525f') + '</div>';
