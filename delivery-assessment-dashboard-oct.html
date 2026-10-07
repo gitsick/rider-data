@@ -36,7 +36,7 @@ body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",
   .c-orange { color:#f5a623; font-weight:700; }
   .c-red { color:#d93025; font-weight:700; }
   /* 维度Tab（Ch34 统一样式：渐变激活态/四页签专属徽标色/统一圆角阴影） */
-  .dim-tabs { display:flex; gap:0; margin-bottom:16px; border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(26,43,74,0.14); position:sticky; top:0; z-index:60; border:1px solid #e8ebf0; }
+  .dim-tabs { display:flex; gap:0; margin-bottom:16px; border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(26,43,74,0.14); position:sticky; top:40px; z-index:60; border:1px solid #e8ebf0; }
   .dim-tab { flex:1; padding:13px 18px; text-align:center; font-size:15.5px; font-weight:700; cursor:pointer; background:#fff; color:#8a94a6; border:none; border-bottom:3px solid transparent; transition:all .22s; position:relative; letter-spacing:.5px; }
   .dim-tab.active { background:#FFC300; color:#1B2233; }
   .dim-tab:hover:not(.active) { background:#f5f8fd; color:#1a2b4a; }
@@ -543,6 +543,16 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 .top-nav .nav-sep{color:#475569;margin:0 2px}
 .top-nav .nav-switch{margin-left:auto}
 @media(max-width:600px){.top-nav{padding:0 12px;font-size:12px;gap:8px;height:36px}}
+@media(max-width:600px){.dim-tabs{top:36px}}
+/* ====== 打磨：焦点可见性 / 选中色 / 锚点偏移 / 数字对齐 / 回到顶部 ====== */
+:focus-visible{outline:2px solid #F5A623;outline-offset:2px;border-radius:4px}
+::selection{background:#ffe58f;color:#1B2233}
+.card,[id^="sec-"]{scroll-margin-top:96px}
+.dt td{font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto !important}}
+#back-top{position:fixed;right:18px;bottom:26px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(27,34,51,.12);background:rgba(255,255,255,.94);box-shadow:0 4px 14px rgba(27,34,51,.18);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#1B2233;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .25s ease-out,transform .25s ease-out,background .15s;z-index:800}
+#back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+#back-top:hover{background:#fff8e1;border-color:#F5A623}
 /* ====== end mt-style ====== */
 .wrap,.container{max-width:100%!important;width:100%!important;margin:0!important;padding:10px 14px!important;box-sizing:border-box!important}
 @media(max-width:768px){.wrap,.container{padding:8px 10px!important}}
@@ -5371,6 +5381,16 @@ window.addEventListener('load', function(){ cityBarStatus(); renderSkaRules(); r
 <script id="wj-split-data">
 var WJ_SPLIT={"daily":{"10-01":{"响水":{"cy":99.96,"fc":99.83,"mix":99.91},"泰兴":{"cy":99.73,"fc":98.92,"mix":99.41},"诸暨":{"cy":99.31,"fc":90.96,"mix":95.97}},"10-02":{"响水":{"cy":99.99,"fc":100.0,"mix":99.99},"泰兴":{"cy":99.89,"fc":99.59,"mix":99.77},"诸暨":{"cy":99.33,"fc":91.84,"mix":96.34}},"10-03":{"响水":{"cy":99.99,"fc":99.83,"mix":99.93},"泰兴":{"cy":99.88,"fc":99.42,"mix":99.7},"诸暨":{"cy":98.96,"fc":87.91,"mix":94.54}},"10-04":{"响水":{"cy":99.98,"fc":99.82,"mix":99.91},"泰兴":{"cy":99.83,"fc":98.6,"mix":99.34},"诸暨":{"cy":98.65,"fc":85.76,"mix":93.5}},"10-05":{"响水":{"cy":99.97,"fc":99.82,"mix":99.91},"泰兴":{"cy":99.9,"fc":99.33,"mix":99.67},"诸暨":{"cy":99.51,"fc":94.0,"mix":97.31}},"10-06":{"响水":{"cy":99.61,"fc":99.29,"mix":99.48},"泰兴":{"cy":99.55,"fc":98.41,"mix":99.1},"诸暨":{"cy":99.35,"fc":94.71,"mix":97.49}}},"mtd":{"响水":{"cy":99.92,"fc":99.77,"mix":99.86},"泰兴":{"cy":99.8,"fc":99.06,"mix":99.5},"诸暨":{"cy":99.18,"fc":90.62,"mix":95.75}}};
 if (typeof renderWjSplit==='function'){try{renderWjSplit();}catch(e){console.warn(e);}}
+</script>
+<button id="back-top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script>
+(function(){
+  var b=document.getElementById('back-top');if(!b)return;
+  var t=null;
+  function upd(){t=null;var y=window.scrollY||document.documentElement.scrollTop||0;b.classList.toggle('show',y>600)}
+  window.addEventListener('scroll',function(){if(t==null)t=requestAnimationFrame(upd)},{passive:true});
+  b.addEventListener('click',function(){var rm=false;try{rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}window.scrollTo({top:0,behavior:rm?'auto':'smooth'})});
+})();
 </script>
 </body>
 </html>
