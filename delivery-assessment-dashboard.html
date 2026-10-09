@@ -213,6 +213,7 @@ body{max-width:1780px;margin:0 auto;}
 #bi-data-body tr[data-city]{cursor:pointer;}
 a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-btn:focus-visible,.anchor-btn:focus-visible,.period-btn:focus-visible,.ska-dim-btn:focus-visible,.ska-scope-btn:focus-visible,.date-nav-btn:focus-visible{outline:2px solid #F5A623;outline-offset:1px;border-radius:4px;}
 </style>
+
 <style>
 /* ====== mt-style-injected ====== */
 :root{
@@ -2384,7 +2385,7 @@ allHtml += '<div class="pp-current">';
 if (isTodayPeak) {
 allHtml += '<span style="color:#d93025;">\u26A1 今日高峰日</span>';
 } else if (line.name === '\u52a0\u76df') {
-allHtml += '<span style="color:#' + (isInPeriod2 ? 'f5a623' : '1967d2') + ';">非高峰日</span>';
+allHtml += '<span style="color:#' + (isInPeriod2 ? 'f5a623' : 'D48806') + ';">非高峰日</span>';
 } else {
 allHtml += '<span style="color:#9aa0a6;">\u2014</span>';
 }
