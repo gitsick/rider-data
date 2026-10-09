@@ -216,6 +216,7 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 
 
 
+
 <style>
 /* ====== mt-style-injected ====== */
 :root{
@@ -482,7 +483,18 @@ body.no-scroll{overflow:hidden}
 .pbtn,.clearbtn,.city-tab,.dim-tab,.vtab,.tab,.fchip,.cbar-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .dim-tabs{scroll-behavior:smooth}
 @media(max-width:600px){.pbtn{min-height:32px!important;padding:6px 10px!important}}
-/* ---- 考核看板结构对齐（黄底线 / 圆角 / 页签激活态） ---- */
+/* ---- 考核看板结构对齐（黄底线 / 圆角 / 页签激活态） ----
+   注：布局参数对齐规则在 ASSESS_ALIGN_CSS，仅注入考核看板，避免影响其它页卡片内边距 */
+.header{position:relative;overflow:hidden;border-radius:10px}
+.header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,#FFC300,#F5A623,#FFC300)}
+.header .subtitle:not(.header-meta){color:#8A8FA3!important}
+.header .header-meta .freshness-badge{display:inline-block}
+.header .freshness-badge.fresh{color:#7bed9f!important}
+.city-tab.active,.dim-tab.active{color:#FFC300!important}
+.city-tab,.dim-tab{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+/* ====== end mt-style ====== */
+
+/* ---- assess layout align ---- */
 body{padding:14px!important}
 .header{padding:16px 22px!important;margin-bottom:12px!important;border-top:none!important;border-radius:10px!important;background:linear-gradient(135deg,#1B2233 0%,#2D3447 50%,#3A4458 100%)!important}
 .card{border-radius:10px!important;padding:12px 14px!important;box-shadow:0 1px 4px rgba(27,34,51,.06)!important}
@@ -492,14 +504,7 @@ body{padding:14px!important}
 .dim-tab{padding:11px 16px!important;font-size:14px!important}
 .grid{gap:12px!important;margin-bottom:12px!important}
 .section-label{margin:16px 0 10px!important}
-.header{position:relative;overflow:hidden;border-radius:10px}
-.header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,#FFC300,#F5A623,#FFC300)}
-.header .subtitle:not(.header-meta){color:#8A8FA3!important}
-.header .header-meta .freshness-badge{display:inline-block}
-.header .freshness-badge.fresh{color:#7bed9f!important}
-.city-tab.active,.dim-tab.active{color:#FFC300!important}
-.city-tab,.dim-tab{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-/* ====== end mt-style ====== */</style>
+/* ====== end assess layout align ====== */</style>
 </head>
 <body>
 
