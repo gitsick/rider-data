@@ -6,9 +6,57 @@
 <meta name="description" content="2026年10月配送考核数据看板：推单完成率、悦跑/加盟运力、体验分、月度总分与赔付预警一屏总览。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>📊</text></svg>">
 <title>2026年10月配送考核</title>
-<style id="refit-style">*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;}body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;background:#f0f2f5;color:#333;padding:20px;font-size:14px;line-height:1.6;}.dt,.trend-table,.penalty-table,.period-table{font-variant-numeric:tabular-nums;}.header{background:linear-gradient(135deg,#1B2233 0%,#2D3447 100%);color:#fff;border-radius:12px;padding:24px 32px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;border-top:4px solid #FFC300;}.header h1{font-size:22px;font-weight:700;}.header .subtitle{font-size:13px;opacity:0.8;margin-top:4px;}.city-tabs{display:flex;gap:8px;align-items:center;}.city-tab{padding:6px 18px;border-radius:20px;background:#fff;border:1.5px solid #dadce0;cursor:pointer;font-size:13px;font-weight:700;color:#3c4043;transition:all .2s;}.city-tab:hover{border-color:#F5A623;color:#1B2233;background:#fff8e1;}.city-tab.active{background:#FFC300;color:#1B2233;border-color:#FFC300;box-shadow:0 2px 8px rgba(245,166,35,.4);}.grid{display:grid;gap:16px;margin-bottom:16px;}.grid-2{grid-template-columns:repeat(2,1fr);}@media(max-width:1200px){.grid-2{grid-template-columns:1fr;}}.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid #e8eaed;}.card-title{font-size:15px;font-weight:700;color:#1a2b4a;margin-bottom:12px;display:flex;align-items:center;gap:6px;border-bottom:2px solid #f0f2f5;padding-bottom:8px;}.card-title .icon{font-size:18px;}.dt{width:100%;border-collapse:collapse;font-size:12px;}.dt th{background:#1a2b4a;color:#fff;padding:8px 6px;text-align:center;font-weight:600;white-space:nowrap;}.dt td{padding:7px 6px;text-align:center;border:1px solid #e8eaed;white-space:nowrap;}.dt tr:nth-child(even) td{background:#fafbfc;}.dt .city-cell{font-weight:700;text-align:left;padding-left:10px;}.dt .score-cell{font-size:14px;font-weight:700;}.c-green{color:#34a853;font-weight:700;}.c-orange{color:#f5a623;font-weight:700;}.c-red{color:#d93025;font-weight:700;}.dim-tabs{display:flex;gap:0;margin-bottom:16px;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(26,43,74,0.14);position:sticky;top:40px;z-index:60;border:1px solid #e8ebf0;}.dim-tab{flex:1;padding:13px 18px;text-align:center;font-size:15.5px;font-weight:700;cursor:pointer;background:#fff;color:#8a94a6;border:none;border-bottom:3px solid transparent;transition:all .22s;position:relative;letter-spacing:.5px;}.dim-tab.active{background:#FFC300;color:#1B2233;}.dim-tab:hover:not(.active){background:#f5f8fd;color:#1a2b4a;}.dim-tab.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:#1B2233;border-radius:3px 3px 0 0;}.dim-tab .tab-badge{margin-left:6px;}.dim-tab.active .tab-badge{background:rgba(27,34,51,0.12) !important;color:#1B2233 !important;}.dim-content{display:none;}.dim-content.active{display:block;animation:dimFade .26s ease;}@keyframes dimFade{from{opacity:.4;transform:translateY(4px);}to{opacity:1;transform:none;}}.mod-ov{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px;}.mod-ov-item{background:#fff;border:1px solid #e8ebf0;border-left:4px solid #FFC300;border-radius:10px;padding:10px 12px;}.mod-ov-item .mo-head{display:flex;align-items:center;gap:6px;margin-bottom:5px;}.mod-ov-item .mo-name{font-size:13px;font-weight:800;color:#1a2b4a;}.mod-ov-item .mo-rule{font-size:10.5px;color:#6b7280;line-height:1.65;}.mod-ov-item .mo-cities{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px;}.mo-chip{flex:1;min-width:72px;min-height:52px;display:flex;flex-direction:column;justify-content:center;background:#f8f9fb;border-radius:8px;padding:5px 6px;text-align:center;}.mo-chip .mo-city{font-size:10.5px;color:#6b7280;margin-bottom:1px;}.mo-chip .mo-val{font-size:14.5px;font-weight:800;}.mo-ok{color:#188038;}.mo-na{color:#9aa3b2;}.mo-bad{color:#d93025;background:#fce8e8;font-weight:800;padding:1px 6px;border-radius:6px;display:inline-block;}.mo-warn{color:#b35f00;background:#fef3e2;font-weight:800;padding:1px 6px;border-radius:6px;display:inline-block;}.trend-table{width:100%;border-collapse:collapse;font-size:11.5px!important;}.trend-table th{background:#1B2233!important;color:#fff!important;padding:6px 4px!important;text-align:center!important;}.trend-table td{padding:5px 4px!important;border:1px solid #e8eaed!important;text-align:center!important;font-size:11.5px!important;}.trend-table .city-col{font-weight:700!important;background:#f8f9fb!important;text-align:left!important;padding-left:8px!important;}.trend-table .metric-row td{background:#fafbfc!important;}.trend-table .peak-col{background:#fff3cd!important;}.trend-table th.peak-col{color:#7a5c00!important;}.trend-table th.peak-col.selected-col{background:#1a6b3a!important;color:#fff!important;}.trend-table td.peak-col.selected-col{background:#fde68a!important;}.trend-table .latest-col{background:#e6f4ea!important;}.trend-table th.latest-col{color:#1a6b3a!important;}.trend-table th.latest-col.selected-col{background:#1a6b3a!important;color:#fff!important;}.module-card{border-left:4px solid #4a7bd4;transition:transform .15s ease,box-shadow .15s ease;}.module-card:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(26,43,74,.10);}.mo-mtd{margin-top:7px;padding-top:6px;border-top:1px dashed #e0e6ef;font-size:11px;color:#6b7280;line-height:1.7;}.module-card.jiameng{border-left-color:#e8525f;}.module-card.tiyan{border-left-color:#7b61ff;}.module-card.tuiwan{border-left-color:#00b8d4;}.module-card.wanjie{border-left-color:#ff6b35;}.indicator-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #eee;font-size:12.5px;}.indicator-row:last-child{border-bottom:none;}.indicator-name{font-weight:600;}.indicator-score{text-align:right;}.calc-input{width:64px;text-align:center;border:1px solid #ccc;border-radius:4px;padding:4px;font-size:13px;font-family:inherit;transition:border-color .15s,box-shadow .15s;}.calc-input:focus{outline:none;border-color:#F5A623;box-shadow:0 0 0 3px rgba(255,195,0,.18);}.pill{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;}.pill-weight{background:#e8f0fe;color:#1967d2;}.pill-period{background:#f3e8fd;color:#7b3fb0;}.period-btn{padding:8px 18px;border:1px solid #dadce0;background:#fff;font-size:13px;cursor:pointer;transition:all .2s;border-right:none;font-weight:500;color:#5f6368;}.period-btn:last-child{border-right:1px solid #dadce0;}.period-btn:hover{background:#e8f0fe;color:#1967d2;}.period-btn.active{background:#FFC300;color:#1B2233;border-color:#FFC300;font-weight:700;}.threshold-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin-left:4px;}.tag-red{background:#fce8e8;color:#d93025;}.tag-orange{background:#fef3e2;color:#f5a623;}.tag-green{background:#e6f4ea;color:#34a853;}.calc-section{background:#f8f9fb;border-radius:8px;padding:16px;margin-top:12px;}.calc-result{font-size:24px;font-weight:700;text-align:center;padding:12px;border-radius:8px;margin-top:8px;}.calc-result.pass{background:#e6f4ea;color:#34a853;}.calc-result.warn{background:#fef7e0;color:#f5a623;}.calc-result.fail{background:#fce8e8;color:#d93025;}.formula-box{background:#f8f9fb;border:1px solid #d0d7e3;border-radius:8px;padding:14px;font-size:12.5px;color:#6b7280;text-align:center;margin-bottom:8px;}.formula-box .formula{font-weight:700;color:#1a2b4a;font-size:13px;}.period-table{width:100%;border-collapse:collapse;font-size:12px;}.period-table th{background:#1a2b4a!important;color:#fff!important;padding:6px 8px!important;text-align:center!important;}.period-table td{padding:6px 8px!important;border:1px solid #e8eaed!important;text-align:center!important;}.period-table .peak{background:#fff3cd;color:#c68400;font-weight:700;}.penalty-table{width:100%;border-collapse:collapse;font-size:12px;}.penalty-table th{background:#f8f9fb!important;color:#1a2b4a!important;padding:6px 8px!important;border:1px solid #e8eaed!important;text-align:center!important;}.penalty-table td{padding:6px 8px!important;border:1px solid #e8eaed!important;text-align:center!important;}.penalty-table .level0{background:#e6f4ea;color:#34a853;font-weight:700;}.penalty-table .level1{background:#fef7e0;color:#f5a623;font-weight:700;}.penalty-table .level2{background:#fce8e8;color:#d93025;font-weight:700;}.section-label{font-size:16px;font-weight:700;color:#1B2233;margin:20px 0 12px;padding-left:8px;border-left:4px solid #FFC300;}.footer-info{text-align:center;font-size:11px;color:#6b7280;margin-top:20px;padding:16px 8px;border-top:1px solid #e8eaed;line-height:1.8;}.collapsible{cursor:pointer;transition:background .15s;}.collapsible:hover{background:rgba(26,43,74,.03);}.collapsible-content{display:block;}.collapsible.collapsed .collapsible-content{display:none;}.daily-card{border-left:4px solid #00b8d4;}.monthly-card{border-left:4px solid #e8453c;}.date-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}.date-bar label{font-size:14px;font-weight:700;color:#1a2b4a;white-space:nowrap;}.date-bar select{padding:8px 14px;border:2px solid #d0d7e3;border-radius:8px;font-size:14px;background:#fff;cursor:pointer;min-width:200px;font-weight:600;color:#1a2b4a;}.date-bar select:focus{outline:none;border-color:#4a7bd4;box-shadow:0 0 0 3px rgba(74,123,212,0.15);}.date-bar select option:disabled{color:#ccc;}.date-nav-btn{padding:6px 14px;border:1px solid #d0d7e3;background:#fff;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;color:#1a2b4a;transition:all .2s;}.date-nav-btn:hover:not(:disabled){background:#e8f0fe;border-color:#4a7bd4;color:#1967d2;}.date-nav-btn:disabled{opacity:0.35;cursor:not-allowed;}.date-status{font-size:12px;padding:3px 12px;border-radius:12px;font-weight:600;}.date-status.has-data{background:#e6f4ea;color:#34a853;}.date-status.no-data{background:#fce8e8;color:#d93025;}.trend-table th.selected-col{background:#1a6b3a;}.trend-table td.selected-col{background:#d4edda;font-weight:700;}.cal-wrap{font-size:12px;}.cal-legend{display:flex;gap:12px;margin-bottom:8px;flex-wrap:wrap;}.cal-legend-item{display:flex;align-items:center;gap:3px;font-size:11px;color:#6b7280;}.cal-legend-dot{width:11px;height:11px;border-radius:3px;display:inline-block;flex-shrink:0;}.cal-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}@media(max-width:800px){.cal-grid{grid-template-columns:repeat(8,1fr);}}.cal-cell{height:30px;border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;font-weight:600;transition:all .15s;position:relative;border:2px solid transparent;line-height:1;}.cal-cell:hover{transform:scale(1.12);z-index:2;}.cal-cell .cal-d{font-size:11px;font-weight:700;}.cal-cell .cal-w{font-size:8px;opacity:0.5;margin-left:2px;}.cal-cell.p1{background:#e8f0fe;color:#1967d2;}.cal-cell.p2{background:#fef3e2;color:#f5a623;}.cal-cell.peak{background:#fce8e8;color:#d93025;}.cal-cell.peak::after{content:'';position:absolute;top:1px;right:1px;width:5px;height:5px;background:#d93025;border-radius:50%;}.cal-cell.selected{border-color:#1a2b4a;box-shadow:0 0 0 2px rgba(26,43,74,0.25);transform:scale(1.12);z-index:3;}.cal-cell.has-data{border-bottom:2px solid #34a853;}.cal-cell.no-data{opacity:0.55;}.period-prog{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;}@media(max-width:800px){.period-prog{grid-template-columns:1fr;}}.period-prog-card{border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;}.period-prog-card .pp-title{font-size:11px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:3px;}.period-prog-card .pp-bar{width:100%;height:5px;background:#eee;border-radius:3px;overflow:hidden;margin:4px 0;}.period-prog-card .pp-bar-fill{height:100%;border-radius:3px;transition:width .3s;}.period-prog-card .pp-info{font-size:10.5px;color:#6b7280;line-height:1.5;}.period-prog-card .pp-current{font-size:10.5px;font-weight:700;color:#1a2b4a;margin-bottom:2px;}.filter-strip{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}.fs-item{display:flex;flex-direction:column;gap:1px;}.fs-label{font-size:10px;color:#6b7280;}.fs-value{font-size:15px;font-weight:700;color:#1a2b4a;}.fs-divider{width:1px;height:30px;background:#e0e0e0;}.grid-cal-bi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:12px;margin-bottom:12px;}@media(max-width:1200px){.grid-cal-bi{grid-template-columns:minmax(0,1fr);}}.grid-cal-bi > .card,.grid-calc-preset > .card,.grid-modules > .card,.grid-util > .card{min-width:0;}.grid-modules{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px;}.grid-modules.gm3{grid-template-columns:repeat(3,1fr);}@media(max-width:1200px){.grid-modules.gm3{grid-template-columns:repeat(2,1fr);}}@media(max-width:600px){.grid-modules.gm3{grid-template-columns:1fr;}}@media(max-width:600px){.summary-card{flex-direction:column;align-items:stretch;gap:8px;padding:14px 16px;}.summary-card .sc-left{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}.summary-card .sc-score{font-size:30px;}}@media(max-width:1200px){.grid-modules{grid-template-columns:repeat(2,1fr);}}@media(max-width:600px){.grid-modules{grid-template-columns:1fr;}}.grid-util{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}@media(max-width:800px){.grid-util{grid-template-columns:1fr;}}.freshness-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;}.freshness-badge.fresh{background:rgba(123,237,159,0.2);color:#7bed9f;}.table-scroll{overflow-x:auto;}.preset-card{background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);border:2px solid #4a7bd4;}.preset-scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;}@media(max-width:800px){.preset-scenarios{grid-template-columns:1fr;}}@media (max-width:768px){body{padding:10px;font-size:13.5px;}.header{padding:16px 18px;}.header h1{font-size:18px;}.dim-tabs{flex-wrap:wrap;}.dim-tab{flex:1 1 46%;padding:10px 8px;font-size:13.5px;}.dim-tab .tab-badge{display:block;margin:2px 0 0;}.card{padding:14px;border-radius:10px;}.card-title{font-size:14.5px;}.city-tabs{flex-wrap:wrap;}.city-tab{padding:5px 14px;font-size:12.5px;}.section-label{font-size:14.5px;margin:14px 0 8px;}.mod-ov{grid-template-columns:1fr;}.mo-cities{flex-wrap:wrap;}.anchor-nav{flex-wrap:wrap;}.table-scroll{-webkit-overflow-scrolling:touch;}.cal-wrap{overflow-x:auto;}.cal-grid{min-width:980px;}canvas{max-width:100%;height:auto;}.dim-content svg{min-width:0 !important;max-width:100%;height:auto;}.slice-wrap{overflow-x:auto;}.dim-content table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}.grid-cal-bi,.grid-util,.grid-calc-preset{grid-template-columns:1fr;}}@media (max-width:480px){.dim-tab{flex:1 1 100%;padding:9px 6px;}.header{padding:14px;}body{padding:8px;}}.preset-scenario{padding:12px;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent;text-align:center;}.preset-scenario:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08);}.preset-scenario.active{border-color:#1a2b4a;box-shadow:0 0 0 3px rgba(26,43,74,0.1);}.preset-scenario.optimistic{background:#e6f4ea;}.preset-scenario.realistic{background:#e8f0fe;}.preset-scenario.conservative{background:#fce8e8;}.preset-scenario .ps-label{font-size:13px;font-weight:700;margin-bottom:4px;}.preset-scenario .ps-score{font-size:22px;font-weight:800;line-height:1.2;}.preset-scenario .ps-desc{font-size:11px;color:#6b7280;margin-top:4px;}.preset-input-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}.preset-input-row label{font-size:12px;font-weight:600;color:#6b7280;min-width:80px;}.preset-input-row input{width:70px;text-align:center;border:1px solid #ccc;border-radius:4px;padding:4px;font-size:13px;}.preset-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}.preset-compare-item{padding:10px;border-radius:8px;text-align:center;}.preset-compare-item.current{background:#f8f9fb;border:1px solid #e8eaed;}.preset-compare-item.estimated{background:#e8f0fe;border:1px solid #4a7bd4;}.preset-compare-item .pc-label{font-size:11px;color:#6b7280;}.preset-compare-item .pc-value{font-size:24px;font-weight:800;margin:4px 0;}.preset-compare-item .pc-delta{font-size:13px;font-weight:700;}.module-card .indicator-row{padding:6px 0;}.module-card .card-title{margin-bottom:8px;padding-bottom:6px;}.grid-calc-preset{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}@media(max-width:800px){.grid-calc-preset{grid-template-columns:1fr;}}#dim-report table{width:100%;border-collapse:collapse;font-size:12.5px!important;margin-bottom:8px;}#dim-report th{background:#1a2b4a!important;color:#fff!important;padding:8px 6px!important;text-align:center!important;font-weight:600!important;white-space:nowrap!important;}#dim-report td{padding:7px 6px!important;border:1px solid #e8eaed!important;text-align:center!important;white-space:nowrap!important;}#dim-report tr:nth-child(even) td{background:#fafbfc!important;}#dim-report .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important;}.rpt-header{background:linear-gradient(135deg,#1a2b4a,#2d4a7a);color:#fff;border-radius:12px;padding:24px 32px;margin-bottom:20px;}.rpt-header h2{font-size:22px;margin-bottom:6px;}.rpt-header .sub{font-size:13px;opacity:.85;}#dim-report .tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;}.scheme-table{font-size:11px!important;min-width:900px;}.scheme-table td{line-height:1.7!important;vertical-align:top!important;}.scheme-table .module-sep td{background:#1a2b4a!important;color:#fff;font-weight:700;font-size:11px;padding:4px 8px;text-align:left;}.scheme-table .current-mod{box-shadow:inset 3px 0 0 #e8525f;}.summary-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;}@media(max-width:800px){.summary-strip{grid-template-columns:1fr;}}.summary-card{border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:16px;border:1px solid #e8eaed;position:relative;overflow:hidden;}.summary-card.danger{background:linear-gradient(135deg,#fff5f5,#fce8e8);border-color:#f8c8c8;}.summary-card.warn{background:linear-gradient(135deg,#fffdf5,#fef3e2);border-color:#ffe0b2;}.summary-card.ok{background:linear-gradient(135deg,#f5fff5,#e6f4ea);border-color:#c8e6c8;}.summary-card .sc-left{flex-shrink:0;}.summary-card .sc-city{font-size:16px;font-weight:700;color:#1a2b4a;}.summary-card .sc-score{font-size:36px;font-weight:800;line-height:1.1;}.summary-card .sc-level{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;display:inline-block;margin-top:2px;}.summary-card .sc-right{flex:1;font-size:12px;line-height:1.7;color:#6b7280;}.summary-card .sc-risk{font-weight:700;}.summary-card .sc-bar{position:absolute;bottom:0;left:0;right:0;height:4px;}.summary-card .sc-progress{height:5px;border-radius:3px;background:rgba(0,0,0,0.08);margin-top:6px;overflow:hidden;}.summary-card .sc-progress-fill{height:100%;border-radius:3px;transition:width .5s;}.ref-collapse{cursor:pointer;user-select:none;transition:background .15s;}.ref-collapse:hover{background:rgba(26,43,74,.04);}.ref-collapse .ref-arrow{display:inline-block;transition:transform .25s ease;}.ref-collapse.collapsed .ref-arrow{transform:rotate(-90deg);}.ref-collapse.collapsed + .ref-content{display:none;}.ref-content{display:block;animation:refExpand .2s ease;}@keyframes refExpand{from{opacity:0}to{opacity:1}}html{scroll-behavior:smooth;}.card{transition:box-shadow .2s,transform .15s;}.card:hover{box-shadow:var(--mt-shadow-h,0 4px 14px rgba(27,34,51,.1));}.module-card{border-left-width:5px;}.anchor-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}.anchor-btn{padding:6px 14px;border-radius:20px;background:#f0f2f5;border:1px solid #e8eaed;font-size:12px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .2s;text-decoration:none;}.anchor-btn:hover{background:#fff8e1;color:#8a6d1a;border-color:#F5A623;}.tab-badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:8px;margin-left:4px;font-weight:700;}.tab-badge.daily{background:#e8f0fe;color:#1967d2;}.tab-badge.monthly{background:#fef3e2;color:#f5a623;}.tab-badge.report{background:#fce8e8;color:#d93025;}.tab-badge.charts{background:#e6f4ea;color:#188038;}.summary-card{cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;}.summary-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.12);}.summary-card:active{transform:translateY(0);}.header > div:first-child{min-width:0;flex:1;}.header-meta{margin-top:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}.header-source{color:#7bed9f;font-size:12px;}.freshness-badge{white-space:nowrap;}body.no-scroll{overflow:hidden;}[id^="sec-"]{scroll-margin-top:20px;}@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}}.delta-good{color:#34a853;font-size:10px;font-weight:700;margin-left:3px;}.delta-bad{color:#d93025;font-size:10px;font-weight:700;margin-left:3px;}.delta-flat{color:#6b7280;font-size:10px;margin-left:3px;}.tc-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}.tc-btn{padding:5px 14px;border-radius:16px;border:1px solid #d0d7e3;background:#fff;font-size:12px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .2s;}.tc-btn:hover{background:#e8f0fe;color:#1967d2;}.tc-btn.active{background:#1a2b4a;color:#fff;border-color:#1a2b4a;}.tc-divider{display:inline-block;width:1px;height:20px;background:#d0d7e3;margin:0 4px;}.card-title .tc-export{margin-left:auto;}#trend-table tr.metric-hl td{background:#e8f0fe!important;}#trend-table tr.metric-hl td:nth-child(2){box-shadow:inset 3px 0 0 #1a73e8;}.dt th.col-hl{background:#4a7bd4!important;color:#fff!important;}.dt td.col-hl{background:#e8f0fe!important;font-weight:700!important;}.tc-export{margin-left:6px;border-color:#a8c7fa;color:#1967d2;background:#f8fbff;}.tc-export:hover{background:#e8f0fe;}.tc-legend{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap;}.tc-legend-item{display:flex;align-items:center;gap:5px;font-size:11.5px;color:#6b7280;font-weight:600;}.tc-legend-dot{width:16px;height:3px;border-radius:2px;display:inline-block;}.tc-gridline{stroke:#e9edf3;stroke-width:1;}.tc-axis{stroke:#c9d0da;stroke-width:1;}.tc-tick{font-size:10.5px;fill:#8a93a3;}.tc-peak{fill:#fff3cd;opacity:.5;}.tc-zeroline{stroke:#d93025;stroke-width:1;stroke-dasharray:5 3;opacity:.55;}.tc-zerotext{font-size:10px;fill:#d93025;opacity:.9;}.tc-selline{stroke:#1a2b4a;stroke-width:1.2;stroke-dasharray:3 2;opacity:.7;}.tc-dot{stroke:#fff;stroke-width:1.5;}#dim-report .slice-wrap{border-left:4px solid #7b61ff !important;}#dim-report .slice-chip{background:#f3f0ff;color:#5b4bc4;padding:3px 10px;border-radius:12px;font-size:11.5px;}#dim-report .gap-bar{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:4px 0 2px;max-width:760px;}#dim-report .gap-bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:10.5px;white-space:nowrap;}#dim-report .gb-hd{background:#3b6ff5}#dim-report .gb-ty{background:#e5484d}#dim-report .gb-tw{background:#f5a623}#dim-report .gb-wj{background:#2e9e5b}#dim-report .slice-note{font-size:11.5px;color:#6b7280;margin-top:8px;line-height:1.8;}#dim-report .slice-empty{text-align:center;padding:28px 10px;color:#6b7280;font-size:13px;line-height:2;}
-:root{--mt-yellow:#FFC300;--mt-yellow-d:#F5A623;--mt-dark:#1B2233;--mt-dark2:#2D3447;--mt-bg:#F0F2F5;--mt-text:#1B1B33;--mt-text2:#6B7280;--mt-text3:#7D8290;--mt-border:#EAECEF;--mt-card:#FFFFFF;--mt-radius:8px;--mt-shadow:0 1px 4px rgba(27,34,51,.06);--mt-shadow-h:0 4px 14px rgba(27,34,51,.1);--mt-th-bg:#F8F9FA;--mt-th-c:#1B1B33;--mt-row-alt:#FAFBFC;--mt-row-hover:#FFF8E1;}body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif!important;background:var(--mt-bg)!important;color:var(--mt-text)!important;font-size:14px!important;line-height:1.6!important;}.header,.u-header{background:linear-gradient(135deg,var(--mt-dark) 0%,var(--mt-dark2) 60%,#3A4458 100%)!important;color:#fff!important;border-radius:var(--mt-radius)!important;padding:20px 26px!important;margin-bottom:14px!important;position:relative!important;}.header::after,.u-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--mt-yellow) 0%,var(--mt-yellow-d) 50%,var(--mt-yellow) 100%);}.header h1,.u-header h1,.u-header .doctitle{color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;}.header .sub,.header .subtitle,.u-header .sub,.u-header .doctime,.u-header .subtitle{color:rgba(255,255,255,.75)!important;font-size:12px!important;margin-top:4px!important;}.wrap,.container{max-width:100%!important;margin:0!important}h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important;letter-spacing:.3px}.doctitle{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important}.doctime,.sub{color:var(--mt-text2)!important;font-size:12px!important}.card,.section,.filters,.tblwrap,.card-header,.search-bar,.filter-bar,.reasons-section{background:var(--mt-card)!important;border-radius:var(--mt-radius)!important;box-shadow:var(--mt-shadow)!important;border:1px solid var(--mt-border)!important;}.card,.section{padding:20px;margin-bottom:12px}.card-title{color:var(--mt-text)!important;font-size:14px!important;font-weight:600!important;border-bottom:1px solid var(--mt-border)!important;padding-bottom:10px!important;margin-bottom:12px!important;}.card-title::before{content:"";display:inline-block;width:3px;height:15px;background:linear-gradient(180deg,var(--mt-yellow),var(--mt-yellow-d));border-radius:2px;margin-right:8px;vertical-align:-2px;}.section h2{font-size:14px!important;font-weight:600!important;color:var(--mt-text)!important;border-left:3px solid var(--mt-yellow)!important;padding-left:10px!important;margin-bottom:12px!important;}.card .num,.metric .m-num{color:var(--mt-dark)!important;font-size:22px!important;font-weight:800!important;line-height:1.1!important;}.card.hd .num,.metric.hd .m-num{color:#52C41A!important}.card.hs .num,.metric.hs .m-num{color:#FA8C16!important}.card .lbl,.metric .m-lbl,.metric .lbl{color:var(--mt-text2)!important;font-size:11px!important;margin-top:3px!important;font-weight:500!important;}.card .pct{color:var(--mt-text3)!important;font-size:10px!important;margin-top:1px!important}.metric{background:var(--mt-row-alt)!important;border-radius:6px!important;padding:12px!important}table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important;font-weight:600!important;font-size:12px!important;padding:10px 12px!important;border-bottom:2px solid var(--mt-yellow)!important;text-align:left!important;transition:background .15s!important;}.dt th{background:#1a2b4a!important;color:#fff!important;font-weight:600!important;font-size:12px!important;padding:8px 6px!important;text-align:center!important;white-space:nowrap!important;}th:hover{background:#F0F1F2!important}.dt th:hover{background:#2d4a7a!important}td,.dt td{padding:9px 12px!important;border-bottom:1px solid #F0F1F2!important;color:var(--mt-text)!important;font-size:13px!important;}.dt td{border:1px solid var(--mt-border)!important;text-align:center!important;font-size:12px!important;padding:7px 6px!important;white-space:nowrap!important}tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}.dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}.dt .score-cell{font-size:14px!important;font-weight:700!important}.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{border-radius:6px!important;border:1px solid #E8E9EB!important;background:var(--mt-card)!important;color:#5A5F6B!important;font-size:13px!important;padding:6px 10px!important;transition:all .15s!important;outline:none!important;font-weight:500!important;}.filters input{min-width:200px!important}.city-tab{background:#fff!important;color:#3c4043!important;border:1.5px solid #dadce0!important;border-radius:20px!important;padding:6px 18px!important;font-size:13px!important;font-weight:700!important;cursor:pointer!important;transition:all .2s!important;}.city-tab:hover{background:#fff8e1!important;border-color:#F5A623!important;color:#1B2233!important}.city-tab.active{background:#FFC300!important;color:#1B2233!important;border-color:#FFC300!important;font-weight:700!important;box-shadow:0 2px 8px rgba(245,166,35,.4)!important;}.foot,.footer{text-align:center!important;color:var(--mt-text3)!important;font-size:12px!important;padding:18px 0!important;}.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2)}.top-nav a{color:#94a3b8;text-decoration:none;transition:color .15s;white-space:nowrap}.top-nav a:hover{color:#FFC300}.top-nav .nav-current{color:#fff;font-weight:700;margin-left:4px;white-space:nowrap}.top-nav .nav-sep{color:#475569;margin:0 2px}.top-nav .nav-switch{margin-left:auto}@media(max-width:600px){.top-nav{padding:0 12px;font-size:12px;gap:8px;height:36px}}@media(max-width:600px){.dim-tabs{top:36px}}:focus-visible{outline:2px solid #F5A623;outline-offset:2px;border-radius:4px}::selection{background:#ffe58f;color:#1B2233}.card,[id^="sec-"]{scroll-margin-top:96px}.dt td{font-variant-numeric:tabular-nums}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto !important}}#back-top{position:fixed;right:18px;bottom:26px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(27,34,51,.12);background:rgba(255,255,255,.94);box-shadow:0 4px 14px rgba(27,34,51,.18);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#1B2233;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .25s ease-out,transform .25s ease-out,background .15s;z-index:800}#back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}#back-top:hover{background:#fff8e1;border-color:#F5A623}.wrap,.container{max-width:100%!important;width:100%!important;margin:0!important;padding:10px 14px!important;box-sizing:border-box!important}@media(max-width:768px){.wrap,.container{padding:8px 10px!important}}.header{position:relative!important;gap:16px}.hdr-left{padding-right:0!important}.qr-small{display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(255,255,255,.96);border-radius:10px;padding:6px 8px;box-shadow:0 2px 12px rgba(0,0,0,.18);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;flex-shrink:0;position:relative}.qr-small::after{content:"";position:absolute;inset:0;border-radius:10px;border:1.5px solid rgba(255,255,255,.5);pointer-events:none;transition:border-color .2s}.qr-small:hover{transform:scale(1.06);box-shadow:0 6px 20px rgba(0,0,0,.25)}.qr-small:hover::after{border-color:rgba(255,195,0,.7)}.qr-small:active{transform:scale(.97)}.qr-small img{width:56px;height:56px;border-radius:6px;display:block}.qr-small .qr-label{font-size:9px;color:#6b7280;font-weight:600;letter-spacing:.5px}.qr-small .qr-pulse{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#FFC300;box-shadow:0 0 0 0 rgba(255,195,0,.5);animation:qrPulse 2s infinite}@keyframes qrPulse{0%{box-shadow:0 0 0 0 rgba(255,195,0,.5)}70%{box-shadow:0 0 0 8px rgba(255,195,0,0)}100%{box-shadow:0 0 0 0 rgba(255,195,0,0)}}.qr-modal{display:none;position:fixed;z-index:10001;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.82);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);justify-content:center;align-items:center;flex-direction:column;opacity:0;transition:opacity .25s ease;padding:20px;touch-action:manipulation}.qr-modal.show{display:flex;opacity:1}.qr-modal-box{background:#fff;border-radius:16px;padding:0;text-align:center;box-shadow:0 16px 56px rgba(0,0,0,.5);max-width:320px;width:100%;transform:scale(.85) translateY(12px);transition:transform .3s cubic-bezier(.34,1.56,.64,1);overflow:hidden}.qr-modal.show .qr-modal-box{transform:scale(1) translateY(0)}.qr-modal-banner{background:linear-gradient(135deg,#1a2b4a 0%,#2d4a7a 100%);color:#fff;padding:14px 20px 10px;font-size:13px;font-weight:700;letter-spacing:.5px}.qr-modal-banner .qr-modal-close{position:static;color:rgba(255,255,255,.6);font-size:22px;float:right;cursor:pointer;font-weight:300;line-height:1;transition:color .15s,transform .15s}.qr-modal-banner .qr-modal-close:hover{color:#FFC300;transform:scale(1.2)}.qr-modal-body{padding:20px 24px 18px}.qr-modal-body img{width:220px;height:220px;border-radius:10px;display:block;margin:0 auto;border:1px solid #e8eaed}.qr-modal-body .tt{font-size:15px;font-weight:700;color:#1a2b4a;margin-top:14px}.qr-modal-body .sub{font-size:12px;color:#6b7280;margin-top:4px}.qr-modal-body .qr-url{font-size:11px;color:#6b7280;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.qr-modal-body .qr-hint{font-size:10px;color:#6b7280;margin-top:8px}@media(max-width:600px){.qr-small img{width:42px;height:42px}.qr-small .qr-label{display:none}.qr-small{padding:4px 6px}.qr-modal-body img{width:180px;height:180px}.qr-modal-box{max-width:280px}.qr-modal-banner{font-size:12px;padding:12px 16px 8px}.qr-modal-body{padding:16px 18px 14px}.summary-card{padding:12px 14px}.summary-card .sc-score{font-size:28px}.header{padding:16px 18px!important}.header h1{font-size:18px!important}.dim-tab{padding:10px 12px!important;font-size:13px!important}}:root{--pol-ink:#1B2233;--pol-brand:#FFC300;--pol-brand-d:#F5A623;--pol-green:#188038;--pol-red:#D93025;--pol-blue:#1967D2;--pol-gray-2:#6B7280;--pol-line:#E8ECF1;--pol-ease:cubic-bezier(.22,1,.36,1);--pol-shadow-lift:0 6px 18px rgba(27,34,51,.10);}body{background:linear-gradient(180deg,#edf0f5 0,#F0F2F5 220px,#F0F2F5)!important}.score-cell,.fs-value,.mo-val,.calc-result,.ps-score,.pc-value,.num,.summary-card .sc-score,.indicator-score,.mo-chip .mo-val,.delta-good,.delta-bad,.freshness-badge{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;}.dt th,.trend-table th,.period-table th,#dim-report th{letter-spacing:.03em}.section-label{letter-spacing:.02em}.card-title .icon{line-height:1;transform:translateY(1px)}.pill,.threshold-tag,.date-status,.freshness-badge,#dim-report .tag{border-radius:999px}tr:hover td.peak-col{background:#fff3cd!important}tr:hover td.latest-col{background:#e6f4ea!important}tr:hover td.selected-col{background:#d4edda!important}.trend-table tr:hover td.peak-col.selected-col{background:#fde68a!important}tr.module-sep:hover td{background:#1a2b4a!important}.card{transition:box-shadow .22s var(--pol-ease)}.module-card:hover,.summary-card:hover{box-shadow:var(--pol-shadow-lift)!important}.preset-scenario,.city-tab,.date-nav-btn,.cal-cell,.anchor-btn{transition-timing-function:var(--pol-ease)}.table-scroll::-webkit-scrollbar,.slice-wrap::-webkit-scrollbar,.cal-wrap::-webkit-scrollbar{height:8px;width:8px}.table-scroll::-webkit-scrollbar-thumb,.slice-wrap::-webkit-scrollbar-thumb,.cal-wrap::-webkit-scrollbar-thumb{background:#d3d9e0;border-radius:999px;border:2px solid transparent;background-clip:content-box}.table-scroll::-webkit-scrollbar-thumb:hover,.slice-wrap::-webkit-scrollbar-thumb:hover,.cal-wrap::-webkit-scrollbar-thumb:hover{background:#b9c2cc;border:2px solid transparent;background-clip:content-box}.table-scroll::-webkit-scrollbar-track,.slice-wrap::-webkit-scrollbar-track,.cal-wrap::-webkit-scrollbar-track{background:transparent}.table-scroll,.slice-wrap,.cal-wrap{scrollbar-width:thin;scrollbar-color:#d3d9e0 transparent}:root{--mt-text:#1B2233}.header::before,.u-header::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(640px 220px at 88% -30%,rgba(255,195,0,.16),transparent 62%);pointer-events:none}.table-scroll{border:1px solid var(--pol-line);border-radius:10px}.card.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s var(--pol-ease),transform .55s var(--pol-ease),box-shadow .22s var(--pol-ease)}.card.reveal.in-view{opacity:1;transform:none}@media print{.top-nav,.dim-tabs,.anchor-nav,#back-top,.qr-small,.date-nav-btn,.cal-wrap,.city-tabs{display:none!important}body{background:#fff!important;padding:0!important}.card{box-shadow:none!important;border:1px solid #ddd!important;break-inside:avoid}.dim-content{display:block!important}.table-scroll{overflow:visible!important;border:none!important}}
-:root{--rk-navy:#1B2233;--rk-navy-2:#2D3447;--rk-ink:#1f2733;--rk-gold:#FFC300;--rk-gold-soft:#fff8e1;--rk-bg:#f3f5f9;--rk-card:#ffffff;--rk-line:#e6eaf1;--rk-line-2:#eef1f6;--rk-muted:#7c8698;--rk-jm:#e8525f;--rk-ym:#f5a623;--rk-pz:#4cb947;--rk-ty:#7b61ff;--rk-tw:#00b8d4;--rk-wj:#ff6b35;--rk-radius:14px;--rk-radius-s:10px;--rk-shadow:0 1px 2px rgba(16,24,40,.04),0 4px 16px rgba(16,24,40,.06);--rk-shadow-hover:0 2px 4px rgba(16,24,40,.06),0 10px 28px rgba(16,24,40,.10);}body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),transparent 60%),radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 55%),var(--rk-bg);}.header{border-radius:16px;border-top:none;position:relative;overflow:hidden;background:linear-gradient(135deg,#141a2a 0%,#222a40 55%,#2d3852 100%);box-shadow:0 12px 32px rgba(21,27,43,.28);}.header::before{content:'';position:absolute;inset:0;background:radial-gradient(640px 190px at 86% -10%,rgba(255,195,0,.16),transparent 62%),radial-gradient(420px 160px at 4% 110%,rgba(0,184,212,.12),transparent 60%);pointer-events:none;}.header h1{letter-spacing:.02em;}.header .subtitle{letter-spacing:.02em;}.city-tab{border-radius:999px;border:1.5px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);color:#e7ebf3;padding:6px 20px;}.city-tab:hover{border-color:var(--rk-gold);background:rgba(255,195,0,.14);color:#fff;}.city-tab.active{background:linear-gradient(135deg,#FFC300,#ffb300);border-color:transparent;color:#1B2233;box-shadow:0 4px 16px rgba(255,195,0,.45);}.dim-tabs{border-radius:999px;border:1px solid var(--rk-line);box-shadow:var(--rk-shadow);background:rgba(255,255,255,.88);padding:5px;gap:4px;top:48px;}.dim-tab{border-radius:999px;border-bottom:none;padding:11px 14px;font-size:14.5px;}.dim-tab.active{background:linear-gradient(135deg,#FFC300,#ffb300);box-shadow:0 4px 14px rgba(255,195,0,.38);}.dim-tab.active::after{display:none;}.dim-tab:hover:not(.active){background:#f2f6fd;}.card{border-radius:var(--rk-radius);border:1px solid var(--rk-line);box-shadow:var(--rk-shadow);transition:box-shadow .2s ease;}.card:hover{box-shadow:var(--rk-shadow-hover);}.card-title{border-bottom:1px solid var(--rk-line-2);letter-spacing:.01em;}.summary-card{border-radius:var(--rk-radius);}.dt th{background:linear-gradient(180deg,#26334e,#1B2233);font-weight:700;letter-spacing:.02em;}.dt td{border-color:var(--rk-line);}.dt tr:nth-child(even) td{background:#fbfcfe;}.dt tbody tr:hover td{background:#f2f7ff;}#bi-data-table th:first-child,#bi-data-table td:first-child{position:sticky;left:0;z-index:2;background:#fff;box-shadow:inset -1px 0 0 var(--rk-line);}#bi-data-table thead th:first-child{background:#26334e;}#bi-data-table tr:nth-child(even) td:first-child{background:#fbfcfe;}#bi-data-table tbody tr:hover td:first-child{background:#f2f7ff;}.table-scroll{border-radius:var(--rk-radius-s);}.metric-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}.metric-chips .mc-label{font-size:11px;color:var(--rk-muted);font-weight:700;margin-right:2px;}.metric-chip{padding:4px 13px;border-radius:999px;border:1px solid var(--rk-line);background:#fff;font-size:11.5px;font-weight:600;color:var(--rk-muted);cursor:pointer;transition:all .18s;user-select:none;line-height:1.5;}.metric-chip:hover{border-color:#F5A623;color:var(--rk-navy);background:var(--rk-gold-soft);}.metric-chip.active{background:var(--rk-navy);border-color:var(--rk-navy);color:#fff;box-shadow:0 2px 8px rgba(27,34,51,.25);}.col-off{display:none !important;}.module-card{border-radius:var(--rk-radius);}.module-card .card-title{padding-bottom:9px;}.calc-input{border-radius:8px;border:1px solid var(--rk-line);}.calc-input:hover{border-color:#c9d2e0;}.period-btn:first-child{border-radius:999px 0 0 999px;}.period-btn:last-child{border-radius:0 999px 999px 0;border-right:1px solid #dadce0;}.period-btn.active{box-shadow:0 3px 10px rgba(255,195,0,.35);}.table-scroll::-webkit-scrollbar-thumb,.slice-wrap::-webkit-scrollbar-thumb{background:#c4cdd9;}@media(max-width:600px){.dim-tabs{top:42px;padding:4px;border-radius:14px;}.dim-tab{padding:9px 6px;font-size:12.5px;border-radius:11px;}.metric-chip{padding:3px 10px;font-size:11px;}body{padding:12px;}.card-title{flex-wrap:wrap;}body .mj-wrap{float:none;max-width:100%;flex:1 1 100%;margin-left:0;justify-content:flex-start;}.top-nav .nav-cities .city-tab{min-width:32px !important;padding:2px 5px !important;}.top-nav .nav-switch{font-size:11px;}}@media print{.metric-chips{display:none!important;}}.ska-dim-bar{display:inline-flex;gap:4px;background:#eef1f6;border-radius:999px;padding:4px;margin-bottom:12px;}.ska-dim-btn{border:none;background:transparent;border-radius:999px;padding:6px 20px;font-size:12.5px;font-weight:700;color:#5f6368;cursor:pointer;transition:all .2s;}.ska-dim-btn:hover{color:#1a2b4a;}.ska-dim-btn.active{background:linear-gradient(135deg,#7b61ff,#9c85ff);color:#fff;box-shadow:0 2px 8px rgba(123,97,255,.35);}.ska-scope-bar{margin-left:auto;display:inline-flex;gap:0;border-radius:999px;overflow:hidden;border:1px solid var(--rk-line,#dadce0);}.ska-scope-btn{border:none;background:#fff;padding:4px 12px;font-size:10.5px;font-weight:600;color:#5f6368;cursor:pointer;transition:all .2s;}.ska-scope-btn+.ska-scope-btn{border-left:1px solid var(--rk-line,#dadce0);}.ska-scope-btn.active{background:#1B2233;color:#FFC300;font-weight:700;}.ska-pane{display:none;}.ska-pane.active{display:block;animation:dimFade .26s ease;}.ska-fold{margin-top:10px;border:1px solid #e8ebf0;border-radius:10px;background:#fff;overflow:hidden;}.ska-fold>summary{cursor:pointer;user-select:none;padding:8px 14px;font-size:11.5px;font-weight:700;color:#5b21b6;background:#f7f5ff;list-style:none;display:flex;align-items:center;gap:6px;}.ska-fold>summary::before{content:'▸';transition:transform .2s;font-size:10px;}.ska-fold[open]>summary::before{transform:rotate(90deg);}.ska-fold>summary::-webkit-details-marker{display:none;}.ska-fold>div{padding:10px 12px;}@media(max-width:600px){.ska-dim-btn{padding:5px 12px;font-size:11.5px;}.ska-scope-bar{display:none;}}
+<style id="refit-style">/* ============================================================
+ * [FE优化轮·任务二] 统一设计 Tokens（08-dev-FE）
+ * 收敛历史三套 token 家族（--mt-* / --rk-* / --pol-*）为语义化
+ * --c-*（色板）/ --radius-* / --shadow-* / --fs-*（四级字号）/ --sp-* / --dur-*。
+ * 旧家族名全部保留为 var() 别名且取值逐字等价（含原 :root{--mt-text:#1B2233}
+ * 的终值覆盖，已并入 --c-text），存量规则零改动、渲染零漂移。
+ * ============================================================ */
+:root{
+/* —— 色板 · 品牌 —— */
+--c-primary:#FFC300;--c-primary-d:#F5A623;--c-ink:#1B2233;--c-ink-2:#2D3447;
+/* —— 色板 · 文本 / 面层 —— */
+--c-text:#1B2233;--c-text2:#6B7280;--c-text3:#7D8290;--c-muted:#7c8698;
+--c-card:#FFFFFF;--c-bg:#F0F2F5;--c-border:#EAECEF;--c-line:#e6eaf1;--c-line-2:#eef1f6;
+/* —— 色板 · 语义状态 —— */
+--c-ok:#34a853;--c-good:#188038;--c-warn:#f5a623;--c-danger:#d93025;--c-info:#1967D2;
+/* —— 色板 · 模块 —— */
+--c-jm:#e8525f;--c-ym:#f5a623;--c-pz:#4cb947;--c-ty:#7b61ff;--c-tw:#00b8d4;--c-wj:#ff6b35;
+/* —— 圆角 —— */
+--radius-card:14px;--radius-card-s:10px;--radius-ctl:8px;--radius-pill:999px;
+/* —— 阴影 —— */
+--shadow-card:0 1px 2px rgba(16,24,40,.04),0 4px 16px rgba(16,24,40,.06);
+--shadow-card-h:0 2px 4px rgba(16,24,40,.06),0 10px 28px rgba(16,24,40,.10);
+--shadow-lift:0 6px 18px rgba(27,34,51,.10);
+/* —— 字号层级（overline / 正文 / 标题 / 辅助） —— */
+--fs-overline:11px;--fs-body:13px;--fs-title:14px;--fs-muted:12px;
+/* —— 间距 —— */
+--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;
+/* —— 动效 —— */
+--ease-out:cubic-bezier(.22,1,.36,1);--dur-ctl:.18s;--dur-view:.18s;
+/* —— 旧家族别名（逐字等价，供存量规则引用；勿新增第三处字面量） —— */
+--mt-yellow:var(--c-primary);--mt-yellow-d:var(--c-primary-d);
+--mt-dark:var(--c-ink);--mt-dark2:var(--c-ink-2);
+--mt-bg:var(--c-bg);--mt-text:var(--c-text);--mt-text2:var(--c-text2);--mt-text3:var(--c-text3);
+--mt-border:var(--c-border);--mt-card:var(--c-card);--mt-radius:8px;
+--mt-shadow:0 1px 4px rgba(27,34,51,.06);--mt-shadow-h:0 4px 14px rgba(27,34,51,.1);
+--mt-th-bg:#F8F9FA;--mt-th-c:#1B1B33;--mt-row-alt:#FAFBFC;--mt-row-hover:#FFF8E1;
+--rk-navy:var(--c-ink);--rk-navy-2:var(--c-ink-2);--rk-ink:#1f2733;
+--rk-gold:var(--c-primary);--rk-gold-soft:#fff8e1;
+--rk-bg:#f3f5f9;--rk-card:var(--c-card);--rk-line:var(--c-line);--rk-line-2:var(--c-line-2);
+--rk-muted:var(--c-muted);--rk-jm:var(--c-jm);--rk-ym:var(--c-ym);--rk-pz:var(--c-pz);
+--rk-ty:var(--c-ty);--rk-tw:var(--c-tw);--rk-wj:var(--c-wj);
+--rk-radius:var(--radius-card);--rk-radius-s:var(--radius-card-s);
+--rk-shadow:var(--shadow-card);--rk-shadow-hover:var(--shadow-card-h);
+--pol-ink:var(--c-ink);--pol-brand:var(--c-primary);--pol-brand-d:var(--c-primary-d);
+--pol-green:#188038;--pol-red:var(--c-danger);--pol-blue:var(--c-info);
+--pol-gray-2:var(--c-text2);--pol-line:#E8ECF1;--pol-ease:var(--ease-out);
+--pol-shadow-lift:var(--shadow-lift);
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;}body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;background:#f0f2f5;color:#333;padding:20px;font-size:14px;line-height:1.6;}.dt,.trend-table,.penalty-table,.period-table{font-variant-numeric:tabular-nums;}.header{background:linear-gradient(135deg,#1B2233 0%,#2D3447 100%);color:#fff;border-radius:12px;padding:24px 32px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;border-top:4px solid #FFC300;}.header h1{font-size:22px;font-weight:700;}.header .subtitle{font-size:13px;opacity:0.8;margin-top:4px;}.city-tab{padding:6px 18px;border-radius:20px;background:#fff;border:1.5px solid #dadce0;cursor:pointer;font-size:13px;font-weight:700;color:#3c4043;transition:all .2s;}.city-tab:hover{border-color:#F5A623;color:#1B2233;background:#fff8e1;}.city-tab.active{background:#FFC300;color:#1B2233;border-color:#FFC300;box-shadow:0 2px 8px rgba(245,166,35,.4);}.grid{display:grid;gap:16px;margin-bottom:16px;}.grid-2{grid-template-columns:repeat(2,1fr);}@media(max-width:1200px){.grid-2{grid-template-columns:1fr;}}.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid #e8eaed;}.card-title{font-size:15px;font-weight:700;color:#1a2b4a;margin-bottom:12px;display:flex;align-items:center;gap:6px;border-bottom:2px solid #f0f2f5;padding-bottom:8px;}.card-title .icon{font-size:18px;}.dt{width:100%;border-collapse:collapse;font-size:12px;}.dt th{background:#1a2b4a;color:#fff;padding:8px 6px;text-align:center;font-weight:600;white-space:nowrap;}.dt td{padding:7px 6px;text-align:center;border:1px solid #e8eaed;white-space:nowrap;}.dt tr:nth-child(even) td{background:#fafbfc;}.dt .city-cell{font-weight:700;text-align:left;padding-left:10px;}.dt .score-cell{font-size:14px;font-weight:700;}.c-green{color:#34a853;font-weight:700;}.c-orange{color:#f5a623;font-weight:700;}.c-red{color:#d93025;font-weight:700;}.dim-tabs{display:flex;gap:0;margin-bottom:16px;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(26,43,74,0.14);position:sticky;top:40px;z-index:60;border:1px solid #e8ebf0;}.dim-tab{flex:1;padding:13px 18px;text-align:center;font-size:15.5px;font-weight:700;cursor:pointer;background:#fff;color:#8a94a6;border:none;border-bottom:3px solid transparent;transition:all .22s;position:relative;letter-spacing:.5px;}.dim-tab.active{background:#FFC300;color:#1B2233;}.dim-tab:hover:not(.active){background:#f5f8fd;color:#1a2b4a;}.dim-tab.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:#1B2233;border-radius:3px 3px 0 0;}.dim-tab .tab-badge{margin-left:6px;}.dim-tab.active .tab-badge{background:rgba(27,34,51,0.12) !important;color:#1B2233 !important;}.dim-content{display:none;}.dim-content.active{display:block;animation:dimFade .26s ease;}@keyframes dimFade{from{opacity:.4;transform:translateY(4px);}to{opacity:1;transform:none;}}.mod-ov{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px;}.mod-ov-item{background:#fff;border:1px solid #e8ebf0;border-left:4px solid #FFC300;border-radius:10px;padding:10px 12px;}.mod-ov-item .mo-head{display:flex;align-items:center;gap:6px;margin-bottom:5px;}.mod-ov-item .mo-name{font-size:13px;font-weight:800;color:#1a2b4a;}.mod-ov-item .mo-rule{font-size:10.5px;color:#6b7280;line-height:1.65;}.mod-ov-item .mo-cities{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px;}.mo-chip{flex:1;min-width:72px;min-height:52px;display:flex;flex-direction:column;justify-content:center;background:#f8f9fb;border-radius:8px;padding:5px 6px;text-align:center;}.mo-chip .mo-city{font-size:10.5px;color:#6b7280;margin-bottom:1px;}.mo-chip .mo-val{font-size:14.5px;font-weight:800;}.mo-ok{color:#188038;}.mo-na{color:#9aa3b2;}.mo-bad{color:#d93025;background:#fce8e8;font-weight:800;padding:1px 6px;border-radius:6px;display:inline-block;}.mo-warn{color:#b35f00;background:#fef3e2;font-weight:800;padding:1px 6px;border-radius:6px;display:inline-block;}.trend-table{width:100%;border-collapse:collapse;font-size:11.5px!important;}.trend-table th{background:#1B2233!important;color:#fff!important;padding:6px 4px!important;text-align:center!important;}.trend-table td{padding:5px 4px!important;border:1px solid #e8eaed!important;text-align:center!important;font-size:11.5px!important;}.trend-table .city-col{font-weight:700!important;background:#f8f9fb!important;text-align:left!important;padding-left:8px!important;}.trend-table .metric-row td{background:#fafbfc!important;}.trend-table .peak-col{background:#fff3cd!important;}.trend-table th.peak-col{color:#7a5c00!important;}.trend-table th.peak-col.selected-col{background:#1a6b3a!important;color:#fff!important;}.trend-table td.peak-col.selected-col{background:#fde68a!important;}.trend-table .latest-col{background:#e6f4ea!important;}.trend-table th.latest-col{color:#1a6b3a!important;}.trend-table th.latest-col.selected-col{background:#1a6b3a!important;color:#fff!important;}.module-card{border-left:4px solid #4a7bd4;transition:transform .15s ease,box-shadow .15s ease;}.module-card:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(26,43,74,.10);}.mo-mtd{margin-top:7px;padding-top:6px;border-top:1px dashed #e0e6ef;font-size:11px;color:#6b7280;line-height:1.7;}.module-card.jiameng{border-left-color:#e8525f;}.module-card.tiyan{border-left-color:#7b61ff;}.module-card.tuiwan{border-left-color:#00b8d4;}.module-card.wanjie{border-left-color:#ff6b35;}.indicator-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #eee;font-size:12.5px;}.indicator-row:last-child{border-bottom:none;}.indicator-name{font-weight:600;}.indicator-score{text-align:right;}.calc-input{width:64px;text-align:center;border:1px solid #ccc;border-radius:4px;padding:4px;font-size:13px;font-family:inherit;transition:border-color .15s,box-shadow .15s;}.calc-input:focus{outline:none;border-color:#F5A623;box-shadow:0 0 0 3px rgba(255,195,0,.18);}.pill{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;}.pill-weight{background:#e8f0fe;color:#1967d2;}.pill-period{background:#f3e8fd;color:#7b3fb0;}.period-btn{padding:8px 18px;border:1px solid #dadce0;background:#fff;font-size:13px;cursor:pointer;transition:all .2s;border-right:none;font-weight:500;color:#5f6368;}.period-btn:last-child{border-right:1px solid #dadce0;}.period-btn:hover{background:#e8f0fe;color:#1967d2;}.period-btn.active{background:#FFC300;color:#1B2233;border-color:#FFC300;font-weight:700;}.threshold-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin-left:4px;}.tag-red{background:#fce8e8;color:#d93025;}.tag-orange{background:#fef3e2;color:#f5a623;}.tag-green{background:#e6f4ea;color:#34a853;}.calc-section{background:#f8f9fb;border-radius:8px;padding:16px;margin-top:12px;}.calc-result{font-size:24px;font-weight:700;text-align:center;padding:12px;border-radius:8px;margin-top:8px;}.calc-result.pass{background:#e6f4ea;color:#34a853;}.calc-result.warn{background:#fef7e0;color:#f5a623;}.calc-result.fail{background:#fce8e8;color:#d93025;}.formula-box{background:#f8f9fb;border:1px solid #d0d7e3;border-radius:8px;padding:14px;font-size:12.5px;color:#6b7280;text-align:center;margin-bottom:8px;}.formula-box .formula{font-weight:700;color:#1a2b4a;font-size:13px;}.period-table{width:100%;border-collapse:collapse;font-size:12px;}.period-table th{background:#1a2b4a!important;color:#fff!important;padding:6px 8px!important;text-align:center!important;}.period-table td{padding:6px 8px!important;border:1px solid #e8eaed!important;text-align:center!important;}.period-table .peak{background:#fff3cd;color:#c68400;font-weight:700;}.penalty-table{width:100%;border-collapse:collapse;font-size:12px;}.penalty-table th{background:#f8f9fb!important;color:#1a2b4a!important;padding:6px 8px!important;border:1px solid #e8eaed!important;text-align:center!important;}.penalty-table td{padding:6px 8px!important;border:1px solid #e8eaed!important;text-align:center!important;}.penalty-table .level0{background:#e6f4ea;color:#34a853;font-weight:700;}.penalty-table .level1{background:#fef7e0;color:#f5a623;font-weight:700;}.penalty-table .level2{background:#fce8e8;color:#d93025;font-weight:700;}.section-label{font-size:16px;font-weight:700;color:#1B2233;margin:20px 0 12px;padding-left:8px;border-left:4px solid #FFC300;}.footer-info{text-align:center;font-size:11px;color:#6b7280;margin-top:20px;padding:16px 8px;border-top:1px solid #e8eaed;line-height:1.8;}.collapsible{cursor:pointer;transition:background .15s;}.collapsible:hover{background:rgba(26,43,74,.03);}.collapsible-content{display:block;}.collapsible.collapsed .collapsible-content{display:none;}.daily-card{border-left:4px solid #00b8d4;}.monthly-card{border-left:4px solid #e8453c;}.date-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}.date-bar label{font-size:14px;font-weight:700;color:#1a2b4a;white-space:nowrap;}.date-bar select{padding:8px 14px;border:2px solid #d0d7e3;border-radius:8px;font-size:14px;background:#fff;cursor:pointer;min-width:200px;font-weight:600;color:#1a2b4a;}.date-bar select:focus{outline:none;border-color:#4a7bd4;box-shadow:0 0 0 3px rgba(74,123,212,0.15);}.date-bar select option:disabled{color:#ccc;}.date-nav-btn{padding:6px 14px;border:1px solid #d0d7e3;background:#fff;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;color:#1a2b4a;transition:all .2s;}.date-nav-btn:hover:not(:disabled){background:#e8f0fe;border-color:#4a7bd4;color:#1967d2;}.date-nav-btn:disabled{opacity:0.35;cursor:not-allowed;}.date-status{font-size:12px;padding:3px 12px;border-radius:12px;font-weight:600;}.date-status.has-data{background:#e6f4ea;color:#34a853;}.date-status.no-data{background:#fce8e8;color:#d93025;}.trend-table th.selected-col{background:#1a6b3a;}.trend-table td.selected-col{background:#d4edda;font-weight:700;}.cal-wrap{font-size:12px;}.cal-legend{display:flex;gap:12px;margin-bottom:8px;flex-wrap:wrap;}.cal-legend-item{display:flex;align-items:center;gap:3px;font-size:11px;color:#6b7280;}.cal-legend-dot{width:11px;height:11px;border-radius:3px;display:inline-block;flex-shrink:0;}.cal-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;}@media(max-width:800px){.cal-grid{grid-template-columns:repeat(8,1fr);}}.cal-cell{height:30px;border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;font-weight:600;transition:all .15s;position:relative;border:2px solid transparent;line-height:1;}.cal-cell:hover{transform:scale(1.12);z-index:2;}.cal-cell .cal-d{font-size:11px;font-weight:700;}.cal-cell .cal-w{font-size:8px;opacity:0.5;margin-left:2px;}.cal-cell.p1{background:#e8f0fe;color:#1967d2;}.cal-cell.p2{background:#fef3e2;color:#f5a623;}.cal-cell.peak{background:#fce8e8;color:#d93025;}.cal-cell.peak::after{content:'';position:absolute;top:1px;right:1px;width:5px;height:5px;background:#d93025;border-radius:50%;}.cal-cell.selected{border-color:#1a2b4a;box-shadow:0 0 0 2px rgba(26,43,74,0.25);transform:scale(1.12);z-index:3;}.cal-cell.has-data{border-bottom:2px solid #34a853;}.cal-cell.no-data{opacity:0.55;}.period-prog{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;}@media(max-width:800px){.period-prog{grid-template-columns:1fr;}}.period-prog-card{border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;}.period-prog-card .pp-title{font-size:11px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:3px;}.period-prog-card .pp-bar{width:100%;height:5px;background:#eee;border-radius:3px;overflow:hidden;margin:4px 0;}.period-prog-card .pp-bar-fill{height:100%;border-radius:3px;transition:width .3s;}.period-prog-card .pp-info{font-size:10.5px;color:#6b7280;line-height:1.5;}.period-prog-card .pp-current{font-size:10.5px;font-weight:700;color:#1a2b4a;margin-bottom:2px;}.filter-strip{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}.fs-item{display:flex;flex-direction:column;gap:1px;}.fs-label{font-size:10px;color:#6b7280;}.fs-value{font-size:15px;font-weight:700;color:#1a2b4a;}.fs-divider{width:1px;height:30px;background:#e0e0e0;}.grid-cal-bi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:12px;margin-bottom:12px;}@media(max-width:1200px){.grid-cal-bi{grid-template-columns:minmax(0,1fr);}}.grid-cal-bi > .card,.grid-calc-preset > .card,.grid-modules > .card,.grid-util > .card{min-width:0;}.grid-modules{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px;}.grid-modules.gm3{grid-template-columns:repeat(3,1fr);}@media(max-width:1200px){.grid-modules.gm3{grid-template-columns:repeat(2,1fr);}}@media(max-width:600px){.grid-modules.gm3{grid-template-columns:1fr;}}@media(max-width:600px){.summary-card{flex-direction:column;align-items:stretch;gap:8px;padding:14px 16px;}.summary-card .sc-left{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}.summary-card .sc-score{font-size:30px;}}@media(max-width:1200px){.grid-modules{grid-template-columns:repeat(2,1fr);}}@media(max-width:600px){.grid-modules{grid-template-columns:1fr;}}.grid-util{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}@media(max-width:800px){.grid-util{grid-template-columns:1fr;}}.freshness-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;}.freshness-badge.fresh{background:rgba(123,237,159,0.2);color:#7bed9f;}.table-scroll{overflow-x:auto;}.preset-card{background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);border:2px solid #4a7bd4;}.preset-scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;}@media(max-width:800px){.preset-scenarios{grid-template-columns:1fr;}}@media (max-width:768px){body{padding:10px;font-size:13.5px;}.header{padding:16px 18px;}.header h1{font-size:18px;}.dim-tabs{flex-wrap:wrap;}.dim-tab{flex:1 1 46%;padding:10px 8px;font-size:13.5px;}.dim-tab .tab-badge{display:block;margin:2px 0 0;}.card{padding:14px;border-radius:10px;}.card-title{font-size:14.5px;}.city-tab{padding:5px 14px;font-size:12.5px;}.section-label{font-size:14.5px;margin:14px 0 8px;}.mod-ov{grid-template-columns:1fr;}.mo-cities{flex-wrap:wrap;}.anchor-nav{flex-wrap:wrap;}.table-scroll{-webkit-overflow-scrolling:touch;}.cal-wrap{overflow-x:auto;}.cal-grid{min-width:980px;}canvas{max-width:100%;height:auto;}.dim-content svg{min-width:0 !important;max-width:100%;height:auto;}.slice-wrap{overflow-x:auto;}.dim-content table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}.grid-cal-bi,.grid-util,.grid-calc-preset{grid-template-columns:1fr;}}@media (max-width:480px){.dim-tab{flex:1 1 100%;padding:9px 6px;}.header{padding:14px;}body{padding:8px;}}.preset-scenario{padding:12px;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid transparent;text-align:center;}.preset-scenario:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08);}.preset-scenario.active{border-color:#1a2b4a;box-shadow:0 0 0 3px rgba(26,43,74,0.1);}.preset-scenario.optimistic{background:#e6f4ea;}.preset-scenario.realistic{background:#e8f0fe;}.preset-scenario.conservative{background:#fce8e8;}.preset-scenario .ps-label{font-size:13px;font-weight:700;margin-bottom:4px;}.preset-scenario .ps-score{font-size:22px;font-weight:800;line-height:1.2;}.preset-scenario .ps-desc{font-size:11px;color:#6b7280;margin-top:4px;}.preset-input-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}.preset-input-row label{font-size:12px;font-weight:600;color:#6b7280;min-width:80px;}.preset-input-row input{width:70px;text-align:center;border:1px solid #ccc;border-radius:4px;padding:4px;font-size:13px;}.preset-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}.preset-compare-item{padding:10px;border-radius:8px;text-align:center;}.preset-compare-item.current{background:#f8f9fb;border:1px solid #e8eaed;}.preset-compare-item.estimated{background:#e8f0fe;border:1px solid #4a7bd4;}.preset-compare-item .pc-label{font-size:11px;color:#6b7280;}.preset-compare-item .pc-value{font-size:24px;font-weight:800;margin:4px 0;}.preset-compare-item .pc-delta{font-size:13px;font-weight:700;}.module-card .indicator-row{padding:6px 0;}.module-card .card-title{margin-bottom:8px;padding-bottom:6px;}.grid-calc-preset{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}@media(max-width:800px){.grid-calc-preset{grid-template-columns:1fr;}}#dim-report table{width:100%;border-collapse:collapse;font-size:12.5px!important;margin-bottom:8px;}#dim-report th{background:#1a2b4a!important;color:#fff!important;padding:8px 6px!important;text-align:center!important;font-weight:600!important;white-space:nowrap!important;}#dim-report td{padding:7px 6px!important;border:1px solid #e8eaed!important;text-align:center!important;white-space:nowrap!important;}#dim-report tr:nth-child(even) td{background:#fafbfc!important;}#dim-report .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important;}.rpt-header{background:linear-gradient(135deg,#1a2b4a,#2d4a7a);color:#fff;border-radius:12px;padding:24px 32px;margin-bottom:20px;}.rpt-header h2{font-size:22px;margin-bottom:6px;}.rpt-header .sub{font-size:13px;opacity:.85;}#dim-report .tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;}.scheme-table{font-size:11px!important;min-width:900px;}.scheme-table td{line-height:1.7!important;vertical-align:top!important;}.scheme-table .module-sep td{background:#1a2b4a!important;color:#fff;font-weight:700;font-size:11px;padding:4px 8px;text-align:left;}.scheme-table .current-mod{box-shadow:inset 3px 0 0 #e8525f;}.summary-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;}@media(max-width:800px){.summary-strip{grid-template-columns:1fr;}}.summary-card{border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:16px;border:1px solid #e8eaed;position:relative;overflow:hidden;}.summary-card.danger{background:linear-gradient(135deg,#fff5f5,#fce8e8);border-color:#f8c8c8;}.summary-card.warn{background:linear-gradient(135deg,#fffdf5,#fef3e2);border-color:#ffe0b2;}.summary-card.ok{background:linear-gradient(135deg,#f5fff5,#e6f4ea);border-color:#c8e6c8;}.summary-card .sc-left{flex-shrink:0;}.summary-card .sc-city{font-size:16px;font-weight:700;color:#1a2b4a;}.summary-card .sc-score{font-size:36px;font-weight:800;line-height:1.1;}.summary-card .sc-level{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;display:inline-block;margin-top:2px;}.summary-card .sc-right{flex:1;font-size:12px;line-height:1.7;color:#6b7280;}.summary-card .sc-risk{font-weight:700;}.summary-card .sc-bar{position:absolute;bottom:0;left:0;right:0;height:4px;}.summary-card .sc-progress{height:5px;border-radius:3px;background:rgba(0,0,0,0.08);margin-top:6px;overflow:hidden;}.summary-card .sc-progress-fill{height:100%;border-radius:3px;transition:width .5s;}.ref-collapse{cursor:pointer;user-select:none;transition:background .15s;}.ref-collapse:hover{background:rgba(26,43,74,.04);}.ref-collapse .ref-arrow{display:inline-block;transition:transform .25s ease;}.ref-collapse.collapsed .ref-arrow{transform:rotate(-90deg);}.ref-collapse.collapsed + .ref-content{display:none;}.ref-content{display:block;animation:refExpand .2s ease;}@keyframes refExpand{from{opacity:0}to{opacity:1}}html{scroll-behavior:smooth;}.card{transition:box-shadow .2s,transform .15s;}.card:hover{box-shadow:var(--mt-shadow-h,0 4px 14px rgba(27,34,51,.1));}.module-card{border-left-width:5px;}.anchor-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}.anchor-btn{padding:6px 14px;border-radius:20px;background:#f0f2f5;border:1px solid #e8eaed;font-size:12px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .2s;text-decoration:none;}.anchor-btn:hover{background:#fff8e1;color:#8a6d1a;border-color:#F5A623;}.tab-badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:8px;margin-left:4px;font-weight:700;}.tab-badge.daily{background:#e8f0fe;color:#1967d2;}.tab-badge.monthly{background:#fef3e2;color:#f5a623;}.tab-badge.report{background:#fce8e8;color:#d93025;}.tab-badge.charts{background:#e6f4ea;color:#188038;}.summary-card{cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;}.summary-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.12);}.summary-card:active{transform:translateY(0);}.header > div:first-child{min-width:0;flex:1;}.header-meta{margin-top:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}.header-source{color:#7bed9f;font-size:12px;}.freshness-badge{white-space:nowrap;}body.no-scroll{overflow:hidden;}[id^="sec-"]{scroll-margin-top:20px;}@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;}}.delta-good{color:#34a853;font-size:10px;font-weight:700;margin-left:3px;}.delta-bad{color:#d93025;font-size:10px;font-weight:700;margin-left:3px;}.delta-flat{color:#6b7280;font-size:10px;margin-left:3px;}.tc-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}.tc-btn{padding:5px 14px;border-radius:16px;border:1px solid #d0d7e3;background:#fff;font-size:12px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .2s;}.tc-btn:hover{background:#e8f0fe;color:#1967d2;}.tc-btn.active{background:#1a2b4a;color:#fff;border-color:#1a2b4a;}.tc-divider{display:inline-block;width:1px;height:20px;background:#d0d7e3;margin:0 4px;}.card-title .tc-export{margin-left:auto;}#trend-table tr.metric-hl td{background:#e8f0fe!important;}#trend-table tr.metric-hl td:nth-child(2){box-shadow:inset 3px 0 0 #1a73e8;}.dt th.col-hl{background:#4a7bd4!important;color:#fff!important;}.dt td.col-hl{background:#e8f0fe!important;font-weight:700!important;}.tc-export{margin-left:6px;border-color:#a8c7fa;color:#1967d2;background:#f8fbff;}.tc-export:hover{background:#e8f0fe;}.tc-legend{display:flex;gap:14px;margin-left:auto;flex-wrap:wrap;}.tc-legend-item{display:flex;align-items:center;gap:5px;font-size:11.5px;color:#6b7280;font-weight:600;}.tc-legend-dot{width:16px;height:3px;border-radius:2px;display:inline-block;}.tc-gridline{stroke:#e9edf3;stroke-width:1;}.tc-axis{stroke:#c9d0da;stroke-width:1;}.tc-tick{font-size:10.5px;fill:#8a93a3;}.tc-peak{fill:#fff3cd;opacity:.5;}.tc-zeroline{stroke:#d93025;stroke-width:1;stroke-dasharray:5 3;opacity:.55;}.tc-zerotext{font-size:10px;fill:#d93025;opacity:.9;}.tc-selline{stroke:#1a2b4a;stroke-width:1.2;stroke-dasharray:3 2;opacity:.7;}.tc-dot{stroke:#fff;stroke-width:1.5;}#dim-report .slice-wrap{border-left:4px solid #7b61ff !important;}#dim-report .slice-chip{background:#f3f0ff;color:#5b4bc4;padding:3px 10px;border-radius:12px;font-size:11.5px;}#dim-report .gap-bar{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:4px 0 2px;max-width:760px;}#dim-report .gap-bar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:10.5px;white-space:nowrap;}#dim-report .gb-hd{background:#3b6ff5}#dim-report .gb-ty{background:#e5484d}#dim-report .gb-tw{background:#f5a623}#dim-report .gb-wj{background:#2e9e5b}#dim-report .slice-note{font-size:11.5px;color:#6b7280;margin-top:8px;line-height:1.8;}#dim-report .slice-empty{text-align:center;padding:28px 10px;color:#6b7280;font-size:13px;line-height:2;}
+body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif!important;background:var(--mt-bg)!important;color:var(--mt-text)!important;font-size:14px!important;line-height:1.6!important;}.header{background:linear-gradient(135deg,var(--mt-dark) 0%,var(--mt-dark2) 60%,#3A4458 100%)!important;color:#fff!important;border-radius:var(--mt-radius)!important;padding:20px 26px!important;margin-bottom:14px!important;position:relative!important;}.header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--mt-yellow) 0%,var(--mt-yellow-d) 50%,var(--mt-yellow) 100%);}.header h1{color:#fff!important;font-size:21px!important;font-weight:700!important;letter-spacing:.3px;}.header .sub,.header .subtitle{color:rgba(255,255,255,.75)!important;font-size:12px!important;margin-top:4px!important;}h1{font-size:21px!important;font-weight:700!important;color:var(--mt-text)!important;letter-spacing:.3px}.doctime,.sub{color:var(--mt-text2)!important;font-size:12px!important}.card,.section,.filters,.tblwrap,.card-header,.search-bar,.filter-bar,.reasons-section{background:var(--mt-card)!important;border-radius:var(--mt-radius)!important;box-shadow:var(--mt-shadow)!important;border:1px solid var(--mt-border)!important;}.card,.section{padding:20px;margin-bottom:12px}.card-title{color:var(--mt-text)!important;font-size:14px!important;font-weight:600!important;border-bottom:1px solid var(--mt-border)!important;padding-bottom:10px!important;margin-bottom:12px!important;}.card-title::before{content:"";display:inline-block;width:3px;height:15px;background:linear-gradient(180deg,var(--mt-yellow),var(--mt-yellow-d));border-radius:2px;margin-right:8px;vertical-align:-2px;}table{width:100%!important;border-collapse:collapse!important;font-size:13px!important}th{background:var(--mt-th-bg)!important;color:var(--mt-th-c)!important;font-weight:600!important;font-size:12px!important;padding:10px 12px!important;border-bottom:2px solid var(--mt-yellow)!important;text-align:left!important;transition:background .15s!important;}.dt th{background:#1a2b4a!important;color:#fff!important;font-weight:600!important;font-size:12px!important;padding:8px 6px!important;text-align:center!important;white-space:nowrap!important;}th:hover{background:#F0F1F2!important}.dt th:hover{background:#2d4a7a!important}td,.dt td{padding:9px 12px!important;border-bottom:1px solid #F0F1F2!important;color:var(--mt-text)!important;font-size:13px!important;}.dt td{border:1px solid var(--mt-border)!important;text-align:center!important;font-size:12px!important;padding:7px 6px!important;white-space:nowrap!important}tr:nth-child(even) td,.dt tr:nth-child(even) td{background:var(--mt-row-alt)!important}tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}.dt .city-cell{font-weight:700!important;text-align:left!important;padding-left:10px!important}.dt .score-cell{font-size:14px!important;font-weight:700!important}.city-tab,.toolbar select,.filters select,.filters input,.filter-bar select,.filter-bar input[type=date]{border-radius:6px!important;border:1px solid #E8E9EB!important;background:var(--mt-card)!important;color:#5A5F6B!important;font-size:13px!important;padding:6px 10px!important;transition:all .15s!important;outline:none!important;font-weight:500!important;}.city-tab{background:#fff!important;color:#3c4043!important;border:1.5px solid #dadce0!important;border-radius:20px!important;padding:6px 18px!important;font-size:13px!important;font-weight:700!important;cursor:pointer!important;transition:all .2s!important;}.city-tab:hover{background:#fff8e1!important;border-color:#F5A623!important;color:#1B2233!important}.city-tab.active{background:#FFC300!important;color:#1B2233!important;border-color:#FFC300!important;font-weight:700!important;box-shadow:0 2px 8px rgba(245,166,35,.4)!important;}.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2)}.top-nav a{color:#94a3b8;text-decoration:none;transition:color .15s;white-space:nowrap}.top-nav a:hover{color:#FFC300}.top-nav .nav-current{color:#fff;font-weight:700;margin-left:4px;white-space:nowrap}.top-nav .nav-sep{color:#475569;margin:0 2px}.top-nav .nav-switch{margin-left:auto}@media(max-width:600px){.top-nav{padding:0 12px;font-size:12px;gap:8px;height:36px}}@media(max-width:600px){.dim-tabs{top:36px}}:focus-visible{outline:2px solid #F5A623;outline-offset:2px;border-radius:4px}::selection{background:#ffe58f;color:#1B2233}.card,[id^="sec-"]{scroll-margin-top:96px}.dt td{font-variant-numeric:tabular-nums}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto !important}}#back-top{position:fixed;right:18px;bottom:26px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(27,34,51,.12);background:rgba(255,255,255,.94);box-shadow:0 4px 14px rgba(27,34,51,.18);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#1B2233;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .25s ease-out,transform .25s ease-out,background .15s;z-index:800}#back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}#back-top:hover{background:#fff8e1;border-color:#F5A623}@media(max-width:768px){}.header{position:relative!important;gap:16px}.hdr-left{padding-right:0!important}.qr-small{display:flex;flex-direction:column;align-items:center;gap:3px;background:rgba(255,255,255,.96);border-radius:10px;padding:6px 8px;box-shadow:0 2px 12px rgba(0,0,0,.18);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;flex-shrink:0;position:relative}.qr-small::after{content:"";position:absolute;inset:0;border-radius:10px;border:1.5px solid rgba(255,255,255,.5);pointer-events:none;transition:border-color .2s}.qr-small:hover{transform:scale(1.06);box-shadow:0 6px 20px rgba(0,0,0,.25)}.qr-small:hover::after{border-color:rgba(255,195,0,.7)}.qr-small:active{transform:scale(.97)}.qr-small img{width:56px;height:56px;border-radius:6px;display:block}.qr-small .qr-label{font-size:9px;color:#6b7280;font-weight:600;letter-spacing:.5px}.qr-small .qr-pulse{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:#FFC300;box-shadow:0 0 0 0 rgba(255,195,0,.5);animation:qrPulse 2s infinite}@keyframes qrPulse{0%{box-shadow:0 0 0 0 rgba(255,195,0,.5)}70%{box-shadow:0 0 0 8px rgba(255,195,0,0)}100%{box-shadow:0 0 0 0 rgba(255,195,0,0)}}.qr-modal{display:none;position:fixed;z-index:10001;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.82);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);justify-content:center;align-items:center;flex-direction:column;opacity:0;transition:opacity .25s ease;padding:20px;touch-action:manipulation}.qr-modal.show{display:flex;opacity:1}.qr-modal-box{background:#fff;border-radius:16px;padding:0;text-align:center;box-shadow:0 16px 56px rgba(0,0,0,.5);max-width:320px;width:100%;transform:scale(.85) translateY(12px);transition:transform .3s cubic-bezier(.34,1.56,.64,1);overflow:hidden}.qr-modal.show .qr-modal-box{transform:scale(1) translateY(0)}.qr-modal-banner{background:linear-gradient(135deg,#1a2b4a 0%,#2d4a7a 100%);color:#fff;padding:14px 20px 10px;font-size:13px;font-weight:700;letter-spacing:.5px}.qr-modal-banner .qr-modal-close{position:static;color:rgba(255,255,255,.6);font-size:22px;float:right;cursor:pointer;font-weight:300;line-height:1;transition:color .15s,transform .15s}.qr-modal-banner .qr-modal-close:hover{color:#FFC300;transform:scale(1.2)}.qr-modal-body{padding:20px 24px 18px}.qr-modal-body img{width:220px;height:220px;border-radius:10px;display:block;margin:0 auto;border:1px solid #e8eaed}.qr-modal-body .tt{font-size:15px;font-weight:700;color:#1a2b4a;margin-top:14px}.qr-modal-body .sub{font-size:12px;color:#6b7280;margin-top:4px}.qr-modal-body .qr-url{font-size:11px;color:#6b7280;margin-top:12px;padding:6px 12px;background:#f0f2f5;border-radius:6px;display:inline-block;user-select:all;cursor:text;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.qr-modal-body .qr-hint{font-size:10px;color:#6b7280;margin-top:8px}@media(max-width:600px){.qr-small img{width:42px;height:42px}.qr-small .qr-label{display:none}.qr-small{padding:4px 6px}.qr-modal-body img{width:180px;height:180px}.qr-modal-box{max-width:280px}.qr-modal-banner{font-size:12px;padding:12px 16px 8px}.qr-modal-body{padding:16px 18px 14px}.summary-card{padding:12px 14px}.summary-card .sc-score{font-size:28px}.header{padding:16px 18px!important}.header h1{font-size:18px!important}.dim-tab{padding:10px 12px!important;font-size:13px!important}}body{background:linear-gradient(180deg,#edf0f5 0,#F0F2F5 220px,#F0F2F5)!important}.score-cell,.fs-value,.mo-val,.calc-result,.ps-score,.pc-value,.num,.summary-card .sc-score,.indicator-score,.mo-chip .mo-val,.delta-good,.delta-bad,.freshness-badge{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;}.dt th,.trend-table th,.period-table th,#dim-report th{letter-spacing:.03em}.section-label{letter-spacing:.02em}.card-title .icon{line-height:1;transform:translateY(1px)}.pill,.threshold-tag,.date-status,.freshness-badge,#dim-report .tag{border-radius:999px}tr:hover td.peak-col{background:#fff3cd!important}tr:hover td.latest-col{background:#e6f4ea!important}tr:hover td.selected-col{background:#d4edda!important}.trend-table tr:hover td.peak-col.selected-col{background:#fde68a!important}tr.module-sep:hover td{background:#1a2b4a!important}.card{transition:box-shadow .22s var(--pol-ease)}.module-card:hover,.summary-card:hover{box-shadow:var(--pol-shadow-lift)!important}.preset-scenario,.city-tab,.date-nav-btn,.cal-cell,.anchor-btn{transition-timing-function:var(--pol-ease)}.table-scroll::-webkit-scrollbar,.slice-wrap::-webkit-scrollbar,.cal-wrap::-webkit-scrollbar{height:8px;width:8px}.table-scroll::-webkit-scrollbar-thumb,.slice-wrap::-webkit-scrollbar-thumb,.cal-wrap::-webkit-scrollbar-thumb{background:#d3d9e0;border-radius:999px;border:2px solid transparent;background-clip:content-box}.table-scroll::-webkit-scrollbar-thumb:hover,.slice-wrap::-webkit-scrollbar-thumb:hover,.cal-wrap::-webkit-scrollbar-thumb:hover{background:#b9c2cc;border:2px solid transparent;background-clip:content-box}.table-scroll::-webkit-scrollbar-track,.slice-wrap::-webkit-scrollbar-track,.cal-wrap::-webkit-scrollbar-track{background:transparent}.table-scroll,.slice-wrap,.cal-wrap{scrollbar-width:thin;scrollbar-color:#d3d9e0 transparent}.header::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(640px 220px at 88% -30%,rgba(255,195,0,.16),transparent 62%);pointer-events:none}.table-scroll{border:1px solid var(--pol-line);border-radius:10px}.card.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s var(--pol-ease),transform .55s var(--pol-ease),box-shadow .22s var(--pol-ease)}.card.reveal.in-view{opacity:1;transform:none}@media print{.top-nav,.dim-tabs,.anchor-nav,#back-top,.qr-small,.date-nav-btn,.cal-wrap,.city-tabs{display:none!important}body{background:#fff!important;padding:0!important}.card{box-shadow:none!important;border:1px solid #ddd!important;break-inside:avoid}.dim-content{display:block!important}.table-scroll{overflow:visible!important;border:none!important}}
+body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),transparent 60%),radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 55%),var(--rk-bg);}.header{border-radius:16px;border-top:none;position:relative;overflow:hidden;background:linear-gradient(135deg,#141a2a 0%,#222a40 55%,#2d3852 100%);box-shadow:0 12px 32px rgba(21,27,43,.28);}.header::before{content:'';position:absolute;inset:0;background:radial-gradient(640px 190px at 86% -10%,rgba(255,195,0,.16),transparent 62%),radial-gradient(420px 160px at 4% 110%,rgba(0,184,212,.12),transparent 60%);pointer-events:none;}.header h1{letter-spacing:.02em;}.header .subtitle{letter-spacing:.02em;}.city-tab{border-radius:999px;border:1.5px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);color:#e7ebf3;padding:6px 20px;}.city-tab:hover{border-color:var(--rk-gold);background:rgba(255,195,0,.14);color:#fff;}.city-tab.active{background:linear-gradient(135deg,#FFC300,#ffb300);border-color:transparent;color:#1B2233;box-shadow:0 4px 16px rgba(255,195,0,.45);}.dim-tabs{border-radius:999px;border:1px solid var(--rk-line);box-shadow:var(--rk-shadow);background:rgba(255,255,255,.88);padding:5px;gap:4px;top:48px;}.dim-tab{border-radius:999px;border-bottom:none;padding:11px 14px;font-size:14.5px;}.dim-tab.active{background:linear-gradient(135deg,#FFC300,#ffb300);box-shadow:0 4px 14px rgba(255,195,0,.38);}.dim-tab.active::after{display:none;}.dim-tab:hover:not(.active){background:#f2f6fd;}.card{border-radius:var(--rk-radius);border:1px solid var(--rk-line);box-shadow:var(--rk-shadow);transition:box-shadow .2s ease;}.card:hover{box-shadow:var(--rk-shadow-hover);}.card-title{border-bottom:1px solid var(--rk-line-2);letter-spacing:.01em;}.summary-card{border-radius:var(--rk-radius);}.dt th{background:linear-gradient(180deg,#26334e,#1B2233);font-weight:700;letter-spacing:.02em;}.dt td{border-color:var(--rk-line);}.dt tr:nth-child(even) td{background:#fbfcfe;}.dt tbody tr:hover td{background:#f2f7ff;}#bi-data-table th:first-child,#bi-data-table td:first-child{position:sticky;left:0;z-index:2;background:#fff;box-shadow:inset -1px 0 0 var(--rk-line);}#bi-data-table thead th:first-child{background:#26334e;}#bi-data-table tr:nth-child(even) td:first-child{background:#fbfcfe;}#bi-data-table tbody tr:hover td:first-child{background:#f2f7ff;}.table-scroll{border-radius:var(--rk-radius-s);}.metric-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}.metric-chips .mc-label{font-size:11px;color:var(--rk-muted);font-weight:700;margin-right:2px;}.metric-chip{padding:4px 13px;border-radius:999px;border:1px solid var(--rk-line);background:#fff;font-size:11.5px;font-weight:600;color:var(--rk-muted);cursor:pointer;transition:all .18s;user-select:none;line-height:1.5;}.metric-chip:hover{border-color:#F5A623;color:var(--rk-navy);background:var(--rk-gold-soft);}.metric-chip.active{background:var(--rk-navy);border-color:var(--rk-navy);color:#fff;box-shadow:0 2px 8px rgba(27,34,51,.25);}.col-off{display:none !important;}.module-card{border-radius:var(--rk-radius);}.module-card .card-title{padding-bottom:9px;}.calc-input{border-radius:8px;border:1px solid var(--rk-line);}.calc-input:hover{border-color:#c9d2e0;}.period-btn:first-child{border-radius:999px 0 0 999px;}.period-btn:last-child{border-radius:0 999px 999px 0;border-right:1px solid #dadce0;}.period-btn.active{box-shadow:0 3px 10px rgba(255,195,0,.35);}.table-scroll::-webkit-scrollbar-thumb,.slice-wrap::-webkit-scrollbar-thumb{background:#c4cdd9;}@media(max-width:600px){.dim-tabs{top:42px;padding:4px;border-radius:14px;}.dim-tab{padding:9px 6px;font-size:12.5px;border-radius:11px;}.metric-chip{padding:3px 10px;font-size:11px;}body{padding:12px;}.card-title{flex-wrap:wrap;}body .mj-wrap{float:none;max-width:100%;flex:1 1 100%;margin-left:0;justify-content:flex-start;}.top-nav .nav-cities .city-tab{min-width:32px !important;padding:2px 5px !important;}.top-nav .nav-switch{font-size:11px;}}@media print{.metric-chips{display:none!important;}}.ska-dim-bar{display:inline-flex;gap:4px;background:#eef1f6;border-radius:999px;padding:4px;margin-bottom:12px;}.ska-dim-btn{border:none;background:transparent;border-radius:999px;padding:6px 20px;font-size:12.5px;font-weight:700;color:#5f6368;cursor:pointer;transition:all .2s;}.ska-dim-btn:hover{color:#1a2b4a;}.ska-dim-btn.active{background:linear-gradient(135deg,#7b61ff,#9c85ff);color:#fff;box-shadow:0 2px 8px rgba(123,97,255,.35);}.ska-scope-bar{margin-left:auto;display:inline-flex;gap:0;border-radius:999px;overflow:hidden;border:1px solid var(--rk-line,#dadce0);}.ska-scope-btn{border:none;background:#fff;padding:4px 12px;font-size:10.5px;font-weight:600;color:#5f6368;cursor:pointer;transition:all .2s;}.ska-scope-btn+.ska-scope-btn{border-left:1px solid var(--rk-line,#dadce0);}.ska-scope-btn.active{background:#1B2233;color:#FFC300;font-weight:700;}.ska-pane{display:none;}.ska-pane.active{display:block;animation:dimFade .26s ease;}.ska-fold{margin-top:10px;border:1px solid #e8ebf0;border-radius:10px;background:#fff;overflow:hidden;}.ska-fold>summary{cursor:pointer;user-select:none;padding:8px 14px;font-size:11.5px;font-weight:700;color:#5b21b6;background:#f7f5ff;list-style:none;display:flex;align-items:center;gap:6px;}.ska-fold>summary::before{content:'▸';transition:transform .2s;font-size:10px;}.ska-fold[open]>summary::before{transform:rotate(90deg);}.ska-fold>summary::-webkit-details-marker{display:none;}.ska-fold>div{padding:10px 12px;}@media(max-width:600px){.ska-dim-btn{padding:5px 12px;font-size:11.5px;}.ska-scope-bar{display:none;}}
 
 /* ============================================================
  * [D包·布局优化轮] layout-enh 增强段
@@ -79,6 +127,74 @@ body.layout-enh .summary-strip{gap:10px;}
 @media print{
 body.layout-enh .anchor-nav{display:none!important;}
 }
+
+/* ============================================================
+ * [FE优化轮·任务二] 语义类（模板内联样式收敛，08-dev-FE）
+ * 声明取值与被替换的模板内联样式逐字一致；置于样式表末尾，
+ * 同特异性下覆盖历史规则，与原内联样式的生效结果保持一致。
+ * 字号引用 --fs-* tokens（四级：overline/body/title/muted）。
+ * 单次使用的布局型内联样式与运行时 JS 注入的样式保留原位，不在本轮收敛。
+ * ============================================================ */
+.u-muted{color:var(--c-text2);}
+.u-link{color:var(--c-info);}
+.u-bad{color:var(--c-danger);}
+.u-ok{color:var(--c-ok);}
+.u-click{cursor:pointer;}
+.note-2xs{font-size:10px;color:var(--c-text2);}
+
+
+
+.note-body{font-size:var(--fs-muted);color:var(--c-text2);}
+.note-foot{font-size:var(--fs-overline);color:var(--c-text2);margin-top:6px;}
+.note-foot-l{font-size:var(--fs-overline);color:var(--c-text2);text-align:left;margin-top:var(--sp-1);}
+.mb-12{margin-bottom:var(--sp-3);}
+.mb-16{margin-bottom:var(--sp-4);}
+
+
+.bg-bad-soft{background:#fce8e8;}
+
+
+/* 表格单元语义类（静态表；运行时由 CFG 回填的同构表格保持相同视觉） */
+.td-note{text-align:left;font-size:var(--fs-overline);}
+
+
+
+.th-ds{text-align:left;padding:6px 8px;border:1px solid #e3e8ef;}
+/* 预估表单元（est-table 内；运行时 CFG.estimateTableHtml 同构替换） */
+
+
+
+/* 悦跑口径徽章（原 #ym-caliber-pill / #ym-caliber-weekly 内联样式收敛） */
+.pill-caliber{background:#fff3e0;color:#e65100;border:1px solid #ffe0b2;font-size:10.5px;}
+
+/* ============================================================
+ * [FE优化轮·任务三] 切换控件统一视觉语言（08-dev-FE）
+ * 四套控件（城市页签/考核期按钮/日期下拉/卡片折叠）统一：
+ *   激活语义 = 金底(--c-primary) + 深字(--c-ink)；反馈 transition 统一 --dur-ctl(.18s)；
+ *   键盘 focus-visible 描边统一金橙 --c-primary-d。
+ * 不改变各控件既有形状/配色基线，仅收敛来源与时长。
+ * ============================================================ */
+.city-tab,.period-btn,.date-bar select,.date-nav-btn,.dim-tab,.metric-chip,
+.ska-scope-btn,.ska-dim-btn,.collapsible .card-title{transition-duration:var(--dur-ctl);}
+.city-tab:focus-visible,.period-btn:focus-visible,.date-bar select:focus-visible,
+.date-nav-btn:focus-visible,.dim-tab:focus-visible,.collapsible .card-title:focus-visible{outline:2px solid var(--c-primary-d);outline-offset:2px;}
+/* city-tab.active 原 #FFC300/#1B2233 → tokens（值等价） */
+.city-tab.active{color:var(--c-ink);}
+.period-btn.active{background:var(--c-primary);color:var(--c-ink);border-color:var(--c-primary);}
+.dim-tab.active{color:var(--c-ink);}
+/* 内容区切换淡入（0.26s→--dur-view .18s；prefers-reduced-motion 已由全局动画禁用规则兜底） */
+.dim-content.active{animation-duration:var(--dur-view);}
+.ska-pane.active{animation-duration:var(--dur-view);}
+/* 顶部城市页签滑动指示条：已回退（浏览器实测发现 #city-bar 内页签为纵向堆叠，
+ * 横向底部下划线不适用；详见 08-dev-FE 偏差登记。激活态由 .city-tab.active 承担。） */
+/* 顶部导航 bar-score 状态色（engine-ska.cityBarScores 改设状态类，颜色表现回归 CSS） */
+.top-nav .bar-score.bar-ok{color:#7ee2a8;}
+.top-nav .bar-score.bar-warn{color:#ff9b9b;}
+body.layout-enh .top-nav .bar-score.bar-ok{color:#7ee2a8;}
+body.layout-enh .top-nav .bar-score.bar-warn{color:#ff9b9b;}
+/* 折叠卡片标题作为按钮的可聚焦态 */
+.collapsible .card-title{cursor:pointer;border-radius:6px;}
+.collapsible .card-title:hover{filter:brightness(.985);}
 </style>
 </head>
 <body>
@@ -130,11 +246,11 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div class="summary-card ok" style="cursor:default;">
 <div class="sc-left">
 <div class="sc-city">泰兴县</div>
-<div class="sc-score" style="color:#6b7280;" id="ss-score-1">待数据</div>
+<div class="sc-score u-muted" id="ss-score-1">待数据</div>
 <span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-1">10月待考核</span>
 </div>
 <div class="sc-right">
-<div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div>
+<div class="sc-risk u-muted">10月考核周期 10/1-10/31</div>
 <div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div>
 <div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
 <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-1"></div></div>
@@ -144,11 +260,11 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div class="summary-card ok" style="cursor:default;">
 <div class="sc-left">
 <div class="sc-city">诸暨市</div>
-<div class="sc-score" style="color:#6b7280;" id="ss-score-2">待数据</div>
+<div class="sc-score u-muted" id="ss-score-2">待数据</div>
 <span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-2">10月待考核</span>
 </div>
 <div class="sc-right">
-<div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div>
+<div class="sc-risk u-muted">10月考核周期 10/1-10/31</div>
 <div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div>
 <div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
 <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-2"></div></div>
@@ -158,11 +274,11 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div class="summary-card ok" style="cursor:default;">
 <div class="sc-left">
 <div class="sc-city">响水县</div>
-<div class="sc-score" style="color:#6b7280;" id="ss-score-3">待数据</div>
+<div class="sc-score u-muted" id="ss-score-3">待数据</div>
 <span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-3">10月待考核</span>
 </div>
 <div class="sc-right">
-<div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div>
+<div class="sc-risk u-muted">10月考核周期 10/1-10/31</div>
 <div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div>
 <div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
 <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-3"></div></div>
@@ -180,7 +296,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 
 <!-- ==================== 天维度 ==================== -->
 <div class="dim-content active" id="dim-daily">
-<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">📅 本页：当日考核数据与趋势拆解</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('monthly')">🏆 去月维度</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('report')">📋 去分析报告</a></div>
+<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📅 本页：当日考核数据与趋势拆解</span><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 去月维度</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a></div>
 
 <!-- 期次切换 -->
 <div style="display:flex;gap:0;margin-bottom:12px;border-radius:8px;overflow:hidden;width:fit-content;">
@@ -220,7 +336,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div class="cal-legend">
 <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#e8f0fe;"></span>第1期</div>
 <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#fef3e2;"></span>第2期</div>
-<div class="cal-legend-item"><span class="cal-legend-dot" style="background:#fce8e8;"></span>高峰</div>
+<div class="cal-legend-item"><span class="cal-legend-dot bg-bad-soft"></span>高峰</div>
 <div class="cal-legend-item"><span style="width:11px;height:2px;background:#34a853;display:inline-block;border-radius:2px;"></span>有数据</div>
 </div>
 <div class="cal-grid" id="cal-grid"></div>
@@ -251,11 +367,9 @@ body.layout-enh .anchor-nav{display:none!important;}
 </table>
 </div>
 <div id="bi-month-mini" style="margin-top:10px;"></div>
-<div style="font-size:11px;color:#6b7280;margin-top:6px;" id="bi-note">10月BI数据待更新，考核周期 10/1-10/31 | 切换城市标签自动联动下方考核模块</div>
+<div class="note-foot" id="bi-note">10月BI数据待更新，考核周期 10/1-10/31 | 切换城市标签自动联动下方考核模块</div>
 </div>
 </div>
-
-<!-- 趋势表 全宽 -->
 
 <!-- 图表已集中至「数据图表」页签 -->
 <div class="card" style="margin-bottom:12px;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
@@ -272,13 +386,13 @@ body.layout-enh .anchor-nav{display:none!important;}
 </div>
 <div class="grid-modules gm3">
 <div id="mod-run" class="card module-card yuepao collapsible">
-<div class="card-title collapsible"><span class="icon">🟠</span> 悦跑运力 <span class="pill pill-weight" id="pill-w-ym">权重 30%</span> <span class="pill" id="ym-caliber-pill" style="background:#fff3e0;color:#e65100;border:1px solid #ffe0b2;font-size:10.5px;">口径判定中…</span></div>
+<div class="card-title collapsible"><span class="icon">🟠</span> 悦跑运力 <span class="pill pill-weight" id="pill-w-ym">权重 30%</span> <span class="pill pill-caliber" id="ym-caliber-pill">口径判定中…</span></div>
 <div class="collapsible-content">
 <div class="indicator-row">
 <div><div class="indicator-name">达标骑手数完成度</div><span class="threshold-tag tag-red">90%~110% 计分</span></div>
 <div class="indicator-score">完成度<input class="calc-input" id="ym_rate" type="number" onchange="calcScore()"><br>出勤系数<select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:70px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select><br>得分<span id="ym_score" style="font-weight:700;color:#e8710a;">—</span><div style="font-size:10.5px;color:#6b7280;margin-top:3px;">BI日更自动填入；出勤率≥90%自动取1.05，＜90%自动置1.00（目标值待任务系统，若低于目标应为0.95）</div></div>
 </div>
-<div style="font-size:11px;color:#6b7280;text-align:left;margin-top:4px;">得分=完成度×出勤合格率系数；完成度＜90%记0分</div>
+<div class="note-foot-l">得分=完成度×出勤合格率系数；完成度＜90%记0分</div>
 <div class="mo-mtd" id="mtd-ym"></div>
 <div id="ym-weekly" style="margin-top:4px;"></div>
 </div>
@@ -301,7 +415,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div><div class="indicator-name">推单完成率</div><span class="threshold-tag tag-red">110%封顶</span></div>
 <div class="indicator-score">完成率<input class="calc-input" id="tw_rate" type="number" onchange="calcScore()"><br>得分<span id="tw_score" style="font-weight:700;color:#00b8d4;">—</span></div>
 </div>
-<div style="font-size:11px;color:#6b7280;text-align:left;margin-top:4px;">人效兜底：日均≥98.8%（高峰日另核）；低于兜底线触发预警，详见「🚨 推完兜底线」卡</div>
+<div class="note-foot-l">人效兜底：日均≥98.8%（高峰日另核）；低于兜底线触发预警，详见「🚨 推完兜底线」卡</div>
 <div class="mo-mtd" id="mtd-tw"></div>
 </div>
 </div>
@@ -333,7 +447,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div><div class="indicator-name">活跃骑手数完成度</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
 <div class="indicator-score">完成度<input class="calc-input" id="pz_rate" type="number" onchange="calcScore()"><br>得分<span id="pz_score" style="font-weight:700;color:#8d6e63;">—</span><div id="pz_act" style="font-size:10.5px;color:#6b7280;margin-top:3px;"></div></div>
 </div>
-<div style="font-size:11px;color:#6b7280;text-align:left;margin-top:4px;">完成度＜90%记0分，100%封顶</div>
+<div class="note-foot-l">完成度＜90%记0分，100%封顶</div>
 <div class="mo-mtd" id="mtd-pz"></div>
 </div>
 </div>
@@ -372,10 +486,10 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div style="font-size:12px;line-height:1.75;color:#374151;">
 <div id="qk-daily-narr">
 <table style="width:100%;border-collapse:collapse;font-size:11.5px;margin:4px 0;">
-<tr style="background:#f3e8fd;"><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">子项</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">扣/加分</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">判定条件</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">当前状态</th></tr>
-<tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❶ 门店流失</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#d93025;">−3%</b>（原5%）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">流失有效门店≥1家（仅因体验问题流失，七天内未发单即流失）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">✅ 监控中</td></tr>
-<tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❷ 门店新签</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#2e7d32;">+2%/家</b>（最高+3%）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">当月新签履约承接品牌有效门店（美配首次发单日计，含月内新签）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">⏳ 待接入（企客体验明细看板）</td></tr>
-<tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❸ 门店体验达标</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#d93025;">−2%</b></td><td style="padding:4px 8px;border:1px solid #eef1f5;">≤3家城≥1家未达标、或>3家城≥2家未达标（口径同SKA考核指标）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">✅ 监控中</td></tr>
+<tr style="background:#f3e8fd;"><th class="th-qk">子项</th><th class="th-qk">扣/加分</th><th class="th-qk">判定条件</th><th class="th-qk">当前状态</th></tr>
+<tr><td class="td-qk-sm">❶ 门店流失</td><td class="td-qk-sm"><b class="u-bad">−3%</b>（原5%）</td><td class="td-qk-sm">流失有效门店≥1家（仅因体验问题流失，七天内未发单即流失）</td><td class="td-qk-sm">✅ 监控中</td></tr>
+<tr><td class="td-qk-sm">❷ 门店新签</td><td class="td-qk-sm"><b style="color:#2e7d32;">+2%/家</b>（最高+3%）</td><td class="td-qk-sm">当月新签履约承接品牌有效门店（美配首次发单日计，含月内新签）</td><td class="td-qk-sm">⏳ 待接入（企客体验明细看板）</td></tr>
+<tr><td class="td-qk-sm">❸ 门店体验达标</td><td class="td-qk-sm"><b class="u-bad">−2%</b></td><td class="td-qk-sm">≤3家城≥1家未达标、或>3家城≥2家未达标（口径同SKA考核指标）</td><td class="td-qk-sm">✅ 监控中</td></tr>
 </table>
 <div style="font-size:11.5px;color:#6b7280;">体验&amp;推完指标剔除企客麦肯必瑞订单（10月方案迭代点）。</div>
 <div style="margin-top:4px;font-size:11.5px;color:#6b7280;">🟣 诸暨：⏳ 待数据（企客KA维值权限申请中）</div>
@@ -392,7 +506,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 <button type="button" class="ska-scope-btn" data-scope="day" onclick="skaScopeSwitch('day',this)">⏱ 最新一天</button>
 </span>
 </div>
-<div style="font-size:11px;margin-bottom:8px;"><a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 数据源：企客KA履约监控（BI 253744）</a><span style="color:#6b7280;">（随每日流水线自动刷新）</span></div>
+<div style="font-size:11px;margin-bottom:8px;"><a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" class="u-link">🔗 数据源：企客KA履约监控（BI 253744）</a><span class="u-muted">（随每日流水线自动刷新）</span></div>
 <div class="ska-dim-bar" id="ska-dim-bar">
 <button type="button" class="ska-dim-btn active" data-dim="city" onclick="skaDimSwitch('city',this)">🏙 城市</button>
 <button type="button" class="ska-dim-btn" data-dim="brand" onclick="skaDimSwitch('brand',this)">🏷 品牌</button>
@@ -416,7 +530,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 <!-- ==================== 月维度 ==================== -->
 
 <div class="dim-content" id="dim-charts">
-<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">📈 本页：图形分析</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('monthly')">🏆 回月维度</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('report')">📋 去分析报告</a></div>
+<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📈 本页：图形分析</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a></div>
 
 <!-- 图表页工具条：期次切换（与天维度页共享状态） -->
 <div class="card" style="margin-bottom:12px;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
@@ -427,19 +541,19 @@ body.layout-enh .anchor-nav{display:none!important;}
 
 <div class="section-label">✅ 数据质量</div>
 <!-- 数据完整性自检 -->
-<div class="card" id="data-health" style="margin-bottom:12px;"></div>
+<div class="card mb-12" id="data-health"></div>
 
 <div class="section-label">📈 趋势对比</div>
 <!-- 指标走势图（三城对比 · 折线/柱状可切换） -->
-<div id="chart-trend" class="card" style="margin-bottom:12px;">
+<div id="chart-trend" class="card mb-12">
 <div class="card-title"><span class="icon">📊</span> 指标走势图（三城对比 · 橙色底纹=高峰日 · 竖虚线/底纹=当前选中日期）</div>
 <div class="tc-toolbar" id="tc-toolbar"></div>
 <div style="overflow-x:auto;">
 <svg id="trend-chart-svg" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" style="min-width:680px;width:100%;height:auto;display:block;"></svg>
 </div>
-<div style="font-size:11px;color:#6b7280;margin-top:6px;">悬停数据点/柱可查看具体数值 | 红色虚线=考核警戒线（HD 显示 90% 零分线、推单率显示 98.8% 兜底线）| 支持折线/柱状切换，切换指标时下方表格同步高亮</div>
+<div class="note-foot">悬停数据点/柱可查看具体数值 | 红色虚线=考核警戒线（HD 显示 90% 零分线、推单率显示 98.8% 兜底线）| 支持折线/柱状切换，切换指标时下方表格同步高亮</div>
 </div>
-<div class="card" style="margin-bottom:12px;">
+<div class="card mb-12">
 <div class="card-title"><span class="icon">📉</span> 近期趋势（分指标展开，点击列头可切换日期）</div>
 <div class="table-scroll">
 <table class="trend-table" id="trend-table">
@@ -449,22 +563,22 @@ body.layout-enh .anchor-nav{display:none!important;}
 <tbody id="trend-body"></tbody>
 </table>
 </div>
-<div style="font-size:11px;color:#6b7280;margin-top:6px;">橙色列=高峰日 | 绿色列=当前选中日 | 点击列头可跳转到对应日期</div>
+<div class="note-foot">橙色列=高峰日 | 绿色列=当前选中日 | 点击列头可跳转到对应日期</div>
 </div>
 <div class="section-label">🧩 拆解与归因</div>
-<div class="card" id="ym-weekly-card" style="margin-bottom:12px;">
-<div class="card-title"><span class="icon">🗓️</span> 悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制） <span class="pill" id="ym-caliber-weekly" style="background:#fff3e0;color:#e65100;border:1px solid #ffe0b2;font-size:10.5px;">口径判定中…</span></div>
+<div class="card mb-12" id="ym-weekly-card">
+<div class="card-title"><span class="icon">🗓️</span> 悦跑运力 · 自然周完成度拆解（计分区间【90%,110%】· 自然周控制） <span class="pill pill-caliber" id="ym-caliber-weekly">口径判定中…</span></div>
 <div class="table-scroll" id="ym-weekly-body"><div style="text-align:center;padding:14px;color:#6b7280;font-size:12.5px;">⏳ BI数据发布后自动生成各自然周完成度</div></div>
-<div id="ym-trend-foot" style="font-size:11px;color:#6b7280;margin-top:6px;">完成度=悦跑服务质量达标骑手数/目标（周均口径，目标以任务系统下发为准）；任一自然周＜90%该周记0分（自然周控制），平均完成率不控制区间；第1/5周含跨月日期，按已有数据日均近似。</div>
+<div id="ym-trend-foot" class="note-foot">完成度=悦跑服务质量达标骑手数/目标（周均口径，目标以任务系统下发为准）；任一自然周＜90%该周记0分（自然周控制），平均完成率不控制区间；第1/5周含跨月日期，按已有数据日均近似。</div>
 </div>
 
 <!-- 两期均值对比 + 月度总分对比 并排 -->
 <div class="grid-util">
-<div class="card" style="margin-bottom:12px;">
+<div class="card mb-12">
 <div class="card-title"><span class="icon">📶</span> 两期均值对比<button class="tc-btn tc-export" onclick="exportPeriodChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
 <div id="period-bar-chart"></div>
 </div>
-<div class="card" style="margin-bottom:12px;">
+<div class="card mb-12">
 <div class="card-title"><span class="icon">🏆</span> 月度总分对比<button class="tc-btn tc-export" onclick="exportMonthChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
 <div id="month-bar-chart"></div>
 </div>
@@ -472,11 +586,11 @@ body.layout-enh .anchor-nav{display:none!important;}
 
 <!-- 多角度诊断图：缺口分解 + 兜底高峰冲击 -->
 <div class="grid-util">
-<div id="chart-gap" class="card" style="margin-bottom:12px;">
+<div id="chart-gap" class="card mb-12">
 <div class="card-title"><span class="icon">🧩</span> 加权缺口分解（缺口=(100−值)×权重，与 100−总分 吻合）<button class="tc-btn tc-export" onclick="exportGapChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
 <div id="gap-chart"></div>
 </div>
-<div id="chart-breach" class="card" style="margin-bottom:12px;">
+<div id="chart-breach" class="card mb-12">
 <div class="card-title"><span class="icon">🚨</span> 推完兜底线：高峰日 vs 非高峰日（高峰冲击视角）<button class="tc-btn tc-export" onclick="exportBreachChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
 <div id="breach-chart"></div>
 </div>
@@ -490,14 +604,14 @@ body.layout-enh .anchor-nav{display:none!important;}
 </div>
 
 <div class="dim-content" id="dim-monthly">
-<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">🏆 本页：月底结果与评估</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('daily')">📅 去天维度</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('report')">📋 去分析报告</a></div>
+<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">🏆 本页：月底结果与评估</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 去天维度</a><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a></div>
 <div class="card" style="padding:12px 18px;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#e8f0fe 100%);" id="period-top-bar">
 <div class="card-title" style="margin-bottom:6px;"><span class="icon">⏱</span> 期次进度 <span id="ptb-date" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
-<div id="ptb-body"><div style="font-size:12px;color:#6b7280;">10月考核周期 10/1-10/31，共31天，含14个高峰日（含11/1）</div></div>
+<div id="ptb-body"><div class="note-body">10月考核周期 10/1-10/31，共31天，含14个高峰日（含11/1）</div></div>
 </div>
 <div class="card" style="padding:14px 18px;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
 <div class="card-title" style="margin-bottom:8px;"><span class="icon">🧭</span> <span id="mo-title">考核方案 · 六大模块指标总览</span> <span id="mo-mode-tag" style="font-weight:400;font-size:11.5px;color:#6b7280;margin-left:4px;"></span></div>
-<div class="mod-ov" id="mod-ov-body"><div style="font-size:12px;color:#6b7280;">数据加载中…</div></div>
+<div class="mod-ov" id="mod-ov-body"><div class="note-body">数据加载中…</div></div>
 <div id="mo-footnote" style="font-size:10.5px;color:#6b7280;margin-top:8px;">口径：悦跑/普众完成度 90%~110%（＜90% 记0，悦跑第1期周出勤≥90% 系数1.05、第2期10/19起新口径不乘系数）；HD完成率 90%~100% 计分；推单完成率 110% 封顶、日均≥98.8% 人效兜底；履约完结率 80%~110% 计分；体验=复合超时40%+虚假点送达30%+配送取消单30%。🟢=计分区间内达标，🔴=低于计分下限/兜底线，⚪=当日未发布。</div>
 </div>
 
@@ -505,8 +619,8 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div class="anchor-nav">
 <a class="anchor-btn" href="#sec-overview">🏆 考核总览</a>
 <a class="anchor-btn" href="#sec-estimate">💰 预估警告罚款</a>
-<a class="anchor-btn" style="cursor:pointer;" onclick="jumpAnchor('report','sec-example');return false;" href="#sec-example">🧮 计分示例</a>
-<a class="anchor-btn" style="cursor:pointer;" onclick="jumpAnchor('report','sec-sensitivity');return false;" href="#sec-sensitivity">📈 敏感度分析</a>
+<a class="anchor-btn u-click" onclick="jumpAnchor('report','sec-example');return false;" href="#sec-example">🧮 计分示例</a>
+<a class="anchor-btn u-click" onclick="jumpAnchor('report','sec-sensitivity');return false;" href="#sec-sensitivity">📈 敏感度分析</a>
 <a class="anchor-btn" href="#sec-datasource">🔍 数据路径</a>
 <a class="anchor-btn" href="#sec-mtdeval">📊 月度评估</a>
 <a class="anchor-btn" href="#sec-qkka">🤝 企客·SKA</a>
@@ -527,35 +641,35 @@ body.layout-enh .anchor-nav{display:none!important;}
 <tbody id="ov-body">
 <tr data-ov="响水">
 <td class="city-cell">响水县</td><td>北部大区</td>
-<td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td>
-<td class="score-cell" style="color:#6b7280;">—</td><td style="color:#6b7280;">待数据</td><td style="color:#6b7280;">—</td>
+<td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td>
+<td class="score-cell u-muted">—</td><td class="u-muted">待数据</td><td class="u-muted">—</td>
 </tr>
 <tr data-ov="泰兴">
 <td class="city-cell">泰兴县</td><td>北部大区</td>
-<td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td>
-<td class="score-cell" style="color:#6b7280;">—</td><td style="color:#6b7280;">待数据</td><td style="color:#6b7280;">—</td>
+<td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td>
+<td class="score-cell u-muted">—</td><td class="u-muted">待数据</td><td class="u-muted">—</td>
 </tr>
 <tr data-ov="诸暨">
 <td class="city-cell">诸暨市</td><td>特区</td>
-<td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td><td style="color:#6b7280;">—</td>
-<td class="score-cell" style="color:#6b7280;">—</td><td style="color:#6b7280;">待数据</td><td style="color:#6b7280;">—</td>
+<td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td><td class="u-muted">—</td>
+<td class="score-cell u-muted">—</td><td class="u-muted">待数据</td><td class="u-muted">—</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="overview-note" style="font-size:11px;color:#6b7280;margin-top:6px;">画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）| 悦跑已接入BI自动抓取（诸暨/响水不考核）；普众展示实际活跃骑手数（完成率待任务系统目标，暂按已接入权重归一）| 体验&推完剔除企客麦肯必瑞订单</div>
+<div id="overview-note" class="note-foot">画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）| 悦跑已接入BI自动抓取（诸暨/响水不考核）；普众展示实际活跃骑手数（完成率待任务系统目标，暂按已接入权重归一）| 体验&推完剔除企客麦肯必瑞订单</div>
 <div id="ov-city-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;">
 <div style="border-left:3px solid #d93025;padding:8px 12px;background:#fff5f5;border-radius:0 6px 6px 0;">
-<div style="font-weight:700;color:#6b7280;font-size:12px;">📊 诸暨 · 10月月预计（MTD）</div>
-<div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div class="card-mini-title">📊 诸暨 · 10月月预计（MTD）</div>
+<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
 </div>
 <div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;">
-<div style="font-weight:700;color:#6b7280;font-size:12px;">📊 泰兴 · 10月月预计（MTD）</div>
-<div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div class="card-mini-title">📊 泰兴 · 10月月预计（MTD）</div>
+<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
 </div>
 <div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;">
-<div style="font-weight:700;color:#6b7280;font-size:12px;">📊 响水 · 10月月预计（MTD）</div>
-<div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div class="card-mini-title">📊 响水 · 10月月预计（MTD）</div>
+<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
 </div>
 </div>
 <!-- 三城月度总分对比已集中至「数据图表」页签 -->
@@ -594,37 +708,37 @@ body.layout-enh .anchor-nav{display:none!important;}
 <tr>
 <td class="city-cell" style="font-weight:700;">诸暨市</td>
 <td data-est="诸暨" data-col="score" style="font-weight:700;color:#6b7280;">—</td>
-<td data-est="诸暨" data-col="level"><span style="background:#e8eaed;color:#6b7280;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10月月预计（MTD）</span></td>
-<td style="background:#f8f9fb;" data-est="诸暨" data-col="keep"><span style="color:#6b7280;">—</span></td>
-<td style="background:#f8f9fb;text-align:center;color:#6b7280;font-weight:700;">—</td>
-<td style="background:#e6f4ea;"><span style="color:#34a853;font-weight:600;">达标</span><br><span style="font-size:10px;color:#6b7280;">需提升至100%</span></td>
-<td style="background:#e6f4ea;text-align:center;color:#34a853;font-weight:700;">0</td>
-<td style="background:#fce8e8;"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span style="font-size:10px;color:#6b7280;">跌破90%</span></td>
-<td style="background:#fce8e8;text-align:center;color:#b71c1c;font-weight:700;">2个+</td>
+<td data-est="诸暨" data-col="level"><span class="level-badge">10月月预计（MTD）</span></td>
+<td class="bg-neutral" data-est="诸暨" data-col="keep"><span class="u-muted">—</span></td>
+<td class="est-cell-keep-num">—</td>
+<td class="bg-ok-soft"><span style="color:#34a853;font-weight:600;">达标</span><br><span class="note-2xs">需提升至100%</span></td>
+<td class="est-cell-ok-num">0</td>
+<td class="bg-bad-soft"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span class="note-2xs">跌破90%</span></td>
+<td class="est-cell-bad-num">2个+</td>
 </tr>
 <!-- 泰兴 -->
 <tr>
 <td class="city-cell" style="font-weight:700;">泰兴县</td>
 <td data-est="泰兴" data-col="score" style="font-weight:700;color:#6b7280;">—</td>
-<td data-est="泰兴" data-col="level"><span style="background:#e8eaed;color:#6b7280;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10月月预计（MTD）</span></td>
-<td style="background:#f8f9fb;" data-est="泰兴" data-col="keep"><span style="color:#6b7280;">—</span></td>
-<td style="background:#f8f9fb;text-align:center;color:#6b7280;font-weight:700;">—</td>
-<td style="background:#e6f4ea;"><span style="color:#34a853;font-weight:600;">达标</span><br><span style="font-size:10px;color:#6b7280;">需提升至100%</span></td>
-<td style="background:#e6f4ea;text-align:center;color:#34a853;font-weight:700;">0</td>
-<td style="background:#fce8e8;"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span style="font-size:10px;color:#6b7280;">跌破90%</span></td>
-<td style="background:#fce8e8;text-align:center;color:#b71c1c;font-weight:700;">2个+</td>
+<td data-est="泰兴" data-col="level"><span class="level-badge">10月月预计（MTD）</span></td>
+<td class="bg-neutral" data-est="泰兴" data-col="keep"><span class="u-muted">—</span></td>
+<td class="est-cell-keep-num">—</td>
+<td class="bg-ok-soft"><span style="color:#34a853;font-weight:600;">达标</span><br><span class="note-2xs">需提升至100%</span></td>
+<td class="est-cell-ok-num">0</td>
+<td class="bg-bad-soft"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span class="note-2xs">跌破90%</span></td>
+<td class="est-cell-bad-num">2个+</td>
 </tr>
 <!-- 响水 -->
 <tr>
 <td class="city-cell" style="font-weight:700;">响水县</td>
 <td data-est="响水" data-col="score" style="font-weight:700;color:#6b7280;">—</td>
-<td data-est="响水" data-col="level"><span style="background:#e8eaed;color:#6b7280;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">10月月预计（MTD）</span></td>
-<td style="background:#f8f9fb;" data-est="响水" data-col="keep"><span style="color:#6b7280;">—</span></td>
-<td style="background:#f8f9fb;text-align:center;color:#6b7280;font-weight:700;">—</td>
-<td style="background:#e6f4ea;"><span style="color:#34a853;font-weight:600;">达标</span><br><span style="font-size:10px;color:#6b7280;">需提升至100%</span></td>
-<td style="background:#e6f4ea;text-align:center;color:#34a853;font-weight:700;">0</td>
-<td style="background:#fce8e8;"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span style="font-size:10px;color:#6b7280;">跌破90%</span></td>
-<td style="background:#fce8e8;text-align:center;color:#b71c1c;font-weight:700;">2个+</td>
+<td data-est="响水" data-col="level"><span class="level-badge">10月月预计（MTD）</span></td>
+<td class="bg-neutral" data-est="响水" data-col="keep"><span class="u-muted">—</span></td>
+<td class="est-cell-keep-num">—</td>
+<td class="bg-ok-soft"><span style="color:#34a853;font-weight:600;">达标</span><br><span class="note-2xs">需提升至100%</span></td>
+<td class="est-cell-ok-num">0</td>
+<td class="bg-bad-soft"><span style="color:#b71c1c;font-weight:600;">重罚</span><br><span class="note-2xs">跌破90%</span></td>
+<td class="est-cell-bad-num">2个+</td>
 </tr>
 </tbody>
 </table>
@@ -632,19 +746,19 @@ body.layout-enh .anchor-nav{display:none!important;}
 <!-- 三城汇总 -->
 <div id="est-sum-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;">
 <div style="border:1px solid #fce8e8;border-radius:8px;padding:12px;background:#fff5f5;">
-<div style="font-size:11px;color:#6b7280;margin-bottom:4px;">维持现状 · 三城合计</div>
+<div class="note-xs-b">维持现状 · 三城合计</div>
 <div id="est-sum-keep" style="font-size:14px;font-weight:700;color:#6b7280;">—</div>
-<div style="font-size:11px;color:#6b7280;margin-top:4px;">10月BI数据更新后自动计算<br>全月警告封顶2个/城，超出转罚款</div>
+<div class="note-xs">10月BI数据更新后自动计算<br>全月警告封顶2个/城，超出转罚款</div>
 </div>
 <div style="border:1px solid #e6f4ea;border-radius:8px;padding:12px;background:#f0faf2;">
-<div style="font-size:11px;color:#6b7280;margin-bottom:4px;">冲刺达标 · 三城合计</div>
+<div class="note-xs-b">冲刺达标 · 三城合计</div>
 <div style="font-size:20px;font-weight:700;color:#34a853;">0警告</div>
-<div style="font-size:11px;color:#6b7280;margin-top:4px;">三城均≥100% → 无警告无罚款<br>10月考核周期 10/1-10/31</div>
+<div class="note-xs">三城均≥100% → 无警告无罚款<br>10月考核周期 10/1-10/31</div>
 </div>
 <div style="border:1px solid #fce8e8;border-radius:8px;padding:12px;background:#fff5f5;">
-<div style="font-size:11px;color:#6b7280;margin-bottom:4px;">持续下滑 · 三城合计</div>
+<div class="note-xs-b">持续下滑 · 三城合计</div>
 <div style="font-size:20px;font-weight:700;color:#b71c1c;">6个+警告</div>
-<div style="font-size:11px;color:#6b7280;margin-top:4px;">三城均跌入重罚区间（&lt;90%）<br>每城2个警告封顶后转罚款</div>
+<div class="note-xs">三城均跌入重罚区间（&lt;90%）<br>每城2个警告封顶后转罚款</div>
 </div>
 </div>
 <!-- 诸暨重点预警 -->
@@ -669,17 +783,17 @@ body.layout-enh .anchor-nav{display:none!important;}
 <!-- [D包] 窄屏适配：宽表（指标数据路径）包一层横向滚动容器，移动端可滑动查看 -->
 <div class="table-scroll" id="ds-table-scroll">
 <table id="ds-table" style="width:100%;border-collapse:collapse;font-size:12px;color:#6b7280;">
-<tr id="ds-head-row" style="background:#eef2f7;"><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">指标</th><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">方案官方数据查看路径</th><th style="text-align:left;padding:6px 8px;border:1px solid #e3e8ef;">本看板接入状态</th></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">加盟达标骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-加盟（数据可查T-3，越久越准，以核算下发为准）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（加盟明细：达标/总骑手）</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑完成度 / 排班出勤</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-悦跑 / 悦跑排班出勤合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（出勤系数自动判定）</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑新口径（10/19起）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-待更新</td><td style="padding:5px 8px;border:1px solid #eef1f5;">⏳ 官方看板未上线，上线后接入</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">普众活跃骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-普通众包</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（目标待任务系统）</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">体验三项 / 推完 / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-体验考核含PHF / 推单完成率all / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（官方核算值发布后补录）</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">工装抽检合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-骑手工装（悦跑考核周期9/28-11/1）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客流失 / 企客体验达标</td><td style="padding:5px 8px;border:1px solid #eef1f5;">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入监控（当前三城无门店数据，有门店自动预警）</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客KA商家履约（商家/门店日维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">readata·KA客户履约监控 → 品牌x商家x履约站-履约明细数据（ID 17805，实际指向 BI 253744），KA商家口径与企客体验明细看板一致</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（10月MTD累计截至10-01：泰兴22品牌/75店、响水13品牌/50店，覆盖门店口径；9月整月：泰兴36品牌/117店、响水22品牌/37店，有单门店口径；诸暨无维值权限待申请）</td></tr>
-<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">兜底阈值（人效X / 承托比X）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">以任务系统下发为准</td><td style="padding:5px 8px;border:1px solid #eef1f5;" id="sp-hd-status">⏳ 待下发后接入预警判定</td></tr>
+<tr id="ds-head-row" style="background:#eef2f7;"><th class="th-ds">指标</th><th class="th-ds">方案官方数据查看路径</th><th class="th-ds">本看板接入状态</th></tr>
+<tr><td class="td-qk">加盟达标骑手</td><td class="td-qk">履约数据考核看板-加盟（数据可查T-3，越久越准，以核算下发为准）</td><td class="td-qk">✅ 已接入日更（加盟明细：达标/总骑手）</td></tr>
+<tr><td class="td-qk">悦跑完成度 / 排班出勤</td><td class="td-qk">履约数据考核看板-悦跑 / 悦跑排班出勤合格率</td><td class="td-qk">✅ 已接入日更（出勤系数自动判定）</td></tr>
+<tr><td class="td-qk">悦跑新口径（10/19起）</td><td class="td-qk">履约数据考核看板-待更新</td><td class="td-qk">⏳ 官方看板未上线，上线后接入</td></tr>
+<tr><td class="td-qk">普众活跃骑手</td><td class="td-qk">履约数据考核看板-普通众包</td><td class="td-qk">✅ 已接入日更（目标待任务系统）</td></tr>
+<tr><td class="td-qk">体验三项 / 推完 / 完结率</td><td class="td-qk">履约数据考核看板-体验考核含PHF / 推单完成率all / 完结率</td><td class="td-qk">✅ 已接入（官方核算值发布后补录）</td></tr>
+<tr><td class="td-qk">承托比</td><td class="td-qk">履约数据考核看板-承托比</td><td class="td-qk">✅ 已接入日更</td></tr>
+<tr><td class="td-qk">工装抽检合格率</td><td class="td-qk">履约数据考核看板-骑手工装（悦跑考核周期9/28-11/1）</td><td class="td-qk">✅ 已接入日更</td></tr>
+<tr><td class="td-qk">企客流失 / 企客体验达标</td><td class="td-qk">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td class="td-qk">✅ 已接入监控（当前三城无门店数据，有门店自动预警）</td></tr>
+<tr><td class="td-qk">企客KA商家履约（商家/门店日维度）</td><td class="td-qk">readata·KA客户履约监控 → 品牌x商家x履约站-履约明细数据（ID 17805，实际指向 BI 253744），KA商家口径与企客体验明细看板一致</td><td class="td-qk">✅ 已接入（10月MTD累计截至10-01：泰兴22品牌/75店、响水13品牌/50店，覆盖门店口径；9月整月：泰兴36品牌/117店、响水22品牌/37店，有单门店口径；诸暨无维值权限待申请）</td></tr>
+<tr><td class="td-qk">兜底阈值（人效X / 承托比X）</td><td class="td-qk">以任务系统下发为准</td><td class="td-qk" id="sp-hd-status">⏳ 待下发后接入预警判定</td></tr>
 </table>
 </div>
 </div>
@@ -687,9 +801,8 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div id="estimate-foot" style="font-size:11px;color:#6b7280;margin-top:8px;">预估基于10月BI数据更新后自动计算 | 全月警告封顶2个/城市，超出按标准转罚款 | 具体罚款金额以任务系统下发为准</div>
 </div>
 
-<!-- 考核方案参考（可折叠） -->
 <!-- 月度评估（月中MTD / 月末月度数据 双模式，数据由流水线注入） -->
-<div class="card" id="sec-mtdeval" style="margin-bottom:16px;">
+<div class="card mb-16" id="sec-mtdeval">
 <div class="card-title"><span class="icon">📊</span> 月度评估 <span id="mtd-mode-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
 <div id="mtd-eval-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月度评估数据加载中…</div></div>
 </div>
@@ -712,7 +825,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 
 <div id="scheme-iterations"></div>
 
-<div id="scheme-formula" class="grid grid-2" style="margin-bottom:16px;"></div>
+<div id="scheme-formula" class="grid grid-2 mb-16"></div>
 
 <!-- 月维度：考核指标明细解读 -->
 <div class="section-label">📋 考核指标明细解读</div>
@@ -720,14 +833,10 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div id="scheme-panorama"></div>
 
 <!-- 推单完成率 & 体验模块区间计分表（配置化渲染） -->
-<div id="scheme-scores" class="grid grid-2" style="margin-bottom:16px;"></div>
+<div id="scheme-scores" class="grid grid-2 mb-16"></div>
 
 <!-- 异常骑手剔除说明（配置化渲染） -->
 <div id="scheme-exception"></div>
-
-<!-- 计分示例解读（框架） -->
-
-<!-- 指标敏感度分析 -->
 
 <!-- 月维度：考核周期（配置化渲染） -->
 <div id="scheme-period"></div>
@@ -781,7 +890,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 </div>
 <div id="ska-month-card" class="card" data-ska-static style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
 <div class="card-title"><span class="icon">📅</span> 企客SKA · 月维度（六品牌总览 · 门店考核值 · 赔付预估）</div>
-<div style="font-size:11px;margin-bottom:8px;"><a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a><span style="color:#6b7280;"> ｜ 门店明细补充：品牌x商家x履约站-履约明细（ID 17805）</span></div>
+<div style="font-size:11px;margin-bottom:8px;"><a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" class="u-link">🔗 月维度数据源：SKA 体验看板（BI 269707）</a><span class="u-muted"> ｜ 门店明细补充：品牌x商家x履约站-履约明细（ID 17805）</span></div>
 <div id="ska-six-box"></div>
 </div>
 </div>
@@ -789,7 +898,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 <!-- ==================== 分析报告 ==================== -->
 
 <div class="dim-content" id="dim-report">
-<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span style="font-size:12px;color:#6b7280;">📋 本页：深度分析</span><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn" style="cursor:pointer;" onclick="jumpDim('monthly')">🏆 回月维度</a></div>
+<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📋 本页：深度分析</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a></div>
 
 <div class="rpt-header">
 <h2 id="rpt-title">2026年10月配送考核指标优化提升方案</h2>
@@ -812,7 +921,7 @@ body.layout-enh .anchor-nav{display:none!important;}
 </div>
 
 <!-- 🔬 切片分析（城市 × 期次 × 指标，JS 自动生成） -->
-<div class="card slice-wrap" id="slice-analysis" style="margin-bottom:16px;"></div>
+<div class="card slice-wrap mb-16" id="slice-analysis"></div>
 
 <!-- 🔍 问题细化拆解 + ⚡ 异常波动明细（JS 自动生成） -->
 <div class="card" id="issues-breakdown" style="margin-bottom:16px;border-left:4px solid #ef6c00;"></div>
@@ -849,18 +958,18 @@ body.layout-enh .anchor-nav{display:none!important;}
 </div>
 <div class="preset-scenarios">
 <div class="preset-scenario optimistic" onclick="applyPreset('optimistic')">
-<div class="ps-label" style="color:#34a853;">乐观预估</div>
-<div class="ps-score" id="ps-optimistic" style="color:#34a853;">—</div>
+<div class="ps-label u-ok">乐观预估</div>
+<div class="ps-score u-ok" id="ps-optimistic">—</div>
 <div class="ps-desc">HD≥98 悦跑≥100 普众=100<br>体验≥96 推单≥99.5 完结≥99.9</div>
 </div>
 <div class="preset-scenario realistic active" onclick="applyPreset('realistic')">
-<div class="ps-label" style="color:#1967d2;">基准预估</div>
-<div class="ps-score" id="ps-realistic" style="color:#1967d2;">—</div>
+<div class="ps-label u-link">基准预估</div>
+<div class="ps-score u-link" id="ps-realistic">—</div>
 <div class="ps-desc">HD=95 悦跑=96 普众=100<br>体验=95 推单=99.2 完结=99.9</div>
 </div>
 <div class="preset-scenario conservative" onclick="applyPreset('conservative')">
-<div class="ps-label" style="color:#d93025;">保守预估</div>
-<div class="ps-score" id="ps-conservative" style="color:#d93025;">—</div>
+<div class="ps-label u-bad">保守预估</div>
+<div class="ps-score u-bad" id="ps-conservative">—</div>
 <div class="ps-desc">HD=92 悦跑=88（周记0）<br>体验=92 推单=98.5 完结=99.5</div>
 </div>
 </div>
@@ -868,11 +977,11 @@ body.layout-enh .anchor-nav{display:none!important;}
 <div class="preset-compare-item current">
 <div class="pc-label" id="pc-current-label">当前MTD总分（—天）</div>
 <div class="pc-value" id="pc-current" style="color:#f5a623;">—</div>
-<div class="pc-delta" style="color:#6b7280;" id="pc-current-level">—</div>
+<div class="pc-delta u-muted" id="pc-current-level">—</div>
 </div>
 <div class="preset-compare-item estimated">
 <div class="pc-label">预估月度总分（31天）</div>
-<div class="pc-value" id="pc-estimated" style="color:#1967d2;">—</div>
+<div class="pc-value u-link" id="pc-estimated">—</div>
 <div class="pc-delta" id="pc-delta">—</div>
 </div>
 </div>
@@ -895,70 +1004,70 @@ body.layout-enh .anchor-nav{display:none!important;}
 <tr>
 <td class="city-cell" style="color:#e8525f;">加盟</td>
 <td>服务质量达标骑手数完成率</td>
-<td data-ex="hd" style="color:#6b7280;">—</td>
-<td style="color:#6b7280;">—</td>
+<td data-ex="hd" class="u-muted">—</td>
+<td class="u-muted">—</td>
 <td>15%</td>
-<td style="color:#6b7280;">—</td>
-<td style="text-align:left;font-size:11px;">计分区间【90%,100%】，＜90%记0分</td>
+<td class="u-muted">—</td>
+<td class="td-note">计分区间【90%,100%】，＜90%记0分</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#e8710a;">悦跑</td>
 <td>达标骑手数完成度×出勤合格率系数</td>
-<td data-ex="ym" style="color:#6b7280;">—</td>
-<td style="color:#6b7280;">—</td>
+<td data-ex="ym" class="u-muted">—</td>
+<td class="u-muted">—</td>
 <td>30%</td>
-<td style="color:#6b7280;">—</td>
-<td style="text-align:left;font-size:11px;">完成度【90%,110%】自然周控制；出勤≥90%→1.05、≥目标→1.0、＜目标→0.95</td>
+<td class="u-muted">—</td>
+<td class="td-note">完成度【90%,110%】自然周控制；出勤≥90%→1.05、≥目标→1.0、＜目标→0.95</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#8d6e63;">普众</td>
 <td>非悦跑活跃骑手数完成度</td>
-<td data-ex="pz" style="color:#6b7280;">—</td>
-<td style="color:#6b7280;">—</td>
+<td data-ex="pz" class="u-muted">—</td>
+<td class="u-muted">—</td>
 <td>5%</td>
-<td style="color:#6b7280;">—</td>
-<td style="text-align:left;font-size:11px;">计分区间【90%,100%】，自然周控制区间</td>
+<td class="u-muted">—</td>
+<td class="td-note">计分区间【90%,100%】，自然周控制区间</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#7b61ff;">体验</td>
-<td>体验模块综合得分<br><span style="font-size:10px;color:#6b7280;">超时40%+虚假30%+取消30%</span></td>
-<td data-ex="ty" style="color:#6b7280;">—</td>
-<td id="ex-ty-note" style="color:#6b7280;">—</td>
+<td>体验模块综合得分<br><span class="note-2xs">超时40%+虚假30%+取消30%</span></td>
+<td data-ex="ty" class="u-muted">—</td>
+<td id="ex-ty-note" class="u-muted">—</td>
 <td>20%</td>
-<td style="color:#6b7280;">—</td>
-<td style="text-align:left;font-size:11px;">10月剔除企客麦肯必瑞订单</td>
+<td class="u-muted">—</td>
+<td class="td-note">10月剔除企客麦肯必瑞订单</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#00b8d4;">推完</td>
 <td>推单完成率</td>
-<td data-ex="tw" style="color:#6b7280;">—</td>
-<td id="ex-tw-note" style="color:#6b7280;">—</td>
+<td data-ex="tw" class="u-muted">—</td>
+<td id="ex-tw-note" class="u-muted">—</td>
 <td>20%</td>
-<td style="color:#6b7280;">—</td>
-<td style="text-align:left;font-size:11px;">10月剔除企客麦肯必瑞订单</td>
+<td class="u-muted">—</td>
+<td class="td-note">10月剔除企客麦肯必瑞订单</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#ff6b35;">完结率</td>
-<td>履约完结率<br><span style="font-size:10px;color:#6b7280;">餐饮60%+非餐40%</span></td>
-<td data-ex="wj" style="color:#6b7280;">—</td>
-<td style="color:#6b7280;">—</td>
+<td>履约完结率<br><span class="note-2xs">餐饮60%+非餐40%</span></td>
+<td data-ex="wj" class="u-muted">—</td>
+<td class="u-muted">—</td>
 <td>10%</td>
-<td style="color:#6b7280;">—</td>
-<td style="text-align:left;font-size:11px;">计分区间【80%,110%】</td>
+<td class="u-muted">—</td>
+<td class="td-note">计分区间【80%,110%】</td>
 </tr>
 <tr style="background:#f8f9fb;font-weight:700;">
 <td class="city-cell" colspan="5" style="text-align:right;">月度总分</td>
 <td id="ex-total" style="color:#6b7280;font-size:16px;">—</td>
-<td id="ex-total-note" style="text-align:left;font-size:11px;">10月BI数据更新后自动计算</td>
+<td id="ex-total-note" class="td-note">10月BI数据更新后自动计算</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="ex-note" style="margin-top:10px;font-size:12px;color:#6b7280;background:#e8f0fe;padding:10px 14px;border-radius:8px;">
-<strong style="color:#1967d2;">10月考核要点：</strong>体验&推完指标剔除企客麦肯必瑞订单；悦跑新口径10/19起生效（需排班班次全量达成）；企客扣分调整（流失扣3%，新签加2%最高加3%，门店体验未达标扣2%）；高峰日共14天（10/1-10/7、10/11、10/17-10/18、10/24-10/25、10/31、11/1；其中11/1为悦跑/普众第2期周末日）。
+<strong class="u-link">10月考核要点：</strong>体验&推完指标剔除企客麦肯必瑞订单；悦跑新口径10/19起生效（需排班班次全量达成）；企客扣分调整（流失扣3%，新签加2%最高加3%，门店体验未达标扣2%）；高峰日共14天（10/1-10/7、10/11、10/17-10/18、10/24-10/25、10/31、11/1；其中11/1为悦跑/普众第2期周末日）。
 </div>
 </div>
-<div class="card" id="sec-sensitivity" style="margin-bottom:16px;">
+<div class="card mb-16" id="sec-sensitivity">
 <div class="card-title"><span class="icon">📈</span> 指标敏感度分析（每提升1个百分点对总分的影响）</div>
 <div class="table-scroll">
 <table class="dt">
@@ -969,26 +1078,26 @@ body.layout-enh .anchor-nav{display:none!important;}
 <tr>
 <td class="city-cell" style="color:#e8525f;">加盟</td>
 <td>服务质量达标骑手数</td><td>15%</td>
-<td><strong style="color:#d93025;">+0.15</strong></td>
+<td><strong class="u-bad">+0.15</strong></td>
 <td class="c-orange">中高</td>
 <td><span class="threshold-tag tag-orange">P1 高</span></td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#e8710a;">悦跑</td>
 <td>达标骑手数完成度×出勤系数</td><td>30%</td>
-<td><strong style="color:#d93025;">+0.30</strong></td>
+<td><strong class="u-bad">+0.30</strong></td>
 <td class="c-orange">中</td>
 <td><span class="threshold-tag tag-red">P0 最高</span></td>
-<td style="text-align:left;font-size:11px;">权重最大模块：保出勤合格率≥目标拿1.0系数，冲刺90%+拿1.05增益</td>
+<td class="td-note">权重最大模块：保出勤合格率≥目标拿1.0系数，冲刺90%+拿1.05增益</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#8d6e63;">普众</td>
 <td>活跃骑手数完成度</td><td>5%</td>
-<td><strong style="color:#34a853;">+0.05</strong></td>
+<td><strong class="u-ok">+0.05</strong></td>
 <td class="c-green">低</td>
 <td><span class="threshold-tag tag-green">P3 维持</span></td>
-<td style="text-align:left;font-size:11px;">盯活跃骑手数不低于目标（周期内≥3天有单且完单≥20单）</td>
-<td style="text-align:left;font-size:11px;">增加高峰日运力供给、优化派单策略</td>
+<td class="td-note">盯活跃骑手数不低于目标（周期内≥3天有单且完单≥20单）</td>
+<td class="td-note">增加高峰日运力供给、优化派单策略</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#7b61ff;">体验</td>
@@ -996,29 +1105,29 @@ body.layout-enh .anchor-nav{display:none!important;}
 <td><strong style="color:#f5a623;">+0.20</strong></td>
 <td class="c-orange">中</td>
 <td><span class="threshold-tag tag-orange">P1 高</span></td>
-<td style="text-align:left;font-size:11px;">降低超时率、减少虚假送达、控制取消</td>
+<td class="td-note">降低超时率、减少虚假送达、控制取消</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#00b8d4;">推完</td>
 <td>推单完成率</td><td>20%</td>
-<td><strong style="color:#1967d2;">+0.20</strong></td>
+<td><strong class="u-link">+0.20</strong></td>
 <td class="c-green">低</td>
 <td><span class="threshold-tag tag-green">P2 维持</span></td>
-<td style="text-align:left;font-size:11px;">已99%+，维持稳定即可</td>
+<td class="td-note">已99%+，维持稳定即可</td>
 </tr>
 <tr>
 <td class="city-cell" style="color:#ff6b35;">完结率</td>
 <td>履约完结率</td><td>10%</td>
-<td><strong style="color:#34a853;">+0.10</strong></td>
+<td><strong class="u-ok">+0.10</strong></td>
 <td class="c-green">低</td>
 <td><span class="threshold-tag tag-green">P3 维持</span></td>
-<td style="text-align:left;font-size:11px;">已99.9%+，无需额外投入</td>
+<td class="td-note">已99.9%+，无需额外投入</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div style="margin-top:10px;font-size:12px;color:#6b7280;background:#e8f0fe;padding:10px 14px;border-radius:8px;">
-<strong style="color:#1967d2;">优先级排序：</strong>加盟完成率（每+1%→总分+0.5%）> 体验分（每+1分→总分+0.2%）= 推单完成率（每+1%→总分+0.2%）> 履约完结率（每+1%→总分+0.1%）。<span id="priority-tail">10月体验&推完剔除企客订单后，指标值可能变化，需重新对标。</span>
+<strong class="u-link">优先级排序：</strong>加盟完成率（每+1%→总分+0.5%）> 体验分（每+1分→总分+0.2%）= 推单完成率（每+1%→总分+0.2%）> 履约完结率（每+1%→总分+0.1%）。<span id="priority-tail">10月体验&推完剔除企客订单后，指标值可能变化，需重新对标。</span>
 </div>
 </div>
 </div>
@@ -2105,12 +2214,24 @@ function setVal(id, val) { var el = document.getElementById(id); if (el) el.valu
 function getVal(id) { var el = document.getElementById(id); if (!el || el.value === '') return null; var v = parseFloat(el.value); return isNaN(v) ? null : v; }
 function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
+// [FE优化轮] 城市页签滑动指示条：浏览器实测（08-dev-FE）发现 .top-nav #city-bar 内三枚
+// .city-tab 为纵向堆叠（getBoundingClientRect：x 恒定 204、y=-42/13/67），横向底部下划线
+// 指示条与实际布局不匹配（会成为固定在条底的误导线）。按"谨慎实现"原则回退该可选增强，
+// 激活态视觉仍由既有 .city-tab.active（金底渐变+阴影）承担；不保留任何指示条残留代码。
+
 // 推单分段线性计分（方案：<门槛0；=门槛90%；门槛~目标线性90~100；=目标100%；目标~挑战线性100~110；≥挑战110）
 // 门槛/目标/挑战具体数值待任务系统下发后填入；未下发时按完成率直算（区间【0,110】）
 
 // ===================== 折叠 =====================
+// [FE优化轮] 折叠卡片键盘可达：card-title 补 role/tabindex/aria-expanded，Enter/Space 触发（原为仅 click 的 div）
 document.querySelectorAll('.collapsible .card-title').forEach(function(el) {
-el.addEventListener('click', function() { this.parentElement.classList.toggle('collapsed'); });
+el.setAttribute('role','button');
+el.setAttribute('tabindex','0');
+el.setAttribute('aria-expanded', el.parentElement.classList.contains('collapsed') ? 'false' : 'true');
+el.addEventListener('click', function() { this.parentElement.classList.toggle('collapsed'); this.setAttribute('aria-expanded', this.parentElement.classList.contains('collapsed') ? 'false' : 'true'); });
+el.addEventListener('keydown', function(e) {
+if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
+});
 });
 
 // ===================== 数据分析维度 =====================
@@ -4730,8 +4851,10 @@ try{
 var m=(typeof MTD_EVAL!=='undefined'&&MTD_EVAL&&MTD_EVAL.cities)?MTD_EVAL.cities:null; if(!m)return;
 document.querySelectorAll('#city-bar .bar-score').forEach(function(el){
 var c=el.getAttribute('data-city'); var v=m[c]&&m[c].score;
-if(v!=null){ el.textContent=(v>=95?'✓ ':'⚠ ')+Number(v).toFixed(2); el.style.color=(v>=95?'#7ee2a8':'#ff9b9b'); }
-else { el.textContent='待数据'; }
+if(v!=null){ el.textContent=(v>=95?'✓ ':'⚠ ')+Number(v).toFixed(2);
+/* [FE优化轮] 颜色表现回归 CSS：只设状态类（.bar-ok/.bar-warn），不再内联覆盖 .bar-score 规则；状态色语义不变（≥95 绿 / <95 红） */
+el.classList.toggle('bar-ok', v>=95); el.classList.toggle('bar-warn', v<95); el.style.color=''; }
+else { el.textContent='待数据'; el.classList.remove('bar-ok'); el.classList.remove('bar-warn'); }
 });
 }catch(e){}
 }
