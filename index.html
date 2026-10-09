@@ -293,6 +293,7 @@
 
 
 
+
 <style>
 /* ====== mt-style-injected ====== */
 :root{
@@ -501,11 +502,11 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 }
 .pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
 /* ---- 统一导航栏 ---- */
-.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
-.top-nav a{color:#94a3b8;text-decoration:none;transition:color .15s;white-space:nowrap}
+.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#1B2233 0%,#2D3447 100%);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.top-nav a{color:#8A8FA3;text-decoration:none;transition:color .15s;white-space:nowrap}
 .top-nav a:hover{color:#FFC300}
 .top-nav .nav-current{color:#fff;font-weight:700;margin-left:4px}
-.top-nav .nav-sep{color:#475569;margin:0 2px}
+.top-nav .nav-sep{color:#3A4458;margin:0 2px}
 .top-nav .nav-switch{margin-left:auto}
 @media(max-width:600px){.top-nav{padding:0 12px;font-size:12px;gap:8px;height:36px}}
 /* ---- 统一二维码 ---- */
@@ -559,6 +560,14 @@ body.no-scroll{overflow:hidden}
 .pbtn,.clearbtn,.city-tab,.dim-tab,.vtab,.tab,.fchip,.cbar-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .dim-tabs{scroll-behavior:smooth}
 @media(max-width:600px){.pbtn{min-height:32px!important;padding:6px 10px!important}}
+/* ---- 考核看板结构对齐（黄底线 / 圆角 / 页签激活态） ---- */
+.header{position:relative;overflow:hidden;border-radius:10px}
+.header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,#FFC300,#F5A623,#FFC300)}
+.header .subtitle:not(.header-meta){color:#8A8FA3!important}
+.header .header-meta .freshness-badge{display:inline-block}
+.header .freshness-badge.fresh{color:#7bed9f!important}
+.city-tab.active,.dim-tab.active{color:#FFC300!important}
+.city-tab,.dim-tab{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 /* ====== end mt-style ====== */</style>
 </head><body>
 
