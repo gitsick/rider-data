@@ -175,9 +175,7 @@ th,td{padding:6px 8px;font-size:11px}
 .chart-section .title .hint{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-</style>
-
-<style>
+</style><style>
 /* ====== mt-style-injected ====== */
 :root{
   --mt-yellow:#FFC300;
@@ -443,7 +441,8 @@ body.no-scroll{overflow:hidden}
 .pbtn,.clearbtn,.city-tab,.dim-tab,.vtab,.tab,.fchip,.cbar-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .dim-tabs{scroll-behavior:smooth}
 @media(max-width:600px){.pbtn{min-height:32px!important;padding:6px 10px!important}}
-/* ---- 考核看板结构对齐（黄底线 / 圆角 / 页签激活态） ---- */
+/* ---- 考核看板结构对齐（黄底线 / 圆角 / 页签激活态） ----
+   注：布局参数对齐规则在 ASSESS_ALIGN_CSS，仅注入考核看板，避免影响其它页卡片内边距 */
 .header{position:relative;overflow:hidden;border-radius:10px}
 .header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,#FFC300,#F5A623,#FFC300)}
 .header .subtitle:not(.header-meta){color:#8A8FA3!important}
@@ -484,11 +483,7 @@ function vtabShow(which){
 /* end vtab */</script><div class="wrap">
 <div class="header">
 <div class="hdr-left"><h1>骑手解约数据看板</h1><div class="sub">华东 + 华南 · 点击姓名查看解除协议 · 支持搜索 / 筛选 / 排序 / 导出</div></div>
-<div class="upd">🕐 数据更新：2026-10-10 03:01</div>
-
-
-
-
+<div class="upd">🕐 数据更新：2026-10-10 04:01</div>
 
 <!-- qr-header-injected -->
 <div class="qr-small" onclick="openQrModal()" role="button" tabindex="0" aria-label="点击查看二维码" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openQrModal()}">
