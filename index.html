@@ -297,6 +297,7 @@
 
 
 
+
 <style>
 /* ====== mt-style-injected ====== */
 :root{
@@ -563,7 +564,8 @@ body.no-scroll{overflow:hidden}
 .pbtn,.clearbtn,.city-tab,.dim-tab,.vtab,.tab,.fchip,.cbar-row{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .dim-tabs{scroll-behavior:smooth}
 @media(max-width:600px){.pbtn{min-height:32px!important;padding:6px 10px!important}}
-/* ---- 考核看板结构对齐（黄底线 / 圆角 / 页签激活态） ---- */
+/* ---- 考核看板结构对齐（黄底线 / 圆角 / 页签激活态） ----
+   注：布局参数对齐规则在 ASSESS_ALIGN_CSS，仅注入考核看板，避免影响其它页卡片内边距 */
 .header{position:relative;overflow:hidden;border-radius:10px}
 .header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,#FFC300,#F5A623,#FFC300)}
 .header .subtitle:not(.header-meta){color:#8A8FA3!important}
