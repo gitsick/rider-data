@@ -410,7 +410,7 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 <div><div class="indicator-name">达标骑手数完成度</div><span class="threshold-tag tag-red">90%~110% 计分</span></div>
 <div class="indicator-score">完成度<input class="calc-input" id="ym_rate" type="number" onchange="calcScore()"><br>出勤系数<select class="calc-input" id="ym_coef" onchange="calcScore()" style="width:70px;"><option value="1.05">1.05</option><option value="1" selected>1.00</option><option value="0.95">0.95</option></select><br>得分<span id="ym_score" style="font-weight:700;color:#e8710a;">—</span><div style="font-size:10.5px;color:#6b7280;margin-top:3px;">BI日更自动填入；出勤率≥90%自动取1.05，＜90%自动置1.00（目标值待任务系统，若低于目标应为0.95）</div></div>
 </div>
-<div class="note-foot-l">得分=完成度×出勤合格率系数；完成度＜90%记0分</div>
+<div class="note-foot-l">得分=完成度×出勤合格率系数；完成度＜90%记0分（按自然周控制，平均完成率不控制区间）；兜底：按自然周兜底，推单完成率（不含散单）≥98.8%且当期承托比≥X%</div>
 <div class="mo-mtd" id="mtd-ym"></div>
 <div id="ym-weekly" style="margin-top:4px;"></div>
 </div>
@@ -421,6 +421,7 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 <div class="indicator-row"><div class="indicator-name">复合超时率 40%</div><div class="indicator-score"><input class="calc-input" id="ty_cs" type="number" onchange="calcScore()"></div></div>
 <div class="indicator-row"><div class="indicator-name">虚假点送达 30%</div><div class="indicator-score"><input class="calc-input" id="ty_fake" type="number" onchange="calcScore()"></div></div>
 <div class="indicator-row"><div class="indicator-name">配送取消单 30%</div><div class="indicator-score"><input class="calc-input" id="ty_cancel" type="number" onchange="calcScore()"></div></div>
+<div style="font-size:10.5px;color:#b06000;text-align:left;margin-top:4px;">⚠ 10月口径：三项指标订单均剔除企客麦肯必瑞订单；复合超时完成率计分区间【50%,110%】，虚假点送达/取消单按门槛值区间计分（详见「📋 计分表」）</div>
 <div style="font-size:10.5px;color:#9aa0a6;text-align:left;margin-top:4px;">口径注：方案正文权重为 复合超时40%/虚假30%/取消30%，但方案示例按 30%/40%/30% 计算，两处不一致——暂按正文权重（如上），待业务确认后修正</div>
 <div style="font-size:11px;color:#6b7280;text-align:right;margin-top:4px;">体验得分 → <span id="ty_score" style="font-weight:700;color:#7b61ff;">—</span></div>
 <div class="mo-mtd" id="mtd-ty"></div>
@@ -433,17 +434,18 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 <div><div class="indicator-name">推单完成率</div><span class="threshold-tag tag-red">110%封顶</span></div>
 <div class="indicator-score">完成率<input class="calc-input" id="tw_rate" type="number" onchange="calcScore()"><br>得分<span id="tw_score" style="font-weight:700;color:#00b8d4;">—</span></div>
 </div>
-<div class="note-foot-l">人效兜底：日均≥98.8%（高峰日另核）；低于兜底线触发预警，详见「🚨 推完兜底线」卡</div>
+<div class="note-foot-l">人效兜底：日均≥98.8%（高峰日另核），低于兜底线触发预警，详见「🚨 推完兜底线」卡；10月口径：指标订单剔除企客麦肯必瑞订单</div>
 <div class="mo-mtd" id="mtd-tw"></div>
 </div>
 </div>
 <div id="mod-hd" class="card module-card jiameng collapsible">
-<div class="card-title collapsible"><span class="icon">🟥</span> 加盟运力（HD完成率） <span class="pill pill-weight" id="pill-w-jm">权重 15%</span></div>
+<div class="card-title collapsible"><span class="icon">🟥</span> 加盟运力 · 服务质量达标骑手数（HD） <span class="pill pill-weight" id="pill-w-jm">权重 15%</span></div>
 <div class="collapsible-content">
 <div class="indicator-row">
-<div><div class="indicator-name">HD完成率</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
+<div><div class="indicator-name">达标骑手数完成率（HD）</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
 <div class="indicator-score">完成率<input class="calc-input" id="jm_rate" type="number" onchange="calcScore()"><br>得分<span id="jm_score" style="font-weight:700;color:#e8525f;">—</span></div>
 </div>
+<div class="note-foot-l">达标骑手数=日均达标骑手+合格有单骑手×折算系数+高峰兼职骑手×折算系数−异常骑手（四舍五入，系数以任务系统下发为准）；BI支持T-3查询，以核算下发结果为准；兜底：分期兜底，推单完成率（不含散单）≥98.8%且人效≤X</div>
 <div class="mo-mtd" id="mtd-jm"></div>
 </div>
 </div>
@@ -465,7 +467,7 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 <div><div class="indicator-name">活跃骑手数完成度</div><span class="threshold-tag tag-red">90%~100% 计分</span></div>
 <div class="indicator-score">完成度<input class="calc-input" id="pz_rate" type="number" onchange="calcScore()"><br>得分<span id="pz_score" style="font-weight:700;color:#8d6e63;">—</span><div id="pz_act" style="font-size:10.5px;color:#6b7280;margin-top:3px;"></div></div>
 </div>
-<div class="note-foot-l">完成度＜90%记0分，100%封顶</div>
+<div class="note-foot-l">活跃骑手：周期内跑单天数≥3天且累计完单量≥20单；完成度＜90%记0分、100%封顶（按自然周控制，平均完成率不控制区间）；兜底：按自然周兜底，推单完成率（不含散单）≥98.8%</div>
 <div class="mo-mtd" id="mtd-pz"></div>
 </div>
 </div>
@@ -2491,7 +2493,7 @@ else window.addEventListener('load', refreshDataStatus);
 var JM = [
 /* —— 天维度 → —— */
 {k:'悦跑运力', dim:'daily', chips:[['📊 走势','charts','chart-trend'],['📅 周拆解','charts','ym-weekly-card'],['📋 报告','report','slice-analysis']]},
-{k:'加盟运力（HD完成率）', dim:'daily', chips:[['📊 走势','charts','chart-trend'],['📶 两期对比','charts','chart-period'],['📋 报告','report','slice-analysis']]},
+{k:'加盟运力 · 服务质量达标骑手数（HD）', dim:'daily', chips:[['📊 走势','charts','chart-trend'],['📶 两期对比','charts','chart-period'],['📋 报告','report','slice-analysis']]},
 {k:'普通众包运力', dim:'daily', chips:[['🏆 月度对比','charts','chart-month'],['📋 报告','report','slice-analysis']]},
 {k:'体验考核', dim:'daily', chips:[['📊 走势','charts','chart-trend'],['📋 计分表','monthly','sec-exp-score'],['📋 报告','report','unmet-actions']]},
 {k:'推单完成率', dim:'daily', chips:[['🚨 兜底线','charts','chart-breach'],['📋 计分表','monthly','sec-push-score'],['📋 报告','report','slice-analysis']]},
@@ -2710,7 +2712,7 @@ var v = (typeof MTD_EVAL !== 'undefined' && MTD_EVAL && MTD_EVAL.cities && MTD_E
 function set(id, raw, lo, label, unit, extra) {
 var el = document.getElementById('mtd-' + id);
 if (!el) return;
-if (!v || raw == null || (typeof raw === 'number' && isNaN(raw))) { el.innerHTML = '<span style="color:#9aa0a6;">月累计' + label + '：待发布</span>'; return; }
+if (!v || raw == null || (typeof raw === 'number' && isNaN(raw))) { el.innerHTML = '<span style="color:#9aa0a6;">月累计' + label + '：待发布（官方核算以任务系统下发为准，日累计见「数据汇总」表）</span>'; return; }
 var num = Number(raw);
 var show = (typeof raw === 'number' || !isNaN(num)) ? num.toFixed(1) : raw;
 var col = (lo != null && !isNaN(num) && num < lo) ? '#d93025' : '#188038';
