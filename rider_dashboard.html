@@ -9,6 +9,7 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 
 /* ===== 顶部导航（与考核看板统一） ===== */
 .top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2);margin:-14px -14px 14px}
+.top-nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(255,195,0,.9) 30%,#F5A623 50%,rgba(255,195,0,.9) 70%,transparent 100%)}
 .top-nav a{color:#94a3b8;text-decoration:none;transition:color .15s;white-space:nowrap}
 .top-nav a:hover{color:#FFC300}
 .top-nav .nav-current{color:#fff;font-weight:700;margin-left:4px}
@@ -16,8 +17,8 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 .top-nav .nav-switch{margin-left:auto}
 
 /* ===== 页签栏（与考核看板统一） ===== */
-.dim-tabs{display:flex;gap:0;margin-bottom:16px;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:40px;z-index:8000}
-.dim-tab{flex:1;padding:14px 24px;text-align:center;font-size:16px;font-weight:700;cursor:pointer;background:#fff;color:#888;border:none;border-bottom:3px solid transparent;transition:all .25s;position:relative;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.dim-tabs{display:flex;gap:0;max-width:640px;margin:0 auto 14px;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(27,34,51,.08);position:sticky;top:40px;z-index:8000;border:1px solid var(--border)}
+.dim-tab{flex:1;padding:12px 20px;text-align:center;font-size:15px;font-weight:700;cursor:pointer;background:#fff;color:#888;border:none;border-bottom:3px solid transparent;transition:all .25s;position:relative;-webkit-tap-highlight-color:transparent;touch-action:manipulation;user-select:none}
 .dim-tab.active{background:#1a2b4a;color:#fff;border-bottom-color:#00b8d4}
 .dim-tab:hover:not(.active){background:#f0f2f5;color:#1a2b4a}
 .dim-tab.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:#00b8d4;border-radius:3px 3px 0 0}
@@ -28,7 +29,7 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 .dim-content.active{display:block}
 
 /* ===== 总览底部提示条 ===== */
-.ov-cta{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;padding:10px 12px;background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:12px;font-size:13px;color:var(--text2);box-shadow:0 1px 4px rgba(27,34,51,.06)}
+.ov-cta{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;padding:8px 14px;background:#fff;border:1px solid var(--border);border-radius:22px;margin-bottom:12px;font-size:13px;color:var(--text2);box-shadow:0 1px 4px rgba(27,34,51,.06)}
 .ov-cta b{color:var(--yellow-d);font-size:15px}
 .ov-cta .tc-btn{border:1px solid var(--yellow);background:#FFF8E1;color:var(--dark);border-radius:6px;padding:6px 16px;cursor:pointer;font-size:12px;font-weight:700;transition:all .15s}
 .ov-cta .tc-btn:hover{background:var(--yellow)}
@@ -37,27 +38,31 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 .footer-info{text-align:center;font-size:11px;color:#6b7280;margin-top:20px;padding:16px 8px;border-top:1px solid #e8eaed;line-height:1.8}
 
 /* ===== 页头 ===== */
-.header{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 50%,#3A4458 100%);border-radius:10px;padding:16px 22px;margin-bottom:12px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.header{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 50%,#3A4458 100%);border-radius:12px;padding:13px 20px;margin-bottom:12px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--yellow) 0%,var(--yellow-d) 50%,var(--yellow) 100%)}
 .header::before{content:"";position:absolute;top:-40%;right:-5%;width:240px;height:240px;background:radial-gradient(circle,rgba(255,195,0,.05) 0%,transparent 70%);pointer-events:none}
 .hdr-left{flex:1;min-width:0}
-.header h1{color:#fff;font-size:20px;font-weight:700;letter-spacing:.3px}
+.header h1{color:#fff;font-size:19px;font-weight:800;letter-spacing:.3px;background:linear-gradient(90deg,#FFFFFF 55%,#FFDf8E);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .header .sub{color:#8A8FA3;font-size:11px;margin-top:4px}
-.header .upd{color:var(--yellow);font-size:10px;display:inline-flex;align-items:center;gap:4px;background:rgba(255,195,0,.1);padding:4px 12px;border-radius:12px;white-space:nowrap;flex-shrink:0}
+.header .upd{color:var(--yellow);font-size:10px;display:inline-flex;align-items:center;gap:4px;background:rgba(255,195,0,.1);padding:4px 12px;border-radius:12px;border:1px solid rgba(255,195,0,.22);white-space:nowrap;flex-shrink:0}
 @media(max-width:768px){.qr-small{align-self:center}}
 
 /* ===== KPI 卡片 ===== */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
-.card{background:#fff;border-radius:10px;padding:12px 14px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.cards .card{animation:cardIn .45s cubic-bezier(.22,.61,.36,1) both}
+.cards .card:nth-child(2){animation-delay:.05s}.cards .card:nth-child(3){animation-delay:.1s}.cards .card:nth-child(4){animation-delay:.15s}.cards .card:nth-child(5){animation-delay:.2s}.cards .card:nth-child(6){animation-delay:.25s}
+@keyframes cardIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.card{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(27,34,51,.1)}
 .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--yellow);border-radius:10px 0 0 10px}
 .card.hd::before{background:var(--green)}
 .card.hs::before{background:var(--orange)}
-.card .num{font-size:24px;font-weight:800;color:var(--dark);line-height:1.15;word-break:break-word}
+.card .num{font-size:24px;font-weight:800;color:var(--dark);line-height:1.15;word-break:break-word;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
 .card .num.sm{font-size:13px!important;line-height:1.45!important;font-weight:700}
 .card .lbl{color:var(--text2);font-size:11px;margin-top:3px;font-weight:500}
 .card .pct{font-size:10px;color:var(--text3);margin-top:2px;font-weight:600}
 .card.hero{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 55%,#3A4458 100%)!important;border-color:transparent!important;box-shadow:0 4px 14px rgba(27,34,51,.18)!important}
+.card.hero::after{content:"";position:absolute;top:-35%;right:-15%;width:150px;height:150px;background:radial-gradient(circle,rgba(255,195,0,.16) 0%,transparent 70%);pointer-events:none}
 .card.hero::before{background:linear-gradient(180deg,var(--yellow),var(--yellow-d));width:4px}
 .card.hero .num{color:#fff!important;font-size:32px!important}
 .card.hero .lbl{color:#C6CAD6!important;font-size:12px!important}
@@ -100,7 +105,8 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 .charts-more{text-align:center;font-size:10px;color:var(--text3);padding:4px 0}
 
 /* ===== 搜索 / 筛选 ===== */
-.search-bar{display:flex;gap:8px;background:#fff;border-radius:10px;padding:8px 12px;margin-bottom:6px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid var(--border);align-items:center}
+.search-bar{display:flex;gap:8px;background:#fff;border-radius:10px;padding:8px 12px;margin-bottom:6px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid var(--border);align-items:center;transition:border-color .15s,box-shadow .15s}
+.search-bar:focus-within{border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,195,0,.1)}
 .search-bar input{flex:1;padding:9px 14px;border:1px solid #D9DCE0;border-radius:8px;font-size:14px;font-weight:500;outline:none;background:#F8F9FA;color:var(--text);transition:all .15s}
 .search-bar input:focus{border-color:var(--yellow);background:#fff;box-shadow:0 0 0 3px rgba(255,195,0,.12)}
 .filter-bar{display:flex;flex-wrap:wrap;gap:6px 8px;background:#fff;border-radius:10px;padding:10px 12px;margin-bottom:6px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid var(--border);align-items:center}
@@ -137,7 +143,7 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 .tblwrap{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(27,34,51,.06);overflow:hidden;border:1px solid var(--border)}
 .tblsc{overflow-x:auto}
 table{width:100%;border-collapse:collapse;min-width:1200px;table-layout:fixed}
-th{background:#FAFBFC;color:var(--dark);font-weight:600;font-size:12px;padding:9px 12px;cursor:pointer;position:sticky;top:0;border-bottom:2px solid var(--yellow);user-select:none;white-space:nowrap;transition:background .15s;z-index:5}
+th{background:#FAFBFC;color:var(--dark);font-weight:600;font-size:12px;padding:9px 12px;cursor:pointer;position:sticky;top:0;border-bottom:2px solid var(--yellow);user-select:none;white-space:nowrap;transition:background .15s;z-index:5;letter-spacing:.3px}
 th:hover{background:#F0F1F2}
 th .sort-ind{font-size:10px;opacity:.3;margin-left:2px}
 th.sort-asc .sort-ind,th.sort-desc .sort-ind{opacity:1;color:var(--yellow-d)}
@@ -195,7 +201,7 @@ body{padding:10px}
 }
 @media(max-width:600px){
 .top-nav{padding:0 12px;font-size:12px;gap:8px;height:36px}
-.dim-tabs{top:36px;margin-bottom:12px}
+.dim-tabs{top:36px;margin-bottom:12px;max-width:100%}
 .dim-tab{padding:10px 12px;font-size:13px}
 .tab-badge{font-size:10px;padding:1px 5px}
 }
@@ -224,11 +230,11 @@ th,td{padding:6px 8px;font-size:11px}
 <div class="wrap">
 <div class="header">
 <div class="hdr-left"><h1>骑手解约数据看板</h1><div class="sub">华东 + 华南 · 点击姓名查看解除协议 · 支持搜索 / 筛选 / 排序 / 导出</div></div>
-<div class="upd">🕐 数据更新：2026-10-10 04:49</div>
+<div class="upd">🕐 数据更新：2026-10-10 04:57</div>
 </div>
 <div class="dim-tabs">
 <div class="dim-tab active" onclick="switchDim(this,'overview')">📊 数据总览<span class="tab-badge overview">概览</span></div>
-<div class="dim-tab" onclick="switchDim(this,'detail')">📋 解约明细<span class="tab-badge detail">明细</span></div>
+<div class="dim-tab" onclick="switchDim(this,'detail')">📋 解约明细<span class="tab-badge detail" id="tabCount">明细</span></div>
 </div>
 <div class="dim-content active" id="dim-overview">
 <div class="cards" id="statCards"></div>
@@ -343,7 +349,7 @@ function updateFilters(){const fr=document.getElementById('fRegion').value;const
 let sortKey='提交时间',sortDir=-1,page=1,pageSize=15;
 function toTs(v){if(!v)return 0;const p=String(v).trim().split(/\s+/);const d=(p[0]||'0/0/0').split('/');const t=p[1]?p[1].split(':').map(Number):[0,0,0];return Date.UTC(+d[0],(+d[1]||1)-1,+d[2]||1,t[0]||0,t[1]||0,t[2]||0)}
 function updateSortHeaders(){document.querySelectorAll('th').forEach(th=>{th.classList.remove('sort-asc','sort-desc');if(th.dataset.key===sortKey){th.classList.add(sortDir>0?'sort-asc':'sort-desc')}});}
-function render(){const q=document.getElementById('search').value.trim().toLowerCase();const fr=document.getElementById('fRegion').value,fc=document.getElementById('fCity').value,fst=document.getElementById('fStation').value,fs=document.getElementById('fReason').value;const fsS=document.getElementById('fSubmitStart').value,fsE=document.getElementById('fSubmitEnd').value,feS=document.getElementById('fEndStart').value,feE=document.getElementById('fEndEnd').value;let l=DATA.filter(r=>{if(fr&&r['区域']!==fr)return false;if(fc&&r['市/区县']!==fc)return false;if(fst&&r['站点']!==fst)return false;if(fs&&r['解除合作原因']!==fs)return false;if(fsS&&toTs(r['提交时间'])<dateStrToTs(fsS))return false;if(fsE&&toTs(r['提交时间'])>dateStrToTs(fsE)+86399999)return false;if(feS&&toTs(r['预计解除合作时间'])<dateStrToTs(feS))return false;if(feE&&toTs(r['预计解除合作时间'])>dateStrToTs(feE)+86399999)return false;if(q){const hay=Object.values(r).join(' ').toLowerCase();if(hay.indexOf(q)<0)return false;}return true;});if(sortKey)l=[...l].sort((a,b)=>{if(sortKey==='提交时间'||sortKey==='入职时间'||sortKey==='预计解除合作时间'){return (toTs(a[sortKey])-toTs(b[sortKey]))*sortDir}return String(a[sortKey]).localeCompare(String(b[sortKey]),'zh',{numeric:true})*sortDir});curRows=l;cards(l);renderReasons(l);renderCharts(l);const ttl=l.length,tp=Math.max(1,Math.ceil(ttl/pageSize));if(page>tp)page=tp;if(page<1)page=1;const st=(page-1)*pageSize,sl=l.slice(st,st+pageSize);const tb=document.getElementById('tbody');tb.innerHTML=sl.length?sl.map((p,i)=>'<tr><td><span class="tag '+(p['区域']==='华东'?'hd':'hs')+'">'+p['区域']+'</span></td><td>'+p['提交时间']+'</td><td>'+p['来源']+'</td><td>'+p['来自IP']+'</td><td><b>'+p['市/区县']+'</b></td><td>'+p['站点']+'</td><td>'+(p['解除协议']&&p['解除协议'].indexOf('http')===0?'<a class="nm-link" onclick="viewAgreement('+(st+i)+')">'+p['骑手姓名']+'</a>':p['骑手姓名'])+'</td><td>'+p['骑手ID']+'</td><td>'+p['联系方式']+'</td><td>'+p['入职时间']+'</td><td>'+p['预计解除合作时间']+'</td><td><span class="why" style="color:'+reasonColor(p['解除合作原因'])+'">'+(p['解除合作原因']||'-')+'</span></td><td>'+p['解除合作去向']+'</td></tr>').join(''):'<tr><td colspan="13" class="empty">🔍 无匹配记录，请调整筛选条件</td></tr>';var chips='';if(fr)chips+='<span class="fchip c-region" onclick="clr(\'fRegion\')"><span class="fk">区域</span><span class="fv">'+fr+'</span><span class="fx">×</span></span>';if(fc)chips+='<span class="fchip c-city" onclick="clr(\'fCity\')"><span class="fk">市/区县</span><span class="fv">'+fc+'</span><span class="fx">×</span></span>';if(fst)chips+='<span class="fchip c-station" onclick="clr(\'fStation\')"><span class="fk">站点</span><span class="fv">'+fst+'</span><span class="fx">×</span></span>';if(fsS||fsE)chips+='<span class="fchip c-date" onclick="clr(\'fSubmitStart\');clr(\'fSubmitEnd\')"><span class="fk">📅提交</span><span class="fv">'+(fsS||'?')+' ~ '+(fsE||'?')+'</span><span class="fx">×</span></span>';if(feS||feE)chips+='<span class="fchip c-date" onclick="clr(\'fEndStart\');clr(\'fEndEnd\')"><span class="fk">📅解除</span><span class="fv">'+(feS||'?')+' ~ '+(feE||'?')+'</span><span class="fx">×</span></span>';if(fs)chips+='<span class="fchip c-reason" onclick="clr(\'fReason\')"><span class="fk">原因</span><span class="fv">'+fs+'</span><span class="fx">×</span></span>';if(q)chips+='<span class="fchip c-search" onclick="clr(\'search\')"><span class="fk">🔍</span><span class="fv">'+q+'</span><span class="fx">×</span></span>';var hasFilter=fr||fc||fst||fsS||fsE||feS||feE||fs||q;var clrBtn=hasFilter?'<span class="fs-clear" onclick="reset()">清除全部</span>':'';document.getElementById('meta').innerHTML='<span class="fs-count">筛选结果 <span class="num">'+ttl+'</span> 条</span><span class="fs-label">· 第'+page+'/'+tp+'页 · 显示'+sl.length+'条</span>'+chips+clrBtn;let h='<button class="pbtn" '+(page<=1?'disabled':'')+' onclick="go(1)">\u00ab</button><button class="pbtn" '+(page<=1?'disabled':'')+' onclick="go('+(page-1)+')">‹上一页</button>';for(let i=Math.max(1,page-2);i<=Math.min(tp,page+2);i++){h+='<button class="pbtn '+(i===page?'cur':'')+'" onclick="go('+i+')">'+i+'</button>';}h+='<button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="go('+(page+1)+')">下一页›</button><button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="go('+tp+')">\u00bb</button><span class="pinfo">共 '+ttl+' 条 · '+page+'/'+tp+'</span>';document.getElementById('pager').innerHTML=h;document.getElementById('ovCta').innerHTML='<span>当前筛选 <b>'+ttl+'</b> 条记录</span><button class="tc-btn" onclick="gotoDetail()">查看明细 →</button>';updateSortHeaders();}
+function render(){const q=document.getElementById('search').value.trim().toLowerCase();const fr=document.getElementById('fRegion').value,fc=document.getElementById('fCity').value,fst=document.getElementById('fStation').value,fs=document.getElementById('fReason').value;const fsS=document.getElementById('fSubmitStart').value,fsE=document.getElementById('fSubmitEnd').value,feS=document.getElementById('fEndStart').value,feE=document.getElementById('fEndEnd').value;let l=DATA.filter(r=>{if(fr&&r['区域']!==fr)return false;if(fc&&r['市/区县']!==fc)return false;if(fst&&r['站点']!==fst)return false;if(fs&&r['解除合作原因']!==fs)return false;if(fsS&&toTs(r['提交时间'])<dateStrToTs(fsS))return false;if(fsE&&toTs(r['提交时间'])>dateStrToTs(fsE)+86399999)return false;if(feS&&toTs(r['预计解除合作时间'])<dateStrToTs(feS))return false;if(feE&&toTs(r['预计解除合作时间'])>dateStrToTs(feE)+86399999)return false;if(q){const hay=Object.values(r).join(' ').toLowerCase();if(hay.indexOf(q)<0)return false;}return true;});if(sortKey)l=[...l].sort((a,b)=>{if(sortKey==='提交时间'||sortKey==='入职时间'||sortKey==='预计解除合作时间'){return (toTs(a[sortKey])-toTs(b[sortKey]))*sortDir}return String(a[sortKey]).localeCompare(String(b[sortKey]),'zh',{numeric:true})*sortDir});curRows=l;cards(l);renderReasons(l);renderCharts(l);const ttl=l.length,tp=Math.max(1,Math.ceil(ttl/pageSize));if(page>tp)page=tp;if(page<1)page=1;const st=(page-1)*pageSize,sl=l.slice(st,st+pageSize);const tb=document.getElementById('tbody');tb.innerHTML=sl.length?sl.map((p,i)=>'<tr><td><span class="tag '+(p['区域']==='华东'?'hd':'hs')+'">'+p['区域']+'</span></td><td>'+p['提交时间']+'</td><td>'+p['来源']+'</td><td>'+p['来自IP']+'</td><td><b>'+p['市/区县']+'</b></td><td>'+p['站点']+'</td><td>'+(p['解除协议']&&p['解除协议'].indexOf('http')===0?'<a class="nm-link" onclick="viewAgreement('+(st+i)+')">'+p['骑手姓名']+'</a>':p['骑手姓名'])+'</td><td>'+p['骑手ID']+'</td><td>'+p['联系方式']+'</td><td>'+p['入职时间']+'</td><td>'+p['预计解除合作时间']+'</td><td><span class="why" style="color:'+reasonColor(p['解除合作原因'])+'">'+(p['解除合作原因']||'-')+'</span></td><td>'+p['解除合作去向']+'</td></tr>').join(''):'<tr><td colspan="13" class="empty">🔍 无匹配记录，请调整筛选条件</td></tr>';var chips='';if(fr)chips+='<span class="fchip c-region" onclick="clr(\'fRegion\')"><span class="fk">区域</span><span class="fv">'+fr+'</span><span class="fx">×</span></span>';if(fc)chips+='<span class="fchip c-city" onclick="clr(\'fCity\')"><span class="fk">市/区县</span><span class="fv">'+fc+'</span><span class="fx">×</span></span>';if(fst)chips+='<span class="fchip c-station" onclick="clr(\'fStation\')"><span class="fk">站点</span><span class="fv">'+fst+'</span><span class="fx">×</span></span>';if(fsS||fsE)chips+='<span class="fchip c-date" onclick="clr(\'fSubmitStart\');clr(\'fSubmitEnd\')"><span class="fk">📅提交</span><span class="fv">'+(fsS||'?')+' ~ '+(fsE||'?')+'</span><span class="fx">×</span></span>';if(feS||feE)chips+='<span class="fchip c-date" onclick="clr(\'fEndStart\');clr(\'fEndEnd\')"><span class="fk">📅解除</span><span class="fv">'+(feS||'?')+' ~ '+(feE||'?')+'</span><span class="fx">×</span></span>';if(fs)chips+='<span class="fchip c-reason" onclick="clr(\'fReason\')"><span class="fk">原因</span><span class="fv">'+fs+'</span><span class="fx">×</span></span>';if(q)chips+='<span class="fchip c-search" onclick="clr(\'search\')"><span class="fk">🔍</span><span class="fv">'+q+'</span><span class="fx">×</span></span>';var hasFilter=fr||fc||fst||fsS||fsE||feS||feE||fs||q;var clrBtn=hasFilter?'<span class="fs-clear" onclick="reset()">清除全部</span>':'';document.getElementById('meta').innerHTML='<span class="fs-count">筛选结果 <span class="num">'+ttl+'</span> 条</span><span class="fs-label">· 第'+page+'/'+tp+'页 · 显示'+sl.length+'条</span>'+chips+clrBtn;let h='<button class="pbtn" '+(page<=1?'disabled':'')+' onclick="go(1)">\u00ab</button><button class="pbtn" '+(page<=1?'disabled':'')+' onclick="go('+(page-1)+')">‹上一页</button>';for(let i=Math.max(1,page-2);i<=Math.min(tp,page+2);i++){h+='<button class="pbtn '+(i===page?'cur':'')+'" onclick="go('+i+')">'+i+'</button>';}h+='<button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="go('+(page+1)+')">下一页›</button><button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="go('+tp+')">\u00bb</button><span class="pinfo">共 '+ttl+' 条 · '+page+'/'+tp+'</span>';document.getElementById('pager').innerHTML=h;document.getElementById('ovCta').innerHTML='<span>当前筛选 <b>'+ttl+'</b> 条记录</span><button class="tc-btn" onclick="gotoDetail()">查看明细 →</button>';var tc=document.getElementById('tabCount');if(tc)tc.textContent=ttl+' 条';updateSortHeaders();}
 function clr(id){var el=document.getElementById(id);if(!el)return;if(el.tagName==='SELECT'){el.value='';if(id==='fRegion'){document.getElementById('fCity').value='';document.getElementById('fStation').value='';}if(id==='fCity'){document.getElementById('fStation').value='';}updateFilters();}else{el.value='';}page=1;render();}
 function go(p){page=p;render();}
 function exportCSV(){const rows=curRows&&curRows.length?curRows:[];if(!rows.length){alert('暂无数据可导出');return;}const esc=v=>{let s=v==null?'':String(v);if(s.includes(',')||s.includes('"')||s.includes('\n')){s='"'+s.replace(/"/g,'""')+'"';}return s;};let csv='\ufeff'+COLS.map(esc).join(',');rows.forEach(r=>{csv+='\n'+COLS.map(h=>esc(r[h])).join(',');});const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);const d=new Date();const st=d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'_'+String(d.getHours()).padStart(2,'0')+String(d.getMinutes()).padStart(2,'0');a.download='rider_export_'+st+'.csv';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},200);}
