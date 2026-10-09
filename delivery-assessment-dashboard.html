@@ -218,6 +218,20 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 
 
 <style>
+
+
+/* ---- assess layout align ---- */
+body{padding:14px!important}
+.header{padding:16px 22px!important;margin-bottom:12px!important;border-top:none!important;border-radius:10px!important;background:linear-gradient(135deg,#1B2233 0%,#2D3447 50%,#3A4458 100%)!important}
+.card{border-radius:10px!important;padding:12px 14px!important;box-shadow:0 1px 4px rgba(27,34,51,.06)!important}
+.summary-card,.rpt-header{border-radius:10px!important}
+.rpt-header{padding:20px 26px!important;background:linear-gradient(135deg,#1B2233 0%,#3A4458 100%)!important}
+.dim-tabs{border-radius:10px!important;margin-bottom:12px!important;box-shadow:0 1px 4px rgba(27,34,51,.08)!important}
+.dim-tab{padding:11px 16px!important;font-size:14px!important}
+.grid{gap:12px!important;margin-bottom:12px!important}
+.section-label{margin:16px 0 10px!important}
+/* ====== end assess layout align ====== */</style>
+<style>
 /* ====== mt-style-injected ====== */
 :root{
   --mt-yellow:#FFC300;
@@ -504,6 +518,22 @@ body{padding:14px!important}
 .dim-tab{padding:11px 16px!important;font-size:14px!important}
 .grid{gap:12px!important;margin-bottom:12px!important}
 .section-label{margin:16px 0 10px!important}
+/* ---- 小屏断点对齐（骑手板口径：768 紧凑 / 480 单列） ---- */
+@media(max-width:768px){
+body{padding:10px!important}
+.header{padding:14px 16px!important}
+.card{padding:8px 10px!important}
+.summary-card{flex-direction:column;align-items:stretch;gap:8px;padding:14px 16px!important}
+.summary-card .sc-score{font-size:30px!important}
+.grid-2,.grid-cal-bi,.grid-util,.grid-calc-preset,.grid-modules,.preset-scenarios,.grid-modules.gm3{grid-template-columns:1fr!important}
+.dim-tab{padding:10px 8px!important;font-size:13.5px!important}
+.dim-tabs{top:36px!important}
+}
+@media(max-width:480px){
+body{padding:8px!important}
+.header{padding:14px!important}
+.dim-tab{flex:1 1 100%!important;padding:9px 6px!important}
+}
 /* ====== end assess layout align ====== */</style>
 </head>
 <body>
@@ -6370,5 +6400,56 @@ currentCity = firstTab.textContent.trim();
 if (document.readyState === 'complete') setTimeout(boot, 0);
 else window.addEventListener('load', boot);
 </script>
+
+<script>/* assess-sort-v1 */
+(function(){
+ function key(card){
+  var el=card.querySelector('.sc-score');var t=el?el.textContent:'';var m=t.match(/([\d.]+)/);
+  var cls=card.className;
+  var pen=cls.indexOf('danger')>-1?0:(cls.indexOf('warn')>-1?1:2);
+  return [pen,m?parseFloat(m[1]):999];
+ }
+ function sortSummary(){
+  document.querySelectorAll('.summary-strip').forEach(function(st){
+   var kids=Array.prototype.slice.call(st.children);
+   if(kids.length<2||st.dataset.sorted==='1')return;
+   kids.sort(function(a,b){var ka=key(a),kb=key(b);return ka[0]-kb[0]||ka[1]-kb[1];});
+   kids.forEach(function(k){st.appendChild(k);});
+   st.dataset.sorted='1';
+  });
+ }
+ var KW=[['悦跑','yuepao'],['体验','tiyan'],['推单','tuiwan'],['推完','tuiwan'],['加盟','jiameng'],['完结','wanjie'],['众包','puzhong']];
+ function mainLoss(){
+  var act=document.querySelector('.city-tab.active');
+  if(!act)return null;
+  var city=act.textContent.trim();
+  var hit=null;
+  document.querySelectorAll('.summary-card').forEach(function(c){
+   var cn=c.querySelector('.sc-city');
+   if(cn&&cn.textContent.indexOf(city)>-1)hit=c;
+  });
+  if(!hit)return null;
+  var risk=hit.querySelector('.sc-risk');var t=risk?risk.textContent:'';
+  for(var i=0;i<KW.length;i++){if(t.indexOf(KW[i][0])>-1)return KW[i][1];}
+  return null;
+ }
+ function sortModules(){
+  var g=document.querySelector('.grid-modules');if(!g)return;
+  var fk=mainLoss();
+  var cards=Array.prototype.slice.call(g.children).filter(function(c){return c.className.indexOf('module-card')>-1;});
+  if(cards.length<2)return;
+  var ranked=cards.map(function(c,i){return [c,(fk&&c.className.indexOf(fk)>-1)?-1:i];});
+  ranked.sort(function(a,b){return a[1]-b[1];});
+  var changed=ranked.some(function(p,i){return p[0]!==cards[i];});
+  if(changed){ranked.forEach(function(p){g.appendChild(p[0]);});}
+ }
+ var pend=null;
+ function schedule(){if(pend)return;pend=setTimeout(function(){pend=null;sortSummary();sortModules();},120);}
+ function boot(){sortSummary();sortModules();
+  new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});
+ }
+ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',boot);}else{boot();}
+})();
+/* end assess-sort */</script>
 </body>
 </html>
