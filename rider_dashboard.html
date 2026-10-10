@@ -8,18 +8,14 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 .wrap.wrap{max-width:1440px!important;margin:0 auto!important}
 
 /* ===== 顶部导航（与考核看板统一） ===== */
-.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;background:linear-gradient(90deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2);margin:-14px -14px 14px}
-.top-nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(255,195,0,.9) 30%,#F5A623 50%,rgba(255,195,0,.9) 70%,transparent 100%)}
-.top-nav a{color:#94a3b8;text-decoration:none;transition:color .15s;white-space:nowrap}
-.top-nav a:hover{color:#FFC300}
-.top-nav .nav-current{color:#fff;font-weight:700;margin-left:4px}
-.top-nav .nav-sep{color:#475569;margin:0 2px}
+.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px;height:40px;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2);margin:-14px -14px 14px}
+/* 导航配色统一规则见文档头部末尾 fix-contrast-v1 统一层 */
 .top-nav .nav-switch{margin-left:auto}
 
 /* ===== 页签栏（与考核看板统一） ===== */
 .dim-tabs{display:flex;gap:0;max-width:640px;margin:0 auto 14px;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(27,34,51,.08);position:sticky;top:40px;z-index:8000;border:1px solid var(--border)}
 .dim-tab{flex:1;padding:12px 20px;text-align:center;font-size:15px;font-weight:700;cursor:pointer;background:#fff;color:#888;border:none;border-bottom:3px solid transparent;transition:all .25s;position:relative;-webkit-tap-highlight-color:transparent;touch-action:manipulation;user-select:none}
-.dim-tab.active{background:#1a2b4a;color:#fff;border-bottom-color:#00b8d4}
+.dim-tab.active{background:#1a2b4a;color:#1B2233;border-bottom-color:transparent}
 .dim-tab:hover:not(.active){background:#f0f2f5;color:#1a2b4a}
 .dim-tab.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:#00b8d4;border-radius:3px 3px 0 0}
 .tab-badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:8px;margin-left:4px;font-weight:700}
@@ -516,6 +512,30 @@ body.no-scroll{overflow:hidden}
 }
 /* ====== end rider layout align ====== */
 /* ====== end mt-style ====== */</style>
+<style id="fix-contrast-v1">
+/* ---- 页签激活态与考核看板统一（金底深字） ---- */
+.dim-tab.active{background:linear-gradient(135deg,#FFC300,#ffb300)!important;color:#1B2233!important;border-bottom-color:transparent!important}
+.dim-tab.active::after{background:#1B2233!important}
+.dim-tab.active .tab-badge{background:rgba(27,34,51,.12)!important;color:#1B2233!important}
+.tab-badge.detail{background:#fff!important;color:#B45309!important}
+.tab-badge.overview{color:#174EA6!important}
+#tabCount{color:#B45309!important}
+/* ---- 浅底金字/绿橙文字加深 ---- */
+.ov-cta b{color:#B45309!important}
+.card.hd .num{color:#2F8A0B!important}
+.card.hs .num{color:#C86A00!important}
+/* ---- 统一顶部导航 ---- */
+.top-nav{background:linear-gradient(90deg,#1B2233 0%,#2D3447 100%)!important}
+.top-nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;pointer-events:none;
+background:linear-gradient(90deg,transparent 0%,rgba(255,195,0,.9) 30%,#F5A623 50%,rgba(255,195,0,.9) 70%,transparent 100%)}
+.top-nav a{color:#A6ABC0!important}
+.top-nav a:hover{color:#FFC300!important}
+.top-nav .nav-current{color:#fff!important;font-weight:700!important}
+.top-nav .nav-sep{color:#3A4458!important}
+.top-nav .nav-switch{border:1px solid rgba(255,255,255,.22)!important;border-radius:999px!important;
+padding:3px 12px!important;line-height:1.4!important;transition:all .15s!important}
+.top-nav .nav-switch:hover{border-color:rgba(255,195,0,.65)!important;background:rgba(255,195,0,.12)!important}
+</style>
 </head><body>
 <nav class="top-nav">
 <a href="https://gitsick.github.io/databi/">← 看板中心</a>
