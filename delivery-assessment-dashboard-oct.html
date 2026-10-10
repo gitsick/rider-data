@@ -496,6 +496,30 @@ body{padding:14px!important}
 body > *:not(.top-nav):not(.qr-modal){max-width:1440px;margin-left:auto!important;margin-right:auto!important}
 @media(max-width:600px){body{padding:10px!important}}
 </style>
+<style id="unify-v3">
+/* ===== 统一布局样式 v3（通用设计语言：卡片/标题/徽标/分区/模块口色） ===== */
+:root{--u-radius:12px;--u-shadow:0 2px 10px rgba(27,34,51,.07);--u-border:#e8ebf0;--u-head:#1B2233;--u-muted:#6b7280;--u-gold:#FFC300;}
+.card{border-radius:var(--u-radius)!important;box-shadow:var(--u-shadow)!important;border:1px solid var(--u-border)!important;padding:18px 20px!important;}
+.card-title{font-size:14px!important;font-weight:700!important;color:#1a2b4a!important;letter-spacing:.01em!important;align-items:center!important;}
+.section-label{font-size:13px!important;font-weight:800!important;color:#1a2b4a!important;margin:20px 0 10px!important;padding-left:10px!important;border-left:4px solid var(--u-gold)!important;line-height:1.4!important;letter-spacing:.02em;display:flex;align-items:center;}
+.pill{font-size:10.5px!important;padding:2px 9px!important;border-radius:999px!important;font-weight:700!important;white-space:nowrap;}
+.grid-modules{gap:14px!important;}
+.module-card{border-top:3px solid var(--u-accent,#d9dee8)!important;}
+.module-card.yuepao{--u-accent:#e8710a;}.module-card.tiyan{--u-accent:#7b61ff;}.module-card.tuiwan{--u-accent:#00b8d4;}.module-card.jiameng{--u-accent:#e8525f;}.module-card.wanjie{--u-accent:#ff6b35;}.module-card.puzhong{--u-accent:#8d6e63;}
+.dt th{background:var(--u-head)!important;font-weight:600!important;}
+.note-foot,.note-foot-l{color:var(--u-muted)!important;font-size:11px!important;line-height:1.65!important;}
+.indicator-name{font-weight:700!important;}
+.mo-mtd{margin-top:6px!important;}
+/* 口径不符的参考指标降级标注 */
+.ref-tag{display:inline-block;font-size:9.5px;font-weight:700;color:#b35f00;background:#fef3e2;border:1px solid #f3ddb8;border-radius:8px;padding:0 6px;margin-left:4px;vertical-align:1px;white-space:nowrap;}
+/* 不考核模块弱化下沉（画像权重0%） */
+.module-na{opacity:.75;border:1px dashed #d9dee8!important;background:linear-gradient(135deg,#fff 0%,#f7f8fa 100%)!important;}
+.module-na .indicator-score,.module-na .note-foot-l{display:none!important;}
+.module-na .card-title::after{content:'本城画像不考核';font-size:10.5px;font-weight:700;color:#8a94a6;background:#f1f3f7;border:1px solid #e3e7ef;border-radius:10px;padding:2px 9px;margin-left:auto;white-space:nowrap;}
+.module-na .mo-mtd{opacity:.55;}
+@media(max-width:900px){.module-na .card-title::after{display:none;}.module-na .card-title::before{content:'⛔';}}
+@media print{.ref-tag{display:none!important;}}
+</style>
 </head>
 <body>
 
@@ -660,7 +684,7 @@ body > *:not(.top-nav):not(.qr-modal){max-width:1440px;margin-left:auto!importan
 <tr>
 <th>城市</th><th>大区</th>
 <th>推单完成率</th><th>体验考核分</th><th>HD完成率</th><th>完结率</th><th>承托比</th>
-<th>悦跑完成度</th><th>悦跑出勤率</th><th>普众活跃骑手</th><th title="骑手工装抽检覆盖率（悦跑/加盟），低于95%观察线标红；悦跑考核周期9/28-11/1">工装覆盖 悦跑/加盟</th><th title="加盟骑手达标人数/总人数（含达标率），未满额标红；人效兜底判定需全部达标">加盟达标骑手</th><th title="KA商家履约·商家准时率（含门店数），低于98%观察线标红；品牌赔付线按SKA规则另行判定">企客KA准时率</th><th title="推单完成率≥98.8%为人效兜底线，未达标按方案扣分">兜底≥98.8%</th>
+<th>悦跑完成度</th><th>悦跑出勤率</th><th>普众活跃骑手</th><th title="骑手工装覆盖率（悦跑/加盟），低于95%观察线标红。注：10月方案考核口径为“工装抽检合格率”（合格次数/识别次数），覆盖率为过程参考值，抽检结果以任务系统/官方口径为准；悦跑考核周期9/28-11/1">工装覆盖 悦跑/加盟 <span class="ref-tag">参考</span></th><th title="加盟骑手达标人数/总人数（含达标率），未满额标红；人效兜底判定需全部达标">加盟达标骑手</th><th title="KA商家履约·商家准时率（含门店数），低于98%观察线标红；品牌赔付线按SKA规则另行判定">企客KA准时率</th><th title="推单完成率≥98.8%为人效兜底线，未达标按方案扣分">兜底≥98.8%</th>
 <th>推单完成/总量</th><th>当日总分</th><th>等级</th>
 </tr>
 </thead>
@@ -732,7 +756,7 @@ body > *:not(.top-nav):not(.qr-modal){max-width:1440px;margin-left:auto!importan
 <div class="mo-mtd" id="mtd-jm"></div>
 </div>
 </div>
-<div class="card module-card wanjie collapsible">
+<div class="card module-card wanjie collapsible" id="mod-wj">
 <div class="card-title collapsible"><span class="icon">🔷</span> 履约完结率 <span class="pill pill-weight">权重 10%</span></div>
 <div class="collapsible-content">
 <div class="indicator-row">
@@ -743,7 +767,7 @@ body > *:not(.top-nav):not(.qr-modal){max-width:1440px;margin-left:auto!importan
 <div id="wj-split" style="margin-top:4px;"></div>
 </div>
 </div>
-<div class="card module-card puzhong collapsible">
+<div class="card module-card puzhong collapsible" id="mod-pz">
 <div class="card-title collapsible"><span class="icon">🟤</span> 普通众包运力 <span class="pill pill-weight" id="pill-w-pz">权重 5%</span></div>
 <div class="collapsible-content">
 <div class="indicator-row">
@@ -784,6 +808,7 @@ body > *:not(.top-nav):not(.qr-modal){max-width:1440px;margin-left:auto!importan
 </div>
 </div>
 
+<div class="section-label">⚠️ 扣分项监控（企客流失/新签/门店体验 · 工装在测算卡勾选模拟）</div>
 <div class="card" id="qk-daily-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f4ff 100%);">
 <div class="card-title">🤝 企客（SKA）· 扣分项模块 <span id="qk-daily-snap" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
 <div style="font-size:12px;line-height:1.75;color:#374151;">
@@ -1075,11 +1100,7 @@ body > *:not(.top-nav):not(.qr-modal){max-width:1440px;margin-left:auto!importan
 
 <!-- 企客·SKA品牌履约：规则解读 + 评估预警 -->
 
-<!-- 下月预看板模型（月末自动填充） -->
-<div class="card" id="sec-nextmonth" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f3e9fd 100%);">
-<div class="card-title"><span class="icon">🔮</span> 下月预看板模型 <span id="nextmonth-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
-<div id="nextmonth-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月末自动生成…</div></div>
-</div>
+<!-- 下月预看板模型（月末自动填充）已移至「分析报告」页签 -->
 
 <div class="section-label">🤝 企客SKA · 月维度评估与赔付</div>
 <div class="card" id="qk-monthly-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f0ff 100%);">
@@ -1134,6 +1155,12 @@ body > *:not(.top-nav):not(.qr-modal){max-width:1440px;margin-left:auto!importan
 
 <div class="dim-content" id="dim-report">
 <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📋 本页：深度分析</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('scheme')">📚 去考核方案</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a></div>
+
+<!-- 下月预看板模型（月末自动填充；前瞻工具，自月维度移入） -->
+<div class="card" id="sec-nextmonth" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f3e9fd 100%);">
+<div class="card-title"><span class="icon">🔮</span> 下月预看板模型 <span id="nextmonth-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
+<div id="nextmonth-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月末自动生成…</div></div>
+</div>
 
 <div class="rpt-header">
 <h2 id="rpt-title">2026年10月配送考核指标优化提升方案</h2>
@@ -2102,6 +2129,20 @@ var pct = function(x){ return Math.round(x*100); };
 var pJm = document.getElementById('pill-w-jm'); if (pJm) pJm.textContent = '权重 ' + pct(w.jm) + '%';
 var pYm = document.getElementById('pill-w-ym'); if (pYm) pYm.textContent = w.ym > 0 ? '权重 ' + pct(w.ym) + '%' : '不考核（画像）';
 var pPz = document.getElementById('pill-w-pz'); if (pPz) pPz.textContent = w.pz > 0 ? '权重 ' + pct(w.pz) + '%' : '不考核（画像）';
+// 不考核模块弱化：画像权重0%的运力模块降级展示（隐藏得分输入/计分说明，标“本城画像不考核”）
+[['ym','mod-run'],['pz','mod-pz']].forEach(function(it){
+var el = document.getElementById(it[1]);
+if (el) el.classList.toggle('module-na', w[it[0]] <= 0);
+});
+// 模块卡按方案模块顺序重排（加盟→悦跑→普众→体验→推完→完结率），幂等
+(function(){
+var g = document.querySelector('.grid-modules.gm3');
+if (!g) return;
+['mod-hd','mod-run','mod-pz','mod-exp','mod-push','mod-wj'].forEach(function(id){
+var el = document.getElementById(id);
+if (el && el.parentNode === g) g.appendChild(el);
+});
+})();
 // [B] DEF-06：sep 原板画像档提示填充段（sep L2120-2122 逐字；oct 板无 profile-note 元素，if(note) 守卫跳过）
 var note = document.getElementById('profile-note');
 if (note) note.innerHTML = '画像档（权重）：加盟' + pct(w.jm) + '%' + (w.ym > 0 ? ' / 悦跑' + pct(w.ym) + '%' : ' / 悦跑不考核') + (w.pz > 0 ? ' / 普众' + pct(w.pz) + '%' : ' / 普众不考核') + '<br>体验20% 推完20% 完结率10%';
