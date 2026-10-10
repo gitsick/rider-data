@@ -1101,23 +1101,20 @@ tr:hover td,.dt tr:hover td{background:var(--mt-row-hover)!important}
 }
 .pn:hover{background:var(--mt-dark2)!important;border-color:var(--mt-yellow)!important}
 /* ====== end mt-style ====== </style>
-</head><body>
-<!-- nav-bar-injected -->
-<style>
-.nb-bar{position:fixed;left:0;top:0;bottom:0;width:52px;z-index:9999;background:linear-gradient(180deg,#1B2233 0%,#15192A 100%);display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 0;box-shadow:1px 0 6px rgba(0,0,0,.12);overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.nb-bar::-webkit-scrollbar{display:none}
-.nb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:7px 2px;font-size:11px;font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:#8A8FA3;text-decoration:none;border-radius:6px;margin:1px 4px;transition:all .18s ease;cursor:pointer;text-align:center;line-height:1.3;width:calc(100% - 8px);box-sizing:border-box;position:relative}
-.nb-item:hover{color:#fff;background:rgba(255,255,255,.07)}
-.nb-item.active{color:#FFC300;font-weight:600;background:rgba(255,195,0,.12)}
-.nb-item.active::before{content:"";position:absolute;left:-4px;top:50%;transform:translateY(-50%);width:3px;height:20px;border-radius:0 2px 2px 0;background:#FFC300}
-.nb-logo{display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 2px 8px;font-size:10px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:3px;width:100%;box-sizing:border-box}
-.nb-logo .dot{width:7px;height:7px;border-radius:2px;background:#FFC300;display:inline-block}
-body{margin-left:52px!important;box-sizing:border-box!important}
-.wrap,.container{max-width:100%!important;width:100%!important;margin:0!important;padding:10px 14px 10px 6px!important;box-sizing:border-box!important}
-@media(max-width:768px){.nb-bar{width:42px}.nb-item{font-size:9px;padding:6px 1px;margin:1px 3px}.nb-logo{font-size:9px;padding:3px 2px 6px}body{margin-left:42px!important}.wrap,.container{padding:8px 10px 8px 4px!important}}
-</style>
-<nav class="nb-bar"><span class="nb-logo"><span class="dot"></span>BI</span><a href="https://gitsick.github.io/databi/" class="nb-item">看板中心</a><a href="rider_dashboard.html" class="nb-item">骑手解约</a><a href="rider_share.html" class="nb-item active">分享页</a><a href="rider_overview.html" class="nb-item">概览</a><a href="delivery-assessment-dashboard.html" class="nb-item">配送考核</a></nav>
-<!-- end-nav-bar -->
+<link rel="stylesheet" href="theme.css">
+</head><body class="theme-align">
+<nav class="top-nav">
+<a href="https://gitsick.github.io/databi/">← 看板中心</a>
+<span class="nav-sep">›</span>
+<span class="nav-current">分享页</span>
+<span class="nav-right"><a href="rider_dashboard.html" class="nav-switch">骑手解约</a>
+<a href="rider_overview.html" class="nav-switch">概览</a>
+<a href="delivery-assessment-dashboard.html" class="nav-switch">9月看板</a>
+<a href="delivery-assessment-dashboard-oct.html" class="nav-switch">10月看板</a>
+</span>
+</nav>
+
+
 
 
 
