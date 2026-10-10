@@ -579,6 +579,51 @@ table td,.dt td{box-shadow:inset -1px 0 0 #e6eaf1!important}
   .card,.section{padding:14px 16px!important}
 }
 </style>
+<style id="kaohe-beauty-v1">
+/* ============================================================
+   逐项美化（基准：考核看板）
+   ①页签排版 ②表头密度 ③KPI统计卡 ④按钮 ⑤二级页签vtab
+   ⑥滚动条 ⑦徽章 ⑧行悬停 ⑨页面氛围底色 ⑩焦点可访问性
+   ============================================================ */
+/* ① 页签排版对齐考核：桌面更大更醒目，吸顶位置与导航贴合 */
+.dim-tab{padding:13px 18px!important;font-size:15.5px!important;font-weight:700!important;letter-spacing:.5px!important}
+.dim-tabs{top:42px!important}
+.tab-badge{font-weight:700!important;letter-spacing:.3px!important}
+/* ② 表头密度对齐：更紧凑的字号与字距 */
+table th,.dt th{font-size:12.5px!important;letter-spacing:.4px!important;padding:8px 10px!important}
+/* ③ KPI 统计卡：数字等宽对齐 + 顶部金线（考核卡片语言）+ 悬停轻浮 */
+.card .num{font-variant-numeric:tabular-nums!important;letter-spacing:-.3px!important}
+.card{transition:box-shadow .2s ease,transform .2s ease!important}
+.card:hover{box-shadow:0 6px 18px rgba(27,34,51,.11)!important}
+.card.hero{border-top:3px solid #FFC300!important}
+.card.hd{border-top:3px solid #52C41A!important}
+.card.hs{border-top:3px solid #FA8C16!important}
+/* ④ 按钮：圆角/hover 金边/focus 金环，对齐考核交互 */
+.pbtn,.clearbtn{border-radius:8px!important}
+.pbtn:hover,.clearbtn:hover{border-color:#F5A623!important;color:#1B2233!important;background:#FFF8E1!important}
+.pbtn:focus-visible,.clearbtn:focus-visible,.vtab:focus-visible,.dim-tab:focus-visible{outline:2px solid #F5A623!important;outline-offset:1px!important}
+/* ⑤ 二级页签 vtab：激活态改金底深字（与主页签一致），hover 金边光晕 */
+.vtab-bar .vtab{border-radius:999px!important}
+.vtab-bar .vtab:hover{border-color:#F5A623!important;color:#1B2233!important;box-shadow:0 2px 8px rgba(255,195,0,.2)!important}
+.vtab-bar .vtab.cur{background:linear-gradient(135deg,#FFC300,#ffb300)!important;color:#1B2233!important;
+border-color:transparent!important;box-shadow:0 4px 14px rgba(255,195,0,.38)!important}
+/* ⑥ 滚动条：细圆角灰条（与考核观感一致） */
+.tblwrap::-webkit-scrollbar,.table-scroll::-webkit-scrollbar,.top-nav::-webkit-scrollbar{height:8px;width:8px}
+.tblwrap::-webkit-scrollbar-thumb,.table-scroll::-webkit-scrollbar-thumb,.top-nav::-webkit-scrollbar-thumb{background:#C9CEDA;border-radius:999px}
+.tblwrap::-webkit-scrollbar-thumb:hover,.table-scroll::-webkit-scrollbar-thumb:hover,.top-nav::-webkit-scrollbar-thumb:hover{background:#AEB5C6}
+.tblwrap::-webkit-scrollbar-track,.table-scroll::-webkit-scrollbar-track,.top-nav::-webkit-scrollbar-track{background:transparent}
+/* ⑦ 徽章圆角统一 */
+.tab-badge{border-radius:8px!important}
+/* ⑧ 表格行悬停金色淡底（考核同款） */
+tr:hover td,.dt tr:hover td{background:#FFF8E1!important}
+/* ⑨ 页面氛围底色：考核同款金/蓝径向光晕 */
+body{background:
+radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),transparent 60%),
+radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 60%),
+#F0F2F5!important}
+/* ⑩ 页脚与说明文字统一弱化 */
+.meta,.notes{color:#6B7280!important}
+</style>
 </head><body>
 <nav class="top-nav">
 <a href="https://gitsick.github.io/databi/">← 看板中心</a>
