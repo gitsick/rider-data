@@ -42,7 +42,29 @@ tr.city-row td{color:#6B7280;font-size:11px}
 .empty{padding:24px;text-align:center;color:#B0B4C0}
 .foot{text-align:center;color:#B0B4C0;font-size:11px;padding:14px 0}
 @media(max-width:768px){.charts-grid{grid-template-columns:1fr}.header{flex-direction:column;align-items:flex-start;gap:8px}.header h1{font-size:17px}.cards{grid-template-columns:repeat(2,1fr)}.card{padding:9px 11px}}
-</style></head><body>
+</style>
+<style>
+/* ---- kaohe-align-v3（对齐考核看板：深色页头/金黄强调/白卡/深色表头） ---- */
+.header{border-radius:10px!important;padding:16px 22px!important;background:linear-gradient(135deg,#1B2233 0%,#2D3447 50%,#3A4458 100%)!important}
+.header h1{font-size:22px!important;font-weight:700!important;background:none!important;-webkit-background-clip:initial!important;-webkit-text-fill-color:#fff!important;letter-spacing:.3px!important}
+.header .sub{color:#8A8FA3!important}
+.card{border-radius:10px!important}
+.chart-section{border-radius:10px!important}
+th{background:#1B2233!important;color:#fff!important;border-bottom:none!important}
+th:hover{background:#2D3447!important}
+th.sort-asc .sort-ind,th.sort-desc .sort-ind{color:#FFC300!important}
+tr:hover td{background:#FFF8E1!important}
+.dim-tabs{border-radius:10px!important}
+.dim-tab.active{background:#1B2233!important;color:#FFC300!important;border-bottom-color:#FFC300!important}
+.dim-tab.active::after{background:linear-gradient(90deg,#FFC300,#F5A623)!important}
+.tab-badge.overview{background:#FFF8E1;color:#D48806}
+.top-nav{background:linear-gradient(90deg,#1B2233 0%,#2D3447 100%)!important}
+.top-nav a:hover{color:#FFC300!important}
+.footer-info{color:#999!important;border-top:none!important}
+.filter-summary{box-shadow:none!important}
+.vtab.cur{color:#1B2233!important;border-bottom-color:#FFC300!important}
+</style>
+</head><body>
 <script>if(/[?&]embed=1/.test(location.search))document.documentElement.className+=' embed';</script>
 <nav class="top-nav"><a href="https://gitsick.github.io/databi/">← 看板中心</a><span class="nav-sep">›</span><a href="rider_dashboard.html">骑手解约</a><span class="nav-sep">›</span><span class="nav-current">访问日志</span></nav>
 <div class="wrap">
