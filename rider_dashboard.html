@@ -536,6 +536,49 @@ background:linear-gradient(90deg,transparent 0%,rgba(255,195,0,.9) 30%,#F5A623 5
 padding:3px 12px!important;line-height:1.4!important;transition:all .15s!important}
 .top-nav .nav-switch:hover{border-color:rgba(255,195,0,.65)!important;background:rgba(255,195,0,.12)!important}
 </style>
+<style id="kaohe-align-v1">
+/* ============================================================
+   布局对齐考核看板（基准：delivery-assessment-dashboard-oct）
+   1 页签胶囊条  2 卡片  3 深色表头  4 页头  5 tag  6 导航  7 窄屏
+   ============================================================ */
+/* 1) 页签：与考核看板同款白色胶囊条 + 金底激活光晕 */
+.dim-tabs{background:rgba(255,255,255,.88)!important;padding:4px!important;gap:4px!important;
+border-radius:14px!important;border:1px solid #e6eaf1!important;max-width:none!important;
+box-shadow:0 1px 2px rgba(16,24,40,.04),0 1px 3px rgba(16,24,40,.06)!important;margin:0 0 16px!important}
+.dim-tab{border-radius:11px!important;border-bottom:none!important;transition:all .2s!important}
+.dim-tab:hover:not(.active){background:#f5f8fd!important;color:#1a2b4a!important}
+.dim-tab.active{background:linear-gradient(135deg,#FFC300,#ffb300)!important;color:#1B2233!important;
+border-bottom-color:transparent!important;box-shadow:0 4px 16px rgba(255,195,0,.45)!important}
+.dim-tab.active::after{display:none!important}
+.dim-tab.active .tab-badge{background:rgba(27,34,51,.12)!important;color:#1B2233!important}
+/* 2) 卡片：考核同款圆角/柔和阴影/描边/内边距 */
+.card,.section,.filters,.tblwrap,.search-bar,.filter-bar,.ov-cta,.reasons-section{background:#fff!important;
+border-radius:12px!important;box-shadow:0 2px 10px rgba(27,34,51,.07)!important;border:1px solid #e8ebf0!important}
+.card,.section{padding:18px 20px!important}
+/* 3) 表格：考核同款深色表头 + 竖向分隔线 */
+table th,.dt th{background:#1B2233!important;color:#fff!important;font-weight:700!important;
+box-shadow:inset -1px 0 0 #e6eaf1!important}
+table th:hover{background:#2D3447!important}
+table td,.dt td{box-shadow:inset -1px 0 0 #e6eaf1!important}
+/* 4) 页头：与考核同款投影，标题去渐变字改纯白 */
+.header{border-radius:8px!important;box-shadow:0 12px 32px rgba(21,27,43,.28)!important}
+.header h1{background-image:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;
+-webkit-text-fill-color:#fff!important}
+/* 5) 标签配色统一为考核金系 */
+.tag{background:#FFF3D4!important;color:#B8860B!important}
+.tag.hd{background:#E6F7DD!important;color:#389E0D!important}
+.tag.hs{background:#FFF1E0!important;color:#D46B08!important}
+/* 6) 导航：与考核一致，去掉负 margin 贴边，改圆角浮条 */
+.top-nav{margin:0 0 12px!important;border-radius:0 0 12px 12px}
+/* 7) 窄屏对齐 */
+@media(max-width:600px){
+  .dim-tabs{top:36px!important}
+  .header h1{font-size:17px!important}
+}
+@media(max-width:768px){
+  .card,.section{padding:14px 16px!important}
+}
+</style>
 </head><body>
 <nav class="top-nav">
 <a href="https://gitsick.github.io/databi/">← 看板中心</a>
