@@ -559,7 +559,48 @@ radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 60%),
 </style>
 
 
-<style>/* unify-nav-v1 全站导航统一层（布局/配色/溢出一致） */
+<style id="unified-theme-v1">/* =====================================================================
+   unified-theme v1 — 全站通用主题（唯一主题源，所有看板统一调用）
+   基准：考核看板（delivery-assessment-dashboard-oct.html）设计语言
+   管理：改这一处 → 所有页面生效
+   结构：
+     [1] 设计令牌（--tk-* 统一命名 + 遗留 token 名映射）
+     [2] 顶部导航统一层（sticky 通栏/右侧成组/窄屏紧凑）
+     [3] 页面对齐层（body.theme-align 时生效，考核看板天然对齐不受影响）
+   ===================================================================== */
+
+/* ---------- [1] 设计令牌 ---------- */
+:root{
+  /* 核心色板 */
+  --tk-navy:#1B2233; --tk-navy2:#2D3447; --tk-navy3:#3A4458;
+  --tk-gold:#FFC300; --tk-gold-d:#F5A623;
+  --tk-bg:#F0F2F5; --tk-card:#FFFFFF; --tk-line:#EAECEF; --tk-line-2:#e6eaf1;
+  --tk-ink:#1B1B33; --tk-muted:#6B7280; --tk-muted2:#8A8FA3;
+  --tk-good:#188038; --tk-warn:#F5A623; --tk-danger:#d93025; --tk-info:#1967D2;
+  /* 字体 / 圆角 / 阴影 / 间距 / 缓动 */
+  --tk-font:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;
+  --tk-radius-card:12px; --tk-radius-card-s:10px; --tk-radius-ctl:8px; --tk-radius-pill:999px;
+  --tk-shadow-card:0 2px 8px rgba(0,0,0,.06);
+  --tk-shadow-card-h:0 2px 4px rgba(16,24,40,.06),0 10px 28px rgba(16,24,40,.10);
+  --tk-shadow-lift:0 6px 18px rgba(27,34,51,.10);
+  --tk-ease:cubic-bezier(.22,.61,.36,1);
+  --tk-sp-2:8px; --tk-sp-3:12px; --tk-sp-4:16px;
+
+  /* 遗留 token 名统一映射（!important：页面内同名定义不再各自为政） */
+  --mt-bg:#F0F2F5!important; --mt-card:#FFFFFF!important; --mt-border:#EAECEF!important;
+  --mt-dark:#1B2233!important; --mt-dark2:#2D3447!important; --mt-radius:8px!important;
+  --mt-shadow:0 1px 4px rgba(27,34,51,.06)!important; --mt-shadow-h:0 4px 14px rgba(27,34,51,.1)!important;
+  --mt-text:#1B1B33!important; --mt-text2:#6B7280!important; --mt-text3:#7D8290!important;
+  --mt-yellow:#FFC300!important; --mt-yellow-d:#F5A623!important;
+  --mt-th-bg:#F8F9FA!important; --mt-th-c:#1B2233!important;
+  --mt-row-alt:#FAFBFC!important; --mt-row-hover:#FFF8E1!important;
+  --bg:#F0F2F5!important; --border:#EAECEF!important;
+  --dark:#1B2233!important; --dark2:#2D3447!important;
+  --yellow:#FFC300!important; --yellow-d:#F5A623!important;
+  --text:#1B1B33!important; --text2:#6B7280!important; --text3:#8A8FA3!important;
+}
+
+/* ---------- [2] 顶部导航统一层 ---------- */
 .top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px!important;height:40px!important;margin:0!important;background:linear-gradient(90deg,#1B2233 0%,#2D3447 100%)!important;color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2);white-space:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;border-radius:0!important}
 .top-nav::-webkit-scrollbar{display:none}
 .top-nav a{color:#8A8FA3;text-decoration:none;white-space:nowrap;transition:color .15s}
@@ -574,6 +615,15 @@ radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 60%),
 @media(max-width:1180px){.top-nav .bar-status{display:none!important}}
 @media(max-width:980px){.top-nav .bar-score{display:none!important}}
 @media (max-width:640px){.top-nav{padding:0 12px!important;font-size:12px;gap:8px!important;height:36px!important}.top-nav .nav-switch{padding:2px 9px!important;font-size:11px}}
+html.embed .top-nav{display:none}
+
+/* ---------- [3] 页面对齐层（body.theme-align 时生效） ---------- */
+body.theme-align{font-family:var(--tk-font)!important;background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),transparent 60%),radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 55%),var(--tk-bg)!important}
+body.theme-align .header{background:linear-gradient(135deg,var(--tk-navy) 0%,var(--tk-navy2) 60%,var(--tk-navy3) 100%)!important;border-radius:16px!important;position:relative!important;overflow:hidden!important}
+body.theme-align .header h1{font-size:22px!important;letter-spacing:.02em}
+@media(max-width:600px){body.theme-align .header h1{font-size:18px!important}}
+body.theme-align .card{border-radius:var(--tk-radius-card)!important;box-shadow:var(--tk-shadow-card)!important;transition:box-shadow .2s var(--tk-ease)}
+body.theme-align .card:hover{box-shadow:var(--tk-shadow-card-h)!important}
 </style>
 </head>
 <body>
