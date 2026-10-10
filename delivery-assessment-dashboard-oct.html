@@ -557,6 +557,24 @@ radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 60%),
 .card:hover{box-shadow:0 6px 18px rgba(27,34,51,.11)!important}
 .tab-badge{border-radius:8px!important}
 </style>
+
+
+<style>/* unify-nav-v1 全站导航统一层（布局/配色/溢出一致） */
+.top-nav{position:sticky;top:0;z-index:9000;display:flex;align-items:center;gap:12px;padding:0 20px!important;height:40px!important;margin:0!important;background:linear-gradient(90deg,#1B2233 0%,#2D3447 100%)!important;color:#e2e8f0;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2);white-space:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;border-radius:0!important}
+.top-nav::-webkit-scrollbar{display:none}
+.top-nav a{color:#8A8FA3;text-decoration:none;white-space:nowrap;transition:color .15s}
+.top-nav a:hover{color:#FFC300}
+.top-nav .nav-current{color:#fff!important;font-weight:700!important;margin-left:4px;white-space:nowrap}
+.top-nav .nav-sep{color:#3A4458;margin:0 2px}
+.top-nav .nav-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex:none}
+.top-nav .nav-right .nav-switch{margin-left:0!important}
+.top-nav .nav-switch{margin-left:0!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:999px!important;padding:3px 12px!important;line-height:1.4!important;transition:all .15s!important;font-size:11px}
+.top-nav .nav-switch:hover{border-color:rgba(255,195,0,.65)!important;background:rgba(255,195,0,.12)!important}
+.top-nav .nav-cities{flex:none;display:flex;align-items:center;gap:6px}
+@media(max-width:1180px){.top-nav .bar-status{display:none!important}}
+@media(max-width:980px){.top-nav .bar-score{display:none!important}}
+@media (max-width:640px){.top-nav{padding:0 12px!important;font-size:12px;gap:8px!important;height:36px!important}.top-nav .nav-switch{padding:2px 9px!important;font-size:11px}}
+</style>
 </head>
 <body>
 
@@ -566,8 +584,8 @@ radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 60%),
 <span class="nav-current">10月看板</span>
 <span class="nav-cities" id="city-bar" role="tablist" aria-label="城市切换"><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'泰兴')">泰兴</div><span class="bar-score" data-city="泰兴"></span><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'诸暨')">诸暨</div><span class="bar-score" data-city="诸暨"></span><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'响水')">响水</div><span class="bar-score" data-city="响水"></span></span>
 <span class="bar-status" id="bar-status"></span>
-<a href="delivery-assessment-dashboard.html" class="nav-switch">9月看板</a>
-<a href="rider_dashboard.html" class="nav-switch">骑手解约</a>
+<span class="nav-right"><a href="delivery-assessment-dashboard.html" class="nav-switch">9月看板</a>
+<a href="rider_dashboard.html" class="nav-switch">骑手解约</a></span>
 </nav>
 
 <div class="header">
