@@ -521,6 +521,44 @@ padding:3px 12px!important;line-height:1.4!important;transition:all .15s!importa
 .summary-card.warn [id^="ss-score"]{color:#B45309!important}
 .summary-card.warn [id^="ss-level"]{color:#B45309!important}
 </style>
+<style id="unify-v3">
+/* ===== 统一布局样式 v3（通用设计语言：卡片/标题/徽标/分区/模块口色） ===== */
+:root{--u-radius:12px;--u-shadow:0 2px 10px rgba(27,34,51,.07);--u-border:#e8ebf0;--u-head:#1B2233;--u-muted:#6b7280;--u-gold:#FFC300;}
+.card{border-radius:var(--u-radius)!important;box-shadow:var(--u-shadow)!important;border:1px solid var(--u-border)!important;padding:18px 20px!important;}
+.card-title{font-size:14px!important;font-weight:700!important;color:#1a2b4a!important;letter-spacing:.01em!important;align-items:center!important;}
+.section-label{font-size:13px!important;font-weight:800!important;color:#1a2b4a!important;margin:20px 0 10px!important;padding-left:10px!important;border-left:4px solid var(--u-gold)!important;line-height:1.4!important;letter-spacing:.02em;display:flex;align-items:center;}
+.pill{font-size:10.5px!important;padding:2px 9px!important;border-radius:999px!important;font-weight:700!important;white-space:nowrap;}
+.grid-modules{gap:14px!important;}
+.module-card{border-top:3px solid var(--u-accent,#d9dee8)!important;}
+.module-card.yuepao{--u-accent:#e8710a;}.module-card.tiyan{--u-accent:#7b61ff;}.module-card.tuiwan{--u-accent:#00b8d4;}.module-card.jiameng{--u-accent:#e8525f;}.module-card.wanjie{--u-accent:#ff6b35;}.module-card.puzhong{--u-accent:#8d6e63;}
+.dt th{background:var(--u-head)!important;font-weight:600!important;}
+.note-foot,.note-foot-l{color:var(--u-muted)!important;font-size:11px!important;line-height:1.65!important;}
+.indicator-name{font-weight:700!important;}
+.mo-mtd{margin-top:6px!important;}
+/* 口径不符的参考指标降级标注 */
+.ref-tag{display:inline-block;font-size:9.5px;font-weight:700;color:#b35f00;background:#fef3e2;border:1px solid #f3ddb8;border-radius:8px;padding:0 6px;margin-left:4px;vertical-align:1px;white-space:nowrap;}
+/* 不考核模块弱化下沉（画像权重0%） */
+.module-na{opacity:.75;border:1px dashed #d9dee8!important;background:linear-gradient(135deg,#fff 0%,#f7f8fa 100%)!important;}
+.module-na .indicator-score,.module-na .note-foot-l{display:none!important;}
+.module-na .card-title::after{content:'本城画像不考核';font-size:10.5px;font-weight:700;color:#8a94a6;background:#f1f3f7;border:1px solid #e3e7ef;border-radius:10px;padding:2px 9px;margin-left:auto;white-space:nowrap;}
+.module-na .mo-mtd{opacity:.55;}
+@media(max-width:900px){.module-na .card-title::after{display:none;}.module-na .card-title::before{content:'⛔';}}
+@media print{.ref-tag{display:none!important;}}
+</style>
+<style id="beauty-common-v1">
+/* ---- 通用美化（三页一致）：氛围底色 / 滚动条 / 卡片悬停 / 徽章 ---- */
+body{background:
+radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),transparent 60%),
+radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 60%),
+#F0F2F5!important}
+.tblwrap::-webkit-scrollbar,.table-scroll::-webkit-scrollbar,.top-nav::-webkit-scrollbar{height:8px;width:8px}
+.tblwrap::-webkit-scrollbar-thumb,.table-scroll::-webkit-scrollbar-thumb,.top-nav::-webkit-scrollbar-thumb{background:#C9CEDA;border-radius:999px}
+.tblwrap::-webkit-scrollbar-thumb:hover,.table-scroll::-webkit-scrollbar-thumb:hover,.top-nav::-webkit-scrollbar-thumb:hover{background:#AEB5C6}
+.tblwrap::-webkit-scrollbar-track,.table-scroll::-webkit-scrollbar-track,.top-nav::-webkit-scrollbar-track{background:transparent}
+.card,.section{transition:box-shadow .2s ease,transform .2s ease!important}
+.card:hover{box-shadow:0 6px 18px rgba(27,34,51,.11)!important}
+.tab-badge{border-radius:8px!important}
+</style>
 </head>
 <body>
 
