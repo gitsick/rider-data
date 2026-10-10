@@ -516,14 +516,20 @@ body.no-scroll{overflow:hidden}
 }
 /* ====== end rider layout align ====== */
 /* ====== end mt-style ====== */</style>
+<style>
+/* ---- back-top: 回到顶部（对齐10月看板） ---- */
+#back-top{position:fixed;right:18px;bottom:26px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(27,34,51,.12);background:rgba(255,255,255,.94);box-shadow:0 4px 14px rgba(27,34,51,.18);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:#1B2233;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .25s ease-out,transform .25s ease-out,background .15s;z-index:800}
+#back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+#back-top:hover{background:#fff8e1;border-color:#F5A623}
+</style>
 </head><body>
 <nav class="top-nav">
 <a href="https://gitsick.github.io/databi/">← 看板中心</a>
 <span class="nav-sep">›</span>
 <span class="nav-current">骑手解约</span>
+<a href="rider_agreement.html" class="nav-switch">解约协议</a>
 <a href="delivery-assessment-dashboard-oct.html" class="nav-switch">10月看板</a>
 <a href="delivery-assessment-dashboard.html" class="nav-switch">9月看板</a>
-<a href="rider_agreement.html" class="nav-switch">解约协议</a>
 </nav>
 <style>/* vtab-style-injected */
 .vtab-bar{display:flex;gap:8px;padding:8px 14px;margin-bottom:8px;position:sticky;top:40px;z-index:8000;background:rgba(240,242,245,.92);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid #EAECEF}
@@ -776,4 +782,12 @@ try{
 catch(e){}
 })();
 /* end visit-logger */</script>
+<button id="back-top" title="回到顶部" aria-label="回到顶部">↑</button>
+<script>(function(){
+var b=document.getElementById('back-top');if(!b)return;
+var t=null;
+function upd(){t=null;var y=window.scrollY||document.documentElement.scrollTop||0;b.classList.toggle('show',y>600)}
+window.addEventListener('scroll',function(){if(t==null)t=requestAnimationFrame(upd)},{passive:true});
+b.addEventListener('click',function(){var rm=false;try{rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}window.scrollTo({top:0,behavior:rm?'auto':'smooth'})})();
+</script>
 </body></html>
