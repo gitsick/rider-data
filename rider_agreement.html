@@ -521,4 +521,5 @@ function upd(){t=null;var y=window.scrollY||document.documentElement.scrollTop||
 window.addEventListener('scroll',function(){if(t==null)t=requestAnimationFrame(upd)},{passive:true});
 b.addEventListener('click',function(){var rm=false;try{rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}window.scrollTo({top:0,behavior:rm?'auto':'smooth'})})();
 </script>
+<div style="max-width:1440px;margin:0 auto;padding:14px 6px 24px;font-size:11px;color:#8A8FA3;">更多看板：<a href="rider_overview.html" style="color:#1967D2;text-decoration:none;">概览</a> · <a href="rider_share.html" style="color:#1967D2;text-decoration:none;">分享页</a> · <a href="access_log.html" style="color:#1967D2;text-decoration:none;">访问日志</a> · <a href="https://gitsick.github.io/databi/" style="color:#1967D2;text-decoration:none;">看板中心</a></div>
 </body></html>
