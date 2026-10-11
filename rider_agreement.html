@@ -410,7 +410,7 @@ body.no-scroll{overflow:hidden}
 @media (max-width:640px){.top-nav{padding:0 12px!important;font-size:12px;gap:8px!important;height:36px!important}.top-nav .nav-switch{padding:2px 9px!important;font-size:11px}}
 html.embed .top-nav{display:none}
 /* [TK-NAV-WIDTH] 导航与看板同宽：内容区以 .wrap 限宽 1440 居中的页面（骑手主看板/概览/协议），顶导航同步限宽居中，宽屏不再"导航通栏、看板居中"错位 */
-body:has(.wrap) .top-nav{max-width:1440px;margin-left:auto!important;margin-right:auto!important}
+@media(min-width:1500px){.top-nav{padding-left:max(20px,calc((100% - 1440px)/2))!important;padding-right:max(20px,calc((100% - 1440px)/2))!important}}
 /* [TK-NAV-FIT] 导航防溢出：分级紧凑（间距/按钮/城市胶囊逐级收紧），窄屏下切换按钮不再被横向滚动藏住 */
 @media(max-width:1500px){
   .top-nav{gap:8px!important}
