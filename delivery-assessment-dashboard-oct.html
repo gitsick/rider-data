@@ -2156,6 +2156,7 @@ document.querySelectorAll('.dim-tab').forEach(function(t){ t.classList.remove('a
 el.classList.add('active');
 document.querySelectorAll('.dim-content').forEach(function(c){ c.classList.remove('active'); });
 document.getElementById('dim-' + dim).classList.add('active');
+try{if(history.replaceState)history.replaceState(null,'','#'+dim);}catch(err){}
 // 惰性加载：分析报告维度首次切换时才渲染
 if ((dim === 'report' || dim === 'scheme') && !window._analysisRendered) {
 window._analysisRendered = true;
@@ -6405,6 +6406,8 @@ currentCity = firstTab.textContent.trim();
   T(initAnchorSpy);
   /* 设计要求的日期入口重入：switchDate(currentDate) 幂等重渲染天视图 */
   T(function(){ if (typeof currentDate !== 'undefined' && currentDate && typeof window.switchDate === 'function') window.switchDate(currentDate); });
+  /* R25：URL hash 深链 → 载入时自动切换到对应维度页签 */
+  T(function(){ try{ var _h=(location.hash||'').replace('#',''); if(!_h) return; var _ts=document.querySelectorAll('.dim-tab'); for(var _i=0;_i<_ts.length;_i++){ if(((_ts[_i].getAttribute('onclick')||'').indexOf("'"+_h+"'"))>=0){ switchDim(_ts[_i],_h); break; } } }catch(e){} });
   if (errs.length) console.warn('[boot] 部分渲染失败：', errs);
 }
 if (document.readyState === 'complete') setTimeout(boot, 0);
