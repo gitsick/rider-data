@@ -1,24 +1,24 @@
 {
  "meta": {
-  "generatedAt": "2026-10-11T11:54:29.857Z",
+  "generatedAt": "2026-10-11T14:35:08.922Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 236,
+  "total": 246,
   "uniqueIp": 2,
-  "today": 134,
+  "today": 144,
   "provinces": 2
  },
  "aggregates": {
   "source": [
    {
     "label": "gitsick.github.io",
-    "count": 127
+    "count": 136
    },
    {
     "label": "直接打开",
-    "count": 108
+    "count": 109
    },
    {
     "label": "微信",
@@ -28,7 +28,7 @@
   "daily": [
    {
     "label": "10-11",
-    "count": 134
+    "count": 144
    },
    {
     "label": "10-10",
@@ -62,7 +62,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 228
+    "count": 238
    },
    {
     "label": "手机",
@@ -85,12 +85,122 @@
   {
    "level": "province",
    "name": "Jiangsu Sheng",
-   "visits": 3,
+   "visits": 13,
    "uniqueIp": 1,
-   "last": "2026-10-11 18:31"
+   "last": "2026-10-11 21:51"
   }
  ],
  "records": [
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 21:51",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 21:51",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 21:51",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 20:10",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-11 20:04",
+   "referrer": "直接打开",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 19:40",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 19:40",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 19:36",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 19:36",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-11 19:36",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "rider_dashboard.html",
    "src": "gitsick.github.io",
@@ -2175,116 +2285,6 @@
    "src": "直接打开",
    "device": "电脑",
    "time": "2026-10-09 20:05",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-09 14:18",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-09 14:07",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "手机",
-   "time": "2026-10-09 12:37",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "手机",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-09 10:21",
-   "referrer": "gitsick.github.io",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-09 08:30",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "Mac",
-   "time": "2026-10-08 18:24",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "Mac",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-08 18:17",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-08 18:07",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-08 18:02",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-08 16:52",
    "referrer": "直接打开",
    "ip": "127.0.0.1（内网）",
    "region": "内网/本机",
