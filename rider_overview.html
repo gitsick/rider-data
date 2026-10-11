@@ -1064,4 +1064,5 @@ function exportCSV(){const rows=curRows&&curRows.length?curRows:[];if(!rows.leng
 function init(){fill('fCity','市/区县','All');fill('fReason','解除合作原因','All');cards(DATA);const sub=document.querySelector('.sub');if(sub&&!sub.dataset.filled){sub.dataset.filled='1';sub.innerHTML=sub.innerHTML.replace('{total}',DATA.length.toLocaleString('zh-CN')).replace('{now}',new Date().toLocaleString('zh-CN',{hour12:false}));}page=1;pageSize=15;render();}
 init();
 </script>
+<div style="max-width:1440px;margin:0 auto;padding:14px 6px 24px;font-size:11px;color:#8A8FA3;">更多看板：<a href="rider_share.html" style="color:#1967D2;text-decoration:none;">分享页</a> · <a href="access_log.html" style="color:#1967D2;text-decoration:none;">访问日志</a> · <a href="https://gitsick.github.io/databi/" style="color:#1967D2;text-decoration:none;">看板中心</a></div>
 </body></html>
