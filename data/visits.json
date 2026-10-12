@@ -1,28 +1,28 @@
 {
  "meta": {
-  "generatedAt": "2026-10-12T06:01:20.197Z",
+  "generatedAt": "2026-10-12T07:01:56.096Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 452,
+  "total": 491,
   "uniqueIp": 8,
-  "today": 203,
+  "today": 242,
   "provinces": 3
  },
  "aggregates": {
   "source": [
    {
     "label": "直接打开",
-    "count": 277
+    "count": 306
    },
    {
     "label": "gitsick.github.io",
-    "count": 169
+    "count": 178
    },
    {
     "label": "localhost",
-    "count": 5
+    "count": 6
    },
    {
     "label": "微信",
@@ -32,7 +32,7 @@
   "daily": [
    {
     "label": "10-12",
-    "count": 203
+    "count": 242
    },
    {
     "label": "10-11",
@@ -70,7 +70,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 444
+    "count": 483
    },
    {
     "label": "手机",
@@ -85,17 +85,17 @@
  "regions": [
   {
    "level": "province",
+   "name": "Jiangsu Sheng",
+   "visits": 257,
+   "uniqueIp": 6,
+   "last": "2026-10-12 14:55"
+  },
+  {
+   "level": "province",
    "name": "内网/本机",
    "visits": 233,
    "uniqueIp": 1,
    "last": "2026-10-11 16:24"
-  },
-  {
-   "level": "province",
-   "name": "Jiangsu Sheng",
-   "visits": 218,
-   "uniqueIp": 6,
-   "last": "2026-10-12 13:57"
   },
   {
    "level": "province",
@@ -106,6 +106,435 @@
   }
  ],
  "records": [
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:55",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "index.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:55",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:55",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:45",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:42",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "localhost",
+   "device": "电脑",
+   "time": "2026-10-12 14:41",
+   "referrer": "localhost",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:41",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:41",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:41",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:40",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:40",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:40",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:30",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:28",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:28",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:27",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:27",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:25",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:24",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:24",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "index.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:23",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:20",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:18",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:18",
+   "referrer": "gitsick.github.io",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "index",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:17",
+   "referrer": "gitsick.github.io",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:17",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 14:17",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:15",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:14",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:12",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:11",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:10",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:09",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:08",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:08",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:08",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:08",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:08",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider-data",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 14:08",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "delivery-assessment-dashboard-oct.html",
    "src": "gitsick.github.io",
@@ -1873,435 +2302,6 @@
    "time": "2026-10-12 09:57",
    "referrer": "直接打开",
    "ip": "240e:3a5:2029:3eb1:ec54:c413:a18f:77eb",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:55",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:54",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:51",
-   "referrer": "直接打开",
-   "ip": "240e:390:7a8c:b81:178:80a2:234e:fedb",
-   "region": "Zhejiang Sheng · Jinhua",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:24",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:180e:cf92:2268:9fb3",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_share.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:24",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:180e:cf92:2268:9fb3",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:24",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:180e:cf92:2268:9fb3",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:22",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:180e:cf92:2268:9fb3",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:19",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:180e:cf92:2268:9fb3",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 09:05",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:180e:cf92:2268:9fb3",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 08:31",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 08:30",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 08:27",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 08:13",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 08:07",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 08:06",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 08:05",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 08:02",
-   "referrer": "gitsick.github.io",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "index.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 08:02",
-   "referrer": "gitsick.github.io",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:58",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:55",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:55",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:55",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:54",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:54",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:52",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:46",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "index",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:46",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 07:33",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:39",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:39",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:39",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "index",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:39",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:37",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "index",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:37",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:37",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 03:36",
-   "referrer": "gitsick.github.io",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:36",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:36",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 03:35",
-   "referrer": "直接打开",
-   "ip": "223.64.148.104",
    "region": "Jiangsu Sheng · Wuxi",
    "ua": "电脑",
    "internal": false
