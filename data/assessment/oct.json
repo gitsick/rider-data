@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generatedAt": "2026-10-12T04:03:15.954Z",
+  "generatedAt": "2026-10-12T04:06:30.253Z",
   "source": "src/data/data-2026-10.js + src/config/config-2026-10.js（迁移期抽取，只读）"
  },
  "dataDates": [
@@ -12,9 +12,11 @@
   "10-06",
   "10-07",
   "10-08",
-  "10-09"
+  "10-09",
+  "10-10",
+  "10-11"
  ],
- "currentDate": "10-09",
+ "currentDate": "10-11",
  "currentCity": "泰兴",
  "cityProfile": {
   "泰兴": {
@@ -375,6 +377,82 @@
     "ymCq": 98.18,
     "pzAct": null
    }
+  },
+  "10-10": {
+   "泰兴": {
+    "twRate": 99.23,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 46.4,
+    "twNum": 17428,
+    "twDen": 17564,
+    "ymRate": 84.48,
+    "ymCq": 98.1,
+    "pzAct": null
+   },
+   "诸暨": {
+    "twRate": 99.26,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 39.46,
+    "twNum": 44025,
+    "twDen": 44355,
+    "ymRate": 91.85,
+    "ymCq": 98.37,
+    "pzAct": null
+   },
+   "响水": {
+    "twRate": 99.3,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 36.14,
+    "twNum": 7550,
+    "twDen": 7603,
+    "ymRate": 98.25,
+    "ymCq": 100,
+    "pzAct": null
+   }
+  },
+  "10-11": {
+   "泰兴": {
+    "twRate": 99.26,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 48.53,
+    "twNum": 20433,
+    "twDen": 20586,
+    "ymRate": 88.79,
+    "ymCq": 98.96,
+    "pzAct": null
+   },
+   "诸暨": {
+    "twRate": 99.22,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 42.69,
+    "twNum": 47849,
+    "twDen": 48225,
+    "ymRate": 93.73,
+    "ymCq": 97.06,
+    "pzAct": null
+   },
+   "响水": {
+    "twRate": 99.06,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 34.76,
+    "twNum": 8719,
+    "twDen": 8802,
+    "ymRate": 100,
+    "ymCq": 100,
+    "pzAct": null
+   }
   }
  },
  "dailyExtra": {
@@ -656,12 +734,70 @@
     "jmDb": 69,
     "jmTotal": 82
    }
+  },
+  "10-10": {
+   "泰兴": {
+    "ymRate": 84.48,
+    "ymCq": 98.1,
+    "jmDb": 189,
+    "jmTotal": 199,
+    "qkKAStores": 52,
+    "qkKAWb": 422,
+    "qkKAOntime": 99.33
+   },
+   "诸暨": {
+    "ymRate": 91.85,
+    "ymCq": 98.37,
+    "jmDb": 395,
+    "jmTotal": 426
+   },
+   "响水": {
+    "ymRate": 98.25,
+    "ymCq": 100,
+    "jmDb": 77,
+    "jmTotal": 84,
+    "qkKAStores": 17,
+    "qkKAWb": 130,
+    "qkKAOntime": 99.38
+   }
+  },
+  "10-11": {
+   "泰兴": {
+    "ymRate": 88.79,
+    "ymCq": 98.96,
+    "gzYm": 85.57,
+    "gzJm": 100,
+    "jmDb": 0,
+    "jmTotal": 199,
+    "qkKAStores": 52,
+    "qkKAWb": 466,
+    "qkKAOntime": 98.29
+   },
+   "诸暨": {
+    "ymRate": 93.73,
+    "ymCq": 97.06,
+    "gzYm": 81.33,
+    "gzJm": 99.76,
+    "jmDb": 0,
+    "jmTotal": 421
+   },
+   "响水": {
+    "ymRate": 100,
+    "ymCq": 100,
+    "gzYm": 100,
+    "gzJm": 98.78,
+    "jmDb": 0,
+    "jmTotal": 82,
+    "qkKAStores": 16,
+    "qkKAWb": 119,
+    "qkKAOntime": 98.37
+   }
   }
  },
  "monthlyData": {},
  "mtdEval": {
   "month": "2026-10",
-  "date": "20261009",
+  "date": "20261011",
   "mode": "mtd",
   "peaks": [
    "10-01",
@@ -681,24 +817,24 @@
   "pbCut": "10-18",
   "cities": {
    "响水": {
-    "days": 9,
+    "days": 11,
     "twAll": 99.14,
-    "twPk": 99.15,
+    "twPk": 99.14,
     "twMin": 98.88,
     "twBrk": 0,
     "twP1": 99.14,
     "twP2": null,
-    "twDbOk": 9,
+    "twDbOk": 11,
     "hdLast": null,
     "tyLast": null,
     "wjAvg": null,
     "ctFirst": 37.41,
-    "ctLast": 33.77,
-    "ymAvg": 94.08,
-    "ymWeekWorst": 93.42,
-    "ymcqLast": 98.18,
+    "ctLast": 34.76,
+    "ymAvg": 95.09,
+    "ymWeekWorst": 94.74,
+    "ymcqLast": 100,
     "coef": 1.05,
-    "ymModule": 98.78,
+    "ymModule": 99.78,
     "ymWeeks": [
      {
       "week": "09-28",
@@ -709,22 +845,22 @@
      },
      {
       "week": "10-05",
-      "rate": 93.42,
-      "cq": 99.64,
+      "rate": 95.32,
+      "cq": 99.74,
       "coef": 1.05,
-      "score": 98.09
+      "score": 100.09
      }
     ],
-    "gzLast": "98.15 / 100.0",
-    "jmDbLast": 69,
+    "gzLast": "100.0 / 98.78",
+    "jmDbLast": 0,
     "pzLast": null,
-    "gzYm": 98.15,
-    "gzJm": 100,
-    "qkStores": 12,
-    "qkOntime": 100,
+    "gzYm": 100,
+    "gzJm": 98.78,
+    "qkStores": 16,
+    "qkOntime": 98.37,
     "qkTotal": null,
     "qkOk": null,
-    "qkka": "10家/12店/93单/100.0%",
+    "qkka": "12家/16店/119单/98.37%",
     "score": 99.83,
     "gap": 0.17,
     "div": 1,
@@ -735,22 +871,22 @@
     "twBrkDb": 0
    },
    "泰兴": {
-    "days": 9,
-    "twAll": 99.14,
-    "twPk": 99.14,
+    "days": 11,
+    "twAll": 99.16,
+    "twPk": 99.15,
     "twMin": 98.87,
     "twBrk": 0,
-    "twP1": 99.14,
+    "twP1": 99.16,
     "twP2": null,
-    "twDbOk": 9,
+    "twDbOk": 11,
     "hdLast": null,
     "tyLast": null,
     "wjAvg": null,
     "ctFirst": 49.78,
-    "ctLast": 47.25,
-    "ymAvg": 84.01,
-    "ymWeekWorst": 79.74,
-    "ymcqLast": 96.3,
+    "ctLast": 48.53,
+    "ymAvg": 84.54,
+    "ymWeekWorst": 82.04,
+    "ymcqLast": 98.96,
     "coef": 1.05,
     "ymModule": 0,
     "ymWeeks": [
@@ -763,48 +899,48 @@
      },
      {
       "week": "10-05",
-      "rate": 79.74,
-      "cq": 97.06,
+      "rate": 82.04,
+      "cq": 97.48,
       "coef": 1.05,
       "score": 0
      }
     ],
-    "gzLast": "83.81 / 99.49",
-    "jmDbLast": 183,
+    "gzLast": "85.57 / 100.0",
+    "jmDbLast": 0,
     "pzLast": null,
-    "gzYm": 83.81,
-    "gzJm": 99.49,
-    "qkStores": 44,
-    "qkOntime": 99.4,
+    "gzYm": 85.57,
+    "gzJm": 100,
+    "qkStores": 52,
+    "qkOntime": 98.29,
     "qkTotal": null,
     "qkOk": null,
-    "qkka": "18家/44店/424单/99.4%",
+    "qkka": "19家/52店/466单/98.29%",
     "score": 69.83,
     "gap": 30.17,
     "div": 1,
     "mainMod": "悦跑",
     "mainGap": 30,
     "hdZero": 0,
-    "ymBrk": 5,
+    "ymBrk": 7,
     "twBrkDb": 0
    },
    "诸暨": {
-    "days": 9,
-    "twAll": 98.7,
-    "twPk": 98.55,
+    "days": 11,
+    "twAll": 98.8,
+    "twPk": 98.63,
     "twMin": 97.54,
     "twBrk": 0,
-    "twP1": 98.7,
+    "twP1": 98.8,
     "twP2": null,
-    "twDbOk": 6,
+    "twDbOk": 8,
     "hdLast": null,
     "tyLast": null,
     "wjAvg": null,
     "ctFirst": 49.31,
-    "ctLast": 40.02,
-    "ymAvg": 81.26,
-    "ymWeekWorst": 77.03,
-    "ymcqLast": 99.02,
+    "ctLast": 42.69,
+    "ymAvg": 83.57,
+    "ymWeekWorst": 82.28,
+    "ymcqLast": 97.06,
     "coef": 1.05,
     "ymModule": 0,
     "ymWeeks": [
@@ -817,27 +953,27 @@
      },
      {
       "week": "10-05",
-      "rate": 77.03,
-      "cq": 98.9,
+      "rate": 82.28,
+      "cq": 98.56,
       "coef": 1.05,
       "score": 0
      }
     ],
-    "gzLast": "80.39 / 99.06",
-    "jmDbLast": 394,
+    "gzLast": "81.33 / 99.76",
+    "jmDbLast": 0,
     "pzLast": null,
-    "gzYm": 80.39,
-    "gzJm": 99.06,
+    "gzYm": 81.33,
+    "gzJm": 99.76,
     "qkStores": null,
     "qkOntime": null,
     "qkTotal": null,
     "qkOk": null,
     "qkka": null,
-    "score": 99.74,
-    "gap": 0.26,
+    "score": 99.76,
+    "gap": 0.24,
     "div": 1,
     "mainMod": "推完",
-    "mainGap": 0.26,
+    "mainGap": 0.24,
     "hdZero": 0,
     "ymBrk": 8,
     "twBrkDb": 3
