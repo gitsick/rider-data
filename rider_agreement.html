@@ -63,6 +63,7 @@ th:nth-child(1){width:50px}th:nth-child(2){width:130px}th:nth-child(3){width:80p
 .modal-close{position:absolute;top:-36px;right:0;color:#fff;font-size:28px;cursor:pointer;font-weight:300;line-height:1}
 .modal-close:hover{color:#FFC300}
 .modal-info{color:rgba(255,255,255,.7);font-size:12px;margin-top:10px;text-align:center}
+.modal-err{display:none;color:#FFB3B3;background:rgba(245,34,45,.16);border:1px solid rgba(245,34,45,.4);border-radius:8px;padding:14px 22px;font-size:13px;max-width:80%;text-align:center;line-height:1.7}
 @media(max-width:768px){body{padding:10px}.header{padding:14px 16px;flex-direction:column;align-items:flex-start;gap:6px}.header h1{font-size:16px}.cards{grid-template-columns:repeat(2,1fr)}.search-bar input{min-width:120px}.filter-bar select{min-width:70px;font-size:12px}}
 </style><style id="mt-style">
 /* ====== mt-style-injected ====== */
@@ -475,12 +476,13 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <thead><tr><th data-key="区域">区域 <span class="sort-ind">▼</span></th><th data-key="提交时间">提交时间 <span class="sort-ind">▼</span></th><th data-key="市/区县">市/区县 <span class="sort-ind">▼</span></th><th data-key="站点">站点 <span class="sort-ind">▼</span></th><th data-key="骑手姓名">姓名 <span class="sort-ind">▼</span></th><th data-key="骑手ID">骑手ID <span class="sort-ind">▼</span></th><th data-key="解除合作原因">解除原因 <span class="sort-ind">▼</span></th><th data-key="解除合作去向">去向 <span class="sort-ind">▼</span></th><th>协议</th></tr></thead>
 <tbody id="tbody"></tbody></table></div></div>
 <div class="pager" id="pager"></div>
-<div class="foot">数据来源：华东 / 华南 骑手解除合作登记 · 每3小时自动刷新</div>
+<div class="foot" id="foot">数据来源：华东 / 华南 骑手解除合作登记 · 每3小时自动刷新</div>
 </div>
 <div class="modal" id="modal" onclick="closeModal(event)">
 <div class="modal-content">
 <span class="modal-close" onclick="closeModal()">&times;</span>
 <img id="modalImg" src="" alt="解除协议" />
+<div class="modal-err" id="modalErr">⚠️ 原图加载失败：链接可能已过期或网络受限。<br/>请稍后重试；若持续失败，请联系数据侧更新协议图片存储。</div>
 <div class="modal-info" id="modalInfo"></div>
 </div>
 </div>
@@ -496,7 +498,7 @@ function toTs(v){if(!v)return 0;const p=String(v).trim().split(/\s+/);const d=(p
 function updateSortHeaders(){document.querySelectorAll('th').forEach(th=>{th.classList.remove('sort-asc','sort-desc');if(th.dataset.key===sortKey){th.classList.add(sortDir>0?'sort-asc':'sort-desc')}});}
 function render(){const q=document.getElementById('search').value.trim().toLowerCase();const fr=document.getElementById('fRegion').value,fc=document.getElementById('fCity').value,fst=document.getElementById('fStation').value,fs=document.getElementById('fReason').value;const fa=document.getElementById('fHasAgree').value;let l=DATA.filter(r=>{if(fr&&r['区域']!==fr)return false;if(fc&&r['市/区县']!==fc)return false;if(fst&&r['站点']!==fst)return false;if(fs&&r['解除合作原因']!==fs)return false;if(fa==='yes'&&!(r['解除协议']&&r['解除协议'].trim()))return false;if(fa==='no'&&(r['解除协议']&&r['解除协议'].trim()))return false;if(q){const hay=Object.values(r).join(' ').toLowerCase();if(hay.indexOf(q)<0)return false;}return true;});if(sortKey)l=[...l].sort((a,b)=>{if(sortKey==='提交时间'||sortKey==='入职时间'||sortKey==='预计解除合作时间'){return(toTs(a[sortKey])-toTs(b[sortKey]))*sortDir}return String(a[sortKey]).localeCompare(String(b[sortKey]),'zh',{numeric:true})*sortDir});curRows=l;cards(l);const ttl=l.length,tp=Math.max(1,Math.ceil(ttl/pageSize));if(page>tp)page=tp;if(page<1)page=1;const st=(page-1)*pageSize,sl=l.slice(st,st+pageSize);const tb=document.getElementById('tbody');tb.innerHTML=sl.length?sl.map(function(p){const hasAgree=p['解除协议']&&p['解除协议'].trim();const agreeHtml=hasAgree?'<a class="btn-view has" onclick="viewAgreement(\''+encodeURIComponent(p['解除协议'])+'\',\''+p['骑手姓名']+'\',\''+p['市/区县']+'\',\''+p['站点']+'\')">查看</a>':'<span class="btn-view no">无</span>';return '<tr><td><span class="tag '+(p['区域']==='华东'?'hd':'hs')+'">'+p['区域']+'</span></td><td>'+p['提交时间']+'</td><td><b>'+p['市/区县']+'</b></td><td>'+p['站点']+'</td><td>'+p['骑手姓名']+'</td><td>'+p['骑手ID']+'</td><td>'+p['解除合作原因']+'</td><td>'+p['解除合作去向']+'</td><td>'+agreeHtml+'</td></tr>';}).join(''):'<tr><td colspan="9" class="empty">无匹配记录</td></tr>';document.getElementById('meta').textContent='第 '+page+'/'+tp+' 页 · 显示 '+sl.length+' 条 · 共 '+ttl+' 条'+(q?' · 搜索"'+q+'"':'');let h='<button class="pbtn" '+(page<=1?'disabled':'')+' onclick="go(1)">\u00ab</button><button class="pbtn" '+(page<=1?'disabled':'')+' onclick="go('+(page-1)+')">\u2039上一页</button>';for(let i=Math.max(1,page-2);i<=Math.min(tp,page+2);i++){h+='<button class="pbtn '+(i===page?'cur':'')+'" onclick="go('+i+')">'+i+'</button>';}h+='<button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="go('+(page+1)+')">下一页\u203a</button><button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="go('+tp+')">\u00bb</button><span class="pinfo">共 '+ttl+' 条 · '+page+'/'+tp+'</span>';document.getElementById('pager').innerHTML=h;updateSortHeaders();}
 function go(p){page=p;render();}
-function viewAgreement(url,name,city,station){const realUrl=decodeURIComponent(url);document.getElementById('modalImg').src=realUrl;document.getElementById('modalInfo').textContent=name+' · '+city+' · '+station;document.getElementById('modal').classList.add('show');}
+function viewAgreement(url,name,city,station){const realUrl=decodeURIComponent(url);const img=document.getElementById('modalImg');const err=document.getElementById('modalErr');err.style.display='none';img.style.display='';img.onload=function(){err.style.display='none';img.style.display=''};img.onerror=function(){img.style.display='none';err.style.display='block'};img.src=realUrl;document.getElementById('modalInfo').textContent=name+' · '+city+' · '+station;document.getElementById('modal').classList.add('show');}
 function closeModal(e){if(e&&e.target!==document.getElementById('modal'))return;document.getElementById('modal').classList.remove('show');document.getElementById('modalImg').src='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 function setSize(){pageSize=parseInt(document.getElementById('fPageSize').value)||15;page=1;render();}
@@ -511,6 +513,26 @@ document.querySelectorAll('th').forEach(th=>{if(th.dataset.key)th.addEventListen
 function reset(){document.getElementById('search').value='';document.getElementById('fRegion').value='';document.getElementById('fCity').value='';document.getElementById('fStation').value='';document.getElementById('fReason').value='';document.getElementById('fHasAgree').value='';document.getElementById('fPageSize').value='15';pageSize=15;page=1;updateFilters();render();}
 function init(){updateFilters();cards(DATA);page=1;pageSize=15;render();}
 init();
+/* ---- 协议图链接到期预警：问卷星签名 URL 含 Expires，临近到期（90 天内）或已过期时在页脚亮提示 ---- */
+(function(){
+  try{
+    var exps=DATA.map(function(r){var m=/(?:\?|&)Expires=(\d+)/.exec(r['解除协议']||'');return m?+m[1]:0}).filter(Boolean);
+    if(!exps.length)return;
+    var min=new Date(Math.min.apply(null,exps)*1000),now=new Date();
+    var d=Math.ceil((min-now)/86400000);
+    var txt='⚠️ 协议原图为问卷星签名链接，预计 '+min.getFullYear()+'-'+String(min.getMonth()+1).padStart(2,'0')+'-'+String(min.getDate()).padStart(2,'0')+' 前后到期';
+    if(d<0){document.getElementById('foot').innerHTML='<span style="color:#F5222D;font-weight:600">'+txt+'，已过期——请数据侧尽快转存为持久地址</span>';}
+    else if(d<90){document.getElementById('foot').innerHTML='<span style="color:#D46B08;font-weight:600">'+txt+'（剩 '+d+' 天）——请数据侧提前转存为持久地址</span>';}
+    else{document.getElementById('foot').innerHTML+=' · <span style="color:#8A8FA3">'+txt+'</span>';}
+  }catch(e){}
+})();
+/* ---- 快照口径说明：本页数据与主看板独立，避免误解 ---- */
+(function(){
+  try{
+    var sub=document.querySelector('.header .sub');
+    if(sub)sub.innerHTML+=' · <span style="color:#C6CAD6">本页为独立快照数据，可能与主看板总数不一致，以主看板为准</span>';
+  }catch(e){}
+})();
 </script><button id="back-top" title="回到顶部" aria-label="回到顶部">↑</button>
 <script>(function(){
 var b=document.getElementById('back-top');if(!b)return;
