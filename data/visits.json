@@ -1,31 +1,31 @@
 {
  "meta": {
-  "generatedAt": "2026-10-12T04:03:15.869Z",
+  "generatedAt": "2026-10-12T05:01:26.934Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 360,
+  "total": 378,
   "uniqueIp": 7,
-  "today": 111,
+  "today": 129,
   "provinces": 3
  },
  "aggregates": {
   "source": [
    {
     "label": "直接打开",
-    "count": 217
+    "count": 230
    },
    {
     "label": "gitsick.github.io",
-    "count": 141
-   },
-   {
-    "label": "微信",
-    "count": 1
+    "count": 143
    },
    {
     "label": "localhost",
+    "count": 4
+   },
+   {
+    "label": "微信",
     "count": 1
    }
   ],
@@ -36,7 +36,7 @@
    },
    {
     "label": "10-12",
-    "count": 111
+    "count": 129
    },
    {
     "label": "10-10",
@@ -70,7 +70,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 352
+    "count": 370
    },
    {
     "label": "手机",
@@ -93,9 +93,9 @@
   {
    "level": "province",
    "name": "Jiangsu Sheng",
-   "visits": 126,
+   "visits": 144,
    "uniqueIp": 5,
-   "last": "2026-10-12 11:46"
+   "last": "2026-10-12 13:00"
   },
   {
    "level": "province",
@@ -106,6 +106,204 @@
   }
  ],
  "records": [
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 13:00",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 13:00",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 13:00",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "localhost",
+   "device": "电脑",
+   "time": "2026-10-12 13:00",
+   "referrer": "localhost",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 13:00",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:46",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:46",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:46",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "localhost",
+   "device": "电脑",
+   "time": "2026-10-12 12:46",
+   "referrer": "localhost",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:46",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:44",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:44",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:44",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard",
+   "src": "localhost",
+   "device": "电脑",
+   "time": "2026-10-12 12:44",
+   "referrer": "localhost",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:44",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 12:32",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "index.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-12 12:32",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 12:31",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "rider_overview.html",
    "src": "直接打开",
@@ -2102,204 +2300,6 @@
    "src": "gitsick.github.io",
    "device": "电脑",
    "time": "2026-10-11 03:40",
-   "referrer": "gitsick.github.io",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 03:38",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 03:35",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 03:34",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 03:32",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 03:15",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 03:08",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 02:34",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 02:25",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-11 02:24",
-   "referrer": "gitsick.github.io",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 02:22",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "index.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 02:21",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-11 02:20",
-   "referrer": "gitsick.github.io",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-11 02:08",
-   "referrer": "直接打开",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-11 02:07",
-   "referrer": "gitsick.github.io",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-11 02:07",
-   "referrer": "gitsick.github.io",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-11 02:06",
-   "referrer": "gitsick.github.io",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-11 02:06",
-   "referrer": "gitsick.github.io",
-   "ip": "127.0.0.1（内网）",
-   "region": "内网/本机",
-   "ua": "电脑",
-   "internal": true
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-11 02:06",
    "referrer": "gitsick.github.io",
    "ip": "127.0.0.1（内网）",
    "region": "内网/本机",
