@@ -1,20 +1,20 @@
 {
  "meta": {
-  "generatedAt": "2026-10-12T08:01:37.006Z",
+  "generatedAt": "2026-10-12T09:01:22.888Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 545,
-  "uniqueIp": 9,
-  "today": 296,
+  "total": 596,
+  "uniqueIp": 10,
+  "today": 347,
   "provinces": 3
  },
  "aggregates": {
   "source": [
    {
     "label": "直接打开",
-    "count": 349
+    "count": 400
    },
    {
     "label": "gitsick.github.io",
@@ -32,7 +32,7 @@
   "daily": [
    {
     "label": "10-12",
-    "count": 296
+    "count": 347
    },
    {
     "label": "10-11",
@@ -70,7 +70,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 537
+    "count": 588
    },
    {
     "label": "手机",
@@ -86,9 +86,9 @@
   {
    "level": "province",
    "name": "Jiangsu Sheng",
-   "visits": 311,
-   "uniqueIp": 7,
-   "last": "2026-10-12 15:57"
+   "visits": 362,
+   "uniqueIp": 8,
+   "last": "2026-10-12 16:58"
   },
   {
    "level": "province",
@@ -106,6 +106,567 @@
   }
  ],
  "records": [
+  {
+   "page": "access_log.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "access_log.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "access_log.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:58",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:57",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:57",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:57",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:57",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:57",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "access_log.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:6cb9:bba9:cff6:7e5c",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "access_log.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:56",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:55",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "access_log.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:55",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:55",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:55",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:55",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:55",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:6cb9:bba9:cff6:7e5c",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "access_log.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_share.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_overview.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:54",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:24",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:6cb9:bba9:cff6:7e5c",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-12 16:05",
+   "referrer": "直接打开",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "rider_dashboard.html",
    "src": "直接打开",
@@ -1739,567 +2300,6 @@
    "src": "直接打开",
    "device": "电脑",
    "time": "2026-10-12 13:21",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:21",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:17",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:17",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:15",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:15",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:15",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:14",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_share",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:14",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:14",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:14",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider-data",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:14",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:14",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:14",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:14",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:10",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_share.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:10",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 13:10",
-   "referrer": "gitsick.github.io",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:10",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:d61:2c20:cc59:5db7",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:00",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_share.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:00",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:00",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "localhost",
-   "device": "电脑",
-   "time": "2026-10-12 13:00",
-   "referrer": "localhost",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:00",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:46",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_share.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:46",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:46",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "localhost",
-   "device": "电脑",
-   "time": "2026-10-12 12:46",
-   "referrer": "localhost",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:46",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:44",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_share",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:44",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:44",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard",
-   "src": "localhost",
-   "device": "电脑",
-   "time": "2026-10-12 12:44",
-   "referrer": "localhost",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:44",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 12:32",
-   "referrer": "gitsick.github.io",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "index.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 12:32",
-   "referrer": "gitsick.github.io",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 12:31",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:46",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "index.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:46",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider-data",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:28",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:28",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:2dd1:9fb0:c860:64a8",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider-data",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:28",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:2dd1:9fb0:c860:64a8",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider-data",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:27",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:24",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:24",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:24",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:24",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:2dd1:9fb0:c860:64a8",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:24",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:2dd1:9fb0:c860:64a8",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:19",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:19",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:19",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 11:19",
    "referrer": "直接打开",
    "ip": "114.225.25.193",
    "region": "Jiangsu Sheng · Nanjing",
