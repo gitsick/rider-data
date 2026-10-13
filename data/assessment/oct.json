@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generatedAt": "2026-10-13T00:36:21.009Z",
+  "generatedAt": "2026-10-13T02:01:34.867Z",
   "source": "src/data/data-2026-10.js + src/config/config-2026-10.js（迁移期抽取，只读）"
  },
  "dataDates": [
@@ -14,9 +14,10 @@
   "10-08",
   "10-09",
   "10-10",
-  "10-11"
+  "10-11",
+  "10-12"
  ],
- "currentDate": "10-11",
+ "currentDate": "10-12",
  "currentCity": "泰兴",
  "cityProfile": {
   "泰兴": {
@@ -453,6 +454,44 @@
     "ymCq": 100,
     "pzAct": null
    }
+  },
+  "10-12": {
+   "泰兴": {
+    "twRate": 99.17,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 44.12,
+    "twNum": 15955,
+    "twDen": 16089,
+    "ymRate": 86.32,
+    "ymCq": 99.1,
+    "pzAct": null
+   },
+   "诸暨": {
+    "twRate": 99.14,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 39.13,
+    "twNum": 42292,
+    "twDen": 42659,
+    "ymRate": 84.12,
+    "ymCq": 96.87,
+    "pzAct": null
+   },
+   "响水": {
+    "twRate": 98.89,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 33.38,
+    "twNum": 6257,
+    "twDen": 6327,
+    "ymRate": 91.8,
+    "ymCq": 100,
+    "pzAct": null
+   }
   }
  },
  "dailyExtra": {
@@ -791,6 +830,38 @@
     "qkKAStores": 16,
     "qkKAWb": 119,
     "qkKAOntime": 98.37
+   }
+  },
+  "10-12": {
+   "泰兴": {
+    "ymRate": 86.32,
+    "ymCq": 99.1,
+    "gzYm": 81.82,
+    "gzJm": 100,
+    "jmDb": 0,
+    "jmTotal": 195,
+    "qkKAStores": 45,
+    "qkKAWb": 400,
+    "qkKAOntime": 98.8
+   },
+   "诸暨": {
+    "ymRate": 84.12,
+    "ymCq": 96.87,
+    "gzYm": 76.51,
+    "gzJm": 99.51,
+    "jmDb": 0,
+    "jmTotal": 412
+   },
+   "响水": {
+    "ymRate": 91.8,
+    "ymCq": 100,
+    "gzYm": 100,
+    "gzJm": 100,
+    "jmDb": 0,
+    "jmTotal": 81,
+    "qkKAStores": 11,
+    "qkKAWb": 97,
+    "qkKAOntime": 100
    }
   }
  },
