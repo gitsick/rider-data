@@ -1,13 +1,13 @@
 {
  "meta": {
-  "generatedAt": "2026-10-13T08:01:04.272Z",
+  "generatedAt": "2026-10-13T09:00:47.796Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 654,
+  "total": 655,
   "uniqueIp": 12,
-  "today": 58,
+  "today": 59,
   "provinces": 3
  },
  "aggregates": {
@@ -22,7 +22,7 @@
    },
    {
     "label": "localhost",
-    "count": 21
+    "count": 22
    },
    {
     "label": "微信",
@@ -40,7 +40,7 @@
    },
    {
     "label": "10-13",
-    "count": 58
+    "count": 59
    },
    {
     "label": "10-10",
@@ -74,7 +74,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 646
+    "count": 647
    },
    {
     "label": "手机",
@@ -90,9 +90,9 @@
   {
    "level": "province",
    "name": "Jiangsu Sheng",
-   "visits": 420,
+   "visits": 421,
    "uniqueIp": 10,
-   "last": "2026-10-13 15:22"
+   "last": "2026-10-13 16:04"
   },
   {
    "level": "province",
@@ -110,6 +110,17 @@
   }
  ],
  "records": [
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "localhost",
+   "device": "电脑",
+   "time": "2026-10-13 16:04",
+   "referrer": "localhost",
+   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "delivery-assessment-dashboard-oct.html",
    "src": "直接打开",
@@ -2290,17 +2301,6 @@
   },
   {
    "page": "rider_share",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 14:08",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview",
    "src": "直接打开",
    "device": "电脑",
    "time": "2026-10-12 14:08",
