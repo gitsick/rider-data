@@ -1,20 +1,20 @@
 {
  "meta": {
-  "generatedAt": "2026-10-13T06:01:04.808Z",
+  "generatedAt": "2026-10-13T07:01:10.787Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 648,
+  "total": 653,
   "uniqueIp": 12,
-  "today": 52,
+  "today": 57,
   "provinces": 3
  },
  "aggregates": {
   "source": [
    {
     "label": "直接打开",
-    "count": 404
+    "count": 407
    },
    {
     "label": "gitsick.github.io",
@@ -22,7 +22,7 @@
    },
    {
     "label": "localhost",
-    "count": 19
+    "count": 21
    },
    {
     "label": "微信",
@@ -39,12 +39,12 @@
     "count": 147
    },
    {
-    "label": "10-10",
-    "count": 54
+    "label": "10-13",
+    "count": 57
    },
    {
-    "label": "10-13",
-    "count": 52
+    "label": "10-10",
+    "count": 54
    },
    {
     "label": "10-04",
@@ -74,7 +74,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 640
+    "count": 645
    },
    {
     "label": "手机",
@@ -90,9 +90,9 @@
   {
    "level": "province",
    "name": "Jiangsu Sheng",
-   "visits": 414,
+   "visits": 419,
    "uniqueIp": 10,
-   "last": "2026-10-13 13:20"
+   "last": "2026-10-13 14:14"
   },
   {
    "level": "province",
@@ -110,6 +110,61 @@
   }
  ],
  "records": [
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "localhost",
+   "device": "电脑",
+   "time": "2026-10-13 14:14",
+   "referrer": "localhost",
+   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-13 14:10",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-13 14:08",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "assessment_oct.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-13 14:07",
+   "referrer": "直接打开",
+   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "localhost",
+   "device": "电脑",
+   "time": "2026-10-13 14:05",
+   "referrer": "localhost",
+   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "delivery-assessment-dashboard-oct.html",
    "src": "localhost",
@@ -2249,61 +2304,6 @@
    "src": "直接打开",
    "device": "电脑",
    "time": "2026-10-12 14:08",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider-data",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 14:08",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 13:57",
-   "referrer": "gitsick.github.io",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 13:57",
-   "referrer": "gitsick.github.io",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-12 13:55",
-   "referrer": "gitsick.github.io",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_overview.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 13:55",
    "referrer": "直接打开",
    "ip": "114.225.25.193",
    "region": "Jiangsu Sheng · Nanjing",
