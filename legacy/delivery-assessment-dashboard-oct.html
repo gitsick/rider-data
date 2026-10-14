@@ -2232,6 +2232,13 @@ e.style.transition = 'box-shadow .5s';
 e.style.boxShadow = '0 0 0 3px rgba(255,193,0,.6)';
 setTimeout(function(){ e.style.boxShadow = ''; }, 1800);
 } catch (err) {}
+/* [滚动兜底] 首屏渲染未稳定时滚动可能被重置，延迟复查一次 */
+setTimeout(function(){
+try {
+var _r = e.getBoundingClientRect();
+if (_r.top < 0 || _r.top > window.innerHeight) e.scrollIntoView({behavior:'smooth', block:'start'});
+} catch (err) {}
+}, 1000);
 }, 500);
 }
 function switchDim(el, dim) {
@@ -2946,7 +2953,7 @@ var JM = [
 {k:'当日测算 + 承托比', dim:'daily', chips:[['🔮 月度预估','monthly','sec-estimate'],['📚 约束指标','scheme','sch-cons']]},
 {k:'考核周期', dim:'daily', chips:[['📅 月度周期','monthly','sec-period']]},
 {k:'扣分项模块', dim:'daily', chips:[['📚 扣分规则','scheme','sch-gz'],['📅 月度评估','monthly','qk-monthly-card'],['📋 计分评估','scheme','qike-score']]},
-{k:'企客SKA · 天维度', dim:'daily', chips:[['📈 趋势图','charts','chart-ska'],['📅 周达标','report','ska-week-card'],['🤝 制度','report','ska-rules-card']]},
+{k:'企客SKA · 天维度', dim:'daily', chips:[['📈 趋势图','charts','chart-ska'],['📅 周达标','monthly','ska-week-card'],['🤝 制度','scheme','ska-rules-card']]},
 /* —— 月维度 → —— */
 {k:'整月考核结果测算', dim:'monthly', chips:[['📈 月度对比','charts','chart-month'],['📋 报告','report','slice-analysis'],['📅 天维度','daily','']]},
 {k:'城市预估警告', dim:'monthly', chips:[['🔮 测算器','report','preset-card']]},
@@ -2955,7 +2962,7 @@ var JM = [
 {k:'体验模块 · 虚假/取消计分表', dim:'monthly', chips:[['🟣 体验模块','daily','mod-exp']]},
 {k:'考核周期（按月分两期', dim:'monthly', chips:[['📅 天维度','daily','']]},
 {k:'企客门店体验 · SKA品牌KPI赔付', dim:'monthly', chips:[['📅 天维度','daily','qk-daily-card'],['📋 计分评估','scheme','qike-score']]},
-{k:'企客SKA · 月维度（六品牌总览', dim:'monthly', chips:[['📈 趋势','charts','chart-ska'],['📅 天维度明细','daily','qk-daily-card'],['📅 周达标','report','ska-week-card']]},
+{k:'企客SKA · 月维度（六品牌总览', dim:'monthly', chips:[['📈 趋势','charts','chart-ska'],['📅 天维度明细','daily','qk-daily-card'],['📅 周达标','monthly','ska-week-card']]},
 {k:'总分计算公式', dim:'monthly', chips:[['🧮 计分示例','scheme','sec-example'],['📈 敏感度','scheme','sec-sensitivity']]},
 /* —— 分析报告 → —— */
 {k:'切片分析：城市 × 期次 × 指标', dim:'report', chips:[['📶 两期对比','charts','chart-period'],['📈 走势','charts','chart-trend'],['🏆 月度','monthly','sec-overview']]},
@@ -2971,7 +2978,7 @@ var JM = [
 {k:'月度总分对比', dim:'charts', chips:[['🏆 月度测算','monthly','sec-overview']]},
 {k:'加权缺口分解', dim:'charts', chips:[['📋 报告','report','slice-analysis'],['🏆 月度','monthly','sec-overview']]},
 {k:'推完兜底线', dim:'charts', chips:[['🔵 推单模块','daily','mod-push'],['📋 计分表','monthly','sec-push-score']]},
-{k:'数据图表（天维度趋势）', dim:'charts', chips:[['📅 天维度明细','daily','qk-daily-card'],['📅 月度评估','monthly','qk-monthly-card'],['📅 周达标','report','ska-week-card']]},
+{k:'数据图表（天维度趋势）', dim:'charts', chips:[['📅 天维度明细','daily','qk-daily-card'],['📅 月度评估','monthly','qk-monthly-card'],['📅 周达标','monthly','ska-week-card']]},
 {k:'自然周完成度拆解', dim:'charts', chips:[['🟠 悦跑模块','daily','mod-run'],['📋 报告','report','slice-analysis']]}
 ];
 function chipHtml(c){
@@ -6445,6 +6452,11 @@ function applyNarrative(){
   if (!CFG.modules.ska) {
     [].slice.call(document.querySelectorAll('[data-ska-static]')).forEach(function(el){ el.remove(); });
   }
+  /* [跳转自愈] 锚点导航指向已被移除的目标时，移除对应按钮 */
+  [].slice.call(document.querySelectorAll('.anchor-nav a.anchor-btn[href^="#"]')).forEach(function(_a){
+    var _id = (_a.getAttribute('href') || '').slice(1);
+    if (_id && !document.getElementById(_id)) _a.remove();
+  });
   if (CFG.modules.qikeMode !== 'v2') {
     var _ce = document.getElementById('calc-extras'); if (_ce) _ce.remove();
     var _qs = document.getElementById('qike-score'); if (_qs) _qs.remove();
