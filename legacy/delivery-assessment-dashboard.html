@@ -1269,11 +1269,11 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#f0f4ff,#fff);border-left:4px solid #1967d2;">
 <div class="card-title">📐 分析框架（数据驱动 · 随数据自动更新）</div>
 <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px;">
-<span style="background:#f3f0ff;color:#7b61ff;padding:4px 12px;border-radius:12px;">🔬 切片分析 · 缺口 · 路径</span>
-<span style="background:#fce8e8;color:#d93025;padding:4px 12px;border-radius:12px;">🔍 问题细化拆解</span>
-<span style="background:#fff3e0;color:#ef6c00;padding:4px 12px;border-radius:12px;">⚡ 异常波动明细</span>
-<span style="background:#e6f4ea;color:#2e7d32;padding:4px 12px;border-radius:12px;">✅ 可落地决策方案</span>
-<span style="background:#e8f0fe;color:#1967d2;padding:4px 12px;border-radius:12px;">🎯 未达成指标 · 措施与月末预判</span>
+<span style="background:#f3f0ff;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','slice-analysis')" title="点击前往对应板块">🔬 切片分析 · 缺口 · 路径 ▸</span>
+<span style="background:#fce8e8;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','issues-breakdown')" title="点击前往对应板块">🔍 问题细化拆解 ▸</span>
+<span style="background:#fff3e0;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','issues-breakdown')" title="点击前往对应板块">⚡ 异常波动明细 ▸</span>
+<span style="background:#e6f4ea;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','unmet-actions')" title="点击前往对应板块">✅ 可落地决策方案 ▸</span>
+<span style="background:#e8f0fe;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','unmet-actions')" title="点击前往对应板块">🎯 未达成指标 · 措施与月末预判 ▸</span>
 <span style="background:#fef7e0;color:#b06000;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('scheme','qike-score')" title="点击前往企客计分评估（考核方案页签）">🧩 企客计分评估 ▸</span>
 </div>
 </div>
@@ -1295,12 +1295,12 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="card-title"><span class="icon">🔮</span> 预估测算器（剩余<span id="preset-remaining-days">31</span>天预估值 → 月度预估总分）</div>
 <div style="font-size:12px;color:#6b7280;margin-bottom:10px;" id="preset-desc-text">设定10月各指标预估值，自动测算月度预估总分</div>
 <div class="preset-input-row">
-<label>加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
-<label>体验分</label><input id="pre_ty" type="number" value="95" step="0.1" onchange="calcPreset()">
+<label title="加盟运力服务质量达标骑手占比（HD）；低于90%该模块记0分">加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
+<label title="体验模块综合分（虚假点送达/配送取消单按区间计分）">体验分</label><input id="pre_ty" type="number" value="95" step="0.1" onchange="calcPreset()">
 </div>
 <div class="preset-input-row">
-<label>推单率%</label><input id="pre_tw" type="number" value="99.2" step="0.1" onchange="calcPreset()">
-<label>完结率%</label><input id="pre_wj" type="number" value="99.9" step="0.1" onchange="calcPreset()">
+<label title="推单完成率；98.8%为兜底赔付线">推单率%</label><input id="pre_tw" type="number" value="99.2" step="0.1" onchange="calcPreset()">
+<label title="履约完结率">完结率%</label><input id="pre_wj" type="number" value="99.9" step="0.1" onchange="calcPreset()">
 </div>
 <div class="preset-input-row">
 <label title="悦跑周均完成度，＜90%按该周记0近似">悦跑周均%</label><input id="pre_ym" type="number" value="96" step="0.1" onchange="calcPreset()">
