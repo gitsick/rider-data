@@ -1276,7 +1276,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <span style="background:#fff3e0;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','issues-breakdown')" title="点击前往对应板块">⚡ 异常波动明细 ▸</span>
 <span style="background:#e6f4ea;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','unmet-actions')" title="点击前往对应板块">✅ 可落地决策方案 ▸</span>
 <span style="background:#e8f0fe;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','unmet-actions')" title="点击前往对应板块">🎯 未达成指标 · 措施与月末预判 ▸</span>
-<span style="background:#fef7e0;color:#b06000;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('scheme','qike-score')" title="点击前往企客计分评估（考核方案页签）">🧩 企客计分评估 ▸</span>
+<span style="background:#fef7e0;color:#b06000;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('monthly','qk-monthly-card')" title="点击前往企客月度扣分评估（月维度页签）">🧩 企客月度扣分评估 ▸</span>
 </div>
 </div>
 
@@ -2948,7 +2948,7 @@ var JM = [
 {k:'数据汇总（', dim:'daily', chips:[['🏆 月度测算','monthly','sec-overview'],['📈 全部图表','charts','chart-trend']]},
 {k:'当日测算 + 承托比', dim:'daily', chips:[['🔮 月度预估','monthly','sec-estimate']]},
 {k:'考核周期', dim:'daily', chips:[['📅 月度周期','monthly','sec-period']]},
-{k:'扣分项模块', dim:'daily', chips:[['📅 月度评估','monthly','qk-monthly-card'],['📋 计分评估','scheme','qike-score']]},
+{k:'扣分项模块', dim:'daily', chips:[['📅 月度评估','monthly','qk-monthly-card'],['📋 计分评估','monthly','qk-monthly-card']]},
 {k:'企客SKA · 天维度', dim:'daily', chips:[['📈 趋势图','charts','chart-ska'],['📅 周达标','report','ska-week-card'],['🤝 制度','report','ska-rules-card']]},
 /* —— 月维度 → —— */
 {k:'整月考核结果测算', dim:'monthly', chips:[['📈 月度对比','charts','chart-month'],['📋 报告','report','slice-analysis'],['📅 天维度','daily','']]},
@@ -2957,7 +2957,7 @@ var JM = [
 {k:'推单完成率 · 区间计分表', dim:'monthly', chips:[['🚨 兜底线','charts','chart-breach'],['🔵 推单模块','daily','mod-push']]},
 {k:'体验模块 · 虚假/取消计分表', dim:'monthly', chips:[['🟣 体验模块','daily','mod-exp']]},
 {k:'考核周期（按月分两期', dim:'monthly', chips:[['📅 天维度','daily','']]},
-{k:'企客门店体验 · SKA品牌KPI赔付', dim:'monthly', chips:[['📅 天维度','daily','qk-daily-card'],['📋 计分评估','scheme','qike-score']]},
+{k:'企客门店体验 · SKA品牌KPI赔付', dim:'monthly', chips:[['📅 天维度','daily','qk-daily-card']]},
 {k:'企客SKA · 月维度（六品牌总览', dim:'monthly', chips:[['📈 趋势','charts','chart-ska'],['📅 天维度明细','daily','qk-daily-card'],['📅 周达标','report','ska-week-card']]},
 {k:'总分计算公式', dim:'monthly', chips:[['🧮 计分示例','scheme','sec-example'],['📈 敏感度','scheme','sec-sensitivity']]},
 /* —— 分析报告 → —— */
