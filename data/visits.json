@@ -1,20 +1,20 @@
 {
  "meta": {
-  "generatedAt": "2026-10-14T09:00:57.536Z",
+  "generatedAt": "2026-10-14T13:00:51.061Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 794,
-  "uniqueIp": 13,
-  "today": 82,
-  "provinces": 3
+  "total": 795,
+  "uniqueIp": 14,
+  "today": 83,
+  "provinces": 4
  },
  "aggregates": {
   "source": [
    {
     "label": "直接打开",
-    "count": 458
+    "count": 459
    },
    {
     "label": "gitsick.github.io",
@@ -44,7 +44,7 @@
    },
    {
     "label": "10-14",
-    "count": 82
+    "count": 83
    },
    {
     "label": "10-10",
@@ -78,7 +78,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 786
+    "count": 787
    },
    {
     "label": "手机",
@@ -111,9 +111,27 @@
    "visits": 1,
    "uniqueIp": 1,
    "last": "2026-10-12 09:51"
+  },
+  {
+   "level": "province",
+   "name": "Beijing",
+   "visits": 1,
+   "uniqueIp": 1,
+   "last": "2026-10-14 20:06"
   }
  ],
  "records": [
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-14 20:06",
+   "referrer": "直接打开",
+   "ip": "101.236.11.22",
+   "region": "Beijing · Beijing",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "delivery-assessment-dashboard.html",
    "src": "gitsick.github.io",
@@ -2294,17 +2312,6 @@
   },
   {
    "page": "access_log.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-12 16:58",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
    "src": "直接打开",
    "device": "电脑",
    "time": "2026-10-12 16:58",
