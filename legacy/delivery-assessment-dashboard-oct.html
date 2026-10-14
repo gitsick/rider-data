@@ -1190,11 +1190,6 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 
 <!-- 企客·SKA品牌履约：规则解读 + 评估预警 -->
 
-<!-- 下月预看板模型（月末自动填充） -->
-<div class="card" id="sec-nextmonth" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f3e9fd 100%);">
-<div class="card-title"><span class="icon">🔮</span> 下月预看板模型 <span id="nextmonth-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
-<div id="nextmonth-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月末自动生成…</div></div>
-</div>
 
 <div class="section-label">🤝 企客SKA · 月维度评估与赔付</div>
 <div class="card" id="qk-monthly-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f0ff 100%);">
@@ -1245,6 +1240,18 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 </div>
 </div>
 
+<!-- 企客SKA · 考核周期维度（自然周达标 · 期1/期2；自分析报告页签归入企客聚合区） -->
+<!-- SKA_ENH_WEEK_START -->
+<div class="section-label" data-ska-static>🤝 企客SKA · 考核周期维度（自然周达标 · 期1/期2）</div>
+<div class="card" id="ska-week-card" data-ska-static style="margin-bottom:16px;border-left:4px solid #1967d2;"></div>
+<!-- SKA_ENH_WEEK_END -->
+
+<!-- 下月预看板模型（月末自动填充） -->
+<div class="card" id="sec-nextmonth" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f3e9fd 100%);">
+<div class="card-title"><span class="icon">🔮</span> 下月预看板模型 <span id="nextmonth-tag" style="font-size:11px;color:#6b7280;font-weight:400;"></span></div>
+<div id="nextmonth-body"><div style="font-size:12px;color:#6b7280;padding:8px 0;">月末自动生成…</div></div>
+</div>
+
 <!-- ==================== 分析报告 ==================== -->
 
 <div class="dim-content" id="dim-report">
@@ -1277,10 +1284,6 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="card" id="issues-breakdown" style="margin-bottom:16px;border-left:4px solid #ef6c00;"></div>
 <!-- 🎯 未达成指标 · 落地措施与月末预判（数据驱动，JS 自动生成） -->
 <div class="card" id="unmet-actions" style="margin-bottom:16px;border-left:4px solid #1967d2;"></div>
-<!-- SKA_ENH_WEEK_START -->
-<div class="section-label" data-ska-static>🤝 企客SKA · 考核周期维度（自然周达标 · 期1/期2）</div>
-<div class="card" id="ska-week-card" data-ska-static style="margin-bottom:16px;border-left:4px solid #1967d2;"></div>
-<!-- SKA_ENH_WEEK_END -->
 
 <!-- SKA_ENH_RULES_END -->
 
@@ -1598,6 +1601,32 @@ var CITY_PROFILE = {
 '诸暨': {jm:0.45, ym:0,    pz:0.05},
 '响水': {jm:0.50, ym:0,    pz:0}
 };
+/* [硬编码治理] 画像文案派生：唯一来源 CITY_PROFILE，权重调整后全表文案自动联动 */
+function __profileTag(p){ if(p.ym>0&&p.pz>0)return '都考'; if(p.ym===0&&p.pz>0)return '不考悦跑'; return '都不考'; }
+function __profilePct(p){ return Math.round(p.jm*100)+'/'+Math.round(p.ym*100)+'/'+Math.round(p.pz*100); }
+function profileShortText(eq){
+  return ['泰兴','诸暨','响水'].map(function(c){ var p=CITY_PROFILE[c]||{jm:0,ym:0,pz:0}; return c+(eq?'='+__profileTag(p):'')+__profilePct(p); }).join(' · ');
+}
+function applyProfileText(){
+  var reps = {
+    '泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0': profileShortText(true),
+    '泰兴15/30/5 · 诸暨45/0/5 · 响水50/0/0': profileShortText(false),
+    '泰兴=都考（15/30/5）、诸暨=不考悦跑（45/0/5）、响水=都不考（50/0/0）': ['泰兴','诸暨','响水'].map(function(c){var p=CITY_PROFILE[c]||{jm:0,ym:0,pz:0};return c+'='+__profileTag(p)+'（'+__profilePct(p)+'）';}).join('、')
+  };
+  try {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false), n;
+    while ((n = w.nextNode())) {
+      for (var k in reps) { if (n.nodeValue.indexOf(k) >= 0) { n.nodeValue = n.nodeValue.split(k).join(reps[k]); } }
+    }
+  } catch (e) {}
+}
+(function(){
+  var _run = function(){ setTimeout(applyProfileText, 50); };
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', _run); }
+  else { _run(); }
+  window.addEventListener('load', applyProfileText);
+})();
+
 
 var fullDataByDate = {
   '10-01': {
