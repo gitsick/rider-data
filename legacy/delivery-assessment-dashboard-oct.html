@@ -701,7 +701,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 </div>
 
 <div class="city-bar-board"><span class="city-bar-label">城市</span><span class="nav-cities" id="city-bar" role="tablist" aria-label="城市切换"><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'泰兴')">泰兴</div><span class="bar-score" data-city="泰兴"></span><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'诸暨')">诸暨</div><span class="bar-score" data-city="诸暨"></span><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'响水')">响水</div><span class="bar-score" data-city="响水"></span></span>
-<span class="bar-status" id="bar-status"></span><span class="bar-hint">键盘 1/2/3 切换城市 · 4-8 切换页签</span></div>
+<span class="bar-status" id="bar-status"></span><span class="bar-hint">键盘 1/2/3 切换城市 · 4-8 切换页签 · ←→ 页签间移动</span></div>
 <div class="dim-tabs">
 <div class="dim-tab active" role="tab" aria-selected="true" tabindex="0" onclick="switchDim(this,'daily')">📊 天维度<span class="tab-badge daily">每日快照</span></div>
 <div class="dim-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchDim(this,'monthly')">🏆 月维度<span class="tab-badge monthly">整月考核</span></div>
@@ -899,6 +899,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 </div>
 </div>
 
+<div class="section-label">🤝 企客（SKA）· 当日扣分评估</div>
 <div class="card" id="qk-daily-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f4ff 100%);">
 <div class="card-title">🤝 企客（SKA）· 扣分项模块 <span id="qk-daily-snap" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
 <div style="font-size:12px;line-height:1.75;color:#374151;">
@@ -2238,6 +2239,7 @@ el.classList.add('active');
 el.setAttribute('aria-selected','true');
 document.querySelectorAll('.dim-content').forEach(function(c){ c.classList.remove('active'); });
 document.getElementById('dim-' + dim).classList.add('active');
+try { if (window.scrollY > 0) window.scrollTo({top:0, behavior:'smooth'}); } catch(err) {}
 try{if(history.replaceState)history.replaceState(null,'','#'+dim);}catch(err){}
 // 惰性加载：分析报告维度首次切换时才渲染
 if ((dim === 'report' || dim === 'scheme') && !window._analysisRendered) {
@@ -2464,7 +2466,7 @@ var grid = document.getElementById('cal-grid');
 if (!grid) return;
 var datesToShow = allDates.filter(function(ds) {
 var day = parseInt(ds.split('-')[1]);
-if (currentPeriod === 'p1') return day <= 18;
+if (currentPeriod === 'p1') return day <= CFG.period.p1EndDay;
 if (currentPeriod === 'p2') return day >= CFG.period.p2StartDay;
 return true;
 });
@@ -2841,6 +2843,13 @@ var dimKeys = {'4':'daily','5':'monthly','6':'report','7':'charts','8':'scheme'}
 if (dimKeys[ev.key]) {
 var _dt = document.querySelectorAll('.dim-tab')[DIM_ORDER.indexOf(dimKeys[ev.key])];
 if (_dt) { _dt.click(); try { _dt.focus(); } catch (e2) {} }
+return;
+}
+/* 键盘可达：焦点在页签上时，←→ 在页签间移动 */
+if ((ev.key === 'ArrowLeft' || ev.key === 'ArrowRight') && ev.target && ev.target.classList && ev.target.classList.contains('dim-tab')) {
+var _dts = document.querySelectorAll('.dim-tab');
+var _di = Array.prototype.indexOf.call(_dts, ev.target);
+if (_di >= 0) { var _dn = _dts[(_di + (ev.key === 'ArrowRight' ? 1 : -1) + _dts.length) % _dts.length]; if (_dn) { _dn.click(); try { _dn.focus(); } catch (e3) {} } }
 return;
 }
 if (ev.key === 'ArrowLeft' || ev.key === 'ArrowRight') {
@@ -3667,7 +3676,12 @@ if (!day) return;
 var bar = function(pct, color) { return '<div style="height:6px;background:#eee;border-radius:3px;overflow:hidden;margin-top:4px;"><div style="height:100%;width:' + Math.min(100, pct) + '%;background:' + color + ';border-radius:3px;"></div></div>'; };
 var fmt = function(s, e) { return Math.max(0, Math.min(day, e) - s + 1) + '/' + (e - s + 1) + ' 天'; };
 var peakDone = peakDays.filter(function(d) { return d <= latest; }).length;
-var ymWeek = day <= 4 ? 1 : (day <= 11 ? 2 : (day <= 18 ? 3 : (day <= 25 ? 4 : 5)));
+var ymWeek = CFG.weeks.ymWeeks.length;
+for (var _wi = 0; _wi < CFG.weeks.ymWeeks.length; _wi++) {
+var _wEnd = CFG.weeks.ymWeeks[_wi][1].split('-');
+var _wEd = (parseInt(_wEnd[0],10) === CFG.monthIdx + 1) ? parseInt(_wEnd[1],10) : CFG.daysInMonth;
+if (day <= _wEd) { ymWeek = _wi + 1; break; }
+}
 var h = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;">';
 h += '<div style="border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;font-size:11.5px;color:#374151;"><b>加盟 第1期</b> ' + CFG.period.p1Short + ' · 已过 ' + fmt(1, CFG.period.p1EndDay) + bar(Math.round(Math.min(day, CFG.period.p1EndDay) / CFG.period.p1EndDay * 100), '#e8525f') + '</div>';
 h += '<div style="border:1px solid #e8eaed;border-radius:6px;padding:8px 10px;font-size:11.5px;color:#374151;"><b>加盟 第2期</b> ' + CFG.period.p2Short + ' · ' + (day >= CFG.period.p2StartDay ? '已过 ' + fmt(CFG.period.p2StartDay, CFG.daysInMonth) : '未开始') + bar(day >= CFG.period.p2StartDay ? Math.round((Math.min(day, CFG.daysInMonth) - CFG.period.p1EndDay) / (CFG.daysInMonth - CFG.period.p1EndDay) * 100) : 0, '#f5a623') + '</div>';
@@ -6596,6 +6610,21 @@ if (typeof renderRawCalc==='function'){try{renderRawCalc();}catch(e){console.war
   window.addEventListener('scroll', _onScroll, { passive: true });
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', function(){ setTimeout(_spy, 60); }); }
   else { setTimeout(_spy, 60); }
+})();
+</script>
+<script>
+/* [页签优化] 打开页面时按 #页签 恢复所在页签（分享/收藏直达对应维度） */
+(function(){
+function restoreFromHash(){
+var h=(location.hash||'').replace('#','');
+if(!/^(daily|monthly|report|charts|scheme)$/.test(h))return;
+var order={daily:0,monthly:1,report:2,charts:3,scheme:4};
+var t=document.querySelectorAll('.dim-tab')[order[h]];
+if(t&&!t.classList.contains('active'))t.click();
+}
+if(document.readyState==='complete')restoreFromHash();
+else window.addEventListener('load',restoreFromHash);
+window.addEventListener('hashchange',restoreFromHash);
 })();
 </script>
 </body>
