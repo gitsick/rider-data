@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generatedAt": "2026-10-14T01:07:17.923Z",
+  "generatedAt": "2026-10-14T03:17:48.314Z",
   "source": "src/data/data-2026-10.js + src/config/config-2026-10.js（迁移期抽取，只读）"
  },
  "dataDates": [
@@ -792,6 +792,7 @@
   },
   "10-09": {
    "泰兴": {
+    "ymRate": 81.03,
     "ymCq": 96.3,
     "gzYm": 83.81,
     "gzJm": 99.49,
@@ -799,6 +800,7 @@
     "jmTotal": 198
    },
    "诸暨": {
+    "ymRate": 90.6,
     "ymCq": 99.02,
     "gzYm": 80.39,
     "gzJm": 99.06,
@@ -806,6 +808,7 @@
     "jmTotal": 425
    },
    "响水": {
+    "ymRate": 98.25,
     "ymCq": 98.18,
     "gzYm": 98.15,
     "gzJm": 100,
@@ -817,6 +820,8 @@
    "泰兴": {
     "ymRate": 84.48,
     "ymCq": 98.1,
+    "gzYm": 80.77,
+    "gzJm": 99.5,
     "jmDb": 189,
     "jmTotal": 199,
     "qkKAStores": 52,
@@ -826,12 +831,16 @@
    "诸暨": {
     "ymRate": 91.85,
     "ymCq": 98.37,
+    "gzYm": 79.41,
+    "gzJm": 99.53,
     "jmDb": 395,
     "jmTotal": 426
    },
    "响水": {
     "ymRate": 98.25,
     "ymCq": 100,
+    "gzYm": 100,
+    "gzJm": 98.81,
     "jmDb": 77,
     "jmTotal": 84,
     "qkKAStores": 17,
