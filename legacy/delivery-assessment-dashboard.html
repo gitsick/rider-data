@@ -705,9 +705,9 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="dim-tabs">
 <div class="dim-tab active" onclick="switchDim(this,'daily')">📊 天维度<span class="tab-badge daily">每日快照</span></div>
 <div class="dim-tab" onclick="switchDim(this,'monthly')">🏆 月维度<span class="tab-badge monthly">整月考核</span></div>
-<div class="dim-tab" onclick="switchDim(this,'report')">📋 分析报告<span class="tab-badge report">深度分析</span></div>
-<div class="dim-tab" onclick="switchDim(this,'charts')">📈 数据图表<span class="tab-badge charts">图形分析</span></div>
-<div class="dim-tab" onclick="switchDim(this,'scheme')">📚 考核方案<span class="tab-badge scheme">规则方案</span></div>
+<div class="dim-tab" onclick="switchDim(this,'report')">📋 分析报告<span class="tab-badge report">切片·措施·测算</span></div>
+<div class="dim-tab" onclick="switchDim(this,'charts')">📈 数据图表<span class="tab-badge charts">质量·趋势·归因</span></div>
+<div class="dim-tab" onclick="switchDim(this,'scheme')">📚 考核方案<span class="tab-badge scheme">规则·参数·赔付</span></div>
 </div>
 
 <!-- ==================== 天维度 ==================== -->
@@ -948,7 +948,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <!-- ==================== 月维度 ==================== -->
 
 <div class="dim-content" id="dim-charts">
-<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📈 本页：图形分析</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a></div>
+<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📈 本页：数据质量 · 趋势对比 · 拆解与归因</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a></div>
 
 <!-- 图表页工具条：期次切换（与天维度页共享状态） -->
 <div class="card" style="margin-bottom:12px;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
@@ -1256,7 +1256,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <!-- ==================== 分析报告 ==================== -->
 
 <div class="dim-content" id="dim-report">
-<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📋 本页：深度分析</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('scheme')">📚 去考核方案</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a></div>
+<div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📋 本页：切片归因 · 落地措施 · 预估测算</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('scheme')">📚 去考核方案</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a></div>
 
 <div class="rpt-header">
 <h2 id="rpt-title">2026年9月配送考核指标优化提升方案</h2>
@@ -1274,7 +1274,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <span style="background:#fff3e0;color:#ef6c00;padding:4px 12px;border-radius:12px;">⚡ 异常波动明细</span>
 <span style="background:#e6f4ea;color:#2e7d32;padding:4px 12px;border-radius:12px;">✅ 可落地决策方案</span>
 <span style="background:#e8f0fe;color:#1967d2;padding:4px 12px;border-radius:12px;">🎯 未达成指标 · 措施与月末预判</span>
-<span style="background:#fef7e0;color:#b06000;padding:4px 12px;border-radius:12px;">🧩 企客计分评估</span>
+<span style="background:#fef7e0;color:#b06000;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('scheme','qike-score')" title="点击前往企客计分评估（考核方案页签）">🧩 企客计分评估 ▸</span>
 </div>
 </div>
 
