@@ -1260,7 +1260,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 
 <div class="rpt-header">
 <h2 id="rpt-title">2026年10月配送考核指标优化提升方案</h2>
-<div id="rpt-sub1" class="sub" style="margin-top:4px;">10月考核周期：2026-10-01至10/31（31天） | 权重按画像分城分档（泰兴=都考；诸暨/响水悦跑不考核，分档以任务系统城市等级为准）</div>
+<div id="rpt-sub1" class="sub" style="margin-top:4px;">10月考核周期：10/01-10/31（31天） | 权重按画像分城分档（泰兴=都考；诸暨/响水悦跑不考核，分档以任务系统城市等级为准）</div>
 <div class="sub" id="report-sub" style="margin-top:2px;">三城：泰兴县 · 诸暨市 · 响水县 | 10月考核周期 10/1-10/31 | 高峰日14个（含11/1）</div>
 </div>
 
@@ -1269,11 +1269,11 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="card" style="margin-bottom:16px;background:linear-gradient(135deg,#f0f4ff,#fff);border-left:4px solid #1967d2;">
 <div class="card-title">📐 分析框架（数据驱动 · 随数据自动更新）</div>
 <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12px;">
-<span style="background:#f3f0ff;color:#7b61ff;padding:4px 12px;border-radius:12px;">🔬 切片分析 · 缺口 · 路径</span>
-<span style="background:#fce8e8;color:#d93025;padding:4px 12px;border-radius:12px;">🔍 问题细化拆解</span>
-<span style="background:#fff3e0;color:#ef6c00;padding:4px 12px;border-radius:12px;">⚡ 异常波动明细</span>
-<span style="background:#e6f4ea;color:#2e7d32;padding:4px 12px;border-radius:12px;">✅ 可落地决策方案</span>
-<span style="background:#e8f0fe;color:#1967d2;padding:4px 12px;border-radius:12px;">🎯 未达成指标 · 措施与月末预判</span>
+<span style="background:#f3f0ff;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','slice-analysis')" title="点击前往对应板块">🔬 切片分析 · 缺口 · 路径 ▸</span>
+<span style="background:#fce8e8;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','issues-breakdown')" title="点击前往对应板块">🔍 问题细化拆解 ▸</span>
+<span style="background:#fff3e0;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','issues-breakdown')" title="点击前往对应板块">⚡ 异常波动明细 ▸</span>
+<span style="background:#e6f4ea;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','unmet-actions')" title="点击前往对应板块">✅ 可落地决策方案 ▸</span>
+<span style="background:#e8f0fe;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('report','unmet-actions')" title="点击前往对应板块">🎯 未达成指标 · 措施与月末预判 ▸</span>
 <span style="background:#fef7e0;color:#b06000;padding:4px 12px;border-radius:12px;cursor:pointer;" onclick="jumpAnchor('scheme','qike-score')" title="点击前往企客计分评估（考核方案页签）">🧩 企客计分评估 ▸</span>
 </div>
 </div>
@@ -1295,12 +1295,12 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="card-title"><span class="icon">🔮</span> 预估测算器（剩余<span id="preset-remaining-days">31</span>天预估值 → 月度预估总分）</div>
 <div style="font-size:12px;color:#6b7280;margin-bottom:10px;" id="preset-desc-text">设定10月各指标预估值，自动测算月度预估总分</div>
 <div class="preset-input-row">
-<label>加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
-<label>体验分</label><input id="pre_ty" type="number" value="95" step="0.1" onchange="calcPreset()">
+<label title="加盟运力服务质量达标骑手占比（HD）；低于90%该模块记0分">加盟HD%</label><input id="pre_jm" type="number" value="95" step="0.1" onchange="calcPreset()">
+<label title="体验模块综合分（虚假点送达/配送取消单按区间计分）">体验分</label><input id="pre_ty" type="number" value="95" step="0.1" onchange="calcPreset()">
 </div>
 <div class="preset-input-row">
-<label>推单率%</label><input id="pre_tw" type="number" value="99.2" step="0.1" onchange="calcPreset()">
-<label>完结率%</label><input id="pre_wj" type="number" value="99.9" step="0.1" onchange="calcPreset()">
+<label title="推单完成率；98.8%为兜底赔付线">推单率%</label><input id="pre_tw" type="number" value="99.2" step="0.1" onchange="calcPreset()">
+<label title="履约完结率">完结率%</label><input id="pre_wj" type="number" value="99.9" step="0.1" onchange="calcPreset()">
 </div>
 <div class="preset-input-row">
 <label title="悦跑周均完成度，＜90%按该周记0近似">悦跑周均%</label><input id="pre_ym" type="number" value="96" step="0.1" onchange="calcPreset()">
@@ -1882,7 +1882,7 @@ var CFG = {
     exNoteHtml: '<div style="margin-top:10px;font-size:12px;color:#6b7280;background:#e8f0fe;padding:10px 14px;border-radius:8px;"><strong style="color:#1967d2;">10月考核要点：</strong>体验&推完指标剔除企客麦肯必瑞订单；悦跑新口径10/19起生效（需排班班次全量达成）；企客扣分调整（流失扣3%，新签加2%最高加3%，门店体验未达标扣2%）；高峰日共14天（10/1-10/7、10/11、10/17-10/18、10/24-10/25、10/31、11/1；其中11/1为悦跑/普众第2期周末日）。</div>',
     priorityTail: '10月体验&推完剔除企客订单后，指标值可能变化，需重新对标。',
     rptTitle: '2026年10月配送考核指标优化提升方案',
-    rptSub1: '10月考核周期：2026-10-01至10/31（31天） | 权重按画像分城分档（泰兴=都考；诸暨/响水悦跑不考核，分档以任务系统城市等级为准）',
+    rptSub1: '10月考核周期：10/01-10/31（31天） | 权重按画像分城分档（泰兴=都考；诸暨/响水悦跑不考核，分档以任务系统城市等级为准）',
     rptSub2: '三城：泰兴县 · 诸暨市 · 响水县 | 10月考核周期 10/1-10/31 | 高峰日14个（含11/1）',
     footerTitle: '2026年10月配送考核看板',
     calcProfileHtml: ''
