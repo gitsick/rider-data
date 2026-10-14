@@ -3683,6 +3683,17 @@ var net = (ls >= 1 ? -CFG.qikeRules.churnDeduct : 0) + (_v2 ? bonus + (tyBad ? -
 el.innerHTML = '<b>当前扣/加分合计：</b>' + rows.join(' ｜ ') + ' ｜ <b style="color:' + (net > 0 ? '#2e7d32' : (net < 0 ? '#d93025' : '#6b7280')) + '">净影响 ' + (net > 0 ? '+' : '') + net + '%</b>' + (_v2 && CFG.qikeNarrative.summaryTail ? '（与测算卡输入联动，' + CFG.qikeNarrative.summaryTail + '）' : '');
 }
 
+
+/* [导航优化] 页签角标实时化：数据日期 / 考核进度 */
+function updateTabBadges(latestDayStr, daysActual, dimTotal){
+  try {
+    var b1 = document.querySelector('.dim-tab .tab-badge.daily');
+    if (b1) b1.textContent = '快照至 ' + String(latestDayStr || '').replace('-', '/');
+    var b2 = document.querySelector('.dim-tab .tab-badge.monthly');
+    if (b2) b2.textContent = '进度 ' + daysActual + '/' + dimTotal + '天';
+  } catch (e) {}
+}
+
 function updateDynamicText() {
 renderPeriodTopBar();
 var _dim = CFG.daysInMonth; /* P1修复：全月天数/月份字面量 → CFG */
@@ -3691,6 +3702,7 @@ var latestDay = parseInt(dataDates[dataDates.length-1].split('-')[1]);
 var daysActual = dataDates.length;
 var daysRemaining = _dim - daysActual;
 var pct = Math.round(daysActual / _dim * 100);
+updateTabBadges(dataDates[dataDates.length-1], daysActual, _dim);
 var dateStr = CFG.monthShort + '/' + latestDay;
 var peakTotal = peakDays.length;
 var peakLeft = peakDays.filter(function(d){ return parseInt(d.split('-')[1]) > latestDay; }).length;
@@ -6539,6 +6551,38 @@ if (typeof renderRawCalc==='function'){try{renderRawCalc();}catch(e){console.war
     for (var i = 0; i < cur.length; i++) cur[i].classList.remove('active');
     a.classList.add('active');
   });
+})();
+</script>
+<script>
+/* [导航优化] 快捷锚点滚动联动高亮：滚到哪个板块亮哪个按钮（仅当前页签内可见目标参与） */
+(function(){
+  var _tick = false;
+  function _spy(){
+    _tick = false;
+    var navs = document.querySelectorAll('.anchor-nav');
+    for (var ni = 0; ni < navs.length; ni++) {
+      var nav = navs[ni];
+      var scope = nav.closest ? nav.closest('.dim-content') : null;
+      if (!scope || !scope.classList.contains('active')) continue;
+      var btns = nav.querySelectorAll('.anchor-btn[href^="#"]');
+      var best = null, bestTop = -Infinity;
+      for (var i = 0; i < btns.length; i++) {
+        var t = document.getElementById(btns[i].getAttribute('href').slice(1));
+        if (!t || t.offsetParent === null) continue;
+        var top = t.getBoundingClientRect().top;
+        if (top <= 180 && top > bestTop) { best = btns[i]; bestTop = top; }
+      }
+      var act = nav.querySelector('.anchor-btn.active');
+      if (best !== act) {
+        if (act) act.classList.remove('active');
+        if (best) best.classList.add('active');
+      }
+    }
+  }
+  function _onScroll(){ if (!_tick) { _tick = true; (window.requestAnimationFrame || function(f){ setTimeout(f, 16); })(_spy); } }
+  window.addEventListener('scroll', _onScroll, { passive: true });
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', function(){ setTimeout(_spy, 60); }); }
+  else { setTimeout(_spy, 60); }
 })();
 </script>
 </body>
