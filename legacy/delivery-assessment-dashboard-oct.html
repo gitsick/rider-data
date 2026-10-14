@@ -1035,13 +1035,14 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 
 <!-- 快捷锚点导航 -->
 <div class="anchor-nav">
-<a class="anchor-btn" href="#sec-overview">🏆 考核总览</a>
+<a class="anchor-btn" href="#sec-overview">🏆 月度测算</a>
 <a class="anchor-btn" href="#sec-estimate">💰 预估警告罚款</a>
 <a class="anchor-btn u-click" onclick="jumpAnchor('scheme','sec-example');return false;" href="#sec-example">🧮 计分示例</a>
 <a class="anchor-btn u-click" onclick="jumpAnchor('scheme','sec-sensitivity');return false;" href="#sec-sensitivity">📈 敏感度分析</a>
-<a class="anchor-btn" href="#sec-datasource">🔍 数据路径</a>
+<a class="anchor-btn u-click" onclick="jumpAnchor('scheme','sec-datasource');return false;" href="#sec-datasource">🔍 数据路径</a>
 <a class="anchor-btn" href="#sec-mtdeval">📊 月度评估</a>
 <a class="anchor-btn" href="#sec-qkka">🤝 企客·SKA</a>
+<a class="anchor-btn u-click" onclick="jumpAnchor('monthly','ska-week-card');return false;" href="#ska-week-card">🗓️ 企客周达标</a>
 <a class="anchor-btn" href="#sec-nextmonth">🔮 下月预看</a>
 <a class="anchor-btn u-click" onclick="jumpAnchor('scheme','sec-scheme');return false;" href="#sec-scheme">📚 考核方案参考</a>
 </div>
@@ -2113,7 +2114,7 @@ rows: [
 '<td>重罚预警<br><span style="color:#6b7280;">（90%~95%）</span></td>',
 '<td>全月</td>',
 '<td style="text-align:left;">月度总分90%（含）~95%</td>',
-'<td style="text-align:left;"><span id="cfg-tier-2">产生y个警告，罚款Y元</span><br><span style="color:#6b7280;">10月月预计（MTD）：泰兴、诸暨处于该区间；月末以月评估为准，详见「考核总览」卡</span></td>',
+'<td style="text-align:left;"><span id="cfg-tier-2">产生y个警告，罚款Y元</span><br><span style="color:#6b7280;">10月月预计（MTD）：泰兴、诸暨处于该区间；月末以月评估为准，详见「月度测算」卡</span></td>',
 '<td><strong style="color:#d93025;">🔴 重罚预警</strong></td>' ] },
 { s:'background:#fff3e0;', cells:[
 '<td>重罚<br><span style="color:#6b7280;">（＜90%）</span></td>',
@@ -6538,6 +6539,20 @@ if (typeof renderWjSplit==='function'){try{renderWjSplit();}catch(e){console.war
 var TY_CALC={"daily":{"10-03":{"响水":{"csAll":1.186,"csIn":0.927,"csOut":3.021,"wIn":87.6,"xj":0.0093,"qx":0.0362,"done":10709,"push":11055},"诸暨":{"csAll":12.181,"csIn":10.436,"csOut":23.041,"wIn":86.2,"xj":0.0137,"qx":0.1553,"done":50980,"push":54092},"泰兴":{"csAll":6.098,"csIn":5.472,"csOut":9.723,"wIn":85.3,"xj":0.013,"qx":0.0668,"done":23056,"push":23957}},"10-08":{"响水":{"csAll":0.217,"csIn":0.162,"csOut":0.546,"wIn":85.8,"xj":0.0,"qx":0.1052,"done":6456,"push":6652},"诸暨":{"csAll":1.239,"csIn":1.103,"csOut":1.99,"wIn":84.7,"xj":0.0191,"qx":0.0972,"done":41963,"push":44220},"泰兴":{"csAll":1.31,"csIn":1.027,"csOut":2.73,"wIn":83.4,"xj":0.0189,"qx":0.0425,"done":15882,"push":16480}},"10-05":{"响水":{"csAll":0.88,"csIn":0.708,"csOut":2.077,"wIn":87.4,"xj":0.0097,"qx":0.0188,"done":10343,"push":10617},"诸暨":{"csAll":3.188,"csIn":2.789,"csOut":5.507,"wIn":85.3,"xj":0.0186,"qx":0.1276,"done":48365,"push":50951},"泰兴":{"csAll":2.83,"csIn":2.58,"csOut":4.184,"wIn":84.4,"xj":0.0322,"qx":0.0578,"done":21764,"push":22508}},"10-02":{"响水":{"csAll":1.184,"csIn":0.967,"csOut":2.63,"wIn":87.0,"xj":0.0391,"qx":0.0474,"done":10221,"push":10546},"诸暨":{"csAll":4.458,"csIn":3.832,"csOut":8.251,"wIn":85.8,"xj":0.0245,"qx":0.0933,"done":48882,"push":51457},"泰兴":{"csAll":2.371,"csIn":2.107,"csOut":3.812,"wIn":84.5,"xj":0.0046,"qx":0.0352,"done":21679,"push":22706}},"10-06":{"响水":{"csAll":0.612,"csIn":0.511,"csOut":1.316,"wIn":87.5,"xj":0.0,"qx":0.0379,"done":10295,"push":10552},"诸暨":{"csAll":2.67,"csIn":2.385,"csOut":4.271,"wIn":84.9,"xj":0.0229,"qx":0.1303,"done":48051,"push":50637},"泰兴":{"csAll":2.439,"csIn":2.166,"csOut":3.888,"wIn":84.1,"xj":0.0232,"qx":0.0135,"done":21523,"push":22253}},"10-01":{"响水":{"csAll":0.701,"csIn":0.582,"csOut":1.503,"wIn":87.2,"xj":0.0305,"qx":0.0,"done":9850,"push":10178},"诸暨":{"csAll":5.577,"csIn":5.016,"csOut":8.874,"wIn":85.4,"xj":0.0273,"qx":0.1096,"done":47549,"push":50164},"泰兴":{"csAll":2.491,"csIn":2.109,"csOut":4.49,"wIn":83.9,"xj":0.0192,"qx":0.0185,"done":20793,"push":21657}},"10-07":{"响水":{"csAll":0.7,"csIn":0.715,"csOut":0.609,"wIn":85.9,"xj":0.0,"qx":0.021,"done":9289,"push":9522},"诸暨":{"csAll":2.22,"csIn":1.961,"csOut":3.66,"wIn":84.8,"xj":0.0275,"qx":0.1085,"done":47262,"push":49763},"泰兴":{"csAll":1.779,"csIn":1.513,"csOut":3.112,"wIn":83.4,"xj":0.0049,"qx":0.0282,"done":20519,"push":21298}},"10-04":{"响水":{"csAll":0.718,"csIn":0.649,"csOut":1.169,"wIn":86.7,"xj":0.0388,"qx":0.0094,"done":10311,"push":10643},"诸暨":{"csAll":12.897,"csIn":10.868,"csOut":25.518,"wIn":86.2,"xj":0.0259,"qx":0.1943,"done":50184,"push":53522},"泰兴":{"csAll":2.72,"csIn":2.325,"csOut":4.919,"wIn":84.8,"xj":0.0046,"qx":0.022,"done":21872,"push":22693}},"10-11":{"响水":{"csAll":0.551,"csIn":0.564,"csOut":0.472,"wIn":85.4,"xj":0.0,"qx":0.0333,"done":8719,"push":9011},"泰兴":{"csAll":1.909,"csIn":1.873,"csOut":2.095,"wIn":83.9,"xj":0.0,"qx":0.0284,"done":20433,"push":21122},"诸暨":{"csAll":2.04,"csIn":1.764,"csOut":3.591,"wIn":84.9,"xj":0.0,"qx":0.0757,"done":47849,"push":50201}},"10-09":{"泰兴":{"csAll":1.227,"csIn":1.013,"csOut":2.261,"wIn":82.8,"xj":0.0,"qx":0.0178,"done":16216,"push":16835},"诸暨":{"csAll":1.434,"csIn":1.121,"csOut":3.17,"wIn":84.7,"xj":0.0,"qx":0.1065,"done":42746,"push":45080},"响水":{"csAll":0.372,"csIn":0.234,"csOut":1.214,"wIn":86.0,"xj":0.0,"qx":0.0,"done":6459,"push":6684}},"10-10":{"泰兴":{"csAll":1.366,"csIn":1.18,"csOut":2.31,"wIn":83.6,"xj":0.0,"qx":0.0221,"done":17428,"push":18105},"响水":{"csAll":0.45,"csIn":0.417,"csOut":0.647,"wIn":85.7,"xj":0.0,"qx":0.0,"done":7550,"push":7791},"诸暨":{"csAll":1.338,"csIn":1.172,"csOut":2.302,"wIn":85.3,"xj":0.0,"qx":0.1034,"done":44025,"push":46420}},"10-12":{"响水":{"csAll":0.543,"csIn":0.48,"csOut":0.948,"wIn":86.5,"xj":0.0,"qx":0.0154,"done":6257,"push":6503},"诸暨":{"csAll":1.279,"csIn":1.201,"csOut":1.709,"wIn":84.6,"xj":0.0,"qx":0.0762,"done":42292,"push":44597},"泰兴":{"csAll":1.228,"csIn":1.039,"csOut":2.129,"wIn":82.6,"xj":0.0,"qx":0.0423,"done":15955,"push":16561}},"10-13":{"泰兴":{"csAll":1.413,"csIn":1.174,"csOut":2.533,"wIn":82.4,"xj":0.0,"qx":0.0418,"done":16132,"push":16740},"诸暨":{"csAll":1.576,"csIn":1.33,"csOut":2.904,"wIn":84.4,"xj":0.0,"qx":0.0969,"done":43026,"push":45386},"响水":{"csAll":0.547,"csIn":0.46,"csOut":1.027,"wIn":84.8,"xj":0.0,"qx":0.0303,"done":6403,"push":6604}}},"mtd":{"响水":{"csAll":0.708,"csIn":0.604,"csOut":1.376,"wIn":86.5,"xj":0.0115,"qx":0.0266,"days":13},"诸暨":{"csAll":4.195,"csIn":3.64,"csOut":7.392,"wIn":85.2,"xj":0.0143,"qx":0.1148,"days":13},"泰兴":{"csAll":2.368,"csIn":2.092,"csOut":3.805,"wIn":83.9,"xj":0.0099,"qx":0.0339,"days":13}}};
 var HD_CALC={"mtd":{"响水":{"dbAvg":53.1,"heAvg":26.8,"gfAvg":0.1,"totAvg":83.0,"dbLast":0,"totLast":81,"days":13},"泰兴":{"dbAvg":129.5,"heAvg":64.5,"gfAvg":0.3,"totAvg":196.6,"dbLast":0,"totLast":194,"days":13},"诸暨":{"dbAvg":276.1,"heAvg":134.8,"gfAvg":0.6,"totAvg":421.3,"dbLast":0,"totLast":412,"days":13}}};
 if (typeof renderRawCalc==='function'){try{renderRawCalc();}catch(e){console.warn(e);}}
+</script>
+<script>
+/* [导航完善] 锚点导航点击高亮（复用 .anchor-btn.active 样式） */
+(function(){
+  document.addEventListener('click', function(ev){
+    var t = ev.target;
+    var a = (t && t.closest) ? t.closest('.anchor-nav .anchor-btn') : null;
+    if (!a) return;
+    var nav = a.closest('.anchor-nav');
+    var cur = nav.querySelectorAll('.anchor-btn.active');
+    for (var i = 0; i < cur.length; i++) cur[i].classList.remove('active');
+    a.classList.add('active');
+  });
+})();
 </script>
 </body>
 </html>
