@@ -2269,14 +2269,16 @@ renderIssuesBreakdown();
 renderUnmetActions();
 renderQikeScore();
 }
-// 图形联动：切换页签时刷新全部图表（图表内部自带空态守卫）
+// 图形联动：仅刷新当前页签可见的图表，隐藏页签图表延迟到激活时再渲染（[性能]减少无效重绘）
+try { if (dim === 'daily') { renderDataHealth(); } } catch (err) {}
+if (dim === 'charts') {
 renderTrendChart();
 renderPeriodBars();
 renderMonthBars();
 renderGapChart();
 renderBreachChart();
-renderDataHealth();
-if (dim === 'monthly' || dim === 'charts') { try { drawSkaCharts(); } catch (e) {} }
+try { drawSkaCharts(); } catch (e) {}
+}
 }
 
 // ===================== 月度评估（月中MTD/月末月度数据 双模式） =====================
