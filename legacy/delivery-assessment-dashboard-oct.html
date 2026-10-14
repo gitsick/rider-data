@@ -665,7 +665,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="sc-right">
 <div class="sc-risk u-muted">10月考核周期 10/1-10/31</div>
 <div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div>
-<div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div>
 <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-1"></div></div>
 </div>
 <div class="sc-bar" style="background:#999;"></div>
@@ -679,7 +679,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="sc-right">
 <div class="sc-risk u-muted">10月考核周期 10/1-10/31</div>
 <div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div>
-<div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div>
 <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-2"></div></div>
 </div>
 <div class="sc-bar" style="background:#999;"></div>
@@ -693,7 +693,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="sc-right">
 <div class="sc-risk u-muted">10月考核周期 10/1-10/31</div>
 <div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div>
-<div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div>
 <div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-3"></div></div>
 </div>
 <div class="sc-bar" style="background:#999;"></div>
@@ -702,7 +702,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 
 <div class="city-bar-board"><span class="city-bar-label">城市</span><span class="nav-cities" id="city-bar" role="tablist" aria-label="城市切换"><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'泰兴')">泰兴</div><span class="bar-score" data-city="泰兴"></span><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'诸暨')">诸暨</div><span class="bar-score" data-city="诸暨"></span><div class="city-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchCity(this,'响水')">响水</div><span class="bar-score" data-city="响水"></span></span>
 <span class="bar-status" id="bar-status"></span><span class="bar-hint">键盘 1/2/3 切换城市 · 4-8 切换页签 · ←→ 页签间移动</span></div>
-<div class="dim-tabs">
+<div class="dim-tabs" role="tablist" aria-label="考核维度切换">
 <div class="dim-tab active" role="tab" aria-selected="true" tabindex="0" onclick="switchDim(this,'daily')">📊 天维度<span class="tab-badge daily">每日快照</span></div>
 <div class="dim-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchDim(this,'monthly')">🏆 月维度<span class="tab-badge monthly">整月考核</span></div>
 <div class="dim-tab" role="tab" aria-selected="false" tabindex="0" onclick="switchDim(this,'report')">📋 分析报告<span class="tab-badge report">切片·措施·测算</span></div>
@@ -711,7 +711,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 </div>
 
 <!-- ==================== 天维度 ==================== -->
-<div class="dim-content active" id="dim-daily">
+<div class="dim-content active" id="dim-daily" role="tabpanel">
 <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📅 本页：当日考核数据与趋势拆解</span><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('scheme')">📚 去考核方案</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 去月维度</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a></div>
 
 <!-- 期次切换 -->
@@ -948,7 +948,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 
 <!-- ==================== 月维度 ==================== -->
 
-<div class="dim-content" id="dim-charts">
+<div class="dim-content" id="dim-charts" role="tabpanel">
 <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📈 本页：数据质量 · 趋势对比 · 拆解与归因</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a></div>
 
 <!-- 图表页工具条：期次切换（与天维度页共享状态） -->
@@ -994,7 +994,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <!-- 两期均值对比 + 月度总分对比 并排 -->
 <div class="grid-util">
 <div class="card mb-12">
-<div class="card-title"><span class="icon">📶</span> 两期均值对比<button class="tc-btn tc-export" onclick="exportPeriodChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
+<div class="card-title"><span class="icon">📶</span> 两期均值对比<span id="pb-metric-tag" style="font-weight:400;font-size:11.5px;color:#6b7280;margin-left:8px;"></span><button class="tc-btn tc-export" onclick="exportPeriodChart()" title="将本图导出为PNG图片">⬇ 导出</button></div>
 <div id="period-bar-chart"></div>
 </div>
 <div class="card mb-12">
@@ -1022,8 +1022,9 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 </div>
 </div>
 
-<div class="dim-content" id="dim-monthly">
+<div class="dim-content" id="dim-monthly" role="tabpanel">
 <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">🏆 本页：月底结果与评估</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 去天维度</a><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('scheme')">📚 去考核方案</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a></div>
+<div class="section-label">📊 月度进度与方案总览</div>
 <div class="card" style="padding:12px 18px;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#e8f0fe 100%);" id="period-top-bar">
 <div class="card-title" style="margin-bottom:6px;"><span class="icon">⏱</span> 期次进度 <span id="ptb-date" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
 <div id="ptb-body"><div class="note-body">10月考核周期 10/1-10/31，共31天，含14个高峰日（含11/1）</div></div>
@@ -1081,15 +1082,15 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div id="ov-city-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;">
 <div style="border-left:3px solid #d93025;padding:8px 12px;background:#fff5f5;border-radius:0 6px 6px 0;">
 <div class="card-mini-title">📊 诸暨 · 10月月预计（MTD）</div>
-<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div>
 </div>
 <div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;">
 <div class="card-mini-title">📊 泰兴 · 10月月预计（MTD）</div>
-<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div>
 </div>
 <div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;">
 <div class="card-mini-title">📊 响水 · 10月月预计（MTD）</div>
-<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div>
+<div class="note-xs-lh">10月考核周期 10/1-10/31<br>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div>
 </div>
 </div>
 <!-- 三城月度总分对比已集中至「数据图表」页签 -->
@@ -1256,7 +1257,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 
 <!-- ==================== 分析报告 ==================== -->
 
-<div class="dim-content" id="dim-report">
+<div class="dim-content" id="dim-report" role="tabpanel">
 <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📋 本页：切片归因 · 落地措施 · 预估测算</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a><a class="anchor-btn u-click" onclick="jumpDim('scheme')">📚 去考核方案</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 回月维度</a></div>
 
 <div class="rpt-header">
@@ -1339,7 +1340,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 </div>
 </div>
 
-<div class="dim-content" id="dim-scheme">
+<div class="dim-content" id="dim-scheme" role="tabpanel">
 <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;"><span class="note-body">📚 本页：考核方案 · 计算规则 · 制度</span><a class="anchor-btn u-click" onclick="jumpDim('daily')">📅 回天维度</a><a class="anchor-btn u-click" onclick="jumpDim('monthly')">🏆 去月维度</a><a class="anchor-btn u-click" onclick="jumpDim('report')">📋 去分析报告</a><a class="anchor-btn u-click" onclick="jumpDim('charts')">📈 去数据图表</a></div>
 
 <!-- 模块速览导航：点击平滑滚动到对应区块（自动展开折叠卡），按模块颜色区分 -->
@@ -1836,19 +1837,19 @@ var CFG = {
     /* 三城考核速览卡（顶部 summary-strip；10月原板模板默认值逐字；含 ss-score/ss-level/ss-prog 钩子供 __ssFill 填充） */
     summaryStripHtml: '<div class="summary-card ok" style="cursor:default;">'
       + '<div class="sc-left"><div class="sc-city">泰兴县</div><div class="sc-score" style="color:#6b7280;" id="ss-score-1">待数据</div><span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-1">10月待考核</span></div>'
-      + '<div class="sc-right"><div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div><div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div><div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div><div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-1"></div></div></div>'
+      + '<div class="sc-right"><div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div><div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div><div>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div><div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-1"></div></div></div>'
       + '<div class="sc-bar" style="background:#999;"></div></div>'
       + '<div class="summary-card ok" style="cursor:default;">'
       + '<div class="sc-left"><div class="sc-city">诸暨市</div><div class="sc-score" style="color:#6b7280;" id="ss-score-2">待数据</div><span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-2">10月待考核</span></div>'
-      + '<div class="sc-right"><div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div><div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div><div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div><div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-2"></div></div></div>'
+      + '<div class="sc-right"><div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div><div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div><div>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div><div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-2"></div></div></div>'
       + '<div class="sc-bar" style="background:#999;"></div></div>'
       + '<div class="summary-card ok" style="cursor:default;">'
       + '<div class="sc-left"><div class="sc-city">响水县</div><div class="sc-score" style="color:#6b7280;" id="ss-score-3">待数据</div><span class="sc-level" style="background:#e8eaed;color:#6b7280;" id="ss-level-3">10月待考核</span></div>'
-      + '<div class="sc-right"><div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div><div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div><div>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div><div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-3"></div></div></div>'
+      + '<div class="sc-right"><div class="sc-risk" style="color:#6b7280;">10月考核周期 10/1-10/31</div><div>画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）</div><div>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div><div class="sc-progress"><div class="sc-progress-fill" style="width:0%;background:#999;" id="ss-prog-3"></div></div></div>'
       + '<div class="sc-bar" style="background:#999;"></div></div>',
-    ovCityCardsHtml: '<div style="border-left:3px solid #d93025;padding:8px 12px;background:#fff5f5;border-radius:0 6px 6px 0;"><div style="font-weight:700;color:#6b7280;font-size:12px;">📊 诸暨 · 10月月预计（MTD）</div><div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div></div>'
-      + '<div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;"><div style="font-weight:700;color:#6b7280;font-size:12px;">📊 泰兴 · 10月月预计（MTD）</div><div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div></div>'
-      + '<div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;"><div style="font-weight:700;color:#6b7280;font-size:12px;">📊 响水 · 10月月预计（MTD）</div><div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</div></div>',
+    ovCityCardsHtml: '<div style="border-left:3px solid #d93025;padding:8px 12px;background:#fff5f5;border-radius:0 6px 6px 0;"><div style="font-weight:700;color:#6b7280;font-size:12px;">📊 诸暨 · 10月月预计（MTD）</div><div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div></div>'
+      + '<div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;"><div style="font-weight:700;color:#6b7280;font-size:12px;">📊 泰兴 · 10月月预计（MTD）</div><div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div></div>'
+      + '<div style="border-left:3px solid #f5a623;padding:8px 12px;background:#fffdf5;border-radius:0 6px 6px 0;"><div style="font-weight:700;color:#6b7280;font-size:12px;">📊 响水 · 10月月预计（MTD）</div><div style="font-size:11px;color:#6b7280;margin-top:4px;line-height:1.6;">10月考核周期 10/1-10/31<br>高峰日：<span class="peak-list-fill">10/1-10/7 · 10/11 · 10/17-10/18 · 10/24-10/25 · 10/31 · 11/1</span></div></div>',
     estimateTitle: '城市预估警告与罚款（基于当前MTD总分推算月末结果）',
     /* oct 原板静态预估表（含 data-est 钩子，__ssFill 介入填数） */
     estimateTableHtml: '<div class="table-scroll"><table class="dt" style="font-size:12px;"><thead><tr style="background:#f5f5f5;"><th rowspan="2">城市</th><th rowspan="2">当前总分</th><th rowspan="2">当前罚则</th><th colspan="2" style="border-bottom:1px solid #ddd;">维持现状（预估月末）</th><th colspan="2" style="border-bottom:1px solid #ddd;">冲刺达标（提升至100%）</th><th colspan="2" style="border-bottom:1px solid #ddd;">持续下滑（跌至90%以下）</th></tr><tr style="background:#fafafa;font-size:11px;"><th>预估罚则</th><th>警告数</th><th>预估罚则</th><th>警告数</th><th>预估罚则</th><th>警告数</th></tr></thead><tbody>'
@@ -6180,6 +6181,8 @@ if (!dataDates.length) { box.innerHTML = '<div style="font-size:12px;color:#6b72
 var m = null;
 tcMetrics.forEach(function(x) { if (x.id === tcCurrent) m = x; });
 if (!m) m = tcMetrics[0];
+var _pbTag = document.getElementById('pb-metric-tag');
+if (_pbTag) _pbTag.textContent = '当前指标：' + m.name + (m.unit ? '（' + m.unit + '）' : '');
 var cities = Object.keys(cityInfo);
 var cut = dataDates[0].slice(0, 3) + PB_CUT;
 var last = dataDates[dataDates.length - 1];
@@ -6625,6 +6628,23 @@ if(t&&!t.classList.contains('active'))t.click();
 if(document.readyState==='complete')restoreFromHash();
 else window.addEventListener('load',restoreFromHash);
 window.addEventListener('hashchange',restoreFromHash);
+})();
+/* [单源化] 高峰日清单由 peakDays 配置推导，覆盖页面所有 .peak-list-fill（无JS时显示 authored 文案） */
+(function(){
+if (typeof peakDays === 'undefined' || !peakDays || !peakDays.length) return;
+function _m(d){ return parseInt(d.split('-')[0],10); }
+function _d(d){ return parseInt(d.split('-')[1],10); }
+var parts = [], s = peakDays[0], prev = peakDays[0];
+for (var i = 1; i <= peakDays.length; i++) {
+var cur = peakDays[i];
+if (!(cur && _m(cur) === _m(prev) && _d(cur) === _d(prev) + 1)) {
+parts.push(_m(s) + '/' + _d(s) + (s === prev ? '' : '-' + _m(prev) + '/' + _d(prev)));
+s = cur;
+}
+prev = cur;
+}
+var txt = parts.join(' · ');
+document.querySelectorAll('.peak-list-fill').forEach(function(el){ el.textContent = txt; });
 })();
 </script>
 </body>
