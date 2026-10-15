@@ -1,13 +1,13 @@
 {
  "meta": {
-  "generatedAt": "2026-10-15T04:01:31.804Z",
+  "generatedAt": "2026-10-15T05:01:37.743Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 808,
-  "uniqueIp": 14,
-  "today": 13,
+  "total": 811,
+  "uniqueIp": 15,
+  "today": 16,
   "provinces": 4
  },
  "aggregates": {
@@ -18,7 +18,7 @@
    },
    {
     "label": "gitsick.github.io",
-    "count": 325
+    "count": 328
    },
    {
     "label": "localhost",
@@ -56,7 +56,7 @@
    },
    {
     "label": "10-15",
-    "count": 13
+    "count": 16
    },
    {
     "label": "10-03",
@@ -82,7 +82,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 800
+    "count": 803
    },
    {
     "label": "手机",
@@ -98,9 +98,9 @@
   {
    "level": "province",
    "name": "Jiangsu Sheng",
-   "visits": 571,
-   "uniqueIp": 11,
-   "last": "2026-10-15 11:26"
+   "visits": 574,
+   "uniqueIp": 12,
+   "last": "2026-10-15 12:37"
   },
   {
    "level": "province",
@@ -125,6 +125,39 @@
   }
  ],
  "records": [
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-15 12:37",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard-oct.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-15 12:21",
+   "referrer": "gitsick.github.io",
+   "ip": "114.225.25.193",
+   "region": "Jiangsu Sheng · Nanjing",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "delivery-assessment-dashboard.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-15 12:13",
+   "referrer": "gitsick.github.io",
+   "ip": "240e:3a5:2029:3eb1:61f9:3087:bb43:9f60",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "delivery-assessment-dashboard.html",
    "src": "gitsick.github.io",
@@ -2289,39 +2322,6 @@
    "referrer": "localhost",
    "ip": "240e:3a5:2029:3eb1:d19c:d1e0:c810:455",
    "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard.html",
-   "src": "localhost",
-   "device": "电脑",
-   "time": "2026-10-13 11:18",
-   "referrer": "localhost",
-   "ip": "240e:3a5:2029:3eb1:d19c:d1e0:c810:455",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-13 11:00",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:d19c:d1e0:c810:455",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log.html",
-   "src": "gitsick.github.io",
-   "device": "电脑",
-   "time": "2026-10-13 09:42",
-   "referrer": "gitsick.github.io",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
    "ua": "电脑",
    "internal": false
   }
