@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16 17:04:56",
+  "generatedAt": "2026-10-16 17:12:11",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -9,7 +9,8 @@
       "cwd": "F:\\work\\mtcapacity\\pro\\assessment",
       "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→deploy_pipeline.py --frontend→归档→第2期目标检测）",
       "note": "技能编排型任务，需浏览器 BI 登录态，由定时任务直接驱动",
-      "last": null
+      "last": null,
+      "history": []
     },
     {
       "id": "xsp-weekly",
@@ -19,7 +20,8 @@
       "cwd": "C:\\Users\\hua'wei\\Documents\\CatPaw\\新商评",
       "entry": "bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel",
       "note": "独立工作区，由定时任务直接驱动",
-      "last": null
+      "last": null,
+      "history": []
     },
     {
       "id": "capacity-daily",
@@ -29,7 +31,8 @@
       "cwd": "F:\\work\\mtcapacity\\pro\\capacity-monitor",
       "entry": "python daily_pipeline.py",
       "note": "八步管线：关键步骤2-7失败即停；步骤1/8失败仅告警；数据源未发布时用日期参数按最近可得日期重跑",
-      "last": null
+      "last": null,
+      "history": []
     },
     {
       "id": "rider-hourly",
@@ -39,7 +42,8 @@
       "cwd": "C:\\Users\\hua'wei\\Documents\\CatPaw\\骑手解除合作登记",
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→部署）",
       "note": "独立工作区，每小时由定时任务直接驱动",
-      "last": null
+      "last": null,
+      "history": []
     },
     {
       "id": "deploy-audit",
@@ -52,13 +56,21 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 00:47:04",
-        "durationSec": 22.1
-      }
+        "finishedAt": "2026-10-17 01:10:57",
+        "durationSec": 2.3
+      },
+      "history": [
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 01:10:57",
+          "durationSec": 2.3,
+          "note": ""
+        }
+      ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 01:04:55",
+    "auditedAt": "2026-10-17 01:10:57",
     "status": "PASS",
     "pass": 9,
     "warn": 0,
@@ -102,7 +114,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: be36a06 2026-10-17 01:01:56 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 7170ce9 2026-10-17 01:05:06 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -116,9 +128,19 @@
       "name": "通用运力监控",
       "recent": [
         {
-          "name": "capacity_breakdown_dashboard_2026-10-15.html",
+          "name": "订单运力分析_2026-10-15.xlsx",
           "mtime": "2026-10-16 15:58",
-          "size": 2663367
+          "size": 22469
+        },
+        {
+          "name": "悦跑排班差异_站点跟进清单_2026-10-15.xlsx",
+          "mtime": "2026-10-16 15:58",
+          "size": 18693
+        },
+        {
+          "name": "时段运力拆解_2026-10-15.xlsx",
+          "mtime": "2026-10-16 15:58",
+          "size": 194323
         },
         {
           "name": "capacity_monitor_latest.html",
@@ -126,51 +148,37 @@
           "size": 2663367
         },
         {
-          "name": "data15_2026-10-15.json",
+          "name": "capacity_breakdown_dashboard_2026-10-15.html",
           "mtime": "2026-10-16 15:58",
-          "size": 929808
-        },
-        {
-          "name": "data15_2026-10-15_enh.json",
-          "mtime": "2026-10-16 15:58",
-          "size": 440432
-        },
-        {
-          "name": "data15_2026-10-15_v9.json",
-          "mtime": "2026-10-16 15:58",
-          "size": 1085522
+          "size": 2663367
         }
-      ]
+      ],
+      "ageHours": 1.2,
+      "stale": false,
+      "staleThreshold": 26
     },
     {
       "name": "履约考核工程",
       "recent": [
         {
-          "name": "check_phase2_targets.py",
-          "mtime": "2026-10-15 04:00",
-          "size": 9113
+          "name": "oct.json",
+          "mtime": "2026-10-16 02:11",
+          "size": 85605
         },
         {
-          "name": "sync_board_data.py",
+          "name": "targets-oct.json",
+          "mtime": "2026-10-15 03:04",
+          "size": 4946
+        },
+        {
+          "name": "sep.json",
           "mtime": "2026-10-13 15:46",
-          "size": 5378
-        },
-        {
-          "name": "verify_mapping.py",
-          "mtime": "2026-10-13 15:44",
-          "size": 9241
-        },
-        {
-          "name": "build.py",
-          "mtime": "2026-10-10 18:21",
-          "size": 17126
-        },
-        {
-          "name": "selftest.py",
-          "mtime": "2026-10-09 19:02",
-          "size": 17736
+          "size": 109686
         }
-      ]
+      ],
+      "ageHours": 15,
+      "stale": false,
+      "staleThreshold": 26
     }
   ],
   "pages": [
