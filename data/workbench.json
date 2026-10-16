@@ -1,0 +1,220 @@
+{
+  "generatedAt": "2026-10-16 16:53:03",
+  "tasks": [
+    {
+      "id": "kaohe-daily",
+      "name": "履约考核看板刷新与备份",
+      "type": "agent",
+      "trigger": "每日 08:00",
+      "cwd": "F:\\work\\mtcapacity\\pro\\assessment",
+      "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→deploy_pipeline.py --frontend→归档→第2期目标检测）",
+      "note": "技能编排型任务，需浏览器 BI 登录态，由定时任务直接驱动",
+      "last": null
+    },
+    {
+      "id": "xsp-weekly",
+      "name": "新商评考核周报",
+      "type": "agent",
+      "trigger": "每日 08:30",
+      "cwd": "C:\\Users\\hua'wei\\Documents\\CatPaw\\新商评",
+      "entry": "bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel",
+      "note": "独立工作区，由定时任务直接驱动",
+      "last": null
+    },
+    {
+      "id": "capacity-daily",
+      "name": "通用运力监控每日刷新",
+      "type": "command",
+      "trigger": "每日 09:00",
+      "cwd": "F:\\work\\mtcapacity\\pro\\capacity-monitor",
+      "entry": "python daily_pipeline.py",
+      "note": "八步管线：关键步骤2-7失败即停；步骤1/8失败仅告警；数据源未发布时用日期参数按最近可得日期重跑",
+      "last": null
+    },
+    {
+      "id": "rider-hourly",
+      "name": "骑手解约数据检查与刷新",
+      "type": "agent",
+      "trigger": "每小时",
+      "cwd": "C:\\Users\\hua'wei\\Documents\\CatPaw\\骑手解除合作登记",
+      "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→部署）",
+      "note": "独立工作区，每小时由定时任务直接驱动",
+      "last": null
+    },
+    {
+      "id": "deploy-audit",
+      "name": "部署体系审计（手动/按需）",
+      "type": "command",
+      "trigger": "手动 / 部署异常后",
+      "cwd": "F:\\work\\mtcapacity",
+      "entry": "pwsh -NoProfile -File deploy\\audit.ps1",
+      "note": "只读体检：通道配置、路径、互斥锁、仓库漂移",
+      "last": {
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-10-17 00:47:04",
+        "durationSec": 22.1
+      }
+    }
+  ],
+  "audit": {
+    "auditedAt": "2026-10-17 00:53:02",
+    "status": "PASS",
+    "pass": 8,
+    "warn": 0,
+    "fail": 0,
+    "checks": [
+      {
+        "level": "PASS",
+        "item": "通道配置",
+        "msg": "配置可解析，default=rider-data，通道: rider-data, capacity-monitor"
+      },
+      {
+        "level": "PASS",
+        "item": "双入口",
+        "msg": "deploy.ps1 在位"
+      },
+      {
+        "level": "PASS",
+        "item": "双入口",
+        "msg": "publish_file.py 在位"
+      },
+      {
+        "level": "PASS",
+        "item": "双入口",
+        "msg": "deploy_v2.ps1 在位"
+      },
+      {
+        "level": "PASS",
+        "item": "互斥锁",
+        "msg": "无残留锁"
+      },
+      {
+        "level": "PASS",
+        "item": "仓库漂移",
+        "msg": "工作区干净"
+      },
+      {
+        "level": "PASS",
+        "item": "仓库漂移",
+        "msg": "与远端 main 同步"
+      },
+      {
+        "level": "PASS",
+        "item": "仓库漂移",
+        "msg": "最新提交: b1c9eb9 2026-10-17 00:03:10 +0800 Deploy: 主看板中心构建发布"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "通用运力监控",
+      "recent": [
+        {
+          "name": "capacity_breakdown_dashboard_2026-10-15.html",
+          "mtime": "2026-10-16 15:58",
+          "size": 2663367
+        },
+        {
+          "name": "capacity_monitor_latest.html",
+          "mtime": "2026-10-16 15:58",
+          "size": 2663367
+        },
+        {
+          "name": "data15_2026-10-15.json",
+          "mtime": "2026-10-16 15:58",
+          "size": 929808
+        },
+        {
+          "name": "data15_2026-10-15_enh.json",
+          "mtime": "2026-10-16 15:58",
+          "size": 440432
+        },
+        {
+          "name": "data15_2026-10-15_v9.json",
+          "mtime": "2026-10-16 15:58",
+          "size": 1085522
+        }
+      ]
+    },
+    {
+      "name": "履约考核工程",
+      "recent": [
+        {
+          "name": "check_phase2_targets.py",
+          "mtime": "2026-10-15 04:00",
+          "size": 9113
+        },
+        {
+          "name": "sync_board_data.py",
+          "mtime": "2026-10-13 15:46",
+          "size": 5378
+        },
+        {
+          "name": "verify_mapping.py",
+          "mtime": "2026-10-13 15:44",
+          "size": 9241
+        },
+        {
+          "name": "build.py",
+          "mtime": "2026-10-10 18:21",
+          "size": 17126
+        },
+        {
+          "name": "selftest.py",
+          "mtime": "2026-10-09 19:02",
+          "size": 17736
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "href": "index.html",
+      "title": "看板中心",
+      "desc": "全部看板入口"
+    },
+    {
+      "href": "capacity_monitor_latest.html",
+      "title": "通用运力监控",
+      "desc": "时段运力 · 每日刷新"
+    },
+    {
+      "href": "delivery-assessment-dashboard-oct.html",
+      "title": "履约考核 · 10月",
+      "desc": "MTD 测评"
+    },
+    {
+      "href": "rider_dashboard.html",
+      "title": "骑手解约看板",
+      "desc": "解约明细 / 总览"
+    },
+    {
+      "href": "access_log.html",
+      "title": "访问日志",
+      "desc": "全站访问记录"
+    }
+  ],
+  "knowledge": [
+    {
+      "name": "架构与部署规范",
+      "path": "ARCHITECTURE.md"
+    },
+    {
+      "name": "业务口径手册",
+      "path": "lib\\docs\\口径手册.md"
+    },
+    {
+      "name": "项目工作区规范",
+      "path": "pro\\README.md"
+    },
+    {
+      "name": "调度层用法",
+      "path": "sched\\README.md"
+    },
+    {
+      "name": "部署基建说明",
+      "path": "deploy\\README.md"
+    }
+  ]
+}
