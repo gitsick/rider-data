@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16 17:38:10",
+  "generatedAt": "2026-10-16 17:50:20",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -10,6 +10,10 @@
       "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→deploy_pipeline.py --frontend→归档→第2期目标检测）",
       "note": "技能编排型任务，需浏览器 BI 登录态，由定时任务直接驱动",
       "last": null,
+      "monitor": {
+        "cadence": "daily",
+        "expect": true
+      },
       "history": []
     },
     {
@@ -21,6 +25,10 @@
       "entry": "bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel",
       "note": "独立工作区，由定时任务直接驱动",
       "last": null,
+      "monitor": {
+        "cadence": "daily",
+        "expect": true
+      },
       "history": []
     },
     {
@@ -32,6 +40,10 @@
       "entry": "python daily_pipeline.py",
       "note": "八步管线：关键步骤2-7失败即停；步骤1/8失败仅告警；数据源未发布时用日期参数按最近可得日期重跑",
       "last": null,
+      "monitor": {
+        "cadence": "daily",
+        "expect": true
+      },
       "history": []
     },
     {
@@ -43,6 +55,10 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→部署）",
       "note": "独立工作区，每小时由定时任务直接驱动",
       "last": null,
+      "monitor": {
+        "cadence": "hourly",
+        "expect": true
+      },
       "history": []
     },
     {
@@ -56,9 +72,13 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 01:37:51",
-        "durationSec": 22.2,
+        "finishedAt": "2026-10-17 01:43:35",
+        "durationSec": 1.9,
         "note": ""
+      },
+      "monitor": {
+        "cadence": "manual",
+        "expect": false
       },
       "history": [
         {
@@ -84,15 +104,21 @@
           "finishedAt": "2026-10-17 01:37:51",
           "durationSec": 22.2,
           "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 01:43:35",
+          "durationSec": 1.9,
+          "note": ""
         }
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 01:37:51",
+    "auditedAt": "2026-10-17 01:43:35",
     "status": "PASS",
     "pass": 17,
-    "warn": 0,
+    "warn": 1,
     "fail": 0,
     "checks": [
       {
@@ -133,7 +159,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 611fc1b 2026-10-17 01:30:53 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 430c468 2026-10-17 01:38:26 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -176,6 +202,11 @@
         "msg": "[rider-hourly] 已关联定时器"
       },
       {
+        "level": "WARN",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 无任何运行留痕（预期每小时）"
+      },
+      {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[deploy-audit] command 入口可用（pwsh）"
@@ -193,9 +224,39 @@
       {
         "auditedAt": "2026-10-17 01:37:51",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 01:43:35",
+        "status": "PASS"
       }
     ]
   },
+  "layers": [
+    {
+      "layer": "调度层",
+      "anchor": "sec-tasks",
+      "status": "PASS",
+      "detail": "4/4 任务正常"
+    },
+    {
+      "layer": "部署层",
+      "anchor": "sec-audit",
+      "status": "PASS",
+      "detail": "审计 PASS（2026-10-17 01:43:35）"
+    },
+    {
+      "layer": "项目层",
+      "anchor": "sec-fresh",
+      "status": "PASS",
+      "detail": "2 项目 · 产物均新鲜，最新产出 1.9h 前"
+    },
+    {
+      "layer": "渲染层",
+      "anchor": "sec-fresh",
+      "status": "PASS",
+      "detail": "站点数据 0.2h 前刷新"
+    }
+  ],
   "projects": [
     {
       "name": "通用运力监控",
@@ -226,7 +287,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 1.7,
+      "ageHours": 1.9,
       "stale": false,
       "staleThreshold": 26
     },
@@ -249,7 +310,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 15.5,
+      "ageHours": 15.7,
       "stale": false,
       "staleThreshold": 26
     }
