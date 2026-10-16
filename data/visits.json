@@ -1,24 +1,24 @@
 {
  "meta": {
-  "generatedAt": "2026-10-16T04:01:04.594Z",
+  "generatedAt": "2026-10-16T12:01:14.988Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 820,
+  "total": 822,
   "uniqueIp": 16,
-  "today": 1,
+  "today": 3,
   "provinces": 5
  },
  "aggregates": {
   "source": [
    {
     "label": "直接打开",
-    "count": 461
+    "count": 462
    },
    {
     "label": "gitsick.github.io",
-    "count": 336
+    "count": 337
    },
    {
     "label": "localhost",
@@ -80,13 +80,13 @@
    },
    {
     "label": "10-16",
-    "count": 1
+    "count": 3
    }
   ],
   "device": [
    {
     "label": "电脑",
-    "count": 812
+    "count": 814
    },
    {
     "label": "手机",
@@ -102,9 +102,9 @@
   {
    "level": "province",
    "name": "Jiangsu Sheng",
-   "visits": 582,
+   "visits": 584,
    "uniqueIp": 12,
-   "last": "2026-10-15 18:49"
+   "last": "2026-10-16 19:37"
   },
   {
    "level": "province",
@@ -136,6 +136,28 @@
   }
  ],
  "records": [
+  {
+   "page": "index.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-16 19:37",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-16 19:37",
+   "referrer": "直接打开",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "rider_dashboard.html",
    "src": "直接打开",
@@ -2308,28 +2330,6 @@
    "src": "localhost",
    "device": "电脑",
    "time": "2026-10-13 12:36",
-   "referrer": "localhost",
-   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-13 12:15",
-   "referrer": "直接打开",
-   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "localhost",
-   "device": "电脑",
-   "time": "2026-10-13 11:54",
    "referrer": "localhost",
    "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
    "region": "Jiangsu Sheng · Wuxi",
