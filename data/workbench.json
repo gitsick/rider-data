@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16 17:30:05",
+  "generatedAt": "2026-10-16 17:38:10",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -52,12 +52,13 @@
       "trigger": "手动 / 部署异常后",
       "cwd": "F:\\work\\mtcapacity",
       "entry": "pwsh -NoProfile -File deploy\\audit.ps1",
-      "note": "只读体检：通道配置、路径、互斥锁、仓库漂移",
+      "note": "只读体检 7 项：通道配置/双入口/互斥锁/仓库漂移/产物完整性/工作台数据新鲜度/调度配置",
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 01:29:57",
-        "durationSec": 22.2
+        "finishedAt": "2026-10-17 01:37:51",
+        "durationSec": 22.2,
+        "note": ""
       },
       "history": [
         {
@@ -77,14 +78,20 @@
           "finishedAt": "2026-10-17 01:29:57",
           "durationSec": 22.2,
           "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 01:37:51",
+          "durationSec": 22.2,
+          "note": ""
         }
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 01:29:57",
+    "auditedAt": "2026-10-17 01:37:51",
     "status": "PASS",
-    "pass": 10,
+    "pass": 17,
     "warn": 0,
     "fail": 0,
     "checks": [
@@ -126,7 +133,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 98652cd 2026-10-17 01:20:54 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 611fc1b 2026-10-17 01:30:53 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -136,7 +143,42 @@
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0.2 小时前已刷新"
+        "msg": "workbench.json 0.1 小时前已刷新"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "tasks.json 可解析，共 5 个登记任务"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[capacity-daily] command 入口可用（python）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[capacity-daily] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[deploy-audit] command 入口可用（pwsh）"
       }
     ],
     "history": [
@@ -146,6 +188,10 @@
       },
       {
         "auditedAt": "2026-10-17 01:29:57",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 01:37:51",
         "status": "PASS"
       }
     ]
@@ -180,7 +226,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 1.5,
+      "ageHours": 1.7,
       "stale": false,
       "staleThreshold": 26
     },
@@ -203,7 +249,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 15.3,
+      "ageHours": 15.5,
       "stale": false,
       "staleThreshold": 26
     }
