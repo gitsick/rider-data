@@ -1,13 +1,13 @@
 {
  "meta": {
-  "generatedAt": "2026-10-16T15:11:04.466Z",
+  "generatedAt": "2026-10-16T16:00:40.009Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
   "total": 826,
   "uniqueIp": 17,
-  "today": 7,
+  "today": 0,
   "provinces": 5
  },
  "aggregates": {
@@ -57,10 +57,6 @@
    {
     "label": "10-04",
     "count": 16
-   },
-   {
-    "label": "10-03",
-    "count": 10
    },
    {
     "label": "10-08",
