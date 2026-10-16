@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16 17:01:15",
+  "generatedAt": "2026-10-16 17:04:56",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -58,9 +58,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 00:53:02",
+    "auditedAt": "2026-10-17 01:04:55",
     "status": "PASS",
-    "pass": 8,
+    "pass": 9,
     "warn": 0,
     "fail": 0,
     "checks": [
@@ -102,7 +102,12 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: b1c9eb9 2026-10-17 00:03:10 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: be36a06 2026-10-17 01:01:56 +0800 Deploy: 主看板中心构建发布"
+      },
+      {
+        "level": "PASS",
+        "item": "rider-data",
+        "msg": "dist 根文件齐全（9 个）"
       }
     ]
   },
