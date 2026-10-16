@@ -1,20 +1,20 @@
 {
  "meta": {
-  "generatedAt": "2026-10-15T16:01:15.721Z",
+  "generatedAt": "2026-10-16T04:01:04.594Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 819,
-  "uniqueIp": 15,
-  "today": 0,
-  "provinces": 4
+  "total": 820,
+  "uniqueIp": 16,
+  "today": 1,
+  "provinces": 5
  },
  "aggregates": {
   "source": [
    {
     "label": "直接打开",
-    "count": 460
+    "count": 461
    },
    {
     "label": "gitsick.github.io",
@@ -77,12 +77,16 @@
    {
     "label": "10-06",
     "count": 3
+   },
+   {
+    "label": "10-16",
+    "count": 1
    }
   ],
   "device": [
    {
     "label": "电脑",
-    "count": 811
+    "count": 812
    },
    {
     "label": "手机",
@@ -122,9 +126,27 @@
    "visits": 1,
    "uniqueIp": 1,
    "last": "2026-10-14 20:06"
+  },
+  {
+   "level": "province",
+   "name": "Jiangxi Sheng",
+   "visits": 1,
+   "uniqueIp": 1,
+   "last": "2026-10-16 11:37"
   }
  ],
  "records": [
+  {
+   "page": "rider_dashboard.html",
+   "src": "直接打开",
+   "device": "电脑",
+   "time": "2026-10-16 11:37",
+   "referrer": "直接打开",
+   "ip": "171.35.78.62",
+   "region": "Jiangxi Sheng · Nanchang",
+   "ua": "电脑",
+   "internal": false
+  },
   {
    "page": "delivery-assessment-dashboard-oct.html",
    "src": "gitsick.github.io",
@@ -2308,17 +2330,6 @@
    "src": "localhost",
    "device": "电脑",
    "time": "2026-10-13 11:54",
-   "referrer": "localhost",
-   "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
-   "region": "Jiangsu Sheng · Wuxi",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "delivery-assessment-dashboard-oct.html",
-   "src": "localhost",
-   "device": "电脑",
-   "time": "2026-10-13 11:35",
    "referrer": "localhost",
    "ip": "240e:3a5:2029:3eb1:6cdf:69a9:ef29:5d78",
    "region": "Jiangsu Sheng · Wuxi",
