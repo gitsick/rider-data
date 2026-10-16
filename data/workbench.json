@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16 17:20:31",
+  "generatedAt": "2026-10-16 17:30:05",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -56,8 +56,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 01:20:22",
-        "durationSec": 2.3
+        "finishedAt": "2026-10-17 01:29:57",
+        "durationSec": 22.2
       },
       "history": [
         {
@@ -71,14 +71,20 @@
           "finishedAt": "2026-10-17 01:20:22",
           "durationSec": 2.3,
           "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 01:29:57",
+          "durationSec": 22.2,
+          "note": ""
         }
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 01:20:22",
+    "auditedAt": "2026-10-17 01:29:57",
     "status": "PASS",
-    "pass": 9,
+    "pass": 10,
     "warn": 0,
     "fail": 0,
     "checks": [
@@ -120,17 +126,26 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: ff08218 2026-10-17 01:12:20 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 98652cd 2026-10-17 01:20:54 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
         "item": "rider-data",
         "msg": "dist 根文件齐全（9 个）"
+      },
+      {
+        "level": "PASS",
+        "item": "工作台数据",
+        "msg": "workbench.json 0.2 小时前已刷新"
       }
     ],
     "history": [
       {
         "auditedAt": "2026-10-17 01:20:22",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 01:29:57",
         "status": "PASS"
       }
     ]
@@ -165,7 +180,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 1.4,
+      "ageHours": 1.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -188,7 +203,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 15.2,
+      "ageHours": 15.3,
       "stale": false,
       "staleThreshold": 26
     }
