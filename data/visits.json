@@ -1,13 +1,13 @@
 {
  "meta": {
-  "generatedAt": "2026-10-17T06:39:41.756Z",
+  "generatedAt": "2026-10-17T07:01:08.788Z",
   "source": "access_log.html (线上旧版访问日志页迁移期抽取)",
   "note": "records 为页面「最近访问明细」最新 200 条；聚合数据(每日/来源/设备/地区)取自页面内聚合区，口径与线上一致"
  },
  "kpi": {
-  "total": 866,
+  "total": 868,
   "uniqueIp": 17,
-  "today": 40,
+  "today": 42,
   "provinces": 5
  },
  "aggregates": {
@@ -18,7 +18,7 @@
    },
    {
     "label": "gitsick.github.io",
-    "count": 375
+    "count": 377
    },
    {
     "label": "localhost",
@@ -52,7 +52,7 @@
    },
    {
     "label": "10-17",
-    "count": 40
+    "count": 42
    },
    {
     "label": "10-15",
@@ -86,7 +86,7 @@
   "device": [
    {
     "label": "电脑",
-    "count": 858
+    "count": 860
    },
    {
     "label": "手机",
@@ -102,16 +102,16 @@
   {
    "level": "province",
    "name": "Jiangsu Sheng",
-   "visits": 624,
+   "visits": 625,
    "uniqueIp": 12,
-   "last": "2026-10-17 14:30"
+   "last": "2026-10-17 14:59"
   },
   {
    "level": "province",
    "name": "内网/本机",
-   "visits": 236,
+   "visits": 237,
    "uniqueIp": 1,
-   "last": "2026-10-17 14:05"
+   "last": "2026-10-17 14:46"
   },
   {
    "level": "province",
@@ -136,6 +136,28 @@
   }
  ],
  "records": [
+  {
+   "page": "workbench.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-17 14:59",
+   "referrer": "gitsick.github.io",
+   "ip": "223.64.148.104",
+   "region": "Jiangsu Sheng · Wuxi",
+   "ua": "电脑",
+   "internal": false
+  },
+  {
+   "page": "workbench.html",
+   "src": "gitsick.github.io",
+   "device": "电脑",
+   "time": "2026-10-17 14:46",
+   "referrer": "gitsick.github.io",
+   "ip": "127.0.0.1（内网）",
+   "region": "内网/本机",
+   "ua": "电脑",
+   "internal": true
+  },
   {
    "page": "workbench.html",
    "src": "gitsick.github.io",
@@ -2308,28 +2330,6 @@
    "src": "直接打开",
    "device": "电脑",
    "time": "2026-10-13 19:03",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "access_log.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-13 19:02",
-   "referrer": "直接打开",
-   "ip": "114.225.25.193",
-   "region": "Jiangsu Sheng · Nanjing",
-   "ua": "电脑",
-   "internal": false
-  },
-  {
-   "page": "rider_dashboard.html",
-   "src": "直接打开",
-   "device": "电脑",
-   "time": "2026-10-13 19:02",
    "referrer": "直接打开",
    "ip": "114.225.25.193",
    "region": "Jiangsu Sheng · Nanjing",
