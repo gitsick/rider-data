@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="utf-8"><title>通用运力监控 · 2026-10-15 · 区域/城市下钻视图</title>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>通用运力监控 · 2026-10-15 · 区域/城市下钻视图</title>
 <style>
 body { font-family:"Microsoft YaHei",sans-serif; max-width:1240px; margin:0 auto; padding:18px 20px 60px; color:#333; background:#f6f8fa; }
-h1 { font-size:22px; color:#1f4e78; margin:6px 0 4px; }
-.sub { font-size:12px; color:#888; margin-bottom:14px; }
+/* —— 站点级导航（与 Vue 主看板 TopNav 同款：暗色渐变 + 金色品牌点 + 胶囊高亮，R50 统一） —— */
+.site-nav { position:sticky; top:0; z-index:950; background:linear-gradient(90deg,rgba(27,34,51,.96),rgba(45,52,71,.96)); box-shadow:0 1px 6px rgba(0,0,0,.25); display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 -20px; padding:8px 20px; font-size:13px; white-space:nowrap; }
+@media(max-width:760px) { .site-nav { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; } .site-nav::-webkit-scrollbar { display:none; } .chartbox { min-width:0 !important; } .checktbl { display:block; overflow-x:auto; } .kchip { white-space:normal !important; } }
+.site-nav a { color:#c3cede; font-size:13px; text-decoration:none; padding:4px 11px; border-radius:999px; transition:all .15s; }
+.site-nav a:hover { color:#ffc300; background:rgba(255,255,255,.08); }
+.site-nav a.on { color:#fff; font-weight:700; background:linear-gradient(135deg,rgba(255,195,0,.26),rgba(255,195,0,.13)); box-shadow:inset 0 0 0 1px rgba(255,195,0,.45); }
+.site-nav .brand { color:#fff; font-weight:700; letter-spacing:.03em; }
+.site-nav .brand::before { content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:#ffc300; margin-right:7px; vertical-align:2px; box-shadow:0 0 7px rgba(255,195,0,.85); }
+.site-nav .nv-spacer { flex:1; }
+/* —— Hero 头卡（与 Vue 页暗色头卡同语言） —— */
+.hero { background:linear-gradient(135deg,#1b2233,#2d3447); color:#fff; border-radius:12px; padding:16px 20px 14px; margin:14px 0 16px; border-bottom:2px solid #ffc300; box-shadow:0 2px 10px rgba(0,0,0,.18); }
+.hero h1 { font-size:20px; color:#fff; margin:0 0 6px; }
+.hero h1 .gold { color:#ffc300; }
+.hero .sub { color:#aeb9cc; margin:0; }
 .card { background:#fff; border-radius:10px; padding:16px 18px; margin-bottom:18px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
 h2 { font-size:17px; color:#1f4e78; margin:4px 0 10px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 h2 .expbtn { margin-left:auto; }
@@ -47,11 +59,11 @@ details[open] summary { border-bottom:1px solid #eee; }
 .cityhd { font-weight:700; color:#1f4e78; margin:2px 0 8px; font-size:14px; padding-left:8px; border-left:3px solid #c9a227; }
 .bar-wrap { position:relative; background:#eef2f7; border-radius:3px; height:18px; min-width:60px; }
 .bar
-.stickyhead { position:sticky; top:0; z-index:99; }
-.topnav { background:#1f4e78; border-radius:8px 8px 0 0; padding:8px 14px 6px; display:flex; gap:10px; flex-wrap:wrap; box-shadow:0 2px 6px rgba(0,0,0,.15); }
-.topnav a { color:#cfe3ff; font-size:13px; text-decoration:none; padding:3px 10px; border-radius:14px; transition:background .15s; }
-.topnav a:hover { background:rgba(255,255,255,.18); color:#fff; }
-.topnav a.ext { color:#ffe08a; }
+.stickyhead { position:sticky; top:36px; z-index:900; }
+.topnav { background:rgba(27,34,51,.92); border-radius:0; padding:7px 14px 5px; display:flex; gap:8px; flex-wrap:wrap; box-shadow:0 2px 6px rgba(0,0,0,.18); }
+.topnav a { color:#b9c4d6; font-size:13px; text-decoration:none; padding:3px 10px; border-radius:999px; transition:all .15s; }
+.topnav a:hover { background:rgba(255,255,255,.10); color:#ffc300; }
+.topnav a.ext { color:#ffc300; opacity:.85; }
 .regbar { background:#fff; border:1px solid #dfe6ef; border-top:none; border-radius:0 0 8px 8px; padding:8px 14px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; box-shadow:0 2px 6px rgba(0,0,0,.08); }
 .regbar .rl { font-size:12px; color:#888; font-weight:700; }
 .regbar .rl.dim { color:#bbb; font-weight:400; }
@@ -103,8 +115,8 @@ h2{letter-spacing:.4px;border-bottom:2px solid #e8eef5;padding-bottom:4px}
 .chartbox svg rect:hover { opacity:.75; cursor:crosshair; }
 .chartbox svg line { shape-rendering:crispEdges; }
 .chartbox svg text { user-select:none; }
-/* v24nav 导航滚动高亮 */
-.topnav a.active { background:#ffe08a; color:#1f4e78; font-weight:700; }
+/* v24nav 导航滚动高亮（对齐金色主色） */
+.topnav a.active { background:rgba(255,195,0,.92); color:#1b2233; font-weight:700; }
 /* ===== v14css 全局美化 ===== */
 .card table tbody tr:nth-child(even)>td{background:#f7fafd}
 .card table .scroll::-webkit-scrollbar{height:10px;width:10px}
@@ -155,8 +167,19 @@ g.greg{cursor:pointer}
 .card{content-visibility:auto;contain-intrinsic-size:auto 1200px}
 details>div,.scroll{contain:layout style}
 </style></head><body>
-<h1>通用运力监控 · 2026-10-15（全天 · 区域/城市下钻视图）</h1>
-<div class="sub">运力达成：推单 254,682 条 ｜ 已送达 240,069（推完占比 94.3%）｜ 取消 14,613（取消率 5.7%）｜ 专送 99,280 / 众包 47,513 / 悦跑 93,276 ｜ 悦跑名册 2,006 人 ｜ 专送排班：86 站 ｜ 数据源：下载中心汇总表 + 日监控分片 ｜ 顶部指标卡可点击跳转对应章节，悬停看区域拆分</div>
+<nav class="site-nav">
+  <a class="brand" href="/rider-data/index.html">履约考核中心</a>
+  <span class="nv-spacer"></span>
+  <a href="/rider-data/index.html">首页</a>
+  <a href="/rider-data/rider_dashboard.html">骑手解约看板</a>
+  <a href="/rider-data/delivery-assessment-dashboard-oct.html">履约考核</a>
+  <a href="/rider-data/rider_overview.html">数据概览</a>
+  <a href="/rider-data/workbench.html">工作台</a>
+  <a class="on" href="capacity_monitor_latest.html">运力监控</a>
+  <a href="/rider-data/access_log.html">访问日志</a>
+</nav>
+<div class="hero"><h1>通用运力监控 · 2026-10-15<span class="gold">（全天 · 区域/城市下钻视图）</span></h1>
+<div class="sub">运力达成：推单 254,682 条 ｜ 已送达 240,069（推完占比 94.3%）｜ 取消 14,613（取消率 5.7%）｜ 专送 99,280 / 众包 47,513 / 悦跑 93,276 ｜ 悦跑名册 2,006 人 ｜ 专送排班：86 站 ｜ 数据源：下载中心汇总表 + 日监控分片 ｜ 顶部指标卡可点击跳转对应章节，悬停看区域拆分</div></div>
 <div class="stickyhead">
 <div class="topnav">
   <a href="#sec0">⓪ 区域总览</a><a href="#sec1">① 走势与承托</a><a href="#sec2">② 排班出勤对照</a><a href="#sec3">③ 小时×城市</a><a href="#sec4">④ 班次×城市</a><a href="#sec5">⑤ 小时×站点</a><a href="#sec6">⑥ 班次×站点</a><a href="#sec7">⑦ KA品牌</a><a href="#sec8">⑧ 数据检核</a>
