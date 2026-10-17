@@ -17,6 +17,9 @@ self.addEventListener('install', () => self.skipWaiting())
 self.addEventListener('activate', e => e.waitUntil((async () => {
   const names = await caches.keys()
   await Promise.all(names.filter(n => !KEEP.includes(n)).map(n => caches.delete(n)))
+  /* 容量保护：同版本内多次发版会让 assets 缓存累积旧 hash 文件，超限整体重建（重新预热成本低） */
+  const a = await caches.open(C_ASSETS)
+  if ((await a.keys()).length > 150) await caches.delete(C_ASSETS)
   await self.clients.claim()
 })()))
 
