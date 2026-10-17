@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 03:23:52",
+  "generatedAt": "2026-10-17 04:09:58",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -63,8 +63,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 11:00:18",
-        "durationSec": 22,
+        "finishedAt": "2026-10-17 11:56:22",
+        "durationSec": 53.2,
         "note": ""
       },
       "monitor": {
@@ -98,6 +98,18 @@
           "status": "PASS",
           "finishedAt": "2026-10-17 11:00:18",
           "durationSec": 22,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 11:45:46",
+          "durationSec": 112.5,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 11:56:22",
+          "durationSec": 53.2,
           "note": ""
         }
       ]
@@ -258,7 +270,7 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 11:09:04",
+    "auditedAt": "2026-10-17 12:04:21",
     "status": "PASS",
     "pass": 20,
     "warn": 2,
@@ -281,11 +293,6 @@
       },
       {
         "level": "PASS",
-        "item": "双入口",
-        "msg": "deploy_v2.ps1 在位"
-      },
-      {
-        "level": "PASS",
         "item": "互斥锁",
         "msg": "无残留锁"
       },
@@ -302,7 +309,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 6fdbc91 2026-10-17 11:08:30 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 3643877 2026-10-17 11:23:59 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -352,7 +359,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[capacity-daily] 定时器最近一次运行失败（2.2h 前）——排查自动化会话日志"
+        "msg": "[capacity-daily] 定时器最近一次运行失败（3.1h 前）——排查自动化会话日志"
       },
       {
         "level": "PASS",
@@ -367,39 +374,20 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0.1h 前）"
+        "msg": "[rider-hourly] 运行正常（1h 前）"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[deploy-audit] command 入口可用（pwsh）"
+      },
+      {
+        "level": "PASS",
+        "item": "架构合规",
+        "msg": "分层约定无违规（无外部工作区引用 / 无项目层渲染器 / 无项目自建部署脚本）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 01:29:57",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 01:37:51",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 01:43:35",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 09:15:11",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 09:25:57",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 09:29:39",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 09:50:35",
         "status": "PASS"
@@ -431,6 +419,30 @@
       {
         "auditedAt": "2026-10-17 11:09:04",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 11:24:41",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 11:46:15",
+        "status": "FAIL"
+      },
+      {
+        "auditedAt": "2026-10-17 11:47:07",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 12:02:56",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 12:03:42",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 12:04:21",
+        "status": "PASS"
       }
     ]
   },
@@ -445,19 +457,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 11:09:04）"
+      "detail": "审计 PASS（2026-10-17 12:04:21）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.4h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -466,31 +478,31 @@
       "recent": [
         {
           "name": "订单运力分析_2026-10-15.xlsx",
-          "mtime": "2026-10-17 03:00",
-          "size": 22468
+          "mtime": "2026-10-17 03:55",
+          "size": 22469
         },
         {
           "name": "悦跑排班差异_站点跟进清单_2026-10-15.xlsx",
-          "mtime": "2026-10-17 03:00",
-          "size": 18692
+          "mtime": "2026-10-17 03:55",
+          "size": 18693
         },
         {
           "name": "时段运力拆解_2026-10-15.xlsx",
-          "mtime": "2026-10-17 03:00",
-          "size": 194318
+          "mtime": "2026-10-17 03:55",
+          "size": 194320
         },
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-17 03:00",
+          "mtime": "2026-10-17 03:55",
           "size": 2663367
         },
         {
           "name": "capacity_breakdown_dashboard_2026-10-15.html",
-          "mtime": "2026-10-17 03:00",
+          "mtime": "2026-10-17 03:55",
           "size": 2663367
         }
       ],
-      "ageHours": 0.4,
+      "ageHours": 0.2,
       "stale": false,
       "staleThreshold": 26
     },
@@ -513,7 +525,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 1.4,
+      "ageHours": 2.2,
       "stale": false,
       "staleThreshold": 26
     }
@@ -626,7 +638,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-17 11:09:04）",
+      "text": "审计有 2 项警告（2026-10-17 12:04:21）",
       "anchor": "sec-audit"
     }
   ],
