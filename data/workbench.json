@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 11:01:11",
+  "generatedAt": "2026-10-17 11:03:26",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -184,8 +184,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 18:01:29",
-        "durationSec": 90,
+        "finishedAt": "2026-10-17 19:03:11",
+        "durationSec": 191,
         "note": ""
       },
       "monitor": {
@@ -275,13 +275,21 @@
           "durationSec": 90,
           "note": "",
           "dur": 90
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 19:03:11",
+          "durationSec": 191,
+          "note": "",
+          "dur": 191
         }
       ],
       "durTrend": [
         188,
         505,
         373,
-        90
+        90,
+        191
       ]
     },
     {
@@ -820,7 +828,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.6h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -876,7 +884,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 9,
+      "ageHours": 9.1,
       "stale": false,
       "staleThreshold": 26
     }
@@ -984,7 +992,7 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-17 10:34:44",
-        "ageH": 0.4
+        "ageH": 0.5
       }
     ]
   },
