@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 00:45:15",
+  "generatedAt": "2026-10-17 01:01:08",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -54,12 +54,27 @@
       "cwd": "C:\\Users\\hua'wei\\Documents\\CatPaw\\骑手解除合作登记",
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→部署）",
       "note": "独立工作区，每小时由定时任务直接驱动",
-      "last": null,
+      "last": {
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-10-17 08:50:55",
+        "durationSec": null,
+        "note": "问卷星登录态失效（华东/华南均未做增量检查，沿用本地1975条）；访问日志+9；看板已生成；首轮部署git pull网络中断，-SkipPull离线发布重试成功，HEAD=c56de65已推送"
+      },
       "monitor": {
         "cadence": "hourly",
-        "expect": true
+        "expect": true,
+        "overdue": false,
+        "overdueText": ""
       },
-      "history": []
+      "history": [
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 08:50:55",
+          "durationSec": null,
+          "note": "问卷星登录态失效（华东/华南均未做增量检查，沿用本地1975条）；访问日志+9；看板已生成；首轮部署git pull网络中断，-SkipPull离线发布重试成功，HEAD=c56de65已推送"
+        }
+      ]
     },
     {
       "id": "deploy-audit",
@@ -248,13 +263,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 8.8h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 9h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 6.9h 前刷新"
+      "detail": "站点数据 0.3h 前刷新"
     }
   ],
   "projects": [
@@ -287,7 +302,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 8.8,
+      "ageHours": 9,
       "stale": false,
       "staleThreshold": 26
     },
@@ -310,7 +325,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 22.6,
+      "ageHours": 22.8,
       "stale": false,
       "staleThreshold": 26
     }
