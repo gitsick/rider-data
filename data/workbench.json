@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 05:45:57",
+  "generatedAt": "2026-10-17 05:46:57",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -226,8 +226,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 13:22:08",
-        "durationSec": 23.7,
+        "finishedAt": "2026-10-17 13:46:19",
+        "durationSec": 3.2,
         "note": ""
       },
       "monitor": {
@@ -239,12 +239,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id deploy-audit）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 09:29:39",
-          "durationSec": 2.1,
-          "note": ""
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:50:35",
@@ -322,15 +316,21 @@
           "finishedAt": "2026-10-17 13:22:08",
           "durationSec": 23.7,
           "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 13:46:19",
+          "durationSec": 3.2,
+          "note": ""
         }
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 13:22:08",
+    "auditedAt": "2026-10-17 13:46:19",
     "status": "PASS",
-    "pass": 23,
-    "warn": 2,
+    "pass": 24,
+    "warn": 1,
     "fail": 0,
     "checks": [
       {
@@ -366,7 +366,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: ebcf1e4 2026-10-17 12:13:50 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: f3b130e 2026-10-17 13:46:05 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -376,17 +376,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（0.7 小时前生成）"
+        "msg": "单文件产物存在（1.1 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（61.7 小时前生成）"
+        "msg": "单文件产物存在（62.1 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0.1 小时前已刷新"
+        "msg": "workbench.json 0 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -409,9 +409,9 @@
         "msg": "[xsp-weekly] 已关联定时器"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[xsp-weekly] 今日应跑（每日 08:30）但无今日成功留痕——疑似断链；command 型可用 run_task.ps1 -Auto 补跑，agent 型手动重跑后 -Record PASS 留痕"
+        "msg": "[xsp-weekly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -441,12 +441,12 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器最近一次运行失败（0.4h 前）——排查自动化会话日志"
+        "msg": "[rider-hourly] 定时器最近一次运行失败（0.8h 前）——排查自动化会话日志"
       },
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0.1h 前）"
+        "msg": "[rider-hourly] 运行正常（0.5h 前）"
       },
       {
         "level": "PASS",
@@ -460,10 +460,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 11:09:04",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 11:24:41",
         "status": "PASS"
@@ -515,6 +511,10 @@
       {
         "auditedAt": "2026-10-17 13:22:08",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 13:46:19",
+        "status": "PASS"
       }
     ]
   },
@@ -529,7 +529,7 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 13:22:08）"
+      "detail": "审计 PASS（2026-10-17 13:46:19）"
     },
     {
       "layer": "项目层",
@@ -705,7 +705,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-17 13:22:08）",
+      "text": "审计有 1 项警告（2026-10-17 13:46:19）",
       "anchor": "sec-audit"
     }
   ],
