@@ -1,0 +1,73 @@
+/* 骑手数据看板中心 Service Worker（R55）
+ * 策略：
+ *  - /assets/*（带 hash 的 JS/CSS）：cache-first —— 发版即换 hash，永久缓存安全
+ *  - /data/*（JSON 数据）：stale-while-revalidate —— 先回缓存做到零等待，后台刷新供下次使用
+ *  - 页面导航（HTML）：network-first —— 始终优先最新，断网/超时回退缓存
+ *  - 带查询串的导航请求（门禁/调试 stamp）直连网络，完全不经过 SW
+ * 版本升级：改 VER 即弃用全部旧缓存
+ */
+const VER = 'v1'
+const C_ASSETS = `rd-assets-${VER}`
+const C_PAGES = `rd-pages-${VER}`
+const C_DATA = `rd-data-${VER}`
+const KEEP = [C_ASSETS, C_PAGES, C_DATA]
+
+self.addEventListener('install', () => self.skipWaiting())
+
+self.addEventListener('activate', e => e.waitUntil((async () => {
+  const names = await caches.keys()
+  await Promise.all(names.filter(n => !KEEP.includes(n)).map(n => caches.delete(n)))
+  await self.clients.claim()
+})()))
+
+self.addEventListener('fetch', e => {
+  const req = e.request
+  if (req.method !== 'GET') return
+  let url
+  try { url = new URL(req.url) } catch { return }
+  if (url.origin !== location.origin) return
+
+  /* 门禁/调试：带查询串的页面请求直连网络，不读写缓存（避免 stamp 校验读到旧行） */
+  if (req.mode === 'navigate' && url.search) { e.respondWith(fetch(req)); return }
+  if (url.search) return
+
+  if (url.pathname.includes('/assets/')) {
+    e.respondWith(caches.open(C_ASSETS).then(async c => {
+      const hit = await c.match(req)
+      if (hit) return hit
+      const res = await fetch(req)
+      if (res && res.ok) c.put(req, res.clone())
+      return res
+    }))
+    return
+  }
+
+  if (url.pathname.includes('/data/')) {
+    e.respondWith(caches.open(C_DATA).then(async c => {
+      const hit = await c.match(req)
+      const net = fetch(req).then(res => {
+        if (res && res.ok) c.put(req, res.clone())
+        return res
+      }).catch(() => hit)
+      return hit || net
+    }))
+    return
+  }
+
+  if (req.mode === 'navigate') {
+    e.respondWith((async () => {
+      try {
+        const res = await fetch(req)
+        if (res && res.ok) {
+          const c = await caches.open(C_PAGES)
+          c.put(req, res.clone())
+        }
+        return res
+      } catch {
+        const hit = await caches.match(req)
+        if (hit) return hit
+        return new Response('离线且无缓存', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
+      }
+    })())
+  }
+})
