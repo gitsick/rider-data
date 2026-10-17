@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 01:15:31",
+  "generatedAt": "2026-10-17 01:38:42",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -93,8 +93,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 09:15:11",
-        "durationSec": 22.2,
+        "finishedAt": "2026-10-17 09:29:39",
+        "durationSec": 2.1,
         "note": ""
       },
       "monitor": {
@@ -137,12 +137,24 @@
           "finishedAt": "2026-10-17 09:15:11",
           "durationSec": 22.2,
           "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 09:25:57",
+          "durationSec": 1.1,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 09:29:39",
+          "durationSec": 2.1,
+          "note": ""
         }
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 09:15:11",
+    "auditedAt": "2026-10-17 09:29:39",
     "status": "PASS",
     "pass": 18,
     "warn": 0,
@@ -186,7 +198,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: da02bf2 2026-10-17 09:01:15 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 4dde863 2026-10-17 09:20:33 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -231,7 +243,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0.2h 前）"
+        "msg": "[rider-hourly] 运行正常（0.4h 前）"
       },
       {
         "level": "PASS",
@@ -259,6 +271,14 @@
       {
         "auditedAt": "2026-10-17 09:15:11",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 09:25:57",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 09:29:39",
+        "status": "PASS"
       }
     ]
   },
@@ -273,19 +293,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 09:15:11）"
+      "detail": "审计 PASS（2026-10-17 09:29:39）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 9.3h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 9.7h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0.4h 前刷新"
     }
   ],
   "projects": [
@@ -318,7 +338,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 9.3,
+      "ageHours": 9.7,
       "stale": false,
       "staleThreshold": 26
     },
@@ -341,7 +361,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 23.1,
+      "ageHours": 23.5,
       "stale": false,
       "staleThreshold": 26
     }
@@ -373,6 +393,68 @@
       "desc": "全站访问记录"
     }
   ],
+  "teamflow": {
+    "roles": [
+      {
+        "id": "planner",
+        "name": "规划（PRD）",
+        "duty": "需求澄清、口径确认、验收标准定义；产出需求文档与验收清单",
+        "deliverable": "需求.md（含验收标准）",
+        "watch": "开发运行目录留痕",
+        "anchor": "sec-teamflow"
+      },
+      {
+        "id": "architect",
+        "name": "架构/技术方案",
+        "duty": "分层选型（改哪层、动哪些模块）、路径纪律、迁移与回滚方案",
+        "deliverable": "方案.md（含变更清单与回滚点）",
+        "watch": "方案随运行目录留痕",
+        "anchor": "sec-teamflow"
+      },
+      {
+        "id": "dev",
+        "name": "开发",
+        "duty": "按方案实现；遵守配置单源/相对定位/口径收编纪律",
+        "deliverable": "代码 + 变更记录.md",
+        "watch": "开发期任务运行状态",
+        "anchor": "sec-tasks"
+      },
+      {
+        "id": "qa",
+        "name": "测试/QA",
+        "duty": "回归门禁：考核构建自测（selftest 28 用例）、数据检核（双恒等式）、页面构建通过",
+        "deliverable": "回归结论（ALL PASS / 不通过项）",
+        "watch": "部署审计 + 数据新鲜度",
+        "anchor": "sec-audit"
+      },
+      {
+        "id": "ops",
+        "name": "发布/运维",
+        "duty": "走 deploy 唯一入口上线；调度任务登记与留痕；断链排查（run_task -History/-Log）",
+        "deliverable": "部署 HEAD + 调度留痕",
+        "watch": "分层健康灯：调度/部署层状态",
+        "anchor": "sec-tasks"
+      },
+      {
+        "id": "auditor",
+        "name": "审计/监控",
+        "duty": "只读体检（审计 7 项）、运行预期比对（应跑未跑）、产物新鲜度预警",
+        "deliverable": "audit_last.json + 工作台预警",
+        "watch": "审计卡片 + 顶部预警面板",
+        "anchor": "sec-audit"
+      }
+    ],
+    "stages": [
+      "需求澄清(规划)",
+      "方案(架构)",
+      "实现(开发)",
+      "回归(测试)",
+      "上线(发布/运维)",
+      "观察(审计/监控)"
+    ],
+    "runs": []
+  },
+  "alerts": [],
   "knowledge": [
     {
       "name": "架构与部署规范",
