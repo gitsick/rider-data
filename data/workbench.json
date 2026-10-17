@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 13:00:45",
+  "generatedAt": "2026-10-17 14:00:56",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -186,8 +186,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 20:01:23",
-        "durationSec": 84,
+        "finishedAt": "2026-10-17 21:01:18",
+        "durationSec": 78,
         "note": ""
       },
       "monitor": {
@@ -291,6 +291,13 @@
           "durationSec": 84,
           "note": "",
           "dur": 84
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 21:01:18",
+          "durationSec": 78,
+          "note": "",
+          "dur": 78
         }
       ],
       "durTrend": [
@@ -299,7 +306,8 @@
         373,
         90,
         191,
-        84
+        84,
+        78
       ]
     },
     {
@@ -604,7 +612,7 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 20:57:35",
+    "auditedAt": "2026-10-17 21:44:00",
     "status": "PASS",
     "pass": 31,
     "warn": 1,
@@ -643,7 +651,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: eaed8db 2026-10-17 20:54:56 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: afeefd1 2026-10-17 21:41:22 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -653,17 +661,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（6.5 小时前生成）"
+        "msg": "单文件产物存在（7.2 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（69.3 小时前生成）"
+        "msg": "单文件产物存在（70 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0.9 小时前已刷新"
+        "msg": "workbench.json 0.7 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -733,7 +741,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0.9h 前）"
+        "msg": "[rider-hourly] 运行正常（0.7h 前）"
       },
       {
         "level": "PASS",
@@ -772,14 +780,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 16:10:44",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 17:06:22",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 17:18:14",
         "status": "PASS"
@@ -827,6 +827,14 @@
       {
         "auditedAt": "2026-10-17 20:57:35",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 21:29:27",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 21:44:00",
+        "status": "PASS"
       }
     ]
   },
@@ -841,13 +849,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 20:57:35）"
+      "detail": "审计 PASS（2026-10-17 21:44:00）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 6.5h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.9h 前"
     },
     {
       "layer": "渲染层",
@@ -886,7 +894,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 6.5,
+      "ageHours": 7.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -895,21 +903,21 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-17 01:58",
-          "size": 87387
+          "mtime": "2026-10-17 13:06",
+          "size": 72175
+        },
+        {
+          "name": "sep.json",
+          "mtime": "2026-10-17 13:06",
+          "size": 83480
         },
         {
           "name": "targets-oct.json",
           "mtime": "2026-10-15 03:04",
           "size": 4946
-        },
-        {
-          "name": "sep.json",
-          "mtime": "2026-10-13 15:46",
-          "size": 109686
         }
       ],
-      "ageHours": 11,
+      "ageHours": 0.9,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1016,7 +1024,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-17 12:58:53",
+        "latestAt": "2026-10-17 14:00:29",
         "ageH": 0
       }
     ]
@@ -1024,7 +1032,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-10-17 20:57:35）",
+      "text": "审计有 1 项警告（2026-10-17 21:44:00）",
       "anchor": "sec-audit"
     }
   ],
