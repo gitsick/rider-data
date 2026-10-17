@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generatedAt": "2026-10-16T02:11:02.528Z",
+  "generatedAt": "2026-10-17T01:58:52.654Z",
   "source": "src/data/data-2026-10.js + src/config/config-2026-10.js（迁移期抽取，只读）"
  },
  "dataDates": [
@@ -17,9 +17,10 @@
   "10-11",
   "10-12",
   "10-13",
-  "10-14"
+  "10-14",
+  "10-15"
  ],
- "currentDate": "10-14",
+ "currentDate": "10-15",
  "currentCity": "泰兴",
  "cityProfile": {
   "泰兴": {
@@ -570,6 +571,44 @@
     "ymCq": 100,
     "pzAct": null
    }
+  },
+  "10-15": {
+   "泰兴": {
+    "twRate": 99.16,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 41.53,
+    "twNum": 15753,
+    "twDen": 15886,
+    "ymRate": 4528.21,
+    "ymCq": 97.35,
+    "pzAct": null
+   },
+   "诸暨": {
+    "twRate": 99.26,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 40.16,
+    "twNum": 43551,
+    "twDen": 43877,
+    "ymRate": 1816.47,
+    "ymCq": 96.31,
+    "pzAct": null
+   },
+   "响水": {
+    "twRate": 99.05,
+    "tyScore": null,
+    "hdRate": null,
+    "wjRate": null,
+    "ctRate": 38.12,
+    "twNum": 6585,
+    "twDen": 6648,
+    "ymRate": 14782,
+    "ymCq": 100,
+    "pzAct": null
+   }
   }
  },
  "dailyExtra": {
@@ -1012,6 +1051,38 @@
     "jmTotal": 80,
     "qkKAStores": 13,
     "qkKAWb": 89,
+    "qkKAOntime": 100
+   }
+  },
+  "10-15": {
+   "泰兴": {
+    "ymRate": 4528.21,
+    "ymCq": 97.35,
+    "gzYm": 83.49,
+    "gzJm": 100,
+    "jmDb": 183,
+    "jmTotal": 191,
+    "qkKAStores": 47,
+    "qkKAWb": 379,
+    "qkKAOntime": 99.23
+   },
+   "诸暨": {
+    "ymRate": 1816.47,
+    "ymCq": 96.31,
+    "gzYm": 80.89,
+    "gzJm": 99.28,
+    "jmDb": 393,
+    "jmTotal": 417
+   },
+   "响水": {
+    "ymRate": 14781.97,
+    "ymCq": 100,
+    "gzYm": 100,
+    "gzJm": 100,
+    "jmDb": 69,
+    "jmTotal": 78,
+    "qkKAStores": 14,
+    "qkKAWb": 81,
     "qkKAOntime": 100
    }
   }
@@ -1808,66 +1879,98 @@
      "done": 15955,
      "push": 16561
     }
+   },
+   "10-15": {
+    "响水": {
+     "csAll": 0.85,
+     "csIn": 0.815,
+     "csOut": 1.033,
+     "wIn": 83.8,
+     "xj": 0,
+     "qx": 0.103,
+     "done": 6585,
+     "push": 6793
+    },
+    "泰兴": {
+     "csAll": 1.219,
+     "csIn": 0.952,
+     "csOut": 2.554,
+     "wIn": 83.3,
+     "xj": 0,
+     "qx": 0.0244,
+     "done": 15753,
+     "push": 16415
+    },
+    "诸暨": {
+     "csAll": 2.11,
+     "csIn": 1.845,
+     "csOut": 3.556,
+     "wIn": 84.5,
+     "xj": 0,
+     "qx": 0.0861,
+     "done": 44169,
+     "push": 46471
+    }
    }
   },
   "mtd": {
    "响水": {
-    "csAll": 0.698,
-    "csIn": 0.597,
-    "csOut": 1.345,
-    "wIn": 86.5,
-    "xj": 0.0117,
-    "qx": 0.026,
-    "days": 14
+    "csAll": 0.706,
+    "csIn": 0.608,
+    "csOut": 1.326,
+    "wIn": 86.4,
+    "xj": 0.0111,
+    "qx": 0.03,
+    "days": 15
    },
    "诸暨": {
-    "csAll": 4.022,
-    "csIn": 3.485,
-    "csOut": 7.106,
-    "wIn": 85.2,
-    "xj": 0.0227,
-    "qx": 0.1108,
-    "days": 14
+    "csAll": 3.9,
+    "csIn": 3.381,
+    "csOut": 6.87,
+    "wIn": 85.1,
+    "xj": 0.0213,
+    "qx": 0.1093,
+    "days": 15
    },
    "泰兴": {
-    "csAll": 2.3,
-    "csIn": 2.021,
-    "csOut": 3.743,
+    "csAll": 2.24,
+    "csIn": 1.963,
+    "csOut": 3.676,
     "wIn": 83.8,
-    "xj": 0.0123,
-    "qx": 0.0318,
-    "days": 14
+    "xj": 0.0116,
+    "qx": 0.0314,
+    "days": 15
    }
   }
  },
  "hdCalc": {
   "mtd": {
    "响水": {
-    "dbAvg": 54.6,
-    "heAvg": 25.1,
+    "dbAvg": 55.6,
+    "heAvg": 23.7,
     "gfAvg": 0.1,
-    "totAvg": 82.8,
-    "dbLast": 75,
-    "totLast": 80,
-    "days": 14
+    "totAvg": 82.5,
+    "dbLast": 69,
+    "totLast": 78,
+    "days": 15
    },
    "泰兴": {
-    "dbAvg": 133.3,
-    "heAvg": 60.2,
-    "gfAvg": 0.4,
-    "totAvg": 196.1,
+    "dbAvg": 136.6,
+    "heAvg": 56.4,
+    "gfAvg": 0.5,
+    "totAvg": 195.8,
     "dbLast": 183,
-    "totLast": 190,
-    "days": 14
+    "totLast": 191,
+    "days": 15
    },
    "诸暨": {
-    "dbAvg": 285,
-    "heAvg": 126,
-    "gfAvg": 0.6,
-    "totAvg": 421.1,
-    "dbLast": 401,
-    "totLast": 419,
-    "days": 14
+    "dbAvg": 292.2,
+    "heAvg": 118.3,
+    "gfAvg": 0.7,
+    "totAvg": 420.9,
+    "dbLast": 393,
+    "totLast": 417,
+    "days": 15
    }
   }
  },
