@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 14:19:58",
+  "generatedAt": "2026-10-17 15:01:01",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -620,10 +620,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 22:06:26",
+    "auditedAt": "2026-10-17 22:37:45",
     "status": "PASS",
-    "pass": 29,
-    "warn": 3,
+    "pass": 31,
+    "warn": 1,
     "fail": 0,
     "checks": [
       {
@@ -642,9 +642,9 @@
         "msg": "publish_file.py 在位"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "互斥锁",
-        "msg": "锁存在（2.5 分钟前创建）——可能有部署进行中，或上次异常未释放（10 分钟后可自动接管/手动删除）"
+        "msg": "无残留锁"
       },
       {
         "level": "PASS",
@@ -652,14 +652,14 @@
         "msg": "工作区干净"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "仓库漂移",
-        "msg": "领先远端 1 个提交，落后 0 个（领先=待推送/待补发；落后=需 pull）"
+        "msg": "与远端 main 同步"
       },
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: f64e915 2026-10-17 22:03:31 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: bd2d70f 2026-10-17 22:20:28 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -669,17 +669,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（7.6 小时前生成）"
+        "msg": "单文件产物存在（8.1 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（70.4 小时前生成）"
+        "msg": "单文件产物存在（70.9 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0.1 小时前已刷新"
+        "msg": "workbench.json 0.3 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -749,7 +749,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（1.1h 前）"
+        "msg": "[rider-hourly] 运行正常（0.5h 前）"
       },
       {
         "level": "PASS",
@@ -764,7 +764,7 @@
       {
         "level": "PASS",
         "item": "发布补发",
-        "msg": "滞留的 1 个提交已自动补推成功"
+        "msg": "本地与 origin/main 一致，无滞留提交"
       },
       {
         "level": "PASS",
@@ -788,18 +788,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 17:47:00",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 18:18:27",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 18:24:20",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 18:28:44",
         "status": "PASS"
@@ -843,6 +831,18 @@
       {
         "auditedAt": "2026-10-17 22:06:26",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 22:23:06",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 22:30:50",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 22:37:45",
+        "status": "PASS"
       }
     ]
   },
@@ -857,25 +857,35 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 22:06:26）"
+      "detail": "审计 PASS（2026-10-17 22:37:45）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 1.2h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.3h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
     {
       "name": "通用运力监控",
       "recent": [
+        {
+          "name": "capacity_monitor_latest.html",
+          "mtime": "2026-10-17 14:55",
+          "size": 2665803
+        },
+        {
+          "name": "capacity_breakdown_dashboard_2026-10-15.html",
+          "mtime": "2026-10-17 14:55",
+          "size": 2665803
+        },
         {
           "name": "订单运力分析_2026-10-15.xlsx",
           "mtime": "2026-10-17 06:33",
@@ -890,19 +900,9 @@
           "name": "时段运力拆解_2026-10-15.xlsx",
           "mtime": "2026-10-17 06:33",
           "size": 194322
-        },
-        {
-          "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-17 06:29",
-          "size": 2663367
-        },
-        {
-          "name": "capacity_breakdown_dashboard_2026-10-15.html",
-          "mtime": "2026-10-17 06:29",
-          "size": 2663367
         }
       ],
-      "ageHours": 7.8,
+      "ageHours": 0.1,
       "stale": false,
       "staleThreshold": 26
     },
@@ -925,7 +925,7 @@
           "size": 4946
         }
       ],
-      "ageHours": 1.2,
+      "ageHours": 1.9,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1032,15 +1032,15 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-17 14:00:29",
-        "ageH": 0.3
+        "latestAt": "2026-10-17 14:37:19",
+        "ageH": 0.4
       }
     ]
   },
   "alerts": [
     {
       "level": "WARN",
-      "text": "审计有 3 项警告（2026-10-17 22:06:26）",
+      "text": "审计有 1 项警告（2026-10-17 22:37:45）",
       "anchor": "sec-audit"
     }
   ],
