@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 06:43:59",
+  "generatedAt": "2026-10-17 07:01:09",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -262,8 +262,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 14:42:58",
-        "durationSec": 3.3,
+        "finishedAt": "2026-10-17 14:58:26",
+        "durationSec": 7.1,
         "note": ""
       },
       "monitor": {
@@ -275,27 +275,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id deploy-audit）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 09:59:42",
-          "durationSec": 2,
-          "note": "",
-          "dur": 2
-        },
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 10:10:20",
-          "durationSec": 22.3,
-          "note": "",
-          "dur": 22
-        },
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 10:13:41",
-          "durationSec": 22.1,
-          "note": "",
-          "dur": 22
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 10:37:27",
@@ -372,12 +351,30 @@
           "durationSec": 3.3,
           "note": "",
           "dur": 3
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 14:44:14",
+          "durationSec": 3.2,
+          "note": "",
+          "dur": 3
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 14:50:51",
+          "durationSec": 23.7,
+          "note": "",
+          "dur": 24
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 14:58:26",
+          "durationSec": 7.1,
+          "note": "",
+          "dur": 7
         }
       ],
       "durTrend": [
-        2,
-        22,
-        22,
         20,
         2,
         2,
@@ -388,12 +385,15 @@
         24,
         3,
         3,
-        3
+        3,
+        3,
+        24,
+        7
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 14:42:58",
+    "auditedAt": "2026-10-17 14:58:26",
     "status": "PASS",
     "pass": 24,
     "warn": 0,
@@ -432,7 +432,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 5f44fdc 2026-10-17 14:41:02 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 15aa513 2026-10-17 14:44:07 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -442,17 +442,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（0.2 小时前生成）"
+        "msg": "单文件产物存在（0.5 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（63 小时前生成）"
+        "msg": "单文件产物存在（63.3 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0.1 小时前已刷新"
+        "msg": "workbench.json 0 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -507,7 +507,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0.7h 前）"
+        "msg": "[rider-hourly] 运行正常（0.9h 前）"
       },
       {
         "level": "PASS",
@@ -521,18 +521,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 11:47:07",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 12:02:56",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 12:03:42",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 12:04:21",
         "status": "PASS"
@@ -576,6 +564,18 @@
       {
         "auditedAt": "2026-10-17 14:42:58",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 14:44:14",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 14:50:51",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 14:58:26",
+        "status": "PASS"
       }
     ]
   },
@@ -590,13 +590,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 14:42:58）"
+      "detail": "审计 PASS（2026-10-17 14:58:26）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.5h 前"
     },
     {
       "layer": "渲染层",
@@ -635,7 +635,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 0.2,
+      "ageHours": 0.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -658,7 +658,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 4.8,
+      "ageHours": 5,
       "stale": false,
       "staleThreshold": 26
     }
@@ -765,8 +765,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-17 06:39:30",
-        "ageH": 0.1
+        "latestAt": "2026-10-17 06:50:26",
+        "ageH": 0.2
       }
     ]
   },
