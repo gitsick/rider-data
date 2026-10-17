@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 09:04:35",
+  "generatedAt": "2026-10-17 09:46:30",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -184,8 +184,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 16:08:25",
-        "durationSec": 505,
+        "finishedAt": "2026-10-17 17:06:12",
+        "durationSec": 373,
         "note": ""
       },
       "monitor": {
@@ -261,11 +261,19 @@
           "durationSec": 505,
           "note": "",
           "dur": 505
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 17:06:12",
+          "durationSec": 373,
+          "note": "",
+          "dur": 373
         }
       ],
       "durTrend": [
         188,
-        505
+        505,
+        373
       ]
     },
     {
@@ -279,8 +287,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 16:10:44",
-        "durationSec": 3.5,
+        "finishedAt": "2026-10-17 17:21:47",
+        "durationSec": 3.6,
         "note": ""
       },
       "monitor": {
@@ -494,6 +502,27 @@
           "durationSec": 3.5,
           "note": "",
           "dur": 4
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 17:06:22",
+          "durationSec": 3.2,
+          "note": "",
+          "dur": 3
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 17:18:14",
+          "durationSec": 3,
+          "note": "",
+          "dur": 3
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 17:21:47",
+          "durationSec": 3.6,
+          "note": "",
+          "dur": 4
         }
       ],
       "durTrend": [
@@ -525,14 +554,17 @@
         24,
         7,
         3,
+        4,
+        3,
+        3,
         4
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 16:10:44",
+    "auditedAt": "2026-10-17 17:21:47",
     "status": "PASS",
-    "pass": 25,
+    "pass": 26,
     "warn": 0,
     "fail": 0,
     "checks": [
@@ -569,7 +601,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 8d68b27 2026-10-17 16:10:25 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 2ba1ba1 2026-10-17 17:05:55 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -579,17 +611,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（1.7 小时前生成）"
+        "msg": "单文件产物存在（2.9 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（64.5 小时前生成）"
+        "msg": "单文件产物存在（65.7 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 0.3 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -644,7 +676,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0h 前）"
+        "msg": "[rider-hourly] 运行正常（0.3h 前）"
       },
       {
         "level": "PASS",
@@ -660,21 +692,14 @@
         "level": "PASS",
         "item": "发布补发",
         "msg": "本地与 origin/main 一致，无滞留提交"
+      },
+      {
+        "level": "PASS",
+        "item": "日志清扫",
+        "msg": "清理 0 个超期留痕日志；history.jsonl 截尾 0 个任务（阈值 500 条/60 天）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 12:52:07",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 13:11:42",
-        "status": "FAIL"
-      },
-      {
-        "auditedAt": "2026-10-17 13:14:34",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 13:17:18",
         "status": "PASS"
@@ -718,6 +743,18 @@
       {
         "auditedAt": "2026-10-17 16:10:44",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 17:06:22",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 17:18:14",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 17:21:47",
+        "status": "PASS"
       }
     ]
   },
@@ -732,19 +769,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 16:10:44）"
+      "detail": "审计 PASS（2026-10-17 17:21:47）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 2.5h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 3.2h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0.4h 前刷新"
     }
   ],
   "projects": [
@@ -777,7 +814,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 2.5,
+      "ageHours": 3.2,
       "stale": false,
       "staleThreshold": 26
     },
@@ -800,7 +837,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 7.1,
+      "ageHours": 7.8,
       "stale": false,
       "staleThreshold": 26
     }
@@ -907,8 +944,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-17 08:11:04",
-        "ageH": 0.9
+        "latestAt": "2026-10-17 09:22:00",
+        "ageH": 0.4
       }
     ]
   },
