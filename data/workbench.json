@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-17 04:13:11",
+  "generatedAt": "2026-10-17 05:45:57",
   "tasks": [
     {
       "id": "kaohe-daily",
       "name": "履约考核看板刷新与备份",
       "type": "agent",
       "trigger": "每日 08:00",
-      "cwd": "F:\\work\\mtcapacity\\pro\\assessment",
+      "cwd": "F:\\work\\mtcapacity\\pro\\kaohe-daily",
       "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→deploy_pipeline.py --frontend→归档→第2期目标检测）",
       "note": "技能编排型任务，需浏览器 BI 登录态，由定时任务直接驱动",
       "last": {
@@ -24,6 +24,10 @@
         "overdue": false,
         "overdueText": ""
       },
+      "heal": {
+        "can": false,
+        "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id kaohe-daily -Record PASS 留痕"
+      },
       "history": [
         {
           "status": "PASS",
@@ -38,33 +42,50 @@
       "name": "新商评考核周报",
       "type": "agent",
       "trigger": "每日 08:30",
-      "cwd": "F:\\work\\mtcapacity\\pro\\xsp-review",
+      "cwd": "F:\\work\\mtcapacity\\pro\\xsp-weekly",
       "entry": "bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）",
       "note": "独立工作区，由定时任务直接驱动",
-      "last": null,
+      "last": {
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-10-17 13:40:09",
+        "durationSec": null,
+        "note": "13:4x 补跑完成：MTD 10-01~10-16 三城周报已生成（泰兴GTV同比+25.4%；响水-10.3%预警；诸暨完成率98.92%<99%）；悦跑出勤泰兴5天<90%"
+      },
       "monitor": {
         "cadence": "daily",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
-        "overdue": true,
-        "overdueText": "今日应跑（每日 08:30）但无任何留痕"
+        "overdue": false,
+        "overdueText": ""
       },
-      "history": []
+      "heal": {
+        "can": false,
+        "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id xsp-weekly -Record PASS 留痕"
+      },
+      "history": [
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 13:40:09",
+          "durationSec": null,
+          "note": "13:4x 补跑完成：MTD 10-01~10-16 三城周报已生成（泰兴GTV同比+25.4%；响水-10.3%预警；诸暨完成率98.92%<99%）；悦跑出勤泰兴5天<90%"
+        }
+      ]
     },
     {
       "id": "capacity-daily",
       "name": "通用运力监控每日刷新",
       "type": "command",
       "trigger": "每日 09:00",
-      "cwd": "F:\\work\\mtcapacity\\pro\\capacity-monitor",
+      "cwd": "F:\\work\\mtcapacity\\pro\\capacity-daily",
       "entry": "python daily_pipeline.py",
       "note": "八步管线：关键步骤2-7失败即停；步骤1/8失败仅告警；数据源未发布时用日期参数按最近可得日期重跑",
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 11:56:22",
-        "durationSec": 53.2,
+        "finishedAt": "2026-10-17 12:50:13",
+        "durationSec": 535.4,
         "note": ""
       },
       "monitor": {
@@ -74,6 +95,10 @@
         "expect": true,
         "overdue": false,
         "overdueText": ""
+      },
+      "heal": {
+        "can": true,
+        "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id capacity-daily）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
         {
@@ -111,6 +136,18 @@
           "finishedAt": "2026-10-17 11:56:22",
           "durationSec": 53.2,
           "note": ""
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-17 12:38:16",
+          "durationSec": 264.8,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 12:50:13",
+          "durationSec": 535.4,
+          "note": ""
         }
       ]
     },
@@ -119,21 +156,25 @@
       "name": "骑手解约数据检查与刷新",
       "type": "agent",
       "trigger": "每小时",
-      "cwd": "F:\\work\\mtcapacity\\pro\\rider-release",
+      "cwd": "F:\\work\\mtcapacity\\pro\\rider-hourly",
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每小时由定时任务直接驱动",
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 11:04:23",
+        "finishedAt": "2026-10-17 13:16:48",
         "durationSec": null,
-        "note": ""
+        "note": "13:16 手动复跑通过：问卷星登录态正常，华东1228/华南747无新增；13:00定时器失败系目录改名窗口期的自动化会话异常，脚本与工作区本身健康"
       },
       "monitor": {
         "cadence": "hourly",
         "expect": true,
         "overdue": false,
         "overdueText": ""
+      },
+      "heal": {
+        "can": false,
+        "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id rider-hourly -Record PASS 留痕"
       },
       "history": [
         {
@@ -159,6 +200,18 @@
           "finishedAt": "2026-10-17 11:04:23",
           "durationSec": null,
           "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 12:16:00",
+          "durationSec": null,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 13:16:48",
+          "durationSec": null,
+          "note": "13:16 手动复跑通过：问卷星登录态正常，华东1228/华南747无新增；13:00定时器失败系目录改名窗口期的自动化会话异常，脚本与工作区本身健康"
         }
       ]
     },
@@ -168,50 +221,24 @@
       "type": "command",
       "trigger": "手动 / 部署异常后",
       "cwd": "F:\\work\\mtcapacity",
-      "entry": "pwsh -NoProfile -File deploy\\audit.ps1",
+      "entry": "pwsh -NoProfile -File pro\\deploy-audit\\audit.ps1",
       "note": "只读体检 7 项：通道配置/双入口/互斥锁/仓库漂移/产物完整性/工作台数据新鲜度/调度配置",
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 11:09:04",
-        "durationSec": 2.4,
+        "finishedAt": "2026-10-17 13:22:08",
+        "durationSec": 23.7,
         "note": ""
       },
       "monitor": {
         "cadence": "manual",
         "expect": false
       },
+      "heal": {
+        "can": true,
+        "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id deploy-audit）；带日期参数的任务自动复用最近成功数据日期"
+      },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 01:29:57",
-          "durationSec": 22.2,
-          "note": ""
-        },
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 01:37:51",
-          "durationSec": 22.2,
-          "note": ""
-        },
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 01:43:35",
-          "durationSec": 1.9,
-          "note": ""
-        },
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 09:15:11",
-          "durationSec": 22.2,
-          "note": ""
-        },
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 09:25:57",
-          "durationSec": 1.1,
-          "note": ""
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:29:39",
@@ -265,21 +292,51 @@
           "finishedAt": "2026-10-17 11:09:04",
           "durationSec": 2.4,
           "note": ""
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-17 13:11:42",
+          "durationSec": 24.1,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 13:14:34",
+          "durationSec": 23.4,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 13:17:18",
+          "durationSec": 23.4,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 13:18:02",
+          "durationSec": 23.8,
+          "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 13:22:08",
+          "durationSec": 23.7,
+          "note": ""
         }
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 12:04:21",
+    "auditedAt": "2026-10-17 13:22:08",
     "status": "PASS",
-    "pass": 20,
+    "pass": 23,
     "warn": 2,
     "fail": 0,
     "checks": [
       {
         "level": "PASS",
         "item": "通道配置",
-        "msg": "配置可解析，default=rider-data，通道: rider-data, capacity-monitor, assessment-legacy-sep, assessment-legacy-oct"
+        "msg": "配置可解析，default=rider-data，通道: rider-data, capacity-monitor, assessment-legacy"
       },
       {
         "level": "PASS",
@@ -309,7 +366,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 3643877 2026-10-17 11:23:59 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: ebcf1e4 2026-10-17 12:13:50 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -318,8 +375,18 @@
       },
       {
         "level": "PASS",
+        "item": "capacity-monitor",
+        "msg": "单文件产物存在（0.7 小时前生成）"
+      },
+      {
+        "level": "PASS",
+        "item": "assessment-legacy",
+        "msg": "单文件产物存在（61.7 小时前生成）"
+      },
+      {
+        "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 0.1 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -344,7 +411,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[xsp-weekly] 今日应跑（每日 08:30）但尚无今日留痕——疑似断链，用 run_task.ps1 -History -Id xsp-weekly 排查"
+        "msg": "[xsp-weekly] 今日应跑（每日 08:30）但无今日成功留痕——疑似断链；command 型可用 run_task.ps1 -Auto 补跑，agent 型手动重跑后 -Record PASS 留痕"
       },
       {
         "level": "PASS",
@@ -357,9 +424,9 @@
         "msg": "[capacity-daily] 已关联定时器"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[capacity-daily] 定时器最近一次运行失败（3.1h 前）——排查自动化会话日志"
+        "msg": "[capacity-daily] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
       },
       {
         "level": "PASS",
@@ -372,9 +439,14 @@
         "msg": "[rider-hourly] 已关联定时器"
       },
       {
+        "level": "WARN",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 定时器最近一次运行失败（0.4h 前）——排查自动化会话日志"
+      },
+      {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（1h 前）"
+        "msg": "[rider-hourly] 运行正常（0.1h 前）"
       },
       {
         "level": "PASS",
@@ -388,34 +460,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 09:50:35",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 09:58:42",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 09:59:42",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 10:10:20",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 10:13:41",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 10:37:27",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 10:47:05",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 11:09:04",
         "status": "PASS"
@@ -443,6 +487,34 @@
       {
         "auditedAt": "2026-10-17 12:04:21",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 12:26:07",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 12:52:07",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 13:11:42",
+        "status": "FAIL"
+      },
+      {
+        "auditedAt": "2026-10-17 13:14:34",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 13:17:18",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 13:18:02",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 13:22:08",
+        "status": "PASS"
       }
     ]
   },
@@ -450,26 +522,26 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "WARN",
-      "detail": "3/4 任务正常 · 1 逾期"
+      "status": "PASS",
+      "detail": "4/4 任务正常"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 12:04:21）"
+      "detail": "审计 PASS（2026-10-17 13:22:08）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.3h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -478,31 +550,31 @@
       "recent": [
         {
           "name": "订单运力分析_2026-10-15.xlsx",
-          "mtime": "2026-10-17 03:55",
+          "mtime": "2026-10-17 04:45",
           "size": 22469
         },
         {
           "name": "悦跑排班差异_站点跟进清单_2026-10-15.xlsx",
-          "mtime": "2026-10-17 03:55",
+          "mtime": "2026-10-17 04:45",
           "size": 18693
         },
         {
           "name": "时段运力拆解_2026-10-15.xlsx",
-          "mtime": "2026-10-17 03:55",
+          "mtime": "2026-10-17 04:45",
           "size": 194320
         },
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-17 03:55",
+          "mtime": "2026-10-17 04:41",
           "size": 2663367
         },
         {
           "name": "capacity_breakdown_dashboard_2026-10-15.html",
-          "mtime": "2026-10-17 03:55",
+          "mtime": "2026-10-17 04:41",
           "size": 2663367
         }
       ],
-      "ageHours": 0.3,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26
     },
@@ -525,7 +597,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 2.2,
+      "ageHours": 3.8,
       "stale": false,
       "staleThreshold": 26
     }
@@ -633,12 +705,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30）但无任何留痕",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-17 12:04:21）",
+      "text": "审计有 2 项警告（2026-10-17 13:22:08）",
       "anchor": "sec-audit"
     }
   ],
