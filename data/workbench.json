@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 10:15:11",
+  "generatedAt": "2026-10-17 10:25:46",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -295,8 +295,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 17:47:00",
-        "durationSec": 3.4,
+        "finishedAt": "2026-10-17 18:18:27",
+        "durationSec": 3.1,
         "note": ""
       },
       "monitor": {
@@ -538,6 +538,13 @@
           "durationSec": 3.4,
           "note": "",
           "dur": 3
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 18:18:27",
+          "durationSec": 3.1,
+          "note": "",
+          "dur": 3
         }
       ],
       "durTrend": [
@@ -573,14 +580,15 @@
         3,
         3,
         4,
+        3,
         3
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 17:47:00",
+    "auditedAt": "2026-10-17 18:24:20",
     "status": "PASS",
-    "pass": 26,
+    "pass": 28,
     "warn": 0,
     "fail": 0,
     "checks": [
@@ -617,7 +625,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: b962161 2026-10-17 17:46:36 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: b07aabb 2026-10-17 18:15:16 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -627,17 +635,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（3.3 小时前生成）"
+        "msg": "单文件产物存在（3.9 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（66.1 小时前生成）"
+        "msg": "单文件产物存在（66.7 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 0.1 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -692,7 +700,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0.7h 前）"
+        "msg": "[rider-hourly] 运行正常（0.4h 前）"
       },
       {
         "level": "PASS",
@@ -713,17 +721,19 @@
         "level": "PASS",
         "item": "日志清扫",
         "msg": "清理 0 个超期留痕日志；history.jsonl 截尾 0 个任务（阈值 500 条/60 天）"
+      },
+      {
+        "level": "PASS",
+        "item": "编排完整性",
+        "msg": "[kaohe-daily] 10:30 发布自愈定时器在位且 ACTIVE（双探测兜底无断点）"
+      },
+      {
+        "level": "PASS",
+        "item": "编排完整性",
+        "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 13:18:02",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 13:22:08",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 13:46:19",
         "status": "PASS"
@@ -771,6 +781,14 @@
       {
         "auditedAt": "2026-10-17 17:47:00",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 18:18:27",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 18:24:20",
+        "status": "PASS"
       }
     ]
   },
@@ -785,19 +803,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 17:47:00）"
+      "detail": "审计 PASS（2026-10-17 18:24:20）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 3.7h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 3.9h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -830,7 +848,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 3.7,
+      "ageHours": 3.9,
       "stale": false,
       "staleThreshold": 26
     },
@@ -853,7 +871,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 8.3,
+      "ageHours": 8.4,
       "stale": false,
       "staleThreshold": 26
     }
@@ -960,8 +978,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-17 09:47:01",
-        "ageH": 0.5
+        "latestAt": "2026-10-17 10:18:40",
+        "ageH": 0.1
       }
     ]
   },
