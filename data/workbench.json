@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 05:46:57",
+  "generatedAt": "2026-10-17 05:54:59",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -7,7 +7,7 @@
       "type": "agent",
       "trigger": "每日 08:00",
       "cwd": "F:\\work\\mtcapacity\\pro\\kaohe-daily",
-      "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→deploy_pipeline.py --frontend→归档→第2期目标检测）",
+      "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）",
       "note": "技能编排型任务，需浏览器 BI 登录态，由定时任务直接驱动",
       "last": {
         "status": "PASS",
@@ -535,7 +535,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 1h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 1.2h 前"
     },
     {
       "layer": "渲染层",
@@ -574,7 +574,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 1,
+      "ageHours": 1.2,
       "stale": false,
       "staleThreshold": 26
     },
@@ -597,7 +597,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 3.8,
+      "ageHours": 3.9,
       "stale": false,
       "staleThreshold": 26
     }
@@ -700,7 +700,14 @@
       "上线(发布/运维)",
       "观察(审计/监控)"
     ],
-    "runs": []
+    "runs": [
+      {
+        "name": "20261017-efficiency-naming",
+        "files": 3,
+        "latestAt": "2026-10-17 05:54:21",
+        "ageH": 0
+      }
+    ]
   },
   "alerts": [
     {
