@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 11:20:34",
+  "generatedAt": "2026-10-17 11:52:45",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -596,10 +596,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 19:04:35",
+    "auditedAt": "2026-10-17 19:37:02",
     "status": "PASS",
-    "pass": 29,
-    "warn": 0,
+    "pass": 31,
+    "warn": 1,
     "fail": 0,
     "checks": [
       {
@@ -635,7 +635,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 34b0058 2026-10-17 19:03:33 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: f967bb7 2026-10-17 19:20:40 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -645,17 +645,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（4.6 小时前生成）"
+        "msg": "单文件产物存在（5.1 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（67.4 小时前生成）"
+        "msg": "单文件产物存在（67.9 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 0.3 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -670,12 +670,22 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（10/17/2026 08:48:35），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[kaohe-daily] 今日已运行"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[xsp-weekly] 已关联定时器"
+      },
+      {
+        "level": "WARN",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 今日有成功留痕但定时器 lastRunAt 停在 10/16/2026 09:04:31 —— 调度器状态时间戳陈旧，耗时折算将失效（不影响执行与告警，建议复查该定时器会话写入）"
       },
       {
         "level": "PASS",
@@ -700,6 +710,11 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[capacity-daily] 定时器状态时间戳新鲜（10/17/2026 09:00:01），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[capacity-daily] 今日已运行"
       },
       {
@@ -710,7 +725,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0h 前）"
+        "msg": "[rider-hourly] 运行正常（0.6h 前）"
       },
       {
         "level": "PASS",
@@ -749,14 +764,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 14:44:14",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-17 14:50:51",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 14:58:26",
         "status": "PASS"
@@ -804,6 +811,14 @@
       {
         "auditedAt": "2026-10-17 19:04:35",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 19:34:04",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 19:37:02",
+        "status": "PASS"
       }
     ]
   },
@@ -818,19 +833,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 19:04:35）"
+      "detail": "审计 PASS（2026-10-17 19:37:02）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 4.8h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 5.3h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0.5h 前刷新"
     }
   ],
   "projects": [
@@ -863,7 +878,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 4.8,
+      "ageHours": 5.3,
       "stale": false,
       "staleThreshold": 26
     },
@@ -886,7 +901,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 9.4,
+      "ageHours": 9.9,
       "stale": false,
       "staleThreshold": 26
     }
@@ -993,12 +1008,18 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-17 11:04:46",
-        "ageH": 0.3
+        "latestAt": "2026-10-17 11:40:51",
+        "ageH": 0.2
       }
     ]
   },
-  "alerts": [],
+  "alerts": [
+    {
+      "level": "WARN",
+      "text": "审计有 1 项警告（2026-10-17 19:37:02）",
+      "anchor": "sec-audit"
+    }
+  ],
   "knowledge": [
     {
       "name": "架构与部署规范",
