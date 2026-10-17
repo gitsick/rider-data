@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 05:54:59",
+  "generatedAt": "2026-10-17 06:01:02",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -226,7 +226,7 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 13:46:19",
+        "finishedAt": "2026-10-17 13:56:36",
         "durationSec": 3.2,
         "note": ""
       },
@@ -239,12 +239,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id deploy-audit）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 09:50:35",
-          "durationSec": 2.2,
-          "note": ""
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:58:42",
@@ -322,12 +316,18 @@
           "finishedAt": "2026-10-17 13:46:19",
           "durationSec": 3.2,
           "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 13:56:36",
+          "durationSec": 3.2,
+          "note": ""
         }
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 13:46:19",
+    "auditedAt": "2026-10-17 13:56:36",
     "status": "PASS",
     "pass": 24,
     "warn": 1,
@@ -366,7 +366,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: f3b130e 2026-10-17 13:46:05 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 8f1bfd7 2026-10-17 13:56:21 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -376,12 +376,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（1.1 小时前生成）"
+        "msg": "单文件产物存在（1.3 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（62.1 小时前生成）"
+        "msg": "单文件产物存在（62.3 小时前生成）"
       },
       {
         "level": "PASS",
@@ -441,12 +441,12 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器最近一次运行失败（0.8h 前）——排查自动化会话日志"
+        "msg": "[rider-hourly] 定时器最近一次运行失败（0.9h 前）——排查自动化会话日志"
       },
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 运行正常（0.5h 前）"
+        "msg": "[rider-hourly] 运行正常（0.7h 前）"
       },
       {
         "level": "PASS",
@@ -460,10 +460,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 11:24:41",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 11:46:15",
         "status": "FAIL"
@@ -515,6 +511,10 @@
       {
         "auditedAt": "2026-10-17 13:46:19",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 13:56:36",
+        "status": "PASS"
       }
     ]
   },
@@ -529,19 +529,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 13:46:19）"
+      "detail": "审计 PASS（2026-10-17 13:56:36）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 1.2h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 1.3h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -574,7 +574,7 @@
           "size": 2663367
         }
       ],
-      "ageHours": 1.2,
+      "ageHours": 1.3,
       "stale": false,
       "staleThreshold": 26
     },
@@ -597,7 +597,7 @@
           "size": 109686
         }
       ],
-      "ageHours": 3.9,
+      "ageHours": 4,
       "stale": false,
       "staleThreshold": 26
     }
@@ -704,7 +704,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-17 05:54:21",
+        "latestAt": "2026-10-17 06:00:57",
         "ageH": 0
       }
     ]
@@ -712,7 +712,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-10-17 13:46:19）",
+      "text": "审计有 1 项警告（2026-10-17 13:56:36）",
       "anchor": "sec-audit"
     }
   ],
