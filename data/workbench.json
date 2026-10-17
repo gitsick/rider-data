@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17 01:58:52",
+  "generatedAt": "2026-10-17 02:01:00",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -9,12 +9,29 @@
       "cwd": "F:\\work\\mtcapacity\\pro\\assessment",
       "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→deploy_pipeline.py --frontend→归档→第2期目标检测）",
       "note": "技能编排型任务，需浏览器 BI 登录态，由定时任务直接驱动",
-      "last": null,
+      "last": {
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-10-17 10:00:03",
+        "durationSec": null,
+        "note": ""
+      },
       "monitor": {
         "cadence": "daily",
-        "expect": true
+        "expectHour": 8,
+        "doneToday": true,
+        "expect": true,
+        "overdue": false,
+        "overdueText": ""
       },
-      "history": []
+      "history": [
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 10:00:03",
+          "durationSec": null,
+          "note": ""
+        }
+      ]
     },
     {
       "id": "xsp-weekly",
@@ -93,8 +110,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 09:58:42",
-        "durationSec": 2.3,
+        "finishedAt": "2026-10-17 09:59:42",
+        "durationSec": 2,
         "note": ""
       },
       "monitor": {
@@ -161,12 +178,18 @@
           "finishedAt": "2026-10-17 09:58:42",
           "durationSec": 2.3,
           "note": ""
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-17 09:59:42",
+          "durationSec": 2,
+          "note": ""
         }
       ]
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-17 09:58:42",
+    "auditedAt": "2026-10-17 09:59:42",
     "status": "PASS",
     "pass": 18,
     "warn": 0,
@@ -210,7 +233,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 644639f 2026-10-17 09:55:12 +0800 Deploy: legacy/delivery-assessment-dashboard.html 数据更新至 10-17"
+        "msg": "最新提交: 5649d3b 2026-10-17 09:59:01 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -220,7 +243,7 @@
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0.3 小时前已刷新"
+        "msg": "workbench.json 0 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -299,6 +322,10 @@
       {
         "auditedAt": "2026-10-17 09:58:42",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-17 09:59:42",
+        "status": "PASS"
       }
     ]
   },
@@ -313,7 +340,7 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-17 09:58:42）"
+      "detail": "审计 PASS（2026-10-17 09:59:42）"
     },
     {
       "layer": "项目层",
