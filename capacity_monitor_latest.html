@@ -77,10 +77,11 @@ details[open] summary { border-bottom:1px solid #eee; }
 .bar
 .stickyhead { position:sticky; top:42px; z-index:900; }
 @media(max-width:640px) { .stickyhead { top:38px; } }
-.topnav { background:rgba(27,34,51,.92); border-radius:0; padding:7px 14px 5px; display:flex; gap:8px; flex-wrap:wrap; box-shadow:0 2px 6px rgba(0,0,0,.18); }
-.topnav a { color:#b9c4d6; font-size:13px; text-decoration:none; padding:3px 10px; border-radius:999px; transition:all .15s; }
+.topnav { background:rgba(27,34,51,.92); border-radius:0; padding:6px 12px 4px; display:flex; gap:5px; flex-wrap:wrap; align-items:center; box-shadow:0 2px 6px rgba(0,0,0,.18); }
+.topnav a { color:#b9c4d6; font-size:12.5px; text-decoration:none; padding:3px 9px; border-radius:999px; transition:all .15s; white-space:nowrap; }
 .topnav a:hover { background:rgba(255,255,255,.10); color:#ffc300; }
 .topnav a.ext { color:#ffc300; opacity:.85; }
+.topnav .exts { margin-left:auto; display:flex; gap:5px; flex-wrap:wrap; } /* R59：外链组靠右，避免窄幅时孤行 */
 .regbar { background:#fff; border:1px solid #dfe6ef; border-top:none; border-radius:0 0 8px 8px; padding:8px 14px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; box-shadow:0 2px 6px rgba(0,0,0,.08); }
 .regbar .rl { font-size:12px; color:#888; font-weight:700; }
 .regbar .rl.dim { color:#bbb; font-weight:400; }
@@ -211,9 +212,9 @@ details>div,.scroll{contain:layout style}
 <div class="stickyhead">
 <div class="topnav">
   <a href="#sec0">⓪ 区域总览</a><a href="#sec1">① 走势与承托</a><a href="#sec2">② 排班出勤对照</a><a href="#sec3">③ 小时×城市</a><a href="#sec4">④ 班次×城市</a><a href="#sec5">⑤ 小时×站点</a><a href="#sec6">⑥ 班次×站点</a><a href="#sec7">⑦ KA品牌</a><a href="#sec8">⑧ 数据检核</a>
-  <a class="ext" href="https://peisong.meituan.com/rider/schedule/management" target="_blank">↗ 排班管理</a>
+  <span class="exts"><a class="ext" href="https://peisong.meituan.com/rider/schedule/management" target="_blank">↗ 排班管理</a>
   <a class="ext" href="https://peisong.meituan.com/order/orderlist/new" target="_blank">↗ 订单管理</a>
-  <a class="ext" href="https://peisong.meituan.com/downloadCenter/list" target="_blank">↗ 下载中心</a>
+  <a class="ext" href="https://peisong.meituan.com/downloadCenter/list" target="_blank">↗ 下载中心</a></span>
 </div>
 <div class="regbar"><span class="rl">区域视图</span>
   <div class="seg">
