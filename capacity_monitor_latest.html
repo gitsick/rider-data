@@ -3,6 +3,10 @@
 <style>
 body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif; max-width:1440px; margin:0 auto; padding:12px 16px 40px; color:#1B1B33; background:radial-gradient(1200px 420px at 12% -6%, rgba(255,195,0,.08), transparent 60%),radial-gradient(1000px 460px at 92% -10%, rgba(59,111,245,.07), transparent 55%),#F0F2F5; } /* R60 对齐 tokens：--font/--bg/--ink + base.css 双光晕 */
 html { overflow-x:hidden; overflow-x:clip; } /* 导航通栏满宽用 100vw，含滚动条宽度会溢出几个 px：clip 裁掉且不破坏 sticky（hidden 作为旧浏览器回退） */
+/* R61 可访问性对齐 base.css：选中色 / 焦点态 / 动画减弱偏好 */
+::selection { background:rgba(255,195,0,.35); }
+:focus-visible { outline:2px solid #FFC300; outline-offset:2px; border-radius:4px; }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
 /* —— 站点级导航（与 Vue 主看板 TopNav 同款同值：暗色渐变 + 金色品牌点 + 胶囊高亮 + 42px 高度，R57 对齐 1440 居中） —— */
 .site-nav { position:sticky; top:0; z-index:9000; background:linear-gradient(90deg,rgba(27,34,51,.94),rgba(45,52,71,.94)); box-shadow:0 1px 6px rgba(0,0,0,.22); white-space:nowrap; width:100vw; margin-left:calc(50% - 50vw); } /* R58：通栏满宽（与 Vue TopNav 一致），内容仍由 .sn-inner 1440 居中 */
 .sn-inner { position:relative; max-width:1440px; margin:0 auto; padding:0 16px; height:42px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; }
