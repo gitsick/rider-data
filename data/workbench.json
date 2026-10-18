@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 02:58:20",
+  "generatedAt": "2026-10-18 03:00:48",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -77,8 +77,8 @@
         "expectHour": 8,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 08:30）但尚无今日留痕"
       },
       "heal": {
         "can": false,
@@ -930,8 +930,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常"
+      "status": "WARN",
+      "detail": "3/4 任务正常 · 1 逾期"
     },
     {
       "layer": "部署层",
@@ -949,7 +949,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -1113,11 +1113,16 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-18 02:57:20",
-        "ageH": 0
+        "ageH": 0.1
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30）但尚无今日留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "text": "审计有 1 项警告（2026-10-17 22:37:45）",
