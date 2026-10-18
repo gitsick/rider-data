@@ -51,7 +51,9 @@ self.addEventListener('fetch', e => {
       const net = fetch(req).then(res => {
         if (res && res.ok) c.put(req, res.clone())
         return res
-      }).catch(() => hit)
+      }).catch(() => hit || new Response('{"error":"offline"}', {
+        status: 503, headers: { 'Content-Type': 'application/json' }
+      })) // R69：无缓存且断网时返回 503 JSON，页面读到可重试的错误态而非裸失败
       return hit || net
     }))
     return
