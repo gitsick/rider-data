@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 03:00:48",
+  "generatedAt": "2026-10-18 03:10:28",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -202,8 +202,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-18 10:06:05",
-        "durationSec": 365,
+        "finishedAt": "2026-10-18 11:03:50",
+        "durationSec": 230,
         "note": ""
       },
       "monitor": {
@@ -377,6 +377,13 @@
           "durationSec": 365,
           "note": "",
           "dur": 365
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-18 11:03:50",
+          "durationSec": 230,
+          "note": "",
+          "dur": 230
         }
       ],
       "durTrend": [
@@ -395,7 +402,8 @@
         258,
         426,
         318,
-        365
+        365,
+        230
       ]
     },
     {
@@ -949,7 +957,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.2h 前刷新"
     }
   ],
   "projects": [
@@ -982,7 +990,7 @@
           "size": 194322
         }
       ],
-      "ageHours": 1.3,
+      "ageHours": 1.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -991,12 +999,12 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-18 02:58",
+          "mtime": "2026-10-18 03:10",
           "size": 73660
         },
         {
           "name": "sep.json",
-          "mtime": "2026-10-17 13:06",
+          "mtime": "2026-10-18 03:10",
           "size": 83480
         },
         {
@@ -1113,7 +1121,7 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-18 02:57:20",
-        "ageH": 0.1
+        "ageH": 0.2
       }
     ]
   },
