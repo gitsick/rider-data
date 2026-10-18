@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 07:09:25",
+  "generatedAt": "2026-10-18 08:02:49",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -202,9 +202,9 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-18 14:09:54",
-        "durationSec": 594,
-        "note": ""
+        "finishedAt": "2026-10-18 15:40:04",
+        "durationSec": 2404,
+        "note": "【检查与部署全部完成】问卷无新增1980条；v2部署首轮遇GitHub网络中断，复跑deploy成功HEAD=98046de，线上回验通过"
       },
       "monitor": {
         "cadence": "hourly",
@@ -405,6 +405,13 @@
           "durationSec": 594,
           "note": "",
           "dur": 594
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-18 15:40:04",
+          "durationSec": 2404,
+          "note": "【检查与部署全部完成】问卷无新增1980条；v2部署首轮遇GitHub网络中断，复跑deploy成功HEAD=98046de，线上回验通过",
+          "dur": 2404
         }
       ],
       "durTrend": [
@@ -427,7 +434,8 @@
         230,
         730,
         249,
-        594
+        594,
+        2404
       ]
     },
     {
@@ -975,13 +983,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 2.3h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 3.2h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -1014,7 +1022,7 @@
           "size": 194322
         }
       ],
-      "ageHours": 5.5,
+      "ageHours": 6.4,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1042,7 +1050,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 2.3,
+      "ageHours": 3.2,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1150,7 +1158,7 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-18 06:29:09",
-        "ageH": 0.7
+        "ageH": 1.6
       }
     ]
   },
