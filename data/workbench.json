@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 08:02:49",
+  "generatedAt": "2026-10-18 11:02:47",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -202,15 +202,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-18 15:40:04",
-        "durationSec": 2404,
-        "note": "【检查与部署全部完成】问卷无新增1980条；v2部署首轮遇GitHub网络中断，复跑deploy成功HEAD=98046de，线上回验通过"
+        "finishedAt": "2026-10-18 16:08:58",
+        "durationSec": 477,
+        "note": ""
       },
       "monitor": {
         "cadence": "hourly",
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "运行超时（距上次 2.9h）"
       },
       "heal": {
         "can": false,
@@ -412,6 +412,13 @@
           "durationSec": 2404,
           "note": "【检查与部署全部完成】问卷无新增1980条；v2部署首轮遇GitHub网络中断，复跑deploy成功HEAD=98046de，线上回验通过",
           "dur": 2404
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-18 16:08:58",
+          "durationSec": 477,
+          "note": "",
+          "dur": 477
         }
       ],
       "durTrend": [
@@ -435,7 +442,8 @@
         730,
         249,
         594,
-        2404
+        2404,
+        477
       ]
     },
     {
@@ -971,7 +979,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "2/4 任务正常 · 2 逾期"
+      "detail": "1/4 任务正常 · 3 逾期"
     },
     {
       "layer": "部署层",
@@ -983,7 +991,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 3.2h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 6.2h 前"
     },
     {
       "layer": "渲染层",
@@ -1022,7 +1030,7 @@
           "size": 194322
         }
       ],
-      "ageHours": 6.4,
+      "ageHours": 9.4,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1050,7 +1058,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 3.2,
+      "ageHours": 6.2,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1157,8 +1165,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-18 06:29:09",
-        "ageH": 1.6
+        "latestAt": "2026-10-18 10:36:06",
+        "ageH": 0.4
       }
     ]
   },
@@ -1171,6 +1179,11 @@
     {
       "level": "WARN",
       "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 2.9h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
