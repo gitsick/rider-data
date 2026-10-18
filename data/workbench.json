@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 00:37:37",
+  "generatedAt": "2026-10-18 01:19:45",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -184,11 +184,11 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每小时由定时任务直接驱动",
       "last": {
-        "status": "FAIL",
-        "exitCode": 1,
-        "finishedAt": "2026-10-18 07:06:20",
-        "durationSec": 327,
-        "note": "【问卷星登录态失效】增量检查未能核对，访问日志汇总与看板部署已成功"
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-10-18 08:40:29",
+        "durationSec": 258,
+        "note": ""
       },
       "monitor": {
         "cadence": "hourly",
@@ -333,6 +333,13 @@
           "durationSec": 327,
           "note": "【问卷星登录态失效】增量检查未能核对，访问日志汇总与看板部署已成功",
           "dur": 327
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-18 08:40:29",
+          "durationSec": 258,
+          "note": "",
+          "dur": 258
         }
       ],
       "durTrend": [
@@ -347,7 +354,8 @@
         551,
         371,
         1111,
-        327
+        327,
+        258
       ]
     },
     {
@@ -882,8 +890,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "FAIL",
-      "detail": "3/4 任务正常 · 1 失败"
+      "status": "PASS",
+      "detail": "4/4 任务正常"
     },
     {
       "layer": "部署层",
@@ -895,13 +903,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.6h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.7h 前刷新"
     }
   ],
   "projects": [
@@ -910,13 +918,13 @@
       "recent": [
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-18 00:27",
-          "size": 2668944
+          "mtime": "2026-10-18 00:40",
+          "size": 2669139
         },
         {
           "name": "capacity_breakdown_dashboard_2026-10-15.html",
-          "mtime": "2026-10-18 00:27",
-          "size": 2605799
+          "mtime": "2026-10-18 00:40",
+          "size": 2605994
         },
         {
           "name": "订单运力分析_2026-10-15.xlsx",
@@ -934,7 +942,7 @@
           "size": 194322
         }
       ],
-      "ageHours": 0.2,
+      "ageHours": 0.6,
       "stale": false,
       "staleThreshold": 26
     },
@@ -957,7 +965,7 @@
           "size": 4946
         }
       ],
-      "ageHours": 11.5,
+      "ageHours": 12.2,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1065,16 +1073,11 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-18 00:36:21",
-        "ageH": 0
+        "ageH": 0.7
       }
     ]
   },
   "alerts": [
-    {
-      "level": "FAIL",
-      "text": "任务失败：骑手解约数据检查与刷新（2026-10-18 07:06:20 · 【问卷星登录态失效】增量检查未能核对，访问日志汇总与看板部署已成功）",
-      "anchor": "sec-tasks"
-    },
     {
       "level": "WARN",
       "text": "审计有 1 项警告（2026-10-17 22:37:45）",
