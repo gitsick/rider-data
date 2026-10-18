@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 12:31:02",
+  "generatedAt": "2026-10-18 13:06:57",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -200,11 +200,11 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每小时由定时任务直接驱动",
       "last": {
-        "status": "FAIL",
-        "exitCode": 1,
-        "finishedAt": "2026-10-18 20:07:37",
-        "durationSec": 447,
-        "note": "【问卷星登录态失效-增量检查未完成】"
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-10-18 20:38:49",
+        "durationSec": 1839,
+        "note": "登录刷新后补跑成功-华东1235-华南748-合计1983条-看板与部署全部完成"
       },
       "monitor": {
         "cadence": "hourly",
@@ -433,6 +433,13 @@
           "durationSec": 447,
           "note": "【问卷星登录态失效-增量检查未完成】",
           "dur": 447
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-18 20:38:49",
+          "durationSec": 1839,
+          "note": "登录刷新后补跑成功-华东1235-华南748-合计1983条-看板与部署全部完成",
+          "dur": 1839
         }
       ],
       "durTrend": [
@@ -459,7 +466,8 @@
         2404,
         477,
         373,
-        447
+        447,
+        1839
       ]
     },
     {
@@ -994,8 +1002,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "FAIL",
-      "detail": "1/4 任务正常 · 1 失败 · 2 逾期"
+      "status": "WARN",
+      "detail": "2/4 任务正常 · 2 逾期"
     },
     {
       "layer": "部署层",
@@ -1007,13 +1015,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.4h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.5h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -1046,7 +1054,7 @@
           "size": 379
         }
       ],
-      "ageHours": 0.4,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1074,7 +1082,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 0.5,
+      "ageHours": 1.1,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1181,8 +1189,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-18 11:42:18",
-        "ageH": 0.8
+        "latestAt": "2026-10-18 12:34:42",
+        "ageH": 0.5
       }
     ]
   },
@@ -1195,11 +1203,6 @@
     {
       "level": "WARN",
       "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "FAIL",
-      "text": "任务失败：骑手解约数据检查与刷新（2026-10-18 20:07:37 · 【问卷星登录态失效-增量检查未完成】）",
       "anchor": "sec-tasks"
     },
     {
