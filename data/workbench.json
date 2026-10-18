@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 00:08:39",
+  "generatedAt": "2026-10-18 00:37:37",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -895,13 +895,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 1.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -910,13 +910,13 @@
       "recent": [
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-18 00:08",
-          "size": 2668620
+          "mtime": "2026-10-18 00:27",
+          "size": 2668944
         },
         {
           "name": "capacity_breakdown_dashboard_2026-10-15.html",
-          "mtime": "2026-10-18 00:07",
-          "size": 2605475
+          "mtime": "2026-10-18 00:27",
+          "size": 2605799
         },
         {
           "name": "订单运力分析_2026-10-15.xlsx",
@@ -934,7 +934,7 @@
           "size": 194322
         }
       ],
-      "ageHours": 0,
+      "ageHours": 0.2,
       "stale": false,
       "staleThreshold": 26
     },
@@ -957,7 +957,7 @@
           "size": 4946
         }
       ],
-      "ageHours": 11,
+      "ageHours": 11.5,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1064,8 +1064,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-17 17:17:30",
-        "ageH": 6.9
+        "latestAt": "2026-10-18 00:36:21",
+        "ageH": 0
       }
     ]
   },
