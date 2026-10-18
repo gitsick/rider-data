@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 15:52:11",
+  "generatedAt": "2026-10-18 16:10:44",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -19,7 +19,7 @@
       "monitor": {
         "cadence": "daily",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -77,8 +77,8 @@
         "expectHour": 8,
         "doneToday": false,
         "expect": true,
-        "overdue": true,
-        "overdueText": "今日应跑（每日 08:30）但尚无今日留痕"
+        "overdue": false,
+        "overdueText": ""
       },
       "heal": {
         "can": false,
@@ -115,8 +115,8 @@
         "expectHour": 9,
         "doneToday": false,
         "expect": true,
-        "overdue": true,
-        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
+        "overdue": false,
+        "overdueText": ""
       },
       "heal": {
         "can": true,
@@ -1026,8 +1026,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "WARN",
-      "detail": "2/4 任务正常 · 2 逾期"
+      "status": "PASS",
+      "detail": "4/4 任务正常"
     },
     {
       "layer": "部署层",
@@ -1039,13 +1039,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 3.8h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 4.1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -1078,7 +1078,7 @@
           "size": 379
         }
       ],
-      "ageHours": 3.8,
+      "ageHours": 4.1,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1106,7 +1106,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 3.8,
+      "ageHours": 4.1,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1213,22 +1213,12 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-18 15:43:41",
-        "ageH": 0.1
+        "latestAt": "2026-10-18 15:57:34",
+        "ageH": 0.2
       }
     ]
   },
   "alerts": [
-    {
-      "level": "WARN",
-      "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30）但尚无今日留痕，需在对应自动化重跑并留痕",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "WARN",
-      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
-      "anchor": "sec-tasks"
-    },
     {
       "level": "WARN",
       "text": "审计有 1 项警告（2026-10-17 22:37:45）",
