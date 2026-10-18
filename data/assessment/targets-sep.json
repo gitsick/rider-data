@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "month": "2026-09",
+    "hdK": 0,
+    "note": "折算系数k=0依据任务43498官方达成文件（合格有单/高峰兼职折算系数均为0）；期1=9/1-9/13(13天)，期2=9/14-9/30(17天)"
+  },
+  "weights": {
+    "jm": 15,
+    "pz": 5,
+    "ym": 30,
+    "ty": 20,
+    "tw": 20,
+    "wj": 10
+  },
+  "weeksMeta": [
+    {
+      "key": "W1",
+      "label": "W1 8.31-9.6",
+      "from": "09-01",
+      "to": "09-06"
+    },
+    {
+      "key": "W2",
+      "label": "W2 9.7-9.13",
+      "from": "09-07",
+      "to": "09-13"
+    },
+    {
+      "key": "W3",
+      "label": "W3 9.14-9.20",
+      "from": "09-14",
+      "to": "09-20"
+    },
+    {
+      "key": "W4",
+      "label": "W4 9.21-9.27",
+      "from": "09-21",
+      "to": "09-27"
+    }
+  ],
+  "hdDays": {
+    "days1": 13,
+    "days2": 17
+  },
+  "cities": {
+    "泰兴": {
+      "level": "E2",
+      "hd": {
+        "youdan1": 239.0,
+        "target1": 228.0,
+        "target2": 183.0,
+        "k": 0
+      },
+      "ty": {
+        "csTg": 1.271,
+        "csInTg": 1.271,
+        "csOutTg": 2.381,
+        "xjTg": 0.022,
+        "xjTh": 0.037,
+        "qxTg": 0.043,
+        "qxTh": 0.123
+      },
+      "tw": {
+        "th": 98.0,
+        "tg": 99.0,
+        "cg": 99.2
+      },
+      "wj": {
+        "cyTg": 84.0,
+        "fcTg": 79.0
+      },
+      "weeks": [
+        {
+          "key": "W1",
+          "pzGuide": 228.0,
+          "pzTarget": 240.0,
+          "ymHC": null,
+          "ymTarget": 91.0,
+          "ymAtt": 83.0
+        },
+        {
+          "key": "W2",
+          "pzGuide": 228.0,
+          "pzTarget": 240.0,
+          "ymHC": null,
+          "ymTarget": 90.0,
+          "ymAtt": 83.0
+        },
+        {
+          "key": "W3",
+          "pzGuide": 225.0,
+          "pzTarget": 236.0,
+          "ymHC": null,
+          "ymTarget": 89.0,
+          "ymAtt": 85.0
+        },
+        {
+          "key": "W4",
+          "pzGuide": 225.0,
+          "pzTarget": 236.0,
+          "ymHC": null,
+          "ymTarget": 89.0,
+          "ymAtt": 85.0
+        }
+      ]
+    },
+    "诸暨": {
+      "level": "E0",
+      "hd": {
+        "youdan1": 607.0,
+        "target1": 514.0,
+        "target2": 495.0,
+        "k": 0
+      },
+      "ty": {
+        "csTg": 2.079,
+        "csInTg": 2.079,
+        "csOutTg": 3.595,
+        "xjTg": 0.026,
+        "xjTh": 0.041,
+        "qxTg": 0.085,
+        "qxTh": 0.165
+      },
+      "tw": {
+        "th": 97.8,
+        "tg": 98.73,
+        "cg": 99.2
+      },
+      "wj": {
+        "cyTg": 85.0,
+        "fcTg": 66.0
+      },
+      "weeks": [
+        {
+          "key": "W1",
+          "pzGuide": 581.0,
+          "pzTarget": 611.0,
+          "ymHC": null,
+          "ymTarget": 225.0,
+          "ymAtt": 83.0
+        },
+        {
+          "key": "W2",
+          "pzGuide": 581.0,
+          "pzTarget": 611.0,
+          "ymHC": null,
+          "ymTarget": 225.0,
+          "ymAtt": 83.0
+        },
+        {
+          "key": "W3",
+          "pzGuide": 552.0,
+          "pzTarget": 581.0,
+          "ymHC": null,
+          "ymTarget": 230.0,
+          "ymAtt": 85.0
+        },
+        {
+          "key": "W4",
+          "pzGuide": 552.0,
+          "pzTarget": 581.0,
+          "ymHC": null,
+          "ymTarget": 244.0,
+          "ymAtt": 85.0
+        }
+      ]
+    },
+    "响水": {
+      "level": "F1",
+      "hd": {
+        "youdan1": 76.0,
+        "target1": 64.0,
+        "target2": 58.0,
+        "k": 0
+      },
+      "ty": {
+        "csTg": 0.661,
+        "csInTg": 0.661,
+        "csOutTg": 1.771,
+        "xjTg": 0.022,
+        "xjTh": 0.037,
+        "qxTg": 0.04,
+        "qxTh": 0.12
+      },
+      "tw": {
+        "th": 98.0,
+        "tg": 99.0,
+        "cg": 99.2
+      },
+      "wj": {
+        "cyTg": 89.0,
+        "fcTg": 80.0
+      },
+      "weeks": [
+        {
+          "key": "W1",
+          "pzGuide": 67.0,
+          "pzTarget": 70.0,
+          "ymHC": null,
+          "ymTarget": 47.0,
+          "ymAtt": 83.0
+        },
+        {
+          "key": "W2",
+          "pzGuide": 67.0,
+          "pzTarget": 70.0,
+          "ymHC": null,
+          "ymTarget": 47.0,
+          "ymAtt": 83.0
+        },
+        {
+          "key": "W3",
+          "pzGuide": 64.0,
+          "pzTarget": 67.0,
+          "ymHC": null,
+          "ymTarget": 46.0,
+          "ymAtt": 85.0
+        },
+        {
+          "key": "W4",
+          "pzGuide": 64.0,
+          "pzTarget": 67.0,
+          "ymHC": null,
+          "ymTarget": 45.0,
+          "ymAtt": 85.0
+        }
+      ]
+    }
+  },
+  "source": {
+    "task": 43498,
+    "files": [
+      "上传目标-9月1期目标.xlsx",
+      "上传目标-9月2期目标.xlsx",
+      "9月1期达成.xlsx",
+      "9月2期达成.xlsx"
+    ]
+  },
+  "asOf": "2026-10-18"
+}

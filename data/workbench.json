@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 04:05:00",
+  "generatedAt": "2026-10-18 04:19:57",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -202,8 +202,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-18 11:03:50",
-        "durationSec": 230,
+        "finishedAt": "2026-10-18 12:12:09",
+        "durationSec": 730,
         "note": ""
       },
       "monitor": {
@@ -384,6 +384,13 @@
           "durationSec": 230,
           "note": "",
           "dur": 230
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-18 12:12:09",
+          "durationSec": 730,
+          "note": "",
+          "dur": 730
         }
       ],
       "durTrend": [
@@ -403,7 +410,8 @@
         426,
         318,
         365,
-        230
+        230,
+        730
       ]
     },
     {
@@ -951,13 +959,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.7h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0.2h 前刷新"
     }
   ],
   "projects": [
@@ -990,13 +998,18 @@
           "size": 194322
         }
       ],
-      "ageHours": 2.4,
+      "ageHours": 2.6,
       "stale": false,
       "staleThreshold": 26
     },
     {
       "name": "履约考核工程",
       "recent": [
+        {
+          "name": "targets-sep.json",
+          "mtime": "2026-10-18 04:10",
+          "size": 4973
+        },
         {
           "name": "targets-oct.json",
           "mtime": "2026-10-18 03:22",
@@ -1013,7 +1026,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 0.7,
+      "ageHours": 0.2,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1120,8 +1133,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-18 03:46:08",
-        "ageH": 0.3
+        "latestAt": "2026-10-18 04:13:40",
+        "ageH": 0.1
       }
     ]
   },
