@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 04:19:57",
+  "generatedAt": "2026-10-18 04:45:58",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -959,13 +959,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -998,7 +998,7 @@
           "size": 194322
         }
       ],
-      "ageHours": 2.6,
+      "ageHours": 3.1,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1006,19 +1006,19 @@
       "name": "履约考核工程",
       "recent": [
         {
-          "name": "targets-sep.json",
-          "mtime": "2026-10-18 04:10",
-          "size": 4973
+          "name": "oct.json",
+          "mtime": "2026-10-18 04:40",
+          "size": 74272
         },
         {
           "name": "targets-oct.json",
-          "mtime": "2026-10-18 03:22",
-          "size": 9116
+          "mtime": "2026-10-18 04:27",
+          "size": 9413
         },
         {
-          "name": "oct.json",
-          "mtime": "2026-10-18 03:10",
-          "size": 73660
+          "name": "targets-sep.json",
+          "mtime": "2026-10-18 04:10",
+          "size": 4973
         },
         {
           "name": "sep.json",
@@ -1026,7 +1026,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 0.2,
+      "ageHours": 0.1,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1133,7 +1133,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-18 04:13:40",
+        "latestAt": "2026-10-18 04:40:39",
         "ageH": 0.1
       }
     ]
