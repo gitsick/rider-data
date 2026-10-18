@@ -2,9 +2,10 @@
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>通用运力监控 · 2026-10-15 · 区域/城市下钻视图</title>
 <style>
 body { font-family:"Microsoft YaHei",sans-serif; max-width:1240px; margin:0 auto; padding:18px 20px 60px; color:#333; background:#f6f8fa; }
+html { overflow-x:hidden; overflow-x:clip; } /* 导航通栏满宽用 100vw，含滚动条宽度会溢出几个 px：clip 裁掉且不破坏 sticky（hidden 作为旧浏览器回退） */
 /* —— 站点级导航（与 Vue 主看板 TopNav 同款同值：暗色渐变 + 金色品牌点 + 胶囊高亮 + 42px 高度，R57 对齐 1440 居中） —— */
-.site-nav { position:sticky; top:0; z-index:9000; background:linear-gradient(90deg,rgba(27,34,51,.94),rgba(45,52,71,.94)); box-shadow:0 1px 6px rgba(0,0,0,.22); margin:0 -20px; white-space:nowrap; }
-.sn-inner { max-width:1440px; margin:0 auto; padding:0 16px; height:42px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; }
+.site-nav { position:sticky; top:0; z-index:9000; background:linear-gradient(90deg,rgba(27,34,51,.94),rgba(45,52,71,.94)); box-shadow:0 1px 6px rgba(0,0,0,.22); white-space:nowrap; width:100vw; margin-left:calc(50% - 50vw); } /* R58：通栏满宽（与 Vue TopNav 一致），内容仍由 .sn-inner 1440 居中 */
+.sn-inner { position:relative; max-width:1440px; margin:0 auto; padding:0 16px; height:42px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; }
 @media(max-width:640px) { .sn-inner { height:38px; padding:0 10px; gap:6px; font-size:12px; flex-wrap:nowrap; overflow:visible; } .sn-inner > a:not(.brand) { display:none; } .brand::before { display:none; } }
 @media(max-width:760px) and (min-width:641px) { .sn-inner { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; } .sn-inner::-webkit-scrollbar { display:none; } }
 @media(max-width:760px) { .chartbox { min-width:0 !important; } .checktbl { display:block; overflow-x:auto; } .kchip { white-space:normal !important; } }
