@@ -7,85 +7,393 @@
     "asOf": "2026-10-15",
     "snapshotNote": "ymWeekly/pzWeekly 为已完成周（W1/W2）的 BI 实查快照；W3 起由看板数据动态推演"
   },
-  "weights": { "jm": 15, "pz": 5, "ym": 30, "ty": 20, "tw": 20, "wj": 10 },
+  "weights": {
+    "jm": 15,
+    "pz": 5,
+    "ym": 30,
+    "ty": 20,
+    "tw": 20,
+    "wj": 10
+  },
   "weightsLabel": "官方目标表 · 三城同权重（加盟15/普众5/悦跑30/体验20/推单20/完结率10）",
   "weeksMeta": [
-    { "key": "W1", "label": "W1 9.28-10.4", "from": "09-28", "to": "10-04", "phase": 1 },
-    { "key": "W2", "label": "W2 10.5-10.11", "from": "10-05", "to": "10-11", "phase": 1 },
-    { "key": "W3", "label": "W3 10.12-10.18", "from": "10-12", "to": "10-18", "phase": 1 }
+    {
+      "key": "W1",
+      "label": "W1 9.28-10.4",
+      "from": "09-28",
+      "to": "10-04",
+      "phase": 1
+    },
+    {
+      "key": "W2",
+      "label": "W2 10.5-10.11",
+      "from": "10-05",
+      "to": "10-11",
+      "phase": 1
+    },
+    {
+      "key": "W3",
+      "label": "W3 10.12-10.18",
+      "from": "10-12",
+      "to": "10-18",
+      "phase": 1
+    }
   ],
   "cities": {
     "泰兴": {
       "level": "E2",
-      "hd": { "youdan1": 192, "target1": 183 },
+      "hd": {
+        "youdan1": 192,
+        "target1": 183
+      },
       "weeks": [
-        { "pzGuide": 232, "pzTarget": 236, "ymHC": 108, "ymTarget": 97, "ymAtt": 86 },
-        { "pzGuide": 232, "pzTarget": 236, "ymHC": 108, "ymTarget": 97, "ymAtt": 86 },
-        { "pzGuide": 232, "pzTarget": 236, "ymHC": 100, "ymTarget": 89, "ymAtt": 86 }
+        {
+          "pzGuide": 232,
+          "pzTarget": 236,
+          "ymHC": 108,
+          "ymTarget": 97,
+          "ymAtt": 86
+        },
+        {
+          "pzGuide": 232,
+          "pzTarget": 236,
+          "ymHC": 108,
+          "ymTarget": 97,
+          "ymAtt": 86
+        },
+        {
+          "pzGuide": 232,
+          "pzTarget": 236,
+          "ymHC": 100,
+          "ymTarget": 89,
+          "ymAtt": 86
+        }
       ],
-      "ty": { "csTg": 1.386, "csInTg": 1.386, "csOutTg": 2.066, "xjTg": 0.022, "xjTh": 0.037, "qxTg": 0.040, "qxTh": 0.055 },
-      "tw": { "th": 98.00, "tg": 98.89, "cg": 99.20 },
-      "wj": { "cyTg": 82, "fcTg": 77 },
-      "dibottom": { "jm": "加盟人效≤38 且 调度后推单完成率（不含散单）≥98.8%", "ym": "悦跑承托比≥38% 且 推单完成率≥98.8%", "pz": "调度后推单完成率（不含散单）≥98.8%" },
-      "penalty": { "warn1": "1警告+7500元", "warn2": "1警告+15000元", "worst": "2警告+15000元", "cap": 2 }
+      "ty": {
+        "csTg": 1.386,
+        "csInTg": 1.386,
+        "csOutTg": 2.066,
+        "xjTg": 0.022,
+        "xjTh": 0.037,
+        "qxTg": 0.04,
+        "qxTh": 0.055
+      },
+      "tw": {
+        "th": 98.0,
+        "tg": 98.89,
+        "cg": 99.2
+      },
+      "wj": {
+        "cyTg": 82,
+        "fcTg": 77
+      },
+      "dibottom": {
+        "jm": "加盟人效≤38 且 调度后推单完成率（不含散单）≥98.8%",
+        "ym": "悦跑承托比≥38% 且 推单完成率≥98.8%",
+        "pz": "调度后推单完成率（不含散单）≥98.8%"
+      },
+      "penalty": {
+        "warn1": "1警告+7500元",
+        "warn2": "1警告+15000元",
+        "worst": "2警告+15000元",
+        "cap": 2
+      }
     },
     "诸暨": {
       "level": "E0",
-      "hd": { "youdan1": 458, "target1": 436 },
+      "hd": {
+        "youdan1": 458,
+        "target1": 436
+      },
       "weeks": [
-        { "pzGuide": 662, "pzTarget": 675, "ymHC": 317, "ymTarget": 259, "ymAtt": 86 },
-        { "pzGuide": 617, "pzTarget": 629, "ymHC": 317, "ymTarget": 259, "ymAtt": 86 },
-        { "pzGuide": 587, "pzTarget": 598, "ymHC": 357, "ymTarget": 285, "ymAtt": 86 }
+        {
+          "pzGuide": 662,
+          "pzTarget": 675,
+          "ymHC": 317,
+          "ymTarget": 259,
+          "ymAtt": 86
+        },
+        {
+          "pzGuide": 617,
+          "pzTarget": 629,
+          "ymHC": 317,
+          "ymTarget": 259,
+          "ymAtt": 86
+        },
+        {
+          "pzGuide": 587,
+          "pzTarget": 598,
+          "ymHC": 357,
+          "ymTarget": 285,
+          "ymAtt": 86
+        }
       ],
-      "ty": { "csTg": 2.166, "csInTg": 2.166, "csOutTg": 3.595, "xjTg": 0.022, "xjTh": 0.037, "qxTg": 0.085, "qxTh": 0.100 },
-      "tw": { "th": 98.00, "tg": 98.92, "cg": 99.20 },
-      "wj": { "cyTg": 83, "fcTg": 73 },
-      "dibottom": { "jm": "加盟人效≤38 且 调度后推单完成率（不含散单）≥98.8%", "ym": "悦跑承托比≥46% 且 推单完成率≥98.8%", "pz": "调度后推单完成率（不含散单）≥98.8%" },
-      "penalty": { "warn1": "1警告+15000元", "warn2": "1警告+30000元", "worst": "2警告+30000元", "cap": 2 }
+      "ty": {
+        "csTg": 2.166,
+        "csInTg": 2.166,
+        "csOutTg": 3.595,
+        "xjTg": 0.022,
+        "xjTh": 0.037,
+        "qxTg": 0.085,
+        "qxTh": 0.1
+      },
+      "tw": {
+        "th": 98.0,
+        "tg": 98.92,
+        "cg": 99.2
+      },
+      "wj": {
+        "cyTg": 83,
+        "fcTg": 73
+      },
+      "dibottom": {
+        "jm": "加盟人效≤38 且 调度后推单完成率（不含散单）≥98.8%",
+        "ym": "悦跑承托比≥46% 且 推单完成率≥98.8%",
+        "pz": "调度后推单完成率（不含散单）≥98.8%"
+      },
+      "penalty": {
+        "warn1": "1警告+15000元",
+        "warn2": "1警告+30000元",
+        "worst": "2警告+30000元",
+        "cap": 2
+      }
     },
     "响水": {
       "level": "F1",
-      "hd": { "youdan1": 60, "target1": 52 },
+      "hd": {
+        "youdan1": 60,
+        "target1": 52
+      },
       "weeks": [
-        { "pzGuide": 73, "pzTarget": 74, "ymHC": 53, "ymTarget": 47, "ymAtt": 86 },
-        { "pzGuide": 66, "pzTarget": 67, "ymHC": 53, "ymTarget": 47, "ymAtt": 86 },
-        { "pzGuide": 66, "pzTarget": 67, "ymHC": 51, "ymTarget": 45, "ymAtt": 86 }
+        {
+          "pzGuide": 73,
+          "pzTarget": 74,
+          "ymHC": 53,
+          "ymTarget": 47,
+          "ymAtt": 86
+        },
+        {
+          "pzGuide": 66,
+          "pzTarget": 67,
+          "ymHC": 53,
+          "ymTarget": 47,
+          "ymAtt": 86
+        },
+        {
+          "pzGuide": 66,
+          "pzTarget": 67,
+          "ymHC": 51,
+          "ymTarget": 45,
+          "ymAtt": 86
+        }
       ],
-      "ty": { "csTg": 0.735, "csInTg": 0.735, "csOutTg": 1.720, "xjTg": 0.022, "xjTh": 0.037, "qxTg": 0.038, "qxTh": 0.053 },
-      "tw": { "th": 98.00, "tg": 98.89, "cg": 99.20 },
-      "wj": { "cyTg": 87, "fcTg": 81 },
-      "dibottom": { "jm": "加盟人效≤38 且 调度后推单完成率（不含散单）≥98.8%", "ym": "悦跑承托比≥49% 且 推单完成率≥98.8%", "pz": "调度后推单完成率（不含散单）≥98.8%" },
-      "penalty": { "warn1": "1警告+5000元", "warn2": "1警告+10000元", "worst": "2警告+10000元", "cap": 2 }
+      "ty": {
+        "csTg": 0.735,
+        "csInTg": 0.735,
+        "csOutTg": 1.72,
+        "xjTg": 0.022,
+        "xjTh": 0.037,
+        "qxTg": 0.038,
+        "qxTh": 0.053
+      },
+      "tw": {
+        "th": 98.0,
+        "tg": 98.89,
+        "cg": 99.2
+      },
+      "wj": {
+        "cyTg": 87,
+        "fcTg": 81
+      },
+      "dibottom": {
+        "jm": "加盟人效≤38 且 调度后推单完成率（不含散单）≥98.8%",
+        "ym": "悦跑承托比≥49% 且 推单完成率≥98.8%",
+        "pz": "调度后推单完成率（不含散单）≥98.8%"
+      },
+      "penalty": {
+        "warn1": "1警告+5000元",
+        "warn2": "1警告+10000元",
+        "worst": "2警告+10000元",
+        "cap": 2
+      }
     }
   },
   "snapshot": {
     "ymWeekly": {
       "泰兴": {
-        "W1": { "rate": 97.64, "att": 96.05, "coef": 1.05, "score": 102.53 },
-        "W2": { "rate": 97.94, "att": 90.93, "coef": 1.05, "score": 102.84 }
+        "W1": {
+          "rate": 97.64,
+          "att": 96.05,
+          "coef": 1.05,
+          "score": 102.53
+        },
+        "W2": {
+          "rate": 97.94,
+          "att": 90.93,
+          "coef": 1.05,
+          "score": 102.84
+        }
       },
       "诸暨": {
-        "W1": { "rate": 91.84, "att": 84.04, "coef": 0.95, "score": 87.24 },
-        "W2": { "rate": 102.98, "att": 90.65, "coef": 1.05, "score": 108.13 }
+        "W1": {
+          "rate": 91.84,
+          "att": 84.04,
+          "coef": 0.95,
+          "score": 87.24
+        },
+        "W2": {
+          "rate": 102.98,
+          "att": 90.65,
+          "coef": 1.05,
+          "score": 108.13
+        }
       },
       "响水": {
-        "W1": { "rate": 115.20, "att": 95.06, "coef": 1.05, "score": 115.50 },
-        "W2": { "rate": 116.11, "att": 96.69, "coef": 1.05, "score": 115.50 }
+        "W1": {
+          "rate": 115.2,
+          "att": 95.06,
+          "coef": 1.05,
+          "score": 115.5
+        },
+        "W2": {
+          "rate": 116.11,
+          "att": 96.69,
+          "coef": 1.05,
+          "score": 115.5
+        }
       }
     },
     "pzWeekly": {
       "泰兴": {
-        "W1": { "act": 296, "rate": 125.42, "score": 100 },
-        "W2": { "act": 288, "rate": 122.03, "score": 100 }
+        "W1": {
+          "act": 296,
+          "rate": 125.42,
+          "score": 100
+        },
+        "W2": {
+          "act": 288,
+          "rate": 122.03,
+          "score": 100
+        }
       },
       "诸暨": {
-        "W1": { "act": 631, "rate": 93.48, "score": 93.48 },
-        "W2": { "act": 663, "rate": 105.41, "score": 100 }
+        "W1": {
+          "act": 631,
+          "rate": 93.48,
+          "score": 93.48
+        },
+        "W2": {
+          "act": 663,
+          "rate": 105.41,
+          "score": 100
+        }
       },
       "响水": {
-        "W1": { "act": 108, "rate": 145.95, "score": 100 },
-        "W2": { "act": 99, "rate": 147.76, "score": 100 }
+        "W1": {
+          "act": 108,
+          "rate": 145.95,
+          "score": 100
+        },
+        "W2": {
+          "act": 99,
+          "rate": 147.76,
+          "score": 100
+        }
       }
     }
+  },
+  "phase2": {
+    "weeksMeta": [
+      {
+        "key": "W4",
+        "label": "W4 10.19-10.25",
+        "from": "10-19",
+        "to": "10-25"
+      },
+      {
+        "key": "W5",
+        "label": "W5 10.26-11.1",
+        "from": "10-26",
+        "to": "11-01"
+      }
+    ],
+    "cities": {
+      "泰兴": {
+        "hd": {
+          "target2": 183
+        },
+        "weeks": [
+          {
+            "key": "W4",
+            "pzGuide": 189,
+            "pzTarget": 236,
+            "ymHC": 100,
+            "ymTarget": 89,
+            "ymAtt": null
+          },
+          {
+            "key": "W5",
+            "pzGuide": 186,
+            "pzTarget": 232,
+            "ymHC": null,
+            "ymTarget": null,
+            "ymAtt": null
+          }
+        ]
+      },
+      "诸暨": {
+        "hd": {
+          "target2": 410
+        },
+        "weeks": [
+          {
+            "key": "W4",
+            "pzGuide": 530,
+            "pzTarget": 598,
+            "ymHC": 400,
+            "ymTarget": 285,
+            "ymAtt": null
+          },
+          {
+            "key": "W5",
+            "pzGuide": 530,
+            "pzTarget": 598,
+            "ymHC": null,
+            "ymTarget": null,
+            "ymAtt": null
+          }
+        ]
+      },
+      "响水": {
+        "hd": {
+          "target2": 52
+        },
+        "weeks": [
+          {
+            "key": "W4",
+            "pzGuide": 56,
+            "pzTarget": 67,
+            "ymHC": 51,
+            "ymTarget": 45,
+            "ymAtt": null
+          },
+          {
+            "key": "W5",
+            "pzGuide": 55,
+            "pzTarget": 66,
+            "ymHC": null,
+            "ymTarget": null,
+            "ymAtt": null
+          }
+        ]
+      }
+    },
+    "hdDays": {
+      "days1": 18,
+      "days2": 14
+    },
+    "source": "上传目标-10月2期目标.xlsx",
+    "fileName": "task_nexus_上传目标-10月2期目标_e0f6ca3b-b878-4a5e-b4de-00ab003fc1af_1792147139370_wuhaonan11.xlsx",
+    "asOf": "2026-10-18"
   }
 }
