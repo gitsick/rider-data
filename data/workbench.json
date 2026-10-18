@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 11:08:06",
+  "generatedAt": "2026-10-18 12:02:00",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -999,19 +999,34 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.1h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0.9h 前刷新"
     }
   ],
   "projects": [
     {
       "name": "通用运力监控",
       "recent": [
+        {
+          "name": "data15_2026-10-17.json",
+          "mtime": "2026-10-18 11:44",
+          "size": 504
+        },
+        {
+          "name": "data15_2026-10-17_enh.json",
+          "mtime": "2026-10-18 11:44",
+          "size": 379
+        },
+        {
+          "name": "data15_2026-10-17_v9.json",
+          "mtime": "2026-10-18 11:44",
+          "size": 672
+        },
         {
           "name": "data15_2026-10-16.json",
           "mtime": "2026-10-18 11:04",
@@ -1021,24 +1036,9 @@
           "name": "data15_2026-10-16_enh.json",
           "mtime": "2026-10-18 11:04",
           "size": 380
-        },
-        {
-          "name": "data15_2026-10-16_v9.json",
-          "mtime": "2026-10-18 11:04",
-          "size": 673
-        },
-        {
-          "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-18 01:41",
-          "size": 2663378
-        },
-        {
-          "name": "capacity_breakdown_dashboard_2026-10-15.html",
-          "mtime": "2026-10-18 01:41",
-          "size": 2600139
         }
       ],
-      "ageHours": 0.1,
+      "ageHours": 0.3,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1047,7 +1047,7 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-18 04:48",
+          "mtime": "2026-10-18 12:01",
           "size": 74272
         },
         {
@@ -1066,7 +1066,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 6.3,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1173,8 +1173,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-18 10:36:06",
-        "ageH": 0.5
+        "latestAt": "2026-10-18 11:42:18",
+        "ageH": 0.3
       }
     ]
   },
