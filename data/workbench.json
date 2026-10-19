@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-19 08:02:34",
+  "generatedAt": "2026-10-19 08:29:24",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -235,15 +235,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-19 13:23:21",
-        "durationSec": 1401,
+        "finishedAt": "2026-10-19 16:10:38",
+        "durationSec": 637,
         "note": ""
       },
       "monitor": {
         "cadence": "hourly",
         "expect": true,
-        "overdue": true,
-        "overdueText": "运行超时（距上次 2.7h）"
+        "overdue": false,
+        "overdueText": ""
       },
       "heal": {
         "can": false,
@@ -543,6 +543,13 @@
           "durationSec": 1401,
           "note": "",
           "dur": 1401
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-19 16:10:38",
+          "durationSec": 637,
+          "note": "",
+          "dur": 637
         }
       ],
       "durTrend": [
@@ -580,7 +587,8 @@
         2016,
         688,
         1117,
-        1401
+        1401,
+        637
       ]
     },
     {
@@ -1116,7 +1124,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "1/4 任务正常 · 3 逾期"
+      "detail": "2/4 任务正常 · 2 逾期"
     },
     {
       "layer": "部署层",
@@ -1128,13 +1136,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.1h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.4h 前刷新"
     }
   ],
   "projects": [
@@ -1167,7 +1175,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 5.1,
+      "ageHours": 5.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1176,13 +1184,13 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-19 07:56",
-          "size": 75418
+          "mtime": "2026-10-19 08:29",
+          "size": 75434
         },
         {
           "name": "sep.json",
-          "mtime": "2026-10-19 07:56",
-          "size": 83494
+          "mtime": "2026-10-19 08:29",
+          "size": 83510
         },
         {
           "name": "targets-oct.json",
@@ -1195,7 +1203,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0.1,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1303,7 +1311,7 @@
         "name": "20261017-efficiency-naming",
         "files": 5,
         "latestAt": "2026-10-19 07:57:49",
-        "ageH": 0.1
+        "ageH": 0.5
       }
     ]
   },
@@ -1316,11 +1324,6 @@
     {
       "level": "WARN",
       "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 2.7h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -1578,8 +1581,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eaec8f4",
-        "at": "2026-10-19T15:37:55+08:00",
+        "hash": "8ade07e",
+        "at": "2026-10-19T16:06:37+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
