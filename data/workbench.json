@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-19 10:51:45",
+  "generatedAt": "2026-10-19 11:25:50",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -243,7 +243,7 @@
         "cadence": "hourly",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 2.7h）"
+        "overdueText": "运行超时（距上次 3.3h）"
       },
       "heal": {
         "can": false,
@@ -1136,13 +1136,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 2.4h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 2.9h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 1.1h 前刷新"
+      "detail": "站点数据 0.6h 前刷新"
     }
   ],
   "projects": [
@@ -1175,7 +1175,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 7.9,
+      "ageHours": 8.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1203,7 +1203,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 2.4,
+      "ageHours": 2.9,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1309,9 +1309,9 @@
     "runs": [
       {
         "name": "20261017-efficiency-naming",
-        "files": 5,
-        "latestAt": "2026-10-19 09:46:56",
-        "ageH": 1.1
+        "files": 6,
+        "latestAt": "2026-10-19 11:08:44",
+        "ageH": 0.3
       }
     ]
   },
@@ -1328,7 +1328,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 2.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 3.3h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -1581,8 +1581,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b176c41",
-        "at": "2026-10-19T17:47:53+08:00",
+        "hash": "cf96e68",
+        "at": "2026-10-19T18:53:19+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
