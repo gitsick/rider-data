@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 03:01:27",
+  "generatedAt": "2026-10-19 03:09:55",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1087,13 +1087,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.1h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -1126,7 +1126,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 0.1,
+      "ageHours": 0.2,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1154,7 +1154,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 1,
+      "ageHours": 1.1,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1262,7 +1262,7 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-19 02:12:51",
-        "ageH": 0.8
+        "ageH": 1
       }
     ]
   },
