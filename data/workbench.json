@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 04:11:47",
+  "generatedAt": "2026-10-19 04:21:38",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -12,8 +12,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-19 11:10:39",
-        "durationSec": 2325,
+        "finishedAt": "2026-10-19 12:12:35",
+        "durationSec": 6041,
         "note": ""
       },
       "monitor": {
@@ -70,6 +70,13 @@
           "durationSec": 2325,
           "note": "",
           "dur": 2325
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-19 12:12:35",
+          "durationSec": 6041,
+          "note": "",
+          "dur": 6041
         }
       ],
       "durTrend": [
@@ -78,7 +85,8 @@
         133,
         2640,
         89,
-        2325
+        2325,
+        6041
       ]
     },
     {
@@ -226,8 +234,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-19 11:11:28",
-        "durationSec": 688,
+        "finishedAt": "2026-10-19 12:18:37",
+        "durationSec": 1117,
         "note": ""
       },
       "monitor": {
@@ -520,6 +528,13 @@
           "durationSec": 688,
           "note": "",
           "dur": 688
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-19 12:18:37",
+          "durationSec": 1117,
+          "note": "",
+          "dur": 1117
         }
       ],
       "durTrend": [
@@ -555,7 +570,8 @@
         414,
         727,
         2016,
-        688
+        688,
+        1117
       ]
     },
     {
@@ -1103,13 +1119,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.2h 前刷新"
     }
   ],
   "projects": [
@@ -1142,7 +1158,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 1.2,
+      "ageHours": 1.4,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1151,8 +1167,8 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-19 04:01",
-          "size": 75070
+          "mtime": "2026-10-19 04:21",
+          "size": 75404
         },
         {
           "name": "targets-oct.json",
@@ -1170,7 +1186,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 0.2,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1277,8 +1293,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-19 04:03:29",
-        "ageH": 0.1
+        "latestAt": "2026-10-19 04:19:36",
+        "ageH": 0
       }
     ]
   },
