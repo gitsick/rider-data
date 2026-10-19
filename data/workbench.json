@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-19 08:29:24",
+  "generatedAt": "2026-10-19 09:16:10",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1136,13 +1136,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.8h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.4h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -1175,7 +1175,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 5.5,
+      "ageHours": 6.3,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1203,7 +1203,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0,
+      "ageHours": 0.8,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1310,8 +1310,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 5,
-        "latestAt": "2026-10-19 07:57:49",
-        "ageH": 0.5
+        "latestAt": "2026-10-19 09:15:53",
+        "ageH": 0
       }
     ]
   },
@@ -1330,11 +1330,6 @@
       "level": "WARN",
       "text": "审计有 1 项警告（2026-10-17 22:37:45）",
       "anchor": "sec-audit"
-    },
-    {
-      "level": "WARN",
-      "text": "审批待签认 1 项：P2 城市总分逐日趋势（需扩展考核管线评分引擎）（teamflow\\runs\\ 审批.md）",
-      "anchor": "sec-approvals"
     }
   ],
   "todos": [
@@ -1342,73 +1337,79 @@
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 3,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "人工核对清单（构建前必须逐项确认）："
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 14,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "行内标记处均为从 2026-10 继承或需人工确认的字段。"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 22,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "继承自 2026-10 的月度/日期字面量 */   prevMm: '2026-10', prevMonthCn: '10月',"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 24,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "页头 BI 数据日期 headerSourceNote 需人工更新 */   headerSourceNote: 'BI数据：2026-11-08 | 来源：STUB',"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 26,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "月度差异静态元素开关 flags（profileNote/backTop，DEF-06）需按当月模板确认 */   flags: { profileNote: false, backTop: true }, /* DEF-06 月度差异静态"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 27,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "继承自 2026-10 的月度/日期字面量 */   period: { p1: ['11-01', '10-18'], p2: ['10-19', '11-30'], pbCut: '10-18', caliberSwitchDay: '"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 28,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "继承自 2026-10 的月度/日期字面量 */   peakDays: ['10-01', '10-02', '10-03'],"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 30,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "继承自 2026-10 的月度/日期字面量 */   weeks: { ymWeeks: [['09-28', '10-04']], weekNames: ['09-28~10-04'], weekPeriodTag: ['期1'], kf"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 33,
       "kind": "TODO",
-      "owner": "未认领",
+      "owner": "赵勇",
       "text": "企客监控截止日 qikeWatchCutoff 为业务口径，不可自动推导 */   qikeWatchCutoff: '20260923'"
     }
   ],
   "todoOwners": [
     {
-      "owner": "未认领",
+      "owner": "赵勇",
       "count": 9
     }
   ],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R105",
+      "date": "2026-10-19",
+      "title": "城市总分逐日趋势：补录槽位管线（P2-1 落地，审批 #4 已签认）"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R104",
@@ -1474,12 +1475,6 @@
       "round": "R94",
       "date": "2026-10-19",
       "title": "复制链接组件化 + 视图省略谓词统一化"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R93",
-      "date": "2026-10-19",
-      "title": "考核图表页 · 视图深链"
     }
   ],
   "approvals": [
@@ -1519,9 +1514,9 @@
       "item": "P2 城市总分逐日趋势（需扩展考核管线评分引擎）",
       "layer": "pro",
       "owner": "dev",
-      "status": "pending",
-      "by": "-",
-      "date": "-"
+      "status": "ok",
+      "by": "赵勇",
+      "date": "2026-10-19"
     }
   ],
   "calibers": [
@@ -1581,8 +1576,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "8ade07e",
-        "at": "2026-10-19T16:06:37+08:00",
+        "hash": "d8a6229",
+        "at": "2026-10-19T16:37:16+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
