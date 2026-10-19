@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 05:14:09",
+  "generatedAt": "2026-10-19 05:45:56",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -234,8 +234,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-19 12:18:37",
-        "durationSec": 1117,
+        "finishedAt": "2026-10-19 13:23:21",
+        "durationSec": 1401,
         "note": ""
       },
       "monitor": {
@@ -535,6 +535,13 @@
           "durationSec": 1117,
           "note": "",
           "dur": 1117
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-19 13:23:21",
+          "durationSec": 1401,
+          "note": "",
+          "dur": 1401
         }
       ],
       "durTrend": [
@@ -571,7 +578,8 @@
         727,
         2016,
         688,
-        1117
+        1117,
+        1401
       ]
     },
     {
@@ -1119,13 +1127,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.8h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 1.4h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -1158,7 +1166,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 2.3,
+      "ageHours": 2.8,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1186,7 +1194,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 0.8,
+      "ageHours": 1.4,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1292,9 +1300,9 @@
     "runs": [
       {
         "name": "20261017-efficiency-naming",
-        "files": 3,
-        "latestAt": "2026-10-19 04:36:27",
-        "ageH": 0.6
+        "files": 4,
+        "latestAt": "2026-10-19 05:36:03",
+        "ageH": 0.2
       }
     ]
   },
@@ -1315,26 +1323,161 @@
       "anchor": "sec-audit"
     }
   ],
+  "todos": [
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 3,
+      "kind": "TODO",
+      "text": "人工核对清单（构建前必须逐项确认）："
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 14,
+      "kind": "TODO",
+      "text": "行内标记处均为从 2026-10 继承或需人工确认的字段。"
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 22,
+      "kind": "TODO",
+      "text": "继承自 2026-10 的月度/日期字面量 */   prevMm: '2026-10', prevMonthCn: '10月',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 24,
+      "kind": "TODO",
+      "text": "页头 BI 数据日期 headerSourceNote 需人工更新 */   headerSourceNote: 'BI数据：2026-11-08 | 来源：STUB',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 26,
+      "kind": "TODO",
+      "text": "月度差异静态元素开关 flags（profileNote/backTop，DEF-06）需按当月模板确认 */   flags: { profileNote: false, backTop: true }, /* DEF-06 月度差异静态"
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 27,
+      "kind": "TODO",
+      "text": "继承自 2026-10 的月度/日期字面量 */   period: { p1: ['11-01', '10-18'], p2: ['10-19', '11-30'], pbCut: '10-18', caliberSwitchDay: '"
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 28,
+      "kind": "TODO",
+      "text": "继承自 2026-10 的月度/日期字面量 */   peakDays: ['10-01', '10-02', '10-03'],"
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 30,
+      "kind": "TODO",
+      "text": "继承自 2026-10 的月度/日期字面量 */   weeks: { ymWeeks: [['09-28', '10-04']], weekNames: ['09-28~10-04'], weekPeriodTag: ['期1'], kf"
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
+      "line": 33,
+      "kind": "TODO",
+      "text": "企客监控截止日 qikeWatchCutoff 为业务口径，不可自动推导 */   qikeWatchCutoff: '20260923'"
+    }
+  ],
+  "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R97",
+      "date": "2026-10-19",
+      "title": "逐页功能检核 + 两项增强（周概览下钻 / 图表视图记忆）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R96",
+      "date": "2026-10-19",
+      "title": "全站图表一键存图 PNG（功能增强）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R95",
+      "date": "2026-10-19",
+      "title": "工作台视图深链（视图分享能力第 4 页落地）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R94",
+      "date": "2026-10-19",
+      "title": "复制链接组件化 + 视图省略谓词统一化"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R93",
+      "date": "2026-10-19",
+      "title": "考核图表页 · 视图深链"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R92",
+      "date": "2026-10-18",
+      "title": "SW 数据新鲜度修订 + 运力监控恢复确认"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R91",
+      "date": "2026-10-18",
+      "title": "无效资产增量复扫 + 扫描器盲区修复"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R90",
+      "date": "2026-10-18",
+      "title": "数据表滚动条与滚动查询体验（R85 后用户点单）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R89",
+      "date": "2026-10-18",
+      "title": "部署引擎并发锁优化：遇锁礼貌等待"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R88",
+      "date": "2026-10-18",
+      "title": "功能增强④：移动端体验专项"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R87",
+      "date": "2026-10-18",
+      "title": "功能增强③：工作台近 7 天运行概览"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R86",
+      "date": "2026-10-18",
+      "title": "功能增强②：考核走势图 MTD 累计口径"
+    }
+  ],
   "knowledge": [
     {
       "name": "架构与部署规范",
-      "path": "ARCHITECTURE.md"
+      "path": "ARCHITECTURE.md",
+      "desc": "七层架构、职责矩阵、部署/调度全链路唯一权威说明"
     },
     {
       "name": "业务口径手册",
-      "path": "lib\\docs\\口径手册.md"
+      "path": "lib\\docs\\口径手册.md",
+      "desc": "跨项目复用的口径/规则/领域函数说明（共享函数库）"
     },
     {
       "name": "项目工作区规范",
-      "path": "pro\\README.md"
+      "path": "pro\\README.md",
+      "desc": "pro 子项目路径约定与管线结构"
     },
     {
       "name": "调度层用法",
-      "path": "sched\\README.md"
+      "path": "sched\\README.md",
+      "desc": "任务登记唯一事实源与统一执行器用法"
     },
     {
       "name": "部署基建说明",
-      "path": "deploy\\README.md"
+      "path": "deploy\\README.md",
+      "desc": "通道配置、发布引擎、断网重试/锁等待预案"
     }
   ]
 }
