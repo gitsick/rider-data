@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18 18:02:10",
+  "generatedAt": "2026-10-19 00:42:20",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -202,15 +202,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-19 00:18:21",
-        "durationSec": 1098,
+        "finishedAt": "2026-10-19 02:06:54",
+        "durationSec": 414,
         "note": ""
       },
       "monitor": {
         "cadence": "hourly",
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "运行超时（距上次 6.6h）"
       },
       "heal": {
         "can": false,
@@ -468,6 +468,13 @@
           "durationSec": 1098,
           "note": "",
           "dur": 1098
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-19 02:06:54",
+          "durationSec": 414,
+          "note": "",
+          "dur": 414
         }
       ],
       "durTrend": [
@@ -499,7 +506,8 @@
         809,
         1202,
         686,
-        1098
+        1098,
+        414
       ]
     },
     {
@@ -1034,8 +1042,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常"
+      "status": "WARN",
+      "detail": "3/4 任务正常 · 1 逾期"
     },
     {
       "layer": "部署层",
@@ -1047,13 +1055,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 5.9h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.5h 前刷新"
+      "detail": "站点数据 6.7h 前刷新"
     }
   ],
   "projects": [
@@ -1086,7 +1094,7 @@
           "size": 379
         }
       ],
-      "ageHours": 5.9,
+      "ageHours": 12.6,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1095,8 +1103,8 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-18 12:01",
-          "size": 74272
+          "mtime": "2026-10-19 00:42",
+          "size": 75062
         },
         {
           "name": "targets-oct.json",
@@ -1114,7 +1122,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 6,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1222,11 +1230,16 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-18 17:35:03",
-        "ageH": 0.5
+        "ageH": 7.1
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 6.6h），需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "text": "审计有 1 项警告（2026-10-17 22:37:45）",
