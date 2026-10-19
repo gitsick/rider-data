@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 02:01:21",
+  "generatedAt": "2026-10-19 02:38:34",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -12,8 +12,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-19 08:45:26",
-        "durationSec": 2640,
+        "finishedAt": "2026-10-19 10:31:29",
+        "durationSec": 89,
         "note": ""
       },
       "monitor": {
@@ -56,13 +56,21 @@
           "durationSec": 2640,
           "note": "",
           "dur": 2640
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-19 10:31:29",
+          "durationSec": 89,
+          "note": "",
+          "dur": 89
         }
       ],
       "durTrend": [
         4287,
         3091,
         133,
-        2640
+        2640,
+        89
       ]
     },
     {
@@ -208,17 +216,17 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每小时由定时任务直接驱动",
       "last": {
-        "status": "PASS",
-        "exitCode": 0,
-        "finishedAt": "2026-10-19 02:06:54",
-        "durationSec": 414,
-        "note": ""
+        "status": "FAIL",
+        "exitCode": 1,
+        "finishedAt": "2026-10-19 10:12:07",
+        "durationSec": 727,
+        "note": "【问卷星登录态失效·增量检查未执行,看板与部署正常】"
       },
       "monitor": {
         "cadence": "hourly",
         "expect": true,
-        "overdue": true,
-        "overdueText": "运行超时（距上次 7.9h）"
+        "overdue": false,
+        "overdueText": ""
       },
       "heal": {
         "can": false,
@@ -483,6 +491,13 @@
           "durationSec": 414,
           "note": "",
           "dur": 414
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-19 10:12:07",
+          "durationSec": 727,
+          "note": "【问卷星登录态失效·增量检查未执行,看板与部署正常】",
+          "dur": 727
         }
       ],
       "durTrend": [
@@ -515,7 +530,8 @@
         1202,
         686,
         1098,
-        414
+        414,
+        727
       ]
     },
     {
@@ -1050,8 +1066,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "WARN",
-      "detail": "3/4 任务正常 · 1 逾期"
+      "status": "FAIL",
+      "detail": "3/4 任务正常 · 1 失败"
     },
     {
       "layer": "部署层",
@@ -1063,13 +1079,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.6h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 1.3h 前刷新"
+      "detail": "站点数据 0.6h 前刷新"
     }
   ],
   "projects": [
@@ -1102,7 +1118,7 @@
           "size": 379
         }
       ],
-      "ageHours": 13.9,
+      "ageHours": 14.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1130,7 +1146,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 0,
+      "ageHours": 0.6,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1237,15 +1253,15 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 3,
-        "latestAt": "2026-10-18 17:35:03",
-        "ageH": 8.4
+        "latestAt": "2026-10-19 02:12:51",
+        "ageH": 0.4
       }
     ]
   },
   "alerts": [
     {
-      "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 7.9h），需在对应自动化重跑并留痕",
+      "level": "FAIL",
+      "text": "任务失败：骑手解约数据检查与刷新（2026-10-19 10:12:07 · 【问卷星登录态失效·增量检查未执行,看板与部署正常】）",
       "anchor": "sec-tasks"
     },
     {
