@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 07:15:03",
+  "generatedAt": "2026-10-19 07:26:15",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1127,13 +1127,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 2.9h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 3.1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -1166,7 +1166,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 4.3,
+      "ageHours": 4.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1194,7 +1194,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 2.9,
+      "ageHours": 3.1,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1301,8 +1301,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 5,
-        "latestAt": "2026-10-19 06:50:32",
-        "ageH": 0.4
+        "latestAt": "2026-10-19 07:23:20",
+        "ageH": 0
       }
     ]
   },
@@ -1402,6 +1402,18 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R102",
+      "date": "2026-10-19",
+      "title": "发布通道编排视图（P2-2 落地）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R101",
+      "date": "2026-10-19",
+      "title": "待办生命周期：Owner 认领与归组（P1-4 落地）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R100",
       "date": "2026-10-19",
       "title": "口径反查索引 + 私有化检测（P1-2 落地）"
@@ -1459,18 +1471,6 @@
       "round": "R91",
       "date": "2026-10-18",
       "title": "无效资产增量复扫 + 扫描器盲区修复"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R90",
-      "date": "2026-10-18",
-      "title": "数据表滚动条与滚动查询体验（R85 后用户点单）"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R89",
-      "date": "2026-10-18",
-      "title": "部署引擎并发锁优化：遇锁礼貌等待"
     }
   ],
   "approvals": [
@@ -1563,6 +1563,41 @@
         "capacity-daily(6处)"
       ],
       "suspects": []
+    }
+  ],
+  "channels": [
+    {
+      "name": "rider-data",
+      "desc": "主看板中心（骑手解约 / 履约考核 / 通用运力监控）",
+      "mode": "mpa",
+      "target": "多页站点 + assets/data",
+      "last": {
+        "hash": "2225c34",
+        "at": "2026-10-19T15:16:41+08:00",
+        "msg": "Deploy: 主看板中心构建发布"
+      }
+    },
+    {
+      "name": "capacity-monitor",
+      "desc": "通用运力监控每日看板（单文件发布：capacity_monitor_latest.html）",
+      "mode": "single-file",
+      "target": "capacity_monitor_latest.html",
+      "last": {
+        "hash": "63d7f36",
+        "at": "2026-10-19T11:03:19+08:00",
+        "msg": "Deploy: 通用运力监控 capacity_monitor_latest.html（每日管线刷新）"
+      }
+    },
+    {
+      "name": "assessment-legacy",
+      "desc": "履约考核遗留板（引擎版冻结页，发布到 legacy/ 子路径；换月板调用方用 --src/--dest 指定，零配置）",
+      "mode": "single-file",
+      "target": "legacy/delivery-assessment-dashboard.html",
+      "last": {
+        "hash": "6109425",
+        "at": "2026-10-19T12:20:06+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-18"
+      }
     }
   ],
   "knowledge": [
