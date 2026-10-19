@@ -1,12 +1,13 @@
-/* 骑手数据看板中心 Service Worker（R55）
+/* 骑手数据看板中心 Service Worker（R55，R92 数据新鲜度修订）
  * 策略：
  *  - /assets/*（带 hash 的 JS/CSS）：cache-first —— 发版即换 hash，永久缓存安全
- *  - /data/*（JSON 数据）：stale-while-revalidate —— 先回缓存做到零等待，后台刷新供下次使用
+ *  - /data/*（JSON 数据）：network-first —— 日更看板正确性优先，首开即见当日新数据；
+ *    断网/超时回退缓存（R69 离线 503 语义保留）。原 stale-while-revalidate 存在「每日首开见昨日旧数」的陈旧窗口
  *  - 页面导航（HTML）：network-first —— 始终优先最新，断网/超时回退缓存
  *  - 带查询串的导航请求（门禁/调试 stamp）直连网络，完全不经过 SW
- * 版本升级：改 VER 即弃用全部旧缓存
+ * 版本升级：改 VER 即弃用全部旧缓存（R92 → v2，同步数据策略变更）
  */
-const VER = 'v1'
+const VER = 'v2'
 const C_ASSETS = `rd-assets-${VER}`
 const C_PAGES = `rd-pages-${VER}`
 const C_DATA = `rd-data-${VER}`
@@ -46,16 +47,21 @@ self.addEventListener('fetch', e => {
   }
 
   if (url.pathname.includes('/data/')) {
-    e.respondWith(caches.open(C_DATA).then(async c => {
-      const hit = await c.match(req)
-      const net = fetch(req).then(res => {
+    /* R92：network-first —— 日更看板首开即见当日新数据；离线回缓存，无缓存时 503 JSON（R69 语义） */
+    e.respondWith((async () => {
+      const c = await caches.open(C_DATA)
+      try {
+        const res = await fetch(req)
         if (res && res.ok) c.put(req, res.clone())
         return res
-      }).catch(() => hit || new Response('{"error":"offline"}', {
-        status: 503, headers: { 'Content-Type': 'application/json' }
-      })) // R69：无缓存且断网时返回 503 JSON，页面读到可重试的错误态而非裸失败
-      return hit || net
-    }))
+      } catch {
+        const hit = await c.match(req)
+        if (hit) return hit
+        return new Response('{"error":"offline"}', {
+          status: 503, headers: { 'Content-Type': 'application/json' }
+        })
+      }
+    })())
     return
   }
 
