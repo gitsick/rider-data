@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 06:06:10",
+  "generatedAt": "2026-10-19 06:50:05",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1127,13 +1127,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 1.7h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 2.4h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -1166,7 +1166,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 3.1,
+      "ageHours": 3.9,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1194,7 +1194,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 1.7,
+      "ageHours": 2.4,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1301,7 +1301,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 5,
-        "latestAt": "2026-10-19 05:55:03",
+        "latestAt": "2026-10-19 06:39:58",
         "ageH": 0.2
       }
     ]
@@ -1387,6 +1387,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R99",
+      "date": "2026-10-19",
+      "title": "审批留痕轻量化（P1-1 落地）+ 口径条目数聚合"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R98",
       "date": "2026-10-19",
       "title": "战略梳理路线图 + 工作台中枢能力（待办/变更审计/知识库摘要）"
@@ -1450,12 +1456,6 @@
       "round": "R88",
       "date": "2026-10-18",
       "title": "功能增强④：移动端体验专项"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R87",
-      "date": "2026-10-18",
-      "title": "功能增强③：工作台近 7 天运行概览"
     }
   ],
   "approvals": [
@@ -1498,6 +1498,56 @@
       "status": "pending",
       "by": "-",
       "date": "-"
+    }
+  ],
+  "calibers": [
+    {
+      "title": "1. 运力数据恒等式（capacity-daily，检核强制）",
+      "fact": "pro\\capacity-daily\\data_freshness_check.py → chk",
+      "users": [
+        "capacity-daily(1处)"
+      ],
+      "suspects": []
+    },
+    {
+      "title": "2. 班次体系（11 个分析班次）",
+      "fact": "lib\\capacity_kit.py → SHIFTS",
+      "users": [
+        "capacity-daily(3处)"
+      ],
+      "suspects": []
+    },
+    {
+      "title": "3. 区域与城市",
+      "fact": "pro\\capacity-daily\\pipeline_config.py → REGION",
+      "users": [
+        "capacity-daily(6处)"
+      ],
+      "suspects": []
+    },
+    {
+      "title": "4. 城市/名称别名归一",
+      "fact": "pro\\capacity-daily\\pipeline_config.py → CANON / canon()",
+      "users": [
+        "capacity-daily(6处)"
+      ],
+      "suspects": []
+    },
+    {
+      "title": "5. 履约考核口径（kaohe-daily）",
+      "fact": "pro\\kaohe-daily\\build\\check_data.py → check_month_file",
+      "users": [
+        "kaohe-daily(2处)"
+      ],
+      "suspects": []
+    },
+    {
+      "title": "6. 数据日期语义",
+      "fact": "pro\\capacity-daily\\pipeline_config.py → yesterday",
+      "users": [
+        "capacity-daily(6处)"
+      ],
+      "suspects": []
     }
   ],
   "knowledge": [
