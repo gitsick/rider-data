@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 07:26:15",
+  "generatedAt": "2026-10-19 07:36:23",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1127,13 +1127,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 3.1h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 3.2h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0.2h 前刷新"
     }
   ],
   "projects": [
@@ -1166,7 +1166,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 4.5,
+      "ageHours": 4.6,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1194,7 +1194,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 3.1,
+      "ageHours": 3.2,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1301,7 +1301,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 5,
-        "latestAt": "2026-10-19 07:23:20",
+        "latestAt": "2026-10-19 07:36:18",
         "ageH": 0
       }
     ]
@@ -1572,8 +1572,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "2225c34",
-        "at": "2026-10-19T15:16:41+08:00",
+        "hash": "3ce9f98",
+        "at": "2026-10-19T15:27:40+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
