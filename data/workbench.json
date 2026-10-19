@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 02:39:17",
+  "generatedAt": "2026-10-19 03:01:27",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -93,8 +93,8 @@
         "expectHour": 8,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 08:30）但尚无今日留痕"
       },
       "heal": {
         "can": false,
@@ -216,11 +216,11 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每小时由定时任务直接驱动",
       "last": {
-        "status": "FAIL",
-        "exitCode": 1,
-        "finishedAt": "2026-10-19 10:12:07",
-        "durationSec": 727,
-        "note": "【问卷星登录态失效·增量检查未执行,看板与部署正常】"
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-10-19 10:46:29",
+        "durationSec": 2016,
+        "note": ""
       },
       "monitor": {
         "cadence": "hourly",
@@ -498,6 +498,13 @@
           "durationSec": 727,
           "note": "【问卷星登录态失效·增量检查未执行,看板与部署正常】",
           "dur": 727
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-19 10:46:29",
+          "durationSec": 2016,
+          "note": "",
+          "dur": 2016
         }
       ],
       "durTrend": [
@@ -531,7 +538,8 @@
         686,
         1098,
         414,
-        727
+        727,
+        2016
       ]
     },
     {
@@ -1066,8 +1074,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "FAIL",
-      "detail": "3/4 任务正常 · 1 失败"
+      "status": "WARN",
+      "detail": "3/4 任务正常 · 1 逾期"
     },
     {
       "layer": "部署层",
@@ -1079,13 +1087,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.6h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -1093,32 +1101,32 @@
       "name": "通用运力监控",
       "recent": [
         {
-          "name": "data15_2026-10-16.json",
-          "mtime": "2026-10-18 12:06",
-          "size": 505
+          "name": "订单运力分析_2026-10-18.xlsx",
+          "mtime": "2026-10-19 02:58",
+          "size": 22646
         },
         {
-          "name": "data15_2026-10-16_enh.json",
-          "mtime": "2026-10-18 12:06",
-          "size": 380
+          "name": "悦跑排班差异_站点跟进清单_2026-10-18.xlsx",
+          "mtime": "2026-10-19 02:58",
+          "size": 18755
         },
         {
-          "name": "data15_2026-10-16_v9.json",
-          "mtime": "2026-10-18 12:06",
-          "size": 673
+          "name": "时段运力拆解_2026-10-18.xlsx",
+          "mtime": "2026-10-19 02:58",
+          "size": 194807
         },
         {
-          "name": "data15_2026-10-17.json",
-          "mtime": "2026-10-18 11:44",
-          "size": 504
+          "name": "capacity_monitor_latest.html",
+          "mtime": "2026-10-19 02:58",
+          "size": 2683659
         },
         {
-          "name": "data15_2026-10-17_enh.json",
-          "mtime": "2026-10-18 11:44",
-          "size": 379
+          "name": "capacity_breakdown_dashboard_2026-10-18.html",
+          "mtime": "2026-10-19 02:58",
+          "size": 2683659
         }
       ],
-      "ageHours": 14.6,
+      "ageHours": 0.1,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1146,7 +1154,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 0.6,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1254,14 +1262,14 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-19 02:12:51",
-        "ageH": 0.4
+        "ageH": 0.8
       }
     ]
   },
   "alerts": [
     {
-      "level": "FAIL",
-      "text": "任务失败：骑手解约数据检查与刷新（2026-10-19 10:12:07 · 【问卷星登录态失效·增量检查未执行,看板与部署正常】）",
+      "level": "WARN",
+      "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30）但尚无今日留痕，需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
