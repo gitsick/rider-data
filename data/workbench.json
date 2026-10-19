@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 06:50:05",
+  "generatedAt": "2026-10-19 07:15:03",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1127,7 +1127,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 2.4h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 2.9h 前"
     },
     {
       "layer": "渲染层",
@@ -1166,7 +1166,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 3.9,
+      "ageHours": 4.3,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1194,7 +1194,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 2.4,
+      "ageHours": 2.9,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1301,8 +1301,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 5,
-        "latestAt": "2026-10-19 06:39:58",
-        "ageH": 0.2
+        "latestAt": "2026-10-19 06:50:32",
+        "ageH": 0.4
       }
     ]
   },
@@ -1333,58 +1333,79 @@
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 3,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "人工核对清单（构建前必须逐项确认）："
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 14,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "行内标记处均为从 2026-10 继承或需人工确认的字段。"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 22,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "继承自 2026-10 的月度/日期字面量 */   prevMm: '2026-10', prevMonthCn: '10月',"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 24,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "页头 BI 数据日期 headerSourceNote 需人工更新 */   headerSourceNote: 'BI数据：2026-11-08 | 来源：STUB',"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 26,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "月度差异静态元素开关 flags（profileNote/backTop，DEF-06）需按当月模板确认 */   flags: { profileNote: false, backTop: true }, /* DEF-06 月度差异静态"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 27,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "继承自 2026-10 的月度/日期字面量 */   period: { p1: ['11-01', '10-18'], p2: ['10-19', '11-30'], pbCut: '10-18', caliberSwitchDay: '"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 28,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "继承自 2026-10 的月度/日期字面量 */   peakDays: ['10-01', '10-02', '10-03'],"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 30,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "继承自 2026-10 的月度/日期字面量 */   weeks: { ymWeeks: [['09-28', '10-04']], weekNames: ['09-28~10-04'], weekPeriodTag: ['期1'], kf"
     },
     {
       "file": "pro\\kaohe-daily\\build\\_stubs\\src\\config\\config-2026-11.js",
       "line": 33,
       "kind": "TODO",
+      "owner": "未认领",
       "text": "企客监控截止日 qikeWatchCutoff 为业务口径，不可自动推导 */   qikeWatchCutoff: '20260923'"
     }
   ],
+  "todoOwners": [
+    {
+      "owner": "未认领",
+      "count": 9
+    }
+  ],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R100",
+      "date": "2026-10-19",
+      "title": "口径反查索引 + 私有化检测（P1-2 落地）"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R99",
@@ -1450,12 +1471,6 @@
       "round": "R89",
       "date": "2026-10-18",
       "title": "部署引擎并发锁优化：遇锁礼貌等待"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R88",
-      "date": "2026-10-18",
-      "title": "功能增强④：移动端体验专项"
     }
   ],
   "approvals": [
