@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 03:46:46",
+  "generatedAt": "2026-10-19 04:01:06",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -139,8 +139,8 @@
         "expectHour": 9,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
       },
       "heal": {
         "can": true,
@@ -1091,7 +1091,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "3/4 任务正常 · 1 逾期"
+      "detail": "2/4 任务正常 · 2 逾期"
     },
     {
       "layer": "部署层",
@@ -1142,7 +1142,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 0.8,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1151,8 +1151,8 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-19 03:46",
-          "size": 75068
+          "mtime": "2026-10-19 04:01",
+          "size": 75070
         },
         {
           "name": "targets-oct.json",
@@ -1278,7 +1278,7 @@
         "name": "20261017-efficiency-naming",
         "files": 3,
         "latestAt": "2026-10-19 03:41:46",
-        "ageH": 0.1
+        "ageH": 0.3
       }
     ]
   },
@@ -1286,6 +1286,11 @@
     {
       "level": "WARN",
       "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30）但尚无今日留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
       "anchor": "sec-tasks"
     },
     {
