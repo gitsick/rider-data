@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19 05:45:56",
+  "generatedAt": "2026-10-19 06:06:10",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1127,7 +1127,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 1.4h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 1.7h 前"
     },
     {
       "layer": "渲染层",
@@ -1166,7 +1166,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 2.8,
+      "ageHours": 3.1,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1194,7 +1194,7 @@
           "size": 83480
         }
       ],
-      "ageHours": 1.4,
+      "ageHours": 1.7,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1300,8 +1300,8 @@
     "runs": [
       {
         "name": "20261017-efficiency-naming",
-        "files": 4,
-        "latestAt": "2026-10-19 05:36:03",
+        "files": 5,
+        "latestAt": "2026-10-19 05:55:03",
         "ageH": 0.2
       }
     ]
@@ -1321,6 +1321,11 @@
       "level": "WARN",
       "text": "审计有 1 项警告（2026-10-17 22:37:45）",
       "anchor": "sec-audit"
+    },
+    {
+      "level": "WARN",
+      "text": "审批待签认 2 项：P1 数据契约版本化（schemaVer 约定，防 pro 升级打断渲染层）；P2 城市总分逐日趋势（需扩展考核管线评分引擎）（teamflow\\runs\\ 审批.md）",
+      "anchor": "sec-approvals"
     }
   ],
   "todos": [
@@ -1380,6 +1385,12 @@
     }
   ],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R98",
+      "date": "2026-10-19",
+      "title": "战略梳理路线图 + 工作台中枢能力（待办/变更审计/知识库摘要）"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R97",
@@ -1445,12 +1456,48 @@
       "round": "R87",
       "date": "2026-10-18",
       "title": "功能增强③：工作台近 7 天运行概览"
+    }
+  ],
+  "approvals": [
+    {
+      "run": "20261017-efficiency-naming",
+      "no": "1",
+      "item": "R81-R98 看板体系 18 轮迭代（数据层统一/视图深链/存图/工作台中枢）",
+      "layer": "frontend+teamflow",
+      "owner": "dev+architect",
+      "status": "ok",
+      "by": "赵勇",
+      "date": "2026-10-19"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R86",
-      "date": "2026-10-18",
-      "title": "功能增强②：考核走势图 MTD 累计口径"
+      "no": "2",
+      "item": "工作台待办扫描 + 开发变更审计卡（R98）",
+      "layer": "frontend",
+      "owner": "dev",
+      "status": "ok",
+      "by": "赵勇",
+      "date": "2026-10-19"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "no": "3",
+      "item": "P1 数据契约版本化（schemaVer 约定，防 pro 升级打断渲染层）",
+      "layer": "pro+frontend",
+      "owner": "dev",
+      "status": "pending",
+      "by": "-",
+      "date": "-"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "no": "4",
+      "item": "P2 城市总分逐日趋势（需扩展考核管线评分引擎）",
+      "layer": "pro",
+      "owner": "dev",
+      "status": "pending",
+      "by": "-",
+      "date": "-"
     }
   ],
   "knowledge": [
@@ -1462,7 +1509,7 @@
     {
       "name": "业务口径手册",
       "path": "lib\\docs\\口径手册.md",
-      "desc": "跨项目复用的口径/规则/领域函数说明（共享函数库）"
+      "desc": "跨项目复用的口径/规则/领域函数说明（共享函数库） · 口径条目 7 条"
     },
     {
       "name": "项目工作区规范",
