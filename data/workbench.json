@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-20 02:21:42",
+  "generatedAt": "2026-10-20 03:08:06",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -13,8 +13,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-20 09:35:14",
-        "durationSec": 1449,
+        "finishedAt": "2026-10-20 10:31:02",
+        "durationSec": 61,
         "note": ""
       },
       "monitor": {
@@ -85,6 +85,13 @@
           "durationSec": 1449,
           "note": "",
           "dur": 1449
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-20 10:31:02",
+          "durationSec": 61,
+          "note": "",
+          "dur": 61
         }
       ],
       "durTrend": [
@@ -95,7 +102,8 @@
         89,
         2325,
         6041,
-        1449
+        1449,
+        61
       ]
     },
     {
@@ -1161,13 +1169,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.7h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 1.4h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0.8h 前刷新"
     }
   ],
   "projects": [
@@ -1200,7 +1208,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 23.4,
+      "ageHours": 24.2,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1228,7 +1236,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0.7,
+      "ageHours": 1.4,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1335,8 +1343,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 6,
-        "latestAt": "2026-10-20 02:07:55",
-        "ageH": 0.2
+        "latestAt": "2026-10-20 02:52:22",
+        "ageH": 0.3
       }
     ]
   },
@@ -1421,6 +1429,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R136",
+      "date": "2026-10-20",
+      "title": "：功能增强轮第九弹——完结率拆分（餐/非餐）逐日趋势图 + 点击下钻（WjSplitPanel）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R135",
       "date": "2026-10-20",
       "title": "：功能增强轮第八弹——访问日志关键词搜索 + 命中高亮（VisitsPanel）"
@@ -1484,12 +1498,6 @@
       "round": "R125",
       "date": "2026-10-19",
       "title": "：考核日页模块状态卡簇拆分（DailyTab 269→216 行）"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R124",
-      "date": "2026-10-19",
-      "title": "：工作台三卡簇拆分（WorkbenchPage 279→196 行）+ kpisOf 下沉"
     }
   ],
   "approvals": [
@@ -1591,8 +1599,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "94bdb11",
-        "at": "2026-10-20T10:10:42+08:00",
+        "hash": "87f9ac4",
+        "at": "2026-10-20T10:47:39+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
