@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-19 23:53:13",
+  "generatedAt": "2026-10-20 00:27:32",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -243,7 +243,7 @@
         "cadence": "hourly",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 15.7h）"
+        "overdueText": "运行超时（距上次 16.3h）"
       },
       "heal": {
         "can": false,
@@ -1136,13 +1136,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 15.4h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 16h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.3h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -1175,7 +1175,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 20.9,
+      "ageHours": 21.5,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1203,7 +1203,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 15.4,
+      "ageHours": 16,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1310,15 +1310,15 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 6,
-        "latestAt": "2026-10-19 23:46:34",
-        "ageH": 0.1
+        "latestAt": "2026-10-20 00:10:46",
+        "ageH": 0.3
       }
     ]
   },
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 15.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 16.3h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -1401,6 +1401,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R132",
+      "date": "2026-10-20",
+      "title": "：功能增强轮第五弹——明细搜索命中高亮（DataTable highlight）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R131",
       "date": "2026-10-20",
       "title": "：功能增强轮第四弹——方案页速览导航 scrollspy 滚动高亮（SchemeTab）"
@@ -1464,12 +1470,6 @@
       "round": "R121",
       "date": "2026-10-19",
       "title": "：What-if 试算面板纯函数层拆解（EstimatePanel 287→211 行）"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R120",
-      "date": "2026-10-19",
-      "title": "：月度页聚合纯函数层拆解（MonthlyTab 234→148 行）"
     }
   ],
   "approvals": [
@@ -1571,8 +1571,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "198a9cd",
-        "at": "2026-10-20T07:39:29+08:00",
+        "hash": "b4ee956",
+        "at": "2026-10-20T07:55:21+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -1593,8 +1593,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "6109425",
-        "at": "2026-10-19T12:20:06+08:00",
+        "hash": "7915582",
+        "at": "2026-10-20T08:18:23+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-18"
       }
     }
