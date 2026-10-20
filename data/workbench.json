@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-20 03:08:06",
+  "generatedAt": "2026-10-20 03:34:13",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1169,13 +1169,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 1.4h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 1.9h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.8h 前刷新"
+      "detail": "站点数据 0.4h 前刷新"
     }
   ],
   "projects": [
@@ -1208,7 +1208,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 24.2,
+      "ageHours": 24.6,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1236,7 +1236,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 1.4,
+      "ageHours": 1.9,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1343,7 +1343,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 6,
-        "latestAt": "2026-10-20 02:52:22",
+        "latestAt": "2026-10-20 03:15:46",
         "ageH": 0.3
       }
     ]
@@ -1429,6 +1429,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R137",
+      "date": "2026-10-20",
+      "title": "：功能增强轮第十弹——数据概览「近 7 天新增」时效 KPI 卡下钻 + 明细页近 N 天筛选（lf 协议扩展 days）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R136",
       "date": "2026-10-20",
       "title": "：功能增强轮第九弹——完结率拆分（餐/非餐）逐日趋势图 + 点击下钻（WjSplitPanel）"
@@ -1492,12 +1498,6 @@
       "round": "R126",
       "date": "2026-10-20",
       "title": "：完结率拆分面板纯计算层拆解（WjSplitPanel 128→112 行）"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R125",
-      "date": "2026-10-19",
-      "title": "：考核日页模块状态卡簇拆分（DailyTab 269→216 行）"
     }
   ],
   "approvals": [
@@ -1599,8 +1599,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "87f9ac4",
-        "at": "2026-10-20T10:47:39+08:00",
+        "hash": "01f05bb",
+        "at": "2026-10-20T11:10:04+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
