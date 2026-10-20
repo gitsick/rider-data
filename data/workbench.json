@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-20 01:41:55",
+  "generatedAt": "2026-10-20 01:56:58",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -260,7 +260,7 @@
         "cadence": "hourly",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 17.5h）"
+        "overdueText": "运行超时（距上次 17.8h）"
       },
       "heal": {
         "can": false,
@@ -1153,13 +1153,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0h 前"
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.3h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.2h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -1192,7 +1192,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 22.7,
+      "ageHours": 23,
       "stale": false,
       "staleThreshold": 26
     },
@@ -1220,7 +1220,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0,
+      "ageHours": 0.3,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1327,15 +1327,15 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 6,
-        "latestAt": "2026-10-20 01:32:13",
-        "ageH": 0.2
+        "latestAt": "2026-10-20 01:50:47",
+        "ageH": 0.1
       }
     ]
   },
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 17.5h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 17.8h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -1418,6 +1418,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R134",
+      "date": "2026-10-20",
+      "title": "：功能增强轮第七弹——解约总览统计表行点击下钻明细（OverviewPage + DataTable row-click）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R133",
       "date": "2026-10-20",
       "title": "：功能增强轮第六弹——考核日页趋势图点击下钻（DailyTab）"
@@ -1481,12 +1487,6 @@
       "round": "R123",
       "date": "2026-10-19",
       "title": "：解约总览纯计算层拆解（OverviewTab 168→59 行）"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R122",
-      "date": "2026-10-19",
-      "title": "：月底评估面板纯函数层拆解（MonthEndPanel 234→127 行）"
     }
   ],
   "approvals": [
@@ -1588,8 +1588,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6fa6b7d",
-        "at": "2026-10-20T09:29:04+08:00",
+        "hash": "aa304a3",
+        "at": "2026-10-20T09:44:08+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
