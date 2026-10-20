@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-20 07:40:57",
+  "generatedAt": "2026-10-20 08:02:45",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1177,7 +1177,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 产物陈旧（超 26h），最新产出 6h 前"
+      "detail": "2 项目 · 1 产物陈旧（超 26h），最新产出 6.3h 前"
     },
     {
       "layer": "渲染层",
@@ -1216,7 +1216,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 28.7,
+      "ageHours": 29.1,
       "stale": true,
       "staleThreshold": 26
     },
@@ -1244,7 +1244,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 6,
+      "ageHours": 6.3,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1351,8 +1351,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 6,
-        "latestAt": "2026-10-20 07:27:17",
-        "ageH": 0.2
+        "latestAt": "2026-10-20 07:47:07",
+        "ageH": 0.3
       }
     ]
   },
@@ -1369,7 +1369,7 @@
     },
     {
       "level": "WARN",
-      "text": "产物陈旧：通用运力监控（28.7h 未更新，阈值 26h）",
+      "text": "产物陈旧：通用运力监控（29.1h 未更新，阈值 26h）",
       "anchor": "sec-fresh"
     }
   ],
@@ -1447,6 +1447,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R148",
+      "date": "2026-10-20",
+      "title": "页面热度口径治理——路径变体归一 + 内部检查页剔除"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R147",
       "date": "2026-10-20",
       "title": "考核页月份参数化统一化——新增月份零代码分支"
@@ -1510,12 +1516,6 @@
       "round": "R133",
       "date": "2026-10-20",
       "title": "：功能增强轮第六弹——考核日页趋势图点击下钻（DailyTab）"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R132",
-      "date": "2026-10-20",
-      "title": "：功能增强轮第五弹——明细搜索命中高亮（DataTable highlight）"
     }
   ],
   "approvals": [
@@ -1617,8 +1617,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c079f69",
-        "at": "2026-10-20T15:20:33+08:00",
+        "hash": "0b2420a",
+        "at": "2026-10-20T15:43:14+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
