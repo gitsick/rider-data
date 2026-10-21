@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-21 11:09:17",
+  "generatedAt": "2026-10-21 11:23:25",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -316,7 +316,7 @@
         "cadence": "hourly",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 2.9h）"
+        "overdueText": "运行超时（距上次 3.1h）"
       },
       "heal": {
         "can": false,
@@ -1265,19 +1265,19 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-21 19:01:47）"
+      "detail": "本轮发布前置 8 段全过（2026-10-21 19:23:25）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 1.9h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 2.1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -1310,7 +1310,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 1.9,
+      "ageHours": 2.1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-18",
@@ -1342,7 +1342,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 8.8,
+      "ageHours": 9,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": null,
@@ -1453,15 +1453,15 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-21 11:00:13",
-        "ageH": 0.2
+        "latestAt": "2026-10-21 11:21:37",
+        "ageH": 0
       }
     ]
   },
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 2.9h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 3.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -1719,8 +1719,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b09576c",
-        "at": "2026-10-21T19:00:54+08:00",
+        "hash": "272a96b",
+        "at": "2026-10-21T19:18:31+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -1748,15 +1748,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-21 19:01:47",
+    "runAt": "2026-10-21 19:23:25",
     "allPass": true,
-    "scope": "complete",
-    "label": "上一轮全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验在发布后落盘）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.2,
+        "seconds": 1.6,
         "note": ""
       },
       {
@@ -1768,19 +1768,19 @@
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 7.1,
+        "seconds": 6,
         "note": ""
       },
       {
@@ -1792,25 +1792,13 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 31.1,
+        "seconds": 25.4,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 27.1,
-        "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 8.7,
-        "note": ""
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 47.6,
+        "seconds": 23.4,
         "note": ""
       }
     ]
