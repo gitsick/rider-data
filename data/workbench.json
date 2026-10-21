@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-21 08:31:29",
+  "generatedAt": "2026-10-21 09:28:26",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -188,17 +188,17 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-17 12:50:13",
-        "durationSec": 535.4,
+        "finishedAt": "2026-10-21 17:26:13",
+        "durationSec": 743.6,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "expectHour": 9,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
-        "overdue": true,
-        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
+        "overdue": false,
+        "overdueText": ""
       },
       "heal": {
         "can": true,
@@ -260,6 +260,27 @@
           "durationSec": 535.4,
           "note": "",
           "dur": 535
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-21 17:04:17",
+          "durationSec": 275.2,
+          "note": "",
+          "dur": 275
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-21 17:08:43",
+          "durationSec": 176.3,
+          "note": "",
+          "dur": 176
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-21 17:26:13",
+          "durationSec": 743.6,
+          "note": "",
+          "dur": 744
         }
       ],
       "durTrend": [
@@ -270,7 +291,10 @@
         113,
         53,
         265,
-        535
+        535,
+        275,
+        176,
+        744
       ]
     },
     {
@@ -1228,8 +1252,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "WARN",
-      "detail": "3/4 任务正常 · 1 逾期"
+      "status": "PASS",
+      "detail": "4/4 任务正常"
     },
     {
       "layer": "部署层",
@@ -1246,14 +1270,14 @@
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
-      "status": "WARN",
-      "detail": "2 项目 · 1 产物陈旧（超 26h），最新产出 6.2h 前"
+      "status": "PASS",
+      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.3h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -1262,32 +1286,32 @@
       "recent": [
         {
           "name": "订单运力分析_2026-10-18.xlsx",
-          "mtime": "2026-10-19 02:58",
+          "mtime": "2026-10-21 09:17",
           "size": 22646
         },
         {
           "name": "悦跑排班差异_站点跟进清单_2026-10-18.xlsx",
-          "mtime": "2026-10-19 02:58",
+          "mtime": "2026-10-21 09:17",
           "size": 18755
         },
         {
           "name": "时段运力拆解_2026-10-18.xlsx",
-          "mtime": "2026-10-19 02:58",
-          "size": 194807
+          "mtime": "2026-10-21 09:17",
+          "size": 194811
         },
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-19 02:58",
+          "mtime": "2026-10-21 09:13",
           "size": 2683659
         },
         {
           "name": "capacity_breakdown_dashboard_2026-10-18.html",
-          "mtime": "2026-10-19 02:58",
+          "mtime": "2026-10-21 09:13",
           "size": 2683659
         }
       ],
-      "ageHours": 53.5,
-      "stale": true,
+      "ageHours": 0.2,
+      "stale": false,
       "staleThreshold": 26
     },
     {
@@ -1314,7 +1338,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 6.2,
+      "ageHours": 7.1,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1421,26 +1445,16 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-21 08:21:25",
-        "ageH": 0.2
+        "latestAt": "2026-10-21 08:52:11",
+        "ageH": 0.6
       }
     ]
   },
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "WARN",
       "text": "审计有 1 项警告（2026-10-17 22:37:45）",
       "anchor": "sec-audit"
-    },
-    {
-      "level": "WARN",
-      "text": "产物陈旧：通用运力监控（53.5h 未更新，阈值 26h）",
-      "anchor": "sec-fresh"
     }
   ],
   "todos": [
@@ -1517,6 +1531,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R176",
+      "date": "2026-10-21",
+      "title": "展示侧打磨：健康分色阶自洽 + 工作台吸顶锚点导航"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R175",
       "date": "2026-10-21",
       "title": "体系健康分上站：五层加权一屏见体系健康度"
@@ -1580,12 +1600,6 @@
       "round": "R149",
       "date": "2026-10-20",
       "title": "页面×来源交叉图——第五图补齐访问来源渠道维度"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R148",
-      "date": "2026-10-20",
-      "title": "页面热度口径治理——路径变体归一 + 内部检查页剔除"
     }
   ],
   "approvals": [
@@ -1687,8 +1701,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6d577a6",
-        "at": "2026-10-21T16:15:05+08:00",
+        "hash": "6b91f3c",
+        "at": "2026-10-21T16:35:25+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -1782,14 +1796,14 @@
     ]
   },
   "health": {
-    "score": 80,
-    "grade": "良",
+    "score": 100,
+    "grade": "优",
     "layers": [
       {
         "layer": "调度层",
-        "status": "WARN",
+        "status": "PASS",
         "weight": 25,
-        "points": 50
+        "points": 100
       },
       {
         "layer": "门禁层",
@@ -1805,9 +1819,9 @@
       },
       {
         "layer": "项目层",
-        "status": "WARN",
+        "status": "PASS",
         "weight": 15,
-        "points": 50
+        "points": 100
       },
       {
         "layer": "渲染层",
