@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-21 08:07:57",
+  "generatedAt": "2026-10-21 08:13:57",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1233,13 +1233,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-21 16:06:02）"
+      "detail": "上轮全链 10 段全过（2026-10-21 16:10:26）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 产物陈旧（超 26h），最新产出 5.8h 前"
+      "detail": "2 项目 · 1 产物陈旧（超 26h），最新产出 5.9h 前"
     },
     {
       "layer": "渲染层",
@@ -1278,7 +1278,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 53.2,
+      "ageHours": 53.3,
       "stale": true,
       "staleThreshold": 26
     },
@@ -1306,7 +1306,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 5.8,
+      "ageHours": 5.9,
       "stale": false,
       "staleThreshold": 26
     }
@@ -1414,7 +1414,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-21 07:39:27",
-        "ageH": 0.5
+        "ageH": 0.6
       }
     ]
   },
@@ -1436,7 +1436,7 @@
     },
     {
       "level": "WARN",
-      "text": "产物陈旧：通用运力监控（53.2h 未更新，阈值 26h）",
+      "text": "产物陈旧：通用运力监控（53.3h 未更新，阈值 26h）",
       "anchor": "sec-fresh"
     }
   ],
@@ -1684,8 +1684,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eb25722",
-        "at": "2026-10-21T16:02:40+08:00",
+        "hash": "e68eb16",
+        "at": "2026-10-21T16:08:57+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -1713,13 +1713,13 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-21 16:06:02",
+    "runAt": "2026-10-21 16:10:26",
     "allPass": true,
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 4.1,
+        "seconds": 1.8,
         "note": ""
       },
       {
@@ -1743,7 +1743,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 7.6,
+        "seconds": 8.1,
         "note": ""
       },
       {
@@ -1755,25 +1755,25 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 30.7,
+        "seconds": 24.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 33,
+        "seconds": 24.1,
         "note": ""
       },
       {
         "name": "deploy",
         "pass": true,
-        "seconds": 11.4,
+        "seconds": 7.8,
         "note": ""
       },
       {
         "name": "live_gate",
         "pass": true,
-        "seconds": 196.4,
+        "seconds": 84.5,
         "note": ""
       }
     ]
