@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-21 15:41:57",
+  "generatedAt": "2026-10-21 17:15:36",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -20,7 +20,7 @@
       "monitor": {
         "cadence": "daily",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -268,7 +268,7 @@
       "monitor": {
         "cadence": "daily",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -451,7 +451,7 @@
       "monitor": {
         "cadence": "daily",
         "expectHour": 9,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -700,7 +700,7 @@
         "cadence": "hourly",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 7.4h）"
+        "overdueText": "运行超时（距上次 9h）"
       },
       "heal": {
         "can": false,
@@ -1905,13 +1905,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-21 23:41:57）"
+      "detail": "本轮发布前置 8 段全过（2026-10-22 01:15:36）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 6.4h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 8h 前"
     },
     {
       "layer": "渲染层",
@@ -1950,11 +1950,11 @@
           "size": 2683659
         }
       ],
-      "ageHours": 6.4,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-18",
-      "dataLag": 3,
+      "dataLag": 4,
       "staleData": true,
       "dataLagThreshold": 2,
       "outage": {
@@ -1986,7 +1986,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 13.4,
+      "ageHours": 14.9,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": null,
@@ -2097,8 +2097,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-21 15:11:03",
-        "ageH": 0.5
+        "latestAt": "2026-10-21 16:26:01",
+        "ageH": 0.8
       }
     ]
   },
@@ -2115,7 +2115,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 7.4h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 9h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -2125,7 +2125,7 @@
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-18（滞后 3 天，超 2 天）——疑似源停发第 3 天（自 2026-10-19 起，待业务侧确认），按最近可得日期重跑模式",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-18（滞后 4 天，超 2 天）——疑似源停发第 3 天（自 2026-10-19 起，待业务侧确认），按最近可得日期重跑模式",
       "anchor": "sec-fresh"
     }
   ],
@@ -2373,8 +2373,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "525f914",
-        "at": "2026-10-21T22:47:37+08:00",
+        "hash": "dfe8672",
+        "at": "2026-10-21T23:42:32+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2402,7 +2402,7 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-21 23:41:57",
+    "runAt": "2026-10-22 01:15:36",
     "allPass": true,
     "scope": "pre-deploy",
     "label": "本轮发布前置快照（构建+门禁；部署与线上回验在发布后落盘）",
@@ -2410,13 +2410,13 @@
       {
         "name": "visits",
         "pass": true,
-        "seconds": 1.7,
+        "seconds": 2.1,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -2428,13 +2428,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 7.3,
+        "seconds": 7.5,
         "note": ""
       },
       {
@@ -2446,13 +2446,13 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 45.4,
+        "seconds": 32.9,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 55.6,
+        "seconds": 29.4,
         "note": ""
       }
     ]
@@ -2496,7 +2496,7 @@
   "healthHistory": [
     {
       "date": "2026-10-21",
-      "at": "2026-10-21 15:41:57",
+      "at": "2026-10-21 17:15:36",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -2575,7 +2575,7 @@
     },
     "data": {
       "count": 6,
-      "totalKB": 1068.9,
+      "totalKB": 1068.8,
       "top": [
         {
           "name": "rider-detail.json",
@@ -2595,7 +2595,7 @@
         },
         {
           "name": "visits.json",
-          "kb": 48.3
+          "kb": 48.2
         },
         {
           "name": "logger.json",
