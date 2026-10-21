@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-21 09:28:26",
+  "generatedAt": "2026-10-21 10:31:00",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1265,13 +1265,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-21 16:16:27）"
+      "detail": "上轮全链 10 段全过（2026-10-21 18:20:47）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
-      "status": "PASS",
-      "detail": "2 项目 · 产物均新鲜，最新产出 0.2h 前"
+      "status": "WARN",
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 1.2h 前"
     },
     {
       "layer": "渲染层",
@@ -1310,9 +1310,13 @@
           "size": 2683659
         }
       ],
-      "ageHours": 0.2,
+      "ageHours": 1.2,
       "stale": false,
-      "staleThreshold": 26
+      "staleThreshold": 26,
+      "dataDate": "2026-10-18",
+      "dataLag": 3,
+      "staleData": true,
+      "dataLagThreshold": 2
     },
     {
       "name": "履约考核工程",
@@ -1338,9 +1342,13 @@
           "size": 4973
         }
       ],
-      "ageHours": 7.1,
+      "ageHours": 8.2,
       "stale": false,
-      "staleThreshold": 26
+      "staleThreshold": 26,
+      "dataDate": null,
+      "dataLag": null,
+      "staleData": false,
+      "dataLagThreshold": 2
     }
   ],
   "pages": [
@@ -1445,8 +1453,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-21 08:52:11",
-        "ageH": 0.6
+        "latestAt": "2026-10-21 10:25:07",
+        "ageH": 0.1
       }
     ]
   },
@@ -1455,6 +1463,11 @@
       "level": "WARN",
       "text": "审计有 1 项警告（2026-10-17 22:37:45）",
       "anchor": "sec-audit"
+    },
+    {
+      "level": "WARN",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-18（滞后 3 天，超 2 天）——疑似数据源停发，按最近可得日期重跑模式",
+      "anchor": "sec-fresh"
     }
   ],
   "todos": [
@@ -1531,6 +1544,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R177",
+      "date": "2026-10-21",
+      "title": "调度层失败任务治理：健康分 68「中」→ 100「优」"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R176",
       "date": "2026-10-21",
       "title": "展示侧打磨：健康分色阶自洽 + 工作台吸顶锚点导航"
@@ -1594,12 +1613,6 @@
       "round": "R150",
       "date": "2026-10-20",
       "title": "访问来源口径治理——同义 host 归一为业务名"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R149",
-      "date": "2026-10-20",
-      "title": "页面×来源交叉图——第五图补齐访问来源渠道维度"
     }
   ],
   "approvals": [
@@ -1701,8 +1714,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6b91f3c",
-        "at": "2026-10-21T16:35:25+08:00",
+        "hash": "afc2867",
+        "at": "2026-10-21T18:19:49+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -1730,19 +1743,19 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-21 16:16:27",
+    "runAt": "2026-10-21 18:20:47",
     "allPass": true,
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 1.7,
+        "seconds": 7.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -1760,7 +1773,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.8,
+        "seconds": 10.1,
         "note": ""
       },
       {
@@ -1772,31 +1785,31 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 28.4,
+        "seconds": 205.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 26.6,
+        "seconds": 27.6,
         "note": ""
       },
       {
         "name": "deploy",
         "pass": true,
-        "seconds": 9.2,
+        "seconds": 2848.8,
         "note": ""
       },
       {
         "name": "live_gate",
         "pass": true,
-        "seconds": 76.5,
+        "seconds": 49,
         "note": ""
       }
     ]
   },
   "health": {
-    "score": 100,
+    "score": 93,
     "grade": "优",
     "layers": [
       {
@@ -1819,9 +1832,9 @@
       },
       {
         "layer": "项目层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 15,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "渲染层",
