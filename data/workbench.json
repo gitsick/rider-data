@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-21 13:06:09",
+  "generatedAt": "2026-10-21 13:48:38",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -700,7 +700,7 @@
         "cadence": "hourly",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 4.8h）"
+        "overdueText": "运行超时（距上次 5.5h）"
       },
       "heal": {
         "can": false,
@@ -1905,13 +1905,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-21 21:06:08）"
+      "detail": "本轮发布前置 8 段全过（2026-10-21 21:48:37）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3.8h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 4.5h 前"
     },
     {
       "layer": "渲染层",
@@ -1950,7 +1950,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 3.8,
+      "ageHours": 4.5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-18",
@@ -1986,7 +1986,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 10.8,
+      "ageHours": 11.5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": null,
@@ -2097,7 +2097,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-21 13:04:36",
+        "latestAt": "2026-10-21 13:48:37",
         "ageH": 0
       }
     ]
@@ -2115,7 +2115,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 4.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 5.5h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -2203,6 +2203,18 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R185",
+      "date": "2026-10-21",
+      "title": "：rider-detail 协议链接拆分（数据侧真瘦身）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R184",
+      "date": "2026-10-21",
+      "title": "echarts 瘦身盘点：按需已生效，575KB 为固有成本——转防回归锁定"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R183",
       "date": "2026-10-21",
       "title": "性能体检上站：体积剖面 + 预算门禁，体积回归上站前拦截"
@@ -2260,18 +2272,6 @@
       "round": "R174",
       "date": "2026-10-21",
       "title": "门禁结果 JSON 结构化报告上站 + Edge 探针挂死根治"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R173",
-      "date": "2026-10-21",
-      "title": "refresh 链前置段并行 + 门禁双层并行反效应实测回退"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R172",
-      "date": "2026-10-21",
-      "title": "体系战略与规范上站"
     }
   ],
   "approvals": [
@@ -2373,8 +2373,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "26721fc",
-        "at": "2026-10-21T20:44:59+08:00",
+        "hash": "0629ac4",
+        "at": "2026-10-21T21:06:43+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2402,7 +2402,7 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-21 21:06:08",
+    "runAt": "2026-10-21 21:48:37",
     "allPass": true,
     "scope": "pre-deploy",
     "label": "本轮发布前置快照（构建+门禁；部署与线上回验在发布后落盘）",
@@ -2410,7 +2410,7 @@
       {
         "name": "visits",
         "pass": true,
-        "seconds": 1.4,
+        "seconds": 2.2,
         "note": ""
       },
       {
@@ -2428,13 +2428,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6,
+        "seconds": 7.5,
         "note": ""
       },
       {
@@ -2446,13 +2446,13 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 55.3,
+        "seconds": 34.4,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 50.1,
+        "seconds": 27.1,
         "note": ""
       }
     ]
@@ -2496,7 +2496,7 @@
   "healthHistory": [
     {
       "date": "2026-10-21",
-      "at": "2026-10-21 13:06:09",
+      "at": "2026-10-21 13:48:38",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -2537,14 +2537,14 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 935.9,
+      "totalKB": 937.5,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-CpVyV_27.js",
+          "name": "main-W9iJgWA8.js",
           "kb": 98.1
         },
         {
@@ -2568,26 +2568,30 @@
           "kb": 13.7
         },
         {
-          "name": "swRegister-Cta6af8D.js",
-          "kb": 10.2
+          "name": "rider_dashboard-CPW4fzTN.js",
+          "kb": 10.9
         }
       ]
     },
     "data": {
-      "count": 5,
-      "totalKB": 1057.6,
+      "count": 6,
+      "totalKB": 1068.8,
       "top": [
         {
           "name": "rider-detail.json",
-          "kb": 644.9
+          "kb": 510
         },
         {
           "name": "rider-index.json",
           "kb": 298
         },
         {
+          "name": "rider-agreements.json",
+          "kb": 146
+        },
+        {
           "name": "workbench.json",
-          "kb": 65.7
+          "kb": 65.8
         },
         {
           "name": "visits.json",
