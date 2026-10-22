@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 00:38:11",
+  "generatedAt": "2026-10-22 01:21:25",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -19,6 +19,7 @@
       },
       "monitor": {
         "cadence": "daily",
+        "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
         "doneToday": true,
         "expect": true,
@@ -269,14 +270,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-21 10:12:55",
-        "durationSec": 2976,
+        "finishedAt": "2026-10-22 09:08:13",
+        "durationSec": 1210,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
+        "trigger": "每日 08:30",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -306,6 +308,13 @@
           "durationSec": 2976,
           "note": "",
           "dur": 2976
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-22 09:08:13",
+          "durationSec": 1210,
+          "note": "",
+          "dur": 1210
         }
       ],
       "gaps": {
@@ -428,17 +437,18 @@
           },
           {
             "date": "2026-10-22",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 2,
         "failCount": 0,
-        "passCount": 3
+        "passCount": 4
       },
       "durTrend": [
         2776,
-        2976
+        2976,
+        1210
       ]
     },
     {
@@ -458,6 +468,7 @@
       },
       "monitor": {
         "cadence": "daily",
+        "trigger": "每日 09:00",
         "expectHour": 9,
         "doneToday": false,
         "expect": true,
@@ -693,10 +704,10 @@
       "id": "rider-hourly",
       "name": "骑手解约数据检查与刷新",
       "type": "agent",
-      "trigger": "每小时",
+      "trigger": "每日 16:00",
       "cwd": "F:\\work\\mtcapacity\\pro\\rider-hourly",
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
-      "note": "独立工作区，每小时由定时任务直接驱动",
+      "note": "独立工作区，每日 16:00 由定时任务直接驱动（R195 口径对齐：登记原为每小时，与定时器实际 RRULE 每日 16:00 漂移，导致非运行窗口持续误报运行超时）",
       "last": {
         "status": "PASS",
         "exitCode": 0,
@@ -705,10 +716,13 @@
         "note": ""
       },
       "monitor": {
-        "cadence": "hourly",
+        "cadence": "daily",
+        "trigger": "每日 16:00",
+        "expectHour": 16,
+        "doneToday": false,
         "expect": true,
-        "overdue": true,
-        "overdueText": "运行超时（距上次 16.3h）"
+        "overdue": false,
+        "overdueText": ""
       },
       "heal": {
         "can": false,
@@ -1257,6 +1271,7 @@
       },
       "monitor": {
         "cadence": "manual",
+        "trigger": "手动 / 部署异常后",
         "expect": false
       },
       "heal": {
@@ -1900,8 +1915,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "WARN",
-      "detail": "3/4 任务正常 · 1 逾期 · 近 30 天触发断档 8 天"
+      "status": "PASS",
+      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -1913,13 +1928,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-22 08:38:11）"
+      "detail": "本轮发布前置 9 段全过（2026-10-22 09:21:25）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0.8h 前"
     },
     {
       "layer": "渲染层",
@@ -1958,7 +1973,7 @@
           "size": 2683659
         }
       ],
-      "ageHours": 15.3,
+      "ageHours": 16.1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-18",
@@ -1995,7 +2010,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0,
+      "ageHours": 0.8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2106,21 +2121,16 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-22 00:28:15",
-        "ageH": 0.2
+        "latestAt": "2026-10-22 01:19:39",
+        "ageH": 0
       }
     ]
   },
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：骑手解约数据检查与刷新 —— 运行超时（距上次 16.3h），需在对应自动化重跑并留痕",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 8 天零留痕（新商评考核周报 3 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
+      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
     },
     {
       "level": "WARN",
@@ -2377,8 +2387,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5a467fb",
-        "at": "2026-10-22T08:36:40+08:00",
+        "hash": "eaffd3a",
+        "at": "2026-10-22T08:38:13+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2406,27 +2416,33 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 08:38:11",
+    "runAt": "2026-10-22 09:21:25",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
+      {
+        "name": "excel",
+        "pass": true,
+        "seconds": 3.5,
+        "note": ""
+      },
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.5,
+        "seconds": 3.5,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.7,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -2438,50 +2454,38 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 8,
+        "seconds": 11.7,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 31.2,
+        "seconds": 42.5,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 27.3,
+        "seconds": 35.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 8,
-        "note": "拷贝回验 59 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 85.4,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "health": {
-    "score": 80,
-    "grade": "良",
+    "score": 93,
+    "grade": "优",
     "layers": [
       {
         "layer": "调度层",
-        "status": "WARN",
+        "status": "PASS",
         "weight": 25,
-        "points": 50
+        "points": 100
       },
       {
         "layer": "门禁层",
@@ -2540,13 +2544,13 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 00:38:11",
-      "score": 80,
-      "grade": "良",
+      "at": "2026-10-22 01:21:25",
+      "score": 93,
+      "grade": "优",
       "layers": [
         {
           "layer": "调度层",
-          "status": "WARN"
+          "status": "PASS"
         },
         {
           "layer": "部署层",
@@ -2619,7 +2623,7 @@
     },
     "data": {
       "count": 6,
-      "totalKB": 1069.3,
+      "totalKB": 1069.9,
       "top": [
         {
           "name": "rider-detail.json",
@@ -2635,7 +2639,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 66.4
+          "kb": 67
         },
         {
           "name": "visits.json",
