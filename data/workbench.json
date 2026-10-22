@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 12:59:50",
+  "generatedAt": "2026-10-22 13:03:14",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1710,7 +1710,7 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-22 19:42:05",
+    "auditedAt": "2026-10-22 21:03:13",
     "status": "PASS",
     "pass": 31,
     "warn": 3,
@@ -1749,7 +1749,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 1813dc9 2026-10-22 19:39:35 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 9737299 2026-10-22 20:59:52 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1759,17 +1759,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（9.3 小时前生成）"
+        "msg": "单文件产物存在（10.7 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（188 小时前生成）"
+        "msg": "单文件产物存在（189.4 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 0.1 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -1889,10 +1889,6 @@
     ],
     "history": [
       {
-        "auditedAt": "2026-10-22 15:35:34",
-        "status": "PASS"
-      },
-      {
         "auditedAt": "2026-10-22 15:52:23",
         "status": "PASS"
       },
@@ -1943,6 +1939,10 @@
       {
         "auditedAt": "2026-10-22 19:42:05",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-22 21:03:13",
+        "status": "PASS"
       }
     ]
   },
@@ -1957,13 +1957,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-22 19:42:05）"
+      "detail": "审计 PASS（2026-10-22 21:03:13）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-22 20:59:49）"
+      "detail": "上轮全链 10 段全过（2026-10-22 21:02:48）"
     },
     {
       "layer": "项目层",
@@ -1975,7 +1975,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -2008,7 +2008,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 10.6,
+      "ageHours": 10.7,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2220,7 +2220,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 11:41:15",
-        "ageH": 1.3
+        "ageH": 1.4
       }
     ]
   },
@@ -2237,7 +2237,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 3 项警告（2026-10-22 19:42:05）",
+      "text": "审计有 3 项警告（2026-10-22 21:03:13）",
       "anchor": "sec-audit"
     }
   ],
@@ -2416,8 +2416,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "1813dc9",
-        "at": "2026-10-22T19:39:35+08:00",
+        "hash": "9737299",
+        "at": "2026-10-22T20:59:52+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2445,10 +2445,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 20:59:49",
+    "runAt": "2026-10-22 21:02:48",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2497,6 +2497,18 @@
         "pass": true,
         "seconds": 34.5,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 7.3,
+        "note": "拷贝回验 71 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 170.8,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2567,7 +2579,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 12:59:50",
+      "at": "2026-10-22 13:03:14",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -2646,7 +2658,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1832.6,
+      "totalKB": 1832.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -2666,7 +2678,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 67.5
+          "kb": 67.3
         },
         {
           "name": "visits.json",
