@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 04:34:20",
+  "generatedAt": "2026-10-22 05:07:31",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1957,19 +1957,19 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-22 12:34:16）"
+      "detail": "本轮发布前置 8 段全过（2026-10-22 13:07:31）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 2.2h 前"
+      "detail": "2 项目，最新产出 2.7h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2002,7 +2002,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 2.2,
+      "ageHours": 2.7,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2034,7 +2034,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 4,
+      "ageHours": 4.5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2070,8 +2070,8 @@
     },
     {
       "key": "rider",
-      "title": "骑手解约看板",
-      "desc": "解约明细 / 总览",
+      "title": "骑手看板",
+      "desc": "解约明细 / 骑手明细 / 总览",
       "href": "rider_dashboard.html"
     },
     {
@@ -2187,7 +2187,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 04:18:34",
-        "ageH": 0.3
+        "ageH": 0.8
       }
     ]
   },
@@ -2447,8 +2447,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "4dd43e5",
-        "at": "2026-10-22T12:30:07+08:00",
+        "hash": "ebfcbb9",
+        "at": "2026-10-22T12:34:23+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2476,21 +2476,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 12:34:16",
+    "runAt": "2026-10-22 13:07:31",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.6,
+        "seconds": 2.3,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -2502,13 +2502,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.7,
+        "seconds": 6.4,
         "note": ""
       },
       {
@@ -2520,26 +2520,14 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 37.5,
+        "seconds": 28.2,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 64.7,
+        "seconds": 24.5,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 15.2,
-        "note": "拷贝回验 60 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 240.7,
-        "note": "指纹+探针 assets/index-lyU2ii0l.css 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2610,7 +2598,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 04:34:20",
+      "at": "2026-10-22 05:07:31",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2650,15 +2638,15 @@
   ],
   "perf": {
     "assets": {
-      "count": 35,
-      "totalKB": 946.8,
+      "count": 36,
+      "totalKB": 947.2,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-W9iJgWA8.js",
+          "name": "main-BhWXgRPj.js",
           "kb": 98.1
         },
         {
@@ -2666,11 +2654,11 @@
           "kb": 73.6
         },
         {
-          "name": "workbench-D2RwbgPt.js",
+          "name": "workbench-C10AItCD.js",
           "kb": 40.7
         },
         {
-          "name": "swRegister-BgfjysGb.css",
+          "name": "swRegister-Cr1xc_hD.css",
           "kb": 28.4
         },
         {
@@ -2682,14 +2670,14 @@
           "kb": 15.7
         },
         {
-          "name": "rider_dashboard-CPW4fzTN.js",
-          "kb": 10.9
+          "name": "rider_dashboard-BQQrwK-7.js",
+          "kb": 11.2
         }
       ]
     },
     "data": {
       "count": 6,
-      "totalKB": 1071,
+      "totalKB": 1071.3,
       "top": [
         {
           "name": "rider-detail.json",
@@ -2705,7 +2693,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 68.1
+          "kb": 68.4
         },
         {
           "name": "visits.json",
