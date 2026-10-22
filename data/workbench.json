@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 15:59:35",
+  "generatedAt": "2026-10-22 16:14:09",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -21,7 +21,7 @@
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -286,7 +286,7 @@
         "cadence": "daily",
         "trigger": "每日 08:30",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -478,7 +478,7 @@
         "cadence": "daily",
         "trigger": "每日 09:00",
         "expectHour": 9,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -743,7 +743,7 @@
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -1963,19 +1963,19 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-22 23:59:09）"
+      "detail": "本轮发布前置 8 段全过（2026-10-23 00:14:08）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 0.1h 前"
+      "detail": "2 项目，最新产出 0.3h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2008,11 +2008,11 @@
           "size": 2701175
         }
       ],
-      "ageHours": 13.6,
+      "ageHours": 13.8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
-      "dataLag": 1,
+      "dataLag": 2,
       "staleData": false,
       "dataLagThreshold": 2
     },
@@ -2045,10 +2045,10 @@
           "size": 4973
         }
       ],
-      "ageHours": 0.1,
+      "ageHours": 0.3,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-10-22",
+      "dataDate": "2026-10-23",
       "dataLag": 0,
       "staleData": false,
       "dataLagThreshold": 2,
@@ -2227,8 +2227,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-22 15:55:58",
-        "ageH": 0.1
+        "latestAt": "2026-10-22 16:12:48",
+        "ageH": 0
       }
     ]
   },
@@ -2242,6 +2242,12 @@
   "todos": [],
   "todoOwners": [],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R218",
+      "date": "2026-10-23",
+      "title": "：换月校验留痕 schema 单源化 + 工作台透出接线盘点"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R217",
@@ -2307,12 +2313,6 @@
       "round": "R176",
       "date": "2026-10-21",
       "title": "展示侧打磨：健康分色阶自洽 + 工作台吸顶锚点导航"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R175",
-      "date": "2026-10-21",
-      "title": "体系健康分上站：五层加权一屏见体系健康度"
     }
   ],
   "approvals": [
@@ -2414,8 +2414,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "8b9b7f3",
-        "at": "2026-10-22T23:55:51+08:00",
+        "hash": "50a03e5",
+        "at": "2026-10-23T00:00:50+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2443,15 +2443,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 23:59:09",
+    "runAt": "2026-10-23 00:14:08",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.1,
+        "seconds": 2.7,
         "note": ""
       },
       {
@@ -2463,50 +2463,38 @@
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 9.1,
+        "seconds": 8.7,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 48,
+        "seconds": 48.5,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 45.7,
+        "seconds": 43.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 9.9,
-        "note": "拷贝回验 71 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 191.7,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2577,7 +2565,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 15:59:35",
+      "at": "2026-10-22 16:14:09",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2618,7 +2606,7 @@
   "perf": {
     "assets": {
       "count": 36,
-      "totalKB": 963.5,
+      "totalKB": 963.7,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -2633,8 +2621,8 @@
           "kb": 73.6
         },
         {
-          "name": "workbench-DaIGstyU.js",
-          "kb": 42.2
+          "name": "workbench-DHjojhdB.js",
+          "kb": 42.4
         },
         {
           "name": "swRegister-DNfKGIUL.css",
@@ -2656,7 +2644,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1843.6,
+      "totalKB": 1843.9,
       "top": [
         {
           "name": "rider_base.json",
@@ -2676,7 +2664,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 66.2
+          "kb": 66.5
         },
         {
           "name": "visits.json",
