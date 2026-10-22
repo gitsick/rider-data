@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 09:17:13",
+  "generatedAt": "2026-10-22 09:18:28",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1958,7 +1958,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-22 17:17:12）"
+      "detail": "本轮发布前置 8 段全过（2026-10-22 17:18:28）"
     },
     {
       "layer": "项目层",
@@ -2187,8 +2187,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-22 08:55:15",
-        "ageH": 0.4
+        "latestAt": "2026-10-22 09:18:19",
+        "ageH": 0
       }
     ]
   },
@@ -2384,8 +2384,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "169e73a",
-        "at": "2026-10-22T17:00:25+08:00",
+        "hash": "973f217",
+        "at": "2026-10-22T17:17:20+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2413,7 +2413,7 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 17:17:12",
+    "runAt": "2026-10-22 17:18:28",
     "allPass": true,
     "scope": "pre-deploy",
     "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
@@ -2421,49 +2421,49 @@
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.2,
+        "seconds": 4.5,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.9,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 1.2,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8,
+        "seconds": 8.9,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 32.8,
+        "seconds": 35,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 31.9,
+        "seconds": 32.4,
         "note": ""
       }
     ]
@@ -2535,7 +2535,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 09:17:13",
+      "at": "2026-10-22 09:18:28",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -2614,7 +2614,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1831.5,
+      "totalKB": 1831.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -2634,7 +2634,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 66.4
+          "kb": 66.1
         },
         {
           "name": "visits.json",
