@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 14:25:57",
+  "generatedAt": "2026-10-22 14:38:02",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -733,11 +733,11 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每日 16:00 由定时任务直接驱动（R195 口径对齐：登记原为每小时，与定时器实际 RRULE 每日 16:00 漂移，导致非运行窗口持续误报运行超时）",
       "last": {
-        "status": "FAIL",
-        "exitCode": 1,
-        "finishedAt": "2026-10-22 16:13:42",
-        "durationSec": 822,
-        "note": "问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑"
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-10-22 22:34:52",
+        "durationSec": null,
+        "note": ""
       },
       "monitor": {
         "cadence": "daily",
@@ -753,13 +753,6 @@
         "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id rider-hourly -Record PASS 留痕"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 09:02:45",
-          "durationSec": null,
-          "note": "",
-          "dur": null
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 10:03:00",
@@ -1102,6 +1095,13 @@
           "durationSec": 822,
           "note": "问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑",
           "dur": 822
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-22 22:34:52",
+          "durationSec": null,
+          "note": "",
+          "dur": null
         }
       ],
       "gaps": {
@@ -1224,13 +1224,13 @@
           },
           {
             "date": "2026-10-22",
-            "state": "fail"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
         "gapCount": 0,
-        "failCount": 1,
-        "passCount": 5
+        "failCount": 0,
+        "passCount": 6
       },
       "durTrend": [
         188,
@@ -1945,8 +1945,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "FAIL",
-      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 5 天"
+      "status": "PASS",
+      "detail": "4/4 任务正常 · 近 30 天触发断档 5 天"
     },
     {
       "layer": "部署层",
@@ -1958,13 +1958,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-22 22:25:32）"
+      "detail": "本轮发布前置 9 段全过（2026-10-22 22:38:01）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 2.8h 前"
+      "detail": "2 项目，最新产出 3h 前"
     },
     {
       "layer": "渲染层",
@@ -2003,7 +2003,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 12,
+      "ageHours": 12.2,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2040,7 +2040,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 2.8,
+      "ageHours": 3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2214,17 +2214,12 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-22 14:08:16",
-        "ageH": 0.3
+        "latestAt": "2026-10-22 14:36:19",
+        "ageH": 0
       }
     ]
   },
   "alerts": [
-    {
-      "level": "FAIL",
-      "text": "任务失败：骑手解约数据检查与刷新（2026-10-22 16:13:42 · 问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑）",
-      "anchor": "sec-tasks"
-    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -2411,8 +2406,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "274a4a6",
-        "at": "2026-10-22T22:22:40+08:00",
+        "hash": "526a4d1",
+        "at": "2026-10-22T22:31:46+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2440,82 +2435,76 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 22:25:32",
+    "runAt": "2026-10-22 22:38:01",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
+      {
+        "name": "excel",
+        "pass": true,
+        "seconds": 4.2,
+        "note": ""
+      },
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.4,
+        "seconds": 4.2,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.9,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.9,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 1.5,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 10.1,
+        "seconds": 11.1,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 66.8,
+        "seconds": 60.8,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 57.2,
+        "seconds": 102.5,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 54.6,
-        "note": "拷贝回验 71 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 563.7,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "health": {
-    "score": 75,
-    "grade": "良",
+    "score": 100,
+    "grade": "优",
     "layers": [
       {
         "layer": "调度层",
-        "status": "FAIL",
+        "status": "PASS",
         "weight": 25,
-        "points": 0
+        "points": 100
       },
       {
         "layer": "门禁层",
@@ -2574,13 +2563,13 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 14:25:57",
-      "score": 75,
-      "grade": "良",
+      "at": "2026-10-22 14:38:02",
+      "score": 100,
+      "grade": "优",
       "layers": [
         {
           "layer": "调度层",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "layer": "部署层",
@@ -2653,7 +2642,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1844.8,
+      "totalKB": 1844.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -2673,7 +2662,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 67.4
+          "kb": 66.9
         },
         {
           "name": "visits.json",
