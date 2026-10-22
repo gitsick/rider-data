@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 07:28:18",
+  "generatedAt": "2026-10-22 07:31:49",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1709,10 +1709,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-22 15:05:03",
+    "auditedAt": "2026-10-22 15:31:48",
     "status": "PASS",
-    "pass": 32,
-    "warn": 1,
+    "pass": 30,
+    "warn": 3,
     "fail": 0,
     "checks": [
       {
@@ -1731,9 +1731,9 @@
         "msg": "publish_file.py 在位"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "互斥锁",
-        "msg": "无残留锁"
+        "msg": "锁存在（1.7 分钟前创建）——可能有部署进行中，或上次异常未释放（10 分钟后可自动接管/手动删除）"
       },
       {
         "level": "PASS",
@@ -1741,14 +1741,14 @@
         "msg": "工作区干净"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "仓库漂移",
-        "msg": "与远端 main 同步"
+        "msg": "领先远端 1 个提交，落后 0 个（领先=待推送/待补发；落后=需 pull）"
       },
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 75910a0 2026-10-22 15:01:37 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 1cbecb6 2026-10-22 15:28:22 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1758,17 +1758,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（4.7 小时前生成）"
+        "msg": "单文件产物存在（5.1 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（183.4 小时前生成）"
+        "msg": "单文件产物存在（183.8 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0.1 小时前已刷新"
+        "msg": "workbench.json 0 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -1858,7 +1858,7 @@
       {
         "level": "PASS",
         "item": "发布补发",
-        "msg": "本地与 origin/main 一致，无滞留提交"
+        "msg": "滞留的 1 个提交已在重试轮补推成功"
       },
       {
         "level": "PASS",
@@ -1882,10 +1882,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-17 22:23:06",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-17 22:30:50",
         "status": "PASS"
@@ -1937,6 +1933,10 @@
       {
         "auditedAt": "2026-10-22 15:05:03",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-22 15:31:48",
+        "status": "PASS"
       }
     ]
   },
@@ -1951,13 +1951,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-22 15:05:03）"
+      "detail": "审计 PASS（2026-10-22 15:31:48）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-22 15:28:18）"
+      "detail": "上轮全链 10 段全过（2026-10-22 15:30:01）"
     },
     {
       "layer": "项目层",
@@ -1969,7 +1969,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -2187,7 +2187,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 07:08:48",
-        "ageH": 0.3
+        "ageH": 0.4
       }
     ]
   },
@@ -2199,7 +2199,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-10-22 15:05:03）",
+      "text": "审计有 3 项警告（2026-10-22 15:31:48）",
       "anchor": "sec-audit"
     }
   ],
@@ -2447,8 +2447,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b1f4f8c",
-        "at": "2026-10-22T15:23:13+08:00",
+        "hash": "1cbecb6",
+        "at": "2026-10-22T15:28:22+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2476,15 +2476,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 15:28:18",
+    "runAt": "2026-10-22 15:30:01",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.5,
+        "seconds": 2.3,
         "note": ""
       },
       {
@@ -2508,7 +2508,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.1,
+        "seconds": 6.5,
         "note": ""
       },
       {
@@ -2520,14 +2520,26 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 26.7,
+        "seconds": 29.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 50.4,
+        "seconds": 30,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 8.1,
+        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 402.9,
+        "note": "指纹+探针 assets/workbench-CSMrRb1M.js 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2598,7 +2610,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 07:28:18",
+      "at": "2026-10-22 07:31:49",
       "score": 100,
       "grade": "优",
       "layers": [
