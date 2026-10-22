@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>骑手明细看板</title>
 <style>
-:root{--yellow:#FFC300;--yellow-d:#F5A623;--dark:#1B2233;--dark2:#2D3447;--bg:#F0F2F5;--text:#1B1B33;--text2:#6B7280;--text3:#8A8FA3;--border:#EAECEF;--green:#52C41A;--orange:#FA8C16;--red:#F5222D;--purple:#722ED1;--blue:#1890FF}
+:root{--yellow:#FFC300;--yellow-d:#F5A623;--dark:#1B2233;--dark2:#2D3447;--bg:#F0F2F5;--text:#1B1B33;--text2:#6B7280;--text3:#8A8FA3;--border:#EAECEF;--line2:#e6eaf1;--th-bg:#F8F9FA;--row-alt:#FAFBFC;--row-hover:#FFF8E1;--green:#52C41A;--orange:#FA8C16;--red:#F5222D;--purple:#722ED1;--blue:#1890FF}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--text);padding:14px}
 .wrap{max-width:1440px;margin:0 auto;position:relative}
@@ -40,14 +40,18 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 .card.hero .lbl{color:#C6CAD6!important;font-size:12px!important}
 .card.hero .pct{color:var(--yellow)!important;font-size:11px!important}
 .filter-bar{display:flex;flex-wrap:wrap;gap:6px 8px;background:#fff;border-radius:10px;padding:10px 12px;margin-bottom:6px;box-shadow:0 1px 4px rgba(27,34,51,.06);border:1px solid var(--border);align-items:center}
-.filter-bar select{padding:6px 10px;border:1px solid #D9DCE0;border-radius:8px;font-size:13px;font-weight:600;min-width:92px;outline:none;background:#fff;color:var(--dark);transition:all .15s;cursor:pointer}
-.filter-bar select:focus{border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,195,0,.12)}
+/* R202 布局样式统一：筛选控件 / 表头 / 面板标题对齐主看板主题令牌（components.css 口径） */
+.panel-title{font-size:14px;font-weight:700;color:var(--dark);margin:0 0 10px;display:flex;align-items:center;gap:7px;min-width:0}
+.panel-title::before{content:"";display:inline-block;width:3px;height:14px;background:linear-gradient(180deg,var(--yellow),var(--yellow-d));border-radius:2px}
+.panel-title .cnt{font-size:11px;color:var(--text3);font-weight:400;margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.filter-bar select{padding:6px 10px;border:1px solid var(--line2);border-radius:8px;font-size:12.5px;min-width:92px;outline:none;background:#fff;color:var(--text);transition:all .15s;cursor:pointer}
+.filter-bar select:focus{border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,195,0,.15)}
 .rd-mode{display:flex;gap:6px;align-items:center}
-.rd-mode .mbtn{border:1px solid #D9DCE0;background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:13px;font-weight:600;color:#3D4252;transition:all .15s;white-space:nowrap}
+.rd-mode .mbtn{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:12.5px;font-weight:600;color:#3D4252;transition:all .15s;white-space:nowrap}
 .rd-mode .mbtn.cur{background:var(--yellow);border-color:var(--yellow);color:var(--dark)}
-.rd-inp{flex:1;min-width:140px;padding:6px 10px;border:1px solid #D9DCE0;border-radius:8px;font-size:13px;outline:none;background:#fff;color:var(--dark);transition:all .15s}
+.rd-inp{flex:1;min-width:140px;padding:6px 10px;border:1px solid var(--line2);border-radius:8px;font-size:12.5px;outline:none;background:#fff;color:var(--text);transition:all .15s}
 .rd-inp:focus{border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,195,0,.12)}
-.clearbtn{border:1px solid #D9DCE0;background:#fff;border-radius:8px;padding:6px 14px;cursor:pointer;color:#3D4252;font-size:13px;transition:all .15s;font-weight:600}
+.clearbtn{border:1px solid var(--line2);background:#fff;border-radius:8px;padding:6px 14px;cursor:pointer;color:#3D4252;font-size:12.5px;transition:all .15s;font-weight:500}
 .clearbtn:hover{border-color:var(--yellow);color:var(--dark);background:#FFF8E1}
 .filter-summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px;padding:9px 12px;background:linear-gradient(135deg,#FFF8E1 0%,#FFFDE7 100%);border:1px solid #FFE082;border-radius:10px;box-shadow:0 1px 4px rgba(255,193,0,.08)}
 .fs-count{font-size:14px;font-weight:800;color:var(--dark);margin-right:4px;white-space:nowrap}
@@ -63,13 +67,13 @@ body{font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",sy
 .fchip.c-search{background:#F0F0F0;color:#531DAB;border-color:#D3ADF7}
 .tblwrap{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(27,34,51,.06);overflow:hidden;border:1px solid var(--border)}
 .tblsc{overflow-x:auto}
-table{width:100%;border-collapse:collapse;min-width:1100px;table-layout:fixed}
-th{background:#FAFBFC;color:var(--dark);font-weight:600;font-size:11px;padding:9px 12px;cursor:pointer;position:sticky;top:0;border-bottom:2px solid var(--yellow);user-select:none;white-space:nowrap;transition:background .15s;z-index:5;letter-spacing:.3px}
+table{width:100%;border-collapse:collapse;min-width:1100px;table-layout:fixed;font-variant-numeric:tabular-nums}
+th{background:var(--th-bg);color:var(--dark);font-weight:700;font-size:11.5px;padding:10px 12px;cursor:pointer;position:sticky;top:0;border-bottom:2px solid var(--yellow);user-select:none;white-space:nowrap;transition:background .15s;z-index:5;letter-spacing:.03em;text-align:left}
 th:hover{background:#F0F1F2}
 th .sort-ind{font-size:10px;opacity:.3;margin-left:2px}
-td{padding:8px 12px;font-size:12px;border-bottom:1px solid #F0F1F2;word-break:break-word;overflow-wrap:break-word;vertical-align:top;color:var(--text)}
-tr:nth-child(even) td{background:#FAFBFC}
-tr:hover td{background:#FFF8E1}
+td{padding:9px 12px;font-size:12.5px;border-bottom:1px solid #F0F1F2;word-break:break-word;overflow-wrap:break-word;vertical-align:top;color:var(--text)}
+tr:nth-child(even) td{background:var(--row-alt)}
+tr:hover td{background:var(--row-hover)}
 .empty{padding:48px;text-align:center;color:var(--text3);font-size:13px}
 .pager{display:flex;align-items:center;justify-content:center;gap:5px;padding:12px 0 6px;flex-wrap:wrap}
 .pbtn{border:1px solid #E8E9EB;background:#fff;border-radius:6px;padding:5px 11px;cursor:pointer;font-size:12px;color:#5A5F6B;transition:all .15s;font-weight:500}
@@ -98,9 +102,10 @@ html.embed .top-nav{display:none}
 <div class="wrap">
 <div class="header">
 <div class="hdr-left"><h1>骑手明细看板</h1><div class="sub">2026.03 至今全量 · 骑手汇总 + 近7日日明细 · 支持筛选 / 搜索 / 排序 / 导出</div></div>
-<div class="upd">🕐 明细数据更新：2026-10-22 13:00</div>
+<div class="upd">🕐 明细数据更新：2026-10-22 13:43</div>
 </div>
 <div class="cards" id="rdCards"></div>
+<div class="panel-title">骑手明细<span class="cnt" id="rdTitleCnt">点击表头可排序</span></div>
 <div class="filter-bar">
 <div class="rd-mode"><button class="mbtn cur" id="rdModeSum" onclick="rdSetMode('sum')">👤 骑手汇总</button><button class="mbtn" id="rdModeDay" onclick="rdSetMode('day')">📅 近7日明细</button></div>
 <select id="rdCity"><option value="">全部城市</option></select>
@@ -181,6 +186,7 @@ if(cv)chips+='<span class="fchip c-city" onclick="rdClrCity()"><span class="fk">
 if(sv)chips+='<span class="fchip c-station" onclick="rdClrStn()"><span class="fk">站点</span><span class="fv">'+esc(sv)+'</span><span class="fx">×</span></span>';
 if(q)chips+='<span class="fchip c-search" onclick="rdClrSearch()"><span class="fk">🔍</span><span class="fv">'+esc(q)+'</span><span class="fx">×</span></span>';
 document.getElementById('rdMeta').innerHTML='<span class="fs-count">'+(mode==='sum'?'筛选骑手 <span class="num">'+ttl+'</span> 人':'筛选记录 <span class="num">'+ttl+'</span> 条')+'</span><span class="fs-label">· 第'+page+'/'+tp+'页 · 显示'+sl.length+'条</span>'+chips;
+var tc=document.getElementById('rdTitleCnt');if(tc)tc.textContent='共 '+ttl+' 条 · 点击表头可排序';
 var h='<button class="pbtn" '+(page<=1?'disabled':'')+' onclick="rdGo(1)">\u00ab</button><button class="pbtn" '+(page<=1?'disabled':'')+' onclick="rdGo('+(page-1)+')">‹上一页</button>';
 for(var i=Math.max(1,page-2);i<=Math.min(tp,page+2);i++)h+='<button class="pbtn '+(i===page?'cur':'')+'" onclick="rdGo('+i+')">'+i+'</button>';
 h+='<button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="rdGo('+(page+1)+')">下一页›</button><button class="pbtn" '+(page>=tp?'disabled':'')+' onclick="rdGo('+tp+')">\u00bb</button><span class="pinfo">共 '+ttl+' 条 · '+page+'/'+tp+'</span>';
