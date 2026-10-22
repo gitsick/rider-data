@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 14:38:02",
+  "generatedAt": "2026-10-22 14:42:42",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1958,13 +1958,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-22 22:38:01）"
+      "detail": "本轮发布前置 8 段全过（2026-10-22 22:42:41）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 3h 前"
+      "detail": "2 项目，最新产出 3.1h 前"
     },
     {
       "layer": "渲染层",
@@ -2003,7 +2003,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 12.2,
+      "ageHours": 12.3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2040,7 +2040,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 3,
+      "ageHours": 3.1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2215,7 +2215,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 14:36:19",
-        "ageH": 0
+        "ageH": 0.1
       }
     ]
   },
@@ -2406,8 +2406,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "526a4d1",
-        "at": "2026-10-22T22:31:46+08:00",
+        "hash": "263e713",
+        "at": "2026-10-22T22:38:06+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2435,21 +2435,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 22:38:01",
+    "runAt": "2026-10-22 22:42:41",
     "allPass": true,
     "scope": "pre-deploy",
     "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
-        "name": "excel",
-        "pass": true,
-        "seconds": 4.2,
-        "note": ""
-      },
-      {
         "name": "visits",
         "pass": true,
-        "seconds": 4.2,
+        "seconds": 2.5,
         "note": ""
       },
       {
@@ -2461,37 +2455,37 @@
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 11.1,
+        "seconds": 9.4,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 60.8,
+        "seconds": 42.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 102.5,
+        "seconds": 42.6,
         "note": ""
       }
     ]
@@ -2563,7 +2557,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 14:38:02",
+      "at": "2026-10-22 14:42:42",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2642,7 +2636,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1844.3,
+      "totalKB": 1844.1,
       "top": [
         {
           "name": "rider_base.json",
@@ -2662,7 +2656,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 66.9
+          "kb": 66.7
         },
         {
           "name": "visits.json",
