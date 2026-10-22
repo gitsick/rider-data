@@ -107,7 +107,7 @@ html.embed .top-nav{display:none}
 <div class="wrap">
 <div class="header">
 <div class="hdr-left"><h1>骑手明细看板</h1><div class="sub">2026.03 至今天维度全量 · 支持起止时间筛选，出勤 / 单量 / 准时率等按所选区间实时计算</div></div>
-<div class="upd">🕐 明细数据更新：2026-10-22 14:35</div>
+<div class="upd">🕐 明细数据更新：2026-10-22 14:50</div>
 </div>
 <div class="cards" id="rdCards"></div>
 <div class="panel-title">骑手明细<span class="cnt" id="rdTitleCnt">点击表头可排序</span></div>
@@ -213,7 +213,7 @@ document.getElementById('rdPager').innerHTML=h;
 /* ---------- R203：月份懒加载 + 区间实时聚合 ---------- */
 function fetchMonth(ym){
 if(MONTHS[ym])return Promise.resolve(MONTHS[ym]);
-return fetch('./data/rider_daily_'+ym.replace('-','')+'.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(j){MONTHS[ym]=j;return j});
+return fetch('./data/daily/rider_daily_'+ym.replace('-','')+'.json?v='+encodeURIComponent(RD_DATA.gen_time)).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(j){MONTHS[ym]=j;return j});
 }
 function build(){
 var acc={},dayRows=[];
