@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 05:07:31",
+  "generatedAt": "2026-10-22 05:13:45",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1709,7 +1709,7 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-22 12:34:20",
+    "auditedAt": "2026-10-22 13:13:44",
     "status": "PASS",
     "pass": 32,
     "warn": 1,
@@ -1748,7 +1748,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 4dd43e5 2026-10-22 12:30:07 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 0d48f7e 2026-10-22 13:07:35 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1758,12 +1758,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（2.2 小时前生成）"
+        "msg": "单文件产物存在（2.8 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（180.9 小时前生成）"
+        "msg": "单文件产物存在（181.5 小时前生成）"
       },
       {
         "level": "PASS",
@@ -1883,10 +1883,6 @@
     ],
     "history": [
       {
-        "auditedAt": "2026-10-17 19:54:46",
-        "status": "PASS"
-      },
-      {
         "auditedAt": "2026-10-17 20:57:35",
         "status": "PASS"
       },
@@ -1937,6 +1933,10 @@
       {
         "auditedAt": "2026-10-22 12:34:20",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-22 13:13:44",
+        "status": "PASS"
       }
     ]
   },
@@ -1951,25 +1951,25 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-22 12:34:20）"
+      "detail": "审计 PASS（2026-10-22 13:13:44）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-22 13:07:31）"
+      "detail": "上轮全链 10 段全过（2026-10-22 13:13:21）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 2.7h 前"
+      "detail": "2 项目，最新产出 2.8h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.1h 前刷新"
     }
   ],
   "projects": [
@@ -2002,7 +2002,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 2.7,
+      "ageHours": 2.8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2034,7 +2034,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 4.5,
+      "ageHours": 4.6,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2187,7 +2187,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 04:18:34",
-        "ageH": 0.8
+        "ageH": 0.9
       }
     ]
   },
@@ -2199,7 +2199,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-10-22 12:34:20）",
+      "text": "审计有 1 项警告（2026-10-22 13:13:44）",
       "anchor": "sec-audit"
     }
   ],
@@ -2447,8 +2447,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "ebfcbb9",
-        "at": "2026-10-22T12:34:23+08:00",
+        "hash": "0d48f7e",
+        "at": "2026-10-22T13:07:35+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2476,10 +2476,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 13:07:31",
+    "runAt": "2026-10-22 13:13:21",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2528,6 +2528,18 @@
         "pass": true,
         "seconds": 24.5,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 9.9,
+        "note": "拷贝回验 61 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 340.2,
+        "note": "指纹+探针 assets/rider_dashboard-BNERI3es.css 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2598,7 +2610,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 05:07:31",
+      "at": "2026-10-22 05:13:45",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2677,7 +2689,7 @@
     },
     "data": {
       "count": 6,
-      "totalKB": 1071.3,
+      "totalKB": 1071,
       "top": [
         {
           "name": "rider-detail.json",
@@ -2693,7 +2705,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 68.4
+          "kb": 68.1
         },
         {
           "name": "visits.json",
