@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 08:06:13",
+  "generatedAt": "2026-10-22 08:29:36",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -733,17 +733,17 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每日 16:00 由定时任务直接驱动（R195 口径对齐：登记原为每小时，与定时器实际 RRULE 每日 16:00 漂移，导致非运行窗口持续误报运行超时）",
       "last": {
-        "status": "PASS",
-        "exitCode": 0,
-        "finishedAt": "2026-10-21 16:17:21",
-        "durationSec": 951,
-        "note": ""
+        "status": "FAIL",
+        "exitCode": 1,
+        "finishedAt": "2026-10-22 16:13:42",
+        "durationSec": 822,
+        "note": "问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑"
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -753,13 +753,6 @@
         "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id rider-hourly -Record PASS 留痕"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 08:50:55",
-          "durationSec": null,
-          "note": "问卷星登录态失效（华东/华南均未做增量检查，沿用本地1975条）；访问日志+9；看板已生成；首轮部署git pull网络中断，-SkipPull离线发布重试成功，HEAD=c56de65已推送",
-          "dur": null
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:02:45",
@@ -1102,6 +1095,13 @@
           "durationSec": 951,
           "note": "",
           "dur": 951
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-22 16:13:42",
+          "durationSec": 822,
+          "note": "问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑",
+          "dur": 822
         }
       ],
       "gaps": {
@@ -1224,12 +1224,12 @@
           },
           {
             "date": "2026-10-22",
-            "state": "gap"
+            "state": "fail"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 1,
-        "failCount": 0,
+        "gapCount": 0,
+        "failCount": 1,
         "passCount": 5
       },
       "durTrend": [
@@ -1275,7 +1275,8 @@
         180,
         1149,
         335,
-        951
+        951,
+        822
       ]
     },
     {
@@ -1944,8 +1945,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 6 天"
+      "status": "FAIL",
+      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 5 天"
     },
     {
       "layer": "部署层",
@@ -1957,19 +1958,19 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-22 16:06:02）"
+      "detail": "本轮发布前置 8 段全过（2026-10-22 16:29:35）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 5.7h 前"
+      "detail": "2 项目，最新产出 6.1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2002,7 +2003,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 5.7,
+      "ageHours": 6.1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2034,7 +2035,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 7.5,
+      "ageHours": 7.9,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2187,15 +2188,20 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 07:54:35",
-        "ageH": 0.2
+        "ageH": 0.6
       }
     ]
   },
   "alerts": [
     {
+      "level": "FAIL",
+      "text": "任务失败：骑手解约数据检查与刷新（2026-10-22 16:13:42 · 问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑）",
+      "anchor": "sec-tasks"
+    },
+    {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
+      "text": "触发断档：2 个任务近 30 天共 5 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天）——断档日历已上工作台，自愈兜底待接管"
     },
     {
       "level": "WARN",
@@ -2378,8 +2384,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "0293ce3",
-        "at": "2026-10-22T16:02:31+08:00",
+        "hash": "efdd3f2",
+        "at": "2026-10-22T16:06:16+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2407,21 +2413,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 16:06:02",
+    "runAt": "2026-10-22 16:29:35",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.3,
+        "seconds": 3,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -2433,13 +2439,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.2,
+        "seconds": 6.8,
         "note": ""
       },
       {
@@ -2451,38 +2457,26 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 33.5,
+        "seconds": 32.4,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 29.7,
+        "seconds": 53.6,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 7.8,
-        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 205.7,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "health": {
-    "score": 100,
-    "grade": "优",
+    "score": 75,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "FAIL",
         "weight": 25,
-        "points": 100
+        "points": 0
       },
       {
         "layer": "门禁层",
@@ -2541,13 +2535,13 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 08:06:13",
-      "score": 100,
-      "grade": "优",
+      "at": "2026-10-22 08:29:36",
+      "score": 75,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "FAIL"
         },
         {
           "layer": "部署层",
@@ -2582,14 +2576,14 @@
   "perf": {
     "assets": {
       "count": 36,
-      "totalKB": 948.6,
+      "totalKB": 949.4,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-Bq0oplZw.js",
+          "name": "main-C_2eDh2k.js",
           "kb": 98.1
         },
         {
@@ -2597,30 +2591,30 @@
           "kb": 73.6
         },
         {
-          "name": "workbench-CSMrRb1M.js",
+          "name": "workbench-CdRLvmio.js",
           "kb": 41.8
         },
         {
-          "name": "swRegister-DVjJXpqU.css",
-          "kb": 28.7
+          "name": "swRegister-ca_tHIyX.css",
+          "kb": 29
         },
         {
-          "name": "main-CmQ2Kjo5.css",
-          "kb": 23.1
+          "name": "main-DmCbR926.css",
+          "kb": 23.4
         },
         {
-          "name": "workbench-BT5Hq3UQ.css",
-          "kb": 15.7
+          "name": "workbench-Bh4rx40D.css",
+          "kb": 15.9
         },
         {
-          "name": "rider_dashboard-Cqs-0eXD.js",
+          "name": "rider_dashboard-Chf2wAqr.js",
           "kb": 11.2
         }
       ]
     },
     "data": {
       "count": 6,
-      "totalKB": 1071.6,
+      "totalKB": 1072.1,
       "top": [
         {
           "name": "rider-detail.json",
@@ -2636,7 +2630,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 65.5
+          "kb": 66
         },
         {
           "name": "visits.json",
