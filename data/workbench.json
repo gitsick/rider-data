@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 01:21:25",
+  "generatedAt": "2026-10-22 01:23:38",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1928,7 +1928,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-22 09:21:25）"
+      "detail": "本轮发布前置 8 段全过（2026-10-22 09:23:37）"
     },
     {
       "layer": "项目层",
@@ -2122,7 +2122,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 01:19:39",
-        "ageH": 0
+        "ageH": 0.1
       }
     ]
   },
@@ -2387,8 +2387,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eaffd3a",
-        "at": "2026-10-22T08:38:13+08:00",
+        "hash": "f05323d",
+        "at": "2026-10-22T09:21:29+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2416,21 +2416,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 09:21:25",
+    "runAt": "2026-10-22 09:23:37",
     "allPass": true,
     "scope": "pre-deploy",
     "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
-        "name": "excel",
-        "pass": true,
-        "seconds": 3.5,
-        "note": ""
-      },
-      {
         "name": "visits",
         "pass": true,
-        "seconds": 3.5,
+        "seconds": 2.9,
         "note": ""
       },
       {
@@ -2454,7 +2448,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 11.7,
+        "seconds": 10.9,
         "note": ""
       },
       {
@@ -2466,13 +2460,13 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 42.5,
+        "seconds": 39.9,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 35.1,
+        "seconds": 61,
         "note": ""
       }
     ]
@@ -2544,7 +2538,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 01:21:25",
+      "at": "2026-10-22 01:23:38",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -2623,7 +2617,7 @@
     },
     "data": {
       "count": 6,
-      "totalKB": 1069.9,
+      "totalKB": 1069.8,
       "top": [
         {
           "name": "rider-detail.json",
@@ -2639,7 +2633,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 67
+          "kb": 66.9
         },
         {
           "name": "visits.json",
