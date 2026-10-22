@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 14:42:42",
+  "generatedAt": "2026-10-22 14:54:07",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1710,10 +1710,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-22 22:25:57",
+    "auditedAt": "2026-10-22 22:54:06",
     "status": "PASS",
-    "pass": 30,
-    "warn": 3,
+    "pass": 34,
+    "warn": 0,
     "fail": 0,
     "checks": [
       {
@@ -1732,9 +1732,9 @@
         "msg": "publish_file.py 在位"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "互斥锁",
-        "msg": "锁存在（0.3 分钟前创建）——可能有部署进行中，或上次异常未释放（10 分钟后可自动接管/手动删除）"
+        "msg": "无残留锁"
       },
       {
         "level": "PASS",
@@ -1749,7 +1749,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 274a4a6 2026-10-22 22:22:40 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 08db330 2026-10-22 22:48:17 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1759,17 +1759,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（12 小时前生成）"
+        "msg": "单文件产物存在（12.5 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（190.7 小时前生成）"
+        "msg": "单文件产物存在（191.2 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 0.2 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -1842,9 +1842,14 @@
         "msg": "[rider-hourly] 已关联定时器"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 今日应跑（每日 16:00）但无今日成功留痕——疑似断链；command 型可用 run_task.ps1 -Auto 补跑，agent 型手动重跑后 -Record PASS 留痕"
+        "msg": "[rider-hourly] 定时器状态时间戳新鲜（10/22/2026 16:14:04），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -1877,20 +1882,12 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "断链自愈",
-        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 rider-hourly（每日 16:00）；  [rider-hourly] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）"
+        "msg": "无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-22 16:53:30",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-22 16:56:46",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-22 17:20:30",
         "status": "PASS"
@@ -1938,6 +1935,14 @@
       {
         "auditedAt": "2026-10-22 22:25:57",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-22 22:54:05",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-22 22:54:06",
+        "status": "PASS"
       }
     ]
   },
@@ -1952,19 +1957,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-22 22:25:57）"
+      "detail": "审计 PASS（2026-10-22 22:54:06）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-22 22:42:41）"
+      "detail": "上轮全链 10 段全过（2026-10-22 22:54:01）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 3.1h 前"
+      "detail": "2 项目，最新产出 3.3h 前"
     },
     {
       "layer": "渲染层",
@@ -2003,7 +2008,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 12.3,
+      "ageHours": 12.5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2040,7 +2045,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 3.1,
+      "ageHours": 3.3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2215,7 +2220,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 14:36:19",
-        "ageH": 0.1
+        "ageH": 0.3
       }
     ]
   },
@@ -2224,11 +2229,6 @@
       "level": "WARN",
       "anchor": "sec-tasks",
       "text": "触发断档：2 个任务近 30 天共 5 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天）——断档日历已上工作台，自愈兜底待接管"
-    },
-    {
-      "level": "WARN",
-      "text": "审计有 3 项警告（2026-10-22 22:25:57）",
-      "anchor": "sec-audit"
     }
   ],
   "todos": [],
@@ -2406,8 +2406,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "263e713",
-        "at": "2026-10-22T22:38:06+08:00",
+        "hash": "08db330",
+        "at": "2026-10-22T22:48:17+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2435,10 +2435,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 22:42:41",
+    "runAt": "2026-10-22 22:54:01",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2487,6 +2487,18 @@
         "pass": true,
         "seconds": 42.6,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 478.1,
+        "note": "拷贝回验 71 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 200.6,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2557,7 +2569,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 14:42:42",
+      "at": "2026-10-22 14:54:07",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2636,7 +2648,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1844.1,
+      "totalKB": 1843.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -2656,7 +2668,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 66.7
+          "kb": 66.3
         },
         {
           "name": "visits.json",
