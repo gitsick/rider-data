@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 03:38:09",
+  "generatedAt": "2026-10-22 03:40:47",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1709,7 +1709,7 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-22 10:48:55",
+    "auditedAt": "2026-10-22 11:40:47",
     "status": "PASS",
     "pass": 32,
     "warn": 1,
@@ -1748,7 +1748,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 18568fe 2026-10-22 10:48:42 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 3b9beec 2026-10-22 11:38:12 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1758,12 +1758,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（0.4 小时前生成）"
+        "msg": "单文件产物存在（1.3 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（179.1 小时前生成）"
+        "msg": "单文件产物存在（180 小时前生成）"
       },
       {
         "level": "PASS",
@@ -1883,10 +1883,6 @@
     ],
     "history": [
       {
-        "auditedAt": "2026-10-17 19:04:35",
-        "status": "PASS"
-      },
-      {
         "auditedAt": "2026-10-17 19:34:04",
         "status": "PASS"
       },
@@ -1937,6 +1933,10 @@
       {
         "auditedAt": "2026-10-22 10:48:55",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-22 11:40:47",
+        "status": "PASS"
       }
     ]
   },
@@ -1951,19 +1951,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-22 10:48:55）"
+      "detail": "审计 PASS（2026-10-22 11:40:47）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-22 11:38:09）"
+      "detail": "上轮全链 10 段全过（2026-10-22 11:40:42）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 1.2h 前"
+      "detail": "2 项目，最新产出 1.3h 前"
     },
     {
       "layer": "渲染层",
@@ -2002,7 +2002,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 1.2,
+      "ageHours": 1.3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2034,7 +2034,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 3,
+      "ageHours": 3.1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2146,7 +2146,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 03:01:09",
-        "ageH": 0.6
+        "ageH": 0.7
       }
     ]
   },
@@ -2158,7 +2158,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-10-22 10:48:55）",
+      "text": "审计有 1 项警告（2026-10-22 11:40:47）",
       "anchor": "sec-audit"
     }
   ],
@@ -2406,8 +2406,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "aed9daa",
-        "at": "2026-10-22T10:48:58+08:00",
+        "hash": "3b9beec",
+        "at": "2026-10-22T11:38:12+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2435,10 +2435,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-22 11:38:09",
+    "runAt": "2026-10-22 11:40:42",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2487,6 +2487,18 @@
         "pass": true,
         "seconds": 29.1,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 7.6,
+        "note": "拷贝回验 59 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 145,
+        "note": "指纹+探针 assets/workbench-BT5Hq3UQ.css 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2557,7 +2569,7 @@
     },
     {
       "date": "2026-10-22",
-      "at": "2026-10-22 03:38:09",
+      "at": "2026-10-22 03:40:47",
       "score": 100,
       "grade": "优",
       "layers": [
