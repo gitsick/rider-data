@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-22 23:59:06",
+  "generatedAt": "2026-10-23 00:12:45",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -126,10 +126,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-09-23",
-            "state": "pre"
-          },
-          {
             "date": "2026-09-24",
             "state": "pre"
           },
@@ -244,10 +240,14 @@
           {
             "date": "2026-10-22",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-23",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 0,
         "passCount": 6
       },
@@ -328,10 +328,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-09-23",
-            "state": "pre"
-          },
-          {
             "date": "2026-09-24",
             "state": "pre"
           },
@@ -446,10 +442,14 @@
           {
             "date": "2026-10-22",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-23",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 2,
+        "gapCount": 3,
         "failCount": 0,
         "passCount": 4
       },
@@ -583,10 +583,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-09-23",
-            "state": "pre"
-          },
-          {
             "date": "2026-09-24",
             "state": "pre"
           },
@@ -701,10 +697,14 @@
           {
             "date": "2026-10-22",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-23",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 4,
         "failCount": 0,
         "passCount": 3
       },
@@ -1107,10 +1107,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-09-23",
-            "state": "pre"
-          },
-          {
             "date": "2026-09-24",
             "state": "pre"
           },
@@ -1225,10 +1221,14 @@
           {
             "date": "2026-10-22",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-23",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 0,
         "passCount": 6
       },
@@ -1546,10 +1546,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-09-23",
-            "state": "pre"
-          },
-          {
             "date": "2026-09-24",
             "state": "pre"
           },
@@ -1664,10 +1660,14 @@
           {
             "date": "2026-10-22",
             "state": "gap"
+          },
+          {
+            "date": "2026-10-23",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 5,
+        "gapCount": 6,
         "failCount": 0,
         "passCount": 1
       },
@@ -1710,7 +1710,7 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-23 07:43:25",
+    "auditedAt": "2026-10-23 08:12:44",
     "status": "PASS",
     "pass": 24,
     "warn": 2,
@@ -1749,7 +1749,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: e50da4c 2026-10-23 07:41:18 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 5e5c913 2026-10-23 07:59:41 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1759,17 +1759,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（21.3 小时前生成）"
+        "msg": "单文件产物存在（21.8 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（200 小时前生成）"
+        "msg": "单文件产物存在（200.5 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 0.2 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -1789,7 +1789,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[xsp-weekly] 定时器最近一次运行失败（22.9h 前）——排查自动化会话日志"
+        "msg": "[xsp-weekly] 定时器最近一次运行失败（23.4h 前）——排查自动化会话日志"
       },
       {
         "level": "PASS",
@@ -1804,7 +1804,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[capacity-daily] 定时器最近一次运行失败（22.7h 前）——排查自动化会话日志"
+        "msg": "[capacity-daily] 定时器最近一次运行失败（23.2h 前）——排查自动化会话日志"
       },
       {
         "level": "PASS",
@@ -1848,10 +1848,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-22 21:03:13",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-22 21:57:17",
         "status": "PASS"
@@ -1903,6 +1899,10 @@
       {
         "auditedAt": "2026-10-23 07:43:25",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-23 08:12:44",
+        "status": "PASS"
       }
     ]
   },
@@ -1911,31 +1911,31 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 5 天"
+      "detail": "4/4 任务正常 · 近 30 天触发断档 9 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-23 07:43:25）"
+      "detail": "审计 PASS（2026-10-23 08:12:44）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-23 07:59:06）"
+      "detail": "上轮全链 10 段全过（2026-10-23 08:12:38）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 8.1h 前"
+      "detail": "2 项目，最新产出 8.3h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.2h 前刷新"
     }
   ],
   "projects": [
@@ -1968,7 +1968,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 21.6,
+      "ageHours": 21.8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -2000,7 +2000,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 8.1,
+      "ageHours": 8.3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-23",
@@ -2183,7 +2183,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-22 23:39:28",
-        "ageH": 0.3
+        "ageH": 0.6
       }
     ]
   },
@@ -2191,11 +2191,11 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：2 个任务近 30 天共 5 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天）——断档日历已上工作台，自愈兜底待接管"
+      "text": "触发断档：4 个任务近 30 天共 9 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-23 07:43:25）",
+      "text": "审计有 2 项警告（2026-10-23 08:12:44）",
       "anchor": "sec-audit"
     }
   ],
@@ -2374,8 +2374,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "e50da4c",
-        "at": "2026-10-23T07:41:18+08:00",
+        "hash": "5e5c913",
+        "at": "2026-10-23T07:59:41+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2403,10 +2403,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-23 07:59:06",
+    "runAt": "2026-10-23 08:12:38",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2455,6 +2455,18 @@
         "pass": true,
         "seconds": 30.1,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 733.5,
+        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 78.5,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2550,6 +2562,34 @@
           "status": "PASS"
         }
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "at": "2026-10-23 00:12:45",
+      "score": 100,
+      "grade": "优",
+      "layers": [
+        {
+          "layer": "调度层",
+          "status": "PASS"
+        },
+        {
+          "layer": "部署层",
+          "status": "PASS"
+        },
+        {
+          "layer": "门禁层",
+          "status": "PASS"
+        },
+        {
+          "layer": "项目层",
+          "status": "PASS"
+        },
+        {
+          "layer": "渲染层",
+          "status": "PASS"
+        }
+      ]
     }
   ],
   "outages": [
@@ -2604,7 +2644,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1842.7,
+      "totalKB": 1842.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -2624,7 +2664,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 65.3
+          "kb": 65.1
         },
         {
           "name": "visits.json",
