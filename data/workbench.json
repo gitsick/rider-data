@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 22:21:08",
+  "generatedAt": "2026-10-23 23:30:47",
   "runDate": "2026-10-23",
   "tasks": [
     {
@@ -1988,7 +1988,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 17h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 18h 前"
     },
     {
       "layer": "渲染层",
@@ -2027,7 +2027,7 @@
           "size": 2535117
         }
       ],
-      "ageHours": 19,
+      "ageHours": 21,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2059,7 +2059,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 17,
+      "ageHours": 18,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-09-30",
@@ -2247,7 +2247,7 @@
         "name": "20261017-efficiency-naming",
         "files": 14,
         "latestAt": "2026-10-23 19:28:33",
-        "ageH": 2
+        "ageH": 4
       }
     ]
   },
@@ -2448,8 +2448,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "f6d587f",
-        "at": "2026-10-24T03:23:02+08:00",
+        "hash": "d7d2325",
+        "at": "2026-10-24T06:27:28+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2627,7 +2627,7 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 22:21:08",
+      "at": "2026-10-23 23:30:47",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2715,7 +2715,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1846.4,
+      "totalKB": 1845.9,
       "top": [
         {
           "name": "rider_base.json",
@@ -2735,7 +2735,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 69
+          "kb": 68.5
         },
         {
           "name": "visits.json",
