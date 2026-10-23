@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 23:36:27",
+  "generatedAt": "2026-10-23 23:54:57",
   "runDate": "2026-10-23",
   "tasks": [
     {
@@ -1769,10 +1769,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-24 00:06:07",
+    "auditedAt": "2026-10-24 07:51:53",
     "status": "PASS",
-    "pass": 24,
-    "warn": 2,
+    "pass": 25,
+    "warn": 4,
     "fail": 0,
     "checks": [
       {
@@ -1808,7 +1808,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 21d189b 2026-10-24 07:34:25 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: cc4ebf5 2026-10-24 07:42:47 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1841,6 +1841,11 @@
         "msg": "[kaohe-daily] 已关联定时器"
       },
       {
+        "level": "WARN",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 关联定时器状态为 PAUSED（非 ACTIVE）——任务将不会自动执行"
+      },
+      {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[xsp-weekly] 已关联定时器"
@@ -1858,17 +1863,27 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[capacity-daily] 定时器工作区漂移：automation=F:\\work\\mtcapacity\\pro\\kaohe-daily vs tasks.json=F:\\work\\mtcapacity\\pro\\capacity-daily"
+        "msg": "[capacity-daily] 关联定时器状态为 PAUSED（非 ACTIVE）——任务将不会自动执行"
       },
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[capacity-daily] 定时器最近一次运行失败（21h 前）——排查自动化会话日志"
+        "msg": "[capacity-daily] 定时器工作区漂移：automation=F:\\work\\mtcapacity\\pro\\kaohe-daily vs tasks.json=F:\\work\\mtcapacity\\pro\\capacity-daily"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[capacity-daily] 任务留痕已晚于定时器失败时刻（PASS 覆盖失败残留，自动刷新）"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 已关联定时器"
+      },
+      {
+        "level": "WARN",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 关联定时器状态为 PAUSED（非 ACTIVE）——任务将不会自动执行"
       },
       {
         "level": "PASS",
@@ -1907,10 +1922,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-23 15:22:08",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-23 15:46:35",
         "status": "PASS"
@@ -1962,6 +1973,10 @@
       {
         "auditedAt": "2026-10-24 00:06:07",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-24 07:51:53",
+        "status": "PASS"
       }
     ]
   },
@@ -1976,13 +1991,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-24 00:06:07）"
+      "detail": "审计 PASS（2026-10-24 07:51:53）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-24 07:36:21）"
+      "detail": "本轮发布前置 8 段全过（2026-10-24 07:54:56）"
     },
     {
       "layer": "项目层",
@@ -2246,8 +2261,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-23 19:28:33",
-        "ageH": 4
+        "latestAt": "2026-10-23 23:44:17",
+        "ageH": 0
       }
     ]
   },
@@ -2264,7 +2279,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-24 00:06:07）",
+      "text": "审计有 4 项警告（2026-10-24 07:51:53）",
       "anchor": "sec-audit"
     },
     {
@@ -2448,8 +2463,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "21d189b",
-        "at": "2026-10-24T07:34:25+08:00",
+        "hash": "cc4ebf5",
+        "at": "2026-10-24T07:42:47+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2477,21 +2492,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 07:36:21",
+    "runAt": "2026-10-24 07:54:56",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.7,
+        "seconds": 2.6,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -2503,44 +2518,32 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.4,
+        "seconds": 8.2,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 2807.1,
+        "seconds": 34.4,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 32.5,
+        "seconds": 38.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 222,
-        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 112.4,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2639,7 +2642,7 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 23:36:27",
+      "at": "2026-10-23 23:54:57",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2727,7 +2730,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1845.9,
+      "totalKB": 1846.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -2747,7 +2750,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 68.5
+          "kb": 69.4
         },
         {
           "name": "visits.json",
