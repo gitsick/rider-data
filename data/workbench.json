@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 01:31:06",
+  "generatedAt": "2026-10-23 03:46:00",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -13,8 +13,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-23 08:43:40",
-        "durationSec": 2620,
+        "finishedAt": "2026-10-23 10:31:13",
+        "durationSec": 73,
         "note": ""
       },
       "monitor": {
@@ -128,6 +128,13 @@
           "durationSec": 2620,
           "note": "",
           "dur": 2620
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-23 10:31:13",
+          "durationSec": 73,
+          "note": "",
+          "dur": 73
         }
       ],
       "gaps": {
@@ -272,7 +279,8 @@
         104,
         1966,
         102,
-        2620
+        2620,
+        73
       ]
     },
     {
@@ -486,15 +494,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-22 10:27:01",
-        "durationSec": 243.5,
+        "finishedAt": "2026-10-23 11:05:42",
+        "durationSec": 2187.5,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 09:00",
         "expectHour": 9,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -594,6 +602,34 @@
           "durationSec": 243.5,
           "note": "",
           "dur": 244
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-23 09:34:51",
+          "durationSec": 221,
+          "note": "",
+          "dur": 221
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-23 10:04:47",
+          "durationSec": 710.1,
+          "note": "",
+          "dur": 710
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-23 10:21:56",
+          "durationSec": 609.7,
+          "note": "",
+          "dur": 610
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-23 11:05:42",
+          "durationSec": 2187.5,
+          "note": "",
+          "dur": 2188
         }
       ],
       "gaps": {
@@ -716,13 +752,13 @@
           },
           {
             "date": "2026-10-23",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 4,
+        "gapCount": 3,
         "failCount": 0,
-        "passCount": 3
+        "passCount": 4
       },
       "durTrend": [
         295,
@@ -737,7 +773,11 @@
         176,
         744,
         410,
-        244
+        244,
+        221,
+        710,
+        610,
+        2188
       ]
     },
     {
@@ -749,17 +789,17 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每日 16:00 由定时任务直接驱动（R195 口径对齐：登记原为每小时，与定时器实际 RRULE 每日 16:00 漂移，导致非运行窗口持续误报运行超时）",
       "last": {
-        "status": "PASS",
-        "exitCode": 0,
-        "finishedAt": "2026-10-22 22:34:52",
-        "durationSec": null,
-        "note": ""
+        "status": "FAIL",
+        "exitCode": 1,
+        "finishedAt": "2026-10-23 09:48:24",
+        "durationSec": 1241,
+        "note": "问卷星登录态失效，华东/华南增量检查未完成；本地2058条无变化，访问日志与看板v2部署正常"
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -769,13 +809,6 @@
         "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id rider-hourly -Record PASS 留痕"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 10:03:00",
-          "durationSec": null,
-          "note": "",
-          "dur": null
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 11:04:23",
@@ -1118,6 +1151,13 @@
           "durationSec": null,
           "note": "",
           "dur": null
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-23 09:48:24",
+          "durationSec": 1241,
+          "note": "问卷星登录态失效，华东/华南增量检查未完成；本地2058条无变化，访问日志与看板v2部署正常",
+          "dur": 1241
         }
       ],
       "gaps": {
@@ -1240,12 +1280,12 @@
           },
           {
             "date": "2026-10-23",
-            "state": "gap"
+            "state": "fail"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 1,
-        "failCount": 0,
+        "gapCount": 0,
+        "failCount": 1,
         "passCount": 6
       },
       "durTrend": [
@@ -1292,7 +1332,8 @@
         1149,
         335,
         951,
-        822
+        822,
+        1241
       ]
     },
     {
@@ -1726,10 +1767,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-23 08:26:13",
+    "auditedAt": "2026-10-23 09:35:06",
     "status": "PASS",
-    "pass": 24,
-    "warn": 2,
+    "pass": 28,
+    "warn": 1,
     "fail": 0,
     "checks": [
       {
@@ -1765,7 +1806,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 6ad7663 2026-10-23 08:24:07 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 8707059 2026-10-23 09:31:10 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1775,17 +1816,17 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（22.1 小时前生成）"
+        "msg": "单文件产物存在（23.2 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（200.8 小时前生成）"
+        "msg": "单文件产物存在（201.9 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 0.1 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -1800,7 +1841,27 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（10/23/2026 08:44:09），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 今日已运行"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[xsp-weekly] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（10/23/2026 08:20:49），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -1816,11 +1877,6 @@
         "level": "WARN",
         "item": "调度配置",
         "msg": "[capacity-daily] 定时器工作区漂移：automation=F:\\work\\mtcapacity\\pro\\kaohe-daily vs tasks.json=F:\\work\\mtcapacity\\pro\\capacity-daily"
-      },
-      {
-        "level": "WARN",
-        "item": "调度配置",
-        "msg": "[capacity-daily] 定时器最近一次运行失败（23.4h 前）——排查自动化会话日志"
       },
       {
         "level": "PASS",
@@ -1864,10 +1920,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-22 22:17:38",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-22 22:25:13",
         "status": "PASS"
@@ -1919,6 +1971,10 @@
       {
         "auditedAt": "2026-10-23 08:26:13",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-23 09:35:06",
+        "status": "PASS"
       }
     ]
   },
@@ -1926,32 +1982,32 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
+      "status": "FAIL",
+      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 5 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-23 08:26:13）"
+      "detail": "审计 PASS（2026-10-23 09:35:06）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-23 09:31:05）"
+      "detail": "上轮全链 10 段全过（2026-10-23 09:34:39）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
-      "status": "PASS",
-      "detail": "2 项目，最新产出 0h 前"
+      "status": "WARN",
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.7h 前刷新"
     }
   ],
   "projects": [
@@ -1959,36 +2015,36 @@
       "name": "通用运力监控",
       "recent": [
         {
-          "name": "订单运力分析_2026-10-21.xlsx",
-          "mtime": "2026-10-22 02:23",
-          "size": 22527
+          "name": "订单运力分析_2026-10-22.xlsx",
+          "mtime": "2026-10-23 02:29",
+          "size": 22482
         },
         {
-          "name": "悦跑排班差异_站点跟进清单_2026-10-21.xlsx",
-          "mtime": "2026-10-22 02:23",
-          "size": 21155
+          "name": "悦跑排班差异_站点跟进清单_2026-10-22.xlsx",
+          "mtime": "2026-10-23 02:29",
+          "size": 21182
         },
         {
-          "name": "时段运力拆解_2026-10-21.xlsx",
-          "mtime": "2026-10-22 02:23",
-          "size": 199501
+          "name": "时段运力拆解_2026-10-22.xlsx",
+          "mtime": "2026-10-23 02:29",
+          "size": 199524
         },
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-22 02:23",
-          "size": 2701175
+          "mtime": "2026-10-23 02:29",
+          "size": 2535117
         },
         {
-          "name": "capacity_breakdown_dashboard_2026-10-21.html",
-          "mtime": "2026-10-22 02:23",
-          "size": 2701175
+          "name": "capacity_breakdown_dashboard_2026-10-22.html",
+          "mtime": "2026-10-23 02:29",
+          "size": 2535117
         }
       ],
-      "ageHours": 23.1,
+      "ageHours": 1.3,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-10-21",
-      "dataLag": 2,
+      "dataDate": "2026-10-22",
+      "dataLag": 1,
       "staleData": false,
       "dataLagThreshold": 2
     },
@@ -1996,14 +2052,14 @@
       "name": "履约考核工程",
       "recent": [
         {
+          "name": "sep.json",
+          "mtime": "2026-10-23 03:45",
+          "size": 84287
+        },
+        {
           "name": "oct.json",
           "mtime": "2026-10-23 01:29",
           "size": 78798
-        },
-        {
-          "name": "sep.json",
-          "mtime": "2026-10-23 00:22",
-          "size": 83650
         },
         {
           "name": "targets-oct.json",
@@ -2019,10 +2075,15 @@
       "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-10-23",
-      "dataLag": 0,
-      "staleData": false,
+      "dataDate": "2026-09-30",
+      "dataLag": 23,
+      "staleData": true,
       "dataLagThreshold": 2,
+      "outage": {
+        "since": "2026-10-01",
+        "dayCount": 23,
+        "cause": null
+      },
       "validation": [
         {
           "file": "oct.json",
@@ -2198,21 +2259,31 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-23 01:24:02",
+        "latestAt": "2026-10-23 03:40:28",
         "ageH": 0.1
       }
     ]
   },
   "alerts": [
     {
-      "level": "WARN",
-      "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
+      "level": "FAIL",
+      "text": "任务失败：骑手解约数据检查与刷新（2026-10-23 09:48:24 · 问卷星登录态失效，华东/华南增量检查未完成；本地2058条无变化，访问日志与看板v2部署正常）",
+      "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-23 08:26:13）",
+      "anchor": "sec-tasks",
+      "text": "触发断档：2 个任务近 30 天共 5 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天）——断档日历已上工作台，自愈兜底待接管"
+    },
+    {
+      "level": "WARN",
+      "text": "审计有 1 项警告（2026-10-23 09:35:06）",
       "anchor": "sec-audit"
+    },
+    {
+      "level": "WARN",
+      "text": "看板数据滞后：履约考核工程 数据日期 2026-09-30（滞后 23 天，超 2 天）——疑似源停发第 23 天（自 2026-10-01 起，待业务侧确认），按最近可得日期重跑模式",
+      "anchor": "sec-fresh"
     }
   ],
   "todos": [],
@@ -2220,75 +2291,75 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
-      "round": "R218",
+      "round": "R238",
       "date": "2026-10-23",
-      "title": "：换月校验留痕 schema 单源化 + 工作台透出接线盘点"
+      "title": "五原则表补落点路径列 + 三表全路径化收口 + 节编号撞号修复"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R217",
-      "date": "2026-10-22",
-      "title": "：wire-audit 接入换月流程三端 + export 闸门联动（缺线不出包）"
+      "round": "R237",
+      "date": "2026-10-23",
+      "title": "六大主轴表补落点路径列 + 路径锁泛化双表同口径"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R185",
-      "date": "2026-10-21",
-      "title": "：rider-detail 协议链接拆分（数据侧真瘦身）"
+      "round": "R236",
+      "date": "2026-10-23",
+      "title": "模式映射补落点文件路径列 + 路径存在性锁"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R184",
-      "date": "2026-10-21",
-      "title": "echarts 瘦身盘点：按需已生效，575KB 为固有成本——转防回归锁定"
+      "round": "R235",
+      "date": "2026-10-23",
+      "title": "Agent 设计五原则 + 六大主轴能力收编"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R183",
-      "date": "2026-10-21",
-      "title": "性能体检上站：体积剖面 + 预算门禁，体积回归上站前拦截"
+      "round": "R234",
+      "date": "2026-10-23",
+      "title": "架构模式收编 + 多 Agent 编排口径入档"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R182",
-      "date": "2026-10-21",
-      "title": "调度触发日历上站：断档天数永久留痕，自愈效果可回看"
+      "round": "R233",
+      "date": "2026-10-23",
+      "title": "脚手架扩页同步点示位"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R181",
-      "date": "2026-10-21",
-      "title": "数据源停发事件跟踪上站：停发时长可视化 + 恢复自动闭环"
+      "round": "R232",
+      "date": "2026-10-23",
+      "title": "发布管家 SKILL 全篇口径体检"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R180",
-      "date": "2026-10-21",
-      "title": "健康分历史趋势上站：治理成效按天回看"
+      "round": "R231",
+      "date": "2026-10-23",
+      "title": "脚手架归档闭环补全：变更记录实体骨架 + 管家浅核验联动口径"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R179",
-      "date": "2026-10-21",
-      "title": "门禁报告当轮化：线上工作台告别「上一轮快照」"
+      "round": "R230",
+      "date": "2026-10-23",
+      "title": "live 探针泛化：聚合层缺席自动分级 + 指纹去站点绑定"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R178",
-      "date": "2026-10-21",
-      "title": "数据新鲜度口径落地 + capacity-daily 自动化未触发根因确诊"
+      "round": "R229",
+      "date": "2026-10-23",
+      "title": "脚手架门禁收口补全：冒烟防线起步示例 + 管家联动口径"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R177",
-      "date": "2026-10-21",
-      "title": "调度层失败任务治理：健康分 68「中」→ 100「优」"
+      "round": "R228",
+      "date": "2026-10-23",
+      "title": "缺线告警红牌路径破坏性演练"
     },
     {
       "run": "20261017-efficiency-naming",
-      "round": "R176",
-      "date": "2026-10-21",
-      "title": "展示侧打磨：健康分色阶自洽 + 工作台吸顶锚点导航"
+      "round": "R227",
+      "date": "2026-10-23",
+      "title": "脚手架模板拼装态结构自检"
     }
   ],
   "approvals": [
@@ -2390,8 +2461,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "3e938d8",
-        "at": "2026-10-23T08:39:31+08:00",
+        "hash": "8707059",
+        "at": "2026-10-23T09:31:10+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2401,8 +2472,8 @@
       "mode": "single-file",
       "target": "capacity_monitor_latest.html",
       "last": {
-        "hash": "64fd65a",
-        "at": "2026-10-22T10:23:03+08:00",
+        "hash": "1ca57dc",
+        "at": "2026-10-23T10:35:47+08:00",
         "msg": "Deploy: 通用运力监控 capacity_monitor_latest.html（每日管线刷新）"
       }
     },
@@ -2412,17 +2483,17 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "c9866b4",
-        "at": "2026-10-23T08:31:33+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-22"
+        "hash": "f99ba44",
+        "at": "2026-10-23T11:45:35+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard.html（assessment-legacy 通道）"
       }
     }
   ],
   "gates": {
-    "runAt": "2026-10-23 09:31:05",
+    "runAt": "2026-10-23 09:34:39",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2471,18 +2542,30 @@
         "pass": true,
         "seconds": 39,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 10.6,
+        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 202,
+        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "health": {
-    "score": 100,
-    "grade": "优",
+    "score": 68,
+    "grade": "中",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "FAIL",
         "weight": 25,
-        "points": 100
+        "points": 0
       },
       {
         "layer": "门禁层",
@@ -2498,9 +2581,9 @@
       },
       {
         "layer": "项目层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 15,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "渲染层",
@@ -2569,13 +2652,13 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 01:31:06",
-      "score": 100,
-      "grade": "优",
+      "at": "2026-10-23 03:46:00",
+      "score": 68,
+      "grade": "中",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "FAIL"
         },
         {
           "layer": "部署层",
@@ -2587,7 +2670,7 @@
         },
         {
           "layer": "项目层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "渲染层",
@@ -2605,6 +2688,15 @@
       "lastSeenAt": "2026-10-22",
       "resolvedAt": "2026-10-22",
       "resolvedDataDate": "2026-10-21"
+    },
+    {
+      "project": "履约考核工程",
+      "since": "2026-10-01",
+      "dayCount": 23,
+      "lastDataDate": "2026-09-30",
+      "lastSeenAt": "2026-10-23",
+      "resolvedAt": null,
+      "resolvedDataDate": null
     }
   ],
   "perf": {
@@ -2648,7 +2740,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1843.7,
+      "totalKB": 1844.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -2668,7 +2760,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 66.3
+          "kb": 67.1
         },
         {
           "name": "visits.json",
