@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 18:59:58",
+  "generatedAt": "2026-10-23 19:13:29",
   "runDate": "2026-10-23",
   "tasks": [
     {
@@ -1982,7 +1982,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-24 02:59:52）"
+      "detail": "本轮发布前置 8 段全过（2026-10-24 03:13:29）"
     },
     {
       "layer": "项目层",
@@ -2246,7 +2246,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-23 18:36:46",
+        "latestAt": "2026-10-23 19:06:25",
         "ageH": 0
       }
     ]
@@ -2448,8 +2448,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "ef84a29",
-        "at": "2026-10-24T02:53:35+08:00",
+        "hash": "e7dc11f",
+        "at": "2026-10-24T03:00:02+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2477,10 +2477,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 02:59:52",
+    "runAt": "2026-10-24 03:13:29",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
@@ -2491,7 +2491,7 @@
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -2503,7 +2503,7 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.8,
         "note": ""
       },
       {
@@ -2529,18 +2529,6 @@
         "pass": true,
         "seconds": 0,
         "note": "resume 跳过（产物指纹一致）"
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 610.1,
-        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 147.8,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2639,7 +2627,7 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 18:59:58",
+      "at": "2026-10-23 19:13:29",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2727,7 +2715,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1846.1,
+      "totalKB": 1846.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -2747,7 +2735,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 68.7
+          "kb": 69
         },
         {
           "name": "visits.json",
