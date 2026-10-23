@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 00:26:14",
+  "generatedAt": "2026-10-23 00:39:17",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -278,15 +278,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-22 09:08:13",
-        "durationSec": 1210,
+        "finishedAt": "2026-10-23 08:32:45",
+        "durationSec": 717,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:30",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -323,6 +323,13 @@
           "durationSec": 1210,
           "note": "",
           "dur": 1210
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-23 08:32:45",
+          "durationSec": 717,
+          "note": "",
+          "dur": 717
         }
       ],
       "gaps": {
@@ -445,18 +452,19 @@
           },
           {
             "date": "2026-10-23",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 2,
         "failCount": 0,
-        "passCount": 4
+        "passCount": 5
       },
       "durTrend": [
         2776,
         2976,
-        1210
+        1210,
+        717
       ]
     },
     {
@@ -1911,7 +1919,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 9 天"
+      "detail": "4/4 任务正常 · 近 30 天触发断档 8 天"
     },
     {
       "layer": "部署层",
@@ -1929,13 +1937,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 0.1h 前"
+      "detail": "2 项目，最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 0.2h 前刷新"
     }
   ],
   "projects": [
@@ -1968,7 +1976,7 @@
           "size": 2701175
         }
       ],
-      "ageHours": 22,
+      "ageHours": 22.3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-21",
@@ -1981,8 +1989,8 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-23 00:22",
-          "size": 77959
+          "mtime": "2026-10-23 00:39",
+          "size": 78798
         },
         {
           "name": "sep.json",
@@ -2000,7 +2008,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0.1,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-23",
@@ -2182,7 +2190,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-23 00:22:06",
+        "latestAt": "2026-10-23 00:31:23",
         "ageH": 0.1
       }
     ]
@@ -2191,7 +2199,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：4 个任务近 30 天共 9 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
+      "text": "触发断档：4 个任务近 30 天共 8 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 2 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
     },
     {
       "level": "WARN",
@@ -2374,8 +2382,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6ad7663",
-        "at": "2026-10-23T08:24:07+08:00",
+        "hash": "d1733a6",
+        "at": "2026-10-23T08:26:50+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2396,9 +2404,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "4530c0a",
-        "at": "2026-10-22T08:24:18+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-21"
+        "hash": "c9866b4",
+        "at": "2026-10-23T08:31:33+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-22"
       }
     }
   ],
@@ -2565,7 +2573,7 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 00:26:14",
+      "at": "2026-10-23 00:39:17",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2644,7 +2652,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1843.1,
+      "totalKB": 1843.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -2664,7 +2672,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 65.7
+          "kb": 66
         },
         {
           "name": "visits.json",
