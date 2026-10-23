@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 23:54:57",
+  "generatedAt": "2026-10-23 23:56:46",
   "runDate": "2026-10-23",
   "tasks": [
     {
@@ -1769,10 +1769,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-24 07:51:53",
+    "auditedAt": "2026-10-24 07:56:45",
     "status": "PASS",
     "pass": 25,
-    "warn": 4,
+    "warn": 1,
     "fail": 0,
     "checks": [
       {
@@ -1808,7 +1808,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: cc4ebf5 2026-10-24 07:42:47 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: e9650e3 2026-10-24 07:55:00 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1841,11 +1841,6 @@
         "msg": "[kaohe-daily] 已关联定时器"
       },
       {
-        "level": "WARN",
-        "item": "调度配置",
-        "msg": "[kaohe-daily] 关联定时器状态为 PAUSED（非 ACTIVE）——任务将不会自动执行"
-      },
-      {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[xsp-weekly] 已关联定时器"
@@ -1863,11 +1858,6 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[capacity-daily] 关联定时器状态为 PAUSED（非 ACTIVE）——任务将不会自动执行"
-      },
-      {
-        "level": "WARN",
-        "item": "调度配置",
         "msg": "[capacity-daily] 定时器工作区漂移：automation=F:\\work\\mtcapacity\\pro\\kaohe-daily vs tasks.json=F:\\work\\mtcapacity\\pro\\capacity-daily"
       },
       {
@@ -1879,11 +1869,6 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 已关联定时器"
-      },
-      {
-        "level": "WARN",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 关联定时器状态为 PAUSED（非 ACTIVE）——任务将不会自动执行"
       },
       {
         "level": "PASS",
@@ -1922,10 +1907,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-23 15:46:35",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-23 16:09:23",
         "status": "PASS"
@@ -1977,6 +1958,10 @@
       {
         "auditedAt": "2026-10-24 07:51:53",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-24 07:56:45",
+        "status": "PASS"
       }
     ]
   },
@@ -1991,13 +1976,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-24 07:51:53）"
+      "detail": "审计 PASS（2026-10-24 07:56:45）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-24 07:54:56）"
+      "detail": "上轮全链 10 段全过（2026-10-24 07:56:41）"
     },
     {
       "layer": "项目层",
@@ -2279,7 +2264,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 4 项警告（2026-10-24 07:51:53）",
+      "text": "审计有 1 项警告（2026-10-24 07:56:45）",
       "anchor": "sec-audit"
     },
     {
@@ -2463,8 +2448,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "cc4ebf5",
-        "at": "2026-10-24T07:42:47+08:00",
+        "hash": "e9650e3",
+        "at": "2026-10-24T07:55:00+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2492,10 +2477,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 07:54:56",
+    "runAt": "2026-10-24 07:56:41",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2544,6 +2529,18 @@
         "pass": true,
         "seconds": 38.1,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 7.4,
+        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 96.4,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2642,7 +2639,7 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 23:54:57",
+      "at": "2026-10-23 23:56:46",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2730,7 +2727,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1846.8,
+      "totalKB": 1846.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -2750,7 +2747,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 69.4
+          "kb": 69.1
         },
         {
           "name": "visits.json",
