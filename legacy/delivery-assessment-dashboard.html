@@ -608,6 +608,23 @@ body.theme-align .card:hover{box-shadow:var(--tk-shadow-card-h)!important}
 /* [TK-ALIGN-TH] 表头对齐考核板：navy 底白字 */
 body.theme-align th{background:var(--tk-navy)!important;color:#fff!important;font-weight:700!important;border-color:var(--tk-navy2)!important}
 body.theme-align th a,body.theme-align th span{color:#fff!important}
+
+/* ---------- [4] 视觉细化层 v2（2026-10-23 界面优化：状态卡/表格可读性/徽章） ---------- */
+/* 三城状态卡：状态色渐变底 + 悬浮抬升，弱化"待数据"灰底观感 */
+.summary-card{border-radius:var(--tk-radius-card-s)!important;transition:transform .18s var(--tk-ease),box-shadow .18s var(--tk-ease)}
+.summary-card:hover{transform:translateY(-2px)}
+.summary-card.danger{background:linear-gradient(180deg,#fff5f5 0%,#fff 58%)!important}
+.summary-card.warn{background:linear-gradient(180deg,#fffdf5 0%,#fff 58%)!important}
+.summary-card.ok,.summary-card.good{background:linear-gradient(180deg,#f0faf2 0%,#fff 58%)!important}
+.sc-level{font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.sc-progress{box-shadow:inset 0 0 0 1px rgba(27,34,51,.05)}
+.sc-progress-fill{background-image:linear-gradient(90deg,rgba(255,255,255,.28),rgba(255,255,255,0) 45%)}
+/* 表格可读性补强（.dt 已有斑马纹/悬停，此处统一行距与状态值字重） */
+.dt td{line-height:1.5}
+.dt .c-red{font-weight:600}
+.dt .c-green{font-weight:600}
+/* 徽章/胶囊统一全圆角 */
+.pill{border-radius:var(--tk-radius-pill)}
 </style>
 </head>
 <body>
