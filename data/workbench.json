@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 11:23:54",
+  "generatedAt": "2026-10-23 11:55:58",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -2016,19 +2016,19 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-23 19:23:49）"
+      "detail": "本轮发布前置 8 段全过（2026-10-23 19:55:58）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 6.4h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 7h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2061,7 +2061,7 @@
           "size": 2535117
         }
       ],
-      "ageHours": 8.9,
+      "ageHours": 9.4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2093,7 +2093,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 6.4,
+      "ageHours": 7,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-09-30",
@@ -2280,8 +2280,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-23 08:21:04",
-        "ageH": 3
+        "latestAt": "2026-10-23 11:26:26",
+        "ageH": 0.5
       }
     ]
   },
@@ -2310,6 +2310,12 @@
   "todos": [],
   "todoOwners": [],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R252",
+      "date": "2026-10-23",
+      "title": "架构替换：三层 Supervisor 模式总设计 + S1 运行时层落地"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R251",
@@ -2375,12 +2381,6 @@
       "round": "R241",
       "date": "2026-10-23",
       "title": "编排模式六条补落点速查表 + 路径锁四节全口径"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R240",
-      "date": "2026-10-23",
-      "title": "gates-summary 同源降噪联动（-Mode quick/full 与探针同口径）"
     }
   ],
   "approvals": [
@@ -2482,8 +2482,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "a0633a7",
-        "at": "2026-10-23T19:21:10+08:00",
+        "hash": "1b0759c",
+        "at": "2026-10-23T19:23:58+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2511,70 +2511,58 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-23 19:23:49",
+    "runAt": "2026-10-23 19:55:58",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.4,
+        "seconds": 3.3,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.7,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.2,
+        "seconds": 9.1,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 65.8,
+        "seconds": 96.1,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 33.6,
+        "seconds": 38.8,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 49.3,
-        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 152.4,
-        "note": "指纹+探针 assets/SchemaBanner-DjDyvklt.js 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2673,7 +2661,7 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 11:23:54",
+      "at": "2026-10-23 11:55:58",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2761,7 +2749,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1846.7,
+      "totalKB": 1847.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -2781,7 +2769,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 69.3
+          "kb": 69.9
         },
         {
           "name": "visits.json",
