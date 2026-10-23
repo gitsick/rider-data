@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 03:46:00",
+  "generatedAt": "2026-10-23 04:10:51",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -2001,13 +2001,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0.4h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.7h 前刷新"
+      "detail": "站点数据 0.4h 前刷新"
     }
   ],
   "projects": [
@@ -2040,7 +2040,7 @@
           "size": 2535117
         }
       ],
-      "ageHours": 1.3,
+      "ageHours": 1.7,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2072,7 +2072,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0,
+      "ageHours": 0.4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-09-30",
@@ -2260,7 +2260,7 @@
         "name": "20261017-efficiency-naming",
         "files": 13,
         "latestAt": "2026-10-23 03:40:28",
-        "ageH": 0.1
+        "ageH": 0.5
       }
     ]
   },
@@ -2461,8 +2461,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "8707059",
-        "at": "2026-10-23T09:31:10+08:00",
+        "hash": "f03a418",
+        "at": "2026-10-23T11:46:12+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2483,9 +2483,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "f99ba44",
-        "at": "2026-10-23T11:45:35+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard.html（assessment-legacy 通道）"
+        "hash": "107072a",
+        "at": "2026-10-23T12:10:39+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
   ],
@@ -2652,7 +2652,7 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 03:46:00",
+      "at": "2026-10-23 04:10:51",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2740,7 +2740,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1844.5,
+      "totalKB": 1817.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -2748,7 +2748,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 519.7
+          "kb": 494.6
         },
         {
           "name": "rider-index.json",
@@ -2760,11 +2760,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 67.1
+          "kb": 68.6
         },
         {
           "name": "visits.json",
-          "kb": 48.2
+          "kb": 45
         },
         {
           "name": "logger.json",
