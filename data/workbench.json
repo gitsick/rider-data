@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-23 04:10:51",
+  "generatedAt": "2026-10-23 05:00:05",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -1995,19 +1995,19 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-23 09:34:39）"
+      "detail": "本轮发布前置 8 段全过（2026-10-23 13:00:04）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0.4h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0.4h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2040,7 +2040,7 @@
           "size": 2535117
         }
       ],
-      "ageHours": 1.7,
+      "ageHours": 2.5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2053,7 +2053,7 @@
       "recent": [
         {
           "name": "sep.json",
-          "mtime": "2026-10-23 03:45",
+          "mtime": "2026-10-23 04:58",
           "size": 84287
         },
         {
@@ -2072,7 +2072,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0.4,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-09-30",
@@ -2259,8 +2259,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 13,
-        "latestAt": "2026-10-23 03:40:28",
-        "ageH": 0.5
+        "latestAt": "2026-10-23 04:42:01",
+        "ageH": 0.3
       }
     ]
   },
@@ -2289,6 +2289,36 @@
   "todos": [],
   "todoOwners": [],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R243",
+      "date": "2026-10-23",
+      "title": "SKILL 模式一/二补 quick 档命令示例（降噪口径可复制直跑）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R242",
+      "date": "2026-10-23",
+      "title": "架构模式.md 节定界升级编号断言（唯一+有序，防再撞号）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R241",
+      "date": "2026-10-23",
+      "title": "编排模式六条补落点速查表 + 路径锁四节全口径"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R240",
+      "date": "2026-10-23",
+      "title": "gates-summary 同源降噪联动（-Mode quick/full 与探针同口径）"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R239",
+      "date": "2026-10-23",
+      "title": "live 探针重复核验降噪（-Mode quick/full 两档）"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R238",
@@ -2330,36 +2360,6 @@
       "round": "R232",
       "date": "2026-10-23",
       "title": "发布管家 SKILL 全篇口径体检"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R231",
-      "date": "2026-10-23",
-      "title": "脚手架归档闭环补全：变更记录实体骨架 + 管家浅核验联动口径"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R230",
-      "date": "2026-10-23",
-      "title": "live 探针泛化：聚合层缺席自动分级 + 指纹去站点绑定"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R229",
-      "date": "2026-10-23",
-      "title": "脚手架门禁收口补全：冒烟防线起步示例 + 管家联动口径"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R228",
-      "date": "2026-10-23",
-      "title": "缺线告警红牌路径破坏性演练"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R227",
-      "date": "2026-10-23",
-      "title": "脚手架模板拼装态结构自检"
     }
   ],
   "approvals": [
@@ -2461,8 +2461,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "f03a418",
-        "at": "2026-10-23T11:46:12+08:00",
+        "hash": "7895f3f",
+        "at": "2026-10-23T12:38:03+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2490,70 +2490,58 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-23 09:34:39",
+    "runAt": "2026-10-23 13:00:04",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5,
+        "seconds": 3.7,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 9.2,
+        "seconds": 7.8,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 41.3,
+        "seconds": 49.3,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 39,
+        "seconds": 33.3,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 10.6,
-        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 202,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2652,7 +2640,7 @@
     },
     {
       "date": "2026-10-23",
-      "at": "2026-10-23 04:10:51",
+      "at": "2026-10-23 05:00:05",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2702,34 +2690,34 @@
   "perf": {
     "assets": {
       "count": 36,
-      "totalKB": 963.7,
+      "totalKB": 969,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-BE2sKozW.js",
-          "kb": 98.1
+          "name": "main-DMP_JWAG.js",
+          "kb": 100
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
           "kb": 73.6
         },
         {
-          "name": "workbench-DHjojhdB.js",
+          "name": "workbench-viILT33I.js",
           "kb": 42.4
         },
         {
-          "name": "swRegister-DNfKGIUL.css",
+          "name": "swRegister-Dw2RnvT-.css",
           "kb": 29
         },
         {
-          "name": "main-DoLrmuOS.css",
-          "kb": 23.6
+          "name": "main-COsFu99n.css",
+          "kb": 27
         },
         {
-          "name": "rider_dashboard-DECcePHh.js",
+          "name": "rider_dashboard-JLTyq54g.js",
           "kb": 22.5
         },
         {
@@ -2740,7 +2728,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1817.7,
+      "totalKB": 1846,
       "top": [
         {
           "name": "rider_base.json",
@@ -2748,7 +2736,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 494.6
+          "kb": 519.7
         },
         {
           "name": "rider-index.json",
@@ -2764,7 +2752,7 @@
         },
         {
           "name": "visits.json",
-          "kb": 45
+          "kb": 48.2
         },
         {
           "name": "logger.json",
