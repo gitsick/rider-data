@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 03:31:42",
+  "generatedAt": "2026-10-24 03:57:01",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -2054,7 +2054,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-24 11:31:18）"
+      "detail": "本轮发布前置 8 段全过（2026-10-24 11:57:00）"
     },
     {
       "layer": "项目层",
@@ -2131,7 +2131,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 2,
+      "ageHours": 3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-24",
@@ -2313,7 +2313,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-24 02:50:38",
+        "latestAt": "2026-10-24 03:48:20",
         "ageH": 0
       }
     ]
@@ -2500,8 +2500,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "4961605",
-        "at": "2026-10-24T11:25:22+08:00",
+        "hash": "fc3d133",
+        "at": "2026-10-24T11:35:21+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2529,21 +2529,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 11:31:18",
+    "runAt": "2026-10-24 11:57:00",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.3,
+        "seconds": 3.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -2561,38 +2561,26 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 0,
-        "note": "resume 跳过（检查点新鲜 + 产物指纹一致）"
+        "seconds": 8.7,
+        "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0,
-        "note": "resume 跳过（产物指纹一致）"
+        "seconds": 0.3,
+        "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 0,
-        "note": "resume 跳过（产物指纹一致）"
+        "seconds": 35.6,
+        "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 0,
-        "note": "resume 跳过（产物指纹一致）"
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 211.1,
-        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 178.5,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
+        "seconds": 32.2,
+        "note": ""
       }
     ]
   },
@@ -2719,7 +2707,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 03:31:42",
+      "at": "2026-10-24 03:57:01",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2769,7 +2757,7 @@
   "perf": {
     "assets": {
       "count": 36,
-      "totalKB": 970.1,
+      "totalKB": 976.7,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -2784,8 +2772,8 @@
           "kb": 73.6
         },
         {
-          "name": "workbench-BgLh3GKL.js",
-          "kb": 42.5
+          "name": "workbench-CDN5yqbB.js",
+          "kb": 46.1
         },
         {
           "name": "swRegister-Df_3ahdu.css",
@@ -2800,14 +2788,14 @@
           "kb": 22.6
         },
         {
-          "name": "workbench-BMROFSVj.css",
-          "kb": 15.6
+          "name": "workbench-DdlUFFgy.css",
+          "kb": 18.6
         }
       ]
     },
     "data": {
       "count": 7,
-      "totalKB": 1858.3,
+      "totalKB": 1858.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -2827,7 +2815,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 70.6
+          "kb": 71
         },
         {
           "name": "visits.json",
@@ -2851,26 +2839,31 @@
   "knowledge": [
     {
       "name": "架构与部署规范",
+      "cat": "架构",
       "path": "ARCHITECTURE.md",
       "desc": "七层架构、职责矩阵、部署/调度全链路唯一权威说明"
     },
     {
       "name": "业务口径手册",
+      "cat": "口径",
       "path": "lib\\docs\\口径手册.md",
       "desc": "跨项目复用的口径/规则/领域函数说明（共享函数库） · 口径条目 7 条"
     },
     {
       "name": "项目工作区规范",
+      "cat": "工作区",
       "path": "pro\\README.md",
       "desc": "pro 子项目路径约定与管线结构"
     },
     {
       "name": "调度层用法",
+      "cat": "调度",
       "path": "sched\\README.md",
       "desc": "任务登记唯一事实源与统一执行器用法"
     },
     {
       "name": "部署基建说明",
+      "cat": "部署",
       "path": "deploy\\README.md",
       "desc": "通道配置、发布引擎、断网重试/锁等待预案"
     }
