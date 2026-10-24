@@ -10,10 +10,11 @@ html { overflow-x:hidden; overflow-x:clip; -webkit-text-size-adjust:100%; text-s
 /* —— 站点级导航（与 Vue 主看板 TopNav 同款同值：暗色渐变 + 金色品牌点 + 胶囊高亮 + 42px 高度，R57 对齐 1440 居中） —— */
 .site-nav { position:sticky; top:0; z-index:9000; background:linear-gradient(90deg,rgba(27,34,51,.94),rgba(45,52,71,.94)); box-shadow:0 1px 6px rgba(0,0,0,.22); white-space:nowrap; width:100vw; margin-left:calc(50% - 50vw); } /* R58：通栏满宽（与 Vue TopNav 一致），内容仍由 .sn-inner 1440 居中 */
 .sn-inner { position:relative; max-width:1440px; margin:0 auto; padding:0 16px; height:42px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; }
-@media(max-width:640px) { .sn-inner { height:38px; padding:0 10px; gap:6px; font-size:12px; flex-wrap:nowrap; overflow:visible; } .sn-inner > a:not(.brand) { display:none; } .brand::before { display:none; } }
+@media(max-width:640px) { .sn-inner { height:38px; padding:0 10px; gap:6px; font-size:12px; flex-wrap:nowrap; overflow:visible; } .sn-inner > a:not(.brand) { display:none; } .site-nav .brand { padding:6px 8px; } .mm-btn { padding:6px 10px; min-height:30px; } .brand::before { display:none; } } /* R279 对齐 TopNav R154 触控目标提升：品牌链与 ☰ 按钮窄屏加高 */
 @media(max-width:760px) and (min-width:641px) { .sn-inner { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; } .sn-inner::-webkit-scrollbar { display:none; } }
+@media(min-width:1472px) { .sn-inner { padding:0; } } /* R279 对齐 TopNav：≥1472px 容器已有边距，内距归零（同款同值） */
 @media(max-width:760px) { .chartbox { min-width:0 !important; } .checktbl { display:block; overflow-x:auto; } .kchip { white-space:normal !important; } }
-.site-nav a { color:#c3cede; font-size:13px; text-decoration:none; padding:5px 11px; border-radius:999px; transition:color .15s,background .15s; }
+.site-nav a { color:#8A8FA3; font-size:13px; text-decoration:none; padding:5px 11px; border-radius:999px; transition:color .15s,background .15s; } /* R279 对齐 TopNav：链接默认色同 tokens --muted2（旧 #c3cede 漂移退役） */
 @media(max-width:640px) { .site-nav a { padding:4px 8px; font-size:12px; } }
 .site-nav a:hover { color:#ffc300; background:rgba(255,255,255,.08); }
 .site-nav a.on { color:#fff; font-weight:700; background:linear-gradient(135deg,rgba(255,195,0,.26),rgba(255,195,0,.13)); box-shadow:inset 0 0 0 1px rgba(255,195,0,.45); }
