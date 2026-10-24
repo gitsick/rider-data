@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 02:45:27",
+  "generatedAt": "2026-10-24 02:49:12",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -1840,7 +1840,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 0285708 2026-10-24 10:28:27 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 7ecaa86 2026-10-24 10:45:58 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2044,7 +2044,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-24 10:45:26）"
+      "detail": "上轮全链 11 段全过（2026-10-24 10:49:06）"
     },
     {
       "layer": "项目层",
@@ -2495,8 +2495,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "f063434",
-        "at": "2026-10-24T10:34:18+08:00",
+        "hash": "7ecaa86",
+        "at": "2026-10-24T10:45:58+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2524,10 +2524,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 10:45:26",
+    "runAt": "2026-10-24 10:49:06",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "excel",
@@ -2582,6 +2582,18 @@
         "pass": true,
         "seconds": 38.4,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 64.2,
+        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 154.8,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2708,7 +2720,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 02:45:27",
+      "at": "2026-10-24 02:49:12",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -2796,7 +2808,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1858.1,
+      "totalKB": 1858.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -2816,7 +2828,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 70.4
+          "kb": 70.5
         },
         {
           "name": "visits.json",
