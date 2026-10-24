@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 00:43:40",
+  "generatedAt": "2026-10-24 00:45:59",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -1816,7 +1816,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 73cf120 2026-10-24 08:18:40 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 6d39cfd 2026-10-24 08:43:53 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1826,7 +1826,7 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（21 小时前生成）"
+        "msg": "单文件产物存在（22 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2000,7 +2000,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-24 08:42:30）"
+      "detail": "上轮全链 11 段全过（2026-10-24 08:45:53）"
     },
     {
       "layer": "项目层",
@@ -2466,8 +2466,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "21464d8",
-        "at": "2026-10-24T08:42:36+08:00",
+        "hash": "6d39cfd",
+        "at": "2026-10-24T08:43:53+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2495,10 +2495,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 08:42:30",
+    "runAt": "2026-10-24 08:45:53",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "excel",
@@ -2553,6 +2553,18 @@
         "pass": true,
         "seconds": 41.1,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 54.8,
+        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 146.9,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2679,7 +2691,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 00:43:40",
+      "at": "2026-10-24 00:45:59",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -2767,7 +2779,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1847.1,
+      "totalKB": 1818.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -2775,7 +2787,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 519.7
+          "kb": 494.6
         },
         {
           "name": "rider-index.json",
@@ -2791,7 +2803,7 @@
         },
         {
           "name": "visits.json",
-          "kb": 48.2
+          "kb": 45
         },
         {
           "name": "logger.json",
