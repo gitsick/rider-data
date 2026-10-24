@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 04:52:47",
+  "generatedAt": "2026-10-24 05:01:57",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -1840,7 +1840,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: bd5101f 2026-10-24 12:33:41 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 3417f9b 2026-10-24 12:59:26 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1935,7 +1935,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器 lastRunAt 停在 10/23/2026 16:22:49 —— 未到今日触发时刻（expectHour 16，当前 12 点），今日留痕来自链路自愈/手动，属预期（R268 触发时机感知）"
+        "msg": "[rider-hourly] 定时器 lastRunAt 停在 10/23/2026 16:22:49 —— 未到今日触发时刻（expectHour 16，当前 13 点），今日留痕来自链路自愈/手动，属预期（R268 触发时机感知）"
       },
       {
         "level": "PASS",
@@ -2054,7 +2054,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-24 12:52:46）"
+      "detail": "上轮全链 10 段全过（2026-10-24 13:01:51）"
     },
     {
       "layer": "项目层",
@@ -2500,8 +2500,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "32de233",
-        "at": "2026-10-24T12:41:13+08:00",
+        "hash": "3417f9b",
+        "at": "2026-10-24T12:59:26+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2529,10 +2529,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 12:52:46",
+    "runAt": "2026-10-24 13:01:51",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2581,6 +2581,18 @@
         "pass": true,
         "seconds": 34.4,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 403.9,
+        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 140.6,
+        "note": "指纹+探针 assets/standards-DTeJ-x8q.css 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2707,7 +2719,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 04:52:47",
+      "at": "2026-10-24 05:01:57",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2795,7 +2807,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1858.6,
+      "totalKB": 1858.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -2815,7 +2827,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 70.9
+          "kb": 70.6
         },
         {
           "name": "visits.json",
