@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>通用运力监控 · 2026-10-22 · 区域/城市下钻视图</title>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/rider-data/assets/favicon-By8xDhwq.svg" /><title>通用运力监控 · 2026-10-22 · 区域/城市下钻视图</title>
 <style>
 body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif; max-width:1440px; margin:0 auto; padding:0 16px 40px; color:#1B1B33; background:radial-gradient(1200px 420px at 12% -6%, rgba(255,195,0,.08), transparent 60%),radial-gradient(1000px 460px at 92% -10%, rgba(59,111,245,.07), transparent 55%),#F0F2F5; } /* R60 对齐 tokens：--font/--bg/--ink + base.css 双光晕；R277 顶部零内距——导航栏贴顶（与主站 TopNav 一致），内容间距由 .hero 12px 上边距承接 */
-html { overflow-x:hidden; overflow-x:clip; } /* 导航通栏满宽用 100vw，含滚动条宽度会溢出几个 px：clip 裁掉且不破坏 sticky（hidden 作为旧浏览器回退） */
+html { overflow-x:hidden; overflow-x:clip; -webkit-text-size-adjust:100%; text-size-adjust:100%; } /* 导航通栏满宽用 100vw，含滚动条宽度会溢出几个 px：clip 裁掉且不破坏 sticky（hidden 作为旧浏览器回退）；R278 对齐 base.css：移动端禁止横屏自动放大文字 */
 /* R61 可访问性对齐 base.css：选中色 / 焦点态 / 动画减弱偏好 */
 ::selection { background:rgba(255,195,0,.35); }
 :focus-visible { outline:2px solid #FFC300; outline-offset:2px; border-radius:4px; }
@@ -142,6 +142,15 @@ h2{letter-spacing:.4px;border-bottom:2px solid #e8eef5;padding-bottom:4px}
 .chartbox svg text { user-select:none; }
 /* v24nav 导航滚动高亮（对齐金色主色） */
 .topnav a.active { background:rgba(255,195,0,.92); color:#1b2233; font-weight:700; }
+/* R278 打印/导出对齐主站 print.css 汇报口径：白底黑字、隐藏导航/章节吸顶条/移动菜单，屏幕观感零变化 */
+@media print {
+  @page { margin:10mm 12mm; }
+  html,body { background:#fff!important; }
+  body { padding:0; }
+  * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .site-nav,.stickyhead,.mm-btn,.totop { display:none!important; }
+  .hero { margin-top:0; }
+}
 /* ===== v14css 全局美化 ===== */
 .card table tbody tr:nth-child(even)>td{background:#f7fafd}
 .card table .scroll::-webkit-scrollbar{height:10px;width:10px}
