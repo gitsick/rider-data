@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 08:17:01",
+  "generatedAt": "2026-10-24 08:45:22",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -822,11 +822,11 @@
       "entry": "check_and_update.ps1（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）",
       "note": "独立工作区，每日 16:00 由定时任务直接驱动（R195 口径对齐：登记原为每小时，与定时器实际 RRULE 每日 16:00 漂移，导致非运行窗口持续误报运行超时）",
       "last": {
-        "status": "PASS",
-        "exitCode": 0,
-        "finishedAt": "2026-10-24 10:58:04",
-        "durationSec": null,
-        "note": "问卷星登录后增量拉取成功：华东1260→1277(+17)，华南798→804(+6)，合计2081条；访问日志今日0；看板v2部署完成"
+        "status": "FAIL",
+        "exitCode": 1,
+        "finishedAt": "2026-10-24 16:21:58",
+        "durationSec": 1319,
+        "note": "问卷星登录态失效，增量拉取未执行（本地2081条已是最新，无数据丢失）；访问日志COS新增0；看板已重新生成并v2部署完成"
       },
       "monitor": {
         "cadence": "daily",
@@ -842,13 +842,6 @@
         "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id rider-hourly -Record PASS 留痕"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 14:01:55",
-          "durationSec": null,
-          "note": "",
-          "dur": null
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 15:03:08",
@@ -1191,6 +1184,13 @@
           "durationSec": null,
           "note": "问卷星登录后增量拉取成功：华东1260→1277(+17)，华南798→804(+6)，合计2081条；访问日志今日0；看板v2部署完成",
           "dur": null
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-24 16:21:58",
+          "durationSec": 1319,
+          "note": "问卷星登录态失效，增量拉取未执行（本地2081条已是最新，无数据丢失）；访问日志COS新增0；看板已重新生成并v2部署完成",
+          "dur": 1319
         }
       ],
       "gaps": {
@@ -1367,7 +1367,8 @@
         951,
         822,
         1241,
-        1332
+        1332,
+        1319
       ]
     },
     {
@@ -2041,8 +2042,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 5 天"
+      "status": "FAIL",
+      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 5 天"
     },
     {
       "layer": "部署层",
@@ -2054,7 +2055,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-24 16:15:09）"
+      "detail": "本轮发布前置 8 段全过（2026-10-24 16:45:21）"
     },
     {
       "layer": "项目层",
@@ -2131,7 +2132,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 7,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-24",
@@ -2313,12 +2314,17 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-24 07:59:52",
+        "latestAt": "2026-10-24 08:20:18",
         "ageH": 0
       }
     ]
   },
   "alerts": [
+    {
+      "level": "FAIL",
+      "text": "任务失败：骑手解约数据检查与刷新（2026-10-24 16:21:58 · 问卷星登录态失效，增量拉取未执行（本地2081条已是最新，无数据丢失）；访问日志COS新增0；看板已重新生成并v2部署完成）",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -2500,8 +2506,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "533dff4",
-        "at": "2026-10-24T16:15:18+08:00",
+        "hash": "c9de5ff",
+        "at": "2026-10-24T16:17:05+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2529,21 +2535,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 16:15:09",
+    "runAt": "2026-10-24 16:45:21",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.7,
+        "seconds": 3.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.8,
         "note": ""
       },
       {
@@ -2555,13 +2561,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.7,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.4,
+        "seconds": 8.8,
         "note": ""
       },
       {
@@ -2579,32 +2585,20 @@
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 37.8,
+        "seconds": 38,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 379.5,
-        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 354.5,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "health": {
-    "score": 100,
-    "grade": "优",
+    "score": 75,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "FAIL",
         "weight": 25,
-        "points": 100
+        "points": 0
       },
       {
         "layer": "门禁层",
@@ -2632,7 +2626,7 @@
       }
     ],
     "extra": {
-      "tests": 631,
+      "tests": 632,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -2723,13 +2717,13 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 08:17:01",
-      "score": 100,
-      "grade": "优",
+      "at": "2026-10-24 08:45:22",
+      "score": 75,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "FAIL"
         },
         {
           "layer": "部署层",
@@ -2773,14 +2767,14 @@
   "perf": {
     "assets": {
       "count": 36,
-      "totalKB": 978.7,
+      "totalKB": 979.3,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-B_phfISK.js",
+          "name": "main-xi-5Ntu9.js",
           "kb": 100.2
         },
         {
@@ -2800,8 +2794,8 @@
           "kb": 24.4
         },
         {
-          "name": "rider_dashboard-f4e0Y2UE.js",
-          "kb": 22.6
+          "name": "rider_dashboard-BsONOYZz.js",
+          "kb": 23.1
         },
         {
           "name": "workbench-CZ5R8r3I.css",
@@ -2811,7 +2805,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1858.5,
+      "totalKB": 1859,
       "top": [
         {
           "name": "rider_base.json",
@@ -2831,7 +2825,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 70.8
+          "kb": 71.3
         },
         {
           "name": "visits.json",
