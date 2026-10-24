@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 06:45:11",
+  "generatedAt": "2026-10-24 07:02:53",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -2054,7 +2054,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-24 14:45:05）"
+      "detail": "本轮发布前置 8 段全过（2026-10-24 15:02:52）"
     },
     {
       "layer": "项目层",
@@ -2075,13 +2075,13 @@
       "recent": [
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-24 06:37",
-          "size": 2697914
+          "mtime": "2026-10-24 06:55",
+          "size": 2698029
         },
         {
           "name": "capacity_breakdown_dashboard_2026-10-22.html",
-          "mtime": "2026-10-24 06:37",
-          "size": 2697914
+          "mtime": "2026-10-24 06:55",
+          "size": 2698029
         },
         {
           "name": "订单运力分析_2026-10-22.xlsx",
@@ -2313,7 +2313,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-24 06:28:36",
+        "latestAt": "2026-10-24 06:49:29",
         "ageH": 0
       }
     ]
@@ -2500,8 +2500,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "53adb3f",
-        "at": "2026-10-24T14:41:04+08:00",
+        "hash": "35d6066",
+        "at": "2026-10-24T14:45:15+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2511,8 +2511,8 @@
       "mode": "single-file",
       "target": "capacity_monitor_latest.html",
       "last": {
-        "hash": "8fef874",
-        "at": "2026-10-24T14:02:42+08:00",
+        "hash": "b66d9d6",
+        "at": "2026-10-24T14:56:48+08:00",
         "msg": "Deploy: 通用运力监控 capacity_monitor_latest.html（每日管线刷新）"
       }
     },
@@ -2529,21 +2529,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 14:45:05",
+    "runAt": "2026-10-24 15:02:52",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3,
+        "seconds": 2.6,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -2555,44 +2555,32 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 9.4,
+        "seconds": 6.4,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 39.2,
+        "seconds": 44.8,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 36.5,
+        "seconds": 43.3,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 73.9,
-        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 221.5,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2632,7 +2620,7 @@
       }
     ],
     "extra": {
-      "tests": 627,
+      "tests": 628,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -2723,7 +2711,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 06:45:11",
+      "at": "2026-10-24 07:02:53",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2811,7 +2799,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1858.4,
+      "totalKB": 1858.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -2831,7 +2819,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 70.7
+          "kb": 70.9
         },
         {
           "name": "visits.json",
