@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 00:42:31",
+  "generatedAt": "2026-10-24 00:43:40",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -2057,6 +2057,11 @@
       "name": "履约考核工程",
       "recent": [
         {
+          "name": "targets-oct.json",
+          "mtime": "2026-10-24 00:42",
+          "size": 9404
+        },
+        {
           "name": "oct.json",
           "mtime": "2026-10-24 00:40",
           "size": 79642
@@ -2065,11 +2070,6 @@
           "name": "sep.json",
           "mtime": "2026-10-24 00:13",
           "size": 84287
-        },
-        {
-          "name": "targets-oct.json",
-          "mtime": "2026-10-18 04:27",
-          "size": 9413
         },
         {
           "name": "targets-sep.json",
@@ -2466,8 +2466,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c57860d",
-        "at": "2026-10-24T08:42:06+08:00",
+        "hash": "21464d8",
+        "at": "2026-10-24T08:42:36+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2679,7 +2679,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 00:42:31",
+      "at": "2026-10-24 00:43:40",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -2767,7 +2767,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1847.3,
+      "totalKB": 1847.1,
       "top": [
         {
           "name": "rider_base.json",
@@ -2787,7 +2787,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 69.9
+          "kb": 69.7
         },
         {
           "name": "visits.json",
