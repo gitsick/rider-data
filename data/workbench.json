@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 02:25:46",
+  "generatedAt": "2026-10-24 02:34:14",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-24 08:49:44",
-        "durationSec": 2984,
+        "finishedAt": "2026-10-24 10:30:54",
+        "durationSec": 54,
         "note": ""
       },
       "monitor": {
@@ -143,6 +143,13 @@
           "durationSec": 2984,
           "note": "",
           "dur": 2984
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-24 10:30:54",
+          "durationSec": 54,
+          "note": "",
+          "dur": 54
         }
       ],
       "gaps": {
@@ -289,7 +296,8 @@
         102,
         2620,
         73,
-        2984
+        2984,
+        54
       ]
     },
     {
@@ -816,15 +824,15 @@
       "last": {
         "status": "FAIL",
         "exitCode": 1,
-        "finishedAt": "2026-10-23 16:22:12",
-        "durationSec": 1332,
-        "note": "问卷星登录态失效，增量检查未完成；本地2058条无变化，访问日志今日0，看板v2部署正常"
+        "finishedAt": "2026-10-24 10:33:33",
+        "durationSec": null,
+        "note": "重跑后问卷星登录态仍失效，增量未拉取；本地2058条无变化，访问日志今日0，看板v2部署正常"
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -834,13 +842,6 @@
         "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id rider-hourly -Record PASS 留痕"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 12:16:00",
-          "durationSec": null,
-          "note": "",
-          "dur": null
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 13:16:48",
@@ -1183,6 +1184,13 @@
           "durationSec": 1332,
           "note": "问卷星登录态失效，增量检查未完成；本地2058条无变化，访问日志今日0，看板v2部署正常",
           "dur": 1332
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-24 10:33:33",
+          "durationSec": null,
+          "note": "重跑后问卷星登录态仍失效，增量未拉取；本地2058条无变化，访问日志今日0，看板v2部署正常",
+          "dur": null
         }
       ],
       "gaps": {
@@ -1305,12 +1313,12 @@
           },
           {
             "date": "2026-10-24",
-            "state": "gap"
+            "state": "fail"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 1,
-        "failCount": 1,
+        "gapCount": 0,
+        "failCount": 2,
         "passCount": 6
       },
       "durTrend": [
@@ -1793,10 +1801,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-24 10:21:46",
+    "auditedAt": "2026-10-24 10:34:14",
     "status": "PASS",
-    "pass": 31,
-    "warn": 1,
+    "pass": 32,
+    "warn": 0,
     "fail": 0,
     "checks": [
       {
@@ -1832,7 +1840,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 8bbca5b 2026-10-24 10:20:24 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 0285708 2026-10-24 10:28:27 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1910,9 +1918,9 @@
         "msg": "[capacity-daily] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[capacity-daily] 今日有成功留痕但定时器 lastRunAt 停在 10/23/2026 10:30:03 —— 调度器状态时间戳陈旧，耗时折算将失效（不影响执行与告警，建议复查该定时器会话写入）"
+        "msg": "[capacity-daily] 定时器 lastRunAt 停在 10/23/2026 10:30:03 —— 暂停中不更新属预期（用户登记主动暂停，R266 意图豁免；恢复运行后自动复检）"
       },
       {
         "level": "PASS",
@@ -1961,10 +1969,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-23 21:05:47",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-23 21:14:31",
         "status": "PASS"
@@ -2016,6 +2020,10 @@
       {
         "auditedAt": "2026-10-24 10:21:46",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-24 10:34:14",
+        "status": "PASS"
       }
     ]
   },
@@ -2024,19 +2032,19 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 6 天"
+      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 5 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-24 10:21:46）"
+      "detail": "审计 PASS（2026-10-24 10:34:14）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-24 10:25:45）"
+      "detail": "上轮全链 10 段全过（2026-10-24 10:34:09）"
     },
     {
       "layer": "项目层",
@@ -2303,18 +2311,13 @@
   "alerts": [
     {
       "level": "FAIL",
-      "text": "任务失败：骑手解约数据检查与刷新（2026-10-23 16:22:12 · 问卷星登录态失效，增量检查未完成；本地2058条无变化，访问日志今日0，看板v2部署正常）",
+      "text": "任务失败：骑手解约数据检查与刷新（2026-10-24 10:33:33 · 重跑后问卷星登录态仍失效，增量未拉取；本地2058条无变化，访问日志今日0，看板v2部署正常）",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
-    },
-    {
-      "level": "WARN",
-      "text": "审计有 1 项警告（2026-10-24 10:21:46）",
-      "anchor": "sec-audit"
+      "text": "触发断档：2 个任务近 30 天共 5 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天）——断档日历已上工作台，自愈兜底待接管"
     }
   ],
   "todos": [],
@@ -2492,8 +2495,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "8bbca5b",
-        "at": "2026-10-24T10:20:24+08:00",
+        "hash": "0285708",
+        "at": "2026-10-24T10:28:27+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2521,10 +2524,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 10:25:45",
+    "runAt": "2026-10-24 10:34:09",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2573,6 +2576,18 @@
         "pass": true,
         "seconds": 36.3,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 244.9,
+        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 258.1,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2699,7 +2714,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 02:25:46",
+      "at": "2026-10-24 02:34:14",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -2787,7 +2802,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1847.9,
+      "totalKB": 1847.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -2807,7 +2822,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 70.5
+          "kb": 70.3
         },
         {
           "name": "visits.json",
