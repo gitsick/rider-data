@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 04:22:43",
+  "generatedAt": "2026-10-24 04:25:53",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -1840,7 +1840,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 6c97554 2026-10-24 11:57:34 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: e84bb14 2026-10-24 12:22:47 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1850,7 +1850,7 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（1 小时前生成）"
+        "msg": "单文件产物存在（2 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2054,7 +2054,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-24 12:22:42）"
+      "detail": "上轮全链 10 段全过（2026-10-24 12:25:48）"
     },
     {
       "layer": "项目层",
@@ -2500,8 +2500,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c73fed8",
-        "at": "2026-10-24T12:12:35+08:00",
+        "hash": "e84bb14",
+        "at": "2026-10-24T12:22:47+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2529,10 +2529,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 12:22:42",
+    "runAt": "2026-10-24 12:25:48",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2581,6 +2581,18 @@
         "pass": true,
         "seconds": 35.1,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 9.2,
+        "note": "拷贝回验 70 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 175.3,
+        "note": "指纹+探针 assets/standards-DfuIympt.css 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2707,7 +2719,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 04:22:43",
+      "at": "2026-10-24 04:25:53",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -2795,7 +2807,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1858.6,
+      "totalKB": 1858.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -2815,7 +2827,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 70.9
+          "kb": 70.6
         },
         {
           "name": "visits.json",
