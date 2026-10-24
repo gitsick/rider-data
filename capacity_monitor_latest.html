@@ -3,6 +3,11 @@
 <style>
 body { font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif; max-width:1440px; margin:0 auto; padding:0 16px 40px; color:#1B1B33; background:radial-gradient(1200px 420px at 12% -6%, rgba(255,195,0,.08), transparent 60%),radial-gradient(1000px 460px at 92% -10%, rgba(59,111,245,.07), transparent 55%),#F0F2F5; } /* R60 对齐 tokens：--font/--bg/--ink + base.css 双光晕；R277 顶部零内距——导航栏贴顶（与主站 TopNav 一致），内容间距由 .hero 12px 上边距承接 */
 html { overflow-x:hidden; overflow-x:clip; -webkit-text-size-adjust:100%; text-size-adjust:100%; } /* 导航通栏满宽用 100vw，含滚动条宽度会溢出几个 px：clip 裁掉且不破坏 sticky（hidden 作为旧浏览器回退）；R278 对齐 base.css：移动端禁止横屏自动放大文字 */
+/* R280 对齐 base.css 桌面端细滚动条（逐字同值：10px 宽 + 圆角灰条 + 透明轨道；--radius-ctl 落 8px） */
+::-webkit-scrollbar { width:10px; height:10px; }
+::-webkit-scrollbar-thumb { background:#c6cbd8; border-radius:8px; border:2px solid transparent; background-clip:content-box; }
+::-webkit-scrollbar-thumb:hover { background-color:#a7adbe; }
+::-webkit-scrollbar-track { background:transparent; }
 /* R61 可访问性对齐 base.css：选中色 / 焦点态 / 动画减弱偏好 */
 ::selection { background:rgba(255,195,0,.35); }
 :focus-visible { outline:2px solid #FFC300; outline-offset:2px; border-radius:4px; }
