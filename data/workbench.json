@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-24 02:49:12",
+  "generatedAt": "2026-10-24 02:53:00",
   "runDate": "2026-10-24",
   "tasks": [
     {
@@ -1840,7 +1840,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 7ecaa86 2026-10-24 10:45:58 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: fbab35d 2026-10-24 10:49:16 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2044,7 +2044,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-24 10:49:06）"
+      "detail": "上轮全链 10 段全过（2026-10-24 10:52:54）"
     },
     {
       "layer": "项目层",
@@ -2303,7 +2303,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-24 02:35:14",
+        "latestAt": "2026-10-24 02:50:38",
         "ageH": 0
       }
     ]
@@ -2495,8 +2495,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "7ecaa86",
-        "at": "2026-10-24T10:45:58+08:00",
+        "hash": "fbab35d",
+        "at": "2026-10-24T10:49:16+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2524,21 +2524,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-24 10:49:06",
+    "runAt": "2026-10-24 10:52:54",
     "allPass": true,
     "scope": "complete",
     "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
-        "name": "excel",
-        "pass": true,
-        "seconds": 4,
-        "note": ""
-      },
-      {
         "name": "visits",
         "pass": true,
-        "seconds": 4,
+        "seconds": 3.1,
         "note": ""
       },
       {
@@ -2562,7 +2556,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 10.2,
+        "seconds": 9.7,
         "note": ""
       },
       {
@@ -2574,25 +2568,25 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 41.8,
+        "seconds": 40.9,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 38.4,
+        "seconds": 45.1,
         "note": ""
       },
       {
         "name": "deploy",
         "pass": true,
-        "seconds": 64.2,
+        "seconds": 327.8,
         "note": "拷贝回验 70 文件 repo≡dist（MD5）"
       },
       {
         "name": "live_gate",
         "pass": true,
-        "seconds": 154.8,
+        "seconds": 410.5,
         "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
@@ -2720,7 +2714,7 @@
     },
     {
       "date": "2026-10-24",
-      "at": "2026-10-24 02:49:12",
+      "at": "2026-10-24 02:53:00",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -2808,7 +2802,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1858.2,
+      "totalKB": 1858.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -2828,7 +2822,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 70.5
+          "kb": 70.7
         },
         {
           "name": "visits.json",
