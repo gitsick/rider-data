@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-25 06:57:34",
+  "generatedAt": "2026-10-25 07:36:08",
   "runDate": "2026-10-25",
   "tasks": [
     {
@@ -1872,7 +1872,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: decec63 2026-10-25 13:59:36 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 4e99825 2026-10-25 15:03:55 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1882,12 +1882,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（3 小时前生成）"
+        "msg": "单文件产物存在（4 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（50 小时前生成）"
+        "msg": "单文件产物存在（51 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2082,7 +2082,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 4h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 5h 前"
     },
     {
       "layer": "渲染层",
@@ -2121,7 +2121,7 @@
           "size": 2699482
         }
       ],
-      "ageHours": 4,
+      "ageHours": 5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2158,7 +2158,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 5,
+      "ageHours": 6,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-25",
@@ -2340,7 +2340,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-25 06:10:14",
+        "latestAt": "2026-10-25 07:20:13",
         "ageH": 0
       }
     ]
@@ -2537,8 +2537,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "9dbcf05",
-        "at": "2026-10-25T14:12:28+08:00",
+        "hash": "4e99825",
+        "at": "2026-10-25T15:03:55+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2621,6 +2621,15 @@
       }
     ]
   },
+  "gatesHistory": [
+    {
+      "runAt": "2026-10-25 14:57:33",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 180.9,
+      "fails": []
+    }
+  ],
   "health": {
     "score": 68,
     "grade": "中",
@@ -2657,7 +2666,7 @@
       }
     ],
     "extra": {
-      "tests": 718,
+      "tests": 722,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -2776,7 +2785,7 @@
     },
     {
       "date": "2026-10-25",
-      "at": "2026-10-25 06:57:34",
+      "at": "2026-10-25 07:36:08",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2835,7 +2844,7 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 980.7,
+      "totalKB": 982,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -2850,8 +2859,8 @@
           "kb": 73.6
         },
         {
-          "name": "workbench-YfMKW8R-.js",
-          "kb": 46.9
+          "name": "workbench-Bf_ht57O.js",
+          "kb": 47.8
         },
         {
           "name": "swRegister-ClCN8fmQ.css",
@@ -2873,7 +2882,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1860.6,
+      "totalKB": 1860.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -2893,7 +2902,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 73
+          "kb": 72.8
         },
         {
           "name": "visits.json",
