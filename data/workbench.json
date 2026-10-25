@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-25 04:29:07",
+  "generatedAt": "2026-10-25 04:55:15",
   "runDate": "2026-10-25",
   "tasks": [
     {
@@ -327,18 +327,18 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-24 08:20:41",
-        "durationSec": 825,
+        "finishedAt": "2026-10-25 12:45:08",
+        "durationSec": null,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:30",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
-        "overdue": true,
-        "overdueText": "今日应跑（每日 08:30）但尚无今日留痕"
+        "overdue": false,
+        "overdueText": ""
       },
       "heal": {
         "can": false,
@@ -386,6 +386,13 @@
           "durationSec": 825,
           "note": "",
           "dur": 825
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-25 12:45:08",
+          "durationSec": null,
+          "note": "",
+          "dur": null
         }
       ],
       "gaps": {
@@ -508,13 +515,13 @@
           },
           {
             "date": "2026-10-25",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 2,
         "failCount": 0,
-        "passCount": 6
+        "passCount": 7
       },
       "durTrend": [
         2776,
@@ -1826,10 +1833,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-25 11:20:34",
+    "auditedAt": "2026-10-25 12:46:05",
     "status": "PASS",
-    "pass": 29,
-    "warn": 2,
+    "pass": 32,
+    "warn": 0,
     "fail": 0,
     "checks": [
       {
@@ -1865,7 +1872,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 6fb5682 2026-10-25 12:17:46 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: d686a6c 2026-10-25 12:29:41 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1913,9 +1920,14 @@
         "msg": "[xsp-weekly] 已关联定时器"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[xsp-weekly] 今日应跑（每日 08:30）但无今日成功留痕——疑似断链；command 型可用 run_task.ps1 -Auto 补跑，agent 型手动重跑后 -Record PASS 留痕"
+        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（10/25/2026 08:06:22），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -1983,16 +1995,12 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "断链自愈",
-        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 xsp-weekly（每日 08:30）；  [xsp-weekly] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）"
+        "msg": "无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-24 08:21:01",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-24 09:45:37",
         "status": "PASS"
@@ -2044,6 +2052,10 @@
       {
         "auditedAt": "2026-10-25 11:20:34",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-25 12:46:05",
+        "status": "PASS"
       }
     ]
   },
@@ -2052,19 +2064,19 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "2/4 任务正常 · 1 失败 · 1 逾期 · 近 30 天触发断档 7 天"
+      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-25 11:20:34）"
+      "detail": "审计 PASS（2026-10-25 12:46:05）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 10 段全过（2026-10-25 12:28:42）"
+      "detail": "本轮发布前置 8 段全过（2026-10-25 12:55:15）"
     },
     {
       "layer": "项目层",
@@ -2328,17 +2340,12 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-25 04:08:24",
+        "latestAt": "2026-10-25 04:47:16",
         "ageH": 0
       }
     ]
   },
   "alerts": [
-    {
-      "level": "WARN",
-      "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30）但尚无今日留痕，需在对应自动化重跑并留痕",
-      "anchor": "sec-tasks"
-    },
     {
       "level": "FAIL",
       "text": "任务失败：骑手解约数据检查与刷新（2026-10-24 16:21:58 · 问卷星登录态失效，增量拉取未执行（本地2081条已是最新，无数据丢失）；访问日志COS新增0；看板已重新生成并v2部署完成）",
@@ -2347,12 +2354,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（新商评考核周报 3 天 · 通用运力监控每日刷新 3 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
-    },
-    {
-      "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-25 11:20:34）",
-      "anchor": "sec-audit"
+      "text": "触发断档：3 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
     },
     {
       "level": "WARN",
@@ -2535,8 +2537,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6fb5682",
-        "at": "2026-10-25T12:17:46+08:00",
+        "hash": "d686a6c",
+        "at": "2026-10-25T12:29:41+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2564,10 +2566,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-25 12:28:42",
+    "runAt": "2026-10-25 12:55:15",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
@@ -2578,7 +2580,7 @@
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -2596,7 +2598,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.2,
+        "seconds": 7.6,
         "note": ""
       },
       {
@@ -2608,26 +2610,14 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 117,
+        "seconds": 37.1,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 35,
+        "seconds": 35.3,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 622.7,
-        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 107.9,
-        "note": "指纹+探针 assets/access_log-DdK2NZmX.js 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2667,7 +2657,7 @@
       }
     ],
     "extra": {
-      "tests": 709,
+      "tests": 711,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -2786,7 +2776,7 @@
     },
     {
       "date": "2026-10-25",
-      "at": "2026-10-25 04:29:07",
+      "at": "2026-10-25 04:55:15",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2852,7 +2842,7 @@
           "kb": 575.1
         },
         {
-          "name": "main-BknC5LAQ.js",
+          "name": "main-CUw3mP_o.js",
           "kb": 97.3
         },
         {
@@ -2868,7 +2858,7 @@
           "kb": 30
         },
         {
-          "name": "main-nGluzX3l.css",
+          "name": "main-b0fvpAwY.css",
           "kb": 24.4
         },
         {
@@ -2883,7 +2873,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1860.8,
+      "totalKB": 1860.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -2903,7 +2893,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 73.2
+          "kb": 73
         },
         {
           "name": "visits.json",
