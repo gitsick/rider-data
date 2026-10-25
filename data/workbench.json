@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-25 03:55:43",
+  "generatedAt": "2026-10-25 03:57:36",
   "runDate": "2026-10-25",
   "tasks": [
     {
@@ -1865,7 +1865,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 2d23e08 2026-10-25 11:40:24 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 3a5c1f9 2026-10-25 11:55:47 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2064,7 +2064,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 8 段全过（2026-10-25 11:55:42）"
+      "detail": "上轮全链 10 段全过（2026-10-25 11:57:30）"
     },
     {
       "layer": "项目层",
@@ -2535,8 +2535,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "bd9e961",
-        "at": "2026-10-25T11:44:53+08:00",
+        "hash": "3a5c1f9",
+        "at": "2026-10-25T11:55:47+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2564,10 +2564,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-25 11:55:42",
+    "runAt": "2026-10-25 11:57:30",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2616,6 +2616,18 @@
         "pass": true,
         "seconds": 35,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 8.8,
+        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 98.6,
+        "note": "指纹+探针 assets/SchemaBanner-aMxCTBb1.js 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2774,7 +2786,7 @@
     },
     {
       "date": "2026-10-25",
-      "at": "2026-10-25 03:55:43",
+      "at": "2026-10-25 03:57:36",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -2871,7 +2883,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1861.1,
+      "totalKB": 1860.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -2891,7 +2903,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 73.5
+          "kb": 73.2
         },
         {
           "name": "visits.json",
