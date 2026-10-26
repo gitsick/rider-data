@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-26 13:48:21",
+  "generatedAt": "2026-10-26 13:57:42",
   "runDate": "2026-10-26",
   "tasks": [
     {
@@ -1871,9 +1871,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-26 20:16:45",
+    "auditedAt": "2026-10-26 21:57:41",
     "status": "PASS",
-    "pass": 34,
+    "pass": 36,
     "warn": 0,
     "fail": 0,
     "checks": [
@@ -1910,7 +1910,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 13b3d31 2026-10-26 18:53:23 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: cf6d1d8 2026-10-26 21:50:18 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1920,12 +1920,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（2 小时前生成）"
+        "msg": "单文件产物存在（0 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（78 小时前生成）"
+        "msg": "单文件产物存在（81 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2015,6 +2015,16 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[rider-hourly] 定时器状态时间戳新鲜（10/26/2026 16:50:08），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 今日已运行"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[deploy-audit] command 入口可用（pwsh）"
       },
       {
@@ -2045,14 +2055,10 @@
       {
         "level": "PASS",
         "item": "断链自愈",
-        "msg": "补跑 rider-hourly（每日 16:00）；[sched:rider-hourly] 骑手解约数据检查与刷新；  cwd  : F:\\work\\mtcapacity\\pro\\rider-hourly；  cmd  : pwsh -NoProfile -File check_and_update.ps1；=== 骑手解约数据检查 2026-10-26 18:59 ===；\u001b[31;1mTraceback (most recent call last):\u001b[0m；本地: 华东 1277 条 | 华南 804 条；；[华东] 检查问卷星...；  登录态失效；；[华南] 检查问卷星...；  登录态失效；；最终本地: 华东 1277 条 | 华南 804 条 | 合计 2081 条；；=== 访问日志汇总 ===；  访问日志: COS新增 0 条（有效 0）| 全量有效访问 4943 条 | 独立IP 24 | 今日 0 | 累计排除本人 70 | 累计排除测试 0；  VISITS_PAGE_CHANGED: yes (2.0s)；；=== 骑手明细：源 Excel 无更新，跳过同步 ===；；=== 生成看板 ===；  原始: 2081 条, 去重: 0 条, 最终: 2081 条；  看板 F:\\work\\mtcapacity\\pro\\rider-hourly\\data\\rider_data\\rider_dashboard.html (5233899 字节，原子写+自检通过)；  已复制 rider_dashboard.html 到 rider_package；  已复制 index.html 到 rider_package；  完成；  完成：2 个文件已更新；；=== 部署（v2: agg_visits → export-data → build → cutover） ===；\u001b[31;1m  File \"F:\\work\\mtcapacity\\pro\\rider-hourly\\rider_hourly.py\", line 442, in <module>\u001b[0m；\u001b[31;1m    main()\u001b[0m；\u001b[31;1m  File \"F:\\work\\mtcapacity\\pro\\rider-hourly\\rider_hourly.py\", line 415, in main\u001b[0m；\u001b[31;1m    result = subprocess.run(\u001b[0m；\u001b[31;1m             ^^^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"C:\\Users\\hua'wei\\.catpaw-xiaoxia\\runtimes\\python\\versions\\3.12.13\\Lib\\subprocess.py\", line 550, in run\u001b[0m；\u001b[31;1m    stdout, stderr = process.communicate(input, timeout=timeout)\u001b[0m；\u001b[31;1m                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"C:\\Users\\hua'wei\\.catpaw-xiaoxia\\runtimes\\python\\versions\\3.12.13\\Lib\\subprocess.py\", line 1209, in communicate\u001b[0m；\u001b[31;1m    stdout, stderr = self._communicate(input, endtime, timeout)\u001b[0m；\u001b[31;1m                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"C:\\Users\\hua'wei\\.catpaw-xiaoxia\\runtimes\\python\\versions\\3.12.13\\Lib\\subprocess.py\", line 1630, in _communicate\u001b[0m；\u001b[31;1m    raise TimeoutExpired(self.args, orig_timeout)\u001b[0m；\u001b[31;1msubprocess.TimeoutExpired: Command '['pwsh', '-NoProfile', '-File', 'F:\\\\work\\\\mtcapacity\\\\frontend\\\\scripts\\\\refresh.ps1', '-SkipExcel']' timed out after 1200 seconds\u001b[0m；[sched:rider-hourly] PASS（4616.7s，日志: F:\\work\\mtcapacity\\sched\\logs\\rider-hourly\\2026-10-26_185948.log）"
+        "msg": "无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-25 00:57:18",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-25 09:04:51",
         "status": "PASS"
@@ -2104,6 +2110,10 @@
       {
         "auditedAt": "2026-10-26 20:16:45",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-26 21:57:41",
+        "status": "PASS"
       }
     ]
   },
@@ -2118,13 +2128,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-26 20:16:45）"
+      "detail": "审计 PASS（2026-10-26 21:57:41）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-26 21:48:20）"
+      "detail": "上轮全链 11 段全过（2026-10-26 21:57:38）"
     },
     {
       "layer": "项目层",
@@ -2580,8 +2590,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "97895eb",
-        "at": "2026-10-26T20:18:47+08:00",
+        "hash": "cf6d1d8",
+        "at": "2026-10-26T21:50:18+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2609,10 +2619,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-26 21:48:20",
+    "runAt": "2026-10-26 21:57:38",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2667,17 +2677,22 @@
         "pass": true,
         "seconds": 23.1,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 356.7,
+        "note": "拷贝回验 68 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 200.6,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-26 11:36:33",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 368.1,
-      "fails": []
-    },
     {
       "runAt": "2026-10-26 11:56:53",
       "scope": "pre-deploy",
@@ -2880,6 +2895,13 @@
       "allPass": true,
       "totalSec": 69,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-26 21:57:38",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 626.3,
+      "fails": []
     }
   ],
   "health": {
@@ -3065,7 +3087,7 @@
     },
     {
       "date": "2026-10-26",
-      "at": "2026-10-26 13:48:21",
+      "at": "2026-10-26 13:57:42",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3162,7 +3184,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1873.3,
+      "totalKB": 1873,
       "top": [
         {
           "name": "rider_base.json",
@@ -3182,7 +3204,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 82
+          "kb": 81.7
         },
         {
           "name": "visits.json",
