@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-26 12:16:45",
+  "generatedAt": "2026-10-26 13:48:21",
   "runDate": "2026-10-26",
   "tasks": [
     {
@@ -566,9 +566,9 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-26 11:09:22",
-        "durationSec": 461.9,
-        "note": ""
+        "finishedAt": "2026-10-26 21:45:47",
+        "durationSec": null,
+        "note": "manual 数据日期 2026-10-22"
       },
       "monitor": {
         "cadence": "daily",
@@ -723,6 +723,13 @@
           "durationSec": 461.9,
           "note": "",
           "dur": 462
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-26 21:45:47",
+          "durationSec": null,
+          "note": "manual 数据日期 2026-10-22",
+          "dur": null
         }
       ],
       "gaps": {
@@ -2117,13 +2124,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-26 20:07:10）"
+      "detail": "本轮发布前置 9 段全过（2026-10-26 21:48:20）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
@@ -2137,36 +2144,36 @@
       "name": "通用运力监控",
       "recent": [
         {
+          "name": "订单运力分析_2026-10-22.xlsx",
+          "mtime": "2026-10-26 13:37",
+          "size": 22476
+        },
+        {
+          "name": "悦跑排班差异_站点跟进清单_2026-10-22.xlsx",
+          "mtime": "2026-10-26 13:37",
+          "size": 21168
+        },
+        {
+          "name": "时段运力拆解_2026-10-22.xlsx",
+          "mtime": "2026-10-26 13:37",
+          "size": 199538
+        },
+        {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-26 08:31",
-          "size": 2699670
+          "mtime": "2026-10-26 13:34",
+          "size": 2699693
         },
         {
-          "name": "订单运力分析_2026-10-23.xlsx",
-          "mtime": "2026-10-26 08:28",
-          "size": 14298
-        },
-        {
-          "name": "悦跑排班差异_站点跟进清单_2026-10-23.xlsx",
-          "mtime": "2026-10-26 08:28",
-          "size": 8557
-        },
-        {
-          "name": "时段运力拆解_2026-10-23.xlsx",
-          "mtime": "2026-10-26 08:28",
-          "size": 47331
-        },
-        {
-          "name": "capacity_breakdown_dashboard_2026-10-23.html",
-          "mtime": "2026-10-26 08:28",
-          "size": 323231
+          "name": "capacity_breakdown_dashboard_2026-10-22.html",
+          "mtime": "2026-10-26 13:34",
+          "size": 2699693
         }
       ],
-      "ageHours": 3,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-10-23",
-      "dataLag": 3,
+      "dataDate": "2026-10-22",
+      "dataLag": 4,
       "staleData": true,
       "dataLagThreshold": 2,
       "outage": {
@@ -2199,7 +2206,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 10,
+      "ageHours": 12,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2381,8 +2388,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-26 08:50:21",
-        "ageH": 3
+        "latestAt": "2026-10-26 13:16:51",
+        "ageH": 0
       }
     ]
   },
@@ -2394,7 +2401,7 @@
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-23（滞后 3 天，超 2 天）——疑似源停发第 4 天（自 2026-10-23 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-22（滞后 4 天，超 2 天）——疑似源停发第 4 天（自 2026-10-23 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     }
   ],
@@ -2573,8 +2580,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "cc03def",
-        "at": "2026-10-26T20:15:08+08:00",
+        "hash": "97895eb",
+        "at": "2026-10-26T20:18:47+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2602,21 +2609,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-26 20:07:10",
+    "runAt": "2026-10-26 21:48:20",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 1.8,
+        "seconds": 2.2,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -2628,13 +2635,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 4.8,
+        "seconds": 5.2,
         "note": ""
       },
       {
@@ -2652,37 +2659,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 23.8,
+        "seconds": 37.5,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 24.2,
+        "seconds": 23.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 209.1,
-        "note": "拷贝回验 68 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 116.6,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-26 11:31:40",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 76,
-      "fails": []
-    },
     {
       "runAt": "2026-10-26 11:36:33",
       "scope": "complete",
@@ -2885,6 +2873,13 @@
       "allPass": true,
       "totalSec": 381.6,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-26 21:48:20",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 69,
+      "fails": []
     }
   ],
   "health": {
@@ -2923,7 +2918,7 @@
       }
     ],
     "extra": {
-      "tests": 763,
+      "tests": 764,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3070,7 +3065,7 @@
     },
     {
       "date": "2026-10-26",
-      "at": "2026-10-26 12:16:45",
+      "at": "2026-10-26 13:48:21",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3120,7 +3115,7 @@
       "project": "通用运力监控",
       "since": "2026-10-23",
       "dayCount": 4,
-      "lastDataDate": "2026-10-23",
+      "lastDataDate": "2026-10-22",
       "lastSeenAt": "2026-10-26",
       "resolvedAt": null,
       "resolvedDataDate": null
@@ -3167,7 +3162,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1877,
+      "totalKB": 1873.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -3187,7 +3182,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 85.7
+          "kb": 82
         },
         {
           "name": "visits.json",
