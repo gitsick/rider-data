@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-26 12:10:28",
+  "generatedAt": "2026-10-26 12:13:05",
   "runDate": "2026-10-26",
   "tasks": [
     {
@@ -887,8 +887,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-26 20:10:27",
-        "durationSec": 173.5,
+        "finishedAt": "2026-10-26 20:13:05",
+        "durationSec": 774,
         "note": ""
       },
       "monitor": {
@@ -905,13 +905,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 19:03:11",
-          "durationSec": 191,
-          "note": "",
-          "dur": 191
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 20:01:23",
@@ -1254,6 +1247,13 @@
           "durationSec": 173.5,
           "note": "",
           "dur": 174
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-26 20:13:05",
+          "durationSec": 774,
+          "note": "",
+          "dur": 774
         }
       ],
       "gaps": {
@@ -1385,7 +1385,6 @@
         "passCount": 8
       },
       "durTrend": [
-        191,
         84,
         78,
         399,
@@ -1430,7 +1429,8 @@
         1319,
         1174,
         2960,
-        174
+        174,
+        774
       ]
     },
     {
@@ -1903,7 +1903,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 6754973 2026-10-26 20:03:46 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 06dec6c 2026-10-26 19:57:12 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1918,7 +1918,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（80 小时前生成）"
+        "msg": "单文件产物存在（79 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2043,7 +2043,7 @@
       {
         "level": "PASS",
         "item": "断链自愈",
-        "msg": "补跑 rider-hourly（每日 16:00）；[sched:rider-hourly] 骑手解约数据检查与刷新；  cwd  : F:\\work\\mtcapacity\\pro\\rider-hourly；  cmd  : pwsh -NoProfile -File check_and_update.ps1；=== 骑手解约数据检查 2026-10-26 20:07 ===；本地: 华东 1279 条 | 华南 810 条；\u001b[31;1mTraceback (most recent call last):\u001b[0m；；[华东] 检查问卷星...；\u001b[31;1m  File \"F:\\work\\mtcapacity\\pro\\rider-hourly\\rider_hourly.py\", line 442, in <module>\u001b[0m；\u001b[31;1m    main()\u001b[0m；\u001b[31;1m  File \"F:\\work\\mtcapacity\\pro\\rider-hourly\\rider_hourly.py\", line 376, in main\u001b[0m；\u001b[31;1m    final, changed = check_region(name, dl_name, url, file)\u001b[0m；\u001b[31;1m                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"F:\\work\\mtcapacity\\pro\\rider-hourly\\rider_hourly.py\", line 258, in check_region\u001b[0m；\u001b[31;1m    if not nav_page(url):\u001b[0m；\u001b[31;1m           ^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"F:\\work\\mtcapacity\\pro\\rider-hourly\\rider_hourly.py\", line 88, in nav_page\u001b[0m；\u001b[31;1m    browser_action({\"action\": \"navigate\", \"url\": url, \"waitUntil\": \"networkidle\"})\u001b[0m；\u001b[31;1m  File \"F:\\work\\mtcapacity\\pro\\rider-hourly\\rider_hourly.py\", line 77, in browser_action\u001b[0m；\u001b[31;1m    result = subprocess.run(cmd, capture_output=True, timeout=120)\u001b[0m；\u001b[31;1m             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"C:\\Users\\hua'wei\\.catpaw-xiaoxia\\runtimes\\python\\versions\\3.12.13\\Lib\\subprocess.py\", line 550, in run\u001b[0m；\u001b[31;1m    stdout, stderr = process.communicate(input, timeout=timeout)\u001b[0m；\u001b[31;1m                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"C:\\Users\\hua'wei\\.catpaw-xiaoxia\\runtimes\\python\\versions\\3.12.13\\Lib\\subprocess.py\", line 1228, in communicate\u001b[0m；\u001b[31;1m    sts = self.wait(timeout=self._remaining_time(endtime))\u001b[0m；\u001b[31;1m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"C:\\Users\\hua'wei\\.catpaw-xiaoxia\\runtimes\\python\\versions\\3.12.13\\Lib\\subprocess.py\", line 1264, in wait\u001b[0m；\u001b[31;1m    return self._wait(timeout=timeout)\u001b[0m；\u001b[31;1m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m；\u001b[31;1m  File \"C:\\Users\\hua'wei\\.catpaw-xiaoxia\\runtimes\\python\\versions\\3.12.13\\Lib\\subprocess.py\", line 1593, in _wait\u001b[0m；\u001b[31;1m    raise TimeoutExpired(self.args, timeout)\u001b[0m；\u001b[31;1msubprocess.TimeoutExpired: Command '['pwsh', '-NoProfile', '-File', \"C:\\\\Users\\\\hua'wei\\\\.catpaw-xiaoxia\\\\bin\\\\catdesk-xiaoxia.ps1\", 'browser-action', '{\"action\": \"navigate\", \"url\": \"https://www.wjx.cn/wjx/activitystat/viewstatsummary.aspx?activity=355497097&sat=1\", \"waitUntil\": \"networkidle\"}']' timed out after -52.5 seconds\u001b[0m；[sched:rider-hourly] PASS（173.5s，日志: F:\\work\\mtcapacity\\sched\\logs\\rider-hourly\\2026-10-26_200734.log）"
+        "msg": "补跑 rider-hourly（每日 16:00）；[sched:rider-hourly] 骑手解约数据检查与刷新；  cwd  : F:\\work\\mtcapacity\\pro\\rider-hourly；  cmd  : pwsh -NoProfile -File check_and_update.ps1；=== 骑手解约数据检查 2026-10-26 20:00 ===；本地: 华东 1279 条 | 华南 810 条；；[华东] 检查问卷星...；  问卷星: 1269 条 (本地 1279)；  新增 -10 条，开始下载...；  下载链接: https://downdoc.wjx.cn/exceldown/355497097csv0/355497097_1269_1269_0.csv.zip?Expires=1793102421&OSSAccessKeyId=LTAIkYiHONyE2mHz&Signature=zeQ3Q043ovKiLfWpJKhej2y2i0w%3D；  下载到: C:\\Users\\hua'wei\\Downloads\\east_wjx.zip；  下载完成: 174318 bytes；  解压...；  找到: 355497097_1269_1269.xlsx；  执行合并...；  本地原有: 1279 行；  下载文件: 1269 行；  新增追加: 0 行；  保存后验证: 1279 行；  华东已更新；；[华南] 检查问卷星...；  问卷星: 801 条 (本地 810)；  新增 -9 条，开始下载...；  下载链接: https://downdoc.wjx.cn/exceldown/351583065csv0/351583065_801_801_0.csv.zip?Expires=1793102437&OSSAccessKeyId=LTAIkYiHONyE2mHz&Signature=nphcSTspddVyH42H0%2BACOQBlvOQ%3D；  下载到: C:\\Users\\hua'wei\\Downloads\\south_wjx.zip；  下载完成: 106680 bytes；  解压...；  找到: 351583065_801_801.xlsx；  执行合并...；  本地原有: 810 行；  下载文件: 801 行；  新增追加: 0 行；  保存后验证: 810 行；  华南已更新；；最终本地: 华东 1279 条 | 华南 810 条 | 合计 2089 条；；=== 访问日志汇总 ===；  访问日志: COS新增 0 条（有效 0）| 全量有效访问 4943 条 | 独立IP 24 | 今日 0 | 累计排除本人 70 | 累计排除测试 0；  VISITS_PAGE_CHANGED: yes (1.4s)；；=== 骑手明细：源 Excel 无更新，跳过同步 ===；；=== 生成看板 ===；  原始: 2089 条, 去重: 0 条, 最终: 2089 条；  看板 F:\\work\\mtcapacity\\pro\\rider-hourly\\data\\rider_data\\rider_dashboard.html (5236045 字节，原子写+自检通过)；  已复制 rider_dashboard.html 到 rider_package；  已复制 index.html 到 rider_package；  完成；  完成：2 个文件已更新；；=== 部署（v2: agg_visits → export-data → build → cutover） ===；  [refresh] 1+2/6 并行前置：gen_rider_boards ‖ agg_visits；  [refresh]   excel 段跳过（-SkipExcel）；  [refresh] 3/6 node export-data.mjs（重抽全部 JSON，幂等写 → .data-raw 暂存）；  [export-data] config-2026-09.js 机械校验通过：29 项规则无 FAIL；  [export-data] config-2026-10.js 机械校验通过：29 项规则无 FAIL；  [refresh] 3a/6 python 骑手数据脱敏工具.py（rider-detail / visits）；  [refresh] 3b/6 node export-workbench.mjs（工作台数据聚合）；  [refresh] 4/6 npm run build；  [refresh] 4b/6 check_paths 门禁；  [refresh] 4c/6 wire_gate 接线盘点（月注册表 × 9 点位，缺线不出包）；  [refresh] 4d/6 mobile_gate 门禁（375×812 视口溢出探测）；  [refresh] 4e/6 smoke_gate 门禁（运行时渲染 + JS 零报错）；  === 运行时冒烟守门：PASS（10 页渲染标记齐全、文本量达标、数据加载完成、JS 零报错）===；  [refresh] 4f/6 门禁报告当轮化同步（发布前置快照）；  [refresh]   当轮门禁已随发布前置快照同步进 dist（scope=pre-deploy）；  [refresh] 5/6 deploy.ps1 -Channel rider-data -Mode cutover；  [deploy:rider-data] 1/5 git pull；    fatal: unable to access 'https://github.com/gitsick/rider-data.git/': Failed to connect to github.com:443 after 21079 ms: Could not connect to server；    fatal: unable to access 'https://github.com/gitsick/rider-data.git/': Failed to connect to github.com:443 after 21077 ms: Could not connect to server；    fatal: unable to access 'https://github.com/gitsick/rider-data.git/': Failed to connect to github.com:443 after 21091 ms: Could not connect to server；    fatal: unable to access 'https://github.com/gitsick/rider-data.git/': Failed to connect to github.com:443 after 21079 ms: Could not connect to server；  [deploy:rider-data] 2/5 dist 覆盖仓库根（增量）；  [deploy:rider-data] 2b/5 拷贝回验（R186：防增量拷贝漏拷/半拷带病上线）；  [deploy:rider-data] 3/5 清理陈旧文件（逐个 git rm）；  [deploy:rider-data] 4/5 git add；  [deploy:rider-data] 5/5 commit + push（30 轮重试）；    push 第 1 轮成功；  [deploy:rider-data] 完成，HEAD=6754973；  [refresh] 6/6 live_gate 线上回验（指纹轮询 + 线上冒烟）；  [refresh] 6b/6 部署审计自刷新（审计快照时效化）；  [refresh]   审计报告已刷新，将随 7/6 重导上站；  [refresh] 7/6 门禁报告 complete 当轮化补发（发布段明细上站）；  [deploy:rider-data] 1/5 git pull；    fatal: unable to access 'https://github.com/gitsick/rider-data.git/': Failed to connect to github.com:443 after 21068 ms: Could not connect to server；    fatal: unable to access 'https://github.com/gitsick/rider-data.git/': Failed to connect to github.com:443 after 21083 ms: Could not connect to server；    fatal: unable to access 'https://github.com/gitsick/rider-data.git/': Failed to connect to github.com:443 after 21052 ms: Could not connect to server；    fatal: unable to access 'https://github.com/gitsick/rider-data.git/': Failed to connect to github.com:443 after 21071 ms: Could not connect to server；  [deploy:rider-data] 2/5 dist 覆盖仓库根（增量）；  [deploy:rider-data] 2b/5 拷贝回验（R186：防增量拷贝漏拷/半拷带病上线）；  [deploy:rider-data] 3/5 清理陈旧文件（逐个 git rm）；  [deploy:rider-data] 4/5 git add；  [deploy:rider-data] 5/5 commit + push（30 轮重试）；    push 第 1 轮失败，3.0s 后重试；    push 第 2 轮成功；  [deploy:rider-data] 完成，HEAD=8df13bc；  [refresh]   complete 全链快照已补发上站（门禁卡含部署+线上回验段与回验明细）；  [refresh]   [S2] 链末检查点已按 dist 终态续记（下链 -Resume 可命中构建/门禁跳过）；  [refresh] 7b/6 链尾零遗留清扫（__pycache__ 防回流，含 pro 层）；  [refresh]   无 __pycache__ 残留；  [refresh] 刷新全流程完成（全链耗时 12 分 17 秒）；  v2 部署完成；；=== 完成 (773s) ===；看板: https://gitsick.github.io/rider-data/rider_dashboard.html；[sched:rider-hourly] PASS（774s，日志: F:\\work\\mtcapacity\\sched\\logs\\rider-hourly\\2026-10-26_200011.log）"
       }
     ],
     "history": [
@@ -2583,8 +2583,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6754973",
-        "at": "2026-10-26T20:03:46+08:00",
+        "hash": "8df13bc",
+        "at": "2026-10-26T20:12:30+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3080,7 +3080,7 @@
     },
     {
       "date": "2026-10-26",
-      "at": "2026-10-26 12:10:28",
+      "at": "2026-10-26 12:13:05",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3177,7 +3177,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1870.6,
+      "totalKB": 1873.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -3197,7 +3197,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 79.3
+          "kb": 82.5
         },
         {
           "name": "visits.json",
