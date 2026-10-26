@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-26 00:44:59",
+  "generatedAt": "2026-10-26 01:49:10",
   "runDate": "2026-10-26",
   "tasks": [
     {
@@ -14,15 +14,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-25 10:31:21",
-        "durationSec": 81,
+        "finishedAt": "2026-10-26 08:47:55",
+        "durationSec": 2874,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -164,6 +164,13 @@
           "durationSec": 81,
           "note": "",
           "dur": 81
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-26 08:47:55",
+          "durationSec": 2874,
+          "note": "",
+          "dur": 2874
         }
       ],
       "gaps": {
@@ -286,13 +293,13 @@
           },
           {
             "date": "2026-10-26",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 1,
+        "gapCount": 0,
         "failCount": 0,
-        "passCount": 9
+        "passCount": 10
       },
       "durTrend": [
         4287,
@@ -313,7 +320,8 @@
         2984,
         54,
         3396,
-        81
+        81,
+        2874
       ]
     },
     {
@@ -2047,7 +2055,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 8 天"
+      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -2059,7 +2067,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-26 07:56:12）"
+      "detail": "本轮发布前置 9 段全过（2026-10-26 09:49:10）"
     },
     {
       "layer": "项目层",
@@ -2104,7 +2112,7 @@
           "size": 2699482
         }
       ],
-      "ageHours": 22,
+      "ageHours": 23,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2122,12 +2130,12 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-26 00:44",
+          "mtime": "2026-10-26 01:48",
           "size": 81325
         },
         {
           "name": "sep.json",
-          "mtime": "2026-10-26 00:44",
+          "mtime": "2026-10-26 01:48",
           "size": 84287
         },
         {
@@ -2323,7 +2331,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-26 00:09:29",
+        "latestAt": "2026-10-26 01:42:38",
         "ageH": 0
       }
     ]
@@ -2337,7 +2345,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：4 个任务近 30 天共 8 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 2 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
+      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
     },
     {
       "level": "WARN",
@@ -2525,8 +2533,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "f0e6fd8",
-        "at": "2026-10-26T07:58:41+08:00",
+        "hash": "eb8d8d2",
+        "at": "2026-10-26T08:45:11+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2554,21 +2562,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-26 07:56:12",
+    "runAt": "2026-10-26 09:49:10",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.3,
+        "seconds": 3.9,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -2580,13 +2588,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 11,
+        "seconds": 11.1,
         "note": ""
       },
       {
@@ -2604,26 +2612,14 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 44.3,
+        "seconds": 29.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 45,
+        "seconds": 25.8,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 161.9,
-        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 102.9,
-        "note": "指纹+探针 assets/main-3kqA58qI.css 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2781,6 +2777,13 @@
       "allPass": true,
       "totalSec": 370.6,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-26 09:49:10",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 72.1,
+      "fails": []
     }
   ],
   "health": {
@@ -2819,7 +2822,7 @@
       }
     ],
     "extra": {
-      "tests": 748,
+      "tests": 751,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -2966,7 +2969,7 @@
     },
     {
       "date": "2026-10-26",
-      "at": "2026-10-26 00:44:59",
+      "at": "2026-10-26 01:49:10",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -3063,7 +3066,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1863.7,
+      "totalKB": 1864.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3083,7 +3086,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 76.1
+          "kb": 77
         },
         {
           "name": "visits.json",
