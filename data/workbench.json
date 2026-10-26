@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-26 03:09:23",
+  "generatedAt": "2026-10-26 03:31:40",
   "runDate": "2026-10-26",
   "tasks": [
     {
@@ -2108,7 +2108,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-26 11:01:35）"
+      "detail": "本轮发布前置 9 段全过（2026-10-26 11:31:40）"
     },
     {
       "layer": "项目层",
@@ -2372,8 +2372,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-26 01:54:10",
-        "ageH": 1
+        "latestAt": "2026-10-26 03:16:40",
+        "ageH": 0
       }
     ]
   },
@@ -2386,11 +2386,11 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台，自愈兜底待接管"
+      "text": "触发断档：3 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-22（滞后 4 天，超 2 天）——疑似源停发第 4 天（自 2026-10-23 起，待业务侧确认），按最近可得日期重跑模式",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-22（滞后 4 天，超 2 天）——疑似源停发第 4 天（自 2026-10-23 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     }
   ],
@@ -2569,8 +2569,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "129d544",
-        "at": "2026-10-26T10:58:08+08:00",
+        "hash": "c78824a",
+        "at": "2026-10-26T11:09:49+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2598,21 +2598,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-26 11:01:35",
+    "runAt": "2026-10-26 11:31:40",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.2,
+        "seconds": 2.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -2630,13 +2630,13 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 7.6,
+        "seconds": 6,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -2648,26 +2648,14 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 37.7,
+        "seconds": 30.2,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 31,
+        "seconds": 36,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 184.7,
-        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 145.2,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2853,6 +2841,13 @@
       "allPass": true,
       "totalSec": 413.2,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-26 11:31:40",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 76,
+      "fails": []
     }
   ],
   "health": {
@@ -2891,7 +2886,7 @@
       }
     ],
     "extra": {
-      "tests": 752,
+      "tests": 753,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3038,7 +3033,7 @@
     },
     {
       "date": "2026-10-26",
-      "at": "2026-10-26 03:09:23",
+      "at": "2026-10-26 03:31:40",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -3135,7 +3130,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1865.7,
+      "totalKB": 1885.1,
       "top": [
         {
           "name": "rider_base.json",
@@ -3155,7 +3150,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 78.1
+          "kb": 97.5
         },
         {
           "name": "visits.json",
