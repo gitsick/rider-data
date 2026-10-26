@@ -18,7 +18,7 @@ html { overflow-x:hidden; overflow-x:clip; -webkit-text-size-adjust:100%; text-s
 @media(max-width:640px) { .sn-inner { height:38px; padding:0 10px; gap:6px; font-size:12px; flex-wrap:nowrap; overflow:visible; } .sn-inner > a:not(.brand) { display:none; } .site-nav .brand { padding:6px 8px; } .mm-btn { padding:6px 10px; min-height:30px; } .brand::before { display:none; } } /* R279 对齐 TopNav R154 触控目标提升：品牌链与 ☰ 按钮窄屏加高 */
 @media(max-width:760px) and (min-width:641px) { .sn-inner { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; } .sn-inner::-webkit-scrollbar { display:none; } }
 @media(min-width:1472px) { .sn-inner { padding:0; } } /* R279 对齐 TopNav：≥1472px 容器已有边距，内距归零（同款同值） */
-@media(max-width:760px) { .chartbox { min-width:0 !important; } .checktbl { display:block; overflow-x:auto; } .kchip { white-space:normal !important; } }
+@media(max-width:760px) { .chartbox { min-width:0 !important; } .kchip { white-space:normal !important; } } /* R330：checktbl 内滚上移为全宽域规则，此处退役 */
 .site-nav a { color:#8A8FA3; font-size:13px; text-decoration:none; padding:5px 11px; border-radius:999px; transition:color .15s,background .15s; } /* R279 对齐 TopNav：链接默认色同 tokens --muted2（旧 #c3cede 漂移退役） */
 @media(max-width:640px) { .site-nav a { padding:4px 8px; font-size:12px; } }
 .site-nav a:hover { color:#ffc300; background:rgba(255,255,255,.08); }
@@ -135,6 +135,8 @@ h2{letter-spacing:.4px;border-bottom:2px solid #e8eef5;padding-bottom:4px}
 .anobox.ok{background:#f4fbf4;border-color:#bfe3bf;border-left-color:#67c23a}
 .anobox.ok .att{color:#3e8e41}
 .checktbl td:first-child{font-weight:600;color:#1B2233;white-space:nowrap}
+/* R330：checktbl 全宽域内滚——761~869px 视口此前被 html clip 裁掉右侧不可达；≤760 媒体查询内同值规则退役（由本条统一承接） */
+.checktbl{display:block;overflow-x:auto}
 /* ===== v13css 分时增强 ===== */
 .kchip{display:inline-block;background:#eef4fb;color:#1B2233;border:1px solid #d4e2f0;border-radius:12px;font-size:11px;line-height:18px;padding:0 9px;margin:2px 5px 2px 0;white-space:nowrap}
 .kchip b{color:#0f3a5f}
