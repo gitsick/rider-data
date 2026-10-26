@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-26 01:49:10",
+  "generatedAt": "2026-10-26 01:51:16",
   "runDate": "2026-10-26",
   "tasks": [
     {
@@ -1849,9 +1849,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-26 00:31:58",
+    "auditedAt": "2026-10-26 09:51:15",
     "status": "PASS",
-    "pass": 26,
+    "pass": 31,
     "warn": 1,
     "fail": 0,
     "checks": [
@@ -1888,7 +1888,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 0ae341c 2026-10-26 07:54:09 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: f376555 2026-10-26 09:49:15 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1898,12 +1898,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（21 小时前生成）"
+        "msg": "单文件产物存在（23 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（67 小时前生成）"
+        "msg": "单文件产物存在（69 小时前生成）"
       },
       {
         "level": "PASS",
@@ -1923,7 +1923,32 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（10/26/2026 08:48:17），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 今日已运行"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[xsp-weekly] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（10/26/2026 08:07:05），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -1993,10 +2018,6 @@
     ],
     "history": [
       {
-        "auditedAt": "2026-10-24 10:34:14",
-        "status": "PASS"
-      },
-      {
         "auditedAt": "2026-10-24 11:03:35",
         "status": "PASS"
       },
@@ -2047,6 +2068,10 @@
       {
         "auditedAt": "2026-10-26 00:31:58",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-26 09:51:15",
+        "status": "PASS"
       }
     ]
   },
@@ -2061,13 +2086,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-26 00:31:58）"
+      "detail": "审计 PASS（2026-10-26 09:51:15）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-26 09:49:10）"
+      "detail": "上轮全链 11 段全过（2026-10-26 09:51:09）"
     },
     {
       "layer": "项目层",
@@ -2349,7 +2374,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-10-26 00:31:58）",
+      "text": "审计有 1 项警告（2026-10-26 09:51:15）",
       "anchor": "sec-audit"
     },
     {
@@ -2533,8 +2558,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eb8d8d2",
-        "at": "2026-10-26T08:45:11+08:00",
+        "hash": "f376555",
+        "at": "2026-10-26T09:49:15+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2562,10 +2587,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-26 09:49:10",
+    "runAt": "2026-10-26 09:51:09",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2620,6 +2645,18 @@
         "pass": true,
         "seconds": 25.8,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 11.5,
+        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 107,
+        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
@@ -2783,6 +2820,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 72.1,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-26 09:51:09",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 190.6,
       "fails": []
     }
   ],
@@ -2969,7 +3013,7 @@
     },
     {
       "date": "2026-10-26",
-      "at": "2026-10-26 01:49:10",
+      "at": "2026-10-26 01:51:16",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -3066,7 +3110,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1864.6,
+      "totalKB": 1864.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -3086,7 +3130,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 77
+          "kb": 76.9
         },
         {
           "name": "visits.json",
