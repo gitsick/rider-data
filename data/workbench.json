@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 15:47:30",
+  "generatedAt": "2026-10-27 16:14:11",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -22,7 +22,7 @@
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -371,7 +371,7 @@
         "cadence": "daily",
         "trigger": "每日 08:30",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -605,7 +605,7 @@
         "cadence": "daily",
         "trigger": "每日 09:00",
         "expectHour": 9,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -978,7 +978,7 @@
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -2221,7 +2221,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 5h 前"
+      "detail": "2 项目，最新产出 0h 前"
     },
     {
       "layer": "渲染层",
@@ -2260,11 +2260,11 @@
           "size": 2647222
         }
       ],
-      "ageHours": 5,
+      "ageHours": 6,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
-      "dataLag": 1,
+      "dataLag": 2,
       "staleData": false,
       "dataLagThreshold": 2
     },
@@ -2273,13 +2273,13 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-27 00:35",
-          "size": 82169
+          "mtime": "2026-10-27 16:14",
+          "size": 82082
         },
         {
           "name": "sep.json",
-          "mtime": "2026-10-27 00:09",
-          "size": 84287
+          "mtime": "2026-10-27 16:14",
+          "size": 84329
         },
         {
           "name": "targets-oct.json",
@@ -2292,10 +2292,10 @@
           "size": 4973
         }
       ],
-      "ageHours": 15,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-10-27",
+      "dataDate": "2026-10-28",
       "dataLag": 0,
       "staleData": false,
       "dataLagThreshold": 2,
@@ -2474,8 +2474,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-27 14:03:49",
-        "ageH": 1
+        "latestAt": "2026-10-27 15:54:32",
+        "ageH": 0
       }
     ]
   },
@@ -2671,8 +2671,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eb3df52",
-        "at": "2026-10-27T23:31:11+08:00",
+        "hash": "c2bdb96",
+        "at": "2026-10-27T23:48:56+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2693,9 +2693,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "4b43b1f",
-        "at": "2026-10-27T08:25:51+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-26"
+        "hash": "a232c16",
+        "at": "2026-10-28T00:11:04+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
   ],
@@ -3196,7 +3196,7 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 15:47:30",
+      "at": "2026-10-27 16:14:11",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -3293,7 +3293,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1892.5,
+      "totalKB": 1892.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -3313,7 +3313,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 83.8
+          "kb": 84.1
         },
         {
           "name": "visits.json",
