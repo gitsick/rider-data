@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 08:35:47",
+  "generatedAt": "2026-10-27 08:42:56",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -1924,9 +1924,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-27 12:20:00",
+    "auditedAt": "2026-10-27 16:42:55",
     "status": "PASS",
-    "pass": 33,
+    "pass": 31,
     "warn": 2,
     "fail": 0,
     "checks": [
@@ -1963,7 +1963,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 44cdebd 2026-10-27 16:07:55 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 1d2a2ac 2026-10-27 16:35:51 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2063,16 +2063,6 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器状态时间戳新鲜（10/27/2026 16:00:00），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 今日已运行"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
         "msg": "[deploy-audit] command 入口可用（pwsh）"
       },
       {
@@ -2103,14 +2093,10 @@
       {
         "level": "WARN",
         "item": "断链自愈",
-        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 xsp-weekly（每日 08:30）；  [xsp-weekly] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）"
+        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：跳过 rider-hourly：最近留痕为已知态失败（问卷星登录态失效）——重跑无法自愈，需人工恢复登录；本地数据维持，看板部署不受影响；补跑 xsp-weekly（每日 08:30）；  [xsp-weekly] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-26 00:31:58",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-26 09:51:15",
         "status": "PASS"
@@ -2162,6 +2148,10 @@
       {
         "auditedAt": "2026-10-27 12:20:00",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-27 16:42:55",
+        "status": "PASS"
       }
     ]
   },
@@ -2176,13 +2166,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-27 12:20:00）"
+      "detail": "审计 PASS（2026-10-27 16:42:55）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-27 16:35:46）"
+      "detail": "上轮全链 11 段全过（2026-10-27 16:42:51）"
     },
     {
       "layer": "项目层",
@@ -2464,7 +2454,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-27 12:20:00）",
+      "text": "审计有 2 项警告（2026-10-27 16:42:55）",
       "anchor": "sec-audit"
     }
   ],
@@ -2643,8 +2633,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "e4d25b3",
-        "at": "2026-10-27T16:15:35+08:00",
+        "hash": "1d2a2ac",
+        "at": "2026-10-27T16:35:51+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2672,10 +2662,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-27 16:35:46",
+    "runAt": "2026-10-27 16:42:51",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2730,17 +2720,22 @@
         "pass": true,
         "seconds": 23.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 8.5,
+        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 415.7,
+        "note": "指纹+探针 assets/clipboard-BmTMO8S_.js 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 08:11:26",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 141.5,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 08:30:11",
       "scope": "pre-deploy",
@@ -2942,6 +2937,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 52.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-27 16:42:51",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 476.6,
       "fails": []
     }
   ],
@@ -3156,7 +3158,7 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 08:35:47",
+      "at": "2026-10-27 08:42:56",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -3253,7 +3255,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1891,
+      "totalKB": 1890.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -3273,7 +3275,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 82.6
+          "kb": 82.4
         },
         {
           "name": "visits.json",
