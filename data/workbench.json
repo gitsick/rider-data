@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 12:57:52",
+  "generatedAt": "2026-10-27 13:27:46",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -355,7 +355,7 @@
       "trigger": "每日 08:30",
       "cwd": "F:\\work\\mtcapacity\\pro\\xsp-weekly",
       "entry": "bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）",
-      "note": "独立工作区，由定时任务直接驱动",
+      "note": "独立工作区，由定时任务直接驱动。R349 实证：10-27 08:00 主定时器触发器醒来仅推进 nextRunAt、会话未启动（单发调度异常），当日业务由人工补跑留痕覆盖（19:03 PASS）——该任务无自愈兜底（kaohe-daily 有 10:30 发布自愈，本任务无），建议增配发布自愈定时器",
       "last": {
         "status": "PASS",
         "exitCode": 0,
@@ -1977,7 +1977,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 519dbac 2026-10-27 20:54:57 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: b30a202 2026-10-27 20:58:24 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -1992,7 +1992,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（104 小时前生成）"
+        "msg": "单文件产物存在（105 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2201,7 +2201,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-27 20:57:43）"
+      "detail": "本轮发布前置 9 段全过（2026-10-27 21:27:46）"
     },
     {
       "layer": "项目层",
@@ -2460,7 +2460,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-27 12:17:10",
+        "latestAt": "2026-10-27 13:07:50",
         "ageH": 0
       }
     ]
@@ -2657,8 +2657,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "519dbac",
-        "at": "2026-10-27T20:54:57+08:00",
+        "hash": "b30a202",
+        "at": "2026-10-27T20:58:24+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2686,45 +2686,45 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-27 20:57:43",
+    "runAt": "2026-10-27 21:27:46",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.9,
+        "seconds": 8.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.9,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 0.8,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 13.8,
+        "seconds": 11,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -2736,37 +2736,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 37,
+        "seconds": 69.8,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 61.1,
+        "seconds": 64.2,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 14.7,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 159,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 10:01:02",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 81.4,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 10:05:15",
       "scope": "complete",
@@ -2969,6 +2950,13 @@
       "allPass": true,
       "totalSec": 294.1,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-27 21:27:46",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 155.5,
+      "fails": []
     }
   ],
   "health": {
@@ -3007,7 +2995,7 @@
       }
     ],
     "extra": {
-      "tests": 807,
+      "tests": 809,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3182,7 +3170,7 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 12:57:52",
+      "at": "2026-10-27 13:27:46",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -3279,7 +3267,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1891.7,
+      "totalKB": 1892.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -3299,11 +3287,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 82.9
+          "kb": 83.6
         },
         {
           "name": "visits.json",
-          "kb": 48.5
+          "kb": 48.4
         },
         {
           "name": "logger.json",
