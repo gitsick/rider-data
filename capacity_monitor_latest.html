@@ -51,6 +51,9 @@ h2 .expbtn { margin-left:auto; }
 h3 { font-size:14px; color:#1B2233; margin:14px 0 8px; }
 .expbtn { cursor:pointer; border:1px solid #EAECEF; background:#F8F9FA; color:#1B2233; font-size:12px; font-weight:600; padding:4px 14px; border-radius:14px; transition:all .15s; }
 .expbtn:hover { background:#1B2233; color:#fff; border-color:#1B2233; }
+.repcopy { cursor:pointer; border:1px solid #1B2233; background:#1B2233; color:#fff; font-size:12px; font-weight:600; padding:4px 14px; border-radius:14px; transition:all .15s; }
+.repcopy:hover { background:#F8F9FA; color:#1B2233; }
+.repcopy.done { background:#0E9F6E; border-color:#0E9F6E; color:#fff; }
 .kpis { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px; }
 a.kpi { flex:1 1 150px; background:#fff; border-radius:12px; padding:12px 16px; box-shadow:0 1px 2px rgba(27,34,51,.04),0 2px 10px rgba(27,34,51,.07); text-decoration:none; color:inherit; display:block; transition:all .15s; border:1px solid transparent; } /* --elev-1 */
 a.kpi:hover { border-color:#FFC300; transform:translateY(-2px); box-shadow:0 2px 6px rgba(16,24,40,.06),0 12px 32px rgba(16,24,40,.12); } /* --elev-2 + 金色描边 */
@@ -236,6 +239,7 @@ details>div,.scroll{contain:layout style}
   <div class="seg">
     <button data-greg="all" class="on" title="全局：推单 243,911｜推完 94.1%｜取消率 5.9%">全部（3区域）</button><button data-greg="苏皖" title="苏皖区域｜推单 31,347｜推完占比 95.3%｜人均 28.4 单｜悦跑占比 47.4%">苏皖区域</button><button data-greg="浙江" title="浙江区域｜推单 101,609｜推完占比 95.1%｜人均 34.4 单｜悦跑占比 48.0%">浙江区域</button><button data-greg="华南" title="华南区域｜推单 110,955｜推完占比 92.9%｜人均 28.6 单｜悦跑占比 43.5%">华南区域</button>
   </div>
+  <button class="repcopy" data-repcopy type="button" title="复制当日运力日报文案，可直接粘贴到大象群">📋 复制日报</button>
   <span class="rl dim">点击区域下钻城市；点城市胶囊看单城数据；图表柱条可切换区域；【导出】按当前可见内容导出</span>
 </div>
 </div>
@@ -7799,6 +7803,32 @@ document.querySelectorAll('[data-exp]').forEach(function(btn){
     a.download = '运力看板_' + title.slice(0, 12) + '_2026-10-26.csv';
     document.body.appendChild(a); a.click();
     setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 800);
+  });
+});
+
+/* R345 一键复制日报：文案由渲染器单源产出（"【运力日报】2026-10-26\n推单 243,911 ｜ 已送达 229,611（推完占比 94.1%）｜ 取消 14,300（取消率 5.9%）\n配送完单 229,611：专送 82,497 / 众包 41,694 / 悦跑 105,420\n苏皖区域：推单 31,347 ｜ 推完 95.3% ｜ 取消率 4.7% ｜ 出勤率 70.1% ｜ 缺口 9 班\n浙江区域：推单 101,609 ｜ 推完 95.1% ｜ 取消率 4.9% ｜ 出勤率 75.0% ｜ 缺口 33 班\n华南区域：推单 110,955 ｜ 推完 92.9% ｜ 取消率 7.1% ｜ 出勤率 86.2% ｜ 缺口 52 班\n悦跑：名册 2,363 人 ｜ 实接 2,139 人 ｜ 专送排班：61 站" 内嵌 JSON），前端零二次拼装 */
+var REPORT_TEXT = "【运力日报】2026-10-26\n推单 243,911 ｜ 已送达 229,611（推完占比 94.1%）｜ 取消 14,300（取消率 5.9%）\n配送完单 229,611：专送 82,497 / 众包 41,694 / 悦跑 105,420\n苏皖区域：推单 31,347 ｜ 推完 95.3% ｜ 取消率 4.7% ｜ 出勤率 70.1% ｜ 缺口 9 班\n浙江区域：推单 101,609 ｜ 推完 95.1% ｜ 取消率 4.9% ｜ 出勤率 75.0% ｜ 缺口 33 班\n华南区域：推单 110,955 ｜ 推完 92.9% ｜ 取消率 7.1% ｜ 出勤率 86.2% ｜ 缺口 52 班\n悦跑：名册 2,363 人 ｜ 实接 2,139 人 ｜ 专送排班：61 站";
+function repFallback(t){
+  var ta = document.createElement('textarea');
+  ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  ta.remove();
+  return ok;
+}
+document.querySelectorAll('[data-repcopy]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var fin = function(ok){
+      btn.classList.toggle('done', !!ok);
+      btn.textContent = ok ? '✓ 已复制' : '✗ 复制失败';
+      setTimeout(function(){ btn.classList.remove('done'); btn.textContent = '📋 复制日报'; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(REPORT_TEXT).then(function(){ fin(true); }, function(){ fin(repFallback(REPORT_TEXT)); });
+    } else {
+      fin(repFallback(REPORT_TEXT));
+    }
   });
 });
 </script>
