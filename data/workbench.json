@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 08:15:33",
+  "generatedAt": "2026-10-27 08:35:47",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -945,11 +945,11 @@
       "entry": "pwsh -NoProfile -File check_and_update.ps1",
       "note": "R320 调度统一化：确定性管线脚本（问卷星增量→原生Excel→看板→主工程 refresh.ps1 部署）由 agent 型转 command 型——run_task 可直跑/-DryRun 可验证/审计可自动执行/-Auto 可补跑；问卷星登录态失效属人工恢复态（已知态，-Auto 不盲补）。R195 口径对齐保留：登记原为每小时，与定时器实际 RRULE 每日 16:00 漂移修正",
       "last": {
-        "status": "PASS",
-        "exitCode": 0,
-        "finishedAt": "2026-10-27 08:47:03",
-        "durationSec": 1986,
-        "note": "登录已恢复增量拉取成功合计2090条看板已部署"
+        "status": "FAIL",
+        "exitCode": 1,
+        "finishedAt": "2026-10-27 16:17:23",
+        "durationSec": 1043,
+        "note": "【问卷星增量检查】登录态失效（华东/华南均提示请先登录），未能核对问卷端条数；本地数据未变（合计2090条），访问日志/明细同步/看板生成与v2部署均完成"
       },
       "monitor": {
         "cadence": "daily",
@@ -962,16 +962,9 @@
       },
       "heal": {
         "can": true,
-        "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
+        "text": "可直跑（command 型），但最近留痕为已知态失败（问卷星登录态失效）——重跑无法自愈，需人工恢复问卷星登录；本地数据维持，看板部署不受影响"
       },
       "history": [
-        {
-          "status": "FAIL",
-          "finishedAt": "2026-10-18 09:25:52",
-          "durationSec": 426,
-          "note": "问卷星登录态失效，增量检查未完成；访问日志汇总与看板部署成功",
-          "dur": 426
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-18 10:05:18",
@@ -1314,6 +1307,13 @@
           "durationSec": 1986,
           "note": "登录已恢复增量拉取成功合计2090条看板已部署",
           "dur": 1986
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-10-27 16:17:23",
+          "durationSec": 1043,
+          "note": "【问卷星增量检查】登录态失效（华东/华南均提示请先登录），未能核对问卷端条数；本地数据未变（合计2090条），访问日志/明细同步/看板生成与v2部署均完成",
+          "dur": 1043
         }
       ],
       "gaps": {
@@ -1445,7 +1445,6 @@
         "passCount": 8
       },
       "durTrend": [
-        426,
         318,
         365,
         230,
@@ -1490,7 +1489,8 @@
         3825,
         4617,
         310,
-        1986
+        1986,
+        1043
       ]
     },
     {
@@ -2169,8 +2169,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "WARN",
-      "detail": "3/4 任务正常 · 1 逾期 · 近 30 天触发断档 6 天"
+      "status": "FAIL",
+      "detail": "2/4 任务正常 · 1 失败 · 1 逾期 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
@@ -2182,13 +2182,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-27 16:15:28）"
+      "detail": "本轮发布前置 9 段全过（2026-10-27 16:35:46）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 3h 前"
+      "detail": "2 项目，最新产出 4h 前"
     },
     {
       "layer": "渲染层",
@@ -2227,7 +2227,7 @@
           "size": 2644542
         }
       ],
-      "ageHours": 3,
+      "ageHours": 4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2259,7 +2259,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 7,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-27",
@@ -2453,6 +2453,11 @@
       "anchor": "sec-tasks"
     },
     {
+      "level": "FAIL",
+      "text": "任务失败：骑手解约数据检查与刷新（2026-10-27 16:17:23 · 【问卷星增量检查】登录态失效（华东/华南均提示请先登录），未能核对问卷端条数；本地数据未变（合计2090条），访问日志/明细同步/看板生成与v2部署均完成）——已知态失败（问卷星登录态失效）：重跑无法自愈，需人工恢复问卷星登录；本地数据维持，看板部署不受影响",
+      "anchor": "sec-tasks"
+    },
+    {
       "level": "WARN",
       "anchor": "sec-tasks",
       "text": "触发断档：2 个任务近 30 天共 6 天零留痕（新商评考核周报 3 天 · 通用运力监控每日刷新 3 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
@@ -2638,8 +2643,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "44cdebd",
-        "at": "2026-10-27T16:07:55+08:00",
+        "hash": "e4d25b3",
+        "at": "2026-10-27T16:15:35+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2667,21 +2672,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-27 16:15:28",
+    "runAt": "2026-10-27 16:35:46",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.3,
+        "seconds": 2.1,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -2699,7 +2704,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 5,
+        "seconds": 4.6,
         "note": ""
       },
       {
@@ -2717,37 +2722,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 25.4,
+        "seconds": 21.5,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 24.7,
+        "seconds": 23.2,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 131.6,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 444.7,
-        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 08:09:56",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 52.3,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 08:11:26",
       "scope": "complete",
@@ -2950,17 +2936,24 @@
       "allPass": true,
       "totalSec": 634.9,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-27 16:35:46",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 52.4,
+      "fails": []
     }
   ],
   "health": {
-    "score": 88,
+    "score": 75,
     "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "WARN",
+        "status": "FAIL",
         "weight": 25,
-        "points": 50
+        "points": 0
       },
       {
         "layer": "门禁层",
@@ -2988,7 +2981,7 @@
       }
     ],
     "extra": {
-      "tests": 792,
+      "tests": 796,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3163,13 +3156,13 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 08:15:33",
-      "score": 88,
+      "at": "2026-10-27 08:35:47",
+      "score": 75,
       "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "WARN"
+          "status": "FAIL"
         },
         {
           "layer": "部署层",
@@ -3222,22 +3215,22 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1000.4,
+      "totalKB": 1002.5,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-DvQT3B88.js",
-          "kb": 103.5
+          "name": "main-Datsy_mX.js",
+          "kb": 105.2
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
           "kb": 73.6
         },
         {
-          "name": "workbench-BZ6sHfl2.js",
+          "name": "workbench-Db7AXuCI.js",
           "kb": 53.3
         },
         {
@@ -3245,11 +3238,11 @@
           "kb": 30
         },
         {
-          "name": "main-nGLIBANG.css",
-          "kb": 28.6
+          "name": "main-CTvB7eU0.css",
+          "kb": 29
         },
         {
-          "name": "rider_dashboard-DeYp78FF.js",
+          "name": "rider_dashboard-HEHSm5Z9.js",
           "kb": 22.1
         },
         {
@@ -3260,7 +3253,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1889.9,
+      "totalKB": 1891,
       "top": [
         {
           "name": "rider_base.json",
@@ -3280,7 +3273,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 81.5
+          "kb": 82.6
         },
         {
           "name": "visits.json",
