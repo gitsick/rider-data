@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 16:14:11",
+  "generatedAt": "2026-10-27 16:44:43",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -2273,13 +2273,13 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-27 16:14",
-          "size": 82082
+          "mtime": "2026-10-27 16:44",
+          "size": 83783
         },
         {
           "name": "sep.json",
-          "mtime": "2026-10-27 16:14",
-          "size": 84329
+          "mtime": "2026-10-27 16:44",
+          "size": 86030
         },
         {
           "name": "targets-oct.json",
@@ -2671,8 +2671,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c2bdb96",
-        "at": "2026-10-27T23:48:56+08:00",
+        "hash": "468946d",
+        "at": "2026-10-28T00:14:45+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2693,8 +2693,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "a232c16",
-        "at": "2026-10-28T00:11:04+08:00",
+        "hash": "5c800bb",
+        "at": "2026-10-28T00:40:35+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
@@ -3196,7 +3196,7 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 16:14:11",
+      "at": "2026-10-27 16:44:43",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -3293,7 +3293,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1892.8,
+      "totalKB": 1864,
       "top": [
         {
           "name": "rider_base.json",
@@ -3301,7 +3301,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 528.2
+          "kb": 502.8
         },
         {
           "name": "rider-index.json",
@@ -3317,7 +3317,7 @@
         },
         {
           "name": "visits.json",
-          "kb": 48.4
+          "kb": 45
         },
         {
           "name": "logger.json",
