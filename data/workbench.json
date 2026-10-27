@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 00:30:11",
+  "generatedAt": "2026-10-27 00:31:44",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -1871,10 +1871,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-27 08:11:30",
+    "auditedAt": "2026-10-27 08:31:43",
     "status": "PASS",
-    "pass": 28,
-    "warn": 0,
+    "pass": 26,
+    "warn": 2,
     "fail": 0,
     "checks": [
       {
@@ -1893,9 +1893,9 @@
         "msg": "publish_file.py 在位"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "互斥锁",
-        "msg": "无残留锁"
+        "msg": "锁存在（0 分钟前创建）——可能有部署进行中，或上次异常未释放（10 分钟后可自动接管/手动删除）"
       },
       {
         "level": "PASS",
@@ -1910,7 +1910,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 65b74db 2026-10-27 08:10:02 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: a137465 2026-10-27 08:30:14 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2013,16 +2013,12 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "断链自愈",
-        "msg": "无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
+        "msg": "已知态失败任务需人工恢复（登录态失效类，重跑无法自愈，-Auto 已感知跳过）：跳过 rider-hourly：最近留痕为已知态失败（问卷星登录态失效）——重跑无法自愈，需人工恢复登录；本地数据维持，看板部署不受影响"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-25 10:56:26",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-25 11:20:34",
         "status": "PASS"
@@ -2074,6 +2070,10 @@
       {
         "auditedAt": "2026-10-27 08:11:30",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-27 08:31:43",
+        "status": "PASS"
       }
     ]
   },
@@ -2088,13 +2088,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-27 08:11:30）"
+      "detail": "审计 PASS（2026-10-27 08:31:43）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-27 08:30:11）"
+      "detail": "上轮全链 11 段全过（2026-10-27 08:31:40）"
     },
     {
       "layer": "项目层",
@@ -2376,6 +2376,11 @@
     },
     {
       "level": "WARN",
+      "text": "审计有 2 项警告（2026-10-27 08:31:43）",
+      "anchor": "sec-audit"
+    },
+    {
+      "level": "WARN",
       "text": "看板数据滞后：通用运力监控 数据日期 2026-10-22（滞后 5 天，超 2 天）——疑似源停发第 5 天（自 2026-10-23 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     }
@@ -2555,8 +2560,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "0c55766",
-        "at": "2026-10-27T08:11:36+08:00",
+        "hash": "a137465",
+        "at": "2026-10-27T08:30:14+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2584,10 +2589,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-27 08:30:11",
+    "runAt": "2026-10-27 08:31:40",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2642,17 +2647,22 @@
         "pass": true,
         "seconds": 20.1,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 8,
+        "note": "拷贝回验 68 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 80.5,
+        "note": "指纹+探针 data/workbench.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-26 13:02:19",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 581.7,
-      "fails": []
-    },
     {
       "runAt": "2026-10-26 13:37:04",
       "scope": "pre-deploy",
@@ -2854,6 +2864,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 51.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-27 08:31:40",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 139.9,
       "fails": []
     }
   ],
@@ -3068,7 +3085,7 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 00:30:11",
+      "at": "2026-10-27 00:31:44",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -3165,7 +3182,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1870.7,
+      "totalKB": 1870.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -3185,7 +3202,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 79.4
+          "kb": 79.1
         },
         {
           "name": "visits.json",
