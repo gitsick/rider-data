@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 09:10:29",
+  "generatedAt": "2026-10-27 10:08:37",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -582,7 +582,7 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-27 12:18:03",
+        "finishedAt": "2026-10-27 17:54:11",
         "durationSec": null,
         "note": "manual 数据日期 2026-10-26"
       },
@@ -778,6 +778,13 @@
         {
           "status": "PASS",
           "finishedAt": "2026-10-27 12:18:03",
+          "durationSec": null,
+          "note": "manual 数据日期 2026-10-26",
+          "dur": null
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-27 17:54:11",
           "durationSec": null,
           "note": "manual 数据日期 2026-10-26",
           "dur": null
@@ -2172,13 +2179,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-27 17:10:24）"
+      "detail": "本轮发布前置 9 段全过（2026-10-27 18:08:37）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 4h 前"
+      "detail": "2 项目，最新产出 0h 前"
     },
     {
       "layer": "渲染层",
@@ -2193,31 +2200,31 @@
       "recent": [
         {
           "name": "订单运力分析_2026-10-26.xlsx",
-          "mtime": "2026-10-27 04:15",
+          "mtime": "2026-10-27 09:54",
           "size": 22475
         },
         {
           "name": "悦跑排班差异_站点跟进清单_2026-10-26.xlsx",
-          "mtime": "2026-10-27 04:15",
+          "mtime": "2026-10-27 09:54",
           "size": 21084
         },
         {
           "name": "时段运力拆解_2026-10-26.xlsx",
-          "mtime": "2026-10-27 04:15",
-          "size": 199529
+          "mtime": "2026-10-27 09:54",
+          "size": 199531
         },
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-10-27 04:15",
-          "size": 2644542
+          "mtime": "2026-10-27 09:53",
+          "size": 2647222
         },
         {
           "name": "capacity_breakdown_dashboard_2026-10-26.html",
-          "mtime": "2026-10-27 04:14",
-          "size": 2644542
+          "mtime": "2026-10-27 09:53",
+          "size": 2647222
         }
       ],
-      "ageHours": 4,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2249,7 +2256,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 8,
+      "ageHours": 9,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-27",
@@ -2431,7 +2438,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 14,
-        "latestAt": "2026-10-27 08:12:54",
+        "latestAt": "2026-10-27 09:20:28",
         "ageH": 0
       }
     ]
@@ -2633,8 +2640,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "d3b784b",
-        "at": "2026-10-27T17:07:09+08:00",
+        "hash": "015df64",
+        "at": "2026-10-27T17:10:33+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2644,8 +2651,8 @@
       "mode": "single-file",
       "target": "capacity_monitor_latest.html",
       "last": {
-        "hash": "e7683e8",
-        "at": "2026-10-27T12:17:58+08:00",
+        "hash": "0a53aa2",
+        "at": "2026-10-27T17:54:07+08:00",
         "msg": "Deploy: 通用运力监控 capacity_monitor_latest.html（每日管线刷新）"
       }
     },
@@ -2662,21 +2669,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-27 17:10:24",
+    "runAt": "2026-10-27 18:08:37",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.1,
+        "seconds": 2.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -2688,13 +2695,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 4.7,
+        "seconds": 5.1,
         "note": ""
       },
       {
@@ -2712,37 +2719,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 21.3,
+        "seconds": 22.4,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 21.7,
+        "seconds": 20.9,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 427.1,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 191.5,
-        "note": "指纹+探针 assets/main-FUUGhvSE.css 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 08:36:27",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 55.4,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 08:37:52",
       "scope": "complete",
@@ -2945,6 +2933,13 @@
       "allPass": true,
       "totalSec": 669.4,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-27 18:08:37",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 52.1,
+      "fails": []
     }
   ],
   "health": {
@@ -2983,7 +2978,7 @@
       }
     ],
     "extra": {
-      "tests": 798,
+      "tests": 801,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3158,7 +3153,7 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 09:10:29",
+      "at": "2026-10-27 10:08:37",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -3255,7 +3250,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1890.6,
+      "totalKB": 1891.1,
       "top": [
         {
           "name": "rider_base.json",
@@ -3275,7 +3270,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 82.2
+          "kb": 82.7
         },
         {
           "name": "visits.json",
