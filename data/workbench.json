@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 12:10:35",
+  "generatedAt": "2026-10-27 12:54:49",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -2196,13 +2196,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-27 20:10:23）"
+      "detail": "本轮发布前置 9 段全过（2026-10-27 20:54:49）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 2h 前"
+      "detail": "2 项目，最新产出 3h 前"
     },
     {
       "layer": "渲染层",
@@ -2241,7 +2241,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 2,
+      "ageHours": 3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2273,7 +2273,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 11,
+      "ageHours": 12,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-27",
@@ -2455,7 +2455,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-27 12:01:54",
+        "latestAt": "2026-10-27 12:17:10",
         "ageH": 0
       }
     ]
@@ -2652,8 +2652,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "2556a0f",
-        "at": "2026-10-27T20:07:13+08:00",
+        "hash": "4a2a36f",
+        "at": "2026-10-27T20:10:42+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2681,39 +2681,39 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-27 20:10:23",
+    "runAt": "2026-10-27 20:54:49",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.2,
+        "seconds": 5.9,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.9,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.8,
+        "seconds": 0.7,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 7.5,
+        "seconds": 13.8,
         "note": ""
       },
       {
@@ -2725,43 +2725,24 @@
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.1,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 51.6,
+        "seconds": 37,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 56.9,
+        "seconds": 61.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 44.3,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 182.9,
-        "note": "指纹+探针 assets/rider_overview-Cn0QPPRP.css 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 09:29:17",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 73.6,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 09:33:26",
       "scope": "complete",
@@ -2964,6 +2945,13 @@
       "allPass": true,
       "totalSec": 348.5,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-27 20:54:49",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 120.4,
+      "fails": []
     }
   ],
   "health": {
@@ -3002,7 +2990,7 @@
       }
     ],
     "extra": {
-      "tests": 804,
+      "tests": 807,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3177,7 +3165,7 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 12:10:35",
+      "at": "2026-10-27 12:54:49",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -3274,7 +3262,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1891.1,
+      "totalKB": 1892,
       "top": [
         {
           "name": "rider_base.json",
@@ -3294,11 +3282,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 82.7
+          "kb": 83.2
         },
         {
           "name": "visits.json",
-          "kb": 48.1
+          "kb": 48.5
         },
         {
           "name": "logger.json",
