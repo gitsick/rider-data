@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-27 13:27:46",
+  "generatedAt": "2026-10-27 13:32:58",
   "runDate": "2026-10-27",
   "tasks": [
     {
@@ -1977,7 +1977,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: b30a202 2026-10-27 20:58:24 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 5d11d8d 2026-10-27 21:27:55 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2037,7 +2037,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[xsp-weekly] 今日有成功留痕但定时器 lastRunAt 停在 10/26/2026 08:07:05 —— 已过触发时刻仍未运行，调度器状态时间戳陈旧，耗时折算将失效（不影响执行与告警，建议复查该定时器会话写入）"
+        "msg": "[xsp-weekly] 今日有成功留痕（2026-10-27 19:03:46）但定时器 lastRunAt 停在 10/26/2026 08:07:05 —— 已过触发时刻仍未运行，调度器状态时间戳陈旧，耗时折算将失效；业务当日已由留痕覆盖，但调度断链明晨可能复发：①桌面端打开该自动化复查（运行历史/重新保存/重启 App）；②参照 kaohe-daily 模式增配发布自愈定时器（R349 处置指引）"
       },
       {
         "level": "PASS",
@@ -2201,7 +2201,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-27 21:27:46）"
+      "detail": "上轮全链 11 段全过（2026-10-27 21:32:30）"
     },
     {
       "layer": "项目层",
@@ -2657,8 +2657,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b30a202",
-        "at": "2026-10-27T20:58:24+08:00",
+        "hash": "5d11d8d",
+        "at": "2026-10-27T21:27:55+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2686,10 +2686,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-27 21:27:46",
+    "runAt": "2026-10-27 21:32:30",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2744,17 +2744,22 @@
         "pass": true,
         "seconds": 64.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 15.1,
+        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 268.2,
+        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 10:05:15",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 334.4,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 11:20:18",
       "scope": "pre-deploy",
@@ -2956,6 +2961,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 155.5,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-27 21:32:30",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 438.8,
       "fails": []
     }
   ],
@@ -3170,7 +3182,7 @@
     },
     {
       "date": "2026-10-27",
-      "at": "2026-10-27 13:27:46",
+      "at": "2026-10-27 13:32:58",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -3267,7 +3279,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1892.3,
+      "totalKB": 1892,
       "top": [
         {
           "name": "rider_base.json",
@@ -3287,7 +3299,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 83.6
+          "kb": 83.3
         },
         {
           "name": "visits.json",
