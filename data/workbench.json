@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-28 05:33:37",
+  "generatedAt": "2026-10-28 05:50:18",
   "runDate": "2026-10-28",
   "tasks": [
     {
@@ -372,10 +372,10 @@
       "id": "xsp-weekly",
       "name": "新商评考核周报",
       "type": "agent",
-      "trigger": "每日 08:30",
+      "trigger": "每日 08:30 主跑 + 10:30 发布自愈",
       "cwd": "F:\\work\\mtcapacity\\pro\\xsp-weekly",
       "entry": "bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）",
-      "note": "独立工作区，由定时任务直接驱动。R349 实证：10-27 08:00 主定时器触发器醒来仅推进 nextRunAt、会话未启动（单发调度异常），当日业务由人工补跑留痕覆盖（19:03 PASS）——该任务无自愈兜底（kaohe-daily 有 10:30 发布自愈，本任务无），建议增配发布自愈定时器",
+      "note": "独立工作区，由定时任务直接驱动。R349 实证：10-27 主定时器触发器醒来仅推进 nextRunAt、会话未启动（单发调度异常），当日业务由人工补跑留痕覆盖；R356 落地增配 10:30 发布自愈定时器（xsp周报发布自愈，与 kaohe-daily 双探测模式同构）——探测今日留痕，已有 PASS 秒退，无则按主跑同逻辑出周报并留痕",
       "last": {
         "status": "PASS",
         "exitCode": 0,
@@ -385,12 +385,12 @@
       },
       "monitor": {
         "cadence": "daily",
-        "trigger": "每日 08:30",
+        "trigger": "每日 08:30 主跑 + 10:30 发布自愈",
         "expectHour": 8,
         "doneToday": false,
         "expect": true,
         "overdue": true,
-        "overdueText": "今日应跑（每日 08:30）但尚无今日留痕"
+        "overdueText": "今日应跑（每日 08:30 主跑 + 10:30 发布自愈）但尚无今日留痕"
       },
       "timer": {
         "state": "ok",
@@ -2296,7 +2296,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-28 13:33:31）"
+      "detail": "本轮发布前置 9 段全过（2026-10-28 13:50:18）"
     },
     {
       "layer": "项目层",
@@ -2555,7 +2555,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-28 05:24:21",
+        "latestAt": "2026-10-28 05:49:08",
         "ageH": 0
       }
     ]
@@ -2563,7 +2563,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30）但尚无今日留痕，需在对应自动化重跑并留痕",
+      "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30 主跑 + 10:30 发布自愈）但尚无今日留痕，需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -2752,8 +2752,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "a2d7e81",
-        "at": "2026-10-28T13:30:25+08:00",
+        "hash": "3e70363",
+        "at": "2026-10-28T13:33:41+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2781,21 +2781,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-28 13:33:31",
+    "runAt": "2026-10-28 13:50:18",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 6.9,
+        "seconds": 7.6,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.6,
         "note": ""
       },
       {
@@ -2807,13 +2807,13 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.7,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.1,
+        "seconds": 9.1,
         "note": ""
       },
       {
@@ -2831,37 +2831,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 30.3,
+        "seconds": 51.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 24.9,
+        "seconds": 29.2,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 7.5,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 180.9,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 16:05:51",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 58.6,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 16:15:28",
       "scope": "complete",
@@ -3064,6 +3045,13 @@
       "allPass": true,
       "totalSec": 258.1,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-28 13:50:18",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 99.5,
+      "fails": []
     }
   ],
   "health": {
@@ -3102,7 +3090,7 @@
       }
     ],
     "extra": {
-      "tests": 826,
+      "tests": 827,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3305,7 +3293,7 @@
     },
     {
       "date": "2026-10-28",
-      "at": "2026-10-28 05:33:37",
+      "at": "2026-10-28 05:50:18",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -3411,7 +3399,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1901.3,
+      "totalKB": 1898.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -3431,7 +3419,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 89.5
+          "kb": 86.9
         },
         {
           "name": "visits.json",
