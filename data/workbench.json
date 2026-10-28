@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-28 03:27:50",
+  "generatedAt": "2026-10-28 03:33:06",
   "runDate": "2026-10-28",
   "tasks": [
     {
@@ -2251,7 +2251,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-28 11:27:43）"
+      "detail": "本轮发布前置 9 段全过（2026-10-28 11:33:05）"
     },
     {
       "layer": "项目层",
@@ -2515,8 +2515,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-28 02:13:07",
-        "ageH": 1
+        "latestAt": "2026-10-28 03:31:39",
+        "ageH": 0
       }
     ]
   },
@@ -2722,8 +2722,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "928b665",
-        "at": "2026-10-28T11:18:15+08:00",
+        "hash": "b02b52e",
+        "at": "2026-10-28T11:27:53+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2751,21 +2751,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-28 11:27:43",
+    "runAt": "2026-10-28 11:33:05",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 8.1,
+        "seconds": 7,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -2783,7 +2783,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 5.4,
+        "seconds": 5.1,
         "note": ""
       },
       {
@@ -2801,37 +2801,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 27,
+        "seconds": 26,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 43.5,
+        "seconds": 25.8,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 556.1,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 244.4,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 15:19:40",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 57.7,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 15:23:10",
       "scope": "complete",
@@ -3034,6 +3015,13 @@
       "allPass": true,
       "totalSec": 885.8,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-28 11:33:05",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 65,
+      "fails": []
     }
   ],
   "health": {
@@ -3072,7 +3060,7 @@
       }
     ],
     "extra": {
-      "tests": 822,
+      "tests": 824,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3275,7 +3263,7 @@
     },
     {
       "date": "2026-10-28",
-      "at": "2026-10-28 03:27:50",
+      "at": "2026-10-28 03:33:06",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -3343,15 +3331,15 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1005.9,
+      "totalKB": 1006,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-Dz34rmgF.js",
-          "kb": 106.8
+          "name": "main-DmDZAtKG.js",
+          "kb": 106.9
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3381,7 +3369,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1903.1,
+      "totalKB": 1901.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -3401,11 +3389,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 91
+          "kb": 89.7
         },
         {
           "name": "visits.json",
-          "kb": 49
+          "kb": 48.6
         },
         {
           "name": "logger.json",
