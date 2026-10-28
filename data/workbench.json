@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-28 15:00:25",
+  "generatedAt": "2026-10-28 15:43:31",
   "runDate": "2026-10-28",
   "tasks": [
     {
@@ -2319,7 +2319,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 9h 前"
+      "detail": "2 项目，最新产出 10h 前"
     },
     {
       "layer": "渲染层",
@@ -2358,7 +2358,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 9,
+      "ageHours": 10,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2390,7 +2390,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 11,
+      "ageHours": 12,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-28",
@@ -2572,8 +2572,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-28 12:09:44",
-        "ageH": 2
+        "latestAt": "2026-10-28 15:17:18",
+        "ageH": 0
       }
     ]
   },
@@ -2764,8 +2764,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "92fde81",
-        "at": "2026-10-28T20:03:44+08:00",
+        "hash": "8e59915",
+        "at": "2026-10-28T23:02:30+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3102,7 +3102,7 @@
       }
     ],
     "extra": {
-      "tests": 845,
+      "tests": 847,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3305,7 +3305,7 @@
     },
     {
       "date": "2026-10-28",
-      "at": "2026-10-28 15:00:25",
+      "at": "2026-10-28 15:43:31",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -3411,7 +3411,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1905.3,
+      "totalKB": 1904.9,
       "top": [
         {
           "name": "rider_base.json",
@@ -3431,11 +3431,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 86.9
+          "kb": 86.6
         },
         {
           "name": "visits.json",
-          "kb": 48.4
+          "kb": 48.3
         },
         {
           "name": "logger.json",
