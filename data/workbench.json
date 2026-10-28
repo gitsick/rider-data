@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-28 00:26:34",
+  "generatedAt": "2026-10-28 00:27:20",
   "runDate": "2026-10-28",
   "tasks": [
     {
@@ -2175,7 +2175,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-28 08:19:45）"
+      "detail": "本轮发布前置 9 段全过（2026-10-28 08:27:20）"
     },
     {
       "layer": "项目层",
@@ -2631,8 +2631,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "3ddc288",
-        "at": "2026-10-28T08:21:22+08:00",
+        "hash": "ce7bf3d",
+        "at": "2026-10-28T08:27:05+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2660,45 +2660,45 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-28 08:19:45",
+    "runAt": "2026-10-28 08:27:20",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.9,
+        "seconds": 3.5,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.4,
+        "seconds": 5.6,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -2710,37 +2710,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 29.8,
+        "seconds": 58.9,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 51.8,
+        "seconds": 46.5,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 8.6,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 88.9,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-27 12:48:02",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 52.6,
-      "fails": []
-    },
     {
       "runAt": "2026-10-27 12:54:16",
       "scope": "complete",
@@ -2942,6 +2923,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 191.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-28 08:27:20",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 115.7,
       "fails": []
     }
   ],
@@ -3184,7 +3172,7 @@
     },
     {
       "date": "2026-10-28",
-      "at": "2026-10-28 00:26:34",
+      "at": "2026-10-28 00:27:20",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -3281,7 +3269,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1894.6,
+      "totalKB": 1865.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -3289,7 +3277,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 529.8
+          "kb": 504.2
         },
         {
           "name": "rider-index.json",
@@ -3305,7 +3293,7 @@
         },
         {
           "name": "visits.json",
-          "kb": 48.8
+          "kb": 45.1
         },
         {
           "name": "logger.json",
