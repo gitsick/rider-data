@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-28 15:49:23",
+  "generatedAt": "2026-10-28 16:11:27",
   "runDate": "2026-10-28",
   "tasks": [
     {
@@ -22,7 +22,7 @@
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -387,7 +387,7 @@
         "cadence": "daily",
         "trigger": "每日 08:30",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -628,7 +628,7 @@
         "cadence": "daily",
         "trigger": "每日 09:00",
         "expectHour": 9,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -1061,7 +1061,7 @@
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -2313,13 +2313,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-28 23:49:17）"
+      "detail": "本轮发布前置 9 段全过（2026-10-29 00:11:26）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
-      "status": "PASS",
-      "detail": "2 项目，最新产出 10h 前"
+      "status": "WARN",
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 10h 前"
     },
     {
       "layer": "渲染层",
@@ -2362,9 +2362,14 @@
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
-      "dataLag": 2,
-      "staleData": false,
-      "dataLagThreshold": 2
+      "dataLag": 3,
+      "staleData": true,
+      "dataLagThreshold": 2,
+      "outage": {
+        "since": "2026-10-27",
+        "dayCount": 2,
+        "cause": null
+      }
     },
     {
       "name": "履约考核工程",
@@ -2393,7 +2398,7 @@
       "ageHours": 12,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-10-28",
+      "dataDate": "2026-10-29",
       "dataLag": 0,
       "staleData": false,
       "dataLagThreshold": 2,
@@ -2572,7 +2577,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-28 15:17:18",
+        "latestAt": "2026-10-28 15:55:10",
         "ageH": 0
       }
     ]
@@ -2587,6 +2592,11 @@
       "level": "WARN",
       "text": "审计有 2 项警告（2026-10-28 19:49:30）",
       "anchor": "sec-audit"
+    },
+    {
+      "level": "WARN",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 3 天，超 2 天）——疑似源停发第 2 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "anchor": "sec-fresh"
     }
   ],
   "todos": [],
@@ -2764,8 +2774,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "425e820",
-        "at": "2026-10-28T23:46:06+08:00",
+        "hash": "558603a",
+        "at": "2026-10-28T23:49:51+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2793,15 +2803,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-28 23:49:17",
+    "runAt": "2026-10-29 00:11:26",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 6.1,
+        "seconds": 7.3,
         "note": ""
       },
       {
@@ -2813,7 +2823,7 @@
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -2825,7 +2835,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 11.1,
+        "seconds": 9.2,
         "note": ""
       },
       {
@@ -2837,43 +2847,24 @@
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.1,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 47.7,
+        "seconds": 54.1,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 61.7,
+        "seconds": 34.9,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 158.7,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 187.6,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-28 11:33:05",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 65,
-      "fails": []
-    },
     {
       "runAt": "2026-10-28 11:41:59",
       "scope": "complete",
@@ -3076,10 +3067,17 @@
       "allPass": true,
       "totalSec": 474.7,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-29 00:11:26",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 107.3,
+      "fails": []
     }
   ],
   "health": {
-    "score": 100,
+    "score": 93,
     "grade": "优",
     "layers": [
       {
@@ -3102,9 +3100,9 @@
       },
       {
         "layer": "项目层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 15,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "渲染层",
@@ -3114,7 +3112,7 @@
       }
     ],
     "extra": {
-      "tests": 847,
+      "tests": 849,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3317,8 +3315,8 @@
     },
     {
       "date": "2026-10-28",
-      "at": "2026-10-28 15:49:23",
-      "score": 100,
+      "at": "2026-10-28 16:11:27",
+      "score": 93,
       "grade": "优",
       "layers": [
         {
@@ -3335,7 +3333,7 @@
         },
         {
           "layer": "项目层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "渲染层",
@@ -3380,6 +3378,15 @@
       "lastSeenAt": "2026-10-28",
       "resolvedAt": "2026-10-28",
       "resolvedDataDate": "2026-10-26"
+    },
+    {
+      "project": "通用运力监控",
+      "since": "2026-10-27",
+      "dayCount": 2,
+      "lastDataDate": "2026-10-26",
+      "lastSeenAt": "2026-10-28",
+      "resolvedAt": null,
+      "resolvedDataDate": null
     }
   ],
   "perf": {
@@ -3423,7 +3430,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1904.9,
+      "totalKB": 1905.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -3443,7 +3450,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 86.6
+          "kb": 87.5
         },
         {
           "name": "visits.json",
