@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-28 16:38:19",
+  "generatedAt": "2026-10-28 17:03:12",
   "runDate": "2026-10-28",
   "tasks": [
     {
@@ -2273,7 +2273,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-29 00:37:53）"
+      "detail": "本轮发布前置 9 段全过（2026-10-29 01:03:11）"
     },
     {
       "layer": "项目层",
@@ -2537,7 +2537,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-28 16:28:37",
+        "latestAt": "2026-10-28 16:51:56",
         "ageH": 0
       }
     ]
@@ -2734,8 +2734,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c63ef90",
-        "at": "2026-10-29T00:30:07+08:00",
+        "hash": "0c98806",
+        "at": "2026-10-29T00:39:48+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2763,21 +2763,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-29 00:37:53",
+    "runAt": "2026-10-29 01:03:11",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 7.3,
+        "seconds": 6.8,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -2789,61 +2789,42 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.8,
+        "seconds": 0.7,
         "note": ""
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 9.3,
+        "seconds": 9.5,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.1,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 54.8,
+        "seconds": 38.7,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 36,
+        "seconds": 40.6,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 420.4,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 169.9,
-        "note": "指纹+探针 assets/main-Orn5XUYH.css 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-28 13:50:18",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 99.5,
-      "fails": []
-    },
     {
       "runAt": "2026-10-28 13:57:37",
       "scope": "complete",
@@ -3046,6 +3027,13 @@
       "allPass": true,
       "totalSec": 699.7,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-29 01:03:11",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 97.4,
+      "fails": []
     }
   ],
   "health": {
@@ -3084,7 +3072,7 @@
       }
     ],
     "extra": {
-      "tests": 850,
+      "tests": 852,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3287,7 +3275,7 @@
     },
     {
       "date": "2026-10-28",
-      "at": "2026-10-28 16:38:19",
+      "at": "2026-10-28 17:03:12",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3364,15 +3352,15 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1008,
+      "totalKB": 1008.2,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-BBUijFhG.js",
-          "kb": 108.8
+          "name": "main-CGG8s0s_.js",
+          "kb": 108.9
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3387,11 +3375,11 @@
           "kb": 30
         },
         {
-          "name": "main-Orn5XUYH.css",
+          "name": "main-BqWSHBSB.css",
           "kb": 29.1
         },
         {
-          "name": "rider_dashboard-DI0sDYUK.js",
+          "name": "rider_dashboard-DzfNs0e_.js",
           "kb": 22.1
         },
         {
@@ -3402,7 +3390,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1904.2,
+      "totalKB": 1904.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3422,11 +3410,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 86
+          "kb": 86.3
         },
         {
           "name": "visits.json",
-          "kb": 48.2
+          "kb": 48.3
         },
         {
           "name": "logger.json",
