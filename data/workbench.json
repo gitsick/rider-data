@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-28 02:49:13",
+  "generatedAt": "2026-10-28 03:14:23",
   "runDate": "2026-10-28",
   "tasks": [
     {
@@ -389,8 +389,8 @@
         "expectHour": 8,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 08:30）但尚无今日留痕"
       },
       "timer": {
         "state": "ok",
@@ -2224,7 +2224,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 6 天"
+      "detail": "2/4 任务正常 · 1 失败 · 1 逾期 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
@@ -2281,7 +2281,7 @@
           "size": 21084
         }
       ],
-      "ageHours": 0,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-22",
@@ -2299,8 +2299,8 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-28 01:49",
-          "size": 84874
+          "mtime": "2026-10-28 03:13",
+          "size": 88744
         },
         {
           "name": "sep.json",
@@ -2501,11 +2501,16 @@
         "name": "20261017-efficiency-naming",
         "files": 15,
         "latestAt": "2026-10-28 02:13:07",
-        "ageH": 0
+        "ageH": 1
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：新商评考核周报 —— 今日应跑（每日 08:30）但尚无今日留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "FAIL",
       "text": "任务失败：通用运力监控每日刷新（2026-10-28 10:04:47）——可用 run_task.ps1 -Auto / -Id capacity-daily 重跑",
@@ -2702,8 +2707,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "af21d44",
-        "at": "2026-10-28T10:04:54+08:00",
+        "hash": "0824241",
+        "at": "2026-10-28T10:49:17+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3243,7 +3248,7 @@
     },
     {
       "date": "2026-10-28",
-      "at": "2026-10-28 02:49:13",
+      "at": "2026-10-28 03:14:23",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -3349,7 +3354,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1903,
+      "totalKB": 1903.1,
       "top": [
         {
           "name": "rider_base.json",
@@ -3373,7 +3378,7 @@
         },
         {
           "name": "visits.json",
-          "kb": 48.9
+          "kb": 49
         },
         {
           "name": "logger.json",
