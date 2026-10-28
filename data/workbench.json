@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-28 16:11:27",
+  "generatedAt": "2026-10-28 16:19:03",
   "runDate": "2026-10-28",
   "tasks": [
     {
@@ -2035,9 +2035,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-28 19:49:30",
+    "auditedAt": "2026-10-29 00:19:02",
     "status": "PASS",
-    "pass": 37,
+    "pass": 29,
     "warn": 2,
     "fail": 0,
     "checks": [
@@ -2074,7 +2074,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 425e820 2026-10-28 23:46:06 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: e4c85cb 2026-10-29 00:11:31 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2084,7 +2084,7 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（10 小时前生成）"
+        "msg": "单文件产物存在（11 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2129,27 +2129,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（10/28/2026 08:31:24），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[kaohe-daily] 今日已运行"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
         "msg": "[xsp-weekly] 已关联定时器"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（10/28/2026 08:16:44），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[xsp-weekly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2169,17 +2149,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[capacity-daily] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[capacity-daily] 定时器 lastRunAt 停在 10/23/2026 10:30:03 —— 暂停中不更新属预期（用户登记主动暂停，R266 意图豁免；恢复运行后自动复检）"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[capacity-daily] 今日已运行"
+        "msg": "[capacity-daily] 任务留痕已晚于定时器失败时刻（PASS 覆盖失败残留，自动刷新）"
       },
       {
         "level": "PASS",
@@ -2190,16 +2160,6 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 已关联定时器"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 定时器状态时间戳新鲜（10/28/2026 16:18:51），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2238,10 +2198,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-27 16:42:55",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-27 20:10:34",
         "status": "PASS"
@@ -2293,6 +2249,10 @@
       {
         "auditedAt": "2026-10-28 19:49:30",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-29 00:19:02",
+        "status": "PASS"
       }
     ]
   },
@@ -2307,19 +2267,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-28 19:49:30）"
+      "detail": "审计 PASS（2026-10-29 00:19:02）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-29 00:11:26）"
+      "detail": "上轮全链 11 段全过（2026-10-29 00:18:56）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 10h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 11h 前"
     },
     {
       "layer": "渲染层",
@@ -2358,7 +2318,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 10,
+      "ageHours": 11,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2395,7 +2355,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 12,
+      "ageHours": 13,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-29",
@@ -2590,7 +2550,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-10-28 19:49:30）",
+      "text": "审计有 2 项警告（2026-10-29 00:19:02）",
       "anchor": "sec-audit"
     },
     {
@@ -2774,8 +2734,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "558603a",
-        "at": "2026-10-28T23:49:51+08:00",
+        "hash": "e4c85cb",
+        "at": "2026-10-29T00:11:31+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2803,10 +2763,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-29 00:11:26",
+    "runAt": "2026-10-29 00:18:56",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2861,17 +2821,22 @@
         "pass": true,
         "seconds": 34.9,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 248.9,
+        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 200.8,
+        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-28 11:41:59",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 598.3,
-      "fails": []
-    },
     {
       "runAt": "2026-10-28 13:30:22",
       "scope": "pre-deploy",
@@ -3073,6 +3038,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 107.3,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-29 00:18:56",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 557,
       "fails": []
     }
   ],
@@ -3315,7 +3287,7 @@
     },
     {
       "date": "2026-10-28",
-      "at": "2026-10-28 16:11:27",
+      "at": "2026-10-28 16:19:03",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3430,7 +3402,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1905.8,
+      "totalKB": 1905.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3450,7 +3422,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 87.5
+          "kb": 87.3
         },
         {
           "name": "visits.json",
