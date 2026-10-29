@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-29 05:58:09",
+  "generatedAt": "2026-10-29 06:01:00",
   "runDate": "2026-10-29",
   "tasks": [
     {
@@ -2127,7 +2127,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: a9b0479 2026-10-29 13:35:51 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 3b98c88 2026-10-29 13:58:12 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2371,7 +2371,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-29 13:58:08）"
+      "detail": "上轮全链 11 段全过（2026-10-29 14:00:54）"
     },
     {
       "layer": "项目层",
@@ -2832,8 +2832,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "a9b0479",
-        "at": "2026-10-29T13:35:51+08:00",
+        "hash": "3b98c88",
+        "at": "2026-10-29T13:58:12+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2861,10 +2861,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-29 13:58:08",
+    "runAt": "2026-10-29 14:00:54",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2919,17 +2919,22 @@
         "pass": true,
         "seconds": 22.9,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 7.6,
+        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 158.1,
+        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-29 00:37:53",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 699.7,
-      "fails": []
-    },
     {
       "runAt": "2026-10-29 01:03:11",
       "scope": "pre-deploy",
@@ -3131,6 +3136,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 563.3,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-29 14:00:54",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 729,
       "fails": []
     }
   ],
@@ -3401,7 +3413,7 @@
     },
     {
       "date": "2026-10-29",
-      "at": "2026-10-29 05:58:09",
+      "at": "2026-10-29 06:01:00",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3507,7 +3519,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1908.6,
+      "totalKB": 1908.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -3527,7 +3539,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 89.1
+          "kb": 88.8
         },
         {
           "name": "visits.json",
