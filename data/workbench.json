@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-29 01:24:32",
+  "generatedAt": "2026-10-29 01:27:41",
   "runDate": "2026-10-29",
   "tasks": [
     {
@@ -2057,10 +2057,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-29 08:25:46",
+    "auditedAt": "2026-10-29 09:27:40",
     "status": "PASS",
-    "pass": 30,
-    "warn": 5,
+    "pass": 31,
+    "warn": 4,
     "fail": 0,
     "checks": [
       {
@@ -2079,9 +2079,9 @@
         "msg": "publish_file.py 在位"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "互斥锁",
-        "msg": "无残留锁"
+        "msg": "锁存在（0 分钟前创建）——可能有部署进行中，或上次异常未释放（10 分钟后可自动接管/手动删除）"
       },
       {
         "level": "PASS",
@@ -2089,14 +2089,14 @@
         "msg": "工作区干净"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "仓库漂移",
-        "msg": "领先远端 1 个提交，落后 0 个（领先=待推送/待补发；落后=需 pull）"
+        "msg": "与远端 main 同步"
       },
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 6f66039 2026-10-29 08:24:10 +0800 Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-28"
+        "msg": "最新提交: cfbf565 2026-10-29 09:24:37 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2106,12 +2106,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（1 小时前生成）"
+        "msg": "单文件产物存在（2 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（25 小时前生成）"
+        "msg": "单文件产物存在（26 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2131,7 +2131,7 @@
       {
         "level": "WARN",
         "item": "考核取数",
-        "msg": "加盟达标列断供存疑：13 天达标数=0 但总骑手数正常（10-07~10-27）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
+        "msg": "加盟达标列断供存疑：14 天达标数=0 但总骑手数正常（10-07~10-28）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
       },
       {
         "level": "PASS",
@@ -2214,9 +2214,9 @@
         "msg": "分层约定无违规（无外部工作区引用 / 无项目层渲染器 / 无项目自建部署脚本）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "发布补发",
-        "msg": "1 个提交补推仍失败（网络/权限），本地已就绪，下次审计或手动 git push 补发"
+        "msg": "本地与 origin/main 一致，无滞留提交"
       },
       {
         "level": "PASS",
@@ -2236,18 +2236,10 @@
       {
         "level": "WARN",
         "item": "断链自愈",
-        "msg": "已知态失败任务需人工恢复（登录态失效类，重跑无法自愈，-Auto 已感知跳过）：跳过 rider-hourly：最近留痕为已知态失败（问卷星登录态失效）——重跑无法自愈，需人工恢复登录；本地数据维持，看板部署不受影响"
+        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：跳过 rider-hourly：最近留痕为已知态失败（问卷星登录态失效）——重跑无法自愈，需人工恢复登录；本地数据维持，看板部署不受影响；补跑 kaohe-daily（每日 08:00 主跑 + 10:30 发布自愈）；  [kaohe-daily] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-28 08:13:30",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-28 08:36:44",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-28 10:04:47",
         "status": "PASS"
@@ -2295,6 +2287,14 @@
       {
         "auditedAt": "2026-10-29 08:25:46",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-29 09:27:13",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-29 09:27:40",
+        "status": "PASS"
       }
     ]
   },
@@ -2309,13 +2309,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-29 08:25:46）"
+      "detail": "审计 PASS（2026-10-29 09:27:40）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-29 09:19:12）"
+      "detail": "上轮全链 11 段全过（2026-10-29 09:26:48）"
     },
     {
       "layer": "项目层",
@@ -2597,7 +2597,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 5 项警告（2026-10-29 08:25:46）",
+      "text": "审计有 4 项警告（2026-10-29 09:27:40）",
       "anchor": "sec-audit"
     },
     {
@@ -2781,8 +2781,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c6f35b1",
-        "at": "2026-10-29T09:23:42+08:00",
+        "hash": "cfbf565",
+        "at": "2026-10-29T09:24:37+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2810,10 +2810,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-29 09:19:12",
+    "runAt": "2026-10-29 09:26:48",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2868,17 +2868,22 @@
         "pass": true,
         "seconds": 59.3,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 226.3,
+        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 228.4,
+        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-28 16:10:57",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 570.8,
-      "fails": []
-    },
     {
       "runAt": "2026-10-28 16:23:26",
       "scope": "pre-deploy",
@@ -3080,6 +3085,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 110.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-29 09:26:48",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 565.1,
       "fails": []
     }
   ],
@@ -3350,7 +3362,7 @@
     },
     {
       "date": "2026-10-29",
-      "at": "2026-10-29 01:24:32",
+      "at": "2026-10-29 01:27:41",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -3465,7 +3477,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1878.3,
+      "totalKB": 1878.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -3485,7 +3497,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 88.5
+          "kb": 89
         },
         {
           "name": "visits.json",
