@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-29 05:35:47",
+  "generatedAt": "2026-10-29 05:58:09",
   "runDate": "2026-10-29",
   "tasks": [
     {
@@ -2127,7 +2127,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: a0e6b35 2026-10-29 13:31:24 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: a9b0479 2026-10-29 13:35:51 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2371,13 +2371,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-29 13:35:43）"
+      "detail": "本轮发布前置 9 段全过（2026-10-29 13:58:08）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 4h 前"
     },
     {
       "layer": "渲染层",
@@ -2453,7 +2453,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 3,
+      "ageHours": 4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-29",
@@ -2635,7 +2635,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-29 05:07:40",
+        "latestAt": "2026-10-29 05:37:47",
         "ageH": 0
       }
     ]
@@ -2660,6 +2660,12 @@
   "todos": [],
   "todoOwners": [],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R377",
+      "date": "2026-10-29",
+      "title": "偏差告警分级与就绪口径校准——健康月实证带 + 发布值守卫 + 阻断/提示分级"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R376",
@@ -2725,12 +2731,6 @@
       "round": "R249",
       "date": "2026-10-23",
       "title": "全局化第六批：--chart-seq 序列色消费落地 + 构建期 lexer 换行陷阱收口"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R248",
-      "date": "2026-10-23",
-      "title": "全局化第五批：报告页分节卡簇收敛——est-sum 退役归 ov-cards auto 变体"
     }
   ],
   "approvals": [
@@ -2832,8 +2832,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "a0e6b35",
-        "at": "2026-10-29T13:31:24+08:00",
+        "hash": "a9b0479",
+        "at": "2026-10-29T13:35:51+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2861,15 +2861,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-29 13:35:43",
+    "runAt": "2026-10-29 13:58:08",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 6.7,
+        "seconds": 7.3,
         "note": ""
       },
       {
@@ -2893,13 +2893,13 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.9,
+        "seconds": 7.8,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -2911,37 +2911,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 25.4,
+        "seconds": 524.1,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 24.6,
+        "seconds": 22.9,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 8.1,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 254.6,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-29 00:28:02",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 109.4,
-      "fails": []
-    },
     {
       "runAt": "2026-10-29 00:37:53",
       "scope": "complete",
@@ -3144,6 +3125,13 @@
       "allPass": true,
       "totalSec": 327.4,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-29 13:58:08",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 563.3,
+      "fails": []
     }
   ],
   "health": {
@@ -3182,7 +3170,7 @@
       }
     ],
     "extra": {
-      "tests": 874,
+      "tests": 878,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3413,7 +3401,7 @@
     },
     {
       "date": "2026-10-29",
-      "at": "2026-10-29 05:35:47",
+      "at": "2026-10-29 05:58:09",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3458,15 +3446,6 @@
       "lastSeenAt": "2026-10-23",
       "resolvedAt": "2026-10-24",
       "resolvedDataDate": "2026-10-24"
-    },
-    {
-      "project": "通用运力监控",
-      "since": "2026-10-23",
-      "dayCount": 5,
-      "lastDataDate": "2026-10-22",
-      "lastSeenAt": "2026-10-27",
-      "resolvedAt": "2026-10-27",
-      "resolvedDataDate": "2026-10-26"
     },
     {
       "project": "通用运力监控",
@@ -3528,7 +3507,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1908.5,
+      "totalKB": 1908.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3548,7 +3527,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 89
+          "kb": 89.1
         },
         {
           "name": "visits.json",
