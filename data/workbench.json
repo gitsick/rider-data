@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-29 04:35:48",
+  "generatedAt": "2026-10-29 04:50:24",
   "runDate": "2026-10-29",
   "tasks": [
     {
@@ -2359,13 +2359,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-29 12:35:43）"
+      "detail": "本轮发布前置 9 段全过（2026-10-29 12:50:23）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 2h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3h 前"
     },
     {
       "layer": "渲染层",
@@ -2441,7 +2441,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 2,
+      "ageHours": 3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-29",
@@ -2623,7 +2623,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-29 04:08:18",
+        "latestAt": "2026-10-29 04:42:10",
         "ageH": 0
       }
     ]
@@ -2648,6 +2648,12 @@
   "todos": [],
   "todoOwners": [],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R375",
+      "date": "2026-10-29",
+      "title": "官方收官发布就绪预检——发布三态判定 + 三结果就绪度告警 + 单源验收结论"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R374",
@@ -2713,12 +2719,6 @@
       "round": "R247",
       "date": "2026-10-23",
       "title": "全局化第四批：筛选 chip 族公共化 + 总分档位色单源（TIER_COLORS）"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R246",
-      "date": "2026-10-23",
-      "title": "全局化第三批：速览条 ov-cards 公共化（双私有实现退役）+ R245 部署补收口"
     }
   ],
   "approvals": [
@@ -2820,8 +2820,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "8a9bf63",
-        "at": "2026-10-29T12:23:33+08:00",
+        "hash": "1349f5c",
+        "at": "2026-10-29T12:35:51+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2849,15 +2849,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-29 12:35:43",
+    "runAt": "2026-10-29 12:50:23",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 6.6,
+        "seconds": 7.2,
         "note": ""
       },
       {
@@ -2881,7 +2881,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 5.9,
+        "seconds": 6.4,
         "note": ""
       },
       {
@@ -2899,37 +2899,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 25.4,
+        "seconds": 28,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 56.9,
+        "seconds": 26.6,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 593,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 164.3,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-28 23:00:25",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 115.5,
-      "fails": []
-    },
     {
       "runAt": "2026-10-28 23:49:17",
       "scope": "complete",
@@ -3132,6 +3113,13 @@
       "allPass": true,
       "totalSec": 853.2,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-29 12:50:23",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 69.3,
+      "fails": []
     }
   ],
   "health": {
@@ -3170,7 +3158,7 @@
       }
     ],
     "extra": {
-      "tests": 868,
+      "tests": 870,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3401,7 +3389,7 @@
     },
     {
       "date": "2026-10-29",
-      "at": "2026-10-29 04:35:48",
+      "at": "2026-10-29 04:50:24",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3516,7 +3504,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1908.1,
+      "totalKB": 1908.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -3536,7 +3524,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 88.7
+          "kb": 89
         },
         {
           "name": "visits.json",
