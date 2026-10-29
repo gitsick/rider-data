@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-29 02:58:25",
+  "generatedAt": "2026-10-29 03:22:55",
   "runDate": "2026-10-29",
   "tasks": [
     {
@@ -2359,7 +2359,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-29 10:58:19）"
+      "detail": "本轮发布前置 9 段全过（2026-10-29 11:22:54）"
     },
     {
       "layer": "项目层",
@@ -2404,7 +2404,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 3,
+      "ageHours": 4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2623,7 +2623,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-29 02:32:36",
+        "latestAt": "2026-10-29 03:21:11",
         "ageH": 0
       }
     ]
@@ -2648,6 +2648,12 @@
   "todos": [],
   "todoOwners": [],
   "changes": [
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R372",
+      "date": "2026-10-29",
+      "title": "月末结算预检——月度页聚合与日页明细交叉一致性校验锁"
+    },
     {
       "run": "20261017-efficiency-naming",
       "round": "R255",
@@ -2713,12 +2719,6 @@
       "round": "R245",
       "date": "2026-10-23",
       "title": "全局化第二批：五处私有表收敛 data-table 变体 + .note-bar 备注条公共类"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R244",
-      "date": "2026-10-23",
-      "title": "全局化八项第一批：模块配色单源（修三处漂移）+ 窄屏断点收敛三档"
     }
   ],
   "approvals": [
@@ -2820,8 +2820,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "841cd46",
-        "at": "2026-10-29T10:56:21+08:00",
+        "hash": "e827ef4",
+        "at": "2026-10-29T10:58:29+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2849,15 +2849,15 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-29 10:58:19",
+    "runAt": "2026-10-29 11:22:54",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.3,
+        "seconds": 6.7,
         "note": ""
       },
       {
@@ -2869,7 +2869,7 @@
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -2881,7 +2881,7 @@
       {
         "name": "build",
         "pass": true,
-        "seconds": 6,
+        "seconds": 5.5,
         "note": ""
       },
       {
@@ -2899,37 +2899,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 29.3,
+        "seconds": 27.2,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 56.3,
+        "seconds": 28.8,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 7.2,
-        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 113.9,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-28 18:55:37",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 114.2,
-      "fails": []
-    },
     {
       "runAt": "2026-10-28 19:03:00",
       "scope": "complete",
@@ -3132,6 +3113,13 @@
       "allPass": true,
       "totalSec": 219.2,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-29 11:22:54",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 69.3,
+      "fails": []
     }
   ],
   "health": {
@@ -3170,7 +3158,7 @@
       }
     ],
     "extra": {
-      "tests": 856,
+      "tests": 860,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3401,7 +3389,7 @@
     },
     {
       "date": "2026-10-29",
-      "at": "2026-10-29 02:58:25",
+      "at": "2026-10-29 03:22:55",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3478,15 +3466,15 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1008.3,
+      "totalKB": 1011,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-CGG8s0s_.js",
-          "kb": 108.9
+          "name": "main-_sZFrJvZ.js",
+          "kb": 111.6
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3501,7 +3489,7 @@
           "kb": 30
         },
         {
-          "name": "main-BqWSHBSB.css",
+          "name": "main-DLTPH0yj.css",
           "kb": 29.1
         },
         {
@@ -3516,7 +3504,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1907.9,
+      "totalKB": 1908.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -3536,7 +3524,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 88.7
+          "kb": 89
         },
         {
           "name": "visits.json",
