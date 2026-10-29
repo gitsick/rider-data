@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-29 05:31:20",
+  "generatedAt": "2026-10-29 05:35:47",
   "runDate": "2026-10-29",
   "tasks": [
     {
@@ -2127,7 +2127,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: d1d6ccf 2026-10-29 12:51:05 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: a0e6b35 2026-10-29 13:31:24 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2137,12 +2137,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（5 小时前生成）"
+        "msg": "单文件产物存在（6 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（30 小时前生成）"
+        "msg": "单文件产物存在（31 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2371,7 +2371,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 9 段全过（2026-10-29 13:31:19）"
+      "detail": "上轮全链 11 段全过（2026-10-29 13:35:43）"
     },
     {
       "layer": "项目层",
@@ -2832,8 +2832,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "f46a36f",
-        "at": "2026-10-29T12:57:14+08:00",
+        "hash": "a0e6b35",
+        "at": "2026-10-29T13:31:24+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2861,10 +2861,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-29 13:31:19",
+    "runAt": "2026-10-29 13:35:43",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -2919,17 +2919,22 @@
         "pass": true,
         "seconds": 24.6,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 8.1,
+        "note": "拷贝回验 67 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 254.6,
+        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-29 00:18:56",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 557,
-      "fails": []
-    },
     {
       "runAt": "2026-10-29 00:28:02",
       "scope": "pre-deploy",
@@ -3131,6 +3136,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 64.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-10-29 13:35:43",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 327.4,
       "fails": []
     }
   ],
@@ -3401,7 +3413,7 @@
     },
     {
       "date": "2026-10-29",
-      "at": "2026-10-29 05:31:20",
+      "at": "2026-10-29 05:35:47",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3516,7 +3528,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1908.8,
+      "totalKB": 1908.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -3536,7 +3548,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 89.3
+          "kb": 89
         },
         {
           "name": "visits.json",
