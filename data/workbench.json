@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-30 20:37:36",
+  "generatedAt": "2026-10-30 20:49:45",
   "runDate": "2026-10-30",
   "tasks": [
     {
@@ -2687,7 +2687,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-30 20:30:30",
+        "latestAt": "2026-10-30 20:43:22",
         "ageH": 0
       }
     ]
@@ -2865,6 +2865,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R422",
+      "date": "2026-10-31",
+      "title": "月度页 MTD 复盘要点——mtdEval 零消费实值字段透出"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R398",
       "date": "2026-10-30",
       "title": "双清单防线动态行为锁：R397 临时验证固化为常驻回归用例"
@@ -2928,12 +2934,6 @@
       "round": "R383",
       "date": "2026-10-29",
       "title": "诸暨企客月度行接入（占位行数据驱动化）+ QKKA_MONTH↔ka-brand.json 单源同数对账锁"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R382",
-      "date": "2026-10-29",
-      "title": "QKKA_MONTH stores/ok/okRatio 空缺补齐（ka-brand.json 单源落数）"
     }
   ],
   "approvals": [
@@ -3040,8 +3040,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "59e74a4",
-        "at": "2026-10-31T04:24:28+08:00",
+        "hash": "ea2d24b",
+        "at": "2026-10-31T04:40:02+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3655,7 +3655,7 @@
     },
     {
       "date": "2026-10-30",
-      "at": "2026-10-30 20:37:36",
+      "at": "2026-10-30 20:49:45",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3723,15 +3723,15 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1018.3,
+      "totalKB": 1020.2,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-DLgCXTFW.js",
-          "kb": 118.8
+          "name": "main-CofykBPQ.js",
+          "kb": 120.7
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3746,7 +3746,7 @@
           "kb": 30
         },
         {
-          "name": "main-C-61lJ6t.css",
+          "name": "main-TWjO_lpo.css",
           "kb": 29.2
         },
         {
