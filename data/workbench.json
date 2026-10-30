@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-30 20:23:10",
+  "generatedAt": "2026-10-30 20:37:36",
   "runDate": "2026-10-30",
   "tasks": [
     {
@@ -2430,7 +2430,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 12h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2687,7 +2687,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-30 20:10:36",
+        "latestAt": "2026-10-30 20:30:30",
         "ageH": 0
       }
     ]
@@ -3040,8 +3040,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c42d9aa",
-        "at": "2026-10-30T16:07:00+08:00",
+        "hash": "59e74a4",
+        "at": "2026-10-31T04:24:28+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3655,7 +3655,7 @@
     },
     {
       "date": "2026-10-30",
-      "at": "2026-10-30 20:23:10",
+      "at": "2026-10-30 20:37:36",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3723,15 +3723,15 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1017.8,
+      "totalKB": 1018.3,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-C5KH4bZB.js",
-          "kb": 118.3
+          "name": "main-DLgCXTFW.js",
+          "kb": 118.8
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3746,7 +3746,7 @@
           "kb": 30
         },
         {
-          "name": "main-CGz7iREw.css",
+          "name": "main-C-61lJ6t.css",
           "kb": 29.2
         },
         {
@@ -3761,7 +3761,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1934.9,
+      "totalKB": 1905.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -3769,7 +3769,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 536.7
+          "kb": 510.9
         },
         {
           "name": "rider-index.json",
@@ -3781,11 +3781,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 111.4
+          "kb": 111.3
         },
         {
           "name": "visits.json",
-          "kb": 49.1
+          "kb": 45.8
         },
         {
           "name": "logger.json",
