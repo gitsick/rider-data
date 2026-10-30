@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-30 04:50:44",
+  "generatedAt": "2026-10-30 08:02:50",
   "runDate": "2026-10-30",
   "tasks": [
     {
@@ -1145,7 +1145,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-10-30 07:51"
+        "lastRunAt": "2026-10-30 16:00"
       },
       "heal": {
         "can": true,
@@ -2403,19 +2403,19 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 11 段全过（2026-10-30 08:24:59）"
+      "detail": "本轮发布前置 10 段全过（2026-10-30 16:02:49）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 产物陈旧（超 26h） · 1 数据滞后（超 2 天），最新产出 2h 前"
+      "detail": "2 项目 · 1 产物陈旧（超 26h） · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 2h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2448,7 +2448,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 29,
+      "ageHours": 32,
       "stale": true,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2466,7 +2466,7 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-30 02:45",
+          "mtime": "2026-10-30 08:01",
           "size": 94075
         },
         {
@@ -2490,7 +2490,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 2,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-30",
@@ -2672,7 +2672,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-30 04:39:12",
+        "latestAt": "2026-10-30 07:29:36",
         "ageH": 0
       }
     ]
@@ -2695,7 +2695,7 @@
     },
     {
       "level": "WARN",
-      "text": "产物陈旧：通用运力监控（29h 未更新，阈值 26h）",
+      "text": "产物陈旧：通用运力监控（32h 未更新，阈值 26h）",
       "anchor": "sec-fresh"
     },
     {
@@ -2716,6 +2716,13 @@
       "kind": "TODO",
       "owner": "未认领",
       "text": "模板打爆导出链。 */"
+    },
+    {
+      "file": "pro\\kaohe-daily\\build\\selftest.py",
+      "line": 224,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
     },
     {
       "file": "pro\\kaohe-daily\\src\\config\\config-2026-11.js",
@@ -2842,13 +2849,6 @@
       "kind": "TODO",
       "owner": "未认领",
       "text": "KFC 目标周数 kfcTargetWeeks 为运营口径 */     kfcTargetWeeks: 3,"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-11.js",
-      "line": 76,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "企客监控截止日 qikeWatchCutoff 为业务口径，不可自动推导 */   qikeWatchCutoff: '20260923',"
     }
   ],
   "todoOwners": [
@@ -3035,8 +3035,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "e0706a0",
-        "at": "2026-10-30T10:45:50+08:00",
+        "hash": "76f4d35",
+        "at": "2026-10-30T12:51:07+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3064,21 +3064,21 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-30 08:24:59",
+    "runAt": "2026-10-30 16:02:49",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 4.3,
+        "seconds": 4.7,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -3090,19 +3090,25 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 1,
+        "seconds": 0.6,
         "note": ""
+      },
+      {
+        "name": "unit_gate",
+        "pass": true,
+        "seconds": 9.6,
+        "note": "npm test pass=924 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.9,
+        "seconds": 6.7,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -3114,37 +3120,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 33.3,
+        "seconds": 33.7,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 28.3,
+        "seconds": 31.4,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 296.4,
-        "note": "拷贝回验 68 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 112,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-29 10:56:18",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 98.1,
-      "fails": []
-    },
     {
       "runAt": "2026-10-29 10:58:19",
       "scope": "complete",
@@ -3347,6 +3334,13 @@
       "allPass": true,
       "totalSec": 485.2,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-30 16:02:49",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 87.8,
+      "fails": []
     }
   ],
   "health": {
@@ -3385,7 +3379,7 @@
       }
     ],
     "extra": {
-      "tests": 921,
+      "tests": 923,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3644,7 +3638,7 @@
     },
     {
       "date": "2026-10-30",
-      "at": "2026-10-30 04:50:44",
+      "at": "2026-10-30 08:02:50",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -3750,7 +3744,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1890.2,
+      "totalKB": 1920.1,
       "top": [
         {
           "name": "rider_base.json",
@@ -3758,7 +3752,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 510.9
+          "kb": 536.7
         },
         {
           "name": "rider-index.json",
@@ -3770,11 +3764,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 96.1
+          "kb": 96.6
         },
         {
           "name": "visits.json",
-          "kb": 45.5
+          "kb": 49.1
         },
         {
           "name": "logger.json",
