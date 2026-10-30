@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-30 00:25:26",
+  "generatedAt": "2026-10-30 02:45:33",
   "runDate": "2026-10-30",
   "tasks": [
     {
@@ -396,10 +396,10 @@
       "id": "xsp-weekly",
       "name": "新商评考核周报",
       "type": "agent",
-      "trigger": "每日 08:30",
+      "trigger": "每日 08:00",
       "cwd": "F:\\work\\mtcapacity\\pro\\xsp-weekly",
       "entry": "bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）",
-      "note": "独立工作区，由定时任务直接驱动。R349 实证：10-27 主定时器触发器醒来仅推进 nextRunAt、会话未启动（单发调度异常），当日业务由人工补跑留痕覆盖——该任务无自愈兜底，建议增配发布自愈定时器；R356 盘点已备好提议（10:30 双探测，与 kaohe-daily 同构），用户暂缓创建——创建后 trigger 声明「发布自愈」即纳入审计[11]声明式治理",
+      "note": "独立工作区，由定时任务直接驱动。R349 实证：10-27 主定时器触发器醒来仅推进 nextRunAt、会话未启动（单发调度异常），当日业务由人工补跑留痕覆盖——该任务无自愈兜底，建议增配发布自愈定时器；R356 盘点已备好提议（10:30 双探测，与 kaohe-daily 同构），用户暂缓创建——创建后 trigger 声明「发布自愈」即纳入审计[11]声明式治理。2026-10-30 排期对齐：07:00→08:00（用户选定方案），恢复 kaohe-daily(07:30)→xsp 缓存接力顺序且 BYHOUR=8 与 expectHour 一致；kaohe-daily 保持 07:30 与登记表 expectHour=8 的漂移为用户知情保留（仅审计 WARN 不阻断）",
       "last": {
         "status": "PASS",
         "exitCode": 0,
@@ -409,8 +409,8 @@
       },
       "monitor": {
         "cadence": "daily",
-        "trigger": "每日 08:30",
-        "expectHour": 7,
+        "trigger": "每日 08:00",
+        "expectHour": 8,
         "doneToday": true,
         "expect": true,
         "overdue": false,
@@ -1114,9 +1114,9 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-30 07:51:18",
-        "durationSec": 904,
-        "note": ""
+        "finishedAt": "2026-10-30 08:28:53",
+        "durationSec": 2233,
+        "note": "08:16手动补跑完成：问卷星增量0条（远端计数低于本地，无漏项），看板已重发布"
       },
       "monitor": {
         "cadence": "daily",
@@ -1136,13 +1136,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-19 00:18:21",
-          "durationSec": 1098,
-          "note": "",
-          "dur": 1098
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 02:06:54",
@@ -1485,6 +1478,13 @@
           "durationSec": 904,
           "note": "",
           "dur": 904
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-30 08:28:53",
+          "durationSec": 2233,
+          "note": "08:16手动补跑完成：问卷星增量0条（远端计数低于本地，无漏项），看板已重发布",
+          "dur": 2233
         }
       ],
       "gaps": {
@@ -1616,7 +1616,6 @@
         "passCount": 10
       },
       "durTrend": [
-        1098,
         414,
         727,
         2016,
@@ -1661,7 +1660,8 @@
         5521,
         6667,
         563,
-        904
+        904,
+        2233
       ]
     },
     {
@@ -2104,11 +2104,11 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-30 08:25:25",
-    "status": "FAIL",
-    "pass": 35,
+    "auditedAt": "2026-10-30 08:31:52",
+    "status": "PASS",
+    "pass": 36,
     "warn": 4,
-    "fail": 1,
+    "fail": 0,
     "checks": [
       {
         "level": "PASS",
@@ -2143,7 +2143,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 77bc0c4 2026-10-30 08:19:53 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: af165dd 2026-10-30 08:25:54 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2281,9 +2281,9 @@
         "msg": "[deploy-audit] command 入口可用（pwsh）"
       },
       {
-        "level": "FAIL",
+        "level": "PASS",
         "item": "架构合规",
-        "msg": "项目自实现发布逻辑: F:\\work\\mtcapacity\\pro\\kaohe-daily\\build\\verify_remote.py"
+        "msg": "分层约定无违规（无外部工作区引用 / 无项目层渲染器 / 无项目自建部署脚本）"
       },
       {
         "level": "PASS",
@@ -2312,10 +2312,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-28 16:47:11",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-28 19:19:44",
         "status": "PASS"
@@ -2367,6 +2363,10 @@
       {
         "auditedAt": "2026-10-30 08:25:25",
         "status": "FAIL"
+      },
+      {
+        "auditedAt": "2026-10-30 08:31:52",
+        "status": "PASS"
       }
     ]
   },
@@ -2380,8 +2380,8 @@
     {
       "layer": "部署层",
       "anchor": "sec-audit",
-      "status": "FAIL",
-      "detail": "审计 FAIL（2026-10-30 08:25:25）"
+      "status": "PASS",
+      "detail": "审计 PASS（2026-10-30 08:31:52）"
     },
     {
       "layer": "门禁层",
@@ -2393,13 +2393,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "detail": "2 项目 · 1 产物陈旧（超 26h） · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 2h 前刷新"
     }
   ],
   "projects": [
@@ -2432,8 +2432,8 @@
           "size": 2647222
         }
       ],
-      "ageHours": 25,
-      "stale": false,
+      "ageHours": 27,
+      "stale": true,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
       "dataLag": 4,
@@ -2450,8 +2450,8 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-30 00:16",
-          "size": 92834
+          "mtime": "2026-10-30 02:45",
+          "size": 94075
         },
         {
           "name": "sep.json",
@@ -2656,8 +2656,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-30 00:19:25",
-        "ageH": 0
+        "latestAt": "2026-10-30 01:32:28",
+        "ageH": 1
       }
     ]
   },
@@ -2668,9 +2668,14 @@
       "text": "触发断档：2 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
-      "level": "FAIL",
-      "text": "部署审计未通过（2026-10-30 08:25:25，失败 1 项）",
+      "level": "WARN",
+      "text": "审计有 4 项警告（2026-10-30 08:31:52）",
       "anchor": "sec-audit"
+    },
+    {
+      "level": "WARN",
+      "text": "产物陈旧：通用运力监控（27h 未更新，阈值 26h）",
+      "anchor": "sec-fresh"
     },
     {
       "level": "WARN",
@@ -3009,8 +3014,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "77bc0c4",
-        "at": "2026-10-30T08:19:53+08:00",
+        "hash": "af165dd",
+        "at": "2026-10-30T08:25:54+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3031,8 +3036,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "9af8de4",
-        "at": "2026-10-30T08:05:26+08:00",
+        "hash": "ee9a7c3",
+        "at": "2026-10-30T10:45:08+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
@@ -3324,8 +3329,8 @@
     }
   ],
   "health": {
-    "score": 73,
-    "grade": "中",
+    "score": 93,
+    "grade": "优",
     "layers": [
       {
         "layer": "调度层",
@@ -3341,9 +3346,9 @@
       },
       {
         "layer": "部署层",
-        "status": "FAIL",
+        "status": "PASS",
         "weight": 20,
-        "points": 0
+        "points": 100
       },
       {
         "layer": "项目层",
@@ -3359,7 +3364,7 @@
       }
     ],
     "extra": {
-      "tests": 915,
+      "tests": 916,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3618,9 +3623,9 @@
     },
     {
       "date": "2026-10-30",
-      "at": "2026-10-30 00:25:26",
-      "score": 73,
-      "grade": "中",
+      "at": "2026-10-30 02:45:33",
+      "score": 93,
+      "grade": "优",
       "layers": [
         {
           "layer": "调度层",
@@ -3628,7 +3633,7 @@
         },
         {
           "layer": "部署层",
-          "status": "FAIL"
+          "status": "PASS"
         },
         {
           "layer": "门禁层",
@@ -3724,7 +3729,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1917.5,
+      "totalKB": 1918.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3744,7 +3749,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 94.3
+          "kb": 95.4
         },
         {
           "name": "visits.json",
