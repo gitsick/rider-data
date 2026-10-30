@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-30 02:45:33",
+  "generatedAt": "2026-10-30 04:50:44",
   "runDate": "2026-10-30",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-30 08:08:02",
-        "durationSec": 1829,
+        "finishedAt": "2026-10-30 10:47:12",
+        "durationSec": 1032,
         "note": ""
       },
       "monitor": {
@@ -231,6 +231,13 @@
           "durationSec": 1829,
           "note": "",
           "dur": 1829
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-30 10:47:12",
+          "durationSec": 1032,
+          "note": "",
+          "dur": 1032
         }
       ],
       "gaps": {
@@ -389,7 +396,8 @@
         70,
         5697,
         52,
-        1829
+        1829,
+        1032
       ]
     },
     {
@@ -403,8 +411,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-30 07:59:12",
-        "durationSec": 1171,
+        "finishedAt": "2026-10-30 12:46:29",
+        "durationSec": 971,
         "note": ""
       },
       "monitor": {
@@ -418,7 +426,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-10-30 07:59"
+        "lastRunAt": "2026-10-30 12:47"
       },
       "heal": {
         "can": false,
@@ -515,6 +523,13 @@
           "durationSec": 1171,
           "note": "",
           "dur": 1171
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-30 12:46:29",
+          "durationSec": 971,
+          "note": "",
+          "dur": 971
         }
       ],
       "gaps": {
@@ -653,7 +668,8 @@
         825,
         1773,
         541,
-        1171
+        1171,
+        971
       ]
     },
     {
@@ -677,8 +693,8 @@
         "expectHour": 9,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
       },
       "timer": null,
       "heal": {
@@ -2374,8 +2390,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 6 天"
+      "status": "WARN",
+      "detail": "3/4 任务正常 · 1 逾期 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
@@ -2393,7 +2409,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 产物陈旧（超 26h） · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "detail": "2 项目 · 1 产物陈旧（超 26h） · 1 数据滞后（超 2 天），最新产出 2h 前"
     },
     {
       "layer": "渲染层",
@@ -2432,7 +2448,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 27,
+      "ageHours": 29,
       "stale": true,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2474,7 +2490,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0,
+      "ageHours": 2,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-30",
@@ -2656,12 +2672,17 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-30 01:32:28",
-        "ageH": 1
+        "latestAt": "2026-10-30 04:39:12",
+        "ageH": 0
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -2674,7 +2695,7 @@
     },
     {
       "level": "WARN",
-      "text": "产物陈旧：通用运力监控（27h 未更新，阈值 26h）",
+      "text": "产物陈旧：通用运力监控（29h 未更新，阈值 26h）",
       "anchor": "sec-fresh"
     },
     {
@@ -3014,8 +3035,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "af165dd",
-        "at": "2026-10-30T08:25:54+08:00",
+        "hash": "e0706a0",
+        "at": "2026-10-30T10:45:50+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3036,8 +3057,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "ee9a7c3",
-        "at": "2026-10-30T10:45:08+08:00",
+        "hash": "018da22",
+        "at": "2026-10-30T11:12:08+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
@@ -3329,14 +3350,14 @@
     }
   ],
   "health": {
-    "score": 93,
-    "grade": "优",
+    "score": 80,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 25,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "门禁层",
@@ -3364,7 +3385,7 @@
       }
     ],
     "extra": {
-      "tests": 916,
+      "tests": 921,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -3623,13 +3644,13 @@
     },
     {
       "date": "2026-10-30",
-      "at": "2026-10-30 02:45:33",
-      "score": 93,
-      "grade": "优",
+      "at": "2026-10-30 04:50:44",
+      "score": 80,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "部署层",
@@ -3729,7 +3750,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1918.6,
+      "totalKB": 1890.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -3737,7 +3758,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 536.7
+          "kb": 510.9
         },
         {
           "name": "rider-index.json",
@@ -3749,11 +3770,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 95.4
+          "kb": 96.1
         },
         {
           "name": "visits.json",
-          "kb": 48.8
+          "kb": 45.5
         },
         {
           "name": "logger.json",
