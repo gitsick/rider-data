@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-30 22:18:51",
+  "generatedAt": "2026-10-30 22:42:04",
   "runDate": "2026-10-30",
   "tasks": [
     {
@@ -2687,7 +2687,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-30 22:10:56",
+        "latestAt": "2026-10-30 22:22:26",
         "ageH": 0
       }
     ]
@@ -2865,6 +2865,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R426",
+      "date": "2026-10-31",
+      "title": "官方月累计对照表补高峰日均与企客KA快照——twPk 同构对读 + qkka 快照串透传"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R425",
       "date": "2026-10-31",
       "title": "月度页官方月累计对照（分模块偏差下钻）——mtdEval 六模块月累计零消费字段透出"
@@ -2928,12 +2934,6 @@
       "round": "R386",
       "date": "2026-10-29",
       "title": "sep 板企客月度卡补数（ka-brand prev 单源）+ sep 引擎对齐 + 对账锁推广 v1 侧"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R385",
-      "date": "2026-10-29",
-      "title": "全链提速二期——verify 快路径（已同步跳过 fetch）+ fetch 重试收紧"
     }
   ],
   "approvals": [
@@ -3040,8 +3040,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6cd1385",
-        "at": "2026-10-31T06:05:41+08:00",
+        "hash": "c7b4173",
+        "at": "2026-10-31T06:19:43+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3655,7 +3655,7 @@
     },
     {
       "date": "2026-10-30",
-      "at": "2026-10-30 22:18:51",
+      "at": "2026-10-30 22:42:04",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3723,15 +3723,15 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1023.6,
+      "totalKB": 1023.8,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-DkwP3HWN.js",
-          "kb": 124
+          "name": "main-BAfG7cEm.js",
+          "kb": 124.2
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3746,7 +3746,7 @@
           "kb": 30
         },
         {
-          "name": "main-D_dZPWWn.css",
+          "name": "main-NKrM0-hx.css",
           "kb": 29.3
         },
         {
