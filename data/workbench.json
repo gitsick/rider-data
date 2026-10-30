@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-30 22:05:15",
+  "generatedAt": "2026-10-30 22:18:51",
   "runDate": "2026-10-30",
   "tasks": [
     {
@@ -2687,7 +2687,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-30 21:52:18",
+        "latestAt": "2026-10-30 22:10:56",
         "ageH": 0
       }
     ]
@@ -2865,6 +2865,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R425",
+      "date": "2026-10-31",
+      "title": "月度页官方月累计对照（分模块偏差下钻）——mtdEval 六模块月累计零消费字段透出"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R423",
       "date": "2026-10-31",
       "title": "悦跑周明细透出——mtdEval ymWeeks 零消费字段 hover 逐周明细"
@@ -2928,12 +2934,6 @@
       "round": "R385",
       "date": "2026-10-29",
       "title": "全链提速二期——verify 快路径（已同步跳过 fetch）+ fetch 重试收紧"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R384",
-      "date": "2026-10-29",
-      "title": "全链提速一期——legacy 发布链 pull 对齐 R319 口径 + kaohe_pipeline 阶段耗时打点"
     }
   ],
   "approvals": [
@@ -3040,8 +3040,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "3c4583d",
-        "at": "2026-10-31T05:49:21+08:00",
+        "hash": "6cd1385",
+        "at": "2026-10-31T06:05:41+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3655,7 +3655,7 @@
     },
     {
       "date": "2026-10-30",
-      "at": "2026-10-30 22:05:15",
+      "at": "2026-10-30 22:18:51",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3723,15 +3723,15 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1021.8,
+      "totalKB": 1023.6,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-DSnREgRI.js",
-          "kb": 122.2
+          "name": "main-DkwP3HWN.js",
+          "kb": 124
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3746,7 +3746,7 @@
           "kb": 30
         },
         {
-          "name": "main-CEvQEo-w.css",
+          "name": "main-D_dZPWWn.css",
           "kb": 29.3
         },
         {
