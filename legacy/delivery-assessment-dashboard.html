@@ -227,6 +227,16 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 .city-bar-board .bar-score.bar-warn{color:#d93025!important;}
 .city-bar-board .bar-status{font-size:12px;color:var(--mt-text2,#6B7280)!important;cursor:pointer;}
 @media(max-width:700px){.city-bar-board .bar-hint{display:none}.city-bar-board{gap:6px;padding:8px 10px}}
+
+/* ============================================================
+ * [R400] 缺因透出徽标与缺数单元格弱化（不造数：把 BI 断供/权限缺因直接透出到页面）
+ * .supply-badge：加盟达标列断供日徽标（橙底 pill，紧凑不破行高，title 带缺因说明）
+ * .na-cell：'—' 缺数单元格（灰斜体 + cursor:help，title 说明未出数/权限原因）
+ * 取值引用 --c-* tokens，不新增第三处字面量色板
+ * ============================================================ */
+.supply-badge{display:inline-block;margin-left:4px;padding:0 6px;border-radius:var(--radius-pill,999px);background:#fef3e2;color:#b35f00;font-size:9.5px;font-weight:700;line-height:16px;vertical-align:1px;cursor:help;white-space:nowrap;}
+.na-cell{color:var(--c-text3,#9aa3b2)!important;font-style:italic;cursor:help;}
+@media print{.supply-badge{border:1px solid #f5a623;}}
 </style>
 <style id="mt-style">
 /* ====== mt-style-injected ====== */
@@ -2669,7 +2679,7 @@ L.push(cityInfo[c].city + '：推单 ' + (v.twRate !== null && v.twRate !== unde
 + '｜普众活跃 ' + (v.pzAct !== null && v.pzAct !== undefined ? v.pzAct : '—')
 + '｜兜底 ' + (v.twRate !== null && v.twRate !== undefined ? (v.twRate >= 98.8 ? '达标' : '未达标') : '—')
 + '｜工装 ' + (function(){ var e=(typeof DAILY_EXTRA!=='undefined')?((DAILY_EXTRA[ds]||{})[c]||null):null; return (e&&e.gzYm!=null)?(e.gzYm+'/'+e.gzJm+'%'):'—'; })()
-+ '｜加盟达标 ' + (function(){ var e=(typeof DAILY_EXTRA!=='undefined')?((DAILY_EXTRA[ds]||{})[c]||null):null; return (e&&e.jmTotal)?(e.jmDb+'/'+e.jmTotal):'—'; })()
++ '｜加盟达标 ' + (function(){ var e=(typeof DAILY_EXTRA!=='undefined')?((DAILY_EXTRA[ds]||{})[c]||null):null; return (e&&e.jmTotal)?(e.jmDb+'/'+e.jmTotal+((e.jmDb===0)?'（断供·BI归桶异常待回刷）':'')):'—'; })()
 + '｜企客KA ' + (function(){ var e=(typeof DAILY_EXTRA!=='undefined')?((DAILY_EXTRA[ds]||{})[c]||null):null; return (e&&e.qkKAOntime!=null)?(e.qkKAOntime+'%'):'—'; })());
 });
 }
@@ -3366,9 +3376,7 @@ var pzV = (d.pzAct !== null && d.pzAct !== undefined) ? d.pzAct : (ex && ex.pzAc
 var ymStr2 = ymV !== null && ymV !== undefined ? ymV + '%' : '—';
 var ymCqStr2 = ymCqV !== null && ymCqV !== undefined ? ymCqV + '%' : '—';
 var pzStr2 = pzV !== null && pzV !== undefined ? pzV : '—';
-var gzStr = '<td>' + (ex && ex.gzYm != null ? '<span class="' + ((ex.gzYm < 95 || (ex.gzJm != null && ex.gzJm < 95)) ? 'c-red' : '') + '">' + ex.gzYm + '% / ' + ex.gzJm + '%</span>' : '—') + '</td>';
-var jmdStr = '<td>' + (ex && ex.jmTotal ? '<span class="' + (ex.jmDb < ex.jmTotal ? 'c-red' : '') + '">' + ex.jmDb + ' / ' + ex.jmTotal + '（' + Math.round(ex.jmDb / ex.jmTotal * 100) + '%）</span>' : '—') + '</td>';
-var kaStr = '<td>' + (ex && ex.qkKAOntime != null ? '<span class="' + (ex.qkKAOntime < 98 ? 'c-red' : '') + '">' + ex.qkKAOntime + '%（' + ex.qkKAStores + '店）</span>' : '—') + '</td>';
+/* [R400] 原 gzStr/jmdStr/kaStr 三个无引用死变量已删（实际渲染在下方 bodyHtml 内联处） */
 var dbOk = d.twRate !== null && d.twRate !== undefined && d.twRate >= 98.8;
 var dbStr = '<td class="' + (d.twRate === null || d.twRate === undefined ? '' : (dbOk ? 'c-green' : 'c-red')) + '">' + (d.twRate === null || d.twRate === undefined ? '—' : (dbOk ? '✓ 达标' : '✗ 未达标')) + '</td>';
 var twNumStr = (d.twNum !== null && d.twDen !== null) ? d.twNum.toLocaleString() + ' / ' + d.twDen.toLocaleString() : '\u2014';
@@ -3389,9 +3397,9 @@ bodyHtml += '<tr data-city="' + k + '" title="点击将该行城市设为当前�
 '<td class="' + colorFor(d.ymRate,[90,80]) + '">' + ymStr + deltaSpan(d.ymRate, prevData && prevData[k] ? prevData[k].ymRate : null) + '</td>' +
 '<td>' + ymCqStr + '</td>' +
 '<td>' + pzStr + deltaSpan(d.pzAct, prevData && prevData[k] ? prevData[k].pzAct : null) + '</td>' +
-'<td>' + (ex && ex.gzYm != null ? '<span class="' + ((ex.gzYm < 95 || (ex.gzJm != null && ex.gzJm < 95)) ? 'c-red' : '') + '">' + ex.gzYm + '% / ' + ex.gzJm + '%</span>' : '—') + '</td>' +
-'<td>' + (ex && ex.jmTotal ? '<span class="' + (ex.jmDb < ex.jmTotal ? 'c-red' : '') + '">' + ex.jmDb + ' / ' + ex.jmTotal + '（' + Math.round(ex.jmDb / ex.jmTotal * 100) + '%）</span>' : '—') + '</td>' +
-'<td>' + (ex && ex.qkKAOntime != null ? '<span class="' + (ex.qkKAOntime < 98 ? 'c-red' : '') + '">' + ex.qkKAOntime + '%（' + ex.qkKAStores + '店）</span>' : '—') + '</td>' +
+'<td>' + (ex && ex.gzYm != null ? '<span class="' + ((ex.gzYm < 95 || (ex.gzJm != null && ex.gzJm < 95)) ? 'c-red' : '') + '">' + ex.gzYm + '% / ' + ex.gzJm + '%</span>' : '<span class="na-cell" title="官方 BI 未出数">—</span>') + '</td>' +
+'<td>' + (ex && ex.jmTotal ? '<span class="' + (ex.jmDb < ex.jmTotal ? 'c-red' : '') + '">' + ex.jmDb + ' / ' + ex.jmTotal + '（' + Math.round(ex.jmDb / ex.jmTotal * 100) + '%）</span>' + ((ex.jmDb === 0) ? ' <span class="supply-badge" title="加盟达标列 BI 上游归桶异常（达标数被整批计入合格有单），已反馈 BI 核查，修复后自动回刷，非真实 0%">断供</span>' : '') : '<span class="na-cell" title="官方 BI 未出数">—</span>') + '</td>' +
+'<td>' + (ex && ex.qkKAOntime != null ? '<span class="' + (ex.qkKAOntime < 98 ? 'c-red' : '') + '">' + ex.qkKAOntime + '%（' + ex.qkKAStores + '店）</span>' : '<span class="na-cell" title="' + ((k === '诸暨') ? '城市代理维值权限审批中（维值 6176），批后自动补齐' : '官方 BI 未出数') + '">—</span>') + '</td>' +
 dbStr.replace('<td','<td') +
 '<td>' + twNumStr + '</td>' +
 '<td class="score-cell ' + sc + '">' + scoreStr + '</td>' +
