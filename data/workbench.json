@@ -1,7 +1,7 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-29 23:44:33",
-  "runDate": "2026-10-29",
+  "generatedAt": "2026-10-30 00:07:17",
+  "runDate": "2026-10-30",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -229,10 +229,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-09-30",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-01",
             "state": "pre"
           },
@@ -347,10 +343,14 @@
           {
             "date": "2026-10-29",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-30",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 0,
         "passCount": 13
       },
@@ -395,22 +395,22 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-29 13:12:13",
-        "durationSec": null,
+        "finishedAt": "2026-10-30 07:59:12",
+        "durationSec": 1171,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:30",
         "expectHour": 7,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-10-30 07:39"
+        "lastRunAt": "2026-10-30 07:59"
       },
       "heal": {
         "can": false,
@@ -500,14 +500,17 @@
           "durationSec": null,
           "note": "",
           "dur": null
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-30 07:59:12",
+          "durationSec": 1171,
+          "note": "",
+          "dur": 1171
         }
       ],
       "gaps": {
         "days": [
-          {
-            "date": "2026-09-30",
-            "state": "pre"
-          },
           {
             "date": "2026-10-01",
             "state": "pre"
@@ -623,12 +626,16 @@
           {
             "date": "2026-10-29",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-30",
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
         "gapCount": 2,
         "failCount": 0,
-        "passCount": 11
+        "passCount": 12
       },
       "durTrend": [
         2776,
@@ -637,7 +644,8 @@
         717,
         825,
         1773,
-        541
+        541,
+        1171
       ]
     },
     {
@@ -933,10 +941,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-09-30",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-01",
             "state": "pre"
           },
@@ -1051,10 +1055,14 @@
           {
             "date": "2026-10-29",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-30",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 4,
         "failCount": 0,
         "passCount": 10
       },
@@ -1098,35 +1106,28 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-29 16:09:23",
-        "durationSec": 563,
+        "finishedAt": "2026-10-30 07:51:18",
+        "durationSec": 904,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-10-30 07:36"
+        "lastRunAt": "2026-10-30 07:51"
       },
       "heal": {
         "can": true,
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-18 23:11:27",
-          "durationSec": 686,
-          "note": "",
-          "dur": 686
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 00:18:21",
@@ -1469,14 +1470,17 @@
           "durationSec": 563,
           "note": "",
           "dur": 563
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-30 07:51:18",
+          "durationSec": 904,
+          "note": "",
+          "dur": 904
         }
       ],
       "gaps": {
         "days": [
-          {
-            "date": "2026-09-30",
-            "state": "pre"
-          },
           {
             "date": "2026-10-01",
             "state": "pre"
@@ -1547,7 +1551,7 @@
           },
           {
             "date": "2026-10-18",
-            "state": "pass"
+            "state": "pre"
           },
           {
             "date": "2026-10-19",
@@ -1592,15 +1596,18 @@
           {
             "date": "2026-10-29",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-30",
+            "state": "pass"
           }
         ],
-        "firstDate": "2026-10-18",
+        "firstDate": "2026-10-19",
         "gapCount": 0,
         "failCount": 2,
         "passCount": 10
       },
       "durTrend": [
-        686,
         1098,
         414,
         727,
@@ -1645,7 +1652,8 @@
         768,
         5521,
         6667,
-        563
+        563,
+        904
       ]
     },
     {
@@ -1923,10 +1931,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-09-30",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-01",
             "state": "pre"
           },
@@ -2041,10 +2045,14 @@
           {
             "date": "2026-10-29",
             "state": "pass"
+          },
+          {
+            "date": "2026-10-30",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 11,
+        "gapCount": 12,
         "failCount": 0,
         "passCount": 2
       },
@@ -2329,7 +2337,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 5 天"
+      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -2386,7 +2394,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 24,
+      "ageHours": 25,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2395,7 +2403,7 @@
       "dataLagThreshold": 2,
       "outage": {
         "since": "2026-10-27",
-        "dayCount": 3,
+        "dayCount": 4,
         "cause": null
       }
     },
@@ -2404,18 +2412,18 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-29 23:37",
+          "mtime": "2026-10-30 00:07",
           "size": 92834
+        },
+        {
+          "name": "sep.json",
+          "mtime": "2026-10-30 00:07",
+          "size": 86030
         },
         {
           "name": "ka-brand.json",
           "mtime": "2026-10-29 09:01",
           "size": 17890
-        },
-        {
-          "name": "sep.json",
-          "mtime": "2026-10-29 00:13",
-          "size": 86030
         },
         {
           "name": "targets-oct.json",
@@ -2444,7 +2452,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-10-29",
+          "at": "2026-10-30",
           "wire": {
             "months": 2,
             "fail": 0
@@ -2458,7 +2466,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-10-29",
+          "at": "2026-10-30",
           "wire": {
             "months": 2,
             "fail": 0
@@ -2609,8 +2617,8 @@
     "runs": [
       {
         "name": "20261017-efficiency-naming",
-        "files": 15,
-        "latestAt": "2026-10-29 23:36:12",
+        "files": 16,
+        "latestAt": "2026-10-30 00:07:04",
         "ageH": 0
       }
     ]
@@ -2619,7 +2627,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：2 个任务近 30 天共 5 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 2 天 · 通用运力监控每日刷新 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "FAIL",
@@ -2628,7 +2636,7 @@
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 4 天，超 2 天）——疑似源停发第 3 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 4 天，超 2 天）——疑似源停发第 4 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     },
     {
@@ -2788,6 +2796,18 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R396",
+      "date": "2026-10-30",
+      "title": "build.py markers 解析器内嵌引号撕裂缺陷修复"
+    },
+    {
+      "run": "20261017-efficiency-naming",
+      "round": "R395",
+      "date": "2026-10-30",
+      "title": "verify_remote 内部超时与外层 90s 预算对齐"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R394",
       "date": "2026-10-29",
       "title": "快验前置收尾质检——去重 + 预算校准"
@@ -2845,18 +2865,6 @@
       "round": "R380",
       "date": "2026-10-29",
       "title": "11月方案接入先行——体验三子项权重数据驱动 + 换月演练"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R377",
-      "date": "2026-10-29",
-      "title": "偏差告警分级与就绪口径校准——健康月实证带 + 发布值守卫 + 阻断/提示分级"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R376",
-      "date": "2026-10-29",
-      "title": "官方发布就绪状态接入审计链——预检落盘 release_status.json + 审计 [6e] 检查项"
     }
   ],
   "approvals": [
@@ -2963,8 +2971,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "0cc7d29",
-        "at": "2026-10-30T07:42:16+08:00",
+        "hash": "5a813a0",
+        "at": "2026-10-30T07:46:36+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2985,8 +2993,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "203d5e9",
-        "at": "2026-10-30T00:56:41+08:00",
+        "hash": "9af8de4",
+        "at": "2026-10-30T08:05:26+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
@@ -3569,6 +3577,34 @@
           "status": "PASS"
         }
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "at": "2026-10-30 00:07:17",
+      "score": 73,
+      "grade": "中",
+      "layers": [
+        {
+          "layer": "调度层",
+          "status": "PASS"
+        },
+        {
+          "layer": "部署层",
+          "status": "FAIL"
+        },
+        {
+          "layer": "门禁层",
+          "status": "PASS"
+        },
+        {
+          "layer": "项目层",
+          "status": "WARN"
+        },
+        {
+          "layer": "渲染层",
+          "status": "PASS"
+        }
+      ]
     }
   ],
   "outages": [
@@ -3602,9 +3638,9 @@
     {
       "project": "通用运力监控",
       "since": "2026-10-27",
-      "dayCount": 3,
+      "dayCount": 4,
       "lastDataDate": "2026-10-26",
-      "lastSeenAt": "2026-10-29",
+      "lastSeenAt": "2026-10-30",
       "resolvedAt": null,
       "resolvedDataDate": null
     }
@@ -3650,7 +3686,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1917.7,
+      "totalKB": 1917,
       "top": [
         {
           "name": "rider_base.json",
@@ -3670,7 +3706,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 94.4
+          "kb": 93.7
         },
         {
           "name": "visits.json",
