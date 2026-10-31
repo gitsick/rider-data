@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-31 12:24:22",
+  "generatedAt": "2026-10-31 12:44:06",
   "runDate": "2026-10-31",
   "tasks": [
     {
@@ -2458,7 +2458,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 2 数据滞后（超 2 天），最新产出 1h 前"
+      "detail": "2 项目 · 2 数据滞后（超 2 天），最新产出 2h 前"
     },
     {
       "layer": "渲染层",
@@ -2539,7 +2539,7 @@
           "size": 9404
         }
       ],
-      "ageHours": 1,
+      "ageHours": 2,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-09-30",
@@ -2726,7 +2726,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-10-31 12:18:31",
+        "latestAt": "2026-10-31 12:36:28",
         "ageH": 0
       }
     ]
@@ -2768,7 +2768,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 243,
+      "line": 244,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -3084,8 +3084,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6b8fee3",
-        "at": "2026-10-31T20:07:52+08:00",
+        "hash": "b241cc4",
+        "at": "2026-10-31T20:27:04+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3727,7 +3727,7 @@
     },
     {
       "date": "2026-10-31",
-      "at": "2026-10-31 12:24:22",
+      "at": "2026-10-31 12:44:06",
       "score": 93,
       "grade": "优",
       "layers": [
