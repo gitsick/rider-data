@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-31 03:51:06",
+  "generatedAt": "2026-10-31 04:07:56",
   "runDate": "2026-10-31",
   "tasks": [
     {
@@ -717,8 +717,8 @@
         "expectHour": 9,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
       },
       "timer": null,
       "heal": {
@@ -2429,8 +2429,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
+      "status": "WARN",
+      "detail": "3/4 任务正常 · 1 逾期 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -2487,7 +2487,7 @@
           "size": 6502
         }
       ],
-      "ageHours": 7,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-27",
@@ -2711,12 +2711,17 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-10-31 03:30:14",
+        "latestAt": "2026-10-31 03:53:58",
         "ageH": 0
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -3064,8 +3069,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "96b7811",
-        "at": "2026-10-31T11:28:37+08:00",
+        "hash": "7dd00c2",
+        "at": "2026-10-31T11:51:35+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3385,14 +3390,14 @@
     }
   ],
   "health": {
-    "score": 93,
-    "grade": "优",
+    "score": 80,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 25,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "门禁层",
@@ -3707,13 +3712,13 @@
     },
     {
       "date": "2026-10-31",
-      "at": "2026-10-31 03:51:06",
-      "score": 93,
-      "grade": "优",
+      "at": "2026-10-31 04:07:56",
+      "score": 80,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "部署层",
