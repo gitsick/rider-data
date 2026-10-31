@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-31 20:40:16",
+  "generatedAt": "2026-10-31 23:46:37",
   "runDate": "2026-10-31",
   "tasks": [
     {
@@ -28,8 +28,8 @@
         "overdueText": ""
       },
       "timer": {
-        "state": "failed",
-        "lastRunAt": "2026-10-31 08:30"
+        "state": "ok",
+        "lastRunAt": "2026-11-01 07:42"
       },
       "heal": {
         "can": false,
@@ -442,7 +442,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-10-31 08:23"
+        "lastRunAt": "2026-11-01 07:46"
       },
       "heal": {
         "can": false,
@@ -1199,7 +1199,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-10-31 16:15"
+        "lastRunAt": "2026-11-01 07:42"
       },
       "heal": {
         "can": true,
@@ -2452,19 +2452,19 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-10-31 16:06:25）"
+      "detail": "本轮发布前置 10 段全过（2026-11-01 07:46:36）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 6h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 4h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2497,7 +2497,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 12,
+      "ageHours": 15,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2515,12 +2515,12 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-31 14:06",
+          "mtime": "2026-10-31 23:44",
           "size": 97399
         },
         {
           "name": "sep.json",
-          "mtime": "2026-10-31 10:29",
+          "mtime": "2026-10-31 23:44",
           "size": 86035
         },
         {
@@ -2539,7 +2539,7 @@
           "size": 9404
         }
       ],
-      "ageHours": 6,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-31",
@@ -2721,8 +2721,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-10-31 20:19:00",
-        "ageH": 0
+        "latestAt": "2026-10-31 20:47:58",
+        "ageH": 2
       }
     ]
   },
@@ -2758,7 +2758,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 251,
+      "line": 252,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -3074,8 +3074,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "3f617ea",
-        "at": "2026-11-01T00:30:35+08:00",
+        "hash": "91f8e46",
+        "at": "2026-11-01T04:42:55+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3096,28 +3096,28 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "51f84a1",
-        "at": "2026-11-01T03:45:10+08:00",
+        "hash": "83262c8",
+        "at": "2026-11-01T04:45:45+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
   ],
   "gates": {
-    "runAt": "2026-10-31 16:06:25",
+    "runAt": "2026-11-01 07:46:36",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 4.4,
+        "seconds": 5.5,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.6,
         "note": ""
       },
       {
@@ -3129,67 +3129,48 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.7,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 24.4,
-        "note": "npm test pass=967 fail=0"
+        "seconds": 34.1,
+        "note": "npm test pass=989 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.2,
+        "seconds": 10.8,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.1,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 51.1,
+        "seconds": 53.2,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 47.7,
+        "seconds": 46.7,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 7.8,
-        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 163.5,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-29 11:40:16",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 60.5,
-      "fails": []
-    },
     {
       "runAt": "2026-10-29 11:58:55",
       "scope": "complete",
@@ -3391,6 +3372,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 308.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-01 07:46:36",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 152.7,
       "fails": []
     }
   ],
@@ -3717,7 +3705,7 @@
     },
     {
       "date": "2026-10-31",
-      "at": "2026-10-31 20:40:16",
+      "at": "2026-10-31 23:46:37",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3823,7 +3811,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1907.8,
+      "totalKB": 1936.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -3831,7 +3819,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 510.9
+          "kb": 536.7
         },
         {
           "name": "rider-index.json",
@@ -3847,7 +3835,7 @@
         },
         {
           "name": "visits.json",
-          "kb": 46.2
+          "kb": 49.4
         },
         {
           "name": "logger.json",
