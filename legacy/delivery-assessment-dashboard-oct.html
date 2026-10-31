@@ -1304,6 +1304,8 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="card" id="issues-breakdown" style="margin-bottom:16px;border-left:4px solid #ef6c00;"></div>
 <!-- 🎯 未达成指标 · 落地措施与月末预判（数据驱动，JS 自动生成） -->
 <div class="card" id="unmet-actions" style="margin-bottom:16px;border-left:4px solid #1967d2;"></div>
+<!-- 🧪 自算参考值（R479：TY_CALC/HD_CALC/MTD_DAILY_SCORES 补渲染；noData/空槽自动隐藏整卡） -->
+<div class="card" id="ref-calc-card" style="margin-bottom:16px;border-left:4px solid #7b61ff;"></div>
 <!-- SKA_ENH_WEEK_START -->
 <div class="section-label" data-ska-static>🤝 企客SKA · 考核周期维度（自然周达标 · 期1/期2）</div>
 <div class="card" id="ska-week-card" data-ska-static style="margin-bottom:16px;border-left:4px solid #1967d2;"></div>
@@ -2335,6 +2337,7 @@ renderSliceAnalysis();
 renderIssuesBreakdown();
 renderUnmetActions();
 renderQikeScore();
+renderRefCalc(); /* R479：自算参考值卡（TY_CALC/HD_CALC/MTD_DAILY_SCORES 补渲染，noData/空槽自动隐藏） */
 }
 // 图形联动：切换页签时刷新全部图表（图表内部自带空态守卫）
 renderTrendChart();
@@ -4179,6 +4182,10 @@ return (v && v.qkOntime != null) ? Number(v.qkOntime).toFixed(2) + '%' : '待数
 function renderQikeScore() {
 var el = document.getElementById('qike-score');
 if (!el || el.dataset.rendered === '1') return;
+/* R479：QIKE_EVAL 裸引用守卫——9月板（qikeMode=v1）数据层无该块，switchDim 首切报告/方案页签
+   会 ReferenceError 中断后续渲染（boot 主流程 v2 守卫只保 boot 路径，保不住 core 惰性路径）；
+   11月 noData 骨架同理静默跳过 */
+if (typeof QIKE_EVAL === 'undefined' || !QIKE_EVAL || QIKE_EVAL.noData) return;
 var E = QIKE_EVAL, QN = CFG.qikeNarrative, h = ''; /* P1修复：企客计分评估叙事月度差异 → CFG.qikeNarrative（仅 v2 月渲染） */
 h += '<div class="card-title">🧩 企客模块 · 方案计分规则评估 <span class="slice-chip" style="margin-left:8px;">门店级日粒度 · 麦肯必瑞星沃服务包口径 · 数据截至 ' + (typeof currentDate !== 'undefined' && currentDate ? currentDate : '—') + '</span></div>';
 h += '<div class="slice-note" style="margin-bottom:10px;">' + QN.scopeNote + '</div>';
@@ -4217,6 +4224,56 @@ h += '<div class="slice-note" style="margin-top:10px;">' + QN.zhujiNote + '</div
 el.innerHTML = h; el.dataset.rendered = '1';
 }
 /* QIKE_SCORE_END */
+
+/* ===== R479 自算参考值卡：TY_CALC（体验三子项）/ HD_CALC（加盟运力）/ MTD_DAILY_SCORES（城市总分逐日序列）补渲染 =====
+   三块数据由流水线自算入库（html_patch 阶段幂等刷新），此前引擎 0 消费；本卡补齐消费，
+   noData 骨架/空槽位自动隐藏整卡（11月板、MTD_DAILY_SCORES 未补录期不占位）。 */
+function _refHas(d) { return typeof d !== 'undefined' && d && !d.noData; }
+function renderRefCalc() {
+var el = document.getElementById('ref-calc-card');
+if (!el || el.dataset.rendered === '1') return;
+var TY = (typeof TY_CALC !== 'undefined') ? TY_CALC : null;
+var HD = (typeof HD_CALC !== 'undefined') ? HD_CALC : null;
+var DS = (typeof MTD_DAILY_SCORES !== 'undefined') ? MTD_DAILY_SCORES : null;
+var tyOk = _refHas(TY) && TY.mtd && Object.keys(TY.mtd).length > 0;
+var hdOk = _refHas(HD) && HD.mtd && Object.keys(HD.mtd).length > 0;
+var dsOk = _refHas(DS) && Object.keys(DS).length > 0;
+if (!tyOk && !hdOk && !dsOk) { el.style.display = 'none'; return; }
+var h = '';
+h += '<div class="card-title">🧪 自算参考值（流水线自算 · 非官方核算口径）</div>';
+if (tyOk) {
+h += '<div style="font-weight:600;font-size:13px;margin:8px 0 4px;">① 体验三子项 · 月累计自算（与 BI「体验考核含PHF-绝对超时指标」同路径）</div>';
+h += '<table class="data-table" style="font-size:12px;"><thead><tr><th>城市</th><th>复合超时率·全部</th><th>3km内</th><th>3km外</th><th>3km内单占比</th><th>虚假点送达占比</th><th>配送取消占比</th><th>覆盖天数</th></tr></thead><tbody>';
+Object.keys(TY.mtd).forEach(function (c) {
+var v = TY.mtd[c] || {};
+function _p(k, n) { return (v[k] != null) ? Number(v[k]).toFixed(n == null ? 3 : n) + '%' : '—'; }
+h += '<tr><td>' + c + '</td><td><b>' + _p('csAll') + '</b></td><td>' + _p('csIn') + '</td><td>' + _p('csOut') + '</td><td>' + _p('wIn', 1) + '</td><td>' + _p('xj', 3) + '</td><td>' + _p('qx', 3) + '</td><td>' + (v.days != null ? v.days : '—') + '</td></tr>';
+});
+h += '</tbody></table>';
+h += '<div style="font-size:11px;color:#6b7280;margin-top:4px;">口径：复合超时率=(一般超时+严重超时×5)/完成单量；配送取消占比=配送原因取消运单量/推单运单量；美配合计=加盟+悦跑+普通众包（含PHF，不含散单）。官方核算值见体验分官方口径，本表仅供偏差定位参考。</div>';
+}
+if (hdOk) {
+h += '<div style="font-weight:600;font-size:13px;margin:12px 0 4px;">② 加盟运力（HD）· 日均在架自算（不折算）</div>';
+h += '<table class="data-table" style="font-size:12px;"><thead><tr><th>城市</th><th>达标骑手日均</th><th>合格有单日均</th><th>高峰兼职日均</th><th>总骑手日均</th><th>末日达标</th><th>末日总骑手</th><th>覆盖天数</th></tr></thead><tbody>';
+Object.keys(HD.mtd).forEach(function (c) {
+var v = HD.mtd[c] || {};
+function _n(k) { return (v[k] != null) ? v[k] : '—'; }
+h += '<tr><td>' + c + '</td><td><b>' + _n('dbAvg') + '</b></td><td>' + _n('heAvg') + '</td><td>' + _n('gfAvg') + '</td><td>' + _n('totAvg') + '</td><td>' + _n('dbLast') + '</td><td>' + _n('totLast') + '</td><td>' + (v.days != null ? v.days : '—') + '</td></tr>';
+});
+h += '</tbody></table>';
+h += '<div style="font-size:11px;color:#6b7280;margin-top:4px;">来源：加盟骑手明细快照（人）；官方完成率=折算后达标数/目标，折算系数与目标以任务系统下发为准，本表未折算。</div>';
+}
+if (dsOk) {
+h += '<div style="font-weight:600;font-size:13px;margin:12px 0 4px;">③ 城市总分逐日序列（BI 公布值补录后自动点亮）</div>';
+h += '<table class="data-table" style="font-size:12px;"><thead><tr><th>城市</th><th>逐日总分（MM-DD=分）</th></tr></thead><tbody>';
+Object.keys(DS).forEach(function (c) {
+var days = DS[c] || {}, ks = Object.keys(days).sort();
+h += '<tr><td>' + c + '</td><td>' + ks.map(function (k) { return k + '=' + days[k]; }).join(' · ') + '</td></tr>';
+});
+h += '</tbody></table>';
+}
+el.innerHTML = h; el.dataset.rendered = '1';
+}
 
 
 function _pairs(c, key) {
