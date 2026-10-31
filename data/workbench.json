@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-31 00:11:59",
+  "generatedAt": "2026-10-31 01:16:48",
   "runDate": "2026-10-31",
   "tasks": [
     {
@@ -14,22 +14,22 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-30 10:47:12",
-        "durationSec": 1032,
+        "finishedAt": "2026-10-31 08:30:09",
+        "durationSec": 8,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 7,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
-        "state": "ok",
-        "lastRunAt": "2026-10-31 07:30"
+        "state": "failed",
+        "lastRunAt": "2026-10-31 08:30"
       },
       "heal": {
         "can": false,
@@ -238,6 +238,13 @@
           "durationSec": 1032,
           "note": "",
           "dur": 1032
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-31 08:30:09",
+          "durationSec": 8,
+          "note": "",
+          "dur": 8
         }
       ],
       "gaps": {
@@ -360,13 +367,13 @@
           },
           {
             "date": "2026-10-31",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 1,
+        "gapCount": 0,
         "failCount": 0,
-        "passCount": 14
+        "passCount": 15
       },
       "durTrend": [
         4287,
@@ -397,7 +404,8 @@
         5697,
         52,
         1829,
-        1032
+        1032,
+        8
       ]
     },
     {
@@ -411,22 +419,22 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-30 12:46:29",
-        "durationSec": 971,
+        "finishedAt": "2026-10-31 08:23:34",
+        "durationSec": 1414,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:00",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-10-31 08:00"
+        "lastRunAt": "2026-10-31 08:23"
       },
       "heal": {
         "can": false,
@@ -530,6 +538,13 @@
           "durationSec": 971,
           "note": "",
           "dur": 971
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-31 08:23:34",
+          "durationSec": 1414,
+          "note": "",
+          "dur": 1414
         }
       ],
       "gaps": {
@@ -652,13 +667,13 @@
           },
           {
             "date": "2026-10-31",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 2,
         "failCount": 0,
-        "passCount": 12
+        "passCount": 13
       },
       "durTrend": [
         2776,
@@ -669,7 +684,8 @@
         1773,
         541,
         1171,
-        971
+        971,
+        1414
       ]
     },
     {
@@ -2406,7 +2422,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 9 天"
+      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -2424,13 +2440,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 1h 前刷新"
     }
   ],
   "projects": [
@@ -2463,7 +2479,7 @@
           "size": 6502
         }
       ],
-      "ageHours": 4,
+      "ageHours": 5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-27",
@@ -2505,7 +2521,7 @@
           "size": 4973
         }
       ],
-      "ageHours": 0,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-31",
@@ -2688,7 +2704,7 @@
         "name": "20261017-efficiency-naming",
         "files": 15,
         "latestAt": "2026-10-30 22:45:28",
-        "ageH": 1
+        "ageH": 2
       }
     ]
   },
@@ -2696,7 +2712,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：4 个任务近 30 天共 9 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -3040,8 +3056,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "2da49ff",
-        "at": "2026-10-31T06:42:30+08:00",
+        "hash": "abeaccb",
+        "at": "2026-10-31T08:20:27+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3683,7 +3699,7 @@
     },
     {
       "date": "2026-10-31",
-      "at": "2026-10-31 00:11:59",
+      "at": "2026-10-31 01:16:48",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3758,7 +3774,7 @@
           "kb": 575.1
         },
         {
-          "name": "main-Cy0KHJiC.js",
+          "name": "main-BXeDaHRm.js",
           "kb": 126
         },
         {
@@ -3789,7 +3805,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1905.7,
+      "totalKB": 1906.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -3809,7 +3825,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 111.3
+          "kb": 111.9
         },
         {
           "name": "visits.json",
