@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-31 01:16:48",
+  "generatedAt": "2026-10-31 01:34:07",
   "runDate": "2026-10-31",
   "tasks": [
     {
@@ -2446,7 +2446,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2703,8 +2703,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 15,
-        "latestAt": "2026-10-30 22:45:28",
-        "ageH": 2
+        "latestAt": "2026-10-31 01:25:12",
+        "ageH": 0
       }
     ]
   },
@@ -2881,6 +2881,12 @@
   "changes": [
     {
       "run": "20261017-efficiency-naming",
+      "round": "R428",
+      "date": "2026-10-31",
+      "title": "HD 折算系数官方联动——targets meta.hdK 驱动月底评估官方档 + What-if jm 口径纠偏 + 口径注透出"
+    },
+    {
+      "run": "20261017-efficiency-naming",
       "round": "R427",
       "date": "2026-10-31",
       "title": "考核页官方快照对读补全与展示侧渲染补强——gz 工装串 + qkOntime + 面板导出 + 口径 tip 收尾"
@@ -2944,12 +2950,6 @@
       "round": "R393",
       "date": "2026-10-29",
       "title": "kaohe_pipeline verify 慢路径接入双通道快验前置"
-    },
-    {
-      "run": "20261017-efficiency-naming",
-      "round": "R392",
-      "date": "2026-10-29",
-      "title": "live 对账双通道自适应 + R391 CDN 遗留闭环"
     }
   ],
   "approvals": [
@@ -3056,8 +3056,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "abeaccb",
-        "at": "2026-10-31T08:20:27+08:00",
+        "hash": "6373221",
+        "at": "2026-10-31T09:17:19+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3699,7 +3699,7 @@
     },
     {
       "date": "2026-10-31",
-      "at": "2026-10-31 01:16:48",
+      "at": "2026-10-31 01:34:07",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3767,15 +3767,15 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1025.6,
+      "totalKB": 1026.6,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-BXeDaHRm.js",
-          "kb": 126
+          "name": "main-BKzh3d-s.js",
+          "kb": 127
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3790,7 +3790,7 @@
           "kb": 30
         },
         {
-          "name": "main-C-f65_u-.css",
+          "name": "main-DvHLPHex.css",
           "kb": 29.3
         },
         {
@@ -3805,7 +3805,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1906.3,
+      "totalKB": 1906.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3825,7 +3825,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 111.9
+          "kb": 112.2
         },
         {
           "name": "visits.json",
