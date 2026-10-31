@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-31 08:03:33",
+  "generatedAt": "2026-10-31 08:07:39",
   "runDate": "2026-10-31",
   "tasks": [
     {
@@ -707,18 +707,18 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-30 16:06:54",
-        "durationSec": 27.5,
+        "finishedAt": "2026-10-31 16:07:38",
+        "durationSec": 47.6,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 09:00",
         "expectHour": 9,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
-        "overdue": true,
-        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
+        "overdue": false,
+        "overdueText": ""
       },
       "timer": null,
       "heal": {
@@ -998,6 +998,20 @@
           "durationSec": 27.5,
           "note": "",
           "dur": 28
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-31 16:07:38",
+          "durationSec": null,
+          "note": "manual 数据日期 2026-10-26",
+          "dur": null
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-10-31 16:07:38",
+          "durationSec": 47.6,
+          "note": "",
+          "dur": 48
         }
       ],
       "gaps": {
@@ -1120,13 +1134,13 @@
           },
           {
             "date": "2026-10-31",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 4,
+        "gapCount": 3,
         "failCount": 0,
-        "passCount": 11
+        "passCount": 12
       },
       "durTrend": [
         295,
@@ -1155,7 +1169,8 @@
         2,
         3,
         563,
-        28
+        28,
+        48
       ]
     },
     {
@@ -2159,9 +2174,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-10-30 08:31:52",
+    "auditedAt": "2026-10-31 16:07:38",
     "status": "PASS",
-    "pass": 36,
+    "pass": 35,
     "warn": 4,
     "fail": 0,
     "checks": [
@@ -2186,9 +2201,9 @@
         "msg": "无残留锁"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "仓库漂移",
-        "msg": "工作区干净"
+        "msg": "工作区不干净：1 个改动"
       },
       {
         "level": "PASS",
@@ -2198,7 +2213,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: f9ad70b 2026-10-30 16:02:54 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 36b8dee 2026-10-31 16:03:38 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2206,14 +2221,14 @@
         "msg": "dist 根文件齐全（13 个）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "每日产物已 33 小时未刷新（阈值 26h）——每日管线可能断链/失败"
+        "msg": "单文件产物存在（24 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（0 小时前生成）"
+        "msg": "单文件产物存在（11 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2223,7 +2238,7 @@
       {
         "level": "PASS",
         "item": "访问源",
-        "msg": "源新鲜（最新对象 1h 前）且消费同步（滞后 0h 内）"
+        "msg": "源新鲜（最新对象 0h 前）且消费同步（滞后 0h 内）"
       },
       {
         "level": "WARN",
@@ -2233,7 +2248,7 @@
       {
         "level": "WARN",
         "item": "考核取数",
-        "msg": "加盟达标列断供存疑：15 天达标数=0 但总骑手数正常（10-07~10-29）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
+        "msg": "加盟达标列断供存疑：16 天达标数=0 但总骑手数正常（10-07~10-30）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
       },
       {
         "level": "PASS",
@@ -2256,6 +2271,11 @@
         "msg": "[kaohe-daily] 已关联定时器"
       },
       {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
+      },
+      {
         "level": "WARN",
         "item": "调度配置",
         "msg": "[kaohe-daily] 定时器排期 07:00 与预期 8 点不一致"
@@ -2263,7 +2283,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（10/30/2026 08:08:56），耗时折算可用"
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（10/31/2026 08:30:01），耗时折算可用"
       },
       {
         "level": "PASS",
@@ -2278,7 +2298,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（10/30/2026 12:47:05），耗时折算可用"
+        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（10/31/2026 08:23:59），耗时折算可用"
       },
       {
         "level": "PASS",
@@ -2323,16 +2343,6 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器状态时间戳新鲜（10/30/2026 16:00:00），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 今日已运行"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
         "msg": "[deploy-audit] command 入口可用（pwsh）"
       },
       {
@@ -2363,14 +2373,10 @@
       {
         "level": "PASS",
         "item": "断链自愈",
-        "msg": "补跑 capacity-daily（每日 09:00）；  复用最近成功数据日期: 2026-10-26（全部 PASS 留痕中取最新，R355）；[sched:capacity-daily] 通用运力监控每日刷新；  cwd  : F:\\work\\mtcapacity\\pro\\capacity-daily；  cmd  : python daily_pipeline.py 2026-10-26；每日看板管线启动 | 数据日期：2026-10-26；；[步骤1 跳过] 合并产物已新于全部源文件，无新增数据；；[步骤1.5 跳过] 当日名册已存在: 悦跑骑手汇总_2026-10-26.xlsx；；============== 步骤 2/8：数据构建 ==============；订单源: M:\\下载\\下载中心\\10.26汇总.xlsx；  缓存命中: orders_6134c26b5fcf8861df5336f8b455497e.pkl（133733 行）；主源 rows: 133733 <- M:\\下载\\下载中心\\10.26汇总.xlsx；  缓存命中: orders_e4f26b48bd9da4f21a2f1a262103d668.pkl（46279 行）；  分片 订单详情_20261027_092519_7.xls: 新增 46279 行；  缓存命中: orders_16a258d45c8a4bd6c0e4ba55fd65f3cd.pkl（42640 行）；  分片 订单详情_20261027_092457_1.xls: 新增 42640 行；  缓存命中: orders_7b60a6f7fc8e6b7ebef5c5ba6063a72f.pkl（22451 行）；  分片 订单详情_20261027_092531_7.xls: 新增 22451 行；  缓存命中: orders_3918bb8a528fb98ebcb15215f94283d4.pkl（32909 行）；  分片 订单详情_20261027_091324_2.xls: 新增 0 行；  缓存命中: orders_ece804d1b381942a266ac8a6d6c80037.pkl（31126 行）；  分片 订单详情_20261027_091312_5.xls: 新增 0 行；  缓存命中: orders_06a50d717938f8414bdf8aae4666b124.pkl（33837 行）；  分片 订单详情_20261027_085455_5.xls: 新增 0 行；  缓存命中: orders_b8020a67b27e1fd65a77444acf1dc4a8.pkl（35861 行）；  分片 订单详情_20261027_085514_8.xls: 新增 0 行；all rows: 245103 | 取数耗时 0.8 秒；in-day rows: 243911 (dropped 1192 cross-day)；名册源: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\悦跑骑手汇总_2026-10-26.xlsx；roster: 2363 | 名册耗时 1.1 秒；delivered: 229611 cancel: 14300；运力拆分耗时 2.6 秒；cities: ['泰兴', '响水县', '宁国', '诸暨', '安吉', '桐庐县', '浦江', '兰溪', '龙南县', '新余', '龙岗区', '火炬高技术产业开发区', '连平县', '南沙', '信宜市'] regions: ['苏皖', '浙江', '华南']；brand matched: 32642 | 品牌匹配耗时 3.1 秒；  缓存命中: 骑手排班明细数据_56405576_20261027_095656.xlsx（607 行）；  缓存命中: 骑手排班明细数据_63240604_20261027_095236.xlsx（1208 行）；zs sched: 504 keys | 61 sites | 专送排班耗时 3.2 秒；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\data15_2026-10-26_v9.json 1070517；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\data15_2026-10-26_enh.json 467951；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\data15_2026-10-26.json 891815；totals: {'push': 243911, 'del': 229611, 'cancel': 14300, 'zs': 82497, 'roster': 2363, 'roster_active': 2139, 'brand_matched': 32642, 'zb': 41694, 'yp': 105420}；yp by city: {'泰兴': 7413, '响水县': 3271, '宁国': 3470, '诸暨': 18861, '安吉': 8684, '桐庐县': 7853, '浦江': 7123, '兰溪': 3846, '龙南县': 1890, '新余': 8282, '龙岗区': 5103, '火炬高技术产业开发区': 9576, '连平县': 0, '南沙': 15967, '信宜市': 4081}；[步骤2 成功] 数据构建（耗时 4 秒）；；============== 步骤 3/8：看板渲染 ==============；saved F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\capacity_breakdown_dashboard_2026-10-26.html 2523 KB；[步骤3 成功] 看板渲染（耗时 0 秒）；；============== 步骤 4/8：增强管线 ==============；== 增强管线报告：capacity_breakdown_dashboard_2026-10-26.html ==；  [sec0_chips] sec0: 全局胶囊；  [sec1_chips] sec1: 泰兴；sec1: 响水县；sec1: 宁国；sec1: 诸暨；sec1: 安吉；sec1: 桐庐县；sec1: 浦江；sec1: 兰溪；sec1: 龙南县；sec1: 新余；sec1: 龙岗区；sec1: 火炬高技术产业开发区；sec1: 连平县；sec1: 南沙；sec1: 信宜市；  [sec2_chips] 无需改动；  [sec3_charts] sec3: 插入总览双图 @943097；  [sec4_chips] sec4: 泰兴；sec4: 响水县；sec4: 宁国；sec4: 诸暨；sec4: 安吉；sec4: 桐庐县；sec4: 浦江；sec4: 兰溪；sec4: 龙南县；sec4: 新余；sec4: 龙岗区；sec4: 火炬高技术产业开发区；sec4: 连平县；sec4: 南沙；sec4: 信宜市；  [sec5_chips] sec5: 异常 7/9；sec5: 异常 3/4；sec5: 异常 2/2；sec5: 异常 18/18；sec5: 异常 11/11；sec5: 异常 9/9；sec5: 异常 7/7；sec5: 异常 4/4；sec5: 异常 3/3；sec5: 异常 7/7；sec5: 异常 5/5；sec5: 异常 12/12；sec5: 异常 2/3；sec5: 异常 18/19；sec5: 异常 2/3；  [sec6_chips] sec6: 泰兴市众包一站；sec6: 江苏【响水县】众包一站；sec6: 安徽【宁国】众包一站；sec6: 浙江【诸暨】众包-市区；sec6: 浙江【安吉县】众包一站；sec6: 浙江【桐庐】众包一站；sec6: 浦江众包城区站；sec6: 浙江区域【兰溪】众包一站；sec6: 江西【龙南市】众包一站；sec6: 江西【新余】众包一站；sec6: 粤海【大鹏新区】众包一站；sec6: 粤海【火炬】众包站；sec6: 粤海【连平县】元善站；sec6: 粤海【南沙】众包一站新；sec6: 粤海【信宜市】众包一站；  [sec7_charts] sec7: 插入 15 城 KA 推单对比图；sec7: 泰兴；sec7: 响水县；sec7: 宁国；sec7: 诸暨；sec7: 安吉；sec7: 桐庐县；sec7: 浦江；sec7: 兰溪；sec7: 龙南县；sec7: 新余；sec7: 龙岗区；sec7: 火炬高技术产业开发区；sec7: 连平县；sec7: 南沙；sec7: 信宜市；  [sec8_chips] sec8: 数据自检胶囊；  [css_beauty] CSS v14css 全局美化 注入；  [css_perf] CSS v14perf 渲染性能优化 注入；  [css_polish] CSS v15css 页面精修 注入；  [ui_cascade] 注入区域→城市级联下钻（城市行+面包屑+图表点击联动+跨区域归属校验）；  [ui_copy] 更新 4 处联动文案（下钻提示/图表可点/双向联动说明）；  [sec1_cityattr] 30 类城市块补 data-city（联动顶部城市下钻）；  [sec0_anfull] 未找到异常提示框，跳过；  [city_sort] sec0 城市表行 重排 15 项（区域序+单量降序）；cityblock 重排 15 项（区域序+单量降序）；cityblock 重排 15 项（区域序+单量降序）；cityblock 重排 15 项（区域序+单量降序）；城市级 details 重排 15 项（区域序+单量降序）；城市级 details 重排 15 项（区域序+单量降序）；城市级 details 重排 15 项（区域序+单量降序）；sec3 筛选按钮 重排 15 项（区域序+单量降序）；sec3 下拉选项 重排 15 项（区域序+单量降序）；  [table_hourfix] 修复 360 行小时标签缺 td（小时列恢复对齐，消除刻度粘连）；  [data_city_ext] 城市级 details 补 data-city 45 处（⑤⑥⑦章选城市联动）；sec3 高峰合计表行补属性 10 处；sec3 合计图标记 data-agg（选区域/城市时隐藏）；  [ui_btnsync] 筛选按钮联动：胶囊/下拉随区域过滤 + 区域按钮提示；更新 5 处文案；  [cleanup_enhance] 清理无效/冗余 CSS 3 处；3 张核心图表标题追加指标摘要（悬停看明细）；  [extend_enhance] 1 张图表标题补齐指标摘要；筛选状态记忆：刷新/重开自动恢复上次区域·城市视角；  [perf_smooth] 章节级渲染跳过 + 局部布局隔离（切换卡顿优化）；  [perf_fastpath] 区域切换分帧调度（每帧≤40 元素+no-op 跳写，消除 ~1.8s 渲染长任务）；  [nav_smooth] 锚点跳转平滑滚动（消除跳转 ~0.8s 布局冻结）；  div 平衡: 0 -> 0；  体积: 2584054 -> 2647222 字节；== 已写盘 ==；[步骤4 成功] 增强管线（耗时 2 秒）；；============== 步骤 5/8：增强幂等复检 ==============；== 增强管线报告：capacity_breakdown_dashboard_2026-10-26.html ==；  [sec0_chips] sec0: 胶囊已存在，跳过；  [sec1_chips] 无需改动；  [sec2_chips] 无需改动；  [sec3_charts] sec3 双图已存在，跳过；  [sec4_chips] 无需改动；  [sec5_chips] 无需改动；  [sec6_chips] 无需改动；  [sec7_charts] 无需改动；  [sec8_chips] sec8: 自检胶囊已存在，跳过；  [css_beauty] CSS v14css 全局美化 已存在，跳过；  [css_perf] CSS v14perf 渲染性能优化 已存在，跳过；  [css_polish] CSS v15css 页面精修 已存在，跳过；  [ui_cascade] v16cascade 级联下钻已存在，跳过；  [ui_copy] 文案已是最新，无需改动；  [sec1_cityattr] 城市块均已带 data-city（或无匹配），无需改动；  [sec0_anfull] 未找到异常提示框，跳过；  [city_sort] 各处城市顺序均已符合「区域序+单量降序」，无需改动；  [table_hourfix] 分小时表行小时列均已包裹 td，无需修复；  [data_city_ext] 区域/城市筛选已全章节覆盖，无需改动；  [ui_btnsync] v20btn 按钮联动已存在，跳过；  [cleanup_enhance] v21 清理与图表指标摘要已存在，跳过；  [extend_enhance] v22 摘要补齐与筛选记忆已存在，跳过；  [perf_smooth] v23perf 渲染优化已存在，跳过；  [perf_fastpath] v23fast 分帧调度已存在，跳过；  [nav_smooth] v23warm 预热布局已存在，跳过；  div 平衡: 0 -> 0；  体积: 2647222 -> 2647222 字节；== 无改动（幂等）==；[步骤5 成功] 增强幂等复检（耗时 0 秒）；；============== 步骤 6/8：每日三表 ==============；== 每日 Excel 交付物生成 | 数据日期 2026-10-26 ==；订单源: M:\\下载\\日监控\\订单详情\\订单详情.xls；主源 rows: 0 <- M:\\下载\\日监控\\订单详情\\订单详情.xls；  缓存命中: orders_e4f26b48bd9da4f21a2f1a262103d668.pkl（46279 行）；  分片 订单详情_20261027_092519_7.xls: 新增 46279 行；  缓存命中: orders_16a258d45c8a4bd6c0e4ba55fd65f3cd.pkl（42640 行）；  分片 订单详情_20261027_092457_1.xls: 新增 42640 行；  缓存命中: orders_7b60a6f7fc8e6b7ebef5c5ba6063a72f.pkl（22451 行）；  分片 订单详情_20261027_092531_7.xls: 新增 22451 行；  缓存命中: orders_3918bb8a528fb98ebcb15215f94283d4.pkl（32909 行）；  分片 订单详情_20261027_091324_2.xls: 新增 32909 行；  缓存命中: orders_ece804d1b381942a266ac8a6d6c80037.pkl（31126 行）；  分片 订单详情_20261027_091312_5.xls: 新增 31126 行；  缓存命中: orders_06a50d717938f8414bdf8aae4666b124.pkl（33837 行）；  分片 订单详情_20261027_085455_5.xls: 新增 33837 行；  缓存命中: orders_b8020a67b27e1fd65a77444acf1dc4a8.pkl（35861 行）；  分片 订单详情_20261027_085514_8.xls: 新增 35861 行；已送达订单: 229611（专送 82497 / 众包 41694 / 悦跑 105420）| 名册: 2363 人 | 管理组覆盖: 4242 人；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\时段运力拆解_2026-10-26.xlsx 199532；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\悦跑排班差异_站点跟进清单_2026-10-26.xlsx 21084；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\订单运力分析_2026-10-26.xlsx 22475；[步骤6 成功] 每日三表（耗时 15 秒）；；============== 步骤 7/8：数据新鲜度检核 ==============；今天: 2026-10-30 | 检核数据日期: 2026-10-26 | 指定日期模式；PASS 看板文件存在且为 2026-10-26 版；PASS 最新版链接 capacity_monitor_latest.html 已刷新为 2026-10-26 数据；PASS 页面无其他日期串入；[口径] 检核日期 2026-10-26 非昨日（按最近可得日期重跑模式）；订单源: M:\\下载\\下载中心\\10.26汇总.xlsx；最新订单源: M:\\下载\\下载中心\\10.26汇总.xlsx | 修改时间: 10-27 11:11；  缓存命中: orders_6134c26b5fcf8861df5336f8b455497e.pkl（133733 行）；主源 rows: 133733 <- M:\\下载\\下载中心\\10.26汇总.xlsx；  缓存命中: orders_e4f26b48bd9da4f21a2f1a262103d668.pkl（46279 行）；  分片 订单详情_20261027_092519_7.xls: 新增 46279 行；  缓存命中: orders_16a258d45c8a4bd6c0e4ba55fd65f3cd.pkl（42640 行）；  分片 订单详情_20261027_092457_1.xls: 新增 42640 行；  缓存命中: orders_7b60a6f7fc8e6b7ebef5c5ba6063a72f.pkl（22451 行）；  分片 订单详情_20261027_092531_7.xls: 新增 22451 行；  缓存命中: orders_3918bb8a528fb98ebcb15215f94283d4.pkl（32909 行）；  分片 订单详情_20261027_091324_2.xls: 新增 0 行；  缓存命中: orders_ece804d1b381942a266ac8a6d6c80037.pkl（31126 行）；  分片 订单详情_20261027_091312_5.xls: 新增 0 行；  缓存命中: orders_06a50d717938f8414bdf8aae4666b124.pkl（33837 行）；  分片 订单详情_20261027_085455_5.xls: 新增 0 行；  缓存命中: orders_b8020a67b27e1fd65a77444acf1dc4a8.pkl（35861 行）；  分片 订单详情_20261027_085514_8.xls: 新增 0 行；PASS 看板推单 243,911 = 最新源重算 243,911；PASS 看板送达 229,611 = 最新源重算 229,611；PASS 看板取消 14,300 = 最新源重算 14,300；PASS 页面 KPI 上屏一致（推单 243,911）；PASS 页面 KPI 上屏一致（送达 229,611）；PASS 页面 KPI 上屏一致（取消 14,300）；PASS 名册源存在: 悦跑骑手汇总_2026-10-26.xlsx；PASS 专送排班源为最新 (骑手排班明细数据_63240604_20261027_095236.xlsx)；PASS 看板专送排班 10494 人次 / 12 站；PASS 恒等式 推单=送达+取消（243,911）；PASS 恒等式 送达=专送+众包+悦跑（229,611=82,497+41,694+105,420）；PASS 页面 KPI 上屏一致（悦跑 105,420）；PASS 页面 KPI 上屏一致（专送 82,497）；PASS 页面 KPI 上屏一致（众包 41,694）；PASS 悦跑单量城市均有名册覆盖；  候选源 订单详情_合并_2026-10-26.xlsx (mtime 10-29 07:04): 窗口内 243911 行, 送达 229611 [全区域] → 数据一致；PASS 更新版本订单源均已核对（1 个，数值一致）；PASS 每日三表 时段运力拆解 存在且含 说明 页（2785 行）；PASS 每日三表 悦跑排班差异 存在且含 站点跟进清单 页（295 行）；PASS 每日三表 订单运力分析 存在且含 小时总览 页（91 行）；；RESULT: ALL PASS；[步骤7 成功] 数据新鲜度检核（耗时 2 秒）；；============== 步骤 8/8：线上发布（检核后放行） ==============；[发布] pull 同步完成（第 1 轮）；[发布] 内容无变化，跳过提交；[export-workbench] workbench.json tasks=5 audit=PASS gates=PASS todos=20 changes=12 approvals=4(待签 0) channels=3 updated=2026-10-30 08:06:53；[sched:capacity-daily] 已登记 PASS（manual 数据日期 2026-10-26）；[步骤8 成功] 线上发布（耗时 2 秒）；[步骤8b 工作台数据聚合] 完成（耗时 0.9 秒）；；[清理] 已删除 27 个过期解析缓存；；==============================================；[管线完成] 2026-10-26 看板已就绪（总耗时 26 秒）；产物：F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\capacity_breakdown_dashboard_2026-10-26.html；[sched留痕] PASS（rc=0，调度台账同步）；[sched:capacity-daily] PASS（27.5s，日志: F:\\work\\mtcapacity\\sched\\logs\\capacity-daily\\2026-10-30_160626.log）"
+        "msg": "补跑 capacity-daily（每日 09:00）；  复用最近成功数据日期: 2026-10-26（全部 PASS 留痕中取最新，R355）；[sched:capacity-daily] 通用运力监控每日刷新；  cwd  : F:\\work\\mtcapacity\\pro\\capacity-daily；  cmd  : python daily_pipeline.py 2026-10-26；每日看板管线启动 | 数据日期：2026-10-26；；[步骤1 跳过] 合并产物已新于全部源文件，无新增数据；；[步骤1.5 跳过] 当日名册已存在: 悦跑骑手汇总_2026-10-26.xlsx；；============== 步骤 2/8：数据构建 ==============；订单源: M:\\下载\\下载中心\\10.26汇总.xlsx；  缓存命中: orders_6134c26b5fcf8861df5336f8b455497e.pkl（133733 行）；主源 rows: 133733 <- M:\\下载\\下载中心\\10.26汇总.xlsx；  缓存命中: orders_e4f26b48bd9da4f21a2f1a262103d668.pkl（46279 行）；  分片 订单详情_20261027_092519_7.xls: 新增 46279 行；  缓存命中: orders_16a258d45c8a4bd6c0e4ba55fd65f3cd.pkl（42640 行）；  分片 订单详情_20261027_092457_1.xls: 新增 42640 行；  缓存命中: orders_7b60a6f7fc8e6b7ebef5c5ba6063a72f.pkl（22451 行）；  分片 订单详情_20261027_092531_7.xls: 新增 22451 行；  缓存命中: orders_3918bb8a528fb98ebcb15215f94283d4.pkl（32909 行）；  分片 订单详情_20261027_091324_2.xls: 新增 0 行；  缓存命中: orders_ece804d1b381942a266ac8a6d6c80037.pkl（31126 行）；  分片 订单详情_20261027_091312_5.xls: 新增 0 行；  缓存命中: orders_06a50d717938f8414bdf8aae4666b124.pkl（33837 行）；  分片 订单详情_20261027_085455_5.xls: 新增 0 行；  缓存命中: orders_b8020a67b27e1fd65a77444acf1dc4a8.pkl（35861 行）；  分片 订单详情_20261027_085514_8.xls: 新增 0 行；all rows: 245103 | 取数耗时 0.8 秒；in-day rows: 243911 (dropped 1192 cross-day)；名册源: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\悦跑骑手汇总_2026-10-26.xlsx；roster: 2363 | 名册耗时 1.2 秒；delivered: 229611 cancel: 14300；运力拆分耗时 2.4 秒；cities: ['泰兴', '响水县', '宁国', '诸暨', '安吉', '桐庐县', '浦江', '兰溪', '龙南县', '新余', '龙岗区', '火炬高技术产业开发区', '连平县', '南沙', '信宜市'] regions: ['苏皖', '浙江', '华南']；brand matched: 32642 | 品牌匹配耗时 2.8 秒；  缓存命中: 骑手排班明细数据_56405576_20261027_095656.xlsx（607 行）；  缓存命中: 骑手排班明细数据_63240604_20261027_095236.xlsx（1208 行）；zs sched: 504 keys | 61 sites | 专送排班耗时 2.8 秒；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\data15_2026-10-26_v9.json 1070517；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\data15_2026-10-26_enh.json 467951；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\data15_2026-10-26.json 891815；totals: {'push': 243911, 'del': 229611, 'cancel': 14300, 'zs': 82497, 'roster': 2363, 'roster_active': 2139, 'brand_matched': 32642, 'zb': 41694, 'yp': 105420}；yp by city: {'泰兴': 7413, '响水县': 3271, '宁国': 3470, '诸暨': 18861, '安吉': 8684, '桐庐县': 7853, '浦江': 7123, '兰溪': 3846, '龙南县': 1890, '新余': 8282, '龙岗区': 5103, '火炬高技术产业开发区': 9576, '连平县': 0, '南沙': 15967, '信宜市': 4081}；[步骤2 成功] 数据构建（耗时 4 秒）；；============== 步骤 3/8：看板渲染 ==============；saved F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\capacity_breakdown_dashboard_2026-10-26.html 2523 KB；[步骤3 成功] 看板渲染（耗时 0 秒）；；============== 步骤 4/8：增强管线 ==============；== 增强管线报告：capacity_breakdown_dashboard_2026-10-26.html ==；  [sec0_chips] sec0: 全局胶囊；  [sec1_chips] sec1: 泰兴；sec1: 响水县；sec1: 宁国；sec1: 诸暨；sec1: 安吉；sec1: 桐庐县；sec1: 浦江；sec1: 兰溪；sec1: 龙南县；sec1: 新余；sec1: 龙岗区；sec1: 火炬高技术产业开发区；sec1: 连平县；sec1: 南沙；sec1: 信宜市；  [sec2_chips] 无需改动；  [sec3_charts] sec3: 插入总览双图 @943097；  [sec4_chips] sec4: 泰兴；sec4: 响水县；sec4: 宁国；sec4: 诸暨；sec4: 安吉；sec4: 桐庐县；sec4: 浦江；sec4: 兰溪；sec4: 龙南县；sec4: 新余；sec4: 龙岗区；sec4: 火炬高技术产业开发区；sec4: 连平县；sec4: 南沙；sec4: 信宜市；  [sec5_chips] sec5: 异常 7/9；sec5: 异常 3/4；sec5: 异常 2/2；sec5: 异常 18/18；sec5: 异常 11/11；sec5: 异常 9/9；sec5: 异常 7/7；sec5: 异常 4/4；sec5: 异常 3/3；sec5: 异常 7/7；sec5: 异常 5/5；sec5: 异常 12/12；sec5: 异常 2/3；sec5: 异常 18/19；sec5: 异常 2/3；  [sec6_chips] sec6: 泰兴市众包一站；sec6: 江苏【响水县】众包一站；sec6: 安徽【宁国】众包一站；sec6: 浙江【诸暨】众包-市区；sec6: 浙江【安吉县】众包一站；sec6: 浙江【桐庐】众包一站；sec6: 浦江众包城区站；sec6: 浙江区域【兰溪】众包一站；sec6: 江西【龙南市】众包一站；sec6: 江西【新余】众包一站；sec6: 粤海【大鹏新区】众包一站；sec6: 粤海【火炬】众包站；sec6: 粤海【连平县】元善站；sec6: 粤海【南沙】众包一站新；sec6: 粤海【信宜市】众包一站；  [sec7_charts] sec7: 插入 15 城 KA 推单对比图；sec7: 泰兴；sec7: 响水县；sec7: 宁国；sec7: 诸暨；sec7: 安吉；sec7: 桐庐县；sec7: 浦江；sec7: 兰溪；sec7: 龙南县；sec7: 新余；sec7: 龙岗区；sec7: 火炬高技术产业开发区；sec7: 连平县；sec7: 南沙；sec7: 信宜市；  [sec8_chips] sec8: 数据自检胶囊；  [css_beauty] CSS v14css 全局美化 注入；  [css_perf] CSS v14perf 渲染性能优化 注入；  [css_polish] CSS v15css 页面精修 注入；  [ui_cascade] 注入区域→城市级联下钻（城市行+面包屑+图表点击联动+跨区域归属校验）；  [ui_copy] 更新 4 处联动文案（下钻提示/图表可点/双向联动说明）；  [sec1_cityattr] 30 类城市块补 data-city（联动顶部城市下钻）；  [sec0_anfull] 未找到异常提示框，跳过；  [city_sort] sec0 城市表行 重排 15 项（区域序+单量降序）；cityblock 重排 15 项（区域序+单量降序）；cityblock 重排 15 项（区域序+单量降序）；cityblock 重排 15 项（区域序+单量降序）；城市级 details 重排 15 项（区域序+单量降序）；城市级 details 重排 15 项（区域序+单量降序）；城市级 details 重排 15 项（区域序+单量降序）；sec3 筛选按钮 重排 15 项（区域序+单量降序）；sec3 下拉选项 重排 15 项（区域序+单量降序）；  [table_hourfix] 修复 360 行小时标签缺 td（小时列恢复对齐，消除刻度粘连）；  [data_city_ext] 城市级 details 补 data-city 45 处（⑤⑥⑦章选城市联动）；sec3 高峰合计表行补属性 10 处；sec3 合计图标记 data-agg（选区域/城市时隐藏）；  [ui_btnsync] 筛选按钮联动：胶囊/下拉随区域过滤 + 区域按钮提示；更新 5 处文案；  [cleanup_enhance] 清理无效/冗余 CSS 3 处；3 张核心图表标题追加指标摘要（悬停看明细）；  [extend_enhance] 1 张图表标题补齐指标摘要；筛选状态记忆：刷新/重开自动恢复上次区域·城市视角；  [perf_smooth] 章节级渲染跳过 + 局部布局隔离（切换卡顿优化）；  [perf_fastpath] 区域切换分帧调度（每帧≤40 元素+no-op 跳写，消除 ~1.8s 渲染长任务）；  [nav_smooth] 锚点跳转平滑滚动（消除跳转 ~0.8s 布局冻结）；  div 平衡: 0 -> 0；  体积: 2584054 -> 2647222 字节；== 已写盘 ==；[步骤4 成功] 增强管线（耗时 2 秒）；；============== 步骤 5/8：增强幂等复检 ==============；== 增强管线报告：capacity_breakdown_dashboard_2026-10-26.html ==；  [sec0_chips] sec0: 胶囊已存在，跳过；  [sec1_chips] 无需改动；  [sec2_chips] 无需改动；  [sec3_charts] sec3 双图已存在，跳过；  [sec4_chips] 无需改动；  [sec5_chips] 无需改动；  [sec6_chips] 无需改动；  [sec7_charts] 无需改动；  [sec8_chips] sec8: 自检胶囊已存在，跳过；  [css_beauty] CSS v14css 全局美化 已存在，跳过；  [css_perf] CSS v14perf 渲染性能优化 已存在，跳过；  [css_polish] CSS v15css 页面精修 已存在，跳过；  [ui_cascade] v16cascade 级联下钻已存在，跳过；  [ui_copy] 文案已是最新，无需改动；  [sec1_cityattr] 城市块均已带 data-city（或无匹配），无需改动；  [sec0_anfull] 未找到异常提示框，跳过；  [city_sort] 各处城市顺序均已符合「区域序+单量降序」，无需改动；  [table_hourfix] 分小时表行小时列均已包裹 td，无需修复；  [data_city_ext] 区域/城市筛选已全章节覆盖，无需改动；  [ui_btnsync] v20btn 按钮联动已存在，跳过；  [cleanup_enhance] v21 清理与图表指标摘要已存在，跳过；  [extend_enhance] v22 摘要补齐与筛选记忆已存在，跳过；  [perf_smooth] v23perf 渲染优化已存在，跳过；  [perf_fastpath] v23fast 分帧调度已存在，跳过；  [nav_smooth] v23warm 预热布局已存在，跳过；  div 平衡: 0 -> 0；  体积: 2647222 -> 2647222 字节；== 无改动（幂等）==；[步骤5 成功] 增强幂等复检（耗时 0 秒）；；============== 步骤 6/8：每日三表 ==============；== 每日 Excel 交付物生成 | 数据日期 2026-10-26 ==；订单源: M:\\下载\\下载中心\\10.26汇总.xlsx；  缓存命中: orders_6134c26b5fcf8861df5336f8b455497e.pkl（133733 行）；主源 rows: 133733 <- M:\\下载\\下载中心\\10.26汇总.xlsx；  缓存命中: orders_e4f26b48bd9da4f21a2f1a262103d668.pkl（46279 行）；  分片 订单详情_20261027_092519_7.xls: 新增 46279 行；  缓存命中: orders_16a258d45c8a4bd6c0e4ba55fd65f3cd.pkl（42640 行）；  分片 订单详情_20261027_092457_1.xls: 新增 42640 行；  缓存命中: orders_7b60a6f7fc8e6b7ebef5c5ba6063a72f.pkl（22451 行）；  分片 订单详情_20261027_092531_7.xls: 新增 22451 行；  缓存命中: orders_3918bb8a528fb98ebcb15215f94283d4.pkl（32909 行）；  分片 订单详情_20261027_091324_2.xls: 新增 0 行；  缓存命中: orders_ece804d1b381942a266ac8a6d6c80037.pkl（31126 行）；  分片 订单详情_20261027_091312_5.xls: 新增 0 行；  缓存命中: orders_06a50d717938f8414bdf8aae4666b124.pkl（33837 行）；  分片 订单详情_20261027_085455_5.xls: 新增 0 行；  缓存命中: orders_b8020a67b27e1fd65a77444acf1dc4a8.pkl（35861 行）；  分片 订单详情_20261027_085514_8.xls: 新增 0 行；已送达订单: 229611（专送 82497 / 众包 41694 / 悦跑 105420）| 名册: 2363 人 | 管理组覆盖: 4242 人；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\时段运力拆解_2026-10-26.xlsx 288660；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\悦跑排班差异_站点跟进清单_2026-10-26.xlsx 21083；saved: F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\订单运力分析_2026-10-26.xlsx 22466；[步骤6 成功] 每日三表（耗时 17 秒）；；============== 步骤 7/8：数据新鲜度检核 ==============；今天: 2026-10-31 | 检核数据日期: 2026-10-26 | 指定日期模式；PASS 看板文件存在且为 2026-10-26 版；PASS 最新版链接 capacity_monitor_latest.html 已刷新为 2026-10-26 数据；PASS 页面无其他日期串入；[口径] 检核日期 2026-10-26 非昨日（按最近可得日期重跑模式）；订单源: M:\\下载\\下载中心\\10.26汇总.xlsx；最新订单源: M:\\下载\\下载中心\\10.26汇总.xlsx | 修改时间: 10-27 11:11；  缓存命中: orders_6134c26b5fcf8861df5336f8b455497e.pkl（133733 行）；主源 rows: 133733 <- M:\\下载\\下载中心\\10.26汇总.xlsx；  缓存命中: orders_e4f26b48bd9da4f21a2f1a262103d668.pkl（46279 行）；  分片 订单详情_20261027_092519_7.xls: 新增 46279 行；  缓存命中: orders_16a258d45c8a4bd6c0e4ba55fd65f3cd.pkl（42640 行）；  分片 订单详情_20261027_092457_1.xls: 新增 42640 行；  缓存命中: orders_7b60a6f7fc8e6b7ebef5c5ba6063a72f.pkl（22451 行）；  分片 订单详情_20261027_092531_7.xls: 新增 22451 行；  缓存命中: orders_3918bb8a528fb98ebcb15215f94283d4.pkl（32909 行）；  分片 订单详情_20261027_091324_2.xls: 新增 0 行；  缓存命中: orders_ece804d1b381942a266ac8a6d6c80037.pkl（31126 行）；  分片 订单详情_20261027_091312_5.xls: 新增 0 行；  缓存命中: orders_06a50d717938f8414bdf8aae4666b124.pkl（33837 行）；  分片 订单详情_20261027_085455_5.xls: 新增 0 行；  缓存命中: orders_b8020a67b27e1fd65a77444acf1dc4a8.pkl（35861 行）；  分片 订单详情_20261027_085514_8.xls: 新增 0 行；PASS 看板推单 243,911 = 最新源重算 243,911；PASS 看板送达 229,611 = 最新源重算 229,611；PASS 看板取消 14,300 = 最新源重算 14,300；PASS 页面 KPI 上屏一致（推单 243,911）；PASS 页面 KPI 上屏一致（送达 229,611）；PASS 页面 KPI 上屏一致（取消 14,300）；PASS 名册源存在: 悦跑骑手汇总_2026-10-26.xlsx；PASS 专送排班源为最新 (骑手排班明细数据_63240604_20261027_095236.xlsx)；PASS 看板专送排班 10494 人次 / 12 站；PASS 恒等式 推单=送达+取消（243,911）；PASS 恒等式 送达=专送+众包+悦跑（229,611=82,497+41,694+105,420）；PASS 页面 KPI 上屏一致（悦跑 105,420）；PASS 页面 KPI 上屏一致（专送 82,497）；PASS 页面 KPI 上屏一致（众包 41,694）；PASS 悦跑单量城市均有名册覆盖；  候选源 订单详情_合并_2026-10-26.xlsx (mtime 10-29 07:04): 窗口内 243911 行, 送达 229611 [全区域] → 数据一致；PASS 更新版本订单源均已核对（1 个，数值一致）；PASS 每日三表 时段运力拆解 存在且含 说明 页（2785 行）；PASS 每日三表 悦跑排班差异 存在且含 站点跟进清单 页（295 行）；PASS 每日三表 订单运力分析 存在且含 小时总览 页（91 行）；；RESULT: ALL PASS；[步骤7 成功] 数据新鲜度检核（耗时 2 秒）；；============== 步骤 8/8：线上发布（检核后放行） ==============；[发布] pull 第 1 轮失败，3s 后重试；[发布] pull 第 2 轮失败，6s 后重试；[发布] pull 第 3 轮失败，12s 后重试；[发布] pull 第 4 轮失败，15s 后重试；[发布] pull 均失败（网络波动），继续本地发布，推送阶段自动重试；[发布] 内容无变化，跳过提交；[export-workbench] workbench.json tasks=5 audit=PASS gates=PASS todos=20 changes=12 approvals=4(待签 0) channels=3 updated=2026-10-31 08:07:37；[sched:capacity-daily] 已登记 PASS（manual 数据日期 2026-10-26）；[步骤8 成功] 线上发布（耗时 21 秒）；[步骤8b 工作台数据聚合] 完成（耗时 0.4 秒）；；[清理] 已删除 2 个过期解析缓存；；==============================================；[管线完成] 2026-10-26 看板已就绪（总耗时 46 秒）；产物：F:\\work\\mtcapacity\\pro\\capacity-daily\\output\\capacity_breakdown_dashboard_2026-10-26.html；[sched留痕] PASS（rc=0，调度台账同步）；[sched:capacity-daily] PASS（47.6s，日志: F:\\work\\mtcapacity\\sched\\logs\\capacity-daily\\2026-10-31_160650.log）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-28 19:19:44",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-10-28 19:49:30",
         "status": "PASS"
@@ -2422,6 +2428,10 @@
       {
         "auditedAt": "2026-10-30 08:31:52",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-10-31 16:07:38",
+        "status": "PASS"
       }
     ]
   },
@@ -2429,20 +2439,20 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "WARN",
-      "detail": "3/4 任务正常 · 1 逾期 · 近 30 天触发断档 7 天"
+      "status": "PASS",
+      "detail": "4/4 任务正常 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-10-30 08:31:52）"
+      "detail": "审计 PASS（2026-10-31 16:07:38）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-10-31 16:03:33）"
+      "detail": "上轮全链 12 段全过（2026-10-31 16:06:25）"
     },
     {
       "layer": "项目层",
@@ -2462,36 +2472,36 @@
       "name": "通用运力监控",
       "recent": [
         {
-          "name": "data15_2026-10-27.json",
-          "mtime": "2026-10-30 19:57",
-          "size": 505
+          "name": "订单运力分析_2026-10-26.xlsx",
+          "mtime": "2026-10-31 08:07",
+          "size": 22466
         },
         {
-          "name": "data15_2026-10-27_enh.json",
-          "mtime": "2026-10-30 19:57",
-          "size": 380
+          "name": "悦跑排班差异_站点跟进清单_2026-10-26.xlsx",
+          "mtime": "2026-10-31 08:07",
+          "size": 21083
         },
         {
-          "name": "data15_2026-10-27_v9.json",
-          "mtime": "2026-10-30 19:57",
-          "size": 673
+          "name": "时段运力拆解_2026-10-26.xlsx",
+          "mtime": "2026-10-31 08:07",
+          "size": 288660
         },
         {
-          "name": "订单运力分析_2026-10-22.xlsx",
-          "mtime": "2026-10-30 12:15",
-          "size": 11641
+          "name": "capacity_monitor_latest.html",
+          "mtime": "2026-10-31 08:06",
+          "size": 2647222
         },
         {
-          "name": "悦跑排班差异_站点跟进清单_2026-10-22.xlsx",
-          "mtime": "2026-10-30 12:15",
-          "size": 6502
+          "name": "capacity_breakdown_dashboard_2026-10-26.html",
+          "mtime": "2026-10-31 08:06",
+          "size": 2647222
         }
       ],
-      "ageHours": 12,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-10-27",
-      "dataLag": 4,
+      "dataDate": "2026-10-26",
+      "dataLag": 5,
       "staleData": true,
       "dataLagThreshold": 2,
       "outage": {
@@ -2719,22 +2729,17 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：3 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
-      "text": "审计有 4 项警告（2026-10-30 08:31:52）",
+      "text": "审计有 4 项警告（2026-10-31 16:07:38）",
       "anchor": "sec-audit"
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-27（滞后 4 天，超 2 天）——疑似源停发第 5 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 5 天，超 2 天）——疑似源停发第 5 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     },
     {
@@ -2753,7 +2758,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 236,
+      "line": 237,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -3069,8 +3074,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "72e3c09",
-        "at": "2026-10-31T15:47:36+08:00",
+        "hash": "36b8dee",
+        "at": "2026-10-31T16:03:38+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3098,10 +3103,10 @@
     }
   ],
   "gates": {
-    "runAt": "2026-10-31 16:03:33",
+    "runAt": "2026-10-31 16:06:25",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -3162,17 +3167,22 @@
         "pass": true,
         "seconds": 47.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 7.8,
+        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 163.5,
+        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-29 11:25:13",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 207.1,
-      "fails": []
-    },
     {
       "runAt": "2026-10-29 11:40:16",
       "scope": "pre-deploy",
@@ -3375,17 +3385,24 @@
       "allPass": true,
       "totalSec": 137.4,
       "fails": []
+    },
+    {
+      "runAt": "2026-10-31 16:06:25",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 308.7,
+      "fails": []
     }
   ],
   "health": {
-    "score": 80,
-    "grade": "良",
+    "score": 93,
+    "grade": "优",
     "layers": [
       {
         "layer": "调度层",
-        "status": "WARN",
+        "status": "PASS",
         "weight": 25,
-        "points": 50
+        "points": 100
       },
       {
         "layer": "门禁层",
@@ -3700,13 +3717,13 @@
     },
     {
       "date": "2026-10-31",
-      "at": "2026-10-31 08:03:33",
-      "score": 80,
-      "grade": "良",
+      "at": "2026-10-31 08:07:39",
+      "score": 93,
+      "grade": "优",
       "layers": [
         {
           "layer": "调度层",
-          "status": "WARN"
+          "status": "PASS"
         },
         {
           "layer": "部署层",
@@ -3759,7 +3776,7 @@
       "project": "通用运力监控",
       "since": "2026-10-27",
       "dayCount": 5,
-      "lastDataDate": "2026-10-27",
+      "lastDataDate": "2026-10-26",
       "lastSeenAt": "2026-10-31",
       "resolvedAt": null,
       "resolvedDataDate": null
@@ -3806,7 +3823,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1936.9,
+      "totalKB": 1936.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3826,7 +3843,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 112.8
+          "kb": 112.5
         },
         {
           "name": "visits.json",
