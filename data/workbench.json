@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-31 12:59:47",
+  "generatedAt": "2026-10-31 13:26:17",
   "runDate": "2026-10-31",
   "tasks": [
     {
@@ -2458,7 +2458,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 2 数据滞后（超 2 天），最新产出 2h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
@@ -2497,7 +2497,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 4,
+      "ageHours": 5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2514,14 +2514,14 @@
       "name": "履约考核工程",
       "recent": [
         {
+          "name": "oct.json",
+          "mtime": "2026-10-31 13:26",
+          "size": 97397
+        },
+        {
           "name": "sep.json",
           "mtime": "2026-10-31 10:29",
           "size": 86035
-        },
-        {
-          "name": "oct.json",
-          "mtime": "2026-10-31 08:01",
-          "size": 97113
         },
         {
           "name": "targets-nov.json",
@@ -2539,18 +2539,13 @@
           "size": 9404
         }
       ],
-      "ageHours": 2,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-09-30",
-      "dataLag": 31,
-      "staleData": true,
+      "dataDate": "2026-10-31",
+      "dataLag": 0,
+      "staleData": false,
       "dataLagThreshold": 2,
-      "outage": {
-        "since": "2026-10-01",
-        "dayCount": 31,
-        "cause": null
-      },
       "validation": [
         {
           "file": "oct.json",
@@ -2726,7 +2721,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-10-31 12:51:44",
+        "latestAt": "2026-10-31 13:02:38",
         "ageH": 0
       }
     ]
@@ -2749,11 +2744,6 @@
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：履约考核工程 数据日期 2026-09-30（滞后 31 天，超 2 天）——疑似源停发第 31 天（自 2026-10-01 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
-      "anchor": "sec-fresh"
-    },
-    {
-      "level": "WARN",
       "text": "口径私有化嫌疑：canon 在 pro\\kaohe-daily\\build\\verify_coverage.py 重新定义（唯一事实源应为 pro\\capacity-daily\\pipeline_config.py → CANON / canon()，条目：4. 城市/名称别名归一）",
       "anchor": "sec-calibers"
     }
@@ -2768,7 +2758,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 244,
+      "line": 246,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -3084,8 +3074,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c48bbe6",
-        "at": "2026-10-31T20:46:47+08:00",
+        "hash": "4daee31",
+        "at": "2026-10-31T21:00:43+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3727,7 +3717,7 @@
     },
     {
       "date": "2026-10-31",
-      "at": "2026-10-31 12:59:47",
+      "at": "2026-10-31 13:26:17",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3770,8 +3760,8 @@
       "dayCount": 31,
       "lastDataDate": "2026-09-30",
       "lastSeenAt": "2026-10-31",
-      "resolvedAt": null,
-      "resolvedDataDate": null
+      "resolvedAt": "2026-10-31",
+      "resolvedDataDate": "2026-10-31"
     },
     {
       "project": "通用运力监控",
