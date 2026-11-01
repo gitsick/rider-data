@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-01 00:31:43",
+  "generatedAt": "2026-11-01 03:41:23",
   "runDate": "2026-11-01",
   "tasks": [
     {
@@ -14,15 +14,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-31 10:33:29",
-        "durationSec": 209,
+        "finishedAt": "2026-11-01 10:31:32",
+        "durationSec": 92,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 7,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -252,6 +252,20 @@
           "durationSec": 209,
           "note": "",
           "dur": 209
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-01 08:35:32",
+          "durationSec": 2731,
+          "note": "",
+          "dur": 2731
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-01 10:31:32",
+          "durationSec": 92,
+          "note": "",
+          "dur": 92
         }
       ],
       "gaps": {
@@ -374,13 +388,13 @@
           },
           {
             "date": "2026-11-01",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 1,
+        "gapCount": 0,
         "failCount": 0,
-        "passCount": 15
+        "passCount": 16
       },
       "durTrend": [
         4287,
@@ -413,7 +427,9 @@
         1829,
         1032,
         8,
-        209
+        209,
+        2731,
+        92
       ]
     },
     {
@@ -2428,7 +2444,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
+      "detail": "4/4 任务正常 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
@@ -2446,13 +2462,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 3h 前刷新"
     }
   ],
   "projects": [
@@ -2485,7 +2501,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 16,
+      "ageHours": 19,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2527,7 +2543,7 @@
           "size": 9404
         }
       ],
-      "ageHours": 0,
+      "ageHours": 3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-31",
@@ -2709,7 +2725,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-01 00:31:07",
+        "latestAt": "2026-11-01 03:01:12",
         "ageH": 0
       }
     ]
@@ -2718,7 +2734,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 2 天 · 通用运力监控每日刷新 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：2 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -2746,7 +2762,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 253,
+      "line": 258,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -3062,8 +3078,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "83c0963",
-        "at": "2026-11-01T08:03:45+08:00",
+        "hash": "640d9e8",
+        "at": "2026-11-01T08:33:53+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3084,8 +3100,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "944aba0",
-        "at": "2026-11-01T08:20:02+08:00",
+        "hash": "2928d61",
+        "at": "2026-11-01T10:57:55+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
@@ -3733,7 +3749,7 @@
     },
     {
       "date": "2026-11-01",
-      "at": "2026-11-01 00:31:43",
+      "at": "2026-11-01 03:41:23",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3839,7 +3855,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1930.6,
+      "totalKB": 1901.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -3847,7 +3863,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 542
+          "kb": 515.9
         },
         {
           "name": "rider-index.json",
@@ -3859,11 +3875,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 98.2
+          "kb": 98.4
         },
         {
           "name": "visits.json",
-          "kb": 49.3
+          "kb": 45.8
         },
         {
           "name": "logger.json",
