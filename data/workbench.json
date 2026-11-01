@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-01 00:03:16",
+  "generatedAt": "2026-11-01 00:31:43",
   "runDate": "2026-11-01",
   "tasks": [
     {
@@ -427,22 +427,22 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-31 08:23:34",
-        "durationSec": 1414,
+        "finishedAt": "2026-11-01 08:18:19",
+        "durationSec": 1100,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:00",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-01 08:00"
+        "lastRunAt": "2026-11-01 08:18"
       },
       "heal": {
         "can": false,
@@ -553,6 +553,13 @@
           "durationSec": 1414,
           "note": "",
           "dur": 1414
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-01 08:18:19",
+          "durationSec": 1100,
+          "note": "",
+          "dur": 1100
         }
       ],
       "gaps": {
@@ -675,13 +682,13 @@
           },
           {
             "date": "2026-11-01",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 2,
         "failCount": 0,
-        "passCount": 13
+        "passCount": 14
       },
       "durTrend": [
         2776,
@@ -693,7 +700,8 @@
         541,
         1171,
         971,
-        1414
+        1414,
+        1100
       ]
     },
     {
@@ -1184,8 +1192,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-01 07:51:00",
-        "durationSec": 490,
+        "finishedAt": "2026-11-01 08:04:07",
+        "durationSec": 752,
         "note": ""
       },
       "monitor": {
@@ -1206,13 +1214,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-19 11:11:28",
-          "durationSec": 688,
-          "note": "",
-          "dur": 688
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 12:18:37",
@@ -1555,6 +1556,13 @@
           "durationSec": 490,
           "note": "",
           "dur": 490
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-01 08:04:07",
+          "durationSec": 752,
+          "note": "",
+          "dur": 752
         }
       ],
       "gaps": {
@@ -1686,7 +1694,6 @@
         "passCount": 12
       },
       "durTrend": [
-        688,
         1117,
         1401,
         637,
@@ -1731,7 +1738,8 @@
         2233,
         675,
         917,
-        490
+        490,
+        752
       ]
     },
     {
@@ -2420,7 +2428,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 8 天"
+      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -2477,7 +2485,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 15,
+      "ageHours": 16,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2495,12 +2503,12 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-10-31 23:44",
-          "size": 97399
+          "mtime": "2026-11-01 00:31",
+          "size": 98676
         },
         {
           "name": "sep.json",
-          "mtime": "2026-10-31 23:44",
+          "mtime": "2026-11-01 00:17",
           "size": 86035
         },
         {
@@ -2535,7 +2543,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-10-31",
+          "at": "2026-11-01",
           "wire": {
             "months": 2,
             "fail": 0
@@ -2549,7 +2557,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-10-31",
+          "at": "2026-11-01",
           "wire": {
             "months": 2,
             "fail": 0
@@ -2701,7 +2709,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-10-31 23:56:31",
+        "latestAt": "2026-11-01 00:31:07",
         "ageH": 0
       }
     ]
@@ -2710,7 +2718,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 8 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天 · 通用运力监控每日刷新 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 2 天 · 通用运力监控每日刷新 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -2738,7 +2746,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 252,
+      "line": 253,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -3054,8 +3062,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "4d47ceb",
-        "at": "2026-11-01T08:00:44+08:00",
+        "hash": "83c0963",
+        "at": "2026-11-01T08:03:45+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3076,9 +3084,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "263d214",
-        "at": "2026-11-01T07:48:42+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-30"
+        "hash": "944aba0",
+        "at": "2026-11-01T08:20:02+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
   ],
@@ -3725,7 +3733,7 @@
     },
     {
       "date": "2026-11-01",
-      "at": "2026-11-01 00:03:16",
+      "at": "2026-11-01 00:31:43",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3831,7 +3839,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1929.4,
+      "totalKB": 1930.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3851,7 +3859,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 97
+          "kb": 98.2
         },
         {
           "name": "visits.json",
