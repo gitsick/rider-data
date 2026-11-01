@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-01 04:15:50",
+  "generatedAt": "2026-11-01 07:16:17",
   "runDate": "2026-11-01",
   "tasks": [
     {
@@ -2462,13 +2462,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 6h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 3h 前刷新"
     }
   ],
   "projects": [
@@ -2501,7 +2501,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 20,
+      "ageHours": 23,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2543,7 +2543,7 @@
           "size": 9404
         }
       ],
-      "ageHours": 3,
+      "ageHours": 6,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-31",
@@ -2725,7 +2725,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-01 03:51:34",
+        "latestAt": "2026-11-01 07:02:58",
         "ageH": 0
       }
     ]
@@ -2767,7 +2767,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 259,
+      "line": 264,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -3083,8 +3083,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "020c022",
-        "at": "2026-11-01T11:42:08+08:00",
+        "hash": "a547ad3",
+        "at": "2026-11-01T12:36:11+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3754,7 +3754,7 @@
     },
     {
       "date": "2026-11-01",
-      "at": "2026-11-01 04:15:50",
+      "at": "2026-11-01 07:16:17",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -3860,7 +3860,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1901.5,
+      "totalKB": 1902.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -3880,7 +3880,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 98.7
+          "kb": 99.7
         },
         {
           "name": "visits.json",
