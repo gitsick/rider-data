@@ -4141,7 +4141,7 @@ h += cityHtml;
 
 // ── SKA考核门店 · 品牌门店专项（以SKA考核门店为主） ──
 h += '<div style="font-size:13.5px;font-weight:700;margin:14px 0 6px;">🏪 SKA考核门店 · 品牌门店专项（预警门店一店一策）</div>';
-var skaOk = (typeof SKA_REPORT !== 'undefined' && SKA_REPORT && SKA_REPORT.risk); /* R480 起此门不再控制赔付块（见下 payout 直判），保留供后续 risk 键接入 */
+/* R483：原 skaOk 死变量移除——其取 SKA_REPORT.risk，数据层从未下发该键；R480 起 payout 已直判，此变量无任何后续消费 */
 var m10 = (typeof SKA_STORES !== 'undefined' && SKA_STORES && SKA_STORES.months && SKA_STORES.months[CFG.month]) ? SKA_STORES.months[CFG.month].cities : null;
 var rows = [];
 if (m10) {
@@ -4284,6 +4284,9 @@ h += '<tr><td>' + c + '</td><td><b>' + _p('csAll') + '</b></td><td>' + _p('csIn'
 });
 h += '</tbody></table>';
 h += '<div style="font-size:11px;color:#6b7280;margin-top:4px;">口径：复合超时率=(一般超时+严重超时×5)/完成单量；配送取消占比=配送原因取消运单量/推单运单量；美配合计=加盟+悦跑+普通众包（含PHF，不含散单）。官方核算值见体验分官方口径，本表仅供偏差定位参考。</div>';
+/* R483：TY_CALC.daily 逐日趋势图化——复合超时率三城折线 + 完成单量柱，点亮最富零消费数据集 */
+h += '<div style="font-weight:600;font-size:13px;margin:12px 0 4px;">①b 体验三子项 · 逐日趋势（复合超时率·全部 + 完成单量合计）</div>';
+h += '<canvas id="ty-calc-cv" style="display:block;margin:0 auto;"></canvas>';
 }
 if (hdOk) {
 h += '<div style="font-weight:600;font-size:13px;margin:12px 0 4px;">② 加盟运力（HD）· 日均在架自算（不折算）</div>';
@@ -4306,6 +4309,8 @@ h += '<tr><td>' + c + '</td><td>' + ks.map(function (k) { return k + '=' + days[
 h += '</tbody></table>';
 }
 el.innerHTML = h; el.dataset.rendered = '1';
+/* R483：表格入 DOM 后再画布绘图（canvas 需已挂载才能取宽） */
+if (tyOk && typeof drawTyCalcDailyChart === 'function') drawTyCalcDailyChart();
 }
 
 
@@ -5868,7 +5873,12 @@ var t = byDay[r.d][r.city] || (byDay[r.d][r.city] = { done: 0, ont: 0 });
 t.done += r.done; t.ont += r.done * r.rate / 100;
 });
 days.sort();
-var cities = ['泰兴', '响水'];
+/* R483：城市集合动态化——原硬编码 ['泰兴','响水']，诸暨等新城市数据到位后不会渲染；
+   改从 SKA_DAILY.rows 实际城市集合推导，配色走固定色板按序分配 */
+var cities = Object.keys(byDay[days[0]] || {}).sort();
+var palette = ['#d93025', '#1967d2', '#188038', '#e37400', '#9334e6'];
+var colors = {};
+cities.forEach(function(c, i) { colors[c] = palette[i % palette.length]; });
 var rates = {}, vols = {};
 cities.forEach(function(c) {
 rates[c] = days.map(function(d) { var t = byDay[d][c]; return t && t.done ? t.ont / t.done * 100 : null; });
@@ -5920,7 +5930,7 @@ ctx.font = '11px sans-serif';
 cities.forEach(function(c, i) { ctx.fillStyle = colors[c]; ctx.fillText('● ' + c, x0 + i * 70, 14); });
 // 图2 单量柱状
 var P2 = prep(c2), ctx2 = P2.ctx, W2 = P2.w - 52, H2 = P2.h - 42, x02 = 52, y02 = 20;
-var vmax = Math.max.apply(null, vols['泰兴'].concat(vols['响水'])) || 1;
+var vmax = Math.max.apply(null, cities.reduce(function(acc, c) { return acc.concat(vols[c]); }, [])) || 1;
 ctx2.clearRect(0, 0, P2.w, P2.h);
 ctx2.font = '10px sans-serif';
 for (var g2 = 0; g2 <= 5; g2++) {
@@ -5943,6 +5953,89 @@ cities.forEach(function(c, i) { ctx2.fillStyle = colors[c]; ctx2.fillText('■ '
 }
 
 // ===================== 下月预看板模型 =====================
+
+// ===================== 自算参考值：TY_CALC.daily 逐日趋势图（R483） =====================
+/* R483：TY_CALC.daily（体验三子项逐日×城×8键）原全量零消费——本图画「复合超时率·全部」
+   三城折线（左轴%）+ 完成单量合计柱（右轴），csIn/csOut/wIn/xj/qx 等明细键见自算参考值卡表格 */
+function drawTyCalcDailyChart() {
+var cv = document.getElementById('ty-calc-cv');
+if (!cv) return;
+if (typeof TY_CALC === 'undefined' || !TY_CALC || !TY_CALC.daily) return;
+var dates = Object.keys(TY_CALC.daily).sort();
+if (!dates.length) return;
+var byCity = {}, dones = [];
+dates.forEach(function(d) {
+var tot = 0;
+Object.keys(TY_CALC.daily[d]).forEach(function(c) {
+var v = TY_CALC.daily[d][c] || {};
+if (!byCity[c]) byCity[c] = [];
+byCity[c].push(v.csAll != null ? v.csAll : null);
+tot += v.done || 0;
+});
+dones.push(tot);
+});
+var cities = Object.keys(byCity).sort();
+if (!cities.length) return;
+var palette = ['#d93025', '#188038', '#1967d2', '#e37400', '#9334e6'];
+var colors = {};
+cities.forEach(function(c, i) { colors[c] = palette[i % palette.length]; });
+var w = Math.max(cv.parentNode.clientWidth - 24, 500);
+var dpr = window.devicePixelRatio || 1;
+cv.width = w * dpr; cv.height = 240 * dpr;
+cv.style.width = w + 'px'; cv.style.height = '240px';
+var ctx = cv.getContext('2d');
+ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+ctx.clearRect(0, 0, w, 240);
+var W = w - 66, H = 240 - 42, x0 = 56, y0 = 20, n = dates.length;
+var csVals = [];
+cities.forEach(function(c) { byCity[c].forEach(function(v) { if (v != null) csVals.push(v); }); });
+var hi = Math.ceil(Math.max.apply(null, csVals) * 1.15 * 10) / 10 || 1;
+var dmax = Math.max.apply(null, dones) || 1;
+ctx.font = '10px sans-serif';
+// 左轴网格（复合超时率%）
+for (var g = 0; g <= 5; g++) {
+var gv = hi * g / 5, gy = y0 + (1 - g / 5) * H;
+ctx.strokeStyle = '#eef1f5'; ctx.beginPath(); ctx.moveTo(x0, gy); ctx.lineTo(x0 + W, gy); ctx.stroke();
+ctx.fillStyle = '#6b7280'; ctx.fillText(gv.toFixed(1) + '%', 10, gy + 3);
+}
+// 右轴刻度（完成单量）
+ctx.fillStyle = '#9aa3af';
+for (var g2 = 0; g2 <= 5; g2++) {
+var dv = Math.round(dmax * g2 / 5), gy2 = y0 + (1 - g2 / 5) * H;
+ctx.fillText(String(dv), x0 + W + 6, gy2 + 3);
+}
+// 完成单量合计柱（浅灰）
+var bw = Math.min(W / n * 0.5, 22);
+dones.forEach(function(dv, i) {
+var bh = dv / dmax * H;
+ctx.fillStyle = 'rgba(148,158,168,.25)';
+ctx.fillRect(x0 + (i + 0.5) / n * W - bw / 2, y0 + H - bh, bw, bh);
+});
+// 三城复合超时率折线
+cities.forEach(function(c) {
+ctx.strokeStyle = colors[c]; ctx.lineWidth = 1.8; ctx.beginPath();
+var started = false;
+byCity[c].forEach(function(v, i) {
+if (v == null) return;
+var px = x0 + (i + 0.5) / n * W, py = y0 + (1 - v / hi) * H;
+if (!started) { ctx.moveTo(px, py); started = true; } else ctx.lineTo(px, py);
+ctx.fillStyle = colors[c]; ctx.fillRect(px - 1.5, py - 1.5, 3, 3);
+});
+ctx.stroke();
+});
+// 图例 + 日期轴
+var lx = x0;
+cities.forEach(function(c, i) {
+ctx.fillStyle = colors[c]; ctx.fillText('● ' + c, lx, 12);
+lx += 14 + c.length * 11 + 26;
+});
+ctx.fillStyle = '#9aa3af'; ctx.fillText('▮ 完成单量', lx, 12);
+ctx.fillStyle = '#6b7280';
+var step = Math.ceil(n / 14);
+dates.forEach(function(d, i) {
+if (i % step === 0 || i === n - 1) ctx.fillText(d.slice(4), x0 + (i + 0.5) / n * W - 10, 240 - 8);
+});
+}
 
 // ===================== 图表页：加权缺口分解图 =====================
 function renderGapChart() {
