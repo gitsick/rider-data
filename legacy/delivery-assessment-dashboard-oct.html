@@ -237,6 +237,25 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 .supply-badge{display:inline-block;margin-left:4px;padding:0 6px;border-radius:var(--radius-pill,999px);background:#fef3e2;color:#b35f00;font-size:9.5px;font-weight:700;line-height:16px;vertical-align:1px;cursor:help;white-space:nowrap;}
 .na-cell{color:var(--c-text3,#9aa3b2)!important;font-style:italic;cursor:help;}
 @media print{.supply-badge{border:1px solid #f5a623;}}
+
+/* ============================================================
+ * R488 两处导航/控件增强
+ * 1) 趋势图指标切换：12 指标按钮组收紧为单下拉框（.tc-select），
+ *    与走势图同卡紧靠；样式族与 .tc-btn 同源色板。
+ * 2) 月维度锚点导航：宽屏（≥1500px）升级左侧竖排固定栏
+ *    （fixed 左栏 + #dim-monthly 内容避让 168px），窄屏维持
+ *    既有吸顶横条不变；#dim-monthly 隐藏时 fixed 子元素随之
+ *    隐藏（display:none 祖先语义），跨页签无残留。
+ * ============================================================ */
+.tc-sel-label{font-size:12px;font-weight:700;color:#1a2b4a;}
+.tc-select{padding:5px 10px;border-radius:10px;border:1px solid #d0d7e3;background:#fff;font-size:12px;font-weight:600;color:#1a2b4a;cursor:pointer;max-width:180px;font-family:inherit;}
+.tc-select:hover{border-color:#F5A623;background:#fff8e1;}
+.tc-select:focus-visible{outline:2px solid #F5A623;outline-offset:1px;}
+@media(min-width:1500px){
+body.layout-enh #dim-monthly.dim-content{padding-left:168px;}
+body.layout-enh .anchor-nav{position:fixed;left:14px;top:122px;bottom:16px;flex-direction:column;align-items:stretch;width:150px;gap:6px;overflow-y:auto;background:#fff;border:1px solid var(--rk-line,#e6eaf1);border-radius:14px;padding:10px 8px;box-shadow:0 4px 18px rgba(27,34,51,.08);-webkit-backdrop-filter:none;backdrop-filter:none;}
+body.layout-enh .anchor-nav a.anchor-btn{border-radius:10px;text-align:center;white-space:normal;}
+}
 </style>
 <style id="mt-style">
 /* ====== mt-style-injected ====== */
@@ -1071,6 +1090,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <a class="anchor-btn" href="#sec-qkka">🤝 企客·SKA</a>
 <a class="anchor-btn" href="#sec-nextmonth">🔮 下月预看</a>
 <a class="anchor-btn u-click" onclick="jumpAnchor('scheme','sec-scheme');return false;" href="#sec-scheme">📚 考核方案参考</a>
+<a class="anchor-btn u-click" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" href="javascript:void(0)" title="回到页面顶部">⬆ 回顶部</a>
 </div>
 
 <!-- 月维度：整月考核总览 -->
@@ -6209,9 +6229,13 @@ var html = '';
 html += '<button class="tc-btn' + (tcChartType === 'line' ? ' active' : '') + '" id="tc-type-line" onclick="switchTrendType(\'line\')">📉 折线</button>';
 html += '<button class="tc-btn' + (tcChartType === 'bar' ? ' active' : '') + '" id="tc-type-bar" onclick="switchTrendType(\'bar\')">📊 柱状</button>';
 html += '<span class="tc-divider"></span>';
+/* R488：12 个指标按钮组换行占多行、远离视线焦点——收紧为单下拉框，与图表紧靠（switchTrendMetric 同步改选下拉值） */
+html += '<label class="tc-sel-label" for="tc-metric-select">指标</label>';
+html += '<select class="tc-select" id="tc-metric-select" onchange="switchTrendMetric(this.value)" title="切换走势图指标（下方分指标表格同步高亮）">';
 tcMetrics.forEach(function(m) {
-html += '<button class="tc-btn' + (m.id === tcCurrent ? ' active' : '') + '" id="tc-btn-' + m.id + '" onclick="switchTrendMetric(\'' + m.id + '\')">' + m.name + '</button>';
+  html += '<option value="' + m.id + '"' + (m.id === tcCurrent ? ' selected' : '') + '>' + m.name + '</option>';
 });
+html += '</select>';
 html += '<div class="tc-legend">';
 Object.keys(tcCityColors).forEach(function(c) {
 html += '<span class="tc-legend-item" data-city="' + c + '"><span class="tc-legend-dot" style="background:' + tcCityColors[c] + ';"></span>' + cityInfo[c].city + '</span>';
@@ -6254,9 +6278,9 @@ renderTrendChart();
 
 function switchTrendMetric(id) {
 tcCurrent = id;
-document.querySelectorAll('.tc-btn').forEach(function(b){ b.classList.remove('active'); });
-var btn = document.getElementById('tc-btn-' + id);
-if (btn) btn.classList.add('active');
+/* R488：指标切换控件已由按钮组改为下拉框，高亮同步改为选中值回填 */
+var sel = document.getElementById('tc-metric-select');
+if (sel) sel.value = id;
 renderTrendChart();
 renderPeriodBars();
 highlightMetricTables();
