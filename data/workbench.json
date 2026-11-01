@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-10-31 23:48:34",
+  "generatedAt": "2026-10-31 23:59:48",
   "runDate": "2026-10-31",
   "tasks": [
     {
@@ -29,7 +29,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-01 07:42"
+        "lastRunAt": "2026-11-01 07:50"
       },
       "heal": {
         "can": false,
@@ -1184,35 +1184,28 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-10-31 16:15:17",
-        "durationSec": 917,
+        "finishedAt": "2026-11-01 07:51:00",
+        "durationSec": 490,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-01 07:42"
+        "lastRunAt": "2026-11-01 07:51"
       },
       "heal": {
         "can": true,
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-19 10:46:29",
-          "durationSec": 2016,
-          "note": "",
-          "dur": 2016
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 11:11:28",
@@ -1555,6 +1548,13 @@
           "durationSec": 917,
           "note": "",
           "dur": 917
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-01 07:51:00",
+          "durationSec": 490,
+          "note": "",
+          "dur": 490
         }
       ],
       "gaps": {
@@ -1686,7 +1686,6 @@
         "passCount": 11
       },
       "durTrend": [
-        2016,
         688,
         1117,
         1401,
@@ -1731,7 +1730,8 @@
         904,
         2233,
         675,
-        917
+        917,
+        490
       ]
     },
     {
@@ -2422,7 +2422,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-01 07:48:26）"
+      "detail": "本轮发布前置 10 段全过（2026-11-01 07:59:47）"
     },
     {
       "layer": "项目层",
@@ -2691,8 +2691,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-10-31 20:47:58",
-        "ageH": 3
+        "latestAt": "2026-10-31 23:56:31",
+        "ageH": 0
       }
     ]
   },
@@ -3044,8 +3044,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "285aa6c",
-        "at": "2026-11-01T07:46:42+08:00",
+        "hash": "518f40c",
+        "at": "2026-11-01T07:51:31+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3066,28 +3066,28 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "83262c8",
-        "at": "2026-11-01T04:45:45+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
+        "hash": "263d214",
+        "at": "2026-11-01T07:48:42+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html 数据更新至 10-30"
       }
     }
   ],
   "gates": {
-    "runAt": "2026-11-01 07:48:26",
+    "runAt": "2026-11-01 07:59:47",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.5,
+        "seconds": 4.9,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.8,
         "note": ""
       },
       {
@@ -3099,25 +3099,25 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 34.1,
-        "note": "npm test pass=989 fail=0"
+        "seconds": 35.7,
+        "note": "npm test pass=990 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 10.8,
+        "seconds": 10.1,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -3129,37 +3129,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 53.2,
+        "seconds": 35.1,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 46.7,
+        "seconds": 29.5,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 9.2,
-        "note": "拷贝回验 69 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 99.8,
-        "note": "指纹+探针 data/visits.json 生效；9 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-29 12:23:05",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 95.9,
-      "fails": []
-    },
     {
       "runAt": "2026-10-29 12:35:43",
       "scope": "complete",
@@ -3361,6 +3342,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 261.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-01 07:59:47",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 117.5,
       "fails": []
     }
   ],
@@ -3687,7 +3675,7 @@
     },
     {
       "date": "2026-10-31",
-      "at": "2026-10-31 23:48:34",
+      "at": "2026-10-31 23:59:48",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3793,7 +3781,7 @@
     },
     "data": {
       "count": 7,
-      "totalKB": 1921.1,
+      "totalKB": 1929.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -3801,15 +3789,15 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 536.7
+          "kb": 542
         },
         {
           "name": "rider-index.json",
-          "kb": 312
+          "kb": 315.1
         },
         {
           "name": "rider-agreements.json",
-          "kb": 149.2
+          "kb": 149.5
         },
         {
           "name": "workbench.json",
@@ -3817,7 +3805,7 @@
         },
         {
           "name": "visits.json",
-          "kb": 49.4
+          "kb": 49.3
         },
         {
           "name": "logger.json",
