@@ -3331,6 +3331,16 @@ h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.days + '</td>'
 });
 h += '</tbody></table></div>';
 h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">' + _M.footnote + '</div>';
+/* R485：ymWeeks 无系数周口径分歧提示——同条件（coef=null）不同处置（泰兴/诸暨 score=0.0、响水 score=rate，
+   9/10 两月数据层同在），上表周分仅供过程跟踪，月末核算以官方发布为准；已登记 KG-YMWEEKS-COEF */
+var _ymDiv = false, _ymNorm = false;
+cities.forEach(function(c) {
+var v = MTD_EVAL.cities[c]; if (!v || !v.ymWeeks) return;
+v.ymWeeks.forEach(function(w) {
+if (w.coef == null && w.score != null) { if (w.score === 0) _ymDiv = true; else _ymNorm = true; }
+});
+});
+if (_ymDiv && _ymNorm) h += '<div style="font-size:11px;color:#b45309;margin-top:4px;">⚠ 悦跑周分口径提示：无系数周各城处置不一（有城记 0 分、有城按实际比率出示），月末核算以官方发布为准。</div>';
 if (_M.penaltyBlock) { /* P1修复：扣分项与处罚监控块月度差异（9月无此块） */
 h += '<div style="margin-top:10px;padding:10px 12px;background:#fffaf0;border:1px solid #ffe0b2;border-radius:8px;">'
 + '<div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">' + _M.penaltyTitle + '<span style="font-weight:400;font-size:11px;color:#6b7280;margin-left:6px;">' + _M.penaltyHead + '</span></div>'
