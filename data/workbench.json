@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-01 03:41:23",
+  "generatedAt": "2026-11-01 04:15:50",
   "runDate": "2026-11-01",
   "tasks": [
     {
@@ -741,8 +741,8 @@
         "expectHour": 9,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
       },
       "timer": null,
       "heal": {
@@ -2443,8 +2443,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 6 天"
+      "status": "WARN",
+      "detail": "3/4 任务正常 · 1 逾期 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
@@ -2468,7 +2468,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 3h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2501,7 +2501,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 19,
+      "ageHours": 20,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2725,12 +2725,17 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-01 03:01:12",
+        "latestAt": "2026-11-01 03:51:34",
         "ageH": 0
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -2762,7 +2767,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 258,
+      "line": 259,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -3078,8 +3083,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "640d9e8",
-        "at": "2026-11-01T08:33:53+08:00",
+        "hash": "020c022",
+        "at": "2026-11-01T11:42:08+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3100,8 +3105,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "2928d61",
-        "at": "2026-11-01T10:57:55+08:00",
+        "hash": "7154ca4",
+        "at": "2026-11-01T12:13:21+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
@@ -3399,14 +3404,14 @@
     }
   ],
   "health": {
-    "score": 93,
-    "grade": "优",
+    "score": 80,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 25,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "门禁层",
@@ -3749,13 +3754,13 @@
     },
     {
       "date": "2026-11-01",
-      "at": "2026-11-01 03:41:23",
-      "score": 93,
-      "grade": "优",
+      "at": "2026-11-01 04:15:50",
+      "score": 80,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "部署层",
@@ -3817,7 +3822,7 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1033.7,
+      "totalKB": 1037,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -3832,8 +3837,8 @@
           "kb": 73.6
         },
         {
-          "name": "workbench-CX6P5xon.js",
-          "kb": 53.5
+          "name": "workbench-CxR8x6Mg.js",
+          "kb": 55.8
         },
         {
           "name": "main-B5You2EB.css",
@@ -3844,18 +3849,18 @@
           "kb": 30
         },
         {
-          "name": "rider_dashboard-CZXD1jLR.js",
-          "kb": 22.2
+          "name": "workbench-Bwx7Mvh9.css",
+          "kb": 22.4
         },
         {
-          "name": "workbench-CoP2sCnQ.css",
-          "kb": 21.4
+          "name": "rider_dashboard-CZXD1jLR.js",
+          "kb": 22.2
         }
       ]
     },
     "data": {
       "count": 7,
-      "totalKB": 1901.2,
+      "totalKB": 1901.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -3875,7 +3880,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 98.4
+          "kb": 98.7
         },
         {
           "name": "visits.json",
@@ -3908,6 +3913,24 @@
       "cat": "口径",
       "path": "lib\\docs\\口径手册.md",
       "desc": "跨项目复用的口径/规则/领域函数说明（共享函数库） · 口径条目 7 条"
+    },
+    {
+      "name": "考核看板系统总览",
+      "cat": "考核",
+      "path": "pro\\kaohe-daily\\docs\\考核看板系统总览.md",
+      "desc": "整套考核体系一页通：看板入口/六层数据链/月更节奏/口径速查/文档地图（R488）"
+    },
+    {
+      "name": "换月SOP",
+      "cat": "考核",
+      "path": "pro\\kaohe-daily\\docs\\换月SOP.md",
+      "desc": "新月份上线操作清单：预接线/目标回填/官方核算值回填/演练与门禁"
+    },
+    {
+      "name": "数据源映射与取数清单",
+      "cat": "考核",
+      "path": "pro\\kaohe-daily\\docs\\数据源映射与取数清单.md",
+      "desc": "每个数据块的 BI 页签取数映射与归属漂移登记（含 SKA 周期口径三原则 §5.5）"
     },
     {
       "name": "项目工作区规范",
