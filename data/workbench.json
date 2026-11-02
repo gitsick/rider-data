@@ -1,7 +1,7 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-01 15:16:55",
-  "runDate": "2026-11-01",
+  "generatedAt": "2026-11-02 00:35:42",
+  "runDate": "2026-11-02",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -22,14 +22,14 @@
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 7,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
-        "state": "ok",
-        "lastRunAt": "2026-11-01 07:50"
+        "state": "failed",
+        "lastRunAt": "2026-11-02 08:30"
       },
       "heal": {
         "can": false,
@@ -271,10 +271,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-03",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-04",
             "state": "pre"
           },
@@ -389,10 +385,14 @@
           {
             "date": "2026-11-01",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-02",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 0,
         "passCount": 16
       },
@@ -443,8 +443,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-01 08:18:19",
-        "durationSec": 1100,
+        "finishedAt": "2026-11-02 08:08:37",
+        "durationSec": 517,
         "note": ""
       },
       "monitor": {
@@ -458,7 +458,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-01 08:18"
+        "lastRunAt": "2026-11-02 08:08"
       },
       "heal": {
         "can": false,
@@ -576,14 +576,17 @@
           "durationSec": 1100,
           "note": "",
           "dur": 1100
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-02 08:08:37",
+          "durationSec": 517,
+          "note": "",
+          "dur": 517
         }
       ],
       "gaps": {
         "days": [
-          {
-            "date": "2026-10-03",
-            "state": "pre"
-          },
           {
             "date": "2026-10-04",
             "state": "pre"
@@ -699,12 +702,16 @@
           {
             "date": "2026-11-01",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-02",
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
         "gapCount": 2,
         "failCount": 0,
-        "passCount": 14
+        "passCount": 15
       },
       "durTrend": [
         2776,
@@ -717,7 +724,8 @@
         1171,
         971,
         1414,
-        1100
+        1100,
+        517
       ]
     },
     {
@@ -739,7 +747,7 @@
         "cadence": "daily",
         "trigger": "每日 09:00",
         "expectHour": 9,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -1055,10 +1063,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-03",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-04",
             "state": "pre"
           },
@@ -1173,10 +1177,14 @@
           {
             "date": "2026-11-01",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-02",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 4,
         "failCount": 0,
         "passCount": 13
       },
@@ -1231,7 +1239,7 @@
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -1599,10 +1607,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-03",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-04",
             "state": "pre"
           },
@@ -1717,10 +1721,14 @@
           {
             "date": "2026-11-01",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-02",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-19",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 2,
         "passCount": 12
       },
@@ -2048,10 +2056,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-03",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-04",
             "state": "pre"
           },
@@ -2166,10 +2170,14 @@
           {
             "date": "2026-11-01",
             "state": "gap"
+          },
+          {
+            "date": "2026-11-02",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 14,
+        "gapCount": 15,
         "failCount": 0,
         "passCount": 2
       },
@@ -2484,7 +2492,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 5 天"
+      "detail": "4/4 任务正常 · 近 30 天触发断档 8 天"
     },
     {
       "layer": "部署层",
@@ -2502,13 +2510,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 4h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 9h 前刷新"
     }
   ],
   "projects": [
@@ -2541,16 +2549,16 @@
           "size": 2647222
         }
       ],
-      "ageHours": 7,
+      "ageHours": 16,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
-      "dataLag": 6,
+      "dataLag": 7,
       "staleData": true,
       "dataLagThreshold": 2,
       "outage": {
         "since": "2026-10-27",
-        "dayCount": 6,
+        "dayCount": 7,
         "cause": null
       }
     },
@@ -2559,12 +2567,12 @@
       "recent": [
         {
           "name": "oct.json",
-          "mtime": "2026-11-01 11:14",
+          "mtime": "2026-11-02 00:35",
           "size": 98919
         },
         {
           "name": "sep.json",
-          "mtime": "2026-11-01 08:01",
+          "mtime": "2026-11-02 00:35",
           "size": 86035
         },
         {
@@ -2583,11 +2591,11 @@
           "size": 9404
         }
       ],
-      "ageHours": 4,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-31",
-      "dataLag": 1,
+      "dataLag": 2,
       "staleData": false,
       "dataLagThreshold": 2,
       "validation": [
@@ -2599,7 +2607,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-11-01",
+          "at": "2026-11-02",
           "wire": {
             "months": 2,
             "fail": 0
@@ -2613,7 +2621,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-11-01",
+          "at": "2026-11-02",
           "wire": {
             "months": 2,
             "fail": 0
@@ -2765,8 +2773,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-01 14:34:14",
-        "ageH": 0
+        "latestAt": "2026-11-01 15:27:55",
+        "ageH": 9
       }
     ]
   },
@@ -2774,7 +2782,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：2 个任务近 30 天共 5 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 3 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：4 个任务近 30 天共 8 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 2 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -2783,7 +2791,7 @@
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 6 天，超 2 天）——疑似源停发第 6 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 7 天，超 2 天）——疑似源停发第 7 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     },
     {
@@ -3118,8 +3126,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "0d5ad39",
-        "at": "2026-11-01T22:23:10+08:00",
+        "hash": "a0092cb",
+        "at": "2026-11-01T23:18:30+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3140,8 +3148,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "7154ca4",
-        "at": "2026-11-01T12:13:21+08:00",
+        "hash": "db2c897",
+        "at": "2026-11-02T08:35:37+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
@@ -3814,6 +3822,34 @@
           "status": "PASS"
         }
       ]
+    },
+    {
+      "date": "2026-11-02",
+      "at": "2026-11-02 00:35:42",
+      "score": 93,
+      "grade": "优",
+      "layers": [
+        {
+          "layer": "调度层",
+          "status": "PASS"
+        },
+        {
+          "layer": "部署层",
+          "status": "PASS"
+        },
+        {
+          "layer": "门禁层",
+          "status": "PASS"
+        },
+        {
+          "layer": "项目层",
+          "status": "WARN"
+        },
+        {
+          "layer": "渲染层",
+          "status": "PASS"
+        }
+      ]
     }
   ],
   "outages": [
@@ -3847,9 +3883,9 @@
     {
       "project": "通用运力监控",
       "since": "2026-10-27",
-      "dayCount": 6,
+      "dayCount": 7,
       "lastDataDate": "2026-10-26",
-      "lastSeenAt": "2026-11-01",
+      "lastSeenAt": "2026-11-02",
       "resolvedAt": null,
       "resolvedDataDate": null
     }
