@@ -256,6 +256,13 @@ body.layout-enh #dim-monthly.dim-content{padding-left:168px;}
 body.layout-enh .anchor-nav{position:fixed;left:14px;top:122px;bottom:16px;flex-direction:column;align-items:stretch;width:150px;gap:6px;overflow-y:auto;background:#fff;border:1px solid var(--rk-line,#e6eaf1);border-radius:14px;padding:10px 8px;box-shadow:0 4px 18px rgba(27,34,51,.08);-webkit-backdrop-filter:none;backdrop-filter:none;}
 body.layout-enh .anchor-nav a.anchor-btn{border-radius:10px;text-align:center;white-space:normal;}
 }
+
+/* R519 全量月份切换胶囊组（导航深色主题，当前月金底高亮，对齐 R517 前端侧） */
+.top-nav .month-switch-group{display:inline-flex;align-items:center;gap:6px;flex:none;}
+.top-nav .month-chip{display:inline-block;padding:2px 12px;font-size:12px;line-height:20px;color:#c9d2e3;text-decoration:none;border:1px solid #3d4557;border-radius:999px;background:rgba(255,255,255,.06);transition:color .15s,border-color .15s,background .15s;}
+.top-nav .month-chip:hover{color:#FFC300;border-color:#FFC300;background:rgba(255,195,0,.12);}
+.top-nav .month-chip.is-current{color:#1B2233;background:#FFC300;border-color:#FFC300;font-weight:700;cursor:default;}
+@media print{.top-nav .month-switch-group{display:none!important;}}
 </style>
 <style id="mt-style">
 /* ====== mt-style-injected ====== */
@@ -6640,6 +6647,31 @@ function boot(){
     var _nv=document.querySelector('.nav-current'); if(_nv) _nv.textContent=CFG.navCurrent;
     var _sw=document.getElementById('nav-sibling'); if(_sw && CFG.navOther){ _sw.textContent=CFG.navOther.label; _sw.href=CFG.navOther.href; }
     var _hs=document.getElementById('header-data-status'); if(_hs) _hs.textContent=CFG.headerSourceNote;
+    /* R519 页面美化：周期胶囊/页脚随月回填 —— 模板静态默认值是 10 月文案，新月板不得残留 */
+    var _p1=document.getElementById('btn-p1'); if(_p1 && CFG.period.p1Short) _p1.textContent='第1期 ' + CFG.period.p1Short;
+    var _p2=document.getElementById('btn-p2'); if(_p2 && CFG.period.p2Short) _p2.textContent='第2期 ' + CFG.period.p2Short;
+    var _fi=document.getElementById('footer-info');
+    if(_fi) _fi.innerHTML = CFG.docTitle + '看板 · 天维度 + 月维度 + 分析报告 + 数据图表 + 考核方案 五视图 · 数据来源 BI看板<br>仅供内部使用，未经授权切勿外传 · 以上内容由 AI 生成，仅供参考，以业务解释为准。';
+    /* R519 全量月份切换胶囊组：考核月一键直达（当前月金底高亮），邻接单键保留降级（对齐 R517 前端侧）。
+     * 注册表换月时同步新增一行即可，胶囊组自动扩位。 */
+    var _MPAGES = [
+      { m: '2026-09', label: '9月',  href: 'delivery-assessment-dashboard.html' },
+      { m: '2026-10', label: '10月', href: 'delivery-assessment-dashboard-oct.html' },
+      { m: '2026-11', label: '11月', href: 'delivery-assessment-dashboard-nov.html' }
+    ];
+    (function(){
+      var _nav=document.querySelector('.top-nav'); if(!_nav) return;
+      var _nr=_nav.querySelector('.nav-right')||_nav;
+      var _g=document.createElement('span'); _g.className='month-switch-group'; _g.setAttribute('aria-label','考核月份切换');
+      _MPAGES.forEach(function(it){
+        var cur = it.m === CFG.month;
+        var a=document.createElement('a'); a.className='month-chip'+(cur?' is-current':''); a.textContent=it.label;
+        a.title=it.m.replace('-','年')+'月配送考核看板';
+        if(cur){ a.setAttribute('aria-current','page'); } else { a.href=it.href; }
+        _g.appendChild(a);
+      });
+      if(_sw && _sw.parentNode===_nr) _nr.insertBefore(_g, _sw); else _nr.appendChild(_g);
+    })();
   } catch(e){ errs.push('header: '+e.message); }
   /* [B] DEF-06 月度差异静态元素开关：profile-note/calc-profile-static 互斥同槽位，back-top 仅 10月板 */
   try {
