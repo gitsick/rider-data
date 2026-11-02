@@ -237,6 +237,32 @@ a.u-click:focus-visible,.jump-chip:focus-visible,.metric-chip:focus-visible,.tc-
 .supply-badge{display:inline-block;margin-left:4px;padding:0 6px;border-radius:var(--radius-pill,999px);background:#fef3e2;color:#b35f00;font-size:9.5px;font-weight:700;line-height:16px;vertical-align:1px;cursor:help;white-space:nowrap;}
 .na-cell{color:var(--c-text3,#9aa3b2)!important;font-style:italic;cursor:help;}
 @media print{.supply-badge{border:1px solid #f5a623;}}
+
+/* ============================================================
+ * R488 两处导航/控件增强
+ * 1) 趋势图指标切换：12 指标按钮组收紧为单下拉框（.tc-select），
+ *    与走势图同卡紧靠；样式族与 .tc-btn 同源色板。
+ * 2) 月维度锚点导航：宽屏（≥1500px）升级左侧竖排固定栏
+ *    （fixed 左栏 + #dim-monthly 内容避让 168px），窄屏维持
+ *    既有吸顶横条不变；#dim-monthly 隐藏时 fixed 子元素随之
+ *    隐藏（display:none 祖先语义），跨页签无残留。
+ * ============================================================ */
+.tc-sel-label{font-size:12px;font-weight:700;color:#1a2b4a;}
+.tc-select{padding:5px 10px;border-radius:10px;border:1px solid #d0d7e3;background:#fff;font-size:12px;font-weight:600;color:#1a2b4a;cursor:pointer;max-width:180px;font-family:inherit;}
+.tc-select:hover{border-color:#F5A623;background:#fff8e1;}
+.tc-select:focus-visible{outline:2px solid #F5A623;outline-offset:1px;}
+@media(min-width:1500px){
+body.layout-enh #dim-monthly.dim-content{padding-left:168px;}
+body.layout-enh .anchor-nav{position:fixed;left:14px;top:122px;bottom:16px;flex-direction:column;align-items:stretch;width:150px;gap:6px;overflow-y:auto;background:#fff;border:1px solid var(--rk-line,#e6eaf1);border-radius:14px;padding:10px 8px;box-shadow:0 4px 18px rgba(27,34,51,.08);-webkit-backdrop-filter:none;backdrop-filter:none;}
+body.layout-enh .anchor-nav a.anchor-btn{border-radius:10px;text-align:center;white-space:normal;}
+}
+
+/* R519 全量月份切换胶囊组（导航深色主题，当前月金底高亮，对齐 R517 前端侧） */
+.top-nav .month-switch-group{display:inline-flex;align-items:center;gap:6px;flex:none;}
+.top-nav .month-chip{display:inline-block;padding:2px 12px;font-size:12px;line-height:20px;color:#c9d2e3;text-decoration:none;border:1px solid #3d4557;border-radius:999px;background:rgba(255,255,255,.06);transition:color .15s,border-color .15s,background .15s;}
+.top-nav .month-chip:hover{color:#FFC300;border-color:#FFC300;background:rgba(255,195,0,.12);}
+.top-nav .month-chip.is-current{color:#1B2233;background:#FFC300;border-color:#FFC300;font-weight:700;cursor:default;}
+@media print{.top-nav .month-switch-group{display:none!important;}}
 </style>
 <style id="mt-style">
 /* ====== mt-style-injected ====== */
@@ -1071,6 +1097,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <a class="anchor-btn" href="#sec-qkka">🤝 企客·SKA</a>
 <a class="anchor-btn" href="#sec-nextmonth">🔮 下月预看</a>
 <a class="anchor-btn u-click" onclick="jumpAnchor('scheme','sec-scheme');return false;" href="#sec-scheme">📚 考核方案参考</a>
+<a class="anchor-btn u-click" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" href="javascript:void(0)" title="回到页面顶部">⬆ 回顶部</a>
 </div>
 
 <!-- 月维度：整月考核总览 -->
@@ -4960,14 +4987,14 @@ var v = m[c];
 var rc = (v.rate != null && v.rate < 95) ? 'c-red' : '';
 var oc = (v.okRatio != null && v.okRatio < 90) ? 'c-red' : '';
 h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + (v.stores != null ? v.stores : '—') + '</td>'
-+ '<td class="' + oc + '">' + (v.ok != null ? v.ok + '（' + v.okRatio + '%）' : '—') + '</td>'
-+ '<td>' + v.ontimeWb + ' / ' + v.doneWb + '</td>'
++ '<td class="' + oc + '">' + (v.ok != null ? v.ok + '（' + (v.okRatio != null ? v.okRatio + '%' : '—') + '）' : '—') + '</td>'
++ '<td>' + (v.ontimeWb != null ? v.ontimeWb : '—') + ' / ' + (v.doneWb != null ? v.doneWb : '—') + '</td>'
 + '<td class="' + rc + '">' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
 + '<td>' + v.brands + '品牌' + (v.stations != null ? ' / ' + v.stations + '站点' : '') + '</td></tr>';
 });
 h += '</tbody></table></div>';
 }
-h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>品牌</th><th>门店数</th><th>运单量</th><th>准时率</th><th>状态</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>';
+h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>品牌</th><th>门店数</th><th>运单量（当日）</th><th>准时率（当日）</th><th>状态</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>';
 h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">数据：品牌x商家x履约站-履约明细（ID 17805，BI 253744，' + (QKKA_BRAND['泰兴'] ? QKKA_BRAND['泰兴'].date : '') + '）；准时率=客户考核准时运单量/配送完成运单量（累计），门店达标口径=门店准时率≥KPI目标95%（本表仅展示SKA品牌门店，非SKA品牌门店已不再展示）；门店月维度赔付以自然月累计为准，本预警为提前提示；配送原因取消率已按17805明细纳入赔付预判（肯/必），客诉率/提前点率口径待数据源开放后接入；<a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a> · <a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度数据源：企客KA履约监控（BI 253744）</a></div>';
 box.innerHTML = h;
 }
@@ -5227,11 +5254,11 @@ th += '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><tabl
 + '<th onclick="skaSdSort(0,false,this)" style="' + SD_TH + '" title="点击排序">城市</th>'
 + '<th onclick="skaSdSort(1,false,this)" style="' + SD_TH + '" title="点击排序">品牌</th>'
 + '<th onclick="skaSdSort(2,false,this)" style="' + SD_TH + '" title="点击排序">门店</th>'
-+ '<th onclick="skaSdSort(3,true,this)" style="' + SD_TH + '" title="点击排序">配送单量</th>'
-+ '<th onclick="skaSdSort(4,true,this)" style="' + SD_TH + '" title="点击排序">准时率</th>'
++ '<th onclick="skaSdSort(3,true,this)" style="' + SD_TH + '" title="点击排序">配送单量（月累计）</th>'
++ '<th onclick="skaSdSort(4,true,this)" style="' + SD_TH + '" title="点击排序">准时率（月累计）</th>'
 + '<th onclick="skaSdSort(5,true,this)" style="' + SD_TH + '" title="点击排序 · 准时率−品牌赔付线">距赔付线</th>'
 + '<th onclick="skaSdSort(6,true,this)" style="' + SD_TH + '" title="点击排序">赔付线</th>'
-+ '<th onclick="skaSdSort(7,true,this)" style="' + SD_TH + '" title="点击排序">有单天数</th>'
++ '<th onclick="skaSdSort(7,true,this)" style="' + SD_TH + '" title="点击排序">有单天数（月）</th>'
 + '<th onclick="skaSdSort(8,true,this)" style="' + SD_TH + '" title="点击排序">低于赔付线天数</th>'
 + '<th onclick="skaSdSort(9,true,this)" style="' + SD_TH + '" title="点击排序">预计赔付</th>'
 + '</tr></thead><tbody>';
@@ -5305,6 +5332,24 @@ if (e && e.src === '269707' && e.date && String(e.date).slice(0,6) !== mp) stale
 })});
 }catch(e){}
 items.push(['品牌看板补充源', stale.length ? stale.join('、') : '均为当月', true, stale.length ? '⚠ 历史可用月：官方2026-03起未更新' : '']);
+/* R487 周期统一：一致性检核扩 4 项（QKKA_MONTH / QKKA_BRAND / SKA_STORE_DAILY / SKA_REPORT） */
+var qm = (typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) ? QKKA_MONTH : null;
+var qmCities = qm ? Object.keys(qm) : [];
+var qmOK = qmCities.length >= 3 && qmCities.every(function(c){ var p = qm[c] && qm[c].period; return p && String(p).indexOf(mp) === 0; });
+items.push(['企客月累计统计期', qmCities.length ? qmCities.map(function(c){ return cityFull(c) + ' ' + (qm[c].period || '—'); }).join(' / ') : '—', qmOK, qmOK ? '' : '⚠ 统计期不在考核月或缺城']);
+var qbDates = [];
+try{ var _qb = (typeof QKKA_BRAND !== 'undefined' && QKKA_BRAND) || {}; Object.keys(_qb).forEach(function(c){ if (_qb[c] && _qb[c].date) qbDates.push(String(_qb[c].date)); }); }catch(e){}
+var qbOK = qbDates.length > 0 && qbDates.every(function(d){ return d.slice(0,6) === mp; });
+items.push(['企客单日快照日', qbDates.length ? qbDates.join(' / ') : '—', qbOK, qbOK ? '' : '⚠ 不在考核月内']);
+var sdKeys = Object.keys((typeof SKA_STORE_DAILY !== 'undefined' && SKA_STORE_DAILY) || {});
+var sdMin = '', sdMax = '';
+sdKeys.forEach(function(k2){ if (!sdMin || k2 < sdMin) sdMin = k2; if (!sdMax || k2 > sdMax) sdMax = k2; });
+var sdOK = sdKeys.length > 0 && sdKeys.every(function(k2){ return k2.replace(/-/g,'').slice(0,6) === mp; });
+items.push(['门店×日明细覆盖', sdKeys.length ? sdMin + ' ~ ' + sdMax : '—', sdOK, sdOK ? '' : '⚠ 含考核月外日期']);
+var repMM = [];
+try{ var _rp = (typeof SKA_REPORT !== 'undefined' && SKA_REPORT && SKA_REPORT.overview) || []; _rp.forEach(function(x){ var _m = x && x.mm; if (_m && repMM.indexOf(_m) < 0) repMM.push(_m); }); }catch(e){}
+var repOK = repMM.indexOf(mk) >= 0;
+items.push(['跨月汇总快照', repMM.sort().join(' / ') || '—', repOK, repOK ? '含考核月' : '⚠ 缺考核月汇总']);
 var warnN = items.filter(function(x){ return x[3].indexOf('⚠') === 0; }).length;
 var hardBad = items.some(function(x){ return !x[2]; });
 var allOk = !hardBad && warnN === 0;
@@ -5383,7 +5428,7 @@ h += '<button onclick="skaSdayCityPick(\'' + c2 + '\')" style="' + (skaSdayCity 
 });
 }
 h += '</div>';
-h += '<div class="table-scroll" style="max-height:420px;overflow:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>配送单量</th><th>有效门店</th><th>准时率</th><th>距赔付线</th><th>低于赔付线</th></tr></thead><tbody>';
+h += '<div class="table-scroll" style="max-height:420px;overflow:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>配送单量（当日）</th><th>有效门店（当日）</th><th>准时率（当日）</th><th>距赔付线</th><th>低于赔付线</th></tr></thead><tbody>';
 rows.forEach(function(r){
 var ln = lines[r.b] || 90;
 var bad = isBad(r);
@@ -5429,7 +5474,7 @@ return a.b < b.b ? -1 : (a.b > b.b ? 1 : 0);
 });
 var h = skaDataCheckHtml() + '<div style="font-size:12.5px;font-weight:700;color:#1967d2;margin:10px 0 2px;">📈 天维度 · 日期 × 城市 × 品牌 × 门店（配送单量 / 有效门店 / 准时率）</div>'
 + '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">仅展示当月SKA考核门店（城市×品牌）；门店列=该城市×品牌当月SKA考核门店名单；配送单量为当日城市×品牌合计（门店级当日单量未在源明细开放）；有效门店=当日有配送完成订单的门店数；<span style="color:#d93025;">红=低于赔付线</span>（体验预警线为月度口径，不在日维度展示，见月维度/分析报告）；门店月累计单量与赔付预判见上方「考核门店明细」卡。</div>'
-+ '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>日期</th><th>城市</th><th>品牌</th><th>门店（SKA考核）</th><th>配送单量</th><th>有效门店</th><th>准时率</th><th>低于赔付线门店</th></tr></thead><tbody>';
++ '<div class="table-scroll" style="max-height:520px;overflow-y:auto;"><table class="dt" style="font-size:11px;"><thead><tr><th>日期</th><th>城市</th><th>品牌</th><th>门店（SKA考核）</th><th>配送单量（当日）</th><th>有效门店（当日）</th><th>准时率（当日）</th><th>低于赔付线门店</th></tr></thead><tbody>';
 rows.forEach(function(r) {
 var col = _skaRateCol(r.rate, r.b);
 var dshow = r.d.slice(4, 6) + '-' + r.d.slice(6, 8);
@@ -5438,8 +5483,8 @@ var storeCell = cb.length
 ? cb.map(function(st){ return skaShortName(st.store, r.b); }).join('、')
 : '<span style="color:#9aa0a6;">—</span>';
 h += '<tr><td>' + dshow + '</td><td>' + cityFull(r.city) + '</td><td>' + r.b + '</td>'
-+ '<td style="font-size:10px;color:#5f6368;max-width:220px;white-space:normal!important;word-break:break-all;line-height:1.5;text-align:left!important;">' + storeCell + '</td><td><b>' + r.done + '</b></td>'
-+ '<td>' + r.pois + '</td>'
++ '<td style="font-size:10px;color:#5f6368;max-width:220px;white-space:normal!important;word-break:break-all;line-height:1.5;text-align:left!important;">' + storeCell + '</td><td><b>' + (r.done != null ? r.done : '—') + '</b></td>'
++ '<td>' + (r.pois != null ? r.pois : '—') + '</td>'
 + '<td style="color:' + col + ';font-weight:700;">' + (r.rate != null ? Number(r.rate).toFixed(2) + '%' : '—') + '</td>'
 + '<td>' + (r.bad ? '<span style="color:#d93025;font-weight:700;">' + r.bad + '</span>' : '0') + '</td></tr>';
 });
@@ -5519,7 +5564,7 @@ h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0;">'
 +'<div style="flex:1;min-width:130px;background:#fef3e0;border:1px solid #f5d9a8;border-radius:10px;padding:8px 12px;"><div style="font-size:10.5px;color:#a15c00;">预警（体验目标）</div><div style="font-size:17px;font-weight:800;color:#e37400;">'+warnN+' 家</div><div style="font-size:10.5px;color:#a15c00;">低于预警线 · 未到赔付</div></div>'
 +'<div style="flex:1;min-width:130px;background:#e6f4ea;border:1px solid #bfe3c8;border-radius:10px;padding:8px 12px;"><div style="font-size:10.5px;color:#188038;">达标</div><div style="font-size:17px;font-weight:800;color:#188038;">'+okN+' 家</div><div style="font-size:10.5px;color:#188038;">考核门店 '+(payN+warnN+okN)+' 家</div></div>'
 +'</div>';
-h+='<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>月配送单量</th><th>准时率</th><th>距赔付线</th><th>预计赔付</th><th>预警</th><th>达标情况</th></tr></thead><tbody>';
+h+='<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>门店</th><th>月配送单量</th><th>准时率（月累计）</th><th>距赔付线</th><th>预计赔付</th><th>预警</th><th>达标情况</th></tr></thead><tbody>';
 rowsArr.forEach(function(x){
 var s0=x.s;
 var st=(s0.amt||0)>0?'赔付':(s0.warn?'预警':'达标');
@@ -5545,9 +5590,9 @@ if(n>=parseInt(_w[0].replace(/-/g,''),10)&&n<=parseInt(_w[1].replace(/-/g,''),10
 return -1;}
 var agg={};
 SKA_DAILY.rows.forEach(function(r){var w=wk(r.d); if(w<0)return;
-var k=r.city+'|'+r.b+'|'+w; var o=agg[k]||(agg[k]={done:0,ont:0,below:0,days:0});
-o.done+=r.done||0; o.ont+=r.ont||0; o.days++;
-var ln=L[r.b]!=null?L[r.b]:90; if(r.done>0&&(r.ont/(r.done))*100<ln)o.below++;});
+var k=r.city+'|'+r.b+'|'+w; var o=agg[k]||(agg[k]={done:0,ont:0,rn:0,below:0,days:0});
+o.done+=r.done||0; if(r.ont!=null)o.ont+=r.ont; else o.rn+=r.done||0; o.days++; /* R487 周期统一：未核算周剔除分母 */
+var ln=L[r.b]!=null?L[r.b]:90; if(r.ont!=null&&r.done>0&&(r.ont/(r.done))*100<ln)o.below++;});
 var cities=['泰兴','诸暨','响水'];
 cities.forEach(function(c){
 h+='<div style="font-weight:700;font-size:13px;margin:10px 0 4px;color:#1a2b4a;">'+ (c==='泰兴'?'泰兴县':c==='诸暨'?'诸暨市':'响水县') +'</div>';
@@ -5561,9 +5606,9 @@ h+='<tr><td style="font-weight:600;">'+b+'<br><span style="font-size:10px;color:
 var met=0, has=0, monD=0, monO=0;
 for(var w=0;w<CFG.weeks.ymWeeks.length;w++){
 var o=agg[c+'|'+b+'|'+w];
-if(o&&o.done>0){ has++;
-var rt=o.ont/o.done*100; if(rt>=wn)met++;
-monD+=o.done; monO+=o.ont;
+if(o&&(o.done-(o.rn||0))>0){ has++; /* R487：有效分母=总单量−未核算单量 */
+var _oe=o.done-(o.rn||0), rt=o.ont/_oe*100; if(rt>=wn)met++;
+monD+=_oe; monO+=o.ont;
 var col=rt>=wn?'#188038':(rt>=ln?'#ef6c00':'#d93025');
 var tag=rt<ln?' ⚠':'';
 h+='<td title="品牌预警线'+wn+'% / 赔付线'+ln+'%；低于赔付线月末按《SKA赔付规则》按门店月完单量分档扣罚，本卡为按天聚合的提前预判" style="color:'+col+';font-weight:700;">'+rt.toFixed(1)+'%'+tag+'<br><span style="font-weight:400;font-size:10px;color:#6b7280;">'+o.done+'单 · 低于线'+o.below+'天</span></td>';
@@ -5632,9 +5677,10 @@ if (hasSka && !skaCB[r.city + '|' + r.b]) return;
 if (!latestDay || r.d > latestDay) latestDay = r.d;
 if (skaScopeCur === 'day' && r.d !== latestDay) return;
 var k = key === 'city' ? r.city : r.b;
-var t = agg[k] || (agg[k] = { done: 0, ont: 0, badDays: 0, pois: 0, days: {}, lines: {} });
+var t = agg[k] || (agg[k] = { done: 0, ont: 0, rn: 0, badDays: 0, pois: 0, days: {}, lines: {} });
 t.done += r.done || 0;
-t.ont += (r.done || 0) * (r.rate || 0);
+/* R487 周期统一：未核算率（null）单量剔除加权分母，与 drawSkaCharts 同口径 */
+if (r.rate != null) t.ont += (r.done || 0) * r.rate; else t.rn += r.done || 0;
 t.pois = Math.max(t.pois, r.pois || 0);
 if (r.rate != null) {
 t.days[r.d] = (t.days[r.d] || 0) + 1;
@@ -5642,7 +5688,7 @@ var line = (SKA_DAILY.lines || {})[r.b];
 if (line != null && r.rate < line) t.badDays++;
 }
 });
-Object.keys(agg).forEach(function(k){ agg[k].rate = agg[k].done ? agg[k].ont / agg[k].done : null; });
+Object.keys(agg).forEach(function(k){ var _eff = agg[k].done - (agg[k].rn || 0); agg[k].rate = _eff > 0 ? agg[k].ont / _eff : null; });
 return agg;
 }
 
@@ -5680,25 +5726,25 @@ h += '<div style="background:#fff;border:1px solid #e8eaed;border-top:3px solid 
 + '</div>';
 });
 h += '</div>';
-h += '<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>考核门店</th><th>配送单量</th><th>准时率</th><th>赔付线</th><th>距线</th><th>判定</th></tr></thead><tbody>';
+h += '<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>城市</th><th>品牌</th><th>考核门店</th><th>配送单量（' + (skaScopeCur === 'day' ? '当日' : '月累计') + '）</th><th>准时率（' + (skaScopeCur === 'day' ? '当日' : '月累计') + '）</th><th>赔付线</th><th>距线</th><th>判定</th></tr></thead><tbody>';
 var keys = Object.keys(skaCB).sort();
 /* 行级：按 城市×品牌 聚合 */
 var cbAgg = {};
 (SKA_DAILY.rows || []).forEach(function(r) {
 if (r.d.indexOf(skaMonthPrefix()) !== 0) return;
-if (!cbAgg[r.city + '|' + r.b]) cbAgg[r.city + '|' + r.b] = { done: 0, ont: 0, bad: 0, pois: 0 };
+if (!cbAgg[r.city + '|' + r.b]) cbAgg[r.city + '|' + r.b] = { done: 0, ont: 0, rn: 0, bad: 0, pois: 0 };
 var t = cbAgg[r.city + '|' + r.b];
-t.done += r.done || 0; t.ont += (r.done || 0) * (r.rate || 0); t.pois = Math.max(t.pois, r.pois || 0);
+t.done += r.done || 0; if (r.rate != null) t.ont += (r.done || 0) * r.rate; else t.rn += r.done || 0; t.pois = Math.max(t.pois, r.pois || 0); /* R487 周期统一 */
 if (r.rate != null && r.rate < _skaLineOf(r.b)) t.bad++;
 });
 if (skaScopeCur === 'day') {
 var latestDay = null;
 (SKA_DAILY.rows || []).forEach(function(r) { if (r.d.indexOf(skaMonthPrefix()) === 0 && (!latestDay || r.d > latestDay)) latestDay = r.d; });
 Object.keys(cbAgg).forEach(function(k) {
-var t2 = { done: 0, ont: 0, bad: 0, pois: 0 };
+var t2 = { done: 0, ont: 0, rn: 0, bad: 0, pois: 0 };
 (SKA_DAILY.rows || []).forEach(function(r) {
 if (r.d !== latestDay || (r.city + '|' + r.b) !== k) return;
-t2.done += r.done || 0; t2.ont += (r.done || 0) * (r.rate || 0); t2.pois = Math.max(t2.pois, r.pois || 0);
+t2.done += r.done || 0; if (r.rate != null) t2.ont += (r.done || 0) * r.rate; else t2.rn += r.done || 0; t2.pois = Math.max(t2.pois, r.pois || 0); /* R487 */
 if (r.rate != null && r.rate < _skaLineOf(r.b)) t2.bad++;
 });
 cbAgg[k] = t2;
@@ -5706,9 +5752,10 @@ cbAgg[k] = t2;
 }
 keys.forEach(function(k) {
 var parts = k.split('|'), c = parts[0], b = parts[1];
-var t = cbAgg[k] || { done: 0, ont: 0, bad: 0, pois: 0 };
+var t = cbAgg[k] || { done: 0, ont: 0, rn: 0, bad: 0, pois: 0 };
 var line = _skaLineOf(b);
-var rate = t.done ? t.ont / t.done : null;
+var _eff = t.done - (t.rn || 0);
+var rate = _eff > 0 ? t.ont / _eff : null;
 h += '<tr><td>' + cityFull(c) + '</td><td><b>' + b + '</b></td>'
 + '<td>' + skaCB[k].length + ' 家</td>'
 + '<td><b>' + t.done + '</b></td>'
@@ -5764,13 +5811,13 @@ h += '<div style="background:#fff;border:1px solid #e8eaed;border-left:4px solid
 + '</div></div>';
 });
 h += '</div>';
-h += '<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>品牌</th><th>城市</th><th>配送单量</th><th>准时率</th><th>赔付线</th><th>距线</th><th>判定</th></tr></thead><tbody>';
+h += '<div class="table-scroll"><table class="dt" style="font-size:11px;"><thead><tr><th>品牌</th><th>城市</th><th>配送单量（' + (skaScopeCur === 'day' ? '当日' : '月累计') + '）</th><th>准时率（' + (skaScopeCur === 'day' ? '当日' : '月累计') + '）</th><th>赔付线</th><th>距线</th><th>判定</th></tr></thead><tbody>';
 var cbAgg = {};
 (SKA_DAILY.rows || []).forEach(function(r) {
 if (r.d.indexOf(skaMonthPrefix()) !== 0) return;
 var k = r.b + '|' + r.city;
-if (!cbAgg[k]) cbAgg[k] = { done: 0, ont: 0 };
-cbAgg[k].done += r.done || 0; cbAgg[k].ont += (r.done || 0) * (r.rate || 0);
+if (!cbAgg[k]) cbAgg[k] = { done: 0, ont: 0, rn: 0 };
+cbAgg[k].done += r.done || 0; if (r.rate != null) cbAgg[k].ont += (r.done || 0) * r.rate; else cbAgg[k].rn += r.done || 0; /* R487 */
 });
 if (skaScopeCur === 'day') {
 var latestDay = null;
@@ -5779,21 +5826,22 @@ var cb2 = {};
 (SKA_DAILY.rows || []).forEach(function(r) {
 if (r.d !== latestDay) return;
 var k = r.b + '|' + r.city;
-if (!cb2[k]) cb2[k] = { done: 0, ont: 0 };
-cb2[k].done += r.done || 0; cb2[k].ont += (r.done || 0) * (r.rate || 0);
+if (!cb2[k]) cb2[k] = { done: 0, ont: 0, rn: 0 };
+cb2[k].done += r.done || 0; if (r.rate != null) cb2[k].ont += (r.done || 0) * r.rate; else cb2[k].rn += r.done || 0; /* R487 */
 });
 Object.keys(cbAgg).forEach(function(k){ if (!cb2[k]) delete cbAgg[k]; else cbAgg[k] = cb2[k]; });
 }
 Object.keys(cbAgg).sort().forEach(function(k) {
 var p = k.split('|'), b = p[0], c = p[1];
 var t = cbAgg[k], line = _skaLineOf(b);
-var rate = t.done ? t.ont / t.done : null;
+var _eff = t.done - (t.rn || 0);
+var rate = _eff > 0 ? t.ont / _eff : null;
 h += '<tr><td><b>' + b + '</b></td><td>' + cityFull(c) + '</td><td><b>' + t.done + '</b></td>'
 + '<td style="color:' + (rate == null ? '#9aa0a6' : (rate >= line ? '#188038' : '#d93025')) + ';font-weight:700;">' + (rate != null ? rate.toFixed(2) + '%' : '—') + '</td>'
 + '<td>' + line + '%</td><td>' + skaGapHtml(rate, line) + '</td><td>' + _skaJudge(rate, line) + '</td></tr>';
 });
 h += '</tbody></table></div>';
-h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：同城市维度；品牌卡片为准时率进度条（灰线=品牌赔付线），跨城市单量加权；诸暨企客数据待权限开通后自动回补。</div>';
+h += '<div style="font-size:10.5px;color:#6b7280;margin-top:6px;">口径：同城市维度；品牌卡片为准时率进度条（灰线=品牌赔付线），跨城市单量加权（未核算率单量剔除分母，R487 周期统一口径）；诸暨企客数据待权限开通后自动回补。</div>';
 box.innerHTML = h;
 }
 
@@ -5808,7 +5856,7 @@ if(!m){ el.innerHTML=c?('<b style="color:#1B2233;">'+c+'</b><span style="color:#
 var sc=(m.score!=null)?Number(m.score).toFixed(2):'—';
 var mm=m.mainMod?m.mainMod:'—', mg=(m.mainGap!=null)?Number(m.mainGap).toFixed(2):'—';
 var col=(m.score!=null&&m.score>=95)?'#188038':'#d93025';
-el.innerHTML='<b style="color:'+col+';">'+c+' '+sc+'</b><span style="color:#6B7280;"> ｜ 主失分：'+mm+'（-'+mg+'）</span>';
+el.innerHTML='<b style="color:'+col+';">'+c+' '+sc+'</b><span style="color:#6B7280;">（月度评估）｜ 主失分：'+mm+'（-'+mg+'）</span>';
 }catch(e){}
 }
 
@@ -6141,9 +6189,13 @@ var html = '';
 html += '<button class="tc-btn' + (tcChartType === 'line' ? ' active' : '') + '" id="tc-type-line" onclick="switchTrendType(\'line\')">📉 折线</button>';
 html += '<button class="tc-btn' + (tcChartType === 'bar' ? ' active' : '') + '" id="tc-type-bar" onclick="switchTrendType(\'bar\')">📊 柱状</button>';
 html += '<span class="tc-divider"></span>';
+/* R488：12 个指标按钮组换行占多行、远离视线焦点——收紧为单下拉框，与图表紧靠（switchTrendMetric 同步改选下拉值） */
+html += '<label class="tc-sel-label" for="tc-metric-select">指标</label>';
+html += '<select class="tc-select" id="tc-metric-select" onchange="switchTrendMetric(this.value)" title="切换走势图指标（下方分指标表格同步高亮）">';
 tcMetrics.forEach(function(m) {
-html += '<button class="tc-btn' + (m.id === tcCurrent ? ' active' : '') + '" id="tc-btn-' + m.id + '" onclick="switchTrendMetric(\'' + m.id + '\')">' + m.name + '</button>';
+  html += '<option value="' + m.id + '"' + (m.id === tcCurrent ? ' selected' : '') + '>' + m.name + '</option>';
 });
+html += '</select>';
 html += '<div class="tc-legend">';
 Object.keys(tcCityColors).forEach(function(c) {
 html += '<span class="tc-legend-item" data-city="' + c + '"><span class="tc-legend-dot" style="background:' + tcCityColors[c] + ';"></span>' + cityInfo[c].city + '</span>';
@@ -6186,9 +6238,9 @@ renderTrendChart();
 
 function switchTrendMetric(id) {
 tcCurrent = id;
-document.querySelectorAll('.tc-btn').forEach(function(b){ b.classList.remove('active'); });
-var btn = document.getElementById('tc-btn-' + id);
-if (btn) btn.classList.add('active');
+/* R488：指标切换控件已由按钮组改为下拉框，高亮同步改为选中值回填 */
+var sel = document.getElementById('tc-metric-select');
+if (sel) sel.value = id;
 renderTrendChart();
 renderPeriodBars();
 highlightMetricTables();
@@ -6708,6 +6760,31 @@ function boot(){
     var _nv=document.querySelector('.nav-current'); if(_nv) _nv.textContent=CFG.navCurrent;
     var _sw=document.getElementById('nav-sibling'); if(_sw && CFG.navOther){ _sw.textContent=CFG.navOther.label; _sw.href=CFG.navOther.href; }
     var _hs=document.getElementById('header-data-status'); if(_hs) _hs.textContent=CFG.headerSourceNote;
+    /* R519 页面美化：周期胶囊/页脚随月回填 —— 模板静态默认值是 10 月文案，新月板不得残留 */
+    var _p1=document.getElementById('btn-p1'); if(_p1 && CFG.period.p1Short) _p1.textContent='第1期 ' + CFG.period.p1Short;
+    var _p2=document.getElementById('btn-p2'); if(_p2 && CFG.period.p2Short) _p2.textContent='第2期 ' + CFG.period.p2Short;
+    var _fi=document.getElementById('footer-info');
+    if(_fi) _fi.innerHTML = CFG.docTitle + '看板 · 天维度 + 月维度 + 分析报告 + 数据图表 + 考核方案 五视图 · 数据来源 BI看板<br>仅供内部使用，未经授权切勿外传 · 以上内容由 AI 生成，仅供参考，以业务解释为准。';
+    /* R519 全量月份切换胶囊组：考核月一键直达（当前月金底高亮），邻接单键保留降级（对齐 R517 前端侧）。
+     * 注册表换月时同步新增一行即可，胶囊组自动扩位。 */
+    var _MPAGES = [
+      { m: '2026-09', label: '9月',  href: 'delivery-assessment-dashboard.html' },
+      { m: '2026-10', label: '10月', href: 'delivery-assessment-dashboard-oct.html' },
+      { m: '2026-11', label: '11月', href: 'delivery-assessment-dashboard-nov.html' }
+    ];
+    (function(){
+      var _nav=document.querySelector('.top-nav'); if(!_nav) return;
+      var _nr=_nav.querySelector('.nav-right')||_nav;
+      var _g=document.createElement('span'); _g.className='month-switch-group'; _g.setAttribute('aria-label','考核月份切换');
+      _MPAGES.forEach(function(it){
+        var cur = it.m === CFG.month;
+        var a=document.createElement('a'); a.className='month-chip'+(cur?' is-current':''); a.textContent=it.label;
+        a.title=it.m.replace('-','年')+'月配送考核看板';
+        if(cur){ a.setAttribute('aria-current','page'); } else { a.href=it.href; }
+        _g.appendChild(a);
+      });
+      if(_sw && _sw.parentNode===_nr) _nr.insertBefore(_g, _sw); else _nr.appendChild(_g);
+    })();
   } catch(e){ errs.push('header: '+e.message); }
   /* [B] DEF-06 月度差异静态元素开关：profile-note/calc-profile-static 互斥同槽位，back-top 仅 10月板 */
   try {
