@@ -5,9 +5,9 @@
  *    断网/超时回退缓存（R69 离线 503 语义保留）。原 stale-while-revalidate 存在「每日首开见昨日旧数」的陈旧窗口
  *  - 页面导航（HTML）：network-first —— 始终优先最新，断网/超时回退缓存
  *  - 带查询串的导航请求（门禁/调试 stamp）直连网络，完全不经过 SW
- * 版本升级：改 VER 即弃用全部旧缓存（R92 → v2，同步数据策略变更）
+ * 版本升级：改 VER 即弃用全部旧缓存（R92 → v2；本轮 v4：capacity 单文件页不入 C_PAGES）
  */
-const VER = 'v2'
+const VER = 'v4'
 const C_ASSETS = `rd-assets-${VER}`
 const C_PAGES = `rd-pages-${VER}`
 const C_DATA = `rd-data-${VER}`
@@ -47,7 +47,9 @@ self.addEventListener('fetch', e => {
   }
 
   if (url.pathname.includes('/data/')) {
-    /* R92：network-first —— 日更看板首开即见当日新数据；离线回缓存，无缓存时 503 JSON（R69 语义） */
+    /* R92：network-first —— 日更看板首开即见当日新数据；离线回缓存，无缓存时 503 JSON（R69 语义）
+     * R518 skip-daily-cache：/data/daily/* 为按需懒载大件（单月数 MB），不写入 SW 缓存，避免「全量区间」一次拖垮 Cache Storage */
+    if (url.pathname.includes('/data/daily/')) { e.respondWith(fetch(req)); return }
     e.respondWith((async () => {
       const c = await caches.open(C_DATA)
       try {
@@ -66,10 +68,13 @@ self.addEventListener('fetch', e => {
   }
 
   if (req.mode === 'navigate') {
+    /* R-cap：capacity_monitor*.html 为 ~2MB+ 单文件嵌入通道（非 /data JSON），
+     * network-first 仍取最新，但不写入 C_PAGES，避免 Cache Storage 被日更巨页撑爆、挤掉主站 HTML。 */
+    const skipPageCache = /capacity_monitor/i.test(url.pathname)
     e.respondWith((async () => {
       try {
         const res = await fetch(req)
-        if (res && res.ok) {
+        if (res && res.ok && !skipPageCache) {
           const c = await caches.open(C_PAGES)
           c.put(req, res.clone())
         }

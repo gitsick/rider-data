@@ -1,16 +1,16 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-02 12:58:36",
+  "generatedAt": "2026-11-02 23:20:36",
   "runDate": "2026-11-02",
   "tasks": [
     {
       "id": "kaohe-daily",
       "name": "履约考核看板刷新与备份",
       "type": "agent",
-      "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
+      "trigger": "每日 07:30 主跑 + 10:30 发布自愈",
       "cwd": "F:\\work\\mtcapacity\\pro\\kaohe-daily",
       "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）",
-      "note": "技能编排型任务，需浏览器 BI 登录态；发布感知双探测：08:00 主跑（已是最新秒级结束，未发布等10分钟复探后早退），10:30 自愈探测补跑（OdrLWZHZtb8IhMG8W8kgp）；留痕耗时按最近触发源折算",
+      "note": "技能编排型任务，需浏览器 BI 登录态；发布感知双探测：07:30 主跑（定时器 BYHOUR=7;BYMINUTE=30，与 expectHour=7 对齐）+ 10:30 自愈探测补跑（OdrLWZHZtb8IhMG8W8kgp）。换月SOP人工核对挂账导致的 FAIL 为已知态（非断链）。留痕耗时按最近触发源折算",
       "last": {
         "status": "FAIL",
         "exitCode": 1,
@@ -20,9 +20,9 @@
       },
       "monitor": {
         "cadence": "daily",
-        "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
+        "trigger": "每日 07:30 主跑 + 10:30 发布自愈",
         "expectHour": 7,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -40,246 +40,179 @@
           "status": "PASS",
           "finishedAt": "2026-10-17 10:00:03",
           "durationSec": 4287,
-          "note": "耗时由触发源折算回填",
-          "dur": 4287
+          "note": "耗时由触发源折算回填"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-18 10:09:19",
-          "durationSec": 3091,
-          "note": "",
-          "dur": 3091
+          "durationSec": 3091
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-18 10:32:13",
-          "durationSec": 133,
-          "note": "",
-          "dur": 133
+          "durationSec": 133
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 08:45:26",
-          "durationSec": 2640,
-          "note": "",
-          "dur": 2640
+          "durationSec": 2640
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 10:31:29",
-          "durationSec": 89,
-          "note": "",
-          "dur": 89
+          "durationSec": 89
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 11:10:39",
-          "durationSec": 2325,
-          "note": "",
-          "dur": 2325
+          "durationSec": 2325
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 12:12:35",
-          "durationSec": 6041,
-          "note": "",
-          "dur": 6041
+          "durationSec": 6041
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-20 09:35:14",
-          "durationSec": 1449,
-          "note": "",
-          "dur": 1449
+          "durationSec": 1449
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-20 10:31:02",
-          "durationSec": 61,
-          "note": "",
-          "dur": 61
+          "durationSec": 61
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-21 10:20:02",
-          "durationSec": 4176,
-          "note": "",
-          "dur": 4176
+          "durationSec": 4176
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-21 10:31:44",
-          "durationSec": 104,
-          "note": "",
-          "dur": 104
+          "durationSec": 104
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-22 08:32:46",
-          "durationSec": 1966,
-          "note": "",
-          "dur": 1966
+          "durationSec": 1966
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-22 10:31:42",
-          "durationSec": 102,
-          "note": "",
-          "dur": 102
+          "durationSec": 102
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-23 08:43:40",
-          "durationSec": 2620,
-          "note": "",
-          "dur": 2620
+          "durationSec": 2620
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-23 10:31:13",
-          "durationSec": 73,
-          "note": "",
-          "dur": 73
+          "durationSec": 73
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-24 08:49:44",
-          "durationSec": 2984,
-          "note": "",
-          "dur": 2984
+          "durationSec": 2984
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-24 10:30:54",
-          "durationSec": 54,
-          "note": "",
-          "dur": 54
+          "durationSec": 54
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-25 08:56:37",
-          "durationSec": 3396,
-          "note": "",
-          "dur": 3396
+          "durationSec": 3396
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-25 10:31:21",
-          "durationSec": 81,
-          "note": "",
-          "dur": 81
+          "durationSec": 81
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 08:47:55",
-          "durationSec": 2874,
-          "note": "",
-          "dur": 2874
+          "durationSec": 2874
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 10:31:20",
-          "durationSec": 80,
-          "note": "",
-          "dur": 80
+          "durationSec": 80
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-27 08:34:55",
-          "durationSec": 1623,
-          "note": "",
-          "dur": 1623
+          "durationSec": 1623
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-27 10:31:13",
-          "durationSec": 73,
-          "note": "",
-          "dur": 73
+          "durationSec": 73
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 08:30:50",
-          "durationSec": 1850,
-          "note": "",
-          "dur": 1850
+          "durationSec": 1850
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 10:31:11",
-          "durationSec": 70,
-          "note": "",
-          "dur": 70
+          "durationSec": 70
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 09:34:57",
-          "durationSec": 5697,
-          "note": "",
-          "dur": 5697
+          "durationSec": 5697
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 10:30:51",
-          "durationSec": 52,
-          "note": "",
-          "dur": 52
+          "durationSec": 52
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 08:08:02",
-          "durationSec": 1829,
-          "note": "",
-          "dur": 1829
+          "durationSec": 1829
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 10:47:12",
-          "durationSec": 1032,
-          "note": "",
-          "dur": 1032
+          "durationSec": 1032
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-31 08:30:09",
-          "durationSec": 8,
-          "note": "",
-          "dur": 8
+          "durationSec": 8
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-31 10:33:29",
-          "durationSec": 209,
-          "note": "",
-          "dur": 209
+          "durationSec": 209
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-01 08:35:32",
-          "durationSec": 2731,
-          "note": "",
-          "dur": 2731
+          "durationSec": 2731
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-01 10:31:32",
-          "durationSec": 92,
-          "note": "",
-          "dur": 92
+          "durationSec": 92
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-11-02 08:43:53",
           "durationSec": 789,
-          "note": "11月遗留板html更新失败：换月SOP初始化未完成（30项人工核对挂账）；数据抓取/Excel/月度MTD/备份/前端回灌均成功",
-          "dur": 789
+          "note": "11月遗留板html更新失败：换月SOP初始化未完成（30项人工核对挂账）；数据抓取/Excel/月度MTD/备份/前端回灌均成功"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-11-02 10:37:46",
           "durationSec": 466,
-          "note": "11月遗留板上线被换月SOP人工核对挂账阻塞（config-2026-11 共30项TODO待人工核对）；11-01数据抓取/Excel/月度MTD/备份/前端回灌主跑已完成",
-          "dur": 466
+          "note": "11月遗留板上线被换月SOP人工核对挂账阻塞（config-2026-11 共30项TODO待人工核对）；11-01数据抓取/Excel/月度MTD/备份/前端回灌主跑已完成"
         }
       ],
       "gaps": {
@@ -411,27 +344,6 @@
         "passCount": 16
       },
       "durTrend": [
-        4287,
-        3091,
-        133,
-        2640,
-        89,
-        2325,
-        6041,
-        1449,
-        61,
-        4176,
-        104,
-        1966,
-        102,
-        2620,
-        73,
-        2984,
-        54,
-        3396,
-        81,
-        2874,
-        80,
         1623,
         73,
         1850,
@@ -452,10 +364,10 @@
       "id": "xsp-weekly",
       "name": "新商评考核周报",
       "type": "agent",
-      "trigger": "每日 08:00",
+      "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
       "cwd": "F:\\work\\mtcapacity\\pro\\xsp-weekly",
       "entry": "bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）",
-      "note": "独立工作区，由定时任务直接驱动。R349 实证：10-27 主定时器触发器醒来仅推进 nextRunAt、会话未启动（单发调度异常），当日业务由人工补跑留痕覆盖——该任务无自愈兜底，建议增配发布自愈定时器；R356 盘点已备好提议（10:30 双探测，与 kaohe-daily 同构），用户暂缓创建——创建后 trigger 声明「发布自愈」即纳入审计[11]声明式治理。2026-10-30 排期对齐：07:00→08:00（用户选定方案），恢复 kaohe-daily(07:30)→xsp 缓存接力顺序且 BYHOUR=8 与 expectHour 一致；kaohe-daily 保持 07:30 与登记表 expectHour=8 的漂移为用户知情保留（仅审计 WARN 不阻断）",
+      "note": "独立工作区，主定时器 GKhFgH92zgdoWdjXsqbGa（BYHOUR=8）。2026-11-02 已创建 10:30 发布自愈定时器 C7QIRamVcQhR3oDd_iO8u（新商评发布自愈探测，与 kaohe 同构）；trigger 已声明「发布自愈」纳入审计[11]声明式治理。R349 曾出现触发器空转，自愈兜底后应由 10:30 补跑覆盖。",
       "last": {
         "status": "PASS",
         "exitCode": 0,
@@ -465,9 +377,9 @@
       },
       "monitor": {
         "cadence": "daily",
-        "trigger": "每日 08:00",
+        "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -485,120 +397,91 @@
           "status": "PASS",
           "finishedAt": "2026-10-17 13:40:09",
           "durationSec": null,
-          "note": "13:4x 补跑完成：MTD 10-01~10-16 三城周报已生成（泰兴GTV同比+25.4%；响水-10.3%预警；诸暨完成率98.92%<99%）；悦跑出勤泰兴5天<90%",
-          "dur": null
+          "note": "13:4x 补跑完成：MTD 10-01~10-16 三城周报已生成（泰兴GTV同比+25.4%；响水-10.3%预警；诸暨完成率98.92%<99%）；悦跑出勤泰兴5天<90%"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-20 09:16:16",
           "durationSec": 2776,
-          "note": "周报已生成",
-          "dur": 2776
+          "note": "周报已生成"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-21 10:12:55",
-          "durationSec": 2976,
-          "note": "",
-          "dur": 2976
+          "durationSec": 2976
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-22 09:08:13",
-          "durationSec": 1210,
-          "note": "",
-          "dur": 1210
+          "durationSec": 1210
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-23 08:32:45",
-          "durationSec": 717,
-          "note": "",
-          "dur": 717
+          "durationSec": 717
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-24 08:20:41",
-          "durationSec": 825,
-          "note": "",
-          "dur": 825
+          "durationSec": 825
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-25 12:45:08",
-          "durationSec": null,
-          "note": "",
-          "dur": null
+          "durationSec": null
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 08:36:37",
-          "durationSec": 1773,
-          "note": "",
-          "dur": 1773
+          "durationSec": 1773
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-27 19:03:46",
           "durationSec": null,
-          "note": "补跑：履约侧244447全量10-26在位(3城x26天)；商家侧250886三次复探诸暨10-26未发布(2/3城)，周报维持1-25全量版本，待明晨自动化按T-1口径推进",
-          "dur": null
+          "note": "补跑：履约侧244447全量10-26在位(3城x26天)；商家侧250886三次复探诸暨10-26未发布(2/3城)，周报维持1-25全量版本，待明晨自动化按T-1口径推进"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 14:39:22",
           "durationSec": null,
-          "note": "补跑完成：履约侧244447全量10-01~10-27三城81行取回；商家侧250886快照10-27在位(泰兴/响水2城，诸暨图表无数据，14:18复探确认未发布)；生成新商评考核周报_2026年10月1-27日.xlsx",
-          "dur": null
+          "note": "补跑完成：履约侧244447全量10-01~10-27三城81行取回；商家侧250886快照10-27在位(泰兴/响水2城，诸暨图表无数据，14:18复探确认未发布)；生成新商评考核周报_2026年10月1-27日.xlsx"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 08:11:53",
           "durationSec": 541,
-          "note": "周报已生成",
-          "dur": 541
+          "note": "周报已生成"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 13:12:13",
-          "durationSec": null,
-          "note": "",
-          "dur": null
+          "durationSec": null
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 07:59:12",
-          "durationSec": 1171,
-          "note": "",
-          "dur": 1171
+          "durationSec": 1171
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 12:46:29",
-          "durationSec": 971,
-          "note": "",
-          "dur": 971
+          "durationSec": 971
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-31 08:23:34",
-          "durationSec": 1414,
-          "note": "",
-          "dur": 1414
+          "durationSec": 1414
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-01 08:18:19",
-          "durationSec": 1100,
-          "note": "",
-          "dur": 1100
+          "durationSec": 1100
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-02 08:08:37",
-          "durationSec": 517,
-          "note": "",
-          "dur": 517
+          "durationSec": 517
         }
       ],
       "gaps": {
@@ -763,7 +646,7 @@
         "cadence": "daily",
         "trigger": "每日 09:00",
         "expectHour": 9,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -777,317 +660,242 @@
         {
           "status": "FAIL",
           "finishedAt": "2026-10-17 10:24:33",
-          "durationSec": 294.8,
-          "note": "",
-          "dur": 295
+          "durationSec": 294.8
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-17 10:32:18",
-          "durationSec": 261.3,
-          "note": "",
-          "dur": 261
+          "durationSec": 261.3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 10:36:54",
-          "durationSec": 216.4,
-          "note": "",
-          "dur": 216
+          "durationSec": 216.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 11:00:18",
-          "durationSec": 22,
-          "note": "",
-          "dur": 22
+          "durationSec": 22
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 11:45:46",
-          "durationSec": 112.5,
-          "note": "",
-          "dur": 113
+          "durationSec": 112.5
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 11:56:22",
-          "durationSec": 53.2,
-          "note": "",
-          "dur": 53
+          "durationSec": 53.2
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-17 12:38:16",
-          "durationSec": 264.8,
-          "note": "",
-          "dur": 265
+          "durationSec": 264.8
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 12:50:13",
-          "durationSec": 535.4,
-          "note": "",
-          "dur": 535
+          "durationSec": 535.4
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-21 17:04:17",
-          "durationSec": 275.2,
-          "note": "",
-          "dur": 275
+          "durationSec": 275.2
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-21 17:08:43",
-          "durationSec": 176.3,
-          "note": "",
-          "dur": 176
+          "durationSec": 176.3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-21 17:26:13",
-          "durationSec": 743.6,
-          "note": "",
-          "dur": 744
+          "durationSec": 743.6
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-22 10:19:28",
-          "durationSec": 409.7,
-          "note": "",
-          "dur": 410
+          "durationSec": 409.7
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-22 10:27:01",
-          "durationSec": 243.5,
-          "note": "",
-          "dur": 244
+          "durationSec": 243.5
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-23 09:34:51",
-          "durationSec": 221,
-          "note": "",
-          "dur": 221
+          "durationSec": 221
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-23 10:04:47",
-          "durationSec": 710.1,
-          "note": "",
-          "dur": 710
+          "durationSec": 710.1
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-23 10:21:56",
-          "durationSec": 609.7,
-          "note": "",
-          "dur": 610
+          "durationSec": 609.7
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-23 11:05:42",
-          "durationSec": 2187.5,
-          "note": "",
-          "dur": 2188
+          "durationSec": 2187.5
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-24 10:20:20",
-          "durationSec": 489.2,
-          "note": "",
-          "dur": 489
+          "durationSec": 489.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-25 10:24:08",
-          "durationSec": 26.5,
-          "note": "",
-          "dur": 27
+          "durationSec": 26.5
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 11:09:22",
-          "durationSec": 461.9,
-          "note": "",
-          "dur": 462
+          "durationSec": 461.9
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 21:45:47",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-22",
-          "dur": null
+          "note": "manual 数据日期 2026-10-22"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-27 10:05:55",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-22",
-          "dur": null
+          "note": "manual 数据日期 2026-10-22"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-27 10:05:55",
-          "durationSec": 32.3,
-          "note": "",
-          "dur": 32
+          "durationSec": 32.3
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-27 11:29:55",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-22",
-          "dur": null
+          "note": "manual 数据日期 2026-10-22"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-27 11:31:29",
-          "durationSec": 119.3,
-          "note": "",
-          "dur": 119
+          "durationSec": 119.3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-27 12:18:03",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-26",
-          "dur": null
+          "note": "manual 数据日期 2026-10-26"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-27 17:54:11",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-26",
-          "dur": null
+          "note": "manual 数据日期 2026-10-26"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 10:00:48",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-22",
-          "dur": null
+          "note": "manual 数据日期 2026-10-22"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 10:04:47",
-          "durationSec": 243,
-          "note": "",
-          "dur": 243
+          "durationSec": 243
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 11:27:50",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-22",
-          "dur": null
+          "note": "manual 数据日期 2026-10-22"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 11:27:50",
-          "durationSec": 2.3,
-          "note": "",
-          "dur": 2
+          "durationSec": 2.3
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 11:47:21",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-22",
-          "dur": null
+          "note": "manual 数据日期 2026-10-22"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 11:47:21",
-          "durationSec": 3.4,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 13:22:51",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-26",
-          "dur": null
+          "note": "manual 数据日期 2026-10-26"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 13:22:51",
-          "durationSec": 563,
-          "note": "",
-          "dur": 563
+          "durationSec": 563
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-29 06:18:46",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-27",
-          "dur": null
+          "note": "manual 数据日期 2026-10-27"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 07:27:44",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-26",
-          "dur": null
+          "note": "manual 数据日期 2026-10-26"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 16:06:54",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-26",
-          "dur": null
+          "note": "manual 数据日期 2026-10-26"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 16:06:54",
-          "durationSec": 27.5,
-          "note": "",
-          "dur": 28
+          "durationSec": 27.5
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-31 16:07:38",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-26",
-          "dur": null
+          "note": "manual 数据日期 2026-10-26"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-31 16:07:38",
-          "durationSec": 47.6,
-          "note": "",
-          "dur": 48
+          "durationSec": 47.6
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-01 16:15:31",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-26",
-          "dur": null
+          "note": "manual 数据日期 2026-10-26"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-01 16:15:32",
-          "durationSec": 62.8,
-          "note": "",
-          "dur": 63
+          "durationSec": 62.8
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-02 16:14:01",
           "durationSec": null,
-          "note": "manual 数据日期 2026-10-26",
-          "dur": null
+          "note": "manual 数据日期 2026-10-26"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-02 16:14:01",
-          "durationSec": 420.2,
-          "note": "",
-          "dur": 420
+          "durationSec": 420.2
         }
       ],
       "gaps": {
@@ -1219,22 +1027,6 @@
         "passCount": 14
       },
       "durTrend": [
-        295,
-        261,
-        216,
-        22,
-        113,
-        53,
-        265,
-        535,
-        275,
-        176,
-        744,
-        410,
-        244,
-        221,
-        710,
-        610,
         2188,
         489,
         27,
@@ -1270,7 +1062,7 @@
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": true,
+        "doneToday": false,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -1287,352 +1079,275 @@
         {
           "status": "PASS",
           "finishedAt": "2026-10-20 16:08:45",
-          "durationSec": 525,
-          "note": "",
-          "dur": 525
+          "durationSec": 525
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-21 11:27:16",
-          "durationSec": 180,
-          "note": "",
-          "dur": 180
+          "durationSec": 180
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-21 11:46:45",
           "durationSec": 1149,
-          "note": "登录态刷新后重跑：华东+4/华南+6，合计2028条，已部署上线",
-          "dur": 1149
+          "note": "登录态刷新后重跑：华东+4/华南+6，合计2028条，已部署上线"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-21 16:07:04",
           "durationSec": 335,
-          "note": "【问卷星登录态失效，增量拉取未执行；访问日志变更触发看板例行重新部署成功（HEAD=eb25722）】",
-          "dur": 335
+          "note": "【问卷星登录态失效，增量拉取未执行；访问日志变更触发看板例行重新部署成功（HEAD=eb25722）】"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-21 16:17:21",
-          "durationSec": 951,
-          "note": "",
-          "dur": 951
+          "durationSec": 951
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-22 16:13:42",
           "durationSec": 822,
-          "note": "问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑",
-          "dur": 822
+          "note": "问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-22 22:34:52",
-          "durationSec": null,
-          "note": "",
-          "dur": null
+          "durationSec": null
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-23 09:48:24",
           "durationSec": 1241,
-          "note": "问卷星登录态失效，华东/华南增量检查未完成；本地2058条无变化，访问日志与看板v2部署正常",
-          "dur": 1241
+          "note": "问卷星登录态失效，华东/华南增量检查未完成；本地2058条无变化，访问日志与看板v2部署正常"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-23 16:22:12",
           "durationSec": 1332,
-          "note": "问卷星登录态失效，增量检查未完成；本地2058条无变化，访问日志今日0，看板v2部署正常",
-          "dur": 1332
+          "note": "问卷星登录态失效，增量检查未完成；本地2058条无变化，访问日志今日0，看板v2部署正常"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-24 10:33:33",
           "durationSec": null,
-          "note": "重跑后问卷星登录态仍失效，增量未拉取；本地2058条无变化，访问日志今日0，看板v2部署正常",
-          "dur": null
+          "note": "重跑后问卷星登录态仍失效，增量未拉取；本地2058条无变化，访问日志今日0，看板v2部署正常"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-24 10:58:04",
           "durationSec": null,
-          "note": "问卷星登录后增量拉取成功：华东1260→1277(+17)，华南798→804(+6)，合计2081条；访问日志今日0；看板v2部署完成",
-          "dur": null
+          "note": "问卷星登录后增量拉取成功：华东1260→1277(+17)，华南798→804(+6)，合计2081条；访问日志今日0；看板v2部署完成"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-24 16:21:58",
           "durationSec": 1319,
-          "note": "问卷星登录态失效，增量拉取未执行（本地2081条已是最新，无数据丢失）；访问日志COS新增0；看板已重新生成并v2部署完成",
-          "dur": 1319
+          "note": "问卷星登录态失效，增量拉取未执行（本地2081条已是最新，无数据丢失）；访问日志COS新增0；看板已重新生成并v2部署完成"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-25 16:20:15",
           "durationSec": 1174,
-          "note": "问卷星登录态失效，增量拉取未执行（华东/华南均0条）；本地数据维持2081条，检查与看板生成部署完成",
-          "dur": 1174
+          "note": "问卷星登录态失效，增量拉取未执行（华东/华南均0条）；本地数据维持2081条，检查与看板生成部署完成"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-26 12:06:11",
           "durationSec": null,
-          "note": "手动刷新：问卷星登录态仍失效，增量拉取0条；本地维持2081条，检查与看板部署完成",
-          "dur": null
+          "note": "手动刷新：问卷星登录态仍失效，增量拉取0条；本地维持2081条，检查与看板部署完成"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-26 16:49:20",
           "durationSec": 2960,
-          "note": "问卷星登录态仍失效：华东/华南增量拉取0条；检查与看板v2部署已完成（访问日志页16:33上站，HEAD=ca12ff9）",
-          "dur": 2960
+          "note": "问卷星登录态仍失效：华东/华南增量拉取0条；检查与看板v2部署已完成（访问日志页16:33上站，HEAD=ca12ff9）"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:10:27",
-          "durationSec": 173.5,
-          "note": "",
-          "dur": 174
+          "durationSec": 173.5
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:13:05",
-          "durationSec": 774,
-          "note": "",
-          "dur": 774
+          "durationSec": 774
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:44",
-          "durationSec": 1349.7,
-          "note": "",
-          "dur": 1350
+          "durationSec": 1349.7
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:44",
-          "durationSec": 2114.6,
-          "note": "",
-          "dur": 2115
+          "durationSec": 2114.6
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:44",
-          "durationSec": 2869.4,
-          "note": "",
-          "dur": 2869
+          "durationSec": 2869.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:44",
-          "durationSec": 3091.9,
-          "note": "",
-          "dur": 3092
+          "durationSec": 3091.9
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:44",
-          "durationSec": 3824.8,
-          "note": "",
-          "dur": 3825
+          "durationSec": 3824.8
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:45",
-          "durationSec": 4616.7,
-          "note": "",
-          "dur": 4617
+          "durationSec": 4616.7
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-27 08:13:11",
           "durationSec": 310,
-          "note": "问卷星登录态失效增量拉取0条-检查与看板部署已完成",
-          "dur": 310
+          "note": "问卷星登录态失效增量拉取0条-检查与看板部署已完成"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-27 08:47:03",
           "durationSec": 1986,
-          "note": "登录已恢复增量拉取成功合计2090条看板已部署",
-          "dur": 1986
+          "note": "登录已恢复增量拉取成功合计2090条看板已部署"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-27 16:17:23",
           "durationSec": 1043,
-          "note": "【问卷星增量检查】登录态失效（华东/华南均提示请先登录），未能核对问卷端条数；本地数据未变（合计2090条），访问日志/明细同步/看板生成与v2部署均完成",
-          "dur": 1043
+          "note": "【问卷星增量检查】登录态失效（华东/华南均提示请先登录），未能核对问卷端条数；本地数据未变（合计2090条），访问日志/明细同步/看板生成与v2部署均完成"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 08:14:09",
           "durationSec": 363,
-          "note": "【问卷星登录态失效，增量检查未执行；访问日志与看板部署已完成】",
-          "dur": 363
+          "note": "【问卷星登录态失效，增量检查未执行；访问日志与看板部署已完成】"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 08:23:43",
           "durationSec": 545,
-          "note": "【华东问卷星登录态仍失效；华南检查正常无新增，看板部署已完成】",
-          "dur": 545
+          "note": "【华东问卷星登录态仍失效；华南检查正常无新增，看板部署已完成】"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 08:42:15",
           "durationSec": 1657,
-          "note": "【检查与部署全部完成；华东+3华南+3，合计2096条】",
-          "dur": 1657
+          "note": "【检查与部署全部完成；华东+3华南+3，合计2096条】"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 16:18:13",
           "durationSec": 1093,
-          "note": "问卷星登录态失效（华东/华南），增量检查未完成；本地2096条照常生成并部署成功",
-          "dur": 1093
+          "note": "问卷星登录态失效（华东/华南），增量检查未完成；本地2096条照常生成并部署成功"
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-28 16:46:45",
           "durationSec": 1674,
-          "note": "重跑：华南已恢复(无新增)，华东问卷星登录态仍失效未检查；部署成功(HEAD=17366fc)",
-          "dur": 1674
+          "note": "重跑：华南已恢复(无新增)，华东问卷星登录态仍失效未检查；部署成功(HEAD=17366fc)"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 19:17:27",
-          "durationSec": 1475.4,
-          "note": "",
-          "dur": 1475
+          "durationSec": 1475.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 19:19:44",
-          "durationSec": 282.5,
-          "note": "",
-          "dur": 283
+          "durationSec": 282.5
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 19:24:20",
-          "durationSec": 1253,
-          "note": "",
-          "dur": 1253
+          "durationSec": 1253
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-29 08:07:38",
           "durationSec": 786,
-          "note": "【问卷星登录态失效_华东华南均未检查_看板已部署】",
-          "dur": 786
+          "note": "【问卷星登录态失效_华东华南均未检查_看板已部署】"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 09:35:02",
-          "durationSec": 768.1,
-          "note": "",
-          "dur": 768
+          "durationSec": 768.1
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-29 09:40:08",
           "durationSec": 5521,
-          "note": "【问卷星登录态仍失效_看板已部署】",
-          "dur": 5521
+          "note": "【问卷星登录态仍失效_看板已部署】"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 09:59:14",
           "durationSec": 6667,
-          "note": "【两地问卷星登录态恢复_增量检查完成_看板已部署】",
-          "dur": 6667
+          "note": "【两地问卷星登录态恢复_增量检查完成_看板已部署】"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 16:09:23",
-          "durationSec": 563,
-          "note": "",
-          "dur": 563
+          "durationSec": 563
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 07:51:18",
-          "durationSec": 904,
-          "note": "",
-          "dur": 904
+          "durationSec": 904
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 08:28:53",
           "durationSec": 2233,
-          "note": "08:16手动补跑完成：问卷星增量0条（远端计数低于本地，无漏项），看板已重发布",
-          "dur": 2233
+          "note": "08:16手动补跑完成：问卷星增量0条（远端计数低于本地，无漏项），看板已重发布"
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-30 16:11:15",
-          "durationSec": 675,
-          "note": "",
-          "dur": 675
+          "durationSec": 675
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-31 16:15:17",
-          "durationSec": 917,
-          "note": "",
-          "dur": 917
+          "durationSec": 917
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-01 07:51:00",
-          "durationSec": 490,
-          "note": "",
-          "dur": 490
+          "durationSec": 490
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-01 08:04:07",
-          "durationSec": 752,
-          "note": "",
-          "dur": 752
+          "durationSec": 752
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-01 16:24:33",
-          "durationSec": 1473,
-          "note": "",
-          "dur": 1473
+          "durationSec": 1473
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-02 16:20:02",
-          "durationSec": 1083,
-          "note": "",
-          "dur": 1083
+          "durationSec": 1083
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-02 17:01:15",
-          "durationSec": 3557,
-          "note": "",
-          "dur": 3557
+          "durationSec": 3557
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-02 17:24:33",
-          "durationSec": 4955,
-          "note": "",
-          "dur": 4955
+          "durationSec": 4955
         },
         {
           "status": "PASS",
           "finishedAt": "2026-11-02 20:06:49",
-          "durationSec": null,
-          "note": "",
-          "dur": null
+          "durationSec": null
         }
       ],
       "gaps": {
@@ -1764,37 +1479,6 @@
         "passCount": 12
       },
       "durTrend": [
-        525,
-        180,
-        1149,
-        335,
-        951,
-        822,
-        1241,
-        1332,
-        1319,
-        1174,
-        2960,
-        174,
-        774,
-        1350,
-        2115,
-        2869,
-        3092,
-        3825,
-        4617,
-        310,
-        1986,
-        1043,
-        363,
-        545,
-        1657,
-        1093,
-        1674,
-        1475,
-        283,
-        1253,
-        786,
         768,
         5521,
         6667,
@@ -1840,247 +1524,177 @@
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 01:10:57",
-          "durationSec": 2.3,
-          "note": "",
-          "dur": 2
+          "durationSec": 2.3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 01:20:22",
-          "durationSec": 2.3,
-          "note": "",
-          "dur": 2
+          "durationSec": 2.3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 01:29:57",
-          "durationSec": 22.2,
-          "note": "",
-          "dur": 22
+          "durationSec": 22.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 01:37:51",
-          "durationSec": 22.2,
-          "note": "",
-          "dur": 22
+          "durationSec": 22.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 01:43:35",
-          "durationSec": 1.9,
-          "note": "",
-          "dur": 2
+          "durationSec": 1.9
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:15:11",
-          "durationSec": 22.2,
-          "note": "",
-          "dur": 22
+          "durationSec": 22.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:25:57",
-          "durationSec": 1.1,
-          "note": "",
-          "dur": 1
+          "durationSec": 1.1
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:29:39",
-          "durationSec": 2.1,
-          "note": "",
-          "dur": 2
+          "durationSec": 2.1
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:50:35",
-          "durationSec": 2.2,
-          "note": "",
-          "dur": 2
+          "durationSec": 2.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:58:42",
-          "durationSec": 2.3,
-          "note": "",
-          "dur": 2
+          "durationSec": 2.3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 09:59:42",
-          "durationSec": 2,
-          "note": "",
-          "dur": 2
+          "durationSec": 2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 10:10:20",
-          "durationSec": 22.3,
-          "note": "",
-          "dur": 22
+          "durationSec": 22.3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 10:13:41",
-          "durationSec": 22.1,
-          "note": "",
-          "dur": 22
+          "durationSec": 22.1
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 10:37:27",
-          "durationSec": 20.4,
-          "note": "",
-          "dur": 20
+          "durationSec": 20.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 10:47:05",
-          "durationSec": 2.4,
-          "note": "",
-          "dur": 2
+          "durationSec": 2.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 11:09:04",
-          "durationSec": 2.4,
-          "note": "",
-          "dur": 2
+          "durationSec": 2.4
         },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-17 13:11:42",
-          "durationSec": 24.1,
-          "note": "",
-          "dur": 24
+          "durationSec": 24.1
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 13:14:34",
-          "durationSec": 23.4,
-          "note": "",
-          "dur": 23
+          "durationSec": 23.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 13:17:18",
-          "durationSec": 23.4,
-          "note": "",
-          "dur": 23
+          "durationSec": 23.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 13:18:02",
-          "durationSec": 23.8,
-          "note": "",
-          "dur": 24
+          "durationSec": 23.8
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 13:22:08",
-          "durationSec": 23.7,
-          "note": "",
-          "dur": 24
+          "durationSec": 23.7
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 13:46:19",
-          "durationSec": 3.2,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 13:56:36",
-          "durationSec": 3.2,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 14:42:58",
-          "durationSec": 3.3,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 14:44:14",
-          "durationSec": 3.2,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 14:50:51",
-          "durationSec": 23.7,
-          "note": "",
-          "dur": 24
+          "durationSec": 23.7
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 14:58:26",
-          "durationSec": 7.1,
-          "note": "",
-          "dur": 7
+          "durationSec": 7.1
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 15:09:17",
-          "durationSec": 3.4,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 16:10:44",
-          "durationSec": 3.5,
-          "note": "",
-          "dur": 4
+          "durationSec": 3.5
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 17:06:22",
-          "durationSec": 3.2,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.2
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 17:18:14",
-          "durationSec": 3,
-          "note": "",
-          "dur": 3
+          "durationSec": 3
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 17:21:47",
-          "durationSec": 3.6,
-          "note": "",
-          "dur": 4
+          "durationSec": 3.6
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 17:47:00",
-          "durationSec": 3.4,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.4
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-17 18:18:27",
-          "durationSec": 3.1,
-          "note": "",
-          "dur": 3
+          "durationSec": 3.1
         },
         {
           "status": "PASS",
           "finishedAt": "2026-10-29 10:27:00",
-          "durationSec": 48.6,
-          "note": "",
-          "dur": 49
+          "durationSec": 48.6
         }
       ],
       "gaps": {
@@ -2212,27 +1826,6 @@
         "passCount": 2
       },
       "durTrend": [
-        2,
-        2,
-        22,
-        22,
-        2,
-        22,
-        1,
-        2,
-        2,
-        2,
-        2,
-        22,
-        22,
-        20,
-        2,
-        2,
-        24,
-        23,
-        23,
-        24,
-        24,
         3,
         3,
         3,
@@ -2251,10 +1844,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-02 19:07:08",
+    "auditedAt": "2026-11-03 00:18:09",
     "status": "PASS",
-    "pass": 35,
-    "warn": 5,
+    "pass": 37,
+    "warn": 0,
     "fail": 0,
     "checks": [
       {
@@ -2290,7 +1883,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 8183230 2026-11-02 19:20:01 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: d47c231 2026-11-02 21:41:53 +0800 Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       },
       {
         "level": "PASS",
@@ -2300,12 +1893,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（3 小时前生成）"
+        "msg": "单文件产物存在（8 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（3 小时前生成）"
+        "msg": "单文件产物存在（7 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2318,9 +1911,9 @@
         "msg": "源新鲜（最新对象 0h 前）且消费同步（滞后 0h 内）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "考核取数",
-        "msg": "企客KA全月缺数城市：诸暨——BI 17805/253744「城市代理」维值无数据权限（诸暨 6176 已验证接口回放无权限），需在 BI 权限中心申请维值权限，批后流水线自动补齐（核对报告第七十五章）"
+        "msg": "企客KA全月缺数城市（已知态）：诸暨——BI 17805/253744「城市代理」维值无数据权限（诸暨 6176 已验证），非流水线断链；需在 BI 权限中心申请，批后自动补齐（核对报告第七十五章）"
       },
       {
         "level": "PASS",
@@ -2343,19 +1936,14 @@
         "msg": "[kaohe-daily] 已关联定时器"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily] 定时器最近一次运行失败（11h 前）——排查自动化会话日志"
+        "msg": "[kaohe-daily] 定时器失败与已知态 FAIL 留痕同因（换月SOP/登录态），非会话故障残留"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily] 定时器排期 07:00 与预期 8 点不一致"
-      },
-      {
-        "level": "WARN",
-        "item": "调度配置",
-        "msg": "[kaohe-daily] 今日应跑（每日 08:00 主跑 + 10:30 发布自愈）但无今日成功留痕——疑似断链；command 型可用 run_task.ps1 -Auto 补跑，agent 型手动重跑后 -Record PASS 留痕"
+        "msg": "[kaohe-daily] 定时器排期 07:30 与 expectHour=7 一致"
       },
       {
         "level": "PASS",
@@ -2365,12 +1953,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（11/02/2026 08:08:50），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[xsp-weekly] 今日已运行"
+        "msg": "[xsp-weekly] 定时器排期 08:00 与 expectHour=8 一致"
       },
       {
         "level": "PASS",
@@ -2390,17 +1973,12 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[capacity-daily] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
+        "msg": "[capacity-daily] 任务留痕已晚于定时器失败时刻（PASS 覆盖失败残留，自动刷新）"
       },
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[capacity-daily] 定时器 lastRunAt 停在 10/23/2026 10:30:03 —— 暂停中不更新属预期（用户登记主动暂停，R266 意图豁免；恢复运行后自动复检）"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[capacity-daily] 今日已运行"
+        "msg": "[capacity-daily] 定时器排期 09:00 与 expectHour=9 一致"
       },
       {
         "level": "PASS",
@@ -2415,12 +1993,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/02/2026 16:01:58），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 今日已运行"
+        "msg": "[rider-hourly] 定时器排期 16:00 与 expectHour=16 一致"
       },
       {
         "level": "PASS",
@@ -2450,39 +2023,20 @@
       {
         "level": "PASS",
         "item": "编排完整性",
+        "msg": "[xsp-weekly] 10:30 发布自愈定时器在位且 ACTIVE（双探测兜底无断点）"
+      },
+      {
+        "level": "PASS",
+        "item": "编排完整性",
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "断链自愈",
-        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 kaohe-daily（每日 08:00 主跑 + 10:30 发布自愈）；  [kaohe-daily] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）"
+        "msg": "嵌套审计（自愈深度 1）——顶层链已覆盖自愈职责，此处跳过补跑防递归（R362）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-10-29 09:47:25",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-29 09:48:06",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-29 10:06:36",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-29 12:57:10",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-10-30 07:44:32",
-        "status": "FAIL"
-      },
-      {
-        "auditedAt": "2026-10-30 08:25:25",
-        "status": "FAIL"
-      },
       {
         "auditedAt": "2026-10-30 08:31:52",
         "status": "PASS"
@@ -2514,6 +2068,30 @@
       {
         "auditedAt": "2026-11-02 19:07:08",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-02 22:36:33",
+        "status": "FAIL"
+      },
+      {
+        "auditedAt": "2026-11-02 22:38:50",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-02 22:41:36",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-02 22:44:47",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-02 22:45:42",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-03 00:18:09",
+        "status": "PASS"
       }
     ]
   },
@@ -2528,7 +2106,7 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-02 19:07:08）"
+      "detail": "审计 PASS（2026-11-03 00:18:09）"
     },
     {
       "layer": "门禁层",
@@ -2540,13 +2118,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 4h 前"
+      "detail": "2 项目 · 2 数据滞后（超 2 天），最新产出 8h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 6h 前刷新"
     }
   ],
   "projects": [
@@ -2579,11 +2157,11 @@
           "size": 2647222
         }
       ],
-      "ageHours": 4,
+      "ageHours": 15,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
-      "dataLag": 7,
+      "dataLag": 8,
       "staleData": true,
       "dataLagThreshold": 2,
       "outage": {
@@ -2596,14 +2174,14 @@
       "name": "履约考核工程",
       "recent": [
         {
+          "name": "oct.json",
+          "mtime": "2026-11-02 14:38",
+          "size": 98928
+        },
+        {
           "name": "nov.json",
           "mtime": "2026-11-02 08:01",
           "size": 55931
-        },
-        {
-          "name": "oct.json",
-          "mtime": "2026-11-02 08:01",
-          "size": 98919
         },
         {
           "name": "sep.json",
@@ -2621,13 +2199,18 @@
           "size": 17890
         }
       ],
-      "ageHours": 4,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-11-02",
-      "dataLag": 0,
-      "staleData": false,
+      "dataDate": "2026-10-31",
+      "dataLag": 3,
+      "staleData": true,
       "dataLagThreshold": 2,
+      "outage": {
+        "since": "2026-11-01",
+        "dayCount": 2,
+        "cause": null
+      },
       "validation": [
         {
           "file": "nov.json",
@@ -2823,15 +2406,15 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-02 09:24:32",
-        "ageH": 3
+        "latestAt": "2026-11-02 17:35:37",
+        "ageH": 5
       }
     ]
   },
   "alerts": [
     {
       "level": "FAIL",
-      "text": "任务失败：履约考核看板刷新与备份（2026-11-02 10:37:46 · 11月遗留板上线被换月SOP人工核对挂账阻塞（config-2026-11 共30项TODO待人工核对）；11-01数据抓取/Excel/月度MTD/备份/前端回灌主跑已完成）",
+      "text": "任务失败：履约考核看板刷新与备份（2026-11-02 10:37:46 · 11月遗留板上线被换月SOP人工核对挂账阻塞（config-2026-11 共30项TODO待人工核对）；11-01数据抓取/Excel/月度MTD/备份/前端回灌主跑已完成）——已知态失败（换月SOP人工核对挂账）：主跑数据链已完成；遗留板/上线被换月人工 TODO 阻塞，需完成核对后重跑上线段，勿当调度断链补跑",
       "anchor": "sec-tasks"
     },
     {
@@ -2841,12 +2424,12 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 5 项警告（2026-11-02 19:07:08）",
-      "anchor": "sec-audit"
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 8 天，超 2 天）——疑似源停发第 7 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "anchor": "sec-fresh"
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 7 天，超 2 天）——疑似源停发第 7 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "text": "看板数据滞后：履约考核工程 数据日期 2026-10-31（滞后 3 天，超 2 天）——疑似源停发第 2 天（自 2026-11-01 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     },
     {
@@ -2857,15 +2440,22 @@
   ],
   "todos": [
     {
+      "file": "frontend\\src\\utils\\knownState.js",
+      "line": 16,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "阻塞，重跑无法跳过核对 */"
+    },
+    {
       "file": "frontend\\scripts\\export-data.mjs",
-      "line": 403,
+      "line": 413,
       "kind": "TODO",
       "owner": "未认领",
       "text": "模板打爆导出链。 */"
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 282,
+      "line": 285,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -2888,7 +2478,7 @@
   "todoOwners": [
     {
       "owner": "未认领",
-      "count": 4
+      "count": 5
     }
   ],
   "changes": [
@@ -3069,8 +2659,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "cad70fa",
-        "at": "2026-11-02T20:00:19+08:00",
+        "hash": "6c2fbbc",
+        "at": "2026-11-02T21:00:09+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3091,9 +2681,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "347897c",
-        "at": "2026-11-02T17:05:05+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html（assessment-legacy 通道）"
+        "hash": "d47c231",
+        "at": "2026-11-02T21:41:53+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
   ],
@@ -3768,7 +3358,7 @@
     },
     {
       "date": "2026-11-02",
-      "at": "2026-11-02 12:58:36",
+      "at": "2026-11-02 23:20:36",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -3831,20 +3421,29 @@
       "lastSeenAt": "2026-11-02",
       "resolvedAt": null,
       "resolvedDataDate": null
+    },
+    {
+      "project": "履约考核工程",
+      "since": "2026-11-01",
+      "dayCount": 2,
+      "lastDataDate": "2026-10-31",
+      "lastSeenAt": "2026-11-02",
+      "resolvedAt": null,
+      "resolvedDataDate": null
     }
   ],
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1040.3,
+      "totalKB": 1040.5,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-C31v8XZE.js",
-          "kb": 135.2
+          "name": "main-B0X3PBqL.js",
+          "kb": 135.4
         },
         {
           "name": "vendor-vue-D7Dr9SKz.js",
@@ -3855,7 +3454,7 @@
           "kb": 55.8
         },
         {
-          "name": "main-D9L-hEim.css",
+          "name": "main-D1g6LCnJ.css",
           "kb": 31
         },
         {
@@ -3873,8 +3472,8 @@
       ]
     },
     "data": {
-      "count": 7,
-      "totalKB": 1939.1,
+      "count": 13,
+      "totalKB": 2176.1,
       "top": [
         {
           "name": "rider_base.json",
@@ -3882,7 +3481,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 542.3
+          "kb": 516.2
         },
         {
           "name": "rider-index.json",
@@ -3897,12 +3496,54 @@
           "kb": 99
         },
         {
-          "name": "visits.json",
-          "kb": 49.5
+          "name": "assessment/oct.json",
+          "kb": 96.6
         },
         {
-          "name": "logger.json",
-          "kb": 0.7
+          "name": "assessment/sep.json",
+          "kb": 84
+        },
+        {
+          "name": "assessment/nov.json",
+          "kb": 54.6
+        }
+      ]
+    },
+    "daily": {
+      "count": 9,
+      "totalKB": 21773.7,
+      "top": [
+        {
+          "name": "daily/rider_daily_202608.json",
+          "kb": 3306
+        },
+        {
+          "name": "daily/rider_daily_202607.json",
+          "kb": 3304.3
+        },
+        {
+          "name": "daily/rider_daily_202605.json",
+          "kb": 3279
+        },
+        {
+          "name": "daily/rider_daily_202606.json",
+          "kb": 3142.4
+        },
+        {
+          "name": "daily/rider_daily_202604.json",
+          "kb": 3111.8
+        },
+        {
+          "name": "daily/rider_daily_202609.json",
+          "kb": 2778.3
+        },
+        {
+          "name": "daily/rider_daily_202610.json",
+          "kb": 2327.5
+        },
+        {
+          "name": "daily/rider_daily_202603.json",
+          "kb": 453.5
         }
       ]
     },
@@ -3910,7 +3551,9 @@
       "totalAssetsKB": 1600,
       "maxChunkKB": 700,
       "totalDataKB": 2400,
-      "maxDataKB": 800
+      "maxDataKB": 800,
+      "totalDailyKB": 30000,
+      "maxDailyKB": 4500
     },
     "breaches": [],
     "status": "PASS"
