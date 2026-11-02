@@ -542,6 +542,10 @@ body.no-scroll{overflow:hidden}
 .header .header-meta .freshness-badge{display:inline-block}
 .header .freshness-badge.fresh{color:#7bed9f!important}
 .city-tab.active,.dim-tab.active{color:#FFC300!important}
+/* R522：激活页签兜底——上行的 !important 金色是暗底时代的口径，现激活态为金底渐变，
+   金底金字不可见（浏览器实证实锤）；.city-tab.active 由 #city-bar 专属规则兜住，
+   .dim-tab.active 无救援被殃及，这里按同优先级 !important 补回深色主墨。 */
+.dim-tab.active{color:#1B2233!important}
 .city-tab,.dim-tab{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 /* ====== end mt-style ====== */
 </style>
