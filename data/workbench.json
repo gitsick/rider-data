@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-02 03:58:53",
+  "generatedAt": "2026-11-02 04:31:51",
   "runDate": "2026-11-02",
   "tasks": [
     {
@@ -765,8 +765,8 @@
         "expectHour": 9,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
       },
       "timer": null,
       "heal": {
@@ -2508,7 +2508,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "3/4 任务正常 · 1 失败 · 近 30 天触发断档 7 天"
+      "detail": "2/4 任务正常 · 1 失败 · 1 逾期 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -2565,7 +2565,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 19,
+      "ageHours": 20,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2809,8 +2809,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-02 02:13:22",
-        "ageH": 1
+        "latestAt": "2026-11-02 04:04:03",
+        "ageH": 0
       }
     ]
   },
@@ -2818,6 +2818,11 @@
     {
       "level": "FAIL",
       "text": "任务失败：履约考核看板刷新与备份（2026-11-02 10:37:46 · 11月遗留板上线被换月SOP人工核对挂账阻塞（config-2026-11 共30项TODO待人工核对）；11-01数据抓取/Excel/月度MTD/备份/前端回灌主跑已完成）",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
       "anchor": "sec-tasks"
     },
     {
@@ -2851,17 +2856,10 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 276,
+      "line": 277,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
-    },
-    {
-      "file": "pro\\kaohe-daily\\build\\tmp_seed_nov.py",
-      "line": 122,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "注释统一清理（保留 noData 结构）"
     },
     {
       "file": "pro\\kaohe-daily\\tools\\month-spec.mjs",
@@ -2881,7 +2879,7 @@
   "todoOwners": [
     {
       "owner": "未认领",
-      "count": 5
+      "count": 4
     }
   ],
   "changes": [
@@ -3062,8 +3060,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "ce90170",
-        "at": "2026-11-02T10:05:42+08:00",
+        "hash": "0677a84",
+        "at": "2026-11-02T12:00:09+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3761,7 +3759,7 @@
     },
     {
       "date": "2026-11-02",
-      "at": "2026-11-02 03:58:53",
+      "at": "2026-11-02 04:31:51",
       "score": 68,
       "grade": "中",
       "layers": [
