@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-03 10:51:59",
+  "generatedAt": "2026-11-03 12:19:12",
   "runDate": "2026-11-03",
   "tasks": [
     {
@@ -2360,13 +2360,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 2h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 1h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2399,7 +2399,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 2,
+      "ageHours": 4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2417,8 +2417,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-03 08:01",
-          "size": 57666
+          "mtime": "2026-11-03 11:11",
+          "size": 57611
         },
         {
           "name": "oct.json",
@@ -2441,7 +2441,7 @@
           "size": 17890
         }
       ],
-      "ageHours": 2,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-03",
@@ -2643,8 +2643,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-03 09:37:08",
-        "ageH": 1
+        "latestAt": "2026-11-03 12:10:47",
+        "ageH": 0
       }
     ]
   },
@@ -2663,6 +2663,11 @@
       "level": "WARN",
       "text": "口径私有化嫌疑：canon 在 pro\\kaohe-daily\\build\\verify_coverage.py 重新定义（唯一事实源应为 pro\\capacity-daily\\pipeline_config.py → CANON / canon()，条目：4. 城市/名称别名归一）",
       "anchor": "sec-calibers"
+    },
+    {
+      "level": "WARN",
+      "text": "换月预检未就绪：下一目标 2026-12 缺 6/6 项——见换月预检卡下一步",
+      "anchor": "sec-preflight"
     }
   ],
   "todos": [
@@ -2682,7 +2687,7 @@
     },
     {
       "file": "pro\\kaohe-daily\\build\\selftest.py",
-      "line": 292,
+      "line": 293,
       "kind": "TODO",
       "owner": "未认领",
       "text": "」漂移态（R407 stub 闭环用例随测试顺序竞态误红）。"
@@ -2886,8 +2891,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "90e3447",
-        "at": "2026-11-03T17:15:42+08:00",
+        "hash": "2d291fc",
+        "at": "2026-11-03T18:56:03+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2908,8 +2913,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "de2a5ec",
-        "at": "2026-11-03T09:11:31+08:00",
+        "hash": "9d5eb3c",
+        "at": "2026-11-03T19:08:00+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-02"
       }
     }
@@ -3206,6 +3211,83 @@
       "fails": []
     }
   ],
+  "preflight": {
+    "current": "2026-11",
+    "next": "2026-12",
+    "ready": false,
+    "missMonths": 1,
+    "months": [
+      {
+        "month": "2026-09",
+        "key": "sep",
+        "ready": true,
+        "miss": 0,
+        "total": 5,
+        "gaps": []
+      },
+      {
+        "month": "2026-10",
+        "key": "oct",
+        "ready": true,
+        "miss": 0,
+        "total": 6,
+        "gaps": []
+      },
+      {
+        "month": "2026-11",
+        "key": "nov",
+        "ready": true,
+        "miss": 0,
+        "total": 6,
+        "gaps": []
+      },
+      {
+        "month": "2026-12",
+        "key": "dec",
+        "ready": false,
+        "miss": 6,
+        "total": 6,
+        "gaps": [
+          {
+            "id": "data-src",
+            "name": "考核主数据源 data-2026-12.js",
+            "owner": "数据/运营：待月度数据发布落位",
+            "nextStep": "向数据/运营确认月度主数据已落位；未发布前勿强行接线上线"
+          },
+          {
+            "id": "config-src",
+            "name": "考核月配置 config-2026-12.js",
+            "owner": "运营：待月度目标值配置落位",
+            "nextStep": "向运营确认月度目标配置已落位；缺配置不要假绿放行"
+          },
+          {
+            "id": "entry-html",
+            "name": "月度入口 delivery-assessment-dashboard-dec.html（含 data-month）",
+            "owner": "前端：换月接线（复制当月入口改参数）",
+            "nextStep": "复制邻近月入口 HTML，改 data-month 为本月；sep 历史月用裸名 delivery-assessment-dashboard.html，oct 起带月码后缀（与 flatEntryOf 同口径）"
+          },
+          {
+            "id": "vite-wiring",
+            "name": "vite.config.js 接线（预载 + input）",
+            "owner": "前端：换月接线",
+            "nextStep": "在 vite.config.js 补 R55 预载 data/assessment/<月码>.json 与 rollup input 条目（入口 stem 与 flatEntryOf 一致）"
+          },
+          {
+            "id": "export-main",
+            "name": "导出产物 assessment/dec.json",
+            "owner": "链路：数据源到位后跑 export-data 自动产出",
+            "nextStep": "数据源就位后跑 npm run export:data 产出 assessment/<月码>.json"
+          },
+          {
+            "id": "export-targets",
+            "name": "目标值 targets-dec.json",
+            "owner": "链路：数据源到位后跑 export-data 自动产出",
+            "nextStep": "官方目标月须产出 targets-<月码>.json；缺目标时看板会回退旧画像——预检红则勿当就绪"
+          }
+        ]
+      }
+    ]
+  },
   "health": {
     "score": 93,
     "grade": "优",
@@ -3613,7 +3695,7 @@
     },
     {
       "date": "2026-11-03",
-      "at": "2026-11-03 10:51:59",
+      "at": "2026-11-03 12:19:12",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3690,38 +3772,38 @@
   "perf": {
     "assets": {
       "count": 38,
-      "totalKB": 1069.6,
+      "totalKB": 1073.6,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-Ce2hy-DO.js",
-          "kb": 143
+          "name": "main-DTvc26q_.js",
+          "kb": 145.7
         },
         {
           "name": "vendor-vue-BUPQgr5I.js",
           "kb": 73.6
         },
         {
-          "name": "workbench-Dfk2iy2E.js",
+          "name": "workbench-COsfMBv7.js",
           "kb": 62.5
         },
         {
-          "name": "swRegister-B5t16Leu.css",
-          "kb": 33.4
+          "name": "main-DY_AzSum.css",
+          "kb": 34.3
         },
         {
-          "name": "main-BbYX9Md5.css",
-          "kb": 33.3
+          "name": "swRegister-C-qjwzzq.css",
+          "kb": 33.7
         },
         {
           "name": "workbench-6SASfZkJ.css",
           "kb": 24.9
         },
         {
-          "name": "rider_dashboard-cdWZ23RR.js",
+          "name": "rider_dashboard-BR7dwvBl.js",
           "kb": 22.6
         }
       ]
