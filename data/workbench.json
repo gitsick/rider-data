@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-03 00:22:05",
+  "generatedAt": "2026-11-03 01:27:39",
   "runDate": "2026-11-03",
   "tasks": [
     {
@@ -376,22 +376,22 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-02 08:08:37",
-        "durationSec": 517,
+        "finishedAt": "2026-11-03 08:29:21",
+        "durationSec": 1761,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-03 08:00"
+        "lastRunAt": "2026-11-03 08:29"
       },
       "heal": {
         "can": false,
@@ -487,6 +487,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-02 08:08:37",
           "durationSec": 517
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-03 08:29:21",
+          "durationSec": 1761
         }
       ],
       "gaps": {
@@ -609,13 +614,13 @@
           },
           {
             "date": "2026-11-03",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 2,
         "failCount": 0,
-        "passCount": 15
+        "passCount": 16
       },
       "durTrend": [
         2776,
@@ -629,7 +634,8 @@
         971,
         1414,
         1100,
-        517
+        517,
+        1761
       ]
     },
     {
@@ -2100,7 +2106,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
+      "detail": "4/4 任务正常 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
@@ -2124,7 +2130,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 1h 前刷新"
     }
   ],
   "projects": [
@@ -2157,7 +2163,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 16,
+      "ageHours": 17,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2175,8 +2181,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-03 00:06",
-          "size": 57312
+          "mtime": "2026-11-03 01:27",
+          "size": 57652
         },
         {
           "name": "oct.json",
@@ -2401,7 +2407,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-02 23:24:14",
+        "latestAt": "2026-11-03 00:32:00",
         "ageH": 0
       }
     ]
@@ -2410,7 +2416,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：2 个任务近 30 天共 7 天零留痕（新商评考核周报 3 天 · 通用运力监控每日刷新 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：2 个任务近 30 天共 6 天零留痕（新商评考核周报 2 天 · 通用运力监控每日刷新 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -2644,8 +2650,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "0c1a007",
-        "at": "2026-11-03T08:11:18+08:00",
+        "hash": "bcc4f2f",
+        "at": "2026-11-03T08:24:43+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2666,8 +2672,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "3be9f4d",
-        "at": "2026-11-03T07:55:54+08:00",
+        "hash": "de2a5ec",
+        "at": "2026-11-03T09:11:31+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-02"
       }
     }
@@ -3371,7 +3377,7 @@
     },
     {
       "date": "2026-11-03",
-      "at": "2026-11-03 00:22:05",
+      "at": "2026-11-03 01:27:39",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -3448,14 +3454,14 @@
   "perf": {
     "assets": {
       "count": 35,
-      "totalKB": 1058.3,
+      "totalKB": 1058.4,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-CN9KEFTc.js",
+          "name": "main-B9lTCGhD.js",
           "kb": 138.2
         },
         {
@@ -3467,8 +3473,8 @@
           "kb": 63.7
         },
         {
-          "name": "main-Bf3SIuo8.css",
-          "kb": 33.3
+          "name": "main-23JFNRUN.css",
+          "kb": 33.4
         },
         {
           "name": "swRegister-CFIU3qhj.css",
@@ -3486,7 +3492,7 @@
     },
     "data": {
       "count": 13,
-      "totalKB": 2167.3,
+      "totalKB": 2166.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -3510,7 +3516,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 91.7
+          "kb": 91.1
         },
         {
           "name": "assessment/sep.json",
