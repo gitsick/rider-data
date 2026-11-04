@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-04 04:14:19",
+  "generatedAt": "2026-11-04 04:24:52",
   "runDate": "2026-11-04",
   "tasks": [
     {
@@ -2386,7 +2386,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2437,8 +2437,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-04 04:14",
-          "size": 62700
+          "mtime": "2026-11-04 04:24",
+          "size": 63375
         },
         {
           "name": "oct.json",
@@ -2875,8 +2875,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "e44fb4c",
-        "at": "2026-11-04T11:13:01+08:00",
+        "hash": "687ed6c",
+        "at": "2026-11-04T12:16:03+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2897,8 +2897,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "f713927",
-        "at": "2026-11-04T12:14:13+08:00",
+        "hash": "e0c8b2d",
+        "at": "2026-11-04T12:24:46+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html（assessment-legacy 通道）"
       }
     }
@@ -3707,7 +3707,7 @@
     },
     {
       "date": "2026-11-04",
-      "at": "2026-11-04 04:14:19",
+      "at": "2026-11-04 04:24:52",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -3822,7 +3822,7 @@
     },
     "data": {
       "count": 13,
-      "totalKB": 2193.8,
+      "totalKB": 2196.9,
       "top": [
         {
           "name": "rider_base.json",
@@ -3842,7 +3842,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 114.8
+          "kb": 115.1
         },
         {
           "name": "assessment/oct.json",
@@ -3854,7 +3854,7 @@
         },
         {
           "name": "assessment/nov.json",
-          "kb": 58.4
+          "kb": 61.2
         }
       ]
     },
