@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-04 04:24:52",
+  "generatedAt": "2026-11-04 05:18:09",
   "runDate": "2026-11-04",
   "tasks": [
     {
@@ -2419,7 +2419,7 @@
           "size": 2647222
         }
       ],
-      "ageHours": 20,
+      "ageHours": 21,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2437,8 +2437,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-04 04:24",
-          "size": 63375
+          "mtime": "2026-11-04 04:55",
+          "size": 63424
         },
         {
           "name": "oct.json",
@@ -2520,6 +2520,12 @@
       "title": "看板中心",
       "desc": "全部看板入口",
       "href": "index.html"
+    },
+    {
+      "key": "admin",
+      "title": "运营后台",
+      "desc": "权限矩阵 · 模块目录 · SSO 接入壳",
+      "href": "admin.html"
     },
     {
       "key": "workbench",
@@ -2664,7 +2670,7 @@
         "name": "20261017-efficiency-naming",
         "files": 16,
         "latestAt": "2026-11-03 22:55:46",
-        "ageH": 5
+        "ageH": 6
       }
     ]
   },
@@ -2875,8 +2881,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "687ed6c",
-        "at": "2026-11-04T12:16:03+08:00",
+        "hash": "63ac4f5",
+        "at": "2026-11-04T12:26:15+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2897,8 +2903,8 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "e0c8b2d",
-        "at": "2026-11-04T12:24:46+08:00",
+        "hash": "5f82d15",
+        "at": "2026-11-04T13:18:03+08:00",
         "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html（assessment-legacy 通道）"
       }
     }
@@ -3707,7 +3713,7 @@
     },
     {
       "date": "2026-11-04",
-      "at": "2026-11-04 04:24:52",
+      "at": "2026-11-04 05:18:09",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -3822,7 +3828,7 @@
     },
     "data": {
       "count": 13,
-      "totalKB": 2196.9,
+      "totalKB": 2197.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -3854,7 +3860,7 @@
         },
         {
           "name": "assessment/nov.json",
-          "kb": 61.2
+          "kb": 61.9
         }
       ]
     },
