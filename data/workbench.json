@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-05 11:21:27",
+  "generatedAt": "2026-11-05 12:01:26",
   "runDate": "2026-11-05",
   "tasks": [
     {
@@ -1132,8 +1132,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-05 16:30:26",
-        "durationSec": 1826,
+        "finishedAt": "2026-11-05 19:34:47",
+        "durationSec": 11016,
         "note": ""
       },
       "monitor": {
@@ -1154,12 +1154,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "FAIL",
-          "finishedAt": "2026-10-22 16:13:42",
-          "durationSec": 822,
-          "note": "问卷星登录态失效（LOGIN_REQUIRED），华东/华南远程条数无法核对；本地无新增，访问日志汇总后看板已重新部署。待用户在集成浏览器重新登录后重跑"
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-22 22:34:52",
@@ -1425,6 +1419,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-05 16:30:26",
           "durationSec": 1826
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-05 19:34:47",
+          "durationSec": 11016
         }
       ],
       "gaps": {
@@ -1556,7 +1555,6 @@
         "passCount": 12
       },
       "durTrend": [
-        2233,
         675,
         917,
         490,
@@ -1569,7 +1567,8 @@
         908,
         1146,
         2290,
-        1826
+        1826,
+        11016
       ]
     },
     {
@@ -2204,11 +2203,14 @@
       "note": "F2：COS audit-trail/ 前缀 → pro/audit-trail/ 拉取入仓（R348 翻页口径 + seen key/本地文件双保险去重；凭证共享 rider-hourly/config/cos_secret.txt 单源不复制）。入仓后由 lib/monitor 聚合进大盘（F1 ⑦ trail:<deviceTag> 告警）。--dry-run 只列不拉、--selftest 不触网自检。F3 起每日 21:00 由桌面端自动化自动跑（结果推收件箱）；首次投放=从访问日志页导出快照上传 COS audit-trail/ 前缀。",
       "last": null,
       "monitor": {
-        "cadence": "daily-21:00",
+        "cadence": "daily",
         "trigger": "每日 21:00（F3 配桌面端自动化；此前手动）",
         "expect": true
       },
-      "timer": null,
+      "timer": {
+        "state": "ok",
+        "lastRunAt": ""
+      },
       "heal": {
         "can": true,
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id audit-trail-pull）；带日期参数的任务自动复用最近成功数据日期"
@@ -2604,7 +2606,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
     },
     {
       "layer": "渲染层",
@@ -2643,7 +2645,7 @@
           "size": 288658
         }
       ],
-      "ageHours": 11,
+      "ageHours": 12,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2659,6 +2661,11 @@
     {
       "name": "履约考核工程",
       "recent": [
+        {
+          "name": "targets-2026-12.json",
+          "mtime": "2026-11-05 11:30",
+          "size": 4282
+        },
         {
           "name": "nov.json",
           "mtime": "2026-11-05 08:02",
@@ -2678,14 +2685,9 @@
           "name": "targets-nov.json",
           "mtime": "2026-10-31 03:37",
           "size": 4659
-        },
-        {
-          "name": "ka-brand.json",
-          "mtime": "2026-10-29 09:01",
-          "size": 17890
         }
       ],
-      "ageHours": 3,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-05",
@@ -2894,7 +2896,7 @@
         "name": "20261017-efficiency-naming",
         "files": 16,
         "latestAt": "2026-11-05 04:36:57",
-        "ageH": 6
+        "ageH": 7
       }
     ]
   },
@@ -2936,12 +2938,158 @@
     },
     {
       "level": "WARN",
-      "text": "换月预检未就绪：下一目标 2026-12 缺 6/6 项——见换月预检卡下一步",
+      "text": "换月预检未就绪：下一目标 2026-12 缺 4/6 项——见换月预检卡下一步",
       "anchor": "sec-preflight"
     }
   ],
-  "todos": [],
-  "todoOwners": [],
+  "todos": [
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 4,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "人工核对清单（构建前必须逐项确认）："
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 24,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */   subtitle: '下沉市场合作商 | 文档负责人：李韶雯 | 考核方案更新 10-29 | 11月考核周期 11/1-11/30',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 28,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "页头 BI 数据日期 headerSourceNote 需人工更新 */   headerSourceNote: 'BI数据：2026-12-01 | 来源：bi.sankuai.com/v2/dashboard/274665',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 30,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "月度差异静态元素开关 flags（profileNote/backTop，DEF-06）需按当月模板确认 */   flags: { profileNote: false, backTop: true }, /* DEF-06 月度差异静态"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 33,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     p1: ['12-01', '11-15'], p2: ['11-16', '12-31'],"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 39,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     pbCut: '11-15',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 40,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     caliberSwitchDay: '11-01',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 42,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     caliberTipOld: '出勤系数旧口径已于10/19停用；11月全月（4个自然周）均按新口径计分（纯完成度，班次全量达成）',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 43,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     periodSummary: '11月考核周期 11/1-11/30，共30天，含9个高峰日（均为周末）',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 44,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     periodSummaryShort: '11月考核周期 11/1-11/30',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 46,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     estimateDescHead: '11月考核周期 11/1-11/30（30天），含9个高峰日（均为周末）。',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 47,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     biNoteEmpty: '11月BI数据待更新，考核周期 11/1-11/30 | 切换城市标签自动联动下方考核模块',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 48,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     emptyDateStatus: '⏳ 11月数据待更新',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 49,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "工装考核周期 workwearPeriod/End 跨月边界需人工确认 */     workwearPeriod: '11/2-11/29', workwearEnd: '11/29',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 54,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     ymWeeklyNote: '自然周维度（方案口径：周均＜90%该周记0，周均不控制区间；11月4个自然周全月适用新口径，周得分=周均完成度、不乘出勤系数；各周得分均值为悦跑运力月值"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 62,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     ymWeeks: [['11-02','11-08'],['11-09','11-15'],['11-16','11-22'],['11-23','11-29']],"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 63,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     weekStarts: ['11-02','11-09','11-16','11-23'],"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 66,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "KFC 目标周数 kfcTargetWeeks 为运营口径 */     kfcTargetWeeks: 4,"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 72,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */   qikeWatchCutoff: '20261129',"
+    },
+    {
+      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
+      "line": 78,
+      "kind": "TODO",
+      "owner": "未认领",
+      "text": "继承自 2026-11 的月度/日期字面量 */     csvPrefix: '履约考核数据_11月更新至',"
+    }
+  ],
+  "todoOwners": [
+    {
+      "owner": "未认领",
+      "count": 20
+    }
+  ],
   "changes": [
     {
       "run": "20261017-efficiency-naming",
@@ -3122,8 +3270,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5079f47",
-        "at": "2026-11-05T16:23:18+08:00",
+        "hash": "574ce39",
+        "at": "2026-11-05T19:23:37+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3528,21 +3676,9 @@
         "month": "2026-12",
         "key": "dec",
         "ready": false,
-        "miss": 6,
+        "miss": 4,
         "total": 6,
         "gaps": [
-          {
-            "id": "data-src",
-            "name": "考核主数据源 data-2026-12.js",
-            "owner": "数据/运营：待月度数据发布落位",
-            "nextStep": "向数据/运营确认月度主数据已落位；未发布前勿强行接线上线"
-          },
-          {
-            "id": "config-src",
-            "name": "考核月配置 config-2026-12.js",
-            "owner": "运营：待月度目标值配置落位",
-            "nextStep": "向运营确认月度目标配置已落位；缺配置不要假绿放行"
-          },
           {
             "id": "entry-html",
             "name": "月度入口 delivery-assessment-dashboard-dec.html（含 data-month）",
@@ -4034,7 +4170,7 @@
     },
     {
       "date": "2026-11-05",
-      "at": "2026-11-05 11:21:27",
+      "at": "2026-11-05 12:01:26",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -4148,8 +4284,8 @@
       ]
     },
     "data": {
-      "count": 13,
-      "totalKB": 2190.1,
+      "count": 14,
+      "totalKB": 2226.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -4157,19 +4293,19 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 513
+          "kb": 527.2
         },
         {
           "name": "rider-index.json",
-          "kb": 315.5
+          "kb": 324.3
         },
         {
           "name": "rider-agreements.json",
-          "kb": 149.8
+          "kb": 153.7
         },
         {
           "name": "workbench.json",
-          "kb": 110.8
+          "kb": 116
         },
         {
           "name": "assessment/oct.json",
