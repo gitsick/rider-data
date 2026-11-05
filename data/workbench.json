@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-05 08:04:59",
+  "generatedAt": "2026-11-05 08:23:12",
   "runDate": "2026-11-05",
   "tasks": [
     {
@@ -3093,8 +3093,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "d64cb84",
-        "at": "2026-11-05T11:33:41+08:00",
+        "hash": "6da144a",
+        "at": "2026-11-05T16:05:03+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3123,24 +3123,42 @@
   ],
   "monitor": {
     "schemaVer": 1,
-    "generatedAt": "2026-11-05 15:58:19",
-    "boards": null,
-    "boardsOverall": null,
-    "boardsVerifiedAt": "",
+    "generatedAt": "2026-11-05 16:11:40",
+    "boards": {
+      "sep": "PASS",
+      "oct": "PASS",
+      "nov": "PASS",
+      "spa-sep": "PASS",
+      "spa-oct": "PASS",
+      "spa-nov": "PASS"
+    },
+    "boardsOverall": "PASS",
+    "boardsVerifiedAt": "2026-11-05 16:02:48",
     "freshness": {
       "capacity-daily": {
-        "dataDay": "2026-10-26"
+        "dataDay": "2026-10-26",
+        "checkedAt": "2026-11-05T16:07:05",
+        "ageH": 0.07659756166666666,
+        "pending": []
       },
       "kaohe-daily": {
-        "dataDay": "2026-11-04"
+        "dataDay": "2026-11-04",
+        "checkedAt": "2026-11-05T16:06:28",
+        "ageH": 0.08687533944444444,
+        "pending": [
+          "qk"
+        ]
       },
       "xsp-weekly": {
-        "dataDay": "2026-11-05"
+        "dataDay": "2026-11-05",
+        "checkedAt": "2026-11-05T16:10:36",
+        "ageH": 0.017986450555555554,
+        "pending": []
       },
       "rider-hourly": {
-        "srcAgeH": 0,
+        "srcAgeH": 0.1,
         "lagH": 0,
-        "generatedAt": "2026-11-05 08:08:39"
+        "generatedAt": "2026-11-05 16:02:22"
       }
     },
     "audit": {
@@ -3981,7 +3999,7 @@
     },
     {
       "date": "2026-11-05",
-      "at": "2026-11-05 08:04:59",
+      "at": "2026-11-05 08:23:12",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -4116,7 +4134,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 109.3
+          "kb": 109.5
         },
         {
           "name": "assessment/oct.json",
