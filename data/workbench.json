@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-05 03:26:15",
+  "generatedAt": "2026-11-05 08:04:59",
   "runDate": "2026-11-05",
   "tasks": [
     {
@@ -701,7 +701,7 @@
       "trigger": "每日 09:00",
       "cwd": "F:\\work\\mtcapacity\\pro\\capacity-daily",
       "entry": "python daily_pipeline.py",
-      "note": "八步管线：关键步骤2-7失败即停；步骤1/8失败仅告警；数据源未发布时用日期参数按最近可得日期重跑",
+      "note": "八步管线：关键步骤2-7失败即停；步骤1/8失败仅告警；数据源未发布时用日期参数按最近可得日期重跑。C1：桌面自动化 G_ndbjAhhr6_cS7hbbZpO 已 PAUSED（人工暂停），登记 paused:true 照实声明——恢复运行时同步删掉本字段，lib/sched.py 双轨核对防漂移",
       "last": {
         "status": "PASS",
         "exitCode": 0,
@@ -715,8 +715,8 @@
         "expectHour": 9,
         "doneToday": false,
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "今日应跑（每日 09:00）但尚无今日留痕"
       },
       "timer": null,
       "heal": {
@@ -1147,7 +1147,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-05 08:14"
+        "lastRunAt": "2026-11-05 16:00"
       },
       "heal": {
         "can": true,
@@ -1573,13 +1573,118 @@
       ]
     },
     {
+      "id": "kaohe-daily-selfheal",
+      "name": "考核看板发布自愈探测",
+      "type": "agent",
+      "trigger": "每日 10:30",
+      "cwd": "F:\\work\\mtcapacity\\pro\\kaohe-daily",
+      "entry": "bi-kaohe-backup 技能自愈入口（检测 07:30 主跑产物未发布则补跑）",
+      "note": "C1 入册：kaohe 主跑（9nqClo7）的发布自愈双探测之二，此前仅 note 提及未独立登记。BYHOUR=10;BYMINUTE=30 与 expectHour=10 对齐",
+      "last": null,
+      "monitor": {
+        "cadence": "daily",
+        "trigger": "每日 10:30",
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
+      },
+      "timer": {
+        "state": "ok",
+        "lastRunAt": "2026-11-05 10:32"
+      },
+      "heal": {
+        "can": false,
+        "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id kaohe-daily-selfheal -Record PASS 留痕"
+      },
+      "history": [],
+      "gaps": {
+        "days": [],
+        "gapCount": 0,
+        "failCount": 0,
+        "passCount": 0,
+        "firstDate": null
+      },
+      "durTrend": []
+    },
+    {
+      "id": "xsp-weekly-selfheal",
+      "name": "新商评周报发布自愈探测",
+      "type": "agent",
+      "trigger": "每日 10:30",
+      "cwd": "F:\\work\\mtcapacity\\pro\\xsp-weekly",
+      "entry": "bi-query-dashboard 技能自愈入口（检测 08:00 主跑产物未发布则补跑）",
+      "note": "C1 入册：xsp 主跑（GKhFgH92zgdoWdjXsqbGa）的发布自愈探测，2026-11-02 创建，与 kaohe-daily-selfheal 同构；此前仅 note 提及未独立登记",
+      "last": null,
+      "monitor": {
+        "cadence": "daily",
+        "trigger": "每日 10:30",
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
+      },
+      "timer": {
+        "state": "ok",
+        "lastRunAt": "2026-11-05 10:32"
+      },
+      "heal": {
+        "can": false,
+        "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id xsp-weekly-selfheal -Record PASS 留痕"
+      },
+      "history": [],
+      "gaps": {
+        "days": [],
+        "gapCount": 0,
+        "failCount": 0,
+        "passCount": 0,
+        "firstDate": null
+      },
+      "durTrend": []
+    },
+    {
+      "id": "monthly-kaohe-backup",
+      "name": "月度考核数据备份",
+      "type": "agent",
+      "trigger": "每日 09:00（当前暂停）",
+      "cwd": "F:\\work\\mtcapacity\\pro\\kaohe-daily",
+      "entry": "月度备份流水线（bi-kaohe-backup 月度档）",
+      "note": "C1 入册：桌面自动化 Rc_JfLXx7BDA_JdjnqJeR（每日 09:00）此前完全未登记，属双轨脱档。当前 PAUSED 属有意暂停，登记 paused:true 照实声明；恢复运行时同步删掉本字段",
+      "last": null,
+      "monitor": {
+        "cadence": "daily",
+        "trigger": "每日 09:00（当前暂停）",
+        "expectHour": 9,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 09:00（当前暂停））但无任何留痕"
+      },
+      "timer": null,
+      "heal": {
+        "can": false,
+        "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id monthly-kaohe-backup -Record PASS 留痕"
+      },
+      "history": [],
+      "gaps": {
+        "days": [],
+        "gapCount": 0,
+        "failCount": 0,
+        "passCount": 0,
+        "firstDate": null
+      },
+      "durTrend": []
+    },
+    {
       "id": "deploy-audit",
       "name": "部署体系审计（手动/按需）",
       "type": "command",
       "trigger": "手动 / 部署异常后",
       "cwd": "F:\\work\\mtcapacity",
       "entry": "pwsh -NoProfile -File pro\\deploy-audit\\audit.ps1",
-      "note": "体检+自愈闭环 12 项：通道/门禁/新鲜度/调度/架构合规/发布补发/日志清扫/编排完整性/断链自愈（每日任务应跑未跑自动补跑）。默认 args 不含 -NoHeal——生产依赖[12]自愈，勿关掉唯一自愈路径。只读巡检/门禁请：pwsh -File pro\\deploy-audit\\audit.ps1 -NoHeal（或 -ReadOnly）；亦可 run_task -Id deploy-audit-ro。详见 pro\\deploy-audit\\README.md。",
+      "note": "体检+自愈闭环 13 项（B3 增「发布清单与回滚记录」）：通道/门禁/新鲜度/调度/架构合规/发布补发/日志清扫/编排完整性/断链自愈（每日任务应跑未跑自动补跑）。默认 args 不含 -NoHeal——生产依赖[12]自愈，勿关掉唯一自愈路径。只读巡检/门禁请：pwsh -File pro\\deploy-audit\\audit.ps1 -NoHeal（或 -ReadOnly）；亦可 run_task -Id deploy-audit-ro。详见 pro\\deploy-audit\\README.md。",
       "last": {
         "status": "PASS",
         "exitCode": 0,
@@ -2091,9 +2196,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-05 10:53:46",
+    "auditedAt": "2026-11-05 13:34:29",
     "status": "PASS",
-    "pass": 44,
+    "pass": 58,
     "warn": 0,
     "fail": 0,
     "checks": [
@@ -2130,7 +2235,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: ac079f3 2026-11-05 08:40:29 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: d64cb84 2026-11-05 11:33:41 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2140,12 +2245,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（3 小时前生成）"
+        "msg": "单文件产物存在（5 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（20 小时前生成）"
+        "msg": "单文件产物存在（23 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2180,7 +2285,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "tasks.json 可解析，共 6 个登记任务"
+        "msg": "tasks.json 可解析，共 9 个登记任务"
       },
       {
         "level": "PASS",
@@ -2250,6 +2355,11 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[capacity-daily] 已登记用户主动暂停——今日无留痕不判断链（R266 意图豁免）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[rider-hourly] command 入口可用（pwsh）"
       },
       {
@@ -2271,6 +2381,56 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 今日已运行"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily-selfheal] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily-selfheal] 定时器排期 10:30 与 expectHour=10 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily-selfheal] 已登记按设计无留痕探测（C1）：自愈探测 BI 未发布早退不留 PASS 痕、留痕语义归主跑——无今日留痕非断链"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly-selfheal] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly-selfheal] 定时器排期 10:30 与 expectHour=10 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly-selfheal] 已登记按设计无留痕探测（C1）：自愈探测 BI 未发布早退不留 PASS 痕、留痕语义归主跑——无今日留痕非断链"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[monthly-kaohe-backup] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[monthly-kaohe-backup] 定时器 PAUSED 为用户登记的主动暂停（意图豁免；恢复运行请桌面端激活并移除登记条目）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[monthly-kaohe-backup] 定时器排期 09:00 与 expectHour=9 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[monthly-kaohe-backup] 已登记用户主动暂停——今日无留痕不判断链（R266 意图豁免）"
       },
       {
         "level": "PASS",
@@ -2300,12 +2460,12 @@
       {
         "level": "PASS",
         "item": "编排完整性",
-        "msg": "[kaohe-daily] 10:30 发布自愈定时器在位且 ACTIVE（双探测兜底无断点）"
+        "msg": "[kaohe-daily] 自愈伴生任务 kaohe-daily-selfheal 在册且定时器 ACTIVE（C1 双轨收敛，双探测兜底无断点）"
       },
       {
         "level": "PASS",
         "item": "编排完整性",
-        "msg": "[xsp-weekly] 10:30 发布自愈定时器在位且 ACTIVE（双探测兜底无断点）"
+        "msg": "[xsp-weekly] 自愈伴生任务 xsp-weekly-selfheal 在册且定时器 ACTIVE（C1 双轨收敛，双探测兜底无断点）"
       },
       {
         "level": "PASS",
@@ -2316,25 +2476,24 @@
         "level": "PASS",
         "item": "断链自愈",
         "msg": "显式 -NoHeal ——跳过 run_task -Auto（只读体检；MT_HEAL_DEPTH=0 未参与补跑）"
+      },
+      {
+        "level": "PASS",
+        "item": "发布清单",
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-05 11:33:40 替换，含 4 文件）"
+      },
+      {
+        "level": "PASS",
+        "item": "发布清单",
+        "msg": "[assessment-legacy] 回滚可用：上一版本 ac079f3（2026-11-05 11:19:45 替换，备份在位）"
+      },
+      {
+        "level": "PASS",
+        "item": "发布清单",
+        "msg": "发布清单一屏可查：3 通道（publishList 已入 audit_last.json；版本指针/回滚记录入 audit_history）"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-02 16:52:57",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-11-02 19:07:08",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-11-02 22:36:33",
-        "status": "FAIL"
-      },
-      {
-        "auditedAt": "2026-11-02 22:38:50",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-02 22:41:36",
         "status": "PASS"
@@ -2374,6 +2533,22 @@
       {
         "auditedAt": "2026-11-05 10:53:46",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-05 11:49:08",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-05 13:28:51",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-05 13:32:18",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-05 13:34:29",
+        "status": "PASS"
       }
     ]
   },
@@ -2381,20 +2556,20 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "4/4 任务正常 · 近 30 天触发断档 7 天"
+      "status": "WARN",
+      "detail": "3/7 任务正常 · 4 逾期 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-05 10:53:46）"
+      "detail": "审计 PASS（2026-11-05 13:34:29）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-05 08:12:10）"
+      "detail": "本轮发布前置 10 段全过（2026-11-05 16:04:58）"
     },
     {
       "layer": "项目层",
@@ -2406,7 +2581,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 3h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -2439,7 +2614,7 @@
           "size": 288658
         }
       ],
-      "ageHours": 3,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2457,7 +2632,7 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-05 03:26",
+          "mtime": "2026-11-05 08:02",
           "size": 64751
         },
         {
@@ -2689,12 +2864,32 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-04 16:01:46",
-        "ageH": 11
+        "latestAt": "2026-11-05 04:36:57",
+        "ageH": 3
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：通用运力监控每日刷新 —— 今日应跑（每日 09:00）但尚无今日留痕，可用 run_task.ps1 -Auto 自愈",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：考核看板发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：新商评周报发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：月度考核数据备份 —— 今日应跑（每日 09:00（当前暂停））但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -2839,7 +3034,8 @@
       "title": "1. 运力数据恒等式（capacity-daily，检核强制）",
       "fact": "pro\\capacity-daily\\data_freshness_check.py → chk",
       "users": [
-        "capacity-daily(1处)"
+        "capacity-daily(1处)",
+        "kaohe-daily(1处)"
       ],
       "suspects": []
     },
@@ -2897,8 +3093,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "ac079f3",
-        "at": "2026-11-05T08:40:29+08:00",
+        "hash": "d64cb84",
+        "at": "2026-11-05T11:33:41+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -2925,16 +3121,56 @@
       }
     }
   ],
+  "monitor": {
+    "schemaVer": 1,
+    "generatedAt": "2026-11-05 15:58:19",
+    "boards": null,
+    "boardsOverall": null,
+    "boardsVerifiedAt": "",
+    "freshness": {
+      "capacity-daily": {
+        "dataDay": "2026-10-26"
+      },
+      "kaohe-daily": {
+        "dataDay": "2026-11-04"
+      },
+      "xsp-weekly": {
+        "dataDay": "2026-11-05"
+      },
+      "rider-hourly": {
+        "srcAgeH": 0,
+        "lagH": 0,
+        "generatedAt": "2026-11-05 08:08:39"
+      }
+    },
+    "audit": {
+      "status": "PASS",
+      "pass": 58,
+      "warn": 0,
+      "fail": 0,
+      "auditedAt": "2026-11-05 13:34:29",
+      "publishCount": 3,
+      "rollbackReady": false
+    },
+    "pairs": [
+      {
+        "name": "kaohe-mtd-eval",
+        "status": "PASS",
+        "msg": "全部一致（eval 块 2 处，date=20261104）"
+      }
+    ],
+    "alerts": []
+  },
   "gates": {
-    "runAt": "2026-11-05 08:12:10",
+    "runAt": "2026-11-05 16:04:58",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 4.7,
+        "seconds": 5.8,
         "note": ""
       },
       {
@@ -2946,73 +3182,54 @@
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 1.1,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 39.4,
-        "note": "npm test pass=1257 fail=0"
+        "seconds": 74.3,
+        "note": "npm test pass=1275 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 7.3,
+        "seconds": 7.7,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.1,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 30.5,
+        "seconds": 34.9,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 30.9,
+        "seconds": 35.2,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 9.2,
-        "note": "拷贝回验 78 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 89.5,
-        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-30 07:42:11",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 118.1,
-      "fails": []
-    },
     {
       "runAt": "2026-10-30 07:44:27",
       "scope": "complete",
@@ -3215,6 +3432,13 @@
       "allPass": true,
       "totalSec": 213.5,
       "fails": []
+    },
+    {
+      "runAt": "2026-11-05 16:04:58",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 160.4,
+      "fails": []
     }
   ],
   "preflight": {
@@ -3295,14 +3519,14 @@
     ]
   },
   "health": {
-    "score": 93,
-    "grade": "优",
+    "score": 80,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 25,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "门禁层",
@@ -3757,13 +3981,13 @@
     },
     {
       "date": "2026-11-05",
-      "at": "2026-11-05 03:26:15",
-      "score": 93,
-      "grade": "优",
+      "at": "2026-11-05 08:04:59",
+      "score": 80,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "部署层",
@@ -3834,7 +4058,7 @@
   "perf": {
     "assets": {
       "count": 40,
-      "totalKB": 1181.7,
+      "totalKB": 1186.8,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -3849,8 +4073,8 @@
           "kb": 73.6
         },
         {
-          "name": "workbench-bjcJuGGY.js",
-          "kb": 66.7
+          "name": "workbench-Cln4aj-T.js",
+          "kb": 70.7
         },
         {
           "name": "swRegister-DlapKF2s.js",
@@ -3872,7 +4096,7 @@
     },
     "data": {
       "count": 13,
-      "totalKB": 2180.1,
+      "totalKB": 2189.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -3892,7 +4116,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 100.6
+          "kb": 109.3
         },
         {
           "name": "assessment/oct.json",
@@ -3904,7 +4128,7 @@
         },
         {
           "name": "assessment/nov.json",
-          "kb": 63.1
+          "kb": 63.2
         }
       ]
     },
