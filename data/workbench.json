@@ -1,7 +1,7 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-05 23:58:06",
-  "runDate": "2026-11-05",
+  "generatedAt": "2026-11-06 00:13:01",
+  "runDate": "2026-11-06",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -253,10 +253,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-07",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-08",
             "state": "pre"
           },
@@ -371,10 +367,14 @@
           {
             "date": "2026-11-05",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-06",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 1,
         "passCount": 19
       },
@@ -421,7 +421,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-05 08:17"
+        "lastRunAt": "2026-11-06 08:00"
       },
       "heal": {
         "can": false,
@@ -552,10 +552,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-07",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-08",
             "state": "pre"
           },
@@ -670,10 +666,14 @@
           {
             "date": "2026-11-05",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-06",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 2,
+        "gapCount": 3,
         "failCount": 0,
         "passCount": 18
       },
@@ -975,10 +975,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-07",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-08",
             "state": "pre"
           },
@@ -1093,10 +1089,14 @@
           {
             "date": "2026-11-05",
             "state": "gap"
+          },
+          {
+            "date": "2026-11-06",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 5,
+        "gapCount": 6,
         "failCount": 0,
         "passCount": 15
       },
@@ -1425,10 +1425,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-07",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-08",
             "state": "pre"
           },
@@ -1543,10 +1539,14 @@
           {
             "date": "2026-11-05",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-06",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-23",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 3,
         "passCount": 11
       },
@@ -1865,10 +1865,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-07",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-08",
             "state": "pre"
           },
@@ -1983,10 +1979,14 @@
           {
             "date": "2026-11-05",
             "state": "gap"
+          },
+          {
+            "date": "2026-11-06",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 18,
+        "gapCount": 19,
         "failCount": 0,
         "passCount": 2
       },
@@ -2047,10 +2047,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-07",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-08",
             "state": "pre"
           },
@@ -2165,10 +2161,14 @@
           {
             "date": "2026-11-05",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-06",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-11-03",
-        "gapCount": 1,
+        "gapCount": 2,
         "failCount": 0,
         "passCount": 2
       },
@@ -2572,7 +2572,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "6/6 任务正常 · 近 30 天触发断档 2 天"
+      "detail": "6/6 任务正常 · 近 30 天触发断档 5 天"
     },
     {
       "layer": "部署层",
@@ -2638,7 +2638,7 @@
       "dataLagThreshold": 2,
       "outage": {
         "since": "2026-10-27",
-        "dayCount": 10,
+        "dayCount": 11,
         "cause": null
       }
     },
@@ -2647,23 +2647,23 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-05 23:58",
+          "mtime": "2026-11-06 00:13",
           "size": 66049
+        },
+        {
+          "name": "oct.json",
+          "mtime": "2026-11-06 00:13",
+          "size": 99124
+        },
+        {
+          "name": "sep.json",
+          "mtime": "2026-11-06 00:13",
+          "size": 86377
         },
         {
           "name": "targets-2026-12.json",
           "mtime": "2026-11-05 11:30",
           "size": 4282
-        },
-        {
-          "name": "oct.json",
-          "mtime": "2026-11-05 00:08",
-          "size": 99124
-        },
-        {
-          "name": "sep.json",
-          "mtime": "2026-11-05 00:08",
-          "size": 86377
         },
         {
           "name": "targets-nov.json",
@@ -2687,7 +2687,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-11-05",
+          "at": "2026-11-06",
           "wire": {
             "months": 3,
             "fail": 0
@@ -2701,7 +2701,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-11-05",
+          "at": "2026-11-06",
           "wire": {
             "months": 3,
             "fail": 0
@@ -2715,7 +2715,7 @@
           "warn": 0,
           "fail": 0,
           "gate": "export-data",
-          "at": "2026-11-05",
+          "at": "2026-11-06",
           "wire": {
             "months": 3,
             "fail": 0
@@ -2888,11 +2888,11 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：新商评考核周报 近 30 天有 2 天零留痕（10-18、10-19；首次留痕 2026-10-17）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：3 个任务近 30 天共 5 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 11 天，超 2 天）——疑似源停发第 10 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-10-26（滞后 11 天，超 2 天）——疑似源停发第 11 天（自 2026-10-27 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     },
     {
@@ -3234,8 +3234,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5a2aa0b",
-        "at": "2026-11-05T21:21:24+08:00",
+        "hash": "db5d5b6",
+        "at": "2026-11-06T08:01:04+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4159,6 +4159,34 @@
           "status": "PASS"
         }
       ]
+    },
+    {
+      "date": "2026-11-06",
+      "at": "2026-11-06 00:13:01",
+      "score": 93,
+      "grade": "优",
+      "layers": [
+        {
+          "layer": "调度层",
+          "status": "PASS"
+        },
+        {
+          "layer": "部署层",
+          "status": "PASS"
+        },
+        {
+          "layer": "门禁层",
+          "status": "PASS"
+        },
+        {
+          "layer": "项目层",
+          "status": "WARN"
+        },
+        {
+          "layer": "渲染层",
+          "status": "PASS"
+        }
+      ]
     }
   ],
   "outages": [
@@ -4192,9 +4220,9 @@
     {
       "project": "通用运力监控",
       "since": "2026-10-27",
-      "dayCount": 10,
+      "dayCount": 11,
       "lastDataDate": "2026-10-26",
-      "lastSeenAt": "2026-11-05",
+      "lastSeenAt": "2026-11-06",
       "resolvedAt": null,
       "resolvedDataDate": null
     },
@@ -4249,7 +4277,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2219.7,
+      "totalKB": 2224.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -4257,7 +4285,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 524.1
+          "kb": 527.4
         },
         {
           "name": "rider-index.json",
@@ -4281,7 +4309,7 @@
         },
         {
           "name": "assessment/nov.json",
-          "kb": 63.2
+          "kb": 64.5
         }
       ]
     },
