@@ -151,12 +151,15 @@ h2{letter-spacing:.4px;border-bottom:2px solid #e8eef5;padding-bottom:4px}
 /* ===== R546 停更提示条（B1 用户侧兑底）：数据日期距打开日 ≥3 天时由 JS 显示，恢复后自动消隐 ===== */
 .stalebar{display:flex;align-items:center;gap:8px;max-width:1440px;margin:10px auto 0;padding:8px 14px;background:#fff8ee;border:1px solid #f0dcb8;border-left:3px solid #e6a23c;border-radius:8px;color:#8a4b00;font-size:12px;line-height:1.6}
 .stalebar[hidden]{display:none}
+/* ===== R546a 页脚版本徽章：一眼确认线上是哪一版（生成时间 + 数据日 + 渲染器轮次） ===== */
+.verbadge{text-align:center;color:#999;font-size:11px;margin:18px 0 26px;letter-spacing:.02em}
 
 /* ===== H-cap 主题切换钮（导航栏内，双主题共用——导航栏本身双主题均暗） ===== */
 .theme-btn{display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;color:#e2e8f0;font-size:14px;line-height:1;padding:4px 10px;border-radius:999px;transition:color .15s,background .15s}
 .theme-btn:hover{color:#ffc300;background:rgba(255,255,255,.08)}
 /* R546 停更提示条深色档（同 tokens 语义 warn 族） */
 html[data-theme="dark"] .stalebar{background:rgba(251,191,36,.10);border-color:rgba(251,191,36,.35);color:#FCD34D}
+html[data-theme="dark"] .verbadge{color:#9AA3B5}
 /* ===== H-cap 指挥舱深色覆盖（浅色路径零改动） ===== */
 html[data-theme="dark"] body{color:#E8ECF4;background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.06),transparent 60%),radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.08),transparent 55%),#141926}
 html[data-theme="dark"] ::-webkit-scrollbar-thumb{background:#3A465F;border-radius:8px;border:2px solid transparent;background-clip:content-box}
@@ -7843,6 +7846,7 @@ details>div,.scroll{contain:layout style}
 <tr><td>排班校准</td><td>专送排班人数与站点排班导出逐班核对，出勤按「排班时段与统计时段有交集」判定</td></tr>
 <tr><td>夜宵2 说明</td><td>夜宵2 班次（20:00-22:00）部分城市悦跑排班表未排班，差异表按实际出勤人数列示，缺口口径以「调整后−现有」为准</td></tr>
 </tbody></table></div>
+<div class="verbadge" id="verBadge">本页版本：生成于 2026-11-06 22:26 · 数据日 2026-10-26 · 渲染器 R546</div>
 <div class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">回到顶部 ↑</div>
 <script>
 /* H-cap 双主题（D9）：与主站 mt-theme 单键同源（浅色默认；本页 head 已有防闪烁引导） */
