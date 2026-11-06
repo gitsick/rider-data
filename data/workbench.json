@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-06 16:18:18",
+  "generatedAt": "2026-11-06 20:46:09",
   "runDate": "2026-11-06",
   "tasks": [
     {
@@ -2632,13 +2632,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 11 段全过（2026-11-07 00:18:17）"
+      "detail": "本轮发布前置 10 段全过（2026-11-07 04:46:08）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 1h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 6h 前"
     },
     {
       "layer": "渲染层",
@@ -2677,7 +2677,7 @@
           "size": 288660
         }
       ],
-      "ageHours": 1,
+      "ageHours": 6,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2719,7 +2719,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 16,
+      "ageHours": 20,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-07",
@@ -2927,8 +2927,8 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-06 15:44:26",
-        "ageH": 0
+        "latestAt": "2026-11-06 16:57:29",
+        "ageH": 3
       }
     ]
   },
@@ -3283,8 +3283,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5cdb9c6",
-        "at": "2026-11-06T21:07:46+08:00",
+        "hash": "aa1ef01",
+        "at": "2026-11-07T00:20:22+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3376,87 +3376,74 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-07 00:18:17",
+    "runAt": "2026-11-07 04:46:08",
     "allPass": true,
     "scope": "pre-deploy",
     "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
-        "name": "excel",
-        "pass": true,
-        "seconds": 9.9,
-        "note": ""
-      },
-      {
         "name": "visits",
         "pass": true,
-        "seconds": 9.9,
+        "seconds": 7.7,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 1,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 65.2,
+        "seconds": 68.3,
         "note": "npm test pass=1336 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6,
+        "seconds": 6.2,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.1,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 38.9,
+        "seconds": 32.9,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 36.3,
+        "seconds": 30.5,
         "note": ""
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-10-30 16:06:21",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 298.4,
-      "fails": []
-    },
     {
       "runAt": "2026-10-31 16:03:33",
       "scope": "pre-deploy",
@@ -3658,6 +3645,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 167.5,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-07 04:46:08",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 148,
       "fails": []
     }
   ],
@@ -4217,7 +4211,7 @@
     },
     {
       "date": "2026-11-06",
-      "at": "2026-11-06 16:18:18",
+      "at": "2026-11-06 20:46:09",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -4301,7 +4295,7 @@
           "kb": 575.1
         },
         {
-          "name": "main-BEfmbP1n.js",
+          "name": "main-CoUfU3m2.js",
           "kb": 157.8
         },
         {
@@ -4309,7 +4303,7 @@
           "kb": 74
         },
         {
-          "name": "workbench-D6afeFMy.js",
+          "name": "workbench-BO7X2noh.js",
           "kb": 72
         },
         {
@@ -4317,11 +4311,11 @@
           "kb": 44.5
         },
         {
-          "name": "swRegister-BQwCxdp1.js",
+          "name": "swRegister-CWDt3cBd.js",
           "kb": 44.4
         },
         {
-          "name": "admin-DU-Cvweq.js",
+          "name": "admin-DAoyyCwh.js",
           "kb": 40.2
         },
         {
@@ -4332,7 +4326,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2239.7,
+      "totalKB": 2239.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -4352,7 +4346,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 117.3
+          "kb": 117.1
         },
         {
           "name": "assessment/oct.json",
