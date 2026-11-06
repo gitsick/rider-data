@@ -959,18 +959,8 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="card" id="qk-daily-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f4ff 100%);">
 <div class="card-title">🤝 企客（SKA）· 扣分项模块 <span id="qk-daily-snap" style="font-weight:400;font-size:11.5px;color:#6b7280;"></span></div>
 <div style="font-size:12px;line-height:1.75;color:#374151;">
-<div id="qk-daily-narr">
-<table style="width:100%;border-collapse:collapse;font-size:11.5px;margin:4px 0;">
-<tr style="background:#f3e8fd;"><th class="th-qk">子项</th><th class="th-qk">扣/加分</th><th class="th-qk">判定条件</th><th class="th-qk">当前状态</th></tr>
-<tr><td class="td-qk-sm">❶ 门店流失</td><td class="td-qk-sm"><b class="u-bad">−3%</b>（原5%）</td><td class="td-qk-sm">流失有效门店≥1家（仅因体验问题流失，七天内未发单即流失）</td><td class="td-qk-sm">✅ 监控中</td></tr>
-<tr><td class="td-qk-sm">❷ 门店新签</td><td class="td-qk-sm"><b style="color:#2e7d32;">+2%/家</b>（最高+3%）</td><td class="td-qk-sm">当月新签履约承接品牌有效门店（美配首次发单日计，含月内新签）</td><td class="td-qk-sm">⏳ 待接入（企客体验明细看板）</td></tr>
-<tr><td class="td-qk-sm">❸ 门店体验达标</td><td class="td-qk-sm"><b class="u-bad">−2%</b></td><td class="td-qk-sm">≤3家城≥1家未达标、或>3家城≥2家未达标（口径同SKA考核指标）</td><td class="td-qk-sm">✅ 监控中</td></tr>
-</table>
-<div style="font-size:11.5px;color:#6b7280;">体验&amp;推完指标剔除企客麦肯必瑞订单（10月方案迭代点）。</div>
-<div style="margin-top:4px;font-size:11.5px;color:#6b7280;">🟣 诸暨：⏳ 待数据（企客KA维值权限申请中）</div>
-<div style="margin-top:6px;font-size:11px;color:#6b7280;">完整品牌履约评估预警见「分析报告」页签；数据来源：企客体验明细看板（bi 269707）· 品牌 x商家x履约站-履约明细（ID 17805）</div>
-</div>
-<div id="qk-adj-summary" style="margin-top:8px;border-top:1px dashed #e8def8;padding-top:6px;font-size:11.5px;color:#374151;">当前扣/加分合计：未触发（在左侧测算卡填入流失/新签家数后自动联动）</div>
+<!-- R549 月度卡叙事迁新板：qk-daily-narr 规则明细卡摘除，方案页（新板）「📋 企客月度规则卡」透出同源文案（cfg.qikeNarrative.qikeCardHtml） -->
+<div id="qk-adj-summary" style="margin-top:8px;padding-top:6px;font-size:11.5px;color:#374151;">当前扣/加分合计：未触发（在左侧测算卡填入流失/新签家数后自动联动）</div>
 </div>
 </div>
 <div class="section-label" data-ska-static>🤝 企客SKA · 天维度数据中心</div>
@@ -1258,12 +1248,12 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <div class="card" id="qk-monthly-card" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f7f0ff 100%);">
 <div class="card-title">🤝 企客（SKA）· 月度模块（扣分项） <a class="anchor-btn" href="#sec-qkka" style="float:right;">查看完整评估预警 ▸</a></div>
 <div style="font-size:12px;line-height:1.75;color:#374151;">
-<span id="qk-monthly-narr">流失有效门店≥1家：扣3%（原5%）；新签履约品牌门店1家+2%（最高+3%）；门店体验达标≤3家≥1家或>3家≥2家：扣2%；体验&推完指标剔除企客麦肯必瑞订单。</span>
+<!-- R549 月度卡叙事迁新板：qk-monthly-narr 摘要句摘除，方案页透出同源文案 -->
 <div class="table-scroll" style="margin-top:8px;"><table class="dt" style="font-size:11.5px;">
 <thead><tr><th>城市</th><th>统计期</th><th>KA门店</th><th>达标门店（≥95%）</th><th>准时率</th><th>覆盖</th></tr></thead>
 <tbody id="qk-monthly-tbody"><tr><td colspan="6" style="text-align:center;color:#6b7280;">数据待接入</td></tr></tbody>
 </table></div>
-<div id="qk-monthly-foot" style="margin-top:6px;font-size:11px;color:#6b7280;">准时率=客户考核准时运单量/配送完成运单量（累计）；完整品牌评估预警与门店考核值赔付预估见下方卡片</div>
+<!-- R549：qk-monthly-foot 脚注摘除，方案页透出同源文案 -->
 </div>
 </div>
 <div class="card" id="sec-qkka" style="margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#f0f7ff 100%);">
@@ -6701,10 +6691,11 @@ function applyNarrative(){
   _html('priority-tail', N.priorityTail);
   _txt('rpt-title', N.rptTitle);
   _txt('rpt-sub1', N.rptSub1);
-  /* —— 企客叙事 —— */
-  _html('qk-daily-narr', QN.qikeCardHtml);
-  _html('qk-monthly-narr', QN.qkMonthlyNarr);
-  _html('qk-monthly-foot', QN.qkMonthlyFoot);
+  /* —— 企客叙事 ——
+   * R549 月度卡叙事迁新板：qk-daily-narr/qk-monthly-narr/qk-monthly-foot 三挂点摘除
+   * （方案页（新板）「📋 企客月度规则卡」透出同源文案 cfg.qikeNarrative.qikeCardHtml/
+   *   qkMonthlyNarr/qkMonthlyFoot）；测算卡三挂点（qkka-rules-summary/qkka-rules-body/
+   * calc-extras）保留——calcExtrasHtml 交互控件依赖旧板 calcScore 引擎，零功能损失。 */
   _txt('qkka-rules-summary', QN.qkkaSummary);
   _html('qkka-rules-body', QN.qkkaRuleHtml);
   if (QN.calcExtrasHtml) _html('calc-extras', QN.calcExtrasHtml);
@@ -6774,7 +6765,8 @@ function boot(){
     var _MPAGES = [
       { m: '2026-09', label: '9月',  href: 'delivery-assessment-dashboard.html' },
       { m: '2026-10', label: '10月', href: 'delivery-assessment-dashboard-oct.html' },
-      { m: '2026-11', label: '11月', href: 'delivery-assessment-dashboard-nov.html' }
+      { m: '2026-11', label: '11月', href: 'delivery-assessment-dashboard-2026-11.html' },
+      { m: '2026-12', label: '12月', href: 'delivery-assessment-dashboard-2026-12.html' }
     ];
     (function(){
       var _nav=document.querySelector('.top-nav'); if(!_nav) return;
