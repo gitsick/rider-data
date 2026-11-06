@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-06 23:17:37",
+  "generatedAt": "2026-11-06 23:19:51",
   "runDate": "2026-11-06",
   "tasks": [
     {
@@ -2273,7 +2273,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 3db17ec 2026-11-07 04:46:37 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 2cb01a9 2026-11-07 07:17:40 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2283,12 +2283,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（6 小时前生成）"
+        "msg": "单文件产物存在（8 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（62 小时前生成）"
+        "msg": "单文件产物存在（1 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2298,7 +2298,7 @@
       {
         "level": "PASS",
         "item": "访问源",
-        "msg": "源新鲜（最新对象 0h 前）且消费同步（滞后 0h 内）"
+        "msg": "源新鲜（最新对象 1h 前）且消费同步（滞后 0h 内）"
       },
       {
         "level": "WARN",
@@ -2483,7 +2483,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-07 04:46:35 替换，含 13 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-07 07:17:39 替换，含 5 文件）"
       },
       {
         "level": "PASS",
@@ -2577,7 +2577,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-07 07:17:36）"
+      "detail": "上轮全链 12 段全过（2026-11-07 07:19:25）"
     },
     {
       "layer": "项目层",
@@ -3228,8 +3228,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "4463e4b",
-        "at": "2026-11-07T05:00:07+08:00",
+        "hash": "2cb01a9",
+        "at": "2026-11-07T07:17:40+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3321,10 +3321,10 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-07 07:17:36",
+    "runAt": "2026-11-07 07:19:25",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -3385,17 +3385,22 @@
         "pass": true,
         "seconds": 57.4,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 67.2,
+        "note": "拷贝回验 81 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 40.9,
+        "note": "指纹+探针 assets/main-CmMR3PYl.css 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-01 07:46:36",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 152.7,
-      "fails": []
-    },
     {
       "runAt": "2026-11-01 07:48:26",
       "scope": "complete",
@@ -3597,6 +3602,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 194.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-07 07:19:25",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 302.3,
       "fails": []
     }
   ],
@@ -4156,7 +4168,7 @@
     },
     {
       "date": "2026-11-06",
-      "at": "2026-11-06 23:17:37",
+      "at": "2026-11-06 23:19:51",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -4271,7 +4283,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2237,
+      "totalKB": 2236.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -4291,7 +4303,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 114.4
+          "kb": 114.1
         },
         {
           "name": "assessment/oct.json",
