@@ -148,10 +148,15 @@ h2{letter-spacing:.4px;border-bottom:2px solid #e8eef5;padding-bottom:4px}
 .kchip b{color:#0f3a5f}
 .card table td.bad{background:#fdecec;color:#b03a2e;font-weight:700}
 .charts .chartbox+.chartbox{margin-top:2px}
+/* ===== R546 停更提示条（B1 用户侧兑底）：数据日期距打开日 ≥3 天时由 JS 显示，恢复后自动消隐 ===== */
+.stalebar{display:flex;align-items:center;gap:8px;max-width:1440px;margin:10px auto 0;padding:8px 14px;background:#fff8ee;border:1px solid #f0dcb8;border-left:3px solid #e6a23c;border-radius:8px;color:#8a4b00;font-size:12px;line-height:1.6}
+.stalebar[hidden]{display:none}
 
 /* ===== H-cap 主题切换钮（导航栏内，双主题共用——导航栏本身双主题均暗） ===== */
 .theme-btn{display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;color:#e2e8f0;font-size:14px;line-height:1;padding:4px 10px;border-radius:999px;transition:color .15s,background .15s}
 .theme-btn:hover{color:#ffc300;background:rgba(255,255,255,.08)}
+/* R546 停更提示条深色档（同 tokens 语义 warn 族） */
+html[data-theme="dark"] .stalebar{background:rgba(251,191,36,.10);border-color:rgba(251,191,36,.35);color:#FCD34D}
 /* ===== H-cap 指挥舱深色覆盖（浅色路径零改动） ===== */
 html[data-theme="dark"] body{color:#E8ECF4;background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.06),transparent 60%),radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.08),transparent 55%),#141926}
 html[data-theme="dark"] ::-webkit-scrollbar-thumb{background:#3A465F;border-radius:8px;border:2px solid transparent;background-clip:content-box}
@@ -359,6 +364,7 @@ details>div,.scroll{contain:layout style}
   </div>
   </div>
 </nav>
+<div class="stalebar" id="staleBar" hidden>⚠️ <span id="staleBarTxt"></span></div>
 <div class="hero"><h1>通用运力监控 · 2026-10-26<span class="gold">（全天 · 区域/城市下钻视图）</span></h1>
 <div class="sub">运力达成：推单 243,911 条 ｜ 已送达 229,611（推完占比 94.1%）｜ 取消 14,300（取消率 5.9%）｜ 专送 82,497 / 众包 41,694 / 悦跑 105,420 ｜ 悦跑名册 2,363 人 ｜ 专送排班：61 站 ｜ 数据源：下载中心汇总表 + 日监控分片 ｜ 顶部指标卡可点击跳转对应章节，悬停看区域拆分</div></div>
 <div class="stickyhead">
@@ -7848,6 +7854,13 @@ function capThemeSet(t){if(t==='dark')document.documentElement.setAttribute('dat
   if(tb)tb.addEventListener('click',function(){capThemeSet(capThemeCur()==='dark'?'light':'dark')});
   capThemeIcon();
   window.addEventListener('storage',function(e){if(e.key==='mt-theme'&&e.value)capThemeSet(e.value==='dark'?'dark':'light')});
+})();
+/* R546 停更提示条：打开时实时计算数据日期与当天差值（阈值 3 天），显示后源恢复更新、页面重出即自动消隐 */
+(function(){
+  var bar=document.getElementById('staleBar');if(!bar)return;
+  var d=new Date('2026-10-26'+'T00:00:00');if(isNaN(d))return;
+  var days=Math.floor((Date.now()-d.getTime())/864e5);
+  if(days>=3){document.getElementById('staleBarTxt').textContent='运力监控数据截至 2026-10-26（已停更 '+days+' 天）· 数据源停发跟进中，恢复更新后本条自动消隐';bar.hidden=false}
 })();
 var GR = 'all', C3 = 'all';
 var REG_CARDS = {"all": [{"cls": "", "v": "243,911", "l": "推单量（当日全部推单）", "t": "苏皖 31,347单/推完95.3% ｜ 浙江 101,609单/推完95.1% ｜ 华南 110,955单/推完92.9%"}, {"cls": "", "v": "229,611", "l": "已送达（推完占比 94.1%）", "t": "苏皖 推完 95.3% ｜ 浙江 推完 95.1% ｜ 华南 推完 92.9%"}, {"cls": "negv", "v": "14,300", "l": "取消单（取消率 5.9%）", "t": "苏皖 取消率 4.7% ｜ 浙江 取消率 4.9% ｜ 华南 取消率 7.1%"}, {"cls": "", "v": "229,611", "l": "配送完单（运力拆分口径）", "t": "苏皖 29,878 单 ｜ 浙江 96,624 单 ｜ 华南 103,109 单"}, {"cls": "", "v": "82,497", "l": "专送单量（35.9%）", "t": "全局｜专送 82,497 单（占 35.9%）"}, {"cls": "", "v": "41,694", "l": "众包·非悦跑（18.2%）", "t": "全局｜众包 41,694 单（占 18.2%）"}, {"cls": "ypc", "v": "105,420", "l": "悦跑单量（45.9%）", "t": "全局｜悦跑 105,420 单（占 45.9%）"}, {"cls": "ypc", "v": "2,363 人", "l": "悦跑当日排班名册", "t": "苏皖 名册 267/实接 270 ｜ 浙江 名册 899/实接 917 ｜ 华南 名册 899/实接 952"}, {"cls": "", "v": "61 站", "l": "专送排班站点", "t": "苏皖 出勤率 70.1%/缺口班次 9 ｜ 浙江 出勤率 75.0%/缺口班次 33 ｜ 华南 出勤率 86.2%/缺口班次 52"}], "苏皖": [{"cls": "", "v": "31,347", "l": "推单量（当日全部推单）", "t": "苏皖区域｜推单 31,347｜推完 95.3%｜取消率 4.7%"}, {"cls": "", "v": "29,878", "l": "已送达（推完占比 95.3%）", "t": "苏皖区域｜已送达 29,878，推完占比 95.3%"}, {"cls": "negv", "v": "1,469", "l": "取消单（取消率 4.7%）", "t": "苏皖区域｜取消 1,469 单"}, {"cls": "", "v": "29,878", "l": "配送完单（运力拆分口径）", "t": "苏皖区域｜专送 9,277 + 众包 6,447 + 悦跑 14,154"}, {"cls": "", "v": "9,277", "l": "专送单量（31.0%）", "t": "苏皖区域｜专送 9,277 单（占 31.0%）"}, {"cls": "", "v": "6,447", "l": "众包·非悦跑（21.6%）", "t": "苏皖区域｜众包 6,447 单（占 21.6%）"}, {"cls": "ypc", "v": "14,154", "l": "悦跑单量（47.4%）", "t": "苏皖区域｜悦跑 14,154 单（占 47.4%）"}, {"cls": "ypc", "v": "267 人", "l": "悦跑当日排班名册", "t": "苏皖区域｜名册 267，实接 270"}, {"cls": "", "v": "1 站", "l": "专送排班站点", "t": "苏皖区域｜出勤率 70.1%/缺口班次 9｜超排班班次 24"}], "浙江": [{"cls": "", "v": "101,609", "l": "推单量（当日全部推单）", "t": "浙江区域｜推单 101,609｜推完 95.1%｜取消率 4.9%"}, {"cls": "", "v": "96,624", "l": "已送达（推完占比 95.1%）", "t": "浙江区域｜已送达 96,624，推完占比 95.1%"}, {"cls": "negv", "v": "4,985", "l": "取消单（取消率 4.9%）", "t": "浙江区域｜取消 4,985 单"}, {"cls": "", "v": "96,624", "l": "配送完单（运力拆分口径）", "t": "浙江区域｜专送 34,508 + 众包 15,749 + 悦跑 46,367"}, {"cls": "", "v": "34,508", "l": "专送单量（35.7%）", "t": "浙江区域｜专送 34,508 单（占 35.7%）"}, {"cls": "", "v": "15,749", "l": "众包·非悦跑（16.3%）", "t": "浙江区域｜众包 15,749 单（占 16.3%）"}, {"cls": "ypc", "v": "46,367", "l": "悦跑单量（48.0%）", "t": "浙江区域｜悦跑 46,367 单（占 48.0%）"}, {"cls": "ypc", "v": "899 人", "l": "悦跑当日排班名册", "t": "浙江区域｜名册 899，实接 917"}, {"cls": "", "v": "23 站", "l": "专送排班站点", "t": "浙江区域｜出勤率 75.0%/缺口班次 33｜超排班班次 21"}], "华南": [{"cls": "", "v": "110,955", "l": "推单量（当日全部推单）", "t": "华南区域｜推单 110,955｜推完 92.9%｜取消率 7.1%"}, {"cls": "", "v": "103,109", "l": "已送达（推完占比 92.9%）", "t": "华南区域｜已送达 103,109，推完占比 92.9%"}, {"cls": "negv", "v": "7,846", "l": "取消单（取消率 7.1%）", "t": "华南区域｜取消 7,846 单"}, {"cls": "", "v": "103,109", "l": "配送完单（运力拆分口径）", "t": "华南区域｜专送 38,712 + 众包 19,498 + 悦跑 44,899"}, {"cls": "", "v": "38,712", "l": "专送单量（37.5%）", "t": "华南区域｜专送 38,712 单（占 37.5%）"}, {"cls": "", "v": "19,498", "l": "众包·非悦跑（18.9%）", "t": "华南区域｜众包 19,498 单（占 18.9%）"}, {"cls": "ypc", "v": "44,899", "l": "悦跑单量（43.5%）", "t": "华南区域｜悦跑 44,899 单（占 43.5%）"}, {"cls": "ypc", "v": "899 人", "l": "悦跑当日排班名册", "t": "华南区域｜名册 899，实接 952"}, {"cls": "", "v": "37 站", "l": "专送排班站点", "t": "华南区域｜出勤率 86.2%/缺口班次 52｜超排班班次 20"}]};
