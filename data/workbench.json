@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-07 18:46:12",
+  "generatedAt": "2026-11-07 23:29:00",
   "runDate": "2026-11-07",
   "tasks": [
     {
@@ -1184,15 +1184,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-07 16:37:55",
-        "durationSec": 2276,
-        "note": ""
+        "finishedAt": "2026-11-08 05:25:51",
+        "durationSec": null,
+        "note": "骑手看板增强轮：页签改名重排(骑手运力/离职骑手/解约骑手/数据总览/访问日志)+gap预计算+清洗提速(合并CSV pickle缓存76万行2.7s/月度打包向量化7s/全流程17s)+清洗报告+ID校验链提效；深度回归PASS(9月度文件0差异)；unit 1428全过；烟测锚点同步'解约骑手'后双通道发布 rider-data HEAD=aa2ee07+115500b；线上回验PASS(rider_base gap列live)"
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -1206,12 +1206,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "FAIL",
-          "finishedAt": "2026-10-26 16:49:20",
-          "durationSec": 2960,
-          "note": "问卷星登录态仍失效：华东/华南增量拉取0条；检查与看板v2部署已完成（访问日志页16:33上站，HEAD=ca12ff9）"
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:10:27",
@@ -1469,6 +1463,12 @@
           "status": "PASS",
           "finishedAt": "2026-11-07 16:37:55",
           "durationSec": 2276
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-08 05:25:51",
+          "durationSec": null,
+          "note": "骑手看板增强轮：页签改名重排(骑手运力/离职骑手/解约骑手/数据总览/访问日志)+gap预计算+清洗提速(合并CSV pickle缓存76万行2.7s/月度打包向量化7s/全流程17s)+清洗报告+ID校验链提效；深度回归PASS(9月度文件0差异)；unit 1428全过；烟测锚点同步'解约骑手'后双通道发布 rider-data HEAD=aa2ee07+115500b；线上回验PASS(rider_base gap列live)"
         }
       ],
       "gaps": {
@@ -2640,13 +2640,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-08 02:45:46）"
+      "detail": "本轮发布前置 10 段全过（2026-11-08 07:28:59）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 0h 前"
+      "detail": "2 项目，最新产出 5h 前"
     },
     {
       "layer": "渲染层",
@@ -2685,7 +2685,7 @@
           "size": 289119
         }
       ],
-      "ageHours": 0,
+      "ageHours": 5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-06",
@@ -2722,7 +2722,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 17,
+      "ageHours": 22,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -2931,7 +2931,7 @@
         "name": "20261017-efficiency-naming",
         "files": 16,
         "latestAt": "2026-11-07 18:30:58",
-        "ageH": 0
+        "ageH": 4
       }
     ]
   },
@@ -3281,8 +3281,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eb5f3d0",
-        "at": "2026-11-08T02:32:55+08:00",
+        "hash": "a9afcc7",
+        "at": "2026-11-08T07:16:34+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3374,21 +3374,21 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-08 02:45:46",
+    "runAt": "2026-11-08 07:28:59",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 6.2,
+        "seconds": 9.6,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -3400,19 +3400,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 555.1,
-        "note": "npm test pass=1430 fail=0"
+        "seconds": 33.2,
+        "note": "npm test pass=1439 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 4.8,
+        "seconds": 5.1,
         "note": ""
       },
       {
@@ -3430,37 +3430,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 22.5,
+        "seconds": 27.3,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 28.2,
+        "seconds": 69.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 854.6,
-        "note": "拷贝回验 84 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 39.2,
-        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-03 07:50:44",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 595.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-03 16:03:05",
       "scope": "pre-deploy",
@@ -3662,6 +3643,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 1512,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-08 07:28:59",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 145.4,
       "fails": []
     }
   ],
@@ -4249,7 +4237,7 @@
     },
     {
       "date": "2026-11-07",
-      "at": "2026-11-07 18:46:12",
+      "at": "2026-11-07 23:29:00",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -4325,46 +4313,46 @@
   ],
   "perf": {
     "assets": {
-      "count": 44,
-      "totalKB": 1251.9,
+      "count": 45,
+      "totalKB": 1260.6,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-CMlGS7zE.js",
-          "kb": 160.9
+          "name": "main-CygfigxV.js",
+          "kb": 161
         },
         {
           "name": "vendor-vue-CZjsW8zj.js",
           "kb": 74
         },
         {
-          "name": "workbench-CIgDjZQP.js",
+          "name": "workbench-B6WOR7wt.js",
           "kb": 73.5
         },
         {
-          "name": "swRegister-DEsNsxzy.css",
-          "kb": 47.3
+          "name": "swRegister-CXDtLDpe.css",
+          "kb": 47.4
         },
         {
-          "name": "swRegister-p2DCAQkd.js",
+          "name": "swRegister-BaMYV-Ge.js",
           "kb": 45.2
         },
         {
-          "name": "admin-B8-UNqqd.js",
-          "kb": 40.3
+          "name": "rider_dashboard-C2uGlK2I.js",
+          "kb": 42.2
         },
         {
-          "name": "main-BUg8GBwo.css",
-          "kb": 38
+          "name": "admin-BGgH48p2.js",
+          "kb": 40.3
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 1791.2,
+      "totalKB": 1812.1,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4372,7 +4360,7 @@
         },
         {
           "name": "rider_base.json",
-          "kb": 332
+          "kb": 354.8
         },
         {
           "name": "rider-index.json",
@@ -4384,7 +4372,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 118.4
+          "kb": 116.6
         },
         {
           "name": "assessment/oct.json",
