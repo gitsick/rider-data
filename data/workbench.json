@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-07 18:11:32",
+  "generatedAt": "2026-11-07 18:30:52",
   "runDate": "2026-11-07",
   "tasks": [
     {
@@ -2772,7 +2772,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 16,
+      "ageHours": 17,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -2980,7 +2980,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-07 17:30:18",
+        "latestAt": "2026-11-07 18:11:59",
         "ageH": 0
       }
     ]
@@ -3331,8 +3331,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c2bbcaf",
-        "at": "2026-11-08T01:52:48+08:00",
+        "hash": "f9305e1",
+        "at": "2026-11-08T02:20:12+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3342,8 +3342,8 @@
       "mode": "single-file",
       "target": "capacity_monitor_latest.html",
       "last": {
-        "hash": "409a7ee",
-        "at": "2026-11-08T02:02:19+08:00",
+        "hash": "f894f1d",
+        "at": "2026-11-08T02:13:40+08:00",
         "msg": "Deploy: 通用运力监控 capacity_monitor_latest.html（每日管线刷新）"
       }
     },
@@ -4287,7 +4287,7 @@
     },
     {
       "date": "2026-11-07",
-      "at": "2026-11-07 18:11:32",
+      "at": "2026-11-07 18:30:52",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -4364,22 +4364,22 @@
   "perf": {
     "assets": {
       "count": 44,
-      "totalKB": 1251.3,
+      "totalKB": 1251.9,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-D9a4WuJQ.js",
+          "name": "main-CMlGS7zE.js",
           "kb": 160.9
         },
         {
-          "name": "vendor-vue-Cdne2nYe.js",
+          "name": "vendor-vue-CZjsW8zj.js",
           "kb": 74
         },
         {
-          "name": "workbench-DDTw0ETb.js",
+          "name": "workbench-CIgDjZQP.js",
           "kb": 73.5
         },
         {
@@ -4387,11 +4387,11 @@
           "kb": 47.3
         },
         {
-          "name": "swRegister-CmlVm0hZ.js",
+          "name": "swRegister-p2DCAQkd.js",
           "kb": 45.2
         },
         {
-          "name": "admin-Bu5OJMG2.js",
+          "name": "admin-B8-UNqqd.js",
           "kb": 40.3
         },
         {
@@ -4402,7 +4402,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1791,
+      "totalKB": 1791.2,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4422,7 +4422,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 118.2
+          "kb": 118.4
         },
         {
           "name": "assessment/oct.json",
