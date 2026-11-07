@@ -20,7 +20,11 @@ html { overflow-x:hidden; overflow-x:clip; -webkit-text-size-adjust:100%; text-s
 .hero h1 { position:relative; font-size:22px; font-weight:800; letter-spacing:.02em; color:#fff; margin:0 0 6px; text-shadow:0 1px 8px rgba(0,0,0,.25); }
 .hero h1::before { content:""; display:inline-block; width:4px; height:20px; border-radius:3px; background:linear-gradient(180deg,#FFC300,#F5A623); box-shadow:0 0 10px rgba(255,195,0,.55); margin-right:11px; vertical-align:-2px; } /* 金色竖标 */
 .hero h1 .gold { color:#FFC300; }
-.hero .sub { position:relative; color:#a9b3c9; margin:0; font-size:12px; letter-spacing:.01em; }
+.hero .sub { position:relative; display:flex; flex-wrap:wrap; align-items:center; row-gap:3px; color:#a9b3c9; margin:0; font-size:12px; letter-spacing:.01em; } /* R-UI5 元信息结构化：竖线分隔片 + 数值金色加粗 + 尾组弱化 */
+.hero .sub .kv { position:relative; padding:0 11px; border-left:1px solid rgba(255,255,255,.14); line-height:1.7; }
+.hero .sub .kv:first-child { border-left:none; padding-left:0; }
+.hero .sub .kv b { color:#FFC300; font-weight:700; }
+.hero .sub .kv.dim { color:#7e88a0; font-size:11px; }
 .card { background:#fff; border-radius:12px; padding:12px 16px; margin-bottom:12px; border:1px solid #EAECEF; box-shadow:0 1px 2px rgba(27,34,51,.04),0 2px 10px rgba(27,34,51,.07); } /* R551：对齐 panel（--radius-card/--sp-3/--sp-4/--block-gap/--line/--elev-1） */
 h2 { font-size:17px; color:#1B2233; margin:4px 0 10px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 h2 .expbtn { margin-left:auto; }
@@ -40,8 +44,8 @@ a.kpi:hover { border-color:#FFC300; transform:translateY(-2px); box-shadow:0 2px
 .kpi .go { font-size:10px; color:#c0d2e8; margin-top:4px; }
 a.kpi:hover .go { color:#1B2233; }
 table { border-collapse:collapse; width:100%; font-size:12px; }
-th, td { border:1px solid #eceff3; padding:4px 7px; text-align:center; white-space:nowrap; }
-th { background:#F8F9FA; color:#1B2233; border-bottom:2px solid #FFC300; position:sticky; top:0; z-index:2; } /* --th-bg + 金色表头下缘 */
+th, td { border:1px solid #eceff3; padding:5px 8px; text-align:center; white-space:nowrap; } /* R-UI5 密度升档：4px7→5px8，长表可读性与信息密度平衡 */
+th { background:#F8F9FA; color:#1B2233; border-bottom:2px solid #FFC300; position:sticky; top:0; z-index:2; letter-spacing:.02em; } /* --th-bg + 金色表头下缘 */
 tbody tr:hover { background:#FFF8E1; }
 tbody tr:nth-child(even) { background:#FAFBFC; }
 .tm { color:#c5c5c5; }
@@ -63,6 +67,8 @@ details[open] summary { border-bottom:1px solid #eee; }
 .charts { display:flex; gap:12px; flex-wrap:wrap; align-items:flex-start; } /* R551：--block-gap */
 .chartbox { flex:1 1 320px; min-width:0; border:1px solid #EAECEF; border-radius:10px; padding:10px 12px; } /* R551：对齐 chart-grid minmax(320) + --radius-card-s/--line；窄屏不再硬 min 380 */
 .ct { font-size:12px; color:#666; margin-bottom:6px; }
+/* R-UI5 图表卡标题金色小标：与城市小节头/主站卡题同一视觉语言 */
+.chartbox .ct::before { content:""; display:inline-block; width:3px; height:10px; border-radius:2px; background:linear-gradient(180deg,#FFC300,#F5A623); margin-right:6px; vertical-align:-1px; }
 .cityblock { margin-bottom:12px; } /* R551：--block-gap */
 .cityhd { font-weight:700; color:#1B2233; margin:2px 0 8px; font-size:14px; padding-left:8px; border-left:3px solid #FFC300; }
 .bar-wrap { position:relative; background:#eef2f7; border-radius:3px; height:18px; min-width:60px; }
@@ -120,7 +126,8 @@ h2{letter-spacing:.4px;border-bottom:2px solid #e8eef5;padding-bottom:4px}
 /* R330：checktbl 全宽域内滚——761~869px 视口此前被 html clip 裁掉右侧不可达；≤760 媒体查询内同值规则退役（由本条统一承接） */
 .checktbl{display:block;overflow-x:auto}
 /* ===== v13css 分时增强 ===== */
-.kchip{display:inline-block;background:#eef4fb;color:#1B2233;border:1px solid #d4e2f0;border-radius:12px;font-size:11px;line-height:18px;padding:0 9px;margin:2px 5px 2px 0;white-space:nowrap}
+.kchip{display:inline-block;background:#eef4fb;color:#1B2233;border:1px solid #d4e2f0;border-radius:12px;font-size:11px;line-height:20px;padding:1px 10px;margin:2px 5px 2px 0;white-space:nowrap;transition:transform .12s,box-shadow .12s} /* R-UI5 胶囊质感：加高一档 + 悬停轻抬 */
+.kchip:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(27,34,51,.08)}
 .kchip b{color:#0f3a5f}
 .card table td.bad{background:#fdecec;color:#b03a2e;font-weight:700}
 .charts .chartbox+.chartbox{margin-top:2px}
@@ -306,7 +313,7 @@ html[data-theme="dark"] .chartbox svg line[stroke="#bbb"]{stroke:#2A3247}
 </style><script>try{if(localStorage.getItem("mt-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script></head><body>
 <div class="stalebar" id="staleBar" hidden>⚠️ <span id="staleBarTxt"></span></div>
 <div class="hero"><h1>通用运力监控 · 2026-11-06<span class="gold">（全天 · 区域视图）</span></h1>
-<div class="sub">运力达成：推单 276,204 条 ｜ 已送达 258,809（推完占比 93.7%）｜ 取消 17,395（取消率 6.3%）｜ 专送 96,727 / 众包 53,210 / 悦跑 108,872 ｜ 悦跑名册 2,255 人 ｜ 专送排班：84 站 ｜ 数据源：下载中心汇总表 + 日监控分片 ｜ 顶部指标卡可点击跳转对应章节，悬停看区域拆分</div></div>
+<div class="sub"><span class="kv">运力达成：推单 <b>276,204</b> 条</span><span class="kv">已送达 <b>258,809</b>（推完占比 93.7%）</span><span class="kv">取消 <b>17,395</b>（取消率 6.3%）</span><span class="kv">专送 <b>96,727</b> / 众包 <b>53,210</b> / 悦跑 <b>108,872</b></span><span class="kv">悦跑名册 <b>2,255</b> 人</span><span class="kv">专送排班：84 站</span><span class="kv dim">数据源：下载中心汇总表 + 日监控分片</span><span class="kv dim">顶部指标卡可点击跳转对应章节，悬停看区域拆分</span></div></div>
 <div class="stickyhead">
 <div class="topnav">
   <a href="#sec0">⓪ 区域总览</a><a href="#sec1">① 走势与承托</a><a href="#sec2">② 排班出勤对照</a><a href="#sec3">③ 小时×城市</a><a href="#sec4">④ 班次×城市</a><a href="#sec5">⑤ 小时×站点</a><a href="#sec6">⑥ 班次×站点</a><a href="#sec7">⑦ KA品牌</a><a href="#sec8">⑧ 数据检核</a>
@@ -7957,7 +7964,7 @@ html[data-theme="dark"] .chartbox svg line[stroke="#bbb"]{stroke:#2A3247}
 <tr><td>排班校准</td><td>专送排班人数与站点排班导出逐班核对，出勤按「排班时段与统计时段有交集」判定</td></tr>
 <tr><td>夜宵2 说明</td><td>夜宵2 班次（20:00-22:00）部分城市悦跑排班表未排班，差异表按实际出勤人数列示，缺口口径以「调整后−现有」为准</td></tr>
 </tbody></table></div>
-<div class="verbadge" id="verBadge">本页版本：生成于 2026-11-07 13:56 · 数据日 2026-11-06 · 渲染器 R546</div>
+<div class="verbadge" id="verBadge">本页版本：生成于 2026-11-07 16:40 · 数据日 2026-11-06 · 渲染器 R546</div>
 <div class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">回到顶部 ↑</div>
 <script>
 /* H-cap 双主题（D9）：与主站 mt-theme 单键同源（浅色默认；本页 head 已有防闪烁引导） */
