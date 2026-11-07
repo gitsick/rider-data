@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-07 05:17:55",
+  "generatedAt": "2026-11-07 05:57:49",
   "runDate": "2026-11-07",
   "tasks": [
     {
@@ -1184,8 +1184,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-07 11:11:30",
-        "durationSec": 6518,
+        "finishedAt": "2026-11-07 13:30:28",
+        "durationSec": null,
         "note": ""
       },
       "monitor": {
@@ -1206,12 +1206,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "FAIL",
-          "finishedAt": "2026-10-25 16:20:15",
-          "durationSec": 1174,
-          "note": "问卷星登录态失效，增量拉取未执行（华东/华南均0条）；本地数据维持2081条，检查与看板生成部署完成"
-        },
         {
           "status": "FAIL",
           "finishedAt": "2026-10-26 12:06:11",
@@ -1471,6 +1465,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-07 11:11:30",
           "durationSec": 6518
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-07 13:30:28",
+          "durationSec": null
         }
       ],
       "gaps": {
@@ -1541,7 +1540,7 @@
           },
           {
             "date": "2026-10-25",
-            "state": "fail"
+            "state": "pre"
           },
           {
             "date": "2026-10-26",
@@ -1596,9 +1595,9 @@
             "state": "pass"
           }
         ],
-        "firstDate": "2026-10-25",
+        "firstDate": "2026-10-26",
         "gapCount": 0,
-        "failCount": 2,
+        "failCount": 1,
         "passCount": 12
       },
       "durTrend": [
@@ -2689,13 +2688,13 @@
       "recent": [
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-11-07 04:31",
-          "size": 2655613
+          "mtime": "2026-11-07 05:56",
+          "size": 2656618
         },
         {
           "name": "capacity_breakdown_dashboard_2026-11-06.html",
-          "mtime": "2026-11-07 04:31",
-          "size": 2655613
+          "mtime": "2026-11-07 05:56",
+          "size": 2656618
         },
         {
           "name": "订单运力分析_2026-11-06.xlsx",
@@ -2750,7 +2749,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 3,
+      "ageHours": 4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-07",
@@ -2958,7 +2957,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-07 05:07:39",
+        "latestAt": "2026-11-07 05:55:04",
         "ageH": 0
       }
     ]
@@ -3319,8 +3318,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "ca3fc5e",
-        "at": "2026-11-07T13:16:51+08:00",
+        "hash": "ca55c1a",
+        "at": "2026-11-07T13:42:07+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4287,7 +4286,7 @@
     },
     {
       "date": "2026-11-07",
-      "at": "2026-11-07 05:17:55",
+      "at": "2026-11-07 05:57:49",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -4363,118 +4362,19 @@
   ],
   "perf": {
     "assets": {
-      "count": 44,
-      "totalKB": 1225.7,
-      "top": [
-        {
-          "name": "vendor-echarts-DzrHUZAj.js",
-          "kb": 575.1
-        },
-        {
-          "name": "main-CV4CHc1r.js",
-          "kb": 159.3
-        },
-        {
-          "name": "vendor-vue-Bu7LhBLS.js",
-          "kb": 74
-        },
-        {
-          "name": "workbench-Dp0HnKnw.js",
-          "kb": 73.4
-        },
-        {
-          "name": "swRegister-BxhWcu6M.css",
-          "kb": 44.6
-        },
-        {
-          "name": "swRegister-BKB1MK7K.js",
-          "kb": 44.4
-        },
-        {
-          "name": "admin-Byh7fIQy.js",
-          "kb": 40.2
-        },
-        {
-          "name": "main-CmMR3PYl.css",
-          "kb": 37.5
-        }
-      ]
+      "count": 0,
+      "totalKB": 0,
+      "top": []
     },
     "data": {
-      "count": 14,
-      "totalKB": 2246.7,
-      "top": [
-        {
-          "name": "rider_base.json",
-          "kb": 787.4
-        },
-        {
-          "name": "rider-detail.json",
-          "kb": 531.4
-        },
-        {
-          "name": "rider-index.json",
-          "kb": 326.9
-        },
-        {
-          "name": "rider-agreements.json",
-          "kb": 157
-        },
-        {
-          "name": "workbench.json",
-          "kb": 118.6
-        },
-        {
-          "name": "assessment/oct.json",
-          "kb": 96.8
-        },
-        {
-          "name": "assessment/sep.json",
-          "kb": 84.4
-        },
-        {
-          "name": "assessment/nov.json",
-          "kb": 65.8
-        }
-      ]
+      "count": 0,
+      "totalKB": 0,
+      "top": []
     },
     "daily": {
-      "count": 9,
-      "totalKB": 22044.1,
-      "top": [
-        {
-          "name": "daily/rider_daily_202608.json",
-          "kb": 3306
-        },
-        {
-          "name": "daily/rider_daily_202607.json",
-          "kb": 3304.3
-        },
-        {
-          "name": "daily/rider_daily_202605.json",
-          "kb": 3279.1
-        },
-        {
-          "name": "daily/rider_daily_202606.json",
-          "kb": 3142.3
-        },
-        {
-          "name": "daily/rider_daily_202604.json",
-          "kb": 3111.7
-        },
-        {
-          "name": "daily/rider_daily_202609.json",
-          "kb": 2778.3
-        },
-        {
-          "name": "daily/rider_daily_202610.json",
-          "kb": 2327.6
-        },
-        {
-          "name": "daily/rider_daily_202603.json",
-          "kb": 453.5
-        }
-      ]
+      "count": 0,
+      "totalKB": 0,
+      "top": []
     },
     "budgets": {
       "totalAssetsKB": 1600,
