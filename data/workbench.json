@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-07 05:02:05",
+  "generatedAt": "2026-11-07 05:16:47",
   "runDate": "2026-11-07",
   "tasks": [
     {
@@ -2270,9 +2270,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-07 12:00:50",
+    "auditedAt": "2026-11-07 13:16:47",
     "status": "PASS",
-    "pass": 59,
+    "pass": 61,
     "warn": 2,
     "fail": 0,
     "checks": [
@@ -2309,12 +2309,12 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: c0ea126 2026-11-07 11:47:08 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 107fa8d 2026-11-07 13:02:32 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "dist 根文件齐全（15 个）"
+        "msg": "dist 根文件齐全（16 个）"
       },
       {
         "level": "PASS",
@@ -2324,7 +2324,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（5 小时前生成）"
+        "msg": "单文件产物存在（7 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2479,12 +2479,22 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[kaohe-daily-selfheal] 已登记按设计无留痕探测（C1）：自愈探测 BI 未发布早退不留 PASS 痕、留痕语义归主跑——无今日留痕非断链"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[xsp-weekly-selfheal] 已关联定时器"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[xsp-weekly-selfheal] 定时器排期 10:30 与 expectHour=10 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly-selfheal] 已登记按设计无留痕探测（C1）：自愈探测 BI 未发布早退不留 PASS 痕、留痕语义归主跑——无今日留痕非断链"
       },
       {
         "level": "PASS",
@@ -2564,12 +2574,12 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-07 11:47:06 替换，含 13 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-07 13:02:31 替换，含 5 文件）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[capacity-monitor] 回滚可用：上一版本 2be23ac（2026-11-07 11:42:31 替换，备份在位）"
+        "msg": "[capacity-monitor] 回滚可用：上一版本 c9ec28e（2026-11-07 12:32:17 替换，备份在位）"
       },
       {
         "level": "PASS",
@@ -2583,10 +2593,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-05 08:12:17",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-05 10:53:46",
         "status": "PASS"
@@ -2638,6 +2644,10 @@
       {
         "auditedAt": "2026-11-07 12:00:50",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-07 13:16:47",
+        "status": "PASS"
       }
     ]
   },
@@ -2652,13 +2662,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-07 12:00:50）"
+      "detail": "审计 PASS（2026-11-07 13:16:47）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-07 12:58:38）"
+      "detail": "上轮全链 12 段全过（2026-11-07 13:16:39）"
     },
     {
       "layer": "项目层",
@@ -2948,7 +2958,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-07 04:23:00",
+        "latestAt": "2026-11-07 05:07:39",
         "ageH": 0
       }
     ]
@@ -2971,7 +2981,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-11-07 12:00:50）",
+      "text": "审计有 2 项警告（2026-11-07 13:16:47）",
       "anchor": "sec-audit"
     },
     {
@@ -3309,8 +3319,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "71f1e0d",
-        "at": "2026-11-07T12:58:42+08:00",
+        "hash": "107fa8d",
+        "at": "2026-11-07T13:02:32+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3402,45 +3412,45 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-07 12:58:38",
+    "runAt": "2026-11-07 13:16:39",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 4.5,
+        "seconds": 6.8,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 88.2,
+        "seconds": 101.9,
         "note": "npm test pass=1347 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 5.2,
+        "seconds": 5.3,
         "note": ""
       },
       {
@@ -3458,25 +3468,30 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 22,
+        "seconds": 25.5,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 46.7,
+        "seconds": 30.9,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 754.7,
+        "note": "拷贝回验 84 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 119.3,
+        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-02 19:00:29",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 133.7,
-      "fails": []
-    },
     {
       "runAt": "2026-11-02 19:07:03",
       "scope": "complete",
@@ -3678,6 +3693,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 167.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-07 13:16:39",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 1046,
       "fails": []
     }
   ],
@@ -4265,7 +4287,7 @@
     },
     {
       "date": "2026-11-07",
-      "at": "2026-11-07 05:02:05",
+      "at": "2026-11-07 05:16:47",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -4380,7 +4402,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2245.2,
+      "totalKB": 2246,
       "top": [
         {
           "name": "rider_base.json",
@@ -4400,7 +4422,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 117.1
+          "kb": 117.9
         },
         {
           "name": "assessment/oct.json",
