@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-07 04:00:51",
+  "generatedAt": "2026-11-07 04:24:45",
   "runDate": "2026-11-07",
   "tasks": [
     {
@@ -2732,7 +2732,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 2,
+      "ageHours": 3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-07",
@@ -2820,7 +2820,7 @@
       "key": "capacity",
       "title": "通用运力监控",
       "desc": "时段运力 · 每日刷新",
-      "href": "capacity_monitor_latest.html"
+      "href": "capacity.html"
     },
     {
       "key": "rider",
@@ -2940,7 +2940,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-07 03:55:06",
+        "latestAt": "2026-11-07 04:23:00",
         "ageH": 0
       }
     ]
@@ -3291,8 +3291,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c0ea126",
-        "at": "2026-11-07T11:47:08+08:00",
+        "hash": "c9ec28e",
+        "at": "2026-11-07T12:00:54+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4259,7 +4259,7 @@
     },
     {
       "date": "2026-11-07",
-      "at": "2026-11-07 04:00:51",
+      "at": "2026-11-07 04:24:45",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -4336,7 +4336,7 @@
   "perf": {
     "assets": {
       "count": 42,
-      "totalKB": 1222.2,
+      "totalKB": 1224.6,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -4351,8 +4351,8 @@
           "kb": 74
         },
         {
-          "name": "workbench-Bs-xjJ8O.js",
-          "kb": 72.4
+          "name": "workbench-CuFhhHPm.js",
+          "kb": 73.4
         },
         {
           "name": "swRegister-BxhWcu6M.css",
@@ -4374,7 +4374,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2260.9,
+      "totalKB": 2245.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -4394,7 +4394,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 132.7
+          "kb": 117.4
         },
         {
           "name": "assessment/oct.json",
