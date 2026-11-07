@@ -255,13 +255,21 @@ html[data-theme="dark"] .chartbox svg line[stroke="#bbb"]{stroke:#2A3247}
 .topnav a.active:hover { color:#fff; background:linear-gradient(135deg,#1B2233,#2D3447); }
 /* R551 窄屏折行与触控节奏：对齐 base page-gutter-sm / board-header 窄屏；不改业务 DOM */
 /* R552 章导航触控：对齐 filter-bar.type-btn 窄屏 min-height:32 */
+/* R553 壳层+KPI 窄屏密度：seg/主题钮/复制触控对齐；≤360 再收一档 */
 @media(max-width:640px) {
+  body { padding:0 10px 32px; }
   .hero { padding:12px 16px; }
+  .hero h1 { font-size:18px; }
+  .hero h1::before { height:18px; }
   .card { padding:12px; }
   .kpis { gap:8px; }
   a.kpi { flex:1 1 140px; padding:10px 12px; }
+  .kpi .v { font-size:20px; }
   .regbar { padding:8px 10px; gap:8px; }
-  .seg button { padding:5px 12px; }
+  .seg { max-width:100%; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+  .seg::-webkit-scrollbar { display:none; }
+  .seg button { min-height:32px; padding:7px 12px; }
+  .theme-btn,.repcopy { min-height:32px; }
   .charts { gap:12px; }
   .chartbox { flex:1 1 100%; min-width:0; padding:8px 10px; }
   .scroll { max-height:70vh; }
@@ -270,6 +278,21 @@ html[data-theme="dark"] .chartbox svg line[stroke="#bbb"]{stroke:#2A3247}
   .topnav { padding:8px 10px; gap:6px; }
   .topnav a { min-height:32px; padding:7px 14px; }
   .card h2 { scroll-margin-top:136px; }
+}
+@media(max-width:360px) {
+  body { padding:0 8px 28px; }
+  .hero { padding:10px 12px; margin:8px 0 10px; }
+  .hero h1 { font-size:16px; }
+  .kpis { gap:6px; margin-bottom:10px; }
+  a.kpi { flex:1 1 calc(50% - 4px); min-width:0; padding:8px 10px; }
+  .kpi .v { font-size:18px; }
+  .kpi .l { font-size:11px; }
+  .regbar { padding:6px 8px; gap:6px; }
+  .seg button { min-height:32px; padding:6px 10px; font-size:11px; }
+  .topnav { padding:6px 8px; gap:4px; }
+  .topnav a { min-height:32px; padding:6px 10px; font-size:12px; }
+  .card { padding:10px; }
+  .stickyhead { top:36px; }
 }
 /* R278 打印/导出对齐主站 print.css 汇报口径：白底黑字、隐藏导航/章节吸顶条/移动菜单，屏幕观感零变化 */
 @media print {
@@ -7934,7 +7957,7 @@ html[data-theme="dark"] .chartbox svg line[stroke="#bbb"]{stroke:#2A3247}
 <tr><td>排班校准</td><td>专送排班人数与站点排班导出逐班核对，出勤按「排班时段与统计时段有交集」判定</td></tr>
 <tr><td>夜宵2 说明</td><td>夜宵2 班次（20:00-22:00）部分城市悦跑排班表未排班，差异表按实际出勤人数列示，缺口口径以「调整后−现有」为准</td></tr>
 </tbody></table></div>
-<div class="verbadge" id="verBadge">本页版本：生成于 2026-11-07 12:31 · 数据日 2026-11-06 · 渲染器 R546</div>
+<div class="verbadge" id="verBadge">本页版本：生成于 2026-11-07 13:56 · 数据日 2026-11-06 · 渲染器 R546</div>
 <div class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">回到顶部 ↑</div>
 <script>
 /* H-cap 双主题（D9）：与主站 mt-theme 单键同源（浅色默认；本页 head 已有防闪烁引导） */
