@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-07 04:58:39",
+  "generatedAt": "2026-11-07 05:02:05",
   "runDate": "2026-11-07",
   "tasks": [
     {
@@ -1630,7 +1630,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:30",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -1662,7 +1666,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:30",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -2637,8 +2645,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "6/6 任务正常 · 近 30 天触发断档 2 天"
+      "status": "WARN",
+      "detail": "4/6 任务正常 · 2 逾期 · 近 30 天触发断档 2 天"
     },
     {
       "layer": "部署层",
@@ -2946,6 +2954,16 @@
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：考核看板发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：新商评周报发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -3291,8 +3309,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c663f6e",
-        "at": "2026-11-07T12:46:17+08:00",
+        "hash": "71f1e0d",
+        "at": "2026-11-07T12:58:42+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3729,14 +3747,14 @@
     ]
   },
   "health": {
-    "score": 100,
-    "grade": "优",
+    "score": 88,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 25,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "门禁层",
@@ -4247,13 +4265,13 @@
     },
     {
       "date": "2026-11-07",
-      "at": "2026-11-07 04:58:39",
-      "score": 100,
-      "grade": "优",
+      "at": "2026-11-07 05:02:05",
+      "score": 88,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "部署层",
@@ -4362,7 +4380,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2245.6,
+      "totalKB": 2245.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -4382,7 +4400,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 117.4
+          "kb": 117.1
         },
         {
           "name": "assessment/oct.json",
