@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-07 00:27:37",
+  "generatedAt": "2026-11-07 00:40:48",
   "runDate": "2026-11-07",
   "tasks": [
     {
@@ -2239,10 +2239,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-07 05:00:03",
+    "auditedAt": "2026-11-07 08:40:47",
     "status": "PASS",
     "pass": 51,
-    "warn": 1,
+    "warn": 2,
     "fail": 0,
     "checks": [
       {
@@ -2278,7 +2278,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 2cb01a9 2026-11-07 07:17:40 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 346122f 2026-11-07 08:29:10 +0800 Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-06"
       },
       {
         "level": "PASS",
@@ -2288,12 +2288,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（8 小时前生成）"
+        "msg": "单文件产物存在（10 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（1 小时前生成）"
+        "msg": "单文件产物存在（2 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2308,7 +2308,7 @@
       {
         "level": "WARN",
         "item": "考核取数",
-        "msg": "加盟达标列断供存疑：3 天达标数=0 但总骑手数正常（11-03~11-05）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
+        "msg": "加盟达标列断供存疑：4 天达标数=0 但总骑手数正常（11-03~11-06）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
       },
       {
         "level": "PASS",
@@ -2353,6 +2353,16 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（11/07/2026 08:07:55），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 今日已运行"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[capacity-daily] command 入口可用（python）"
       },
       {
@@ -2384,11 +2394,6 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 已关联定时器"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 任务留痕已晚于定时器失败时刻（PASS 覆盖失败残留，自动刷新）"
       },
       {
         "level": "PASS",
@@ -2481,14 +2486,14 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "断链自愈",
-        "msg": "无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
+        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 kaohe-daily（每日 07:30 主跑 + 10:30 发布自愈）；  [kaohe-daily] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-07 07:17:39 替换，含 5 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-07 08:27:40 替换，含 7 文件）"
       },
       {
         "level": "PASS",
@@ -2498,7 +2503,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[assessment-legacy] 回滚可用：上一版本 ac079f3（2026-11-05 11:19:45 替换，备份在位）"
+        "msg": "[assessment-legacy] 回滚可用：上一版本 f60305b（2026-11-07 08:02:06 替换，备份在位）"
       },
       {
         "level": "PASS",
@@ -2507,10 +2512,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-03 00:18:09",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-03 07:51:09",
         "status": "PASS"
@@ -2562,6 +2563,10 @@
       {
         "auditedAt": "2026-11-07 05:00:03",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-07 08:40:47",
+        "status": "PASS"
       }
     ]
   },
@@ -2576,13 +2581,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-07 05:00:03）"
+      "detail": "审计 PASS（2026-11-07 08:40:47）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-07 08:27:36）"
+      "detail": "上轮全链 12 段全过（2026-11-07 08:40:22）"
     },
     {
       "layer": "项目层",
@@ -2645,8 +2650,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-07 00:24",
-          "size": 66049
+          "mtime": "2026-11-07 00:40",
+          "size": 67404
         },
         {
           "name": "oct.json",
@@ -2890,7 +2895,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-11-07 05:00:03）",
+      "text": "审计有 2 项警告（2026-11-07 08:40:47）",
       "anchor": "sec-audit"
     },
     {
@@ -3233,8 +3238,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b1d6001",
-        "at": "2026-11-07T07:19:54+08:00",
+        "hash": "4ddb2ec",
+        "at": "2026-11-07T08:27:41+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3255,9 +3260,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "f3a444c",
-        "at": "2026-11-07T08:02:06+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-12.html（assessment-legacy 通道）"
+        "hash": "346122f",
+        "at": "2026-11-07T08:29:10+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-06"
       }
     }
   ],
@@ -3326,10 +3331,10 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-07 08:27:36",
+    "runAt": "2026-11-07 08:40:22",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -3390,17 +3395,22 @@
         "pass": true,
         "seconds": 42,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 731.4,
+        "note": "拷贝回验 81 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 34,
+        "note": "指纹+无变更探针 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-01 07:59:47",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 117.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-01 08:02:49",
       "scope": "complete",
@@ -3602,6 +3612,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 130.3,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-07 08:40:22",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 895.7,
       "fails": []
     }
   ],
@@ -4189,7 +4206,7 @@
     },
     {
       "date": "2026-11-07",
-      "at": "2026-11-07 00:27:37",
+      "at": "2026-11-07 00:40:48",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -4304,7 +4321,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2237.7,
+      "totalKB": 2237.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -4324,7 +4341,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 115.1
+          "kb": 114.9
         },
         {
           "name": "assessment/oct.json",
