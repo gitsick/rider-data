@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-07 01:24:47",
+  "generatedAt": "2026-11-07 01:38:36",
   "runDate": "2026-11-07",
   "tasks": [
     {
@@ -2244,9 +2244,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-07 08:40:47",
+    "auditedAt": "2026-11-07 09:38:35",
     "status": "PASS",
-    "pass": 51,
+    "pass": 54,
     "warn": 2,
     "fail": 0,
     "checks": [
@@ -2283,7 +2283,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 346122f 2026-11-07 08:29:10 +0800 Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-06"
+        "msg": "最新提交: ab3f302 2026-11-07 09:24:53 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2293,12 +2293,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（10 小时前生成）"
+        "msg": "单文件产物存在（11 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（2 小时前生成）"
+        "msg": "单文件产物存在（3 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2308,7 +2308,7 @@
       {
         "level": "PASS",
         "item": "访问源",
-        "msg": "源新鲜（最新对象 1h 前）且消费同步（滞后 0h 内）"
+        "msg": "源新鲜（最新对象 0h 前）且消费同步（滞后 0h 内）"
       },
       {
         "level": "WARN",
@@ -2344,6 +2344,16 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[kaohe-daily] 定时器排期 07:30 与 expectHour=7 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（11/07/2026 08:24:05），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2399,6 +2409,11 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 已关联定时器"
+      },
+      {
+        "level": "WARN",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 定时器最近一次运行失败（0h 前）——排查自动化会话日志"
       },
       {
         "level": "PASS",
@@ -2491,14 +2506,14 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "断链自愈",
-        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 kaohe-daily（每日 07:30 主跑 + 10:30 发布自愈）；  [kaohe-daily] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）"
+        "msg": "无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-07 08:27:40 替换，含 7 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-07 09:24:51 替换，含 9 文件）"
       },
       {
         "level": "PASS",
@@ -2517,10 +2532,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-03 07:51:09",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-03 13:20:20",
         "status": "PASS"
@@ -2572,6 +2583,10 @@
       {
         "auditedAt": "2026-11-07 08:40:47",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-07 09:38:35",
+        "status": "PASS"
       }
     ]
   },
@@ -2586,13 +2601,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-07 08:40:47）"
+      "detail": "审计 PASS（2026-11-07 09:38:35）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-07 09:24:46）"
+      "detail": "上轮全链 12 段全过（2026-11-07 09:38:22）"
     },
     {
       "layer": "项目层",
@@ -2637,7 +2652,7 @@
           "size": 288660
         }
       ],
-      "ageHours": 10,
+      "ageHours": 11,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-10-26",
@@ -2900,7 +2915,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-11-07 08:40:47）",
+      "text": "审计有 2 项警告（2026-11-07 09:38:35）",
       "anchor": "sec-audit"
     },
     {
@@ -3243,8 +3258,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "7d99530",
-        "at": "2026-11-07T08:51:09+08:00",
+        "hash": "ab3f302",
+        "at": "2026-11-07T09:24:53+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3336,10 +3351,10 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-07 09:24:46",
+    "runAt": "2026-11-07 09:38:22",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -3400,17 +3415,22 @@
         "pass": true,
         "seconds": 32.3,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 735,
+        "note": "拷贝回验 81 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 79.9,
+        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-01 16:03:47",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 152.9,
-      "fails": []
-    },
     {
       "runAt": "2026-11-01 16:14:22",
       "scope": "complete",
@@ -3612,6 +3632,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 153.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-07 09:38:22",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 968.6,
       "fails": []
     }
   ],
@@ -4199,7 +4226,7 @@
     },
     {
       "date": "2026-11-07",
-      "at": "2026-11-07 01:24:47",
+      "at": "2026-11-07 01:38:36",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -4314,7 +4341,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2233.9,
+      "totalKB": 2233.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -4334,7 +4361,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 115.6
+          "kb": 115.5
         },
         {
           "name": "assessment/oct.json",
