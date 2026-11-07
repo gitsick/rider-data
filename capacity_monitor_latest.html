@@ -351,7 +351,50 @@ g.greg{cursor:pointer}
 /* v23perf 章节级渲染跳过：视口外章节不参与布局/绘制，区域·城市切换仅在可见章重排 */
 .card{content-visibility:auto;contain-intrinsic-size:auto 1200px}
 details>div,.scroll{contain:layout style}
-</style><script>try{if(localStorage.getItem("mt-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script></head><body>
+/* ===== v24beauty 主题美化升级 ===== */
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+b{font-variant-numeric:tabular-nums}
+.card{transition:box-shadow .25s ease}
+.card:hover{box-shadow:0 2px 6px rgba(31,66,135,.08),0 10px 28px rgba(31,66,135,.10)}
+.card h2{font-size:16.5px;letter-spacing:.2px}
+.chip b,.kchip b{color:#1c5bd0}
+.card table thead th{background:linear-gradient(180deg,#f6f9fd,#edf3fb)}
+::selection{background:#bcd9ff}
+a{color:#1a66d6}
+summary{font-weight:600}
+details[open]>summary{color:#1c5bd0}
+/* ===== v24nav 左侧导航栏 ===== */
+body{padding-left:188px}
+#v24side{position:fixed;left:0;top:0;bottom:0;width:172px;background:linear-gradient(180deg,#122a52 0%,#1d3f7a 100%);z-index:99;display:flex;flex-direction:column;box-shadow:2px 0 12px rgba(18,42,82,.18)}
+#v24side .v24brand{color:#fff;font-weight:700;font-size:14px;padding:14px 16px 4px;letter-spacing:.5px}
+#v24side .v24date{color:#9db8e0;font-size:11px;padding:0 16px 10px;border-bottom:1px solid rgba(255,255,255,.12)}
+#v24side ul{list-style:none;margin:0;padding:8px 0;flex:1;overflow-y:auto}
+#v24side li a{display:block;color:#c6d5ee;font-size:12.5px;line-height:1.35;padding:8px 14px;text-decoration:none;border-left:3px solid transparent;transition:all .15s ease;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v24side li a:hover{color:#fff;background:rgba(255,255,255,.08)}
+#v24side li a.on{color:#fff;background:rgba(64,140,255,.28);border-left-color:#4da1ff;font-weight:600}
+#v24side .v24top{color:#8fa9d4;font-size:11px;text-align:center;padding:10px 0 12px;cursor:pointer;border-top:1px solid rgba(255,255,255,.12);margin:0}
+#v24side .v24top:hover{color:#fff}
+#v24side .v24brand,#v24side .v24date{margin:0}
+@media (max-width:1180px){#v24side{display:none}body{padding-left:0}}
+@media (min-width:1181px){body .site-nav{margin-left:0;width:auto}}
+h2[id]{scroll-margin-top:14px}
+</style><script>try{if(localStorage.getItem("mt-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script></head><body><aside id="v24side" aria-label="看板章节导航">
+<p class="v24brand">运力监控日报</p>
+<p class="v24date" id="v24date">时段运力拆解 · 15 城 / 3 区域</p>
+<nav><ul>
+<li><a href="#sec0">⓪ 区域总览</a></li>
+<li><a href="#sec1">① 分小时走势</a></li>
+<li><a href="#sec2">② 排班出勤</a></li>
+<li><a href="#sec3">③ 小时×城市</a></li>
+<li><a href="#sec4">④ 班次×城市</a></li>
+<li><a href="#sec5">⑤ 小时×站点</a></li>
+<li><a href="#sec6">⑥ 班次×站点</a></li>
+<li><a href="#sec7">⑦ KA 品牌单量</a></li>
+<li><a href="#sec8">⑧ 数据检核</a></li>
+</ul></nav>
+<p class="v24top" id="v24top">▲ 返回顶部</p>
+</aside>
+
 <nav class="site-nav" id="siteNav">
   <div class="sn-inner">
   <a class="brand" href="/rider-data/index.html">首页</a>
@@ -8352,5 +8395,31 @@ document.addEventListener('click', function(ev){
   }
 }, true);
 setTimeout(warm, 300);
+})();
+</script><script>/* v24nav 左侧导航联动 */
+(function(){
+if (window.__v24nav) return; window.__v24nav = 1;
+var links = [].slice.call(document.querySelectorAll('#v24side li a'));
+var secs = [];
+links.forEach(function(a){ var el = document.getElementById(a.getAttribute('href').slice(1)); if (el) secs.push(el); });
+var boxes = [], lastH = -1;
+function measure(){ boxes = secs.map(function(el){ return el.getBoundingClientRect().top + window.pageYOffset; }); lastH = document.body.scrollHeight; }
+function spy(){
+  if (document.body.scrollHeight !== lastH) measure();
+  var y = window.pageYOffset + 140, cur = 0, i;
+  for (i = 0; i < boxes.length; i++){ if (y >= boxes[i]) cur = i; }
+  if (window.innerHeight + window.pageYOffset >= document.body.scrollHeight - 60) cur = secs.length - 1;
+  links.forEach(function(a){ a.classList.remove('on'); });
+  if (links[cur]) links[cur].classList.add('on');
+}
+var t = null;
+window.addEventListener('scroll', function(){ if (t) clearTimeout(t); t = setTimeout(spy, 60); }, {passive:true});
+window.addEventListener('resize', function(){ measure(); spy(); });
+var topBtn = document.getElementById('v24top');
+if (topBtn) topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+var m = (document.title || '').match(/\d{4}-\d{2}-\d{2}/);
+var dateEl = document.getElementById('v24date');
+if (m && dateEl) dateEl.textContent = '数据日期 ' + m[0];
+setTimeout(function(){ measure(); spy(); }, 400);
 })();
 </script></body></html>
