@@ -381,21 +381,6 @@ details[open]>summary{color:#1c5bd0}
 .v25foot a:hover{color:#1967D2;text-decoration:underline}
 @media(max-width:640px){.card h2{font-size:14px}}
 html{scrollbar-width:thin;scrollbar-color:#c6cbd8 transparent}
-/* ===== v24nav 左侧导航栏 ===== */
-body{padding-left:188px}
-#v24side{position:fixed;left:0;top:0;bottom:0;width:172px;background:linear-gradient(180deg,#122a52 0%,#1d3f7a 100%);z-index:99;display:flex;flex-direction:column;box-shadow:2px 0 12px rgba(18,42,82,.18)}
-#v24side .v24brand{color:#fff;font-weight:700;font-size:14px;padding:14px 16px 4px;letter-spacing:.5px}
-#v24side .v24date{color:#9db8e0;font-size:11px;padding:0 16px 10px;border-bottom:1px solid rgba(255,255,255,.12)}
-#v24side ul{list-style:none;margin:0;padding:8px 0;flex:1;overflow-y:auto}
-#v24side li a{display:block;color:#c6d5ee;font-size:12.5px;line-height:1.35;padding:8px 14px;text-decoration:none;border-left:3px solid transparent;transition:all .15s ease;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#v24side li a:hover{color:#fff;background:rgba(255,255,255,.08)}
-#v24side li a.on{color:#fff;background:rgba(64,140,255,.28);border-left-color:#4da1ff;font-weight:600}
-#v24side .v24top{color:#8fa9d4;font-size:11px;text-align:center;padding:10px 0 12px;cursor:pointer;border-top:1px solid rgba(255,255,255,.12);margin:0}
-#v24side .v24top:hover{color:#fff}
-#v24side .v24brand,#v24side .v24date{margin:0}
-@media (max-width:1180px){#v24side{display:none}body{padding-left:0}}
-@media (min-width:1181px){body .site-nav{margin-left:0;width:auto}}
-h2[id]{scroll-margin-top:14px}
 /* ===== v26float 右下角悬浮导航 ===== */
 #v26float{position:fixed;right:18px;bottom:22px;z-index:98;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 #v26float .fbtn{width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,#1B2233,#2D3447);color:#FFC300;font-size:17px;cursor:pointer;box-shadow:0 4px 14px rgba(27,34,51,.28);transition:transform .15s ease;padding:0}
@@ -418,6 +403,21 @@ body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),tran
 .card table tbody tr:hover>td{background:#FFF8E1}
 .card table tbody tr:nth-child(even)>td{background:#FAFBFC}
 
+/* ===== v24nav 左侧导航栏 ===== */
+body{padding-left:188px}
+#v24side{position:fixed;left:0;top:0;bottom:0;width:172px;background:linear-gradient(180deg,#122a52 0%,#1d3f7a 100%);z-index:99;display:flex;flex-direction:column;box-shadow:2px 0 12px rgba(18,42,82,.18)}
+#v24side .v24brand{color:#fff;font-weight:700;font-size:14px;padding:14px 16px 4px;letter-spacing:.5px}
+#v24side .v24date{color:#9db8e0;font-size:11px;padding:0 16px 10px;border-bottom:1px solid rgba(255,255,255,.12)}
+#v24side ul{list-style:none;margin:0;padding:8px 0;flex:1;overflow-y:auto}
+#v24side li a{display:block;color:#c6d5ee;font-size:12.5px;line-height:1.35;padding:8px 14px;text-decoration:none;border-left:3px solid transparent;transition:all .15s ease;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v24side li a:hover{color:#fff;background:rgba(255,255,255,.08)}
+#v24side li a.on{color:#fff;background:rgba(64,140,255,.28);border-left-color:#4da1ff;font-weight:600}
+#v24side .v24top{color:#8fa9d4;font-size:11px;text-align:center;padding:10px 0 12px;cursor:pointer;border-top:1px solid rgba(255,255,255,.12);margin:0}
+#v24side .v24top:hover{color:#fff}
+#v24side .v24brand,#v24side .v24date{margin:0}
+@media (max-width:1180px){#v24side{display:none}body{padding-left:0}}
+@media (min-width:1181px){body .site-nav{margin-left:0;width:auto}}
+h2[id]{scroll-margin-top:14px}
 </style><script>try{if(localStorage.getItem("mt-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script></head><body><aside id="v24side" aria-label="看板章节导航">
 <p class="v24brand">运力监控日报</p>
 <p class="v24date" id="v24date">时段运力拆解 · 15 城 / 3 区域</p>
@@ -434,7 +434,6 @@ body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),tran
 </ul></nav>
 <p class="v24top" id="v24top">▲ 返回顶部</p>
 </aside>
-
 <div class="stalebar" id="staleBar" hidden>⚠️ <span id="staleBarTxt"></span></div>
 <div class="hero"><h1>运力监控 · 2026-11-06<span class="gold">（全天 · 区域/城市下钻视图）</span></h1>
 <div class="sub"><span class="kv">运力达成：推单 <b>276,204</b> 条</span><span class="kv">已送达 <b>258,809</b>（推完占比 93.7%）</span><span class="kv">取消 <b>17,395</b>（取消率 6.3%）</span><span class="kv">专送 <b>96,727</b> / 众包 <b>53,210</b> / 悦跑 <b>108,872</b></span><span class="kv">悦跑名册 <b>2,255</b> 人</span><span class="kv">专送排班：84 站</span><span class="kv dim">数据源：下载中心汇总表 + 日监控分片</span><span class="kv dim">顶部指标卡可点击跳转对应章节，悬停看区域拆分</span></div></div>
@@ -8415,33 +8414,7 @@ document.addEventListener('click', function(ev){
 }, true);
 setTimeout(warm, 300);
 })();
-</script><footer class="v25foot"><a href="/rider-data/index.html">看板中心</a> · 骑手签约 / 履约考核 / 运力监控 / 数据概览 · <a href="/rider-data/index.html">返回看板中心</a></footer><script>/* v24nav 左侧导航联动 */
-(function(){
-if (window.__v24nav) return; window.__v24nav = 1;
-var links = [].slice.call(document.querySelectorAll('#v24side li a'));
-var secs = [];
-links.forEach(function(a){ var el = document.getElementById(a.getAttribute('href').slice(1)); if (el) secs.push(el); });
-var boxes = [], lastH = -1;
-function measure(){ boxes = secs.map(function(el){ return el.getBoundingClientRect().top + window.pageYOffset; }); lastH = document.body.scrollHeight; }
-function spy(){
-  if (document.body.scrollHeight !== lastH) measure();
-  var y = window.pageYOffset + 140, cur = 0, i;
-  for (i = 0; i < boxes.length; i++){ if (y >= boxes[i]) cur = i; }
-  if (window.innerHeight + window.pageYOffset >= document.body.scrollHeight - 60) cur = secs.length - 1;
-  links.forEach(function(a){ a.classList.remove('on'); });
-  if (links[cur]) links[cur].classList.add('on');
-}
-var t = null;
-window.addEventListener('scroll', function(){ if (t) clearTimeout(t); t = setTimeout(spy, 60); }, {passive:true});
-window.addEventListener('resize', function(){ measure(); spy(); });
-var topBtn = document.getElementById('v24top');
-if (topBtn) topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-var m = (document.title || '').match(/\d{4}-\d{2}-\d{2}/);
-var dateEl = document.getElementById('v24date');
-if (m && dateEl) dateEl.textContent = '数据日期 ' + m[0];
-setTimeout(function(){ measure(); spy(); }, 400);
-})();
-</script><aside id="v26float" aria-label="快捷导航">
+</script><footer class="v25foot"><a href="/rider-data/index.html">看板中心</a> · 骑手签约 / 履约考核 / 运力监控 / 数据概览 · <a href="/rider-data/index.html">返回看板中心</a></footer><aside id="v26float" aria-label="快捷导航">
 <nav class="fmenu" id="v26fmenu"><ul>
 <li><a href="#sec0">⓪ 区域总览</a></li>
 <li><a href="#sec1">① 分小时走势</a></li>
@@ -8467,5 +8440,34 @@ top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smoo
 document.addEventListener('click', function(e){ if (box.classList.contains('open') && !box.contains(e.target)) box.classList.remove('open'); });
 var links = document.querySelectorAll('#v26fmenu a');
 for (var i = 0; i < links.length; i++){ links[i].addEventListener('click', function(){ box.classList.remove('open'); }); }
+})();
+</script><script>/* v24nav 左侧导航联动 */
+(function(){
+if (window.__v24nav) return; window.__v24nav = 1;
+var links = [].slice.call(document.querySelectorAll('#v24side li a'));
+var secs = [];
+links.forEach(function(a){ var el = document.getElementById(a.getAttribute('href').slice(1)); if (el) secs.push(el); });
+var boxes = [], lastH = -1;
+function measure(){ boxes = secs.map(function(el){ return el.getBoundingClientRect().top + window.pageYOffset; }); lastH = document.body.scrollHeight; }
+function spy(){
+  if (document.body.scrollHeight !== lastH) measure();
+  var y = window.pageYOffset + 140, cur = 0, i;
+  for (i = 0; i < boxes.length; i++){ if (y >= boxes[i]) cur = i; }
+  if (window.innerHeight + window.pageYOffset >= document.body.scrollHeight - 60) cur = secs.length - 1;
+  links.forEach(function(a){ a.classList.remove('on'); });
+  if (links[cur]) links[cur].classList.add('on');
+}
+var t = null;
+window.addEventListener('scroll', function(){ if (t) clearTimeout(t); t = setTimeout(spy, 60); }, {passive:true});
+var side = document.getElementById('v24side');
+function place(){ if (!side) return; var l = document.body.getBoundingClientRect().left; side.style.left = Math.max(0, Math.round(l)) + 'px'; }
+place();
+window.addEventListener('resize', function(){ place(); measure(); spy(); });
+var topBtn = document.getElementById('v24top');
+if (topBtn) topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+var m = (document.title || '').match(/\d{4}-\d{2}-\d{2}/);
+var dateEl = document.getElementById('v24date');
+if (m && dateEl) dateEl.textContent = '数据日期 ' + m[0];
+setTimeout(function(){ measure(); spy(); }, 400);
 })();
 </script></body></html>
