@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-08 04:28:55",
+  "generatedAt": "2026-11-08 05:02:16",
   "runDate": "2026-11-08",
   "tasks": [
     {
@@ -1646,7 +1646,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:30",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -1678,7 +1682,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:30",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -2690,8 +2698,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "7/7 任务正常 · 近 30 天触发断档 2 天"
+      "status": "WARN",
+      "detail": "5/7 任务正常 · 2 逾期 · 近 30 天触发断档 2 天"
     },
     {
       "layer": "部署层",
@@ -2703,13 +2711,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-08 12:28:49）"
+      "detail": "本轮发布前置 10 段全过（2026-11-08 13:02:15）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 1h 前"
+      "detail": "2 项目，最新产出 2h 前"
     },
     {
       "layer": "渲染层",
@@ -2748,7 +2756,7 @@
           "size": 2729579
         }
       ],
-      "ageHours": 1,
+      "ageHours": 2,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-06",
@@ -2785,7 +2793,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 3,
+      "ageHours": 4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -2994,11 +3002,21 @@
         "name": "20261017-efficiency-naming",
         "files": 16,
         "latestAt": "2026-11-07 23:38:29",
-        "ageH": 4
+        "ageH": 5
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：考核看板发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：新商评周报发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -3344,8 +3362,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "8567197",
-        "at": "2026-11-08T12:14:50+08:00",
+        "hash": "0ac06af",
+        "at": "2026-11-08T12:30:42+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3437,21 +3455,21 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-08 12:28:49",
+    "runAt": "2026-11-08 13:02:15",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 8,
+        "seconds": 8.2,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -3469,13 +3487,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 34.1,
+        "seconds": 48.6,
         "note": "npm test pass=1447 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 5.1,
+        "seconds": 4.9,
         "note": ""
       },
       {
@@ -3493,37 +3511,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 26,
+        "seconds": 25.7,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 29.8,
+        "seconds": 45.6,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 730.6,
-        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 111.8,
-        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-06 21:07:13",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 1196.1,
-      "fails": []
-    },
     {
       "runAt": "2026-11-07 00:18:17",
       "scope": "pre-deploy",
@@ -3726,6 +3725,13 @@
       "allPass": true,
       "totalSec": 946.8,
       "fails": []
+    },
+    {
+      "runAt": "2026-11-08 13:02:15",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 134.1,
+      "fails": []
     }
   ],
   "preflight": {
@@ -3794,14 +3800,14 @@
     ]
   },
   "health": {
-    "score": 100,
-    "grade": "优",
+    "score": 88,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 25,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "门禁层",
@@ -4340,13 +4346,13 @@
     },
     {
       "date": "2026-11-08",
-      "at": "2026-11-08 04:28:55",
-      "score": 100,
-      "grade": "优",
+      "at": "2026-11-08 05:02:16",
+      "score": 88,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "部署层",
@@ -4417,7 +4423,7 @@
   "perf": {
     "assets": {
       "count": 45,
-      "totalKB": 1269.4,
+      "totalKB": 1269.6,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -4436,8 +4442,8 @@
           "kb": 73.5
         },
         {
-          "name": "rider_dashboard-DHxuvQ9K.js",
-          "kb": 47.4
+          "name": "rider_dashboard-BA1iW0xC.js",
+          "kb": 47.6
         },
         {
           "name": "swRegister-CXDtLDpe.css",
@@ -4455,11 +4461,11 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1878.8,
+      "totalKB": 1906.6,
       "top": [
         {
           "name": "rider-detail.json",
-          "kb": 552.5
+          "kb": 579
         },
         {
           "name": "rider_base.json",
@@ -4475,7 +4481,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 119.9
+          "kb": 121.1
         },
         {
           "name": "assessment/oct.json",
