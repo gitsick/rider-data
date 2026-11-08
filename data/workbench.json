@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-08 00:16:58",
+  "generatedAt": "2026-11-08 00:57:32",
   "runDate": "2026-11-08",
   "tasks": [
     {
@@ -14,15 +14,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-07 10:31:23",
-        "durationSec": 83,
+        "finishedAt": "2026-11-08 08:50:26",
+        "durationSec": 4827,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 07:30 主跑 + 10:30 发布自愈",
         "expectHour": 7,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -268,6 +268,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-07 10:31:23",
           "durationSec": 83
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-08 08:50:26",
+          "durationSec": 4827
         }
       ],
       "gaps": {
@@ -390,16 +395,15 @@
           },
           {
             "date": "2026-11-08",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 1,
+        "gapCount": 0,
         "failCount": 1,
-        "passCount": 21
+        "passCount": 22
       },
       "durTrend": [
-        92,
         789,
         466,
         2122,
@@ -412,7 +416,8 @@
         2800,
         89,
         3552,
-        83
+        83,
+        4827
       ]
     },
     {
@@ -2629,7 +2634,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "7/7 任务正常 · 近 30 天触发断档 4 天"
+      "detail": "7/7 任务正常 · 近 30 天触发断档 3 天"
     },
     {
       "layer": "部署层",
@@ -2699,17 +2704,17 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-08 00:04",
+          "mtime": "2026-11-08 00:55",
           "size": 68702
         },
         {
           "name": "oct.json",
-          "mtime": "2026-11-08 00:04",
+          "mtime": "2026-11-08 00:55",
           "size": 99124
         },
         {
           "name": "sep.json",
-          "mtime": "2026-11-08 00:04",
+          "mtime": "2026-11-08 00:55",
           "size": 86377
         },
         {
@@ -2932,7 +2937,7 @@
         "name": "20261017-efficiency-naming",
         "files": 16,
         "latestAt": "2026-11-07 23:38:29",
-        "ageH": 0
+        "ageH": 1
       }
     ]
   },
@@ -2940,7 +2945,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：2 个任务近 30 天共 4 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：新商评考核周报 近 30 天有 3 天零留痕（10-18、10-19、11-08；首次留痕 2026-10-17）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -3282,8 +3287,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "116f400",
-        "at": "2026-11-08T07:30:51+08:00",
+        "hash": "9d49185",
+        "at": "2026-11-08T08:20:07+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4266,7 +4271,7 @@
     },
     {
       "date": "2026-11-08",
-      "at": "2026-11-08 00:16:58",
+      "at": "2026-11-08 00:57:32",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -4343,14 +4348,14 @@
   "perf": {
     "assets": {
       "count": 45,
-      "totalKB": 1260.6,
+      "totalKB": 1268.7,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-CygfigxV.js",
+          "name": "main-D7QMg1w2.js",
           "kb": 161
         },
         {
@@ -4366,12 +4371,12 @@
           "kb": 47.4
         },
         {
-          "name": "swRegister-BaMYV-Ge.js",
-          "kb": 45.2
+          "name": "rider_dashboard-7iZJu3QR.js",
+          "kb": 46.7
         },
         {
-          "name": "rider_dashboard-C2uGlK2I.js",
-          "kb": 42.2
+          "name": "swRegister-BaMYV-Ge.js",
+          "kb": 45.2
         },
         {
           "name": "admin-BGgH48p2.js",
@@ -4381,7 +4386,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1811.9,
+      "totalKB": 1814,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4401,7 +4406,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 116.4
+          "kb": 117.3
         },
         {
           "name": "assessment/oct.json",
@@ -4413,7 +4418,7 @@
         },
         {
           "name": "assessment/nov.json",
-          "kb": 65.8
+          "kb": 67.1
         }
       ]
     },
