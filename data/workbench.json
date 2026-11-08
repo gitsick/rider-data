@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-08 02:44:12",
+  "generatedAt": "2026-11-08 03:32:09",
   "runDate": "2026-11-08",
   "tasks": [
     {
@@ -1200,9 +1200,9 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-08 08:04:21",
+        "finishedAt": "2026-11-08 11:02:42",
         "durationSec": null,
-        "note": "R-OV总览内嵌轮：数据总览改看板内原生页签(与各页签同壳同构)，下钻/访问跳转看板内切换(?lf可分享)，页头重复入口退役，独立页保留兼容；新增回归锁5项，门禁1439全过；发布116f400，live_gate PASS，浏览器实测总览渲染与下钻链路全通过；与考核管线并发撞dist一次已重建恢复"
+        "note": "多维分析四维上线(全部/区域/城市/站点)+图表增强,门禁1447全过,HEAD=a671fe7,live_gate PASS,浏览器实测四维切换与站点下钻OK"
       },
       "monitor": {
         "cadence": "daily",
@@ -1222,11 +1222,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-26 20:13:05",
-          "durationSec": 774
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:44",
@@ -1486,6 +1481,12 @@
           "finishedAt": "2026-11-08 08:04:21",
           "durationSec": null,
           "note": "R-OV总览内嵌轮：数据总览改看板内原生页签(与各页签同壳同构)，下钻/访问跳转看板内切换(?lf可分享)，页头重复入口退役，独立页保留兼容；新增回归锁5项，门禁1439全过；发布116f400，live_gate PASS，浏览器实测总览渲染与下钻链路全通过；与考核管线并发撞dist一次已重建恢复"
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-08 11:02:42",
+          "durationSec": null,
+          "note": "多维分析四维上线(全部/区域/城市/站点)+图表增强,门禁1447全过,HEAD=a671fe7,live_gate PASS,浏览器实测四维切换与站点下钻OK"
         }
       ],
       "gaps": {
@@ -2687,7 +2688,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-08 10:37:45）"
+      "detail": "本轮发布前置 10 段全过（2026-11-08 11:32:09）"
     },
     {
       "layer": "项目层",
@@ -2769,7 +2770,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 1,
+      "ageHours": 2,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3328,8 +3329,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "dbc8e30",
-        "at": "2026-11-08T10:23:23+08:00",
+        "hash": "a671fe7",
+        "at": "2026-11-08T10:45:55+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3421,21 +3422,21 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-08 10:37:45",
+    "runAt": "2026-11-08 11:32:09",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 9.7,
+        "seconds": 4.8,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -3447,26 +3448,26 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 38.7,
+        "seconds": 37.7,
         "note": "npm test pass=1447 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 0,
-        "note": "resume 跳过（检查点新鲜 + 产物指纹一致）"
+        "seconds": 7.8,
+        "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0,
-        "note": "resume 跳过（产物指纹一致）"
+        "seconds": 0.2,
+        "note": ""
       },
       {
         "name": "wire_gate",
@@ -3477,37 +3478,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 0,
-        "note": "resume 跳过（产物指纹一致）"
+        "seconds": 31.1,
+        "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 29.6,
+        "seconds": 33.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 846.7,
-        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 42.2,
-        "note": "指纹+无变更探针 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-05 08:12:10",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 213.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-05 16:04:58",
       "scope": "pre-deploy",
@@ -3709,6 +3691,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 968.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-08 11:32:09",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 115.7,
       "fails": []
     }
   ],
@@ -4324,7 +4313,7 @@
     },
     {
       "date": "2026-11-08",
-      "at": "2026-11-08 02:44:12",
+      "at": "2026-11-08 03:32:09",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -4401,7 +4390,7 @@
   "perf": {
     "assets": {
       "count": 45,
-      "totalKB": 1268.7,
+      "totalKB": 1269.4,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -4420,12 +4409,12 @@
           "kb": 73.5
         },
         {
-          "name": "swRegister-CXDtLDpe.css",
+          "name": "rider_dashboard-DHxuvQ9K.js",
           "kb": 47.4
         },
         {
-          "name": "rider_dashboard-C2_dw0Or.js",
-          "kb": 46.7
+          "name": "swRegister-CXDtLDpe.css",
+          "kb": 47.4
         },
         {
           "name": "swRegister-BaMYV-Ge.js",
@@ -4439,11 +4428,11 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1815.3,
+      "totalKB": 1855.4,
       "top": [
         {
           "name": "rider-detail.json",
-          "kb": 531.4
+          "kb": 552.5
         },
         {
           "name": "rider_base.json",
@@ -4459,7 +4448,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 118.6
+          "kb": 137.5
         },
         {
           "name": "assessment/oct.json",
