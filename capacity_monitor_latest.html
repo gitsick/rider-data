@@ -381,28 +381,6 @@ details[open]>summary{color:#1c5bd0}
 .v25foot a:hover{color:#1967D2;text-decoration:underline}
 @media(max-width:640px){.card h2{font-size:14px}}
 html{scrollbar-width:thin;scrollbar-color:#c6cbd8 transparent}
-/* ===== v26float 右下角悬浮导航 ===== */
-#v26float{position:fixed;right:18px;bottom:22px;z-index:98;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
-#v26float .fbtn{width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,#1B2233,#2D3447);color:#FFC300;font-size:17px;cursor:pointer;box-shadow:0 4px 14px rgba(27,34,51,.28);transition:transform .15s ease;padding:0}
-#v26float .fbtn:hover{transform:translateY(-2px)}
-#v26float .ftop{font-size:13px}
-#v26float .fmenu{display:none;flex-direction:column;background:#fff;border:1px solid #EAECEF;border-radius:10px;box-shadow:0 8px 24px rgba(31,66,135,.14);max-height:62vh;overflow-y:auto;min-width:150px}
-#v26float.open .fmenu{display:flex}
-#v26float .fmenu ul{list-style:none;margin:0;padding:4px 0}
-#v26float .fmenu a{display:block;padding:8px 18px;font-size:12.5px;color:#1B1B33;text-decoration:none;border-bottom:1px solid #F0F2F5;white-space:nowrap}
-#v26float .fmenu li:last-child a{border-bottom:none}
-#v26float .fmenu a:hover{background:#FFF8E1}/* ===== v27align 滚动修复+看板中心对齐 ===== */
-/* 滚动修复：原生 CSS 中 .bar 与 .stickyhead 之间缺分隔符，被解析成后代选择器
-   .bar .stickyhead，吸顶规则从未生效（章节条滚动即消失）。此处以更高优先级重申。 */
-body .stickyhead{position:sticky;top:0;z-index:900}
-h2[id]{scroll-margin-top:100px}
-html{scroll-behavior:auto}
-/* 对齐看板中心：背景双光晕+底色 / 卡片圆角 12px / 行悬停金色 / 斑马纹 */
-body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),transparent 60%),radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 55%),#F0F2F5}
-.card{border-radius:12px}
-.card table tbody tr:hover>td{background:#FFF8E1}
-.card table tbody tr:nth-child(even)>td{background:#FAFBFC}
-
 /* ===== v24nav 左侧导航栏 ===== */
 body{padding-left:188px}
 #v24side{position:fixed;left:0;top:0;bottom:0;width:172px;background:linear-gradient(180deg,#122a52 0%,#1d3f7a 100%);z-index:99;display:flex;flex-direction:column;box-shadow:2px 0 12px rgba(18,42,82,.18)}
@@ -418,6 +396,29 @@ body{padding-left:188px}
 @media (max-width:1180px){#v24side{display:none}body{padding-left:0}}
 @media (min-width:1181px){body .site-nav{margin-left:0;width:auto}}
 h2[id]{scroll-margin-top:14px}
+/* ===== v26float 右下角悬浮导航 ===== */
+#v26float{position:fixed;right:18px;bottom:22px;z-index:98;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+#v26float .fbtn{width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,#1B2233,#2D3447);color:#FFC300;font-size:17px;cursor:pointer;box-shadow:0 4px 14px rgba(27,34,51,.28);transition:transform .15s ease;padding:0}
+#v26float .fbtn:hover{transform:translateY(-2px)}
+#v26float .ftop{font-size:13px}
+#v26float .fmenu{display:none;flex-direction:column;background:#fff;border:1px solid #EAECEF;border-radius:10px;box-shadow:0 8px 24px rgba(31,66,135,.14);max-height:62vh;overflow-y:auto;min-width:150px}
+#v26float.open .fmenu{display:flex}
+#v26float .fmenu ul{list-style:none;margin:0;padding:4px 0}
+#v26float .fmenu a{display:block;padding:8px 18px;font-size:12.5px;color:#1B1B33;text-decoration:none;border-bottom:1px solid #F0F2F5;white-space:nowrap}
+#v26float .fmenu li:last-child a{border-bottom:none}
+#v26float .fmenu a:hover{background:#FFF8E1}
+/* ===== v27align 滚动修复+看板中心对齐 ===== */
+/* 滚动修复：原生 CSS 中 .bar 与 .stickyhead 之间缺分隔符，被解析成后代选择器
+   .bar .stickyhead，吸顶规则从未生效（章节条滚动即消失）。此处以更高优先级重申。 */
+body .stickyhead{position:sticky;top:0;z-index:900}
+h2[id]{scroll-margin-top:100px}
+html{scroll-behavior:auto}
+/* 对齐看板中心：背景双光晕+底色 / 卡片圆角 12px / 行悬停金色 / 斑马纹 */
+body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),transparent 60%),radial-gradient(1000px 460px at 92% -10%,rgba(59,111,245,.07),transparent 55%),#F0F2F5}
+.card{border-radius:12px}
+.card table tbody tr:hover>td{background:#FFF8E1}
+.card table tbody tr:nth-child(even)>td{background:#FAFBFC}
+
 </style><script>try{if(localStorage.getItem("mt-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script></head><body><aside id="v24side" aria-label="看板章节导航">
 <p class="v24brand">运力监控日报</p>
 <p class="v24date" id="v24date">时段运力拆解 · 15 城 / 3 区域</p>
@@ -434,6 +435,7 @@ h2[id]{scroll-margin-top:14px}
 </ul></nav>
 <p class="v24top" id="v24top">▲ 返回顶部</p>
 </aside>
+
 <div class="stalebar" id="staleBar" hidden>⚠️ <span id="staleBarTxt"></span></div>
 <div class="hero"><h1>运力监控 · 2026-11-06<span class="gold">（全天 · 区域/城市下钻视图）</span></h1>
 <div class="sub"><span class="kv">运力达成：推单 <b>276,204</b> 条</span><span class="kv">已送达 <b>258,809</b>（推完占比 93.7%）</span><span class="kv">取消 <b>17,395</b>（取消率 6.3%）</span><span class="kv">专送 <b>96,727</b> / 众包 <b>53,210</b> / 悦跑 <b>108,872</b></span><span class="kv">悦跑名册 <b>2,255</b> 人</span><span class="kv">专送排班：84 站</span><span class="kv dim">数据源：下载中心汇总表 + 日监控分片</span><span class="kv dim">顶部指标卡可点击跳转对应章节，悬停看区域拆分</span></div></div>
@@ -8003,7 +8005,7 @@ h2[id]{scroll-margin-top:14px}
 <tr><td>排班校准</td><td>专送排班人数与站点排班导出逐班核对，出勤按「排班时段与统计时段有交集」判定</td></tr>
 <tr><td>夜宵2 说明</td><td>夜宵2 班次（20:00-22:00）部分城市悦跑排班表未排班，差异表按实际出勤人数列示，缺口口径以「调整后−现有」为准</td></tr>
 </tbody></table></div>
-<div class="verbadge" id="verBadge">本页版本：生成于 2026-11-07 16:40 · 数据日 2026-11-06 · 渲染器 R546</div>
+<div class="verbadge" id="verBadge">本页版本：生成于 2026-11-08 10:38 · 数据日 2026-11-06 · 渲染器 R546</div>
 <div class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">回到顶部 ↑</div>
 <script>
 /* H-cap 双主题（D9）：与主站 mt-theme 单键同源（浅色默认；本页 head 已有防闪烁引导） */
@@ -8414,34 +8416,7 @@ document.addEventListener('click', function(ev){
 }, true);
 setTimeout(warm, 300);
 })();
-</script><footer class="v25foot"><a href="/rider-data/index.html">看板中心</a> · 骑手签约 / 履约考核 / 运力监控 / 数据概览 · <a href="/rider-data/index.html">返回看板中心</a></footer><aside id="v26float" aria-label="快捷导航">
-<nav class="fmenu" id="v26fmenu"><ul>
-<li><a href="#sec0">⓪ 区域总览</a></li>
-<li><a href="#sec1">① 分小时走势</a></li>
-<li><a href="#sec2">② 排班出勤</a></li>
-<li><a href="#sec3">③ 小时×城市</a></li>
-<li><a href="#sec4">④ 班次×城市</a></li>
-<li><a href="#sec5">⑤ 小时×站点</a></li>
-<li><a href="#sec6">⑥ 班次×站点</a></li>
-<li><a href="#sec7">⑦ KA 品牌单量</a></li>
-<li><a href="#sec8">⑧ 数据检核</a></li>
-</ul></nav>
-<button class="fbtn" id="v26fbtn" title="章节导航" type="button">☰</button>
-<button class="fbtn ftop" id="v26ftop" title="返回顶部" type="button">▲</button>
-</aside>
-<script>/* v26float 悬浮导航联动 */
-(function(){
-if (window.__v26float) return; window.__v26float = 1;
-var box = document.getElementById('v26float');
-var btn = document.getElementById('v26fbtn');
-var top = document.getElementById('v26ftop');
-btn.addEventListener('click', function(e){ e.stopPropagation(); box.classList.toggle('open'); });
-top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-document.addEventListener('click', function(e){ if (box.classList.contains('open') && !box.contains(e.target)) box.classList.remove('open'); });
-var links = document.querySelectorAll('#v26fmenu a');
-for (var i = 0; i < links.length; i++){ links[i].addEventListener('click', function(){ box.classList.remove('open'); }); }
-})();
-</script><script>/* v24nav 左侧导航联动 */
+</script><footer class="v25foot"><a href="/rider-data/index.html">看板中心</a> · 骑手签约 / 履约考核 / 运力监控 / 数据概览 · <a href="/rider-data/index.html">返回看板中心</a></footer><script>/* v24nav 左侧导航联动 */
 (function(){
 if (window.__v24nav) return; window.__v24nav = 1;
 var links = [].slice.call(document.querySelectorAll('#v24side li a'));
@@ -8469,5 +8444,32 @@ var m = (document.title || '').match(/\d{4}-\d{2}-\d{2}/);
 var dateEl = document.getElementById('v24date');
 if (m && dateEl) dateEl.textContent = '数据日期 ' + m[0];
 setTimeout(function(){ measure(); spy(); }, 400);
+})();
+</script><aside id="v26float" aria-label="快捷导航">
+<nav class="fmenu" id="v26fmenu"><ul>
+<li><a href="#sec0">⓪ 区域总览</a></li>
+<li><a href="#sec1">① 分小时走势</a></li>
+<li><a href="#sec2">② 排班出勤</a></li>
+<li><a href="#sec3">③ 小时×城市</a></li>
+<li><a href="#sec4">④ 班次×城市</a></li>
+<li><a href="#sec5">⑤ 小时×站点</a></li>
+<li><a href="#sec6">⑥ 班次×站点</a></li>
+<li><a href="#sec7">⑦ KA 品牌单量</a></li>
+<li><a href="#sec8">⑧ 数据检核</a></li>
+</ul></nav>
+<button class="fbtn" id="v26fbtn" title="章节导航" type="button">☰</button>
+<button class="fbtn ftop" id="v26ftop" title="返回顶部" type="button">▲</button>
+</aside>
+<script>/* v26float 悬浮导航联动 */
+(function(){
+if (window.__v26float) return; window.__v26float = 1;
+var box = document.getElementById('v26float');
+var btn = document.getElementById('v26fbtn');
+var top = document.getElementById('v26ftop');
+btn.addEventListener('click', function(e){ e.stopPropagation(); box.classList.toggle('open'); });
+top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+document.addEventListener('click', function(e){ if (box.classList.contains('open') && !box.contains(e.target)) box.classList.remove('open'); });
+var links = document.querySelectorAll('#v26fmenu a');
+for (var i = 0; i < links.length; i++){ links[i].addEventListener('click', function(){ box.classList.remove('open'); }); }
 })();
 </script></body></html>
