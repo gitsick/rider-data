@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-08 08:52:31",
+  "generatedAt": "2026-11-08 09:12:42",
   "runDate": "2026-11-08",
   "tasks": [
     {
@@ -1214,8 +1214,8 @@
         "overdueText": ""
       },
       "timer": {
-        "state": "ok",
-        "lastRunAt": "2026-11-08 16:00"
+        "state": "failed",
+        "lastRunAt": "2026-11-08 17:00"
       },
       "heal": {
         "can": true,
@@ -2318,9 +2318,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-08 16:18:34",
+    "auditedAt": "2026-11-08 17:12:41",
     "status": "PASS",
-    "pass": 61,
+    "pass": 62,
     "warn": 2,
     "fail": 0,
     "checks": [
@@ -2357,7 +2357,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: bece0a6 2026-11-08 16:04:38 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 38202c7 2026-11-08 16:52:35 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2367,12 +2367,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（5 小时前生成）"
+        "msg": "单文件产物存在（6 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（34 小时前生成）"
+        "msg": "单文件产物存在（35 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2497,12 +2497,17 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[rider-hourly] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[rider-hourly] 定时器排期 16:00 与 expectHour=16 一致"
       },
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/08/2026 16:00:00），耗时折算可用"
+        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/08/2026 17:00:01），耗时折算可用"
       },
       {
         "level": "PASS",
@@ -2622,7 +2627,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-08 16:04:35 替换，含 5 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-08 16:52:33 替换，含 7 文件）"
       },
       {
         "level": "PASS",
@@ -2641,10 +2646,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-07 09:38:35",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-07 10:55:28",
         "status": "PASS"
@@ -2696,6 +2697,10 @@
       {
         "auditedAt": "2026-11-08 16:18:34",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-08 17:12:41",
+        "status": "PASS"
       }
     ]
   },
@@ -2710,13 +2715,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-08 16:18:34）"
+      "detail": "审计 PASS（2026-11-08 17:12:41）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-08 16:30:10）"
+      "detail": "上轮全链 12 段全过（2026-11-08 17:12:16）"
     },
     {
       "layer": "项目层",
@@ -2798,7 +2803,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 7,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3029,7 +3034,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-11-08 16:18:34）",
+      "text": "审计有 2 项警告（2026-11-08 17:12:41）",
       "anchor": "sec-audit"
     },
     {
@@ -3367,8 +3372,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "22fab4f",
-        "at": "2026-11-08T16:31:59+08:00",
+        "hash": "38202c7",
+        "at": "2026-11-08T16:52:35+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3460,45 +3465,45 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-08 16:30:10",
+    "runAt": "2026-11-08 17:12:16",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.3,
+        "seconds": 8,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 1.2,
+        "seconds": 1.1,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 319.5,
+        "seconds": 66.3,
         "note": "npm test pass=1447 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 13.2,
+        "seconds": 5.6,
         "note": ""
       },
       {
@@ -3516,25 +3521,30 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 28.5,
+        "seconds": 27,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 30.8,
+        "seconds": 27.3,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 1126.3,
+        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 58.4,
+        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-07 09:38:22",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 968.6,
-      "fails": []
-    },
     {
       "runAt": "2026-11-07 10:04:47",
       "scope": "pre-deploy",
@@ -3736,6 +3746,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 400,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-08 17:12:16",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 1321.2,
       "fails": []
     }
   ],
@@ -4351,7 +4368,7 @@
     },
     {
       "date": "2026-11-08",
-      "at": "2026-11-08 08:52:31",
+      "at": "2026-11-08 09:12:42",
       "score": 88,
       "grade": "良",
       "layers": [
