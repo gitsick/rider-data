@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-08 17:01:48",
+  "generatedAt": "2026-11-08 17:11:15",
   "runDate": "2026-11-08",
   "tasks": [
     {
@@ -2342,10 +2342,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-08 18:27:30",
+    "auditedAt": "2026-11-09 01:11:15",
     "status": "PASS",
-    "pass": 63,
-    "warn": 3,
+    "pass": 53,
+    "warn": 2,
     "fail": 0,
     "checks": [
       {
@@ -2381,7 +2381,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 158c29c 2026-11-08 23:49:01 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 69038ac 2026-11-09 01:02:47 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2391,12 +2391,12 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（13 小时前生成）"
+        "msg": "单文件产物存在（14 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（41 小时前生成）"
+        "msg": "单文件产物存在（43 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2446,32 +2446,12 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（11/08/2026 07:30:00），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[kaohe-daily] 今日已运行"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
         "msg": "[xsp-weekly] 已关联定时器"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[xsp-weekly] 定时器排期 08:00 与 expectHour=8 一致"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（11/08/2026 08:04:39），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[xsp-weekly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2491,22 +2471,12 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[capacity-daily] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
+        "msg": "[capacity-daily] 任务留痕已晚于定时器失败时刻（PASS 覆盖失败残留，自动刷新）"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[capacity-daily] 定时器排期 09:00 与 expectHour=9 一致"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[capacity-daily] 定时器 lastRunAt 停在 10/23/2026 10:30:03 —— 暂停中不更新属预期（用户登记主动暂停，R266 意图豁免；恢复运行后自动复检）"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[capacity-daily] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2521,22 +2491,12 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
+        "msg": "[rider-hourly] 任务留痕已晚于定时器失败时刻（PASS 覆盖失败残留，自动刷新）"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 定时器排期 16:00 与 expectHour=16 一致"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/08/2026 17:00:01），耗时折算可用"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[rider-hourly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2551,22 +2511,12 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily-selfheal] 已登记按设计无留痕探测（C1）：自愈探测 BI 未发布早退不留 PASS 痕、留痕语义归主跑——无今日留痕非断链"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
         "msg": "[xsp-weekly-selfheal] 已关联定时器"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[xsp-weekly-selfheal] 定时器排期 10:30 与 expectHour=10 一致"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[xsp-weekly-selfheal] 已登记按设计无留痕探测（C1）：自愈探测 BI 未发布早退不留 PASS 痕、留痕语义归主跑——无今日留痕非断链"
       },
       {
         "level": "PASS",
@@ -2582,11 +2532,6 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[monthly-kaohe-backup] 定时器排期 09:00 与 expectHour=9 一致"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
-        "msg": "[monthly-kaohe-backup] 已登记用户主动暂停——今日无留痕不判断链（R266 意图豁免）"
       },
       {
         "level": "PASS",
@@ -2654,14 +2599,14 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "断链自愈",
-        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 kaohe-daily-selfheal（每日 10:30）；  [kaohe-daily-selfheal] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-kaohe-backup 技能自愈入口（检测 07:30 主跑产物未发布则补跑）；补跑 xsp-weekly-selfheal（每日 10:30）；  [xsp-weekly-selfheal] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-query-dashboard 技能自愈入口（检测 08:00 主跑产物未发布则补跑）；补跑 monthly-kaohe-backup（每日 09:00（当前暂停））；  [monthly-kaohe-backup] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: 月度备份流水线（bi-kaohe-backup 月度档）"
+        "msg": "无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-08 23:48:57 替换，含 14 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-09 01:02:43 替换，含 14 文件）"
       },
       {
         "level": "PASS",
@@ -2680,10 +2625,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-07 11:32:11",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-07 12:00:50",
         "status": "PASS"
@@ -2735,6 +2676,10 @@
       {
         "auditedAt": "2026-11-08 18:27:30",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-09 01:11:15",
+        "status": "PASS"
       }
     ]
   },
@@ -2749,13 +2694,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-08 18:27:30）"
+      "detail": "审计 PASS（2026-11-09 01:11:15）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-09 01:01:47）"
+      "detail": "上轮全链 12 段全过（2026-11-09 01:10:49）"
     },
     {
       "layer": "项目层",
@@ -3063,7 +3008,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 3 项警告（2026-11-08 18:27:30）",
+      "text": "审计有 2 项警告（2026-11-09 01:11:15）",
       "anchor": "sec-audit"
     },
     {
@@ -3406,8 +3351,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5910c61",
-        "at": "2026-11-08T23:54:46+08:00",
+        "hash": "69038ac",
+        "at": "2026-11-09T01:02:47+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3499,10 +3444,10 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-09 01:01:47",
+    "runAt": "2026-11-09 01:10:49",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -3563,17 +3508,22 @@
         "pass": true,
         "seconds": 57.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 460.3,
+        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 80.1,
+        "note": "指纹+探针 assets/export-audit-DWpMn_5y.js 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-08 11:49:36",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 1162.7,
-      "fails": []
-    },
     {
       "runAt": "2026-11-08 12:14:46",
       "scope": "pre-deploy",
@@ -3775,6 +3725,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 222.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-09 01:10:49",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 762.8,
       "fails": []
     }
   ],
@@ -4390,7 +4347,7 @@
     },
     {
       "date": "2026-11-08",
-      "at": "2026-11-08 17:01:48",
+      "at": "2026-11-08 17:11:15",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -4514,7 +4471,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1882.7,
+      "totalKB": 1882.4,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4534,7 +4491,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 123
+          "kb": 122.7
         },
         {
           "name": "assessment/oct.json",
