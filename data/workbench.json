@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-08 00:57:32",
+  "generatedAt": "2026-11-08 01:19:08",
   "runDate": "2026-11-08",
   "tasks": [
     {
@@ -2298,10 +2298,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-08 02:46:11",
+    "auditedAt": "2026-11-08 09:19:07",
     "status": "PASS",
-    "pass": 52,
-    "warn": 1,
+    "pass": 55,
+    "warn": 2,
     "fail": 0,
     "checks": [
       {
@@ -2337,7 +2337,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: eb5f3d0 2026-11-08 02:32:55 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 76e9edc 2026-11-08 09:12:31 +0800 Deploy: 通用运力监控 capacity_monitor_latest.html（每日管线刷新）"
       },
       {
         "level": "PASS",
@@ -2352,7 +2352,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（20 小时前生成）"
+        "msg": "单文件产物存在（27 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2367,7 +2367,7 @@
       {
         "level": "WARN",
         "item": "考核取数",
-        "msg": "加盟达标列断供存疑：4 天达标数=0 但总骑手数正常（11-03~11-06）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
+        "msg": "加盟达标列断供存疑：5 天达标数=0 但总骑手数正常（11-03~11-07）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
       },
       {
         "level": "PASS",
@@ -2398,6 +2398,16 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[kaohe-daily] 定时器排期 07:30 与 expectHour=7 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（11/08/2026 07:30:00），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2447,12 +2457,22 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 任务留痕已晚于定时器失败时刻（PASS 覆盖失败残留，自动刷新）"
+        "msg": "[rider-hourly] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 定时器排期 16:00 与 expectHour=16 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 定时器 lastRunAt 停在 11/07/2026 16:00:00 —— 未到今日触发时刻（expectHour 16，当前 9 点），今日留痕来自链路自愈/手动，属预期（R268 触发时机感知）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2545,19 +2565,19 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "断链自愈",
-        "msg": "无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
+        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 xsp-weekly（每日 08:00 主跑 + 10:30 发布自愈）；  [xsp-weekly] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-query-dashboard 技能取看板 250886/244447 → 三城 MTD 周报 Excel（产物落 reports\\）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-08 02:32:54 替换，含 5 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-08 08:57:37 替换，含 13 文件）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[capacity-monitor] 回滚可用：上一版本 409a7ee（2026-11-08 02:13:40 替换，备份在位）"
+        "msg": "[capacity-monitor] 回滚可用：上一版本 dd848c1（2026-11-08 09:12:30 替换，备份在位）"
       },
       {
         "level": "PASS",
@@ -2571,10 +2591,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-05 13:32:18",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-05 13:34:29",
         "status": "PASS"
@@ -2626,6 +2642,10 @@
       {
         "auditedAt": "2026-11-08 02:46:11",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-08 09:19:07",
+        "status": "PASS"
       }
     ]
   },
@@ -2640,13 +2660,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-08 02:46:11）"
+      "detail": "审计 PASS（2026-11-08 09:19:07）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-08 07:28:59）"
+      "detail": "上轮全链 12 段全过（2026-11-08 09:18:42）"
     },
     {
       "layer": "项目层",
@@ -2667,13 +2687,13 @@
       "recent": [
         {
           "name": "capacity_monitor_latest.html",
-          "mtime": "2026-11-07 18:11",
-          "size": 2722514
+          "mtime": "2026-11-08 01:11",
+          "size": 2728575
         },
         {
           "name": "capacity_breakdown_dashboard_2026-11-06.html",
-          "mtime": "2026-11-07 18:11",
-          "size": 2722514
+          "mtime": "2026-11-08 01:10",
+          "size": 2728575
         },
         {
           "name": "订单运力分析_2026-11-06.xlsx",
@@ -2691,7 +2711,7 @@
           "size": 289119
         }
       ],
-      "ageHours": 6,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-06",
@@ -2949,7 +2969,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-11-08 02:46:11）",
+      "text": "审计有 2 项警告（2026-11-08 09:19:07）",
       "anchor": "sec-audit"
     },
     {
@@ -3287,8 +3307,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "9d49185",
-        "at": "2026-11-08T08:20:07+08:00",
+        "hash": "dd848c1",
+        "at": "2026-11-08T08:57:39+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3298,8 +3318,8 @@
       "mode": "single-file",
       "target": "capacity_monitor_latest.html",
       "last": {
-        "hash": "f894f1d",
-        "at": "2026-11-08T02:13:40+08:00",
+        "hash": "76e9edc",
+        "at": "2026-11-08T09:12:31+08:00",
         "msg": "Deploy: 通用运力监控 capacity_monitor_latest.html（每日管线刷新）"
       }
     },
@@ -3380,21 +3400,21 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-08 07:28:59",
+    "runAt": "2026-11-08 09:18:42",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 9.6,
+        "seconds": 22.7,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -3406,14 +3426,14 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 33.2,
-        "note": "npm test pass=1439 fail=0"
+        "seconds": 39.5,
+        "note": "npm test pass=1447 fail=0"
       },
       {
         "name": "build",
@@ -3436,25 +3456,30 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 27.3,
+        "seconds": 41.3,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 69.1,
+        "seconds": 61.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 1192.5,
+        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 77.2,
+        "note": "指纹+无变更探针 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-03 16:03:05",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 119.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-03 16:07:55",
       "scope": "complete",
@@ -3656,6 +3681,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 145.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-08 09:18:42",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 1441.4,
       "fails": []
     }
   ],
@@ -4271,7 +4303,7 @@
     },
     {
       "date": "2026-11-08",
-      "at": "2026-11-08 00:57:32",
+      "at": "2026-11-08 01:19:08",
       "score": 100,
       "grade": "优",
       "layers": [
