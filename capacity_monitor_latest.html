@@ -419,6 +419,12 @@ body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),tran
 .card table tbody tr:hover>td{background:#FFF8E1}
 .card table tbody tr:nth-child(even)>td{background:#FAFBFC}
 
+/* ===== v28typo 排版精修 ===== */
+body{font-variant-numeric:tabular-nums}
+.card table td{line-height:1.55}
+.card table thead th{letter-spacing:.3px}
+.anobox{line-height:1.65}
+::selection{background:#ffe9a8}
 </style><script>try{if(localStorage.getItem("mt-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script><style>/* v24side-u1 侧栏样式统一：主站 navy+gold */
 #v24side{background:linear-gradient(180deg,#1B2233 0%,#2D3447 100%);box-shadow:2px 0 12px rgba(27,34,51,.28)}
 #v24side .v24brand::before{content:"";display:inline-block;width:3px;height:12px;border-radius:2px;background:linear-gradient(180deg,#FFC300,#F5A623);margin-right:8px;vertical-align:-1px}
@@ -431,6 +437,15 @@ body{background:radial-gradient(1200px 420px at 12% -6%,rgba(255,195,0,.08),tran
 #v24side li a.on{color:#fff;background:linear-gradient(135deg,#ffc30042,#ffc30021);border-left-color:#FFC300;font-weight:700;box-shadow:inset 0 0 0 1px #ffc30059}
 #v24side .v24top{color:#A9B7D8;border-top-color:rgba(255,255,255,.10)}
 #v24side .v24top:hover{color:#FFC300}
+</style>
+<style>/* v24side-u2 侧栏功能增强：折叠/阅读进度条/快捷键/悬停提示 */
+#v24prog{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,#FFC300,#F5A623);z-index:1000;pointer-events:none}
+#v24side{transition:transform .25s ease}
+#v24side .v24fold{position:absolute;top:16px;right:-20px;width:20px;height:44px;border:none;border-radius:0 8px 8px 0;background:linear-gradient(180deg,#1B2233,#2D3447);color:#FFC300;font-size:12px;line-height:1;cursor:pointer;padding:0;box-shadow:2px 2px 8px rgba(27,34,51,.28)}
+#v24side .v24fold:hover{color:#fff;background:linear-gradient(180deg,#2D3447,#1B2233)}
+html.v24folded body{padding-left:0}
+html.v24folded #v24side{transform:translateX(-100%);box-shadow:none}
+@media (max-width:1180px){#v24side .v24fold{display:none}}
 </style>
 </head><body><aside id="v24side" aria-label="看板章节导航">
 <p class="v24brand">运力监控日报</p>
@@ -4638,5 +4653,36 @@ top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smoo
 document.addEventListener('click', function(e){ if (box.classList.contains('open') && !box.contains(e.target)) box.classList.remove('open'); });
 var links = document.querySelectorAll('#v26fmenu a');
 for (var i = 0; i < links.length; i++){ links[i].addEventListener('click', function(){ box.classList.remove('open'); }); }
+})();
+</script><script>/* v24side-u2 侧栏功能增强 */
+(function(){
+if (window.__v24u2) return; window.__v24u2 = 1;
+var side = document.getElementById('v24side');
+if (!side) return;
+[].forEach.call(document.querySelectorAll('#v24side li a'), function(a){ a.title = a.textContent.trim(); });
+var fold = document.createElement('button');
+fold.type = 'button'; fold.className = 'v24fold'; fold.setAttribute('aria-label','收起/展开侧栏');
+fold.textContent = '‹';
+side.appendChild(fold);
+function applyFold(f){
+  document.documentElement.classList.toggle('v24folded', f);
+  fold.textContent = f ? '›' : '‹';
+  try{ localStorage.setItem('v24fold', f ? '1' : '0'); }catch(e){}
+  window.dispatchEvent(new Event('resize'));
+}
+fold.addEventListener('click', function(){ applyFold(!document.documentElement.classList.contains('v24folded')); });
+try{ if (localStorage.getItem('v24fold') === '1') applyFold(true); }catch(e){}
+var prog = document.createElement('div'); prog.id = 'v24prog'; document.body.appendChild(prog);
+var tick = false;
+function upd(){ tick = false; var h = document.documentElement.scrollHeight - window.innerHeight; prog.style.width = (h > 0 ? Math.min(100, window.pageYOffset / h * 100) : 0) + '%'; }
+window.addEventListener('scroll', function(){ if (!tick){ tick = true; requestAnimationFrame(upd); } }, {passive:true});
+upd();
+document.addEventListener('keydown', function(e){
+  if (e.ctrlKey || e.altKey || e.metaKey) return;
+  var t = e.target; if (t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return;
+  var k = e.key;
+  if (k >= '0' && k <= '8'){ var el = document.getElementById('sec' + k); if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.pageYOffset - 110); }
+  else if (k === 't' || k === 'T'){ window.scrollTo(0, 0); }
+});
 })();
 </script></body></html>
