@@ -451,6 +451,14 @@ html.v24folded #v24side{transform:translateX(-100%);box-shadow:none}
 h2[id].v29flash{border-radius:6px;animation:v29glow 1.3s ease-out 1}
 @keyframes v29glow{0%{box-shadow:0 0 0 3px rgba(255,195,0,.50);background:rgba(255,195,0,.10)}100%{box-shadow:0 0 0 3px rgba(255,195,0,0);background:transparent}}
 </style>
+<style>/* v30map 侧栏章节小地图：位置指示+章节刻度+点击拖拽定位 */
+#v24map{position:absolute;right:3px;top:72px;bottom:46px;width:12px;cursor:pointer;z-index:2;user-select:none;touch-action:none}
+#v24map .v24map-track{position:absolute;right:4px;top:0;bottom:0;width:4px;border-radius:2px;background:rgba(255,255,255,.10)}
+#v24map .v24map-thumb{position:absolute;right:0;width:4px;border-radius:2px;background:linear-gradient(180deg,#FFC300,#F5A623);min-height:8px;box-shadow:0 0 6px rgba(255,195,0,.45)}
+#v24map .v24map-tick{position:absolute;right:0;width:4px;height:2px;background:rgba(255,255,255,.35)}
+#v24map:hover .v24map-tick{background:rgba(255,255,255,.6)}
+@media (max-width:1180px){#v24map{display:none}}
+</style>
 </head><body><aside id="v24side" aria-label="看板章节导航">
 <p class="v24brand">运力监控日报</p>
 <p class="v24date" id="v24date">时段运力拆解 · 8 城 / 3 区域</p>
@@ -4677,9 +4685,9 @@ function applyFold(f){
 fold.addEventListener('click', function(){ applyFold(!document.documentElement.classList.contains('v24folded')); });
 try{ if (localStorage.getItem('v24fold') === '1') applyFold(true); }catch(e){}
 var prog = document.createElement('div'); prog.id = 'v24prog'; document.body.appendChild(prog);
-var tick = false;
-function upd(){ tick = false; var h = document.documentElement.scrollHeight - window.innerHeight; prog.style.width = (h > 0 ? Math.min(100, window.pageYOffset / h * 100) : 0) + '%'; }
-window.addEventListener('scroll', function(){ if (!tick){ tick = true; requestAnimationFrame(upd); } }, {passive:true});
+function upd(){ var h = document.documentElement.scrollHeight - window.innerHeight; prog.style.width = (h > 0 ? Math.min(100, window.pageYOffset / h * 100) : 0) + '%'; }
+var lastT = 0;
+window.addEventListener('scroll', function(){ var n = Date.now(); if (n - lastT < 80) return; lastT = n; upd(); }, {passive:true});
 upd();
 document.addEventListener('keydown', function(e){
   if (e.ctrlKey || e.altKey || e.metaKey) return;
@@ -4735,5 +4743,52 @@ document.addEventListener('keydown', function(e){
     if (el) setTimeout(function(){ correctTo(el, OFFSET); flash(el); }, 60);
   }
 });
+})();
+</script><script>/* v30map 侧栏章节小地图：位置指示+章节刻度+点击/拖拽定位 */
+(function(){
+if (window.__v30map) return; window.__v30map = 1;
+var side = document.getElementById('v24side');
+if (!side) return;
+var map = document.createElement('div'); map.id = 'v24map'; map.title = '章节小地图：点击/拖拽定位';
+var track = document.createElement('div'); track.className = 'v24map-track';
+var thumb = document.createElement('div'); thumb.className = 'v24map-thumb';
+track.appendChild(thumb); map.appendChild(track); side.appendChild(map);
+var secs = [];
+[].forEach.call(document.querySelectorAll('#v24side li a'), function(a){
+  var el = document.getElementById((a.getAttribute('href') || '').slice(1));
+  if (el) secs.push({el: el, label: a.textContent.trim()});
+});
+var tickEls = secs.map(function(){ var t = document.createElement('div'); t.className = 'v24map-tick'; track.appendChild(t); return t; });
+function measure(){
+  var dh = document.documentElement.scrollHeight;
+  secs.forEach(function(s, i){
+    tickEls[i].style.top = ((s.el.getBoundingClientRect().top + window.pageYOffset) / dh * 100) + '%';
+    tickEls[i].title = s.label;
+  });
+  return dh;
+}
+var lastH = -1;
+function upd(){
+  var dh = document.documentElement.scrollHeight;
+  if (dh !== lastH){ lastH = dh; measure(); }
+  var range = dh - window.innerHeight;
+  var f = range > 0 ? window.pageYOffset / range : 0;
+  thumb.style.top = (f * 100) + '%';
+  thumb.style.height = Math.max(8, window.innerHeight / dh * track.clientHeight) + 'px';
+}
+var lastT = 0;
+window.addEventListener('scroll', function(){ var n = Date.now(); if (n - lastT < 80) return; lastT = n; upd(); }, {passive:true});
+window.addEventListener('resize', function(){ lastH = -1; upd(); });
+var dragging = false;
+function goTo(clientY){
+  var r = track.getBoundingClientRect();
+  var f = Math.min(1, Math.max(0, (clientY - r.top) / r.height));
+  window.scrollTo(0, f * (document.documentElement.scrollHeight - window.innerHeight));
+}
+map.addEventListener('pointerdown', function(e){ dragging = true; try{ map.setPointerCapture(e.pointerId); }catch(err){} goTo(e.clientY); e.preventDefault(); });
+map.addEventListener('pointermove', function(e){ if (dragging) goTo(e.clientY); });
+map.addEventListener('pointerup', function(){ dragging = false; });
+map.addEventListener('pointercancel', function(){ dragging = false; });
+setTimeout(function(){ measure(); upd(); }, 500);
 })();
 </script></body></html>
