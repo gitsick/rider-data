@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-09 13:39:19",
+  "generatedAt": "2026-11-09 13:55:50",
   "runDate": "2026-11-09",
   "tasks": [
     {
@@ -2509,7 +2509,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 3h）"
+        "overdueText": "运行超时（距上次 3.3h）"
       },
       "timer": {
         "state": "ok",
@@ -2533,10 +2533,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-09 20:13:48",
+    "auditedAt": "2026-11-09 21:55:49",
     "status": "PASS",
-    "pass": 67,
-    "warn": 1,
+    "pass": 66,
+    "warn": 2,
     "fail": 0,
     "checks": [
       {
@@ -2572,7 +2572,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: f4d0585 2026-11-09 17:34:49 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 022d051 2026-11-09 21:39:47 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2582,22 +2582,22 @@
       {
         "level": "PASS",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（7 小时前生成）"
+        "msg": "单文件产物存在（9 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（62 小时前生成）"
+        "msg": "单文件产物存在（63 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 2 小时前已刷新"
+        "msg": "workbench.json 0 小时前已刷新"
       },
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 0 小时前已聚合（告警 1 条）"
+        "msg": "monitor_status 1 小时前已聚合（告警 1 条）"
       },
       {
         "level": "PASS",
@@ -2797,7 +2797,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行正常（0h 前，节奏每 1h）"
+        "msg": "[monitor-aggregate] 运行正常（1h 前，节奏每 1h）"
       },
       {
         "level": "PASS",
@@ -2822,7 +2822,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（1h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（3h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -2855,14 +2855,14 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "断链自愈",
-        "msg": "显式 -NoHeal ——跳过 run_task -Auto（只读体检；MT_HEAL_DEPTH=0 未参与补跑）"
+        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：补跑 kaohe-daily-selfheal（每日 10:30）；  [kaohe-daily-selfheal] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-kaohe-backup 技能自愈入口（检测 07:30 主跑产物未发布则补跑）；补跑 xsp-weekly-selfheal（每日 10:30）；  [xsp-weekly-selfheal] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-query-dashboard 技能自愈入口（检测 08:00 主跑产物未发布则补跑）；补跑 monthly-kaohe-backup（每日 09:00（当前暂停））；  [monthly-kaohe-backup] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: 月度备份流水线（bi-kaohe-backup 月度档）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-09 17:34:47 替换，含 6 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-09 21:39:46 替换，含 5 文件）"
       },
       {
         "level": "PASS",
@@ -2881,10 +2881,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-08 16:18:34",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-08 17:12:41",
         "status": "PASS"
@@ -2936,6 +2932,10 @@
       {
         "auditedAt": "2026-11-09 20:13:48",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-09 21:55:49",
+        "status": "PASS"
       }
     ]
   },
@@ -2950,13 +2950,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-09 20:13:48）"
+      "detail": "审计 PASS（2026-11-09 21:55:49）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-09 21:39:19）"
+      "detail": "上轮全链 12 段全过（2026-11-09 21:55:43）"
     },
     {
       "layer": "项目层",
@@ -3043,7 +3043,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 12,
+      "ageHours": 13,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-09",
@@ -3250,8 +3250,8 @@
     "runs": [
       {
         "name": "r563-audit-regression-lock",
-        "files": 1,
-        "latestAt": "2026-11-09 13:36:55",
+        "files": 2,
+        "latestAt": "2026-11-09 13:51:04",
         "ageH": 0
       },
       {
@@ -3270,25 +3270,25 @@
         "name": "r561-patrol-trace-wiring",
         "files": 2,
         "latestAt": "2026-11-09 10:42:14",
-        "ageH": 2
+        "ageH": 3
       },
       {
         "name": "r560-lib-readme-roster",
         "files": 2,
         "latestAt": "2026-11-09 09:53:17",
-        "ageH": 3
+        "ageH": 4
       },
       {
         "name": "r559-alert-history",
         "files": 4,
         "latestAt": "2026-11-09 09:43:24",
-        "ageH": 3
+        "ageH": 4
       },
       {
         "name": "r558-b1-capacity-resume",
         "files": 2,
         "latestAt": "2026-11-09 08:43:25",
-        "ageH": 4
+        "ageH": 5
       },
       {
         "name": "r557-plan-closeout",
@@ -3311,7 +3311,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 3h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 3.3h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3321,7 +3321,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-11-09 20:13:48）",
+      "text": "审计有 2 项警告（2026-11-09 21:55:49）",
       "anchor": "sec-audit"
     },
     {
@@ -3664,8 +3664,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "f4d0585",
-        "at": "2026-11-09T17:34:49+08:00",
+        "hash": "022d051",
+        "at": "2026-11-09T21:39:47+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3764,10 +3764,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-09 21:39:19",
+    "runAt": "2026-11-09 21:55:43",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -3828,17 +3828,22 @@
         "pass": true,
         "seconds": 25.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 682.1,
+        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 301.3,
+        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-08 21:15:57",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 491.1,
-      "fails": []
-    },
     {
       "runAt": "2026-11-08 21:56:24",
       "scope": "pre-deploy",
@@ -4040,6 +4045,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 122.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-09 21:55:43",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 1105.8,
       "fails": []
     }
   ],
@@ -4683,7 +4695,7 @@
     },
     {
       "date": "2026-11-09",
-      "at": "2026-11-09 13:39:19",
+      "at": "2026-11-09 13:55:50",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -4807,7 +4819,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1901.4,
+      "totalKB": 1901.1,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4827,7 +4839,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 130.3
+          "kb": 130
         },
         {
           "name": "assessment/oct.json",
