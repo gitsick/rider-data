@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-09 05:55:52",
+  "generatedAt": "2026-11-09 06:28:13",
   "runDate": "2026-11-09",
   "tasks": [
     {
@@ -3082,15 +3082,21 @@
     ],
     "runs": [
       {
-        "name": "r554-archmode-agentroles",
+        "name": "r555-third-orchestrated",
         "files": 3,
-        "latestAt": "2026-11-09 05:55:23",
+        "latestAt": "2026-11-09 06:27:43",
         "ageH": 0
       },
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-09 05:31:36",
+        "latestAt": "2026-11-09 06:11:10",
+        "ageH": 0
+      },
+      {
+        "name": "r554-archmode-agentroles",
+        "files": 4,
+        "latestAt": "2026-11-09 06:10:51",
         "ageH": 0
       },
       {
@@ -3462,8 +3468,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b9d7c62",
-        "at": "2026-11-09T13:31:58+08:00",
+        "hash": "71a017c",
+        "at": "2026-11-09T13:59:05+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4486,7 +4492,7 @@
     },
     {
       "date": "2026-11-09",
-      "at": "2026-11-09 05:55:52",
+      "at": "2026-11-09 06:28:13",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -4610,7 +4616,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1904.6,
+      "totalKB": 1904.7,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4630,7 +4636,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 125.1
+          "kb": 125.2
         },
         {
           "name": "assessment/oct.json",
