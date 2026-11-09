@@ -1802,6 +1802,12 @@ var CFG = {
   qikeRules: { churnDeduct: 3, newSignBonus: 2, newSignCap: 3, expDeduct: 2 },
   qikeWatchCutoff: '20261129',
 
+  /* ===== 官方目标接线（taskId=49819《2026年11月履约考核》附件《上传目标-11月1期目标》，2026-11-10 入库） =====
+   * 权威评分口径在 frontend/public/data/assessment/targets-nov.json；本处为展示层快照。 */
+  pzTarget1: { '泰兴': 242, '诸暨': 574, '响水': 83 },   /* 期1周目标：众包活跃骑手目标数（W1/W2 同值） */
+  pzGuide1:  { '泰兴': 238, '诸暨': 563, '响水': 82 },   /* 期1周：众包普众日均有单指引 */
+  gzTargets: { jm: 98, ym: 70 },                          /* 工装抽检合格率目标：加盟98%/悦跑70%（三城同值） */
+
   /* ===== P1评审修复：月度差异文案面（引擎/模板不再含月度专属规则文本，全部由本配置注入） =====
    * 取值来源：10月原板 delivery-assessment-dashboard-oct.html / 模板默认值（即 oct 原文）逐字摘录。
    * 换月时仅需改本配置 + 数据层。字段语义与 config-2026-09 同名对齐。 */
@@ -1821,7 +1827,7 @@ var CFG = {
     ],
     /* 收官分支标题（oct 数据未收官，本值为收官态同构措辞，登记：authored；仅供 updateDynamicText completed 分支） */
     overviewTitle: '整月考核结果测算（数据截止 11/30，MTD占全月 30/30 天，共9个高峰日）',
-    overviewNote: '画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）| 悦跑已接入BI自动抓取（诸暨/响水不考核）；普众展示实际活跃骑手数（完成率待任务系统目标，暂按已接入权重归一）| 体验&推完剔除企客麦肯必瑞订单（10月起延续）',
+    overviewNote: '画像：分城分档（泰兴=都考15/30/5 · 诸暨=45/0/5 · 响水=50/0/0；分档以任务系统城市等级为准）| 悦跑已接入BI自动抓取（诸暨/响水不考核）；普众展示实际活跃骑手数（期1周目标已下发：泰兴242/诸暨574/响水83）| 体验&推完剔除企客麦肯必瑞订单（10月起延续）',
     /* 三城状态卡（oct 原板 sec-overview 静态 MTD 月预计卡） */
     /* 三城考核速览卡（顶部 summary-strip；10月原板模板默认值逐字；含 ss-score/ss-level/ss-prog 钩子供 __ssFill 填充） */
     summaryStripHtml: '<div class="summary-card ok" style="cursor:default;">'
@@ -1856,12 +1862,12 @@ var CFG = {
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">加盟达标骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-加盟（数据可查T-3，越久越准，以核算下发为准）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（加盟明细：达标/总骑手）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑完成度 / 排班出勤</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-悦跑 / 悦跑排班出勤合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（出勤系数自动判定）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑完成度（11月全月新口径）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-悦跑-城市-周度有效骑手数</td><td style="padding:5px 8px;border:1px solid #eef1f5;">⏳ 按11月方案口径接入，状态待核</td></tr>',
-      '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">普众活跃骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-普通众包</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（目标待任务系统）</td></tr>',
+      '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">普众活跃骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-普通众包</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（期1周目标已下发：242/574/83）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">体验三项 / 推完 / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-体验考核含PHF / 推单完成率all / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（官方核算值发布后补录）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">工装抽检合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-骑手工装（悦跑考核周期11/2-11/29）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客流失 / 企客体验达标</td><td style="padding:5px 8px;border:1px solid #eef1f5;">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入监控（当前三城无门店数据，有门店自动预警）</td></tr>',
-      '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客KA商家履约（商家/门店日维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">readata·KA客户履约监控 → 品牌x商家x履约站-履约明细数据（ID 17805，实际指向 BI 253744），KA商家口径与企客体验明细看板一致</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（11-01快照：泰兴22品牌/49店、响水13品牌/17店，覆盖门店口径；诸暨无维值权限待申请）</td></tr>',
+      '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客KA商家履约（商家/门店日维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">readata·KA客户履约监控 → 品牌x商家x履约站-履约明细数据（ID 17805，实际指向 BI 253744），KA商家口径与企客体验明细看板一致</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（泰兴/响水官方重放；诸暨自算通道日更，官方维值6176权限仍在TT审批）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">兜底阈值（人效X / 承托比X）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">以任务系统下发为准</td><td style="padding:5px 8px;border:1px solid #eef1f5;" id="sp-hd-status">⏳ 待下发后接入预警判定</td></tr>'
     ],
     ymTrendFoot: '完成度=悦跑服务质量达标骑手数/目标（周均口径，目标以任务系统下发为准）；任一自然周＜90%该周记0分（自然周控制），平均完成率不控制区间；11月4个自然周（11/2-11/29）均在月内，无跨月周。',
@@ -1887,7 +1893,7 @@ var CFG = {
     footnote: '总分口径：已接入模块加权缺口直接计入，未发布模块（体验/HD/完结率/普众）暂按100分假设；悦跑按自然周分期计分（周完成度＜90%该周记0；11月全月新口径不乘出勤系数）；推完按全月完成率；兜底线98.8%。',
     penaltyBlock: true, /* oct 原板有「⚠️ 扣分项与处罚监控」块 */
     penaltyTitle: '⚠️ 扣分项与处罚监控',
-    penaltyHead: '扣分不计入左侧MTD近似总分，以官方核算为准；工装/警告金额等目标值待任务系统下发',
+    penaltyHead: '扣分不计入左侧MTD近似总分，以官方核算为准；工装抽检目标已下发（加盟98%/悦跑70%，未达成按档扣分）；警告封顶2次，超封顶每警告转化罚款：泰兴7500/诸暨10000/响水5000元（期1处置规则，期2待下发）',
     qkStoreTh: '企客有效门店',
     qkStoreThTitle: '企客麦肯必瑞星沃服务包有效门店（日均10单以上）',
     qkExpTh: '企客门店体验达标',
@@ -1989,7 +1995,7 @@ weights: [
 ],
 panorama: {
 title: '考核指标全景表（对标2026年11月配送考核方案）',
-footnote: '数据来源：bi.sankuai.com 履约数据考核看板 | 三城权重按画像分档：泰兴=都考（15/30/5）、诸暨=不考悦跑（45/0/5）、响水=都不考（50/0/0）——分档以任务系统城市等级为准；悦跑已接入日更，普众完成率待任务系统目标| 体验&推完剔除企客麦肯必瑞订单（10月起延续） | 散单规模核算时剔除刷单等行为订单 | 灰色行=非当前考核项或扣分项 | 靛蓝行=申诉机制 | 具体目标值/门槛值/折算系数以任务系统下发为准',
+footnote: '数据来源：bi.sankuai.com 履约数据考核看板 | 三城权重按画像分档：泰兴=都考（15/30/5）、诸暨=不考悦跑（45/0/5）、响水=都不考（50/0/0）——分档以任务系统城市等级为准；悦跑已接入日更，普众期1周目标已下发（242/574/83）| 体验&推完剔除企客麦肯必瑞订单（10月起延续） | 散单规模核算时剔除刷单等行为订单 | 灰色行=非当前考核项或扣分项 | 靛蓝行=申诉机制 | 期2（11/16-11/30）目标待任务系统下发，具体目标值/门槛值/折算系数以任务系统下发为准',
 rows: [
 { sep:'▶ 计分模块（权重按当前城市画像档动态取值，见测算卡）' },
 { s:'background:#fce8e8;', c:'current-mod', cells:[
@@ -2012,7 +2018,7 @@ rows: [
 '<td>11/2-11/8、11/9-11/15<br>11/16-11/22、11/23-11/29<br><span style="color:#6b7280;">（按自然周）</span></td>',
 '<td style="text-align:left;">活跃骑手：周期内跑单≥3天且累计完单≥20单<br>完成度=实际活跃骑手数/目标</td>',
 '<td style="text-align:left;">计分区间【90%,100%】，自然周控制区间（＜90%记0分）<br>平均完成率不控制区间<br>兜底：推单完成率≥98.8%</td>',
-'<td><strong style="color:#4cb947;font-size:13px;">5% / 5% / —</strong><br><span style="font-size:10px;color:#6b7280;">画像1/2考核，画像3不考核 · 目标待任务系统</span></td>' ] },
+'<td><strong style="color:#4cb947;font-size:13px;">5% / 5% / —</strong><br><span style="font-size:10px;color:#6b7280;">画像1/2考核，画像3不考核 · 期1周目标 242/574/83</span></td>' ] },
 { s:'background:#f3e8fd;', cells:[
 '<td class="city-cell" style="color:#7b61ff;" rowspan="3">体验模块 <a href="https://bi.sankuai.com/v2/dashboard/274665" target="_blank" rel="noopener" style="font-size:10px;color:#1a73e8;text-decoration:underline;white-space:nowrap;">查数↗</a></td>',
 '<td>美配复合超时率<br><span style="color:#6b7280;">（权重b1=40%）</span></td>',
@@ -3536,7 +3542,8 @@ selC.disabled = isP2;
 selC.title = isP2 ? (CFG.period.p2NewTitle || '') : '';
 }
 var pzl = document.getElementById('pz_act');
-if (pzl) pzl.textContent = (d.pzAct !== null && d.pzAct !== undefined) ? ('活跃骑手 ' + d.pzAct + '（完成率待任务系统目标）') : '';
+var _pzt = (typeof CFG !== 'undefined' && CFG.pzTarget1) ? CFG.pzTarget1[currentCity] : null;
+if (pzl) pzl.textContent = (d.pzAct !== null && d.pzAct !== undefined) ? ('活跃骑手 ' + d.pzAct + (_pzt ? ('（期1周目标 ' + _pzt + '，完成率 ' + Math.round(d.pzAct / _pzt * 1000) / 10 + '%）') : '（完成率待任务系统目标）')) : '';
 }
 calcScore();
 if (typeof renderWjSplit === 'function') renderWjSplit();
