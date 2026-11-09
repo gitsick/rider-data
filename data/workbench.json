@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-09 01:31:33",
+  "generatedAt": "2026-11-09 04:14:25",
   "runDate": "2026-11-09",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-09 08:45:26",
-        "durationSec": 3830,
+        "finishedAt": "2026-11-09 10:32:41",
+        "durationSec": 161,
         "note": ""
       },
       "monitor": {
@@ -283,6 +283,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-09 08:45:26",
           "durationSec": 3830
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-09 10:32:41",
+          "durationSec": 161
         }
       ],
       "gaps": {
@@ -414,7 +419,6 @@
         "passCount": 23
       },
       "durTrend": [
-        2122,
         4501,
         354,
         1800,
@@ -427,7 +431,8 @@
         83,
         4827,
         197,
-        3830
+        3830,
+        161
       ]
     },
     {
@@ -441,8 +446,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-09 08:20:22",
-        "durationSec": 1221,
+        "finishedAt": "2026-11-09 10:33:04",
+        "durationSec": 184,
         "note": ""
       },
       "monitor": {
@@ -607,6 +612,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-09 08:20:22",
           "durationSec": 1221
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-09 10:33:04",
+          "durationSec": 184
         }
       ],
       "gaps": {
@@ -738,7 +748,6 @@
         "passCount": 22
       },
       "durTrend": [
-        1414,
         1100,
         517,
         1761,
@@ -751,7 +760,8 @@
         195,
         137,
         346,
-        1221
+        1221,
+        184
       ]
     },
     {
@@ -1210,15 +1220,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-08 17:34:27",
-        "durationSec": 2066,
+        "finishedAt": "2026-11-09 09:48:12",
+        "durationSec": 2522,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -1232,11 +1242,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-26 20:16:44",
-          "durationSec": 2114.6
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:44",
@@ -1497,6 +1502,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-08 17:34:27",
           "durationSec": 2066
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-09 09:48:12",
+          "durationSec": 2522
         }
       ],
       "gaps": {
@@ -1619,16 +1629,15 @@
           },
           {
             "date": "2026-11-09",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-26",
-        "gapCount": 1,
+        "gapCount": 0,
         "failCount": 1,
-        "passCount": 13
+        "passCount": 14
       },
       "durTrend": [
-        4955,
         820,
         908,
         1146,
@@ -1641,7 +1650,8 @@
         2011,
         6518,
         2276,
-        2066
+        2066,
+        2522
       ]
     },
     {
@@ -1660,7 +1670,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-08 10:33"
+        "lastRunAt": "2026-11-09 10:33"
       },
       "heal": {
         "can": false,
@@ -1692,7 +1702,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-08 10:36"
+        "lastRunAt": "2026-11-09 10:33"
       },
       "heal": {
         "can": false,
@@ -2723,7 +2733,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "PASS",
-      "detail": "8/8 任务正常 · 近 30 天触发断档 3 天"
+      "detail": "8/8 任务正常 · 近 30 天触发断档 2 天"
     },
     {
       "layer": "部署层",
@@ -2741,13 +2751,13 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 0h 前刷新"
+      "detail": "站点数据 2h 前刷新"
     }
   ],
   "projects": [
@@ -2780,7 +2790,7 @@
           "size": 2729579
         }
       ],
-      "ageHours": 22,
+      "ageHours": 25,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-06",
@@ -2822,7 +2832,7 @@
           "size": 4659
         }
       ],
-      "ageHours": 0,
+      "ageHours": 3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-09",
@@ -3031,7 +3041,7 @@
         "name": "20261017-efficiency-naming",
         "files": 16,
         "latestAt": "2026-11-07 23:38:29",
-        "ageH": 25
+        "ageH": 28
       }
     ]
   },
@@ -3039,7 +3049,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：2 个任务近 30 天共 3 天零留痕（新商评考核周报 2 天 · 骑手解约数据检查与刷新 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：新商评考核周报 近 30 天有 2 天零留痕（10-18、10-19；首次留痕 2026-10-17）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -3386,8 +3396,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "28a408a",
-        "at": "2026-11-09T09:17:58+08:00",
+        "hash": "4cd0ccb",
+        "at": "2026-11-09T11:08:01+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4410,7 +4420,7 @@
     },
     {
       "date": "2026-11-09",
-      "at": "2026-11-09 01:31:33",
+      "at": "2026-11-09 04:14:25",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -4496,14 +4506,14 @@
   "perf": {
     "assets": {
       "count": 45,
-      "totalKB": 1279.7,
+      "totalKB": 1279.9,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-DlvUaHa8.js",
+          "name": "main-BJ2oFYJw.js",
           "kb": 161
         },
         {
@@ -4511,30 +4521,30 @@
           "kb": 74
         },
         {
-          "name": "workbench-BsqSe2IN.js",
+          "name": "workbench-DQn4MwOr.js",
           "kb": 73.5
         },
         {
-          "name": "rider_dashboard-BmMv6ufR.js",
-          "kb": 57.4
+          "name": "rider_dashboard-B2EGfGE-.js",
+          "kb": 57.5
         },
         {
-          "name": "swRegister-CXDtLDpe.css",
-          "kb": 47.4
+          "name": "swRegister-DZyP3cje.css",
+          "kb": 51.3
         },
         {
-          "name": "swRegister-Bav2RQCB.js",
+          "name": "swRegister-CkAHjIQ1.js",
           "kb": 45.2
         },
         {
-          "name": "admin-Ccx6CMHr.js",
+          "name": "admin-Bbd72NWG.js",
           "kb": 40.3
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 1885.9,
+      "totalKB": 1886.3,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4554,7 +4564,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 121.2
+          "kb": 121.6
         },
         {
           "name": "assessment/oct.json",
