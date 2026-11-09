@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-09 13:55:50",
+  "generatedAt": "2026-11-09 14:09:00",
   "runDate": "2026-11-09",
   "tasks": [
     {
@@ -2509,7 +2509,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 3.3h）"
+        "overdueText": "运行超时（距上次 3.5h）"
       },
       "timer": {
         "state": "ok",
@@ -2956,7 +2956,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-09 21:55:43）"
+      "detail": "本轮发布前置 10 段全过（2026-11-09 22:08:59）"
     },
     {
       "layer": "项目层",
@@ -3250,8 +3250,8 @@
     "runs": [
       {
         "name": "r563-audit-regression-lock",
-        "files": 2,
-        "latestAt": "2026-11-09 13:51:04",
+        "files": 3,
+        "latestAt": "2026-11-09 14:00:47",
         "ageH": 0
       },
       {
@@ -3294,7 +3294,7 @@
         "name": "r557-plan-closeout",
         "files": 2,
         "latestAt": "2026-11-09 07:02:20",
-        "ageH": 6
+        "ageH": 7
       }
     ]
   },
@@ -3311,7 +3311,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 3.3h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 3.5h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3664,8 +3664,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "022d051",
-        "at": "2026-11-09T21:39:47+08:00",
+        "hash": "cb85a4d",
+        "at": "2026-11-09T21:55:54+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3764,21 +3764,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-09 21:55:43",
+    "runAt": "2026-11-09 22:08:59",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.7,
+        "seconds": 5.8,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -3790,19 +3790,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 1,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 56.9,
-        "note": "npm test pass=1452 fail=0"
+        "seconds": 58.5,
+        "note": "npm test pass=1453 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.2,
+        "seconds": 6,
         "note": ""
       },
       {
@@ -3820,37 +3820,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 25.9,
+        "seconds": 28.8,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 25.7,
+        "seconds": 444.3,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 682.1,
-        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 301.3,
-        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-08 21:56:24",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 215.8,
-      "fails": []
-    },
     {
       "runAt": "2026-11-08 22:03:17",
       "scope": "complete",
@@ -4052,6 +4033,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 1105.8,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-09 22:08:59",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 544.9,
       "fails": []
     }
   ],
@@ -4695,7 +4683,7 @@
     },
     {
       "date": "2026-11-09",
-      "at": "2026-11-09 13:55:50",
+      "at": "2026-11-09 14:09:00",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -4819,7 +4807,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1901.1,
+      "totalKB": 1902.3,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4839,7 +4827,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 130
+          "kb": 131.2
         },
         {
           "name": "assessment/oct.json",
