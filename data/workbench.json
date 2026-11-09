@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-09 00:48:37",
+  "generatedAt": "2026-11-09 01:15:28",
   "runDate": "2026-11-09",
   "tasks": [
     {
@@ -1224,8 +1224,8 @@
         "overdueText": ""
       },
       "timer": {
-        "state": "ok",
-        "lastRunAt": "2026-11-09 08:05"
+        "state": "failed",
+        "lastRunAt": "2026-11-09 09:06"
       },
       "heal": {
         "can": true,
@@ -2730,7 +2730,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-09 08:48:06）"
+      "detail": "本轮发布前置 10 段全过（2026-11-09 09:15:27）"
     },
     {
       "layer": "项目层",
@@ -3381,8 +3381,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eb9d290",
-        "at": "2026-11-09T08:45:09+08:00",
+        "hash": "9368230",
+        "at": "2026-11-09T09:06:23+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3474,93 +3474,74 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-09 08:48:06",
+    "runAt": "2026-11-09 09:15:27",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.7,
+        "seconds": 11,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 1.2,
+        "seconds": 1.7,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.8,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 55.3,
+        "seconds": 96,
         "note": "npm test pass=1450 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.9,
+        "seconds": 13.2,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.8,
         "note": ""
       },
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.1,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 28.1,
+        "seconds": 43.2,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 45.1,
+        "seconds": 35.6,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 164.9,
-        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 40.7,
-        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-08 14:36:29",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 130,
-      "fails": []
-    },
     {
       "runAt": "2026-11-08 14:51:48",
       "scope": "complete",
@@ -3762,6 +3743,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 349.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-09 09:15:27",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 203.1,
       "fails": []
     }
   ],
@@ -4405,7 +4393,7 @@
     },
     {
       "date": "2026-11-09",
-      "at": "2026-11-09 00:48:37",
+      "at": "2026-11-09 01:15:28",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -4529,11 +4517,11 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1891.1,
+      "totalKB": 1886.1,
       "top": [
         {
           "name": "rider-detail.json",
-          "kb": 534
+          "kb": 530.6
         },
         {
           "name": "rider_base.json",
@@ -4541,15 +4529,15 @@
         },
         {
           "name": "rider-index.json",
-          "kb": 328.4
+          "kb": 326.3
         },
         {
           "name": "rider-agreements.json",
-          "kb": 158.8
+          "kb": 158.7
         },
         {
           "name": "workbench.json",
-          "kb": 120.9
+          "kb": 121.4
         },
         {
           "name": "assessment/oct.json",
