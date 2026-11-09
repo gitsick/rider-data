@@ -447,6 +447,10 @@ html.v24folded body{padding-left:0}
 html.v24folded #v24side{transform:translateX(-100%);box-shadow:none}
 @media (max-width:1180px){#v24side .v24fold{display:none}}
 </style>
+<style>/* v29jump 章节切换：落点校正+高亮反馈 */
+h2[id].v29flash{border-radius:6px;animation:v29glow 1.3s ease-out 1}
+@keyframes v29glow{0%{box-shadow:0 0 0 3px rgba(255,195,0,.50);background:rgba(255,195,0,.10)}100%{box-shadow:0 0 0 3px rgba(255,195,0,0);background:transparent}}
+</style>
 </head><body><aside id="v24side" aria-label="看板章节导航">
 <p class="v24brand">运力监控日报</p>
 <p class="v24date" id="v24date">时段运力拆解 · 8 城 / 3 区域</p>
@@ -4683,6 +4687,53 @@ document.addEventListener('keydown', function(e){
   var k = e.key;
   if (k >= '0' && k <= '8'){ var el = document.getElementById('sec' + k); if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.pageYOffset - 110); }
   else if (k === 't' || k === 'T'){ window.scrollTo(0, 0); }
+});
+})();
+</script><script>/* v29jump 章节切换体验：锚点/快捷键落点二次校正 + 目标章节金色高亮 */
+(function(){
+if (window.__v29jump) return; window.__v29jump = 1;
+var OFFSET = 110;
+function flash(el){
+  el.classList.remove('v29flash'); void el.offsetWidth; el.classList.add('v29flash');
+  setTimeout(function(){ el.classList.remove('v29flash'); }, 1400);
+}
+function correctTo(el, off){
+  var n = 0, last = window.pageYOffset;
+  function fix(){
+    if (Math.abs(window.pageYOffset - last) > 2) return; /* 用户已手动滚动，停止校正 */
+    var top = el.getBoundingClientRect().top;
+    if (Math.abs(top - off) > 4 && n < 6){
+      n++;
+      last = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - off);
+      window.scrollTo(0, last);
+      setTimeout(fix, 130);
+    }
+  }
+  setTimeout(fix, 90);
+}
+function jumpTo(el, off){
+  window.scrollTo(0, Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - off));
+  correctTo(el, off);
+  flash(el);
+}
+document.addEventListener('click', function(e){
+  var t = e.target;
+  var a = t && t.closest ? t.closest('a[href^="#sec"]') : null;
+  if (!a) return;
+  var el = document.getElementById((a.getAttribute('href') || '').slice(1));
+  if (!el) return;
+  e.preventDefault();
+  jumpTo(el, OFFSET);
+  try{ history.replaceState(null, '', a.getAttribute('href')); }catch(err){}
+});
+document.addEventListener('keydown', function(e){
+  if (e.ctrlKey || e.altKey || e.metaKey) return;
+  var t = e.target; if (t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return;
+  var k = e.key;
+  if (k >= '0' && k <= '8'){
+    var el = document.getElementById('sec' + k);
+    if (el) setTimeout(function(){ correctTo(el, OFFSET); flash(el); }, 60);
+  }
 });
 })();
 </script></body></html>
