@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 14:32:17",
+  "generatedAt": "2026-11-10 15:02:12",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -2293,7 +2293,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 26.3h）"
+        "overdueText": "运行超时（距上次 26.8h）"
       },
       "timer": null,
       "heal": {
@@ -2966,7 +2966,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-10 22:31:46）"
+      "detail": "本轮发布前置 10 段全过（2026-11-10 23:02:11）"
     },
     {
       "layer": "项目层",
@@ -3257,49 +3257,385 @@
         "name": "20261017-efficiency-naming",
         "files": 16,
         "latestAt": "2026-11-10 13:00:36",
-        "ageH": 1
+        "flow": {
+          "done": false,
+          "current": "分析",
+          "stalled": false,
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "done",
+              "at": "2026-10-17 05:54:07",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-10-17 11:37:32",
+              "durH": 6
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "done",
+              "at": "2026-11-10 13:00:36",
+              "durH": 577
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 2
       },
       {
         "name": "r571-style-unify",
         "files": 1,
         "latestAt": "2026-11-10 12:15:37",
+        "flow": {
+          "done": false,
+          "current": "编排",
+          "stalled": false,
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-11-10 12:15:37",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
         "ageH": 2
       },
       {
         "name": "r570-pending-card-exempt",
         "files": 1,
         "latestAt": "2026-11-09 15:36:14",
-        "ageH": 22
+        "flow": {
+          "done": false,
+          "current": "编排",
+          "stalled": false,
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-11-09 15:36:14",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 23
       },
       {
         "name": "r569-heal-intent-exempt",
         "files": 1,
         "latestAt": "2026-11-09 15:25:19",
+        "flow": {
+          "done": false,
+          "current": "编排",
+          "stalled": false,
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-11-09 15:25:19",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
         "ageH": 23
       },
       {
         "name": "r568-audit-trace-surface",
         "files": 1,
         "latestAt": "2026-11-09 15:15:01",
+        "flow": {
+          "done": false,
+          "current": "编排",
+          "stalled": false,
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-11-09 15:15:01",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
         "ageH": 23
       },
       {
         "name": "r567-remaining-pages-patrol",
         "files": 1,
         "latestAt": "2026-11-09 14:59:53",
-        "ageH": 23
+        "flow": {
+          "done": false,
+          "current": "编排",
+          "stalled": false,
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-11-09 14:59:53",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 24
       },
       {
         "name": "r566-dark-patrol",
         "files": 1,
         "latestAt": "2026-11-09 14:48:33",
-        "ageH": 23
+        "flow": {
+          "done": false,
+          "current": "编排",
+          "stalled": false,
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-11-09 14:48:33",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 24
       },
       {
         "name": "r565-visual-patrol",
         "files": 1,
         "latestAt": "2026-11-09 14:45:09",
-        "ageH": 23
+        "flow": {
+          "done": false,
+          "current": "编排",
+          "stalled": false,
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-11-09 14:45:09",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 24
       }
     ]
   },
@@ -3316,7 +3652,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 26.3h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 26.8h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3664,8 +4000,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eb689d8",
-        "at": "2026-11-10T22:25:42+08:00",
+        "hash": "5c563bb",
+        "at": "2026-11-10T22:34:05+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3764,21 +4100,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-10 22:31:46",
+    "runAt": "2026-11-10 23:02:11",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 8.6,
+        "seconds": 10.7,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -3796,13 +4132,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 74.7,
-        "note": "npm test pass=1474 fail=0"
+        "seconds": 87.6,
+        "note": "npm test pass=1475 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.6,
+        "seconds": 5.1,
         "note": ""
       },
       {
@@ -3820,37 +4156,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 29.2,
+        "seconds": 45,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 31.2,
+        "seconds": 28.2,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 288.4,
-        "note": "拷贝回验 127 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 82.6,
-        "note": "指纹+探针 assets/rows-DV0YqjmG.js 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-09 07:36:12",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 6563,
-      "fails": []
-    },
     {
       "runAt": "2026-11-09 07:40:35",
       "scope": "complete",
@@ -4052,6 +4369,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 524.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-10 23:02:11",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 177.8,
       "fails": []
     }
   ],
@@ -4723,7 +5047,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 14:32:17",
+      "at": "2026-11-10 15:02:12",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -4809,7 +5133,7 @@
   "perf": {
     "assets": {
       "count": 87,
-      "totalKB": 1300.1,
+      "totalKB": 1305.2,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -4828,8 +5152,8 @@
           "kb": 51.3
         },
         {
-          "name": "workbench-BHj5T5Wm.js",
-          "kb": 46.1
+          "name": "workbench-BR7SV6Dh.js",
+          "kb": 47.3
         },
         {
           "name": "swRegister-BAz5TevK.js",
@@ -4847,7 +5171,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1909.1,
+      "totalKB": 1917.6,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4867,7 +5191,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 131
+          "kb": 139.7
         },
         {
           "name": "assessment/oct.json",
