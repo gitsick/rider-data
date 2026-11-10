@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 19:55:39",
+  "generatedAt": "2026-11-10 19:59:38",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -2285,7 +2285,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 31.7h）"
+        "overdueText": "运行超时（距上次 31.8h）"
       },
       "timer": null,
       "heal": {
@@ -2518,7 +2518,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 6.6h）"
+        "overdueText": "运行超时（距上次 6.7h）"
       },
       "timer": {
         "state": "ok",
@@ -2584,7 +2584,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: a40352c 2026-11-11 03:30:02 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 66634d5 2026-11-11 03:56:34 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2599,7 +2599,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（26 小时前生成）"
+        "msg": "单文件产物存在（27 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2809,7 +2809,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-11 03:30:01 替换，含 2 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-11 03:56:33 替换，含 4 文件）"
       },
       {
         "level": "PASS",
@@ -2903,7 +2903,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-11 03:55:38）"
+      "detail": "上轮全链 12 段全过（2026-11-11 03:59:11）"
     },
     {
       "layer": "项目层",
@@ -3712,12 +3712,12 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 31.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 31.8h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6.7h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4075,8 +4075,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b30e3b2",
-        "at": "2026-11-11T03:42:49+08:00",
+        "hash": "66634d5",
+        "at": "2026-11-11T03:56:34+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4175,10 +4175,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-11 03:55:38",
+    "runAt": "2026-11-11 03:59:11",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -4239,17 +4239,22 @@
         "pass": true,
         "seconds": 44.4,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 180.4,
+        "note": "拷贝回验 130 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 31.7,
+        "note": "指纹+探针 assets/WbAuditCard-BgGzwThM.js 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-09 13:31:41",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 1256.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-09 16:12:02",
       "scope": "pre-deploy",
@@ -4451,6 +4456,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 127.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-11 03:59:11",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 339.8,
       "fails": []
     }
   ],
@@ -5122,7 +5134,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 19:55:39",
+      "at": "2026-11-10 19:59:38",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5255,7 +5267,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2024.8,
+      "totalKB": 2024.6,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5271,7 +5283,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 194.7
+          "kb": 194.5
         },
         {
           "name": "rider-agreements.json",
