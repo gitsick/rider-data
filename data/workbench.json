@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 15:10:20",
+  "generatedAt": "2026-11-10 15:11:38",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -2966,7 +2966,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-10 23:09:44）"
+      "detail": "本轮发布前置 10 段全过（2026-11-10 23:11:38）"
     },
     {
       "layer": "项目层",
@@ -4000,8 +4000,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "3f70f6b",
-        "at": "2026-11-10T23:02:17+08:00",
+        "hash": "ee7cad4",
+        "at": "2026-11-10T23:10:27+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4100,21 +4100,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-10 23:09:44",
+    "runAt": "2026-11-10 23:11:38",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 10.7,
+        "seconds": 7.5,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -4132,13 +4132,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 87.6,
+        "seconds": 82.8,
         "note": "npm test pass=1475 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 5.1,
+        "seconds": 4.9,
         "note": ""
       },
       {
@@ -4156,37 +4156,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 45,
+        "seconds": 23.3,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 28.2,
+        "seconds": 72,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 178.9,
-        "note": "拷贝回验 127 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 273.6,
-        "note": "指纹+探针 assets/WbAuditCard-DPsM5j-T.js 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-09 08:09:41",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 175,
-      "fails": []
-    },
     {
       "runAt": "2026-11-09 08:12:40",
       "scope": "complete",
@@ -4388,6 +4369,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 630.3,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-10 23:11:38",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 191.6,
       "fails": []
     }
   ],
@@ -5059,7 +5047,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 15:10:20",
+      "at": "2026-11-10 15:11:38",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -5183,7 +5171,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1917.3,
+      "totalKB": 1917.6,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5203,7 +5191,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 139.4
+          "kb": 139.7
         },
         {
           "name": "assessment/oct.json",
