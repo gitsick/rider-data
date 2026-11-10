@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 00:02:34",
+  "generatedAt": "2026-11-10 00:09:56",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -14,15 +14,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-09 10:32:41",
-        "durationSec": 161,
+        "finishedAt": "2026-11-10 08:06:30",
+        "durationSec": 1743,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 07:30 主跑 + 10:30 发布自愈",
         "expectHour": 7,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -36,12 +36,6 @@
         "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id kaohe-daily -Record PASS 留痕"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-17 10:00:03",
-          "durationSec": 4287,
-          "note": "耗时由触发源折算回填"
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-18 10:09:19",
@@ -288,6 +282,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-09 10:32:41",
           "durationSec": 161
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-10 08:06:30",
+          "durationSec": 1743
         }
       ],
       "gaps": {
@@ -314,7 +313,7 @@
           },
           {
             "date": "2026-10-17",
-            "state": "pass"
+            "state": "pre"
           },
           {
             "date": "2026-10-18",
@@ -410,16 +409,15 @@
           },
           {
             "date": "2026-11-10",
-            "state": "gap"
+            "state": "pass"
           }
         ],
-        "firstDate": "2026-10-17",
-        "gapCount": 1,
+        "firstDate": "2026-10-18",
+        "gapCount": 0,
         "failCount": 1,
         "passCount": 23
       },
       "durTrend": [
-        4501,
         354,
         1800,
         201,
@@ -432,7 +430,8 @@
         4827,
         197,
         3830,
-        161
+        161,
+        1743
       ]
     },
     {
@@ -2281,7 +2280,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 11.9h）"
+        "overdueText": "运行超时（距上次 12h）"
       },
       "timer": null,
       "heal": {
@@ -2513,7 +2512,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 13.4h）"
+        "overdueText": "运行超时（距上次 13.5h）"
       },
       "timer": {
         "state": "ok",
@@ -2893,7 +2892,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "7/9 任务正常 · 2 逾期 · 近 30 天触发断档 5 天"
+      "detail": "7/9 任务正常 · 2 逾期 · 近 30 天触发断档 4 天"
     },
     {
       "layer": "部署层",
@@ -2905,7 +2904,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-10 07:41:52）"
+      "detail": "本轮发布前置 10 段全过（2026-11-10 08:09:56）"
     },
     {
       "layer": "项目层",
@@ -2950,7 +2949,7 @@
           "size": 1426639
         }
       ],
-      "ageHours": 7,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -2963,17 +2962,17 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-10 00:02",
+          "mtime": "2026-11-10 00:07",
           "size": 71743
         },
         {
           "name": "oct.json",
-          "mtime": "2026-11-10 00:02",
+          "mtime": "2026-11-10 00:07",
           "size": 99433
         },
         {
           "name": "sep.json",
-          "mtime": "2026-11-10 00:02",
+          "mtime": "2026-11-10 00:07",
           "size": 86377
         },
         {
@@ -3245,18 +3244,18 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 11.9h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 12h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 13.4h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 13.5h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 5 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天 · undefined 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：2 个任务近 30 天共 4 天零留痕（新商评考核周报 3 天 · undefined 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -3598,8 +3597,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "1686316",
-        "at": "2026-11-10T07:42:52+08:00",
+        "hash": "75877e9",
+        "at": "2026-11-10T08:03:31+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -3698,21 +3697,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-10 07:41:52",
+    "runAt": "2026-11-10 08:09:56",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 6.1,
+        "seconds": 5.3,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -3724,19 +3723,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 1,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 57.1,
+        "seconds": 51.5,
         "note": "npm test pass=1454 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.4,
+        "seconds": 7.4,
         "note": ""
       },
       {
@@ -3754,37 +3753,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 25.3,
+        "seconds": 26.3,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 25.8,
+        "seconds": 45.8,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 207.5,
-        "note": "拷贝回验 85 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 38.6,
-        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-08 23:08:16",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 178.7,
-      "fails": []
-    },
     {
       "runAt": "2026-11-08 23:12:31",
       "scope": "complete",
@@ -3986,6 +3966,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 371,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-10 08:09:56",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 138,
       "fails": []
     }
   ],
@@ -4657,7 +4644,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 00:02:34",
+      "at": "2026-11-10 00:09:56",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -4781,11 +4768,11 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1900.9,
+      "totalKB": 1912.3,
       "top": [
         {
           "name": "rider-detail.json",
-          "kb": 532.9
+          "kb": 537.9
         },
         {
           "name": "rider_base.json",
@@ -4793,15 +4780,15 @@
         },
         {
           "name": "rider-index.json",
-          "kb": 327.7
+          "kb": 330.7
         },
         {
           "name": "rider-agreements.json",
-          "kb": 160.2
+          "kb": 161.8
         },
         {
           "name": "workbench.json",
-          "kb": 128.3
+          "kb": 128.7
         },
         {
           "name": "assessment/oct.json",
@@ -4813,7 +4800,7 @@
         },
         {
           "name": "assessment/nov.json",
-          "kb": 68.8
+          "kb": 70.1
         }
       ]
     },
