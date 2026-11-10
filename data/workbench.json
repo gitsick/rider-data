@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 19:59:38",
+  "generatedAt": "2026-11-10 20:28:17",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -2285,7 +2285,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 31.8h）"
+        "overdueText": "运行超时（距上次 32.3h）"
       },
       "timer": null,
       "heal": {
@@ -2518,7 +2518,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 6.7h）"
+        "overdueText": "运行超时（距上次 7.1h）"
       },
       "timer": {
         "state": "ok",
@@ -2909,7 +2909,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 产物陈旧（超 26h） · 1 数据滞后（超 2 天），最新产出 19h 前"
+      "detail": "2 项目 · 1 产物陈旧（超 26h） · 1 数据滞后（超 2 天），最新产出 20h 前"
     },
     {
       "layer": "渲染层",
@@ -2948,7 +2948,7 @@
           "size": 1426639
         }
       ],
-      "ageHours": 27,
+      "ageHours": 28,
       "stale": true,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -2990,7 +2990,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 19,
+      "ageHours": 20,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-11",
@@ -3242,7 +3242,7 @@
             }
           ]
         },
-        "ageH": 6,
+        "ageH": 7,
         "totalH": 583,
         "deltaH": null,
         "gapH": 1
@@ -3294,7 +3294,7 @@
             }
           ]
         },
-        "ageH": 7,
+        "ageH": 8,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -3398,7 +3398,7 @@
             }
           ]
         },
-        "ageH": 28,
+        "ageH": 29,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3450,7 +3450,7 @@
             }
           ]
         },
-        "ageH": 28,
+        "ageH": 29,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3502,7 +3502,7 @@
             }
           ]
         },
-        "ageH": 28,
+        "ageH": 29,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3671,19 +3671,19 @@
         "name": "r567-remaining-pages-patrol",
         "pct": 0,
         "sev": "",
-        "ageH": 28
+        "ageH": 29
       },
       {
         "name": "r568-audit-trace-surface",
         "pct": 0,
         "sev": "",
-        "ageH": 28
+        "ageH": 29
       },
       {
         "name": "r569-heal-intent-exempt",
         "pct": 0,
         "sev": "",
-        "ageH": 28
+        "ageH": 29
       },
       {
         "name": "r570-pending-card-exempt",
@@ -3695,13 +3695,13 @@
         "name": "r571-style-unify",
         "pct": 0,
         "sev": "",
-        "ageH": 7
+        "ageH": 8
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 6
+        "ageH": 7
       }
     ],
     "stall": {
@@ -3712,12 +3712,12 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 31.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 32.3h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 7.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3732,7 +3732,7 @@
     },
     {
       "level": "WARN",
-      "text": "产物陈旧：通用运力监控（27h 未更新，阈值 26h）",
+      "text": "产物陈旧：通用运力监控（28h 未更新，阈值 26h）",
       "anchor": "sec-fresh"
     },
     {
@@ -4075,8 +4075,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "66634d5",
-        "at": "2026-11-11T03:56:34+08:00",
+        "hash": "6c4f8c9",
+        "at": "2026-11-11T04:13:29+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -5134,7 +5134,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 19:59:38",
+      "at": "2026-11-10 20:28:17",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5228,15 +5228,15 @@
   ],
   "perf": {
     "assets": {
-      "count": 90,
-      "totalKB": 1323.5,
+      "count": 91,
+      "totalKB": 1333.1,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-e030K-z0.js",
+          "name": "main-DhJy8VMF.js",
           "kb": 93.4
         },
         {
@@ -5256,18 +5256,18 @@
           "kb": 45.2
         },
         {
-          "name": "MonthlyTab-kxDISCtl.js",
+          "name": "MonthlyTab-CYYsCAtt.js",
           "kb": 40.7
         },
         {
-          "name": "rider_dashboard-Cg9cxCBU.js",
-          "kb": 25.8
+          "name": "rider_dashboard-DCht7jCw.js",
+          "kb": 25.9
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 2024.6,
+      "totalKB": 2024.9,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5283,7 +5283,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 194.5
+          "kb": 194.8
         },
         {
           "name": "rider-agreements.json",
