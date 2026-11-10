@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 18:38:53",
+  "generatedAt": "2026-11-10 18:42:24",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -2518,7 +2518,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 5.3h）"
+        "overdueText": "运行超时（距上次 5.4h）"
       },
       "timer": {
         "state": "ok",
@@ -2584,7 +2584,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 1349989 2026-11-11 02:10:43 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: afd68ff 2026-11-11 02:39:00 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2599,7 +2599,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（25 小时前生成）"
+        "msg": "单文件产物存在（26 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2769,7 +2769,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（4h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（5h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -2809,7 +2809,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-11 02:10:42 替换，含 2 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-11 02:38:55 替换，含 14 文件）"
       },
       {
         "level": "PASS",
@@ -2903,7 +2903,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-11 02:38:52）"
+      "detail": "上轮全链 12 段全过（2026-11-11 02:42:19）"
     },
     {
       "layer": "项目层",
@@ -3693,7 +3693,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 5.3h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 5.4h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4046,8 +4046,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "2181024",
-        "at": "2026-11-11T02:13:38+08:00",
+        "hash": "afd68ff",
+        "at": "2026-11-11T02:39:00+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4146,10 +4146,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-11 02:38:52",
+    "runAt": "2026-11-11 02:42:19",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -4210,17 +4210,22 @@
         "pass": true,
         "seconds": 25.8,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 160,
+        "note": "拷贝回验 130 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 45.7,
+        "note": "指纹+探针 assets/SchemaBanner-COsdCBK2.js 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-09 09:30:58",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 1133,
-      "fails": []
-    },
     {
       "runAt": "2026-11-09 12:27:19",
       "scope": "pre-deploy",
@@ -4422,6 +4427,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 114,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-11 02:42:19",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 319.7,
       "fails": []
     }
   ],
@@ -5093,7 +5105,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 18:38:53",
+      "at": "2026-11-10 18:42:24",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5226,7 +5238,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1917.7,
+      "totalKB": 1917.5,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5246,7 +5258,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 139.9
+          "kb": 139.7
         },
         {
           "name": "assessment/oct.json",
@@ -5316,49 +5328,197 @@
       "name": "架构与部署规范",
       "cat": "架构",
       "path": "ARCHITECTURE.md",
-      "desc": "七层架构、职责矩阵、部署/调度全链路唯一权威说明"
+      "desc": "七层架构、职责矩阵、部署/调度全链路唯一权威说明",
+      "doc": {
+        "content": "# mtcapacity 工程结构统一规范\n\n> 本文档是全工程结构、部署、调度、口径的唯一权威说明。目录与职责的任何调整须同步更新本文。\n> 最后更新：2026-11-07（R-cap-unify：运力监控接入统一壳为第 12 入口页，日更巨页降为壳内嵌入件；入口页数与 vite 对齐为 12）\n\n## 一、七层架构（目录 = 架构）\n\n```\nmtcapacity\\\n├── _repo\\               ① 线上部署层   仓库 gitsick/rider-data（GitHub Pages 发布源，只被 deploy 层写入）\n├── deploy\\              ② 部署基建层   配置（channels.json）+ 引擎（deploy.ps1/publish_file.py 双入口）+ 共用库（deploy_common.psm1：网络韧性环境/R89 锁/拉推退避重试/远端校验五件套单源，refresh.ps1 与 deploy.ps1 共用）+ 通道发布管线\n├── lib\\                 ③ 知识库层     共享函数库 + 知识文档化（docs\\口径手册.md）\n├── frontend\\            ④ 渲染层       Vue 3 + Vite 统一前端工程（12 入口页），含运力统一壳主页 + 项目看板渲染器（scripts\\capacity\\）\n├── pro\\                 ⑤ 项目层       业务项目工作区（任务设置、产物产出）\n│   ├── kaohe-daily\\         履约考核工程（构建器 + 数据层 + 发布流水线）\n│   ├── capacity-daily\\      通用运力监控每日管线（数据→看板→三表→检核）\n│   ├── xsp-weekly\\          新商评考核周报（BI 取数 → 三城 Excel）\n│   ├── rider-hourly\\        骑手解约登记（问卷星增量 → 看板 → 部署）\n│   └── deploy-audit\\        部署体系审计（13 项体检含断链自愈，供工作台/自愈巡检）\n└── sched\\               ⑥ 调度层       任务清单唯一事实源（tasks.json）+ 统一执行器（run_task.ps1）+ 运行日志\n\nmtcapacity\\（续）\n└── teamflow\\            ⑦ 开发流程层   多角色开发工作流：角色定义（roles.json）+ 流程 SOP + 需求运行目录（runs\\）\n```\n\n### 全链路（数据怎么流动）\n\n```\nM:\\数据源（日监控/下载中心）\n   → pro\\<项目>\\ 每日管线（合并清洗→构建→渲染→增强→检核）\n   → 项目产物（output\\）\n       ├─ 线上链路：deploy\\ 发布引擎 → _repo → GitHub Pages 上线\n       └─ 展示链路：frontend\\export-data → public\\data → Vite 构建 → 同样经 deploy 上线\n调度链路：sched\\tasks.json 登记全部任务 → 定时器/统一执行器驱动（日志在 sched\\logs\\）\n```\n\n### 职责矩阵（谁做什么、不做什么）\n\n> 项目层路径约定：`pro\\<项目名>\\`；项目内脚本一律相对自身定位（`dirname(__file__)`），工作区根取两层上溯，禁止再写死完整绝对路径。\n>\n> **Owner 角色绑定**：每层唯一归属一个角色（见 `teamflow\\roles.json` layers 数组）；层内变更须由该 Owner 签认后交接（方案.md Owner 签认表），跨层联改由架构角色在方案中列出各层 Owner。\n\n| 层 | Owner 角色 | 只负责 | 禁止 |\n|---|---|---|---|\n| 线上部署层 `_repo` | 发布运维 | 被 deploy 层写入；不手改（`rider_agreement.html` 除外） | 项目/构建逻辑 |\n| 部署基建层 `deploy` | 发布运维 | 一切上线动作：配置（channels.json）、引擎（dist 整树/单文件双入口）；git 重试/互斥锁/校验 | 业务口径、页面代码 |\n| 知识库 `lib` | 架构 | 被 ≥2 处复用的**口径/规则/领域函数** + 口径知识文档（docs\\） | 流程编排、数据源适配、部署机制 |\n| 渲染层 `frontend` | 开发 | 页面、组件、数据展示；入口 HTML 在 `vite.config.js` 登记；生成型看板渲染器（如运力看板 make_capacity_dashboard.py）也归此层，项目层只产数据 | 各项目自带部署脚本、项目内渲染页面 |\n| 项目层 `pro` | 开发 | 产出产物（看板/数据表/JSON）+ 项目任务设置，调用系统层上线；新增业务项目也放这里 | 自带 git 发布逻辑 |\n| 调度层 `sched` | 发布运维 | 任务登记唯一事实源、统一执行、运行留痕 | 业务逻辑（只编排不实现） |\n| 开发流程层 `teamflow` | 架构 | 角色↔层所有权（roles.json）、协同规则、运行目录（runs\\）、交接模板 | 具体业务实现 |\n| 回归门禁（测试/QA） | 测试 QA | 变更验收清单执行、构建/审计回归确认（方案.md 验收项） | 直接改层内代码 |\n| 监控体系（审计+预警+自愈） | 审计监控 | audit.ps1 十三项体检（项目层 deploy-audit，含编排完整性/断链自愈闭环/发布清单与回滚记录）、工作台预警面板值守、预警直达责任层 Owner | 代替 Owner 修复（只报警+定位+自动补跑） |\n\n## 二、部署规范（防抖动机制）\n\n**唯一部署入口 = `deploy\\`**（配置 + 引擎 + 通道管线）。两条发布路径：\n\n| 场景 | 入口 | 通道 |\n|---|---|---|\n| 前端构建产物（整树） | `pwsh deploy\\deploy.ps1 [-Channel rider-data] [-Mode preview\\|cutover] [-SkipPull]` | rider-data |\n| 单文件产物（如运力监控每日看板） | `python deploy\\publish_file.py [--channel capacity-monitor]` | capacity-monitor |\n\n**防抖四件套**（全部已内建，无需人工干预）：\n\n1. **互斥锁** `deploy\\.deploy.lock`：两发布器共用；10 分钟内拒绝并发部署（防争抢推送），超时锁自动接管；正常结束/异常退出均自动释放\n2. **指数退避重试**（R319 提速重设计）：pull 4 轮（3s 起倍增，上限 15s——初始 pull 只赌短抖动，长抖动由 R258 离线发布兜底 + push 轮间 rebase 接管）、push 30 轮（1.3 倍增，上限 30s），轮间自动 rebase\n3. **网络参数硬化**（_repo 本地配置）：HTTP/1.1 + 大 postBuffer + 关闭低速中断，针对 GitHub 闪断优化\n4. **失败就绪语义**：推送彻底失败时本地提交保留，**直接重跑同一命令即可补发**；pull 持续失败可用 `-SkipPull` 离线发布\n\n**发布顺序铁律**：先产物、后发布；产物内容未变时自动跳过提交（幂等）。\n\n## 三、数据管线规范（capacity-daily 为样板）\n\n- **配置单源**：路径/区域/别名/班次全部收敛 `pipeline_config.py`（BASE/OUT/MON/DL/LIB/REGION/CANON），脚本禁止硬编码绝对路径\n- **分层目录**：脚本根目录 / `output\\` 当日产物 / `cache\\` 解析缓存（指纹失效+3天自清）/ `history\\` 归档 / `合并数据_<D>\\` 清洗备份\n- **八步编排** `daily_pipeline.py`：合并清洗→构建→渲染→增强→幂等复检→三表→新鲜度检核→发布；关键步骤失败即停并标注步骤号\n- **口径双恒等式**（新鲜度检核强制）：推单=送达+取消；送达=专送+众包+悦跑\n- **知识库挂接**：`import pipeline_config` 即自动获得 lib 模块搜索路径，共享库零路径成本\n\n## 四、考核工程规范（kaohe-daily 摘要）\n\n- 统一引擎 + 月度配置 + 月度数据三层结构；换月走 `pro\\kaohe-daily\\build\\new_board.py` + `docs\\换月SOP.md`\n- 构建器自测 28 用例（`build\\selftest.py`）为回归门禁；markers 未登记的新月度构建阻断\n- 主工程换月接线盘点（R322）：`frontend\\scripts\\wire-audit-main.mjs` 只读盘点月注册表（ASSESSMENT_PAGES）× 9 点位（入口壳 / vite 预载·input / pages flat·v2 / pageLin\n…（内容过长已截断，全文见工作区文件）",
+        "outline": [
+          "mtcapacity 工程结构统一规范",
+          "一、七层架构（目录 = 架构）",
+          "全链路（数据怎么流动）",
+          "职责矩阵（谁做什么、不做什么）",
+          "二、部署规范（防抖动机制）",
+          "三、数据管线规范（capacity-daily 为样板）",
+          "四、考核工程规范（kaohe-daily 摘要）",
+          "五、前端工程规范（frontend 摘要）",
+          "六、调度规范（sched\\）",
+          "六b、开发流程规范（teamflow\\）",
+          "七、清理与收编原则",
+          "七b、文件命名规范（2026-10-17）",
+          "八、定时任务总览（登记于 sched\\tasks.json）",
+          "九、变更 SOP（改任何东西前看这里）",
+          "十、前端渲染层现状与可优化点（2026-11-03）"
+        ],
+        "chars": 10376,
+        "truncated": true
+      }
     },
     {
       "name": "业务口径手册",
       "cat": "口径",
       "path": "lib\\docs\\口径手册.md",
-      "desc": "跨项目复用的口径/规则/领域函数说明（共享函数库） · 口径条目 7 条"
+      "desc": "跨项目复用的口径/规则/领域函数说明（共享函数库） · 口径条目 7 条",
+      "doc": {
+        "content": "# 业务口径手册（知识库·文档化）\r\n\r\n> 本手册是跨项目业务口径的**文档化知识**；代码实现以标注的唯一事实源为准。\r\n> 修改口径时：先改代码（唯一事实源），再同步本手册，最后跑调用方回归。\r\n\r\n## 1. 运力数据恒等式（capacity-daily，检核强制）\r\n\r\n- **定义唯一事实源**：`pro\\capacity-daily\\data_freshness_check.py → chk`\r\n\r\n| 恒等式 | 含义 | 校验位置 |\r\n|---|---|---|\r\n| 推单 = 送达 + 取消 | 订单总量恒等 | 数据新鲜度检核（步骤7） |\r\n| 送达 = 专送 + 众包 + 悦跑 | 运力渠道三分 | 同上 |\r\n\r\n## 2. 班次体系（11 个分析班次）\r\n\r\n- **定义唯一事实源**：`lib\\capacity_kit.py → SHIFTS`\r\n- 归属规则：按分钟→班次预计算表（`_minute_shifts`），跨零点班次正确归属\r\n- 班次时长：`(结束 - 起点) mod 1440`\r\n- 上层展示口径（时段运力拆解）以班次为最小粒度，不再向下拆\r\n\r\n## 3. 区域与城市\r\n\r\n- **定义唯一事实源**：`pro\\capacity-daily\\pipeline_config.py → REGION`\r\n- 结构：18 城、3 区域；对照表城市过滤在合并清洗阶段完成（`merge_daily_sources.py`）\r\n\r\n## 4. 城市/名称别名归一\r\n\r\n- **定义唯一事实源**：`lib\\city_canon.py → canon_alias() / canon_capacity()`\r\n- 规则：别名等价关系（CITY_ALIAS）与各域主名策略（CAPACITY_KEEP）上提 lib 单源（B2，2026-11-06）；考核域入口 canon_alias（响水县→响水 短名口径）、capacity 域入口 canon_capacity（响水县全名保留）；pro\\capacity-daily\\pipeline_config.py 为门面 re-export（消费方 from pipeline_config import canon 零改动）；新增别名先补 lib/city_canon.py 的 CITY_ALIAS 再重跑管线\r\n\r\n## 5. 履约考核口径（kaohe-daily）\r\n\r\n- **定义唯一事实源**：`pro\\kaohe-daily\\build\\check_data.py → check_month_file`\r\n- 指标体系、markers、月度字段 schema：以 `pro\\kaohe-daily\\build\\config.py`（月度配置）+ `check_data.py` 校验为准\r\n- 体验分 / HD率 / 完结率：**默认待发布**，禁止从模块数据推导，以 BI 公布值为准补录\r\n- 城市总分逐日序列（R105）：补录槽位 `var MTD_DAILY_SCORES = { 城市: { \"MM-DD\": 总分 } }`（data-YYYY-MM.js，sync 管线块保护）——**只填 BI 公布值**，填后 assessment 图表页自动出趋势图；同样禁止从模块数据推导\r\n\r\n## 6. 数据日期语义\r\n\r\n- **定义唯一事实源**：`pro\\capacity-daily\\pipeline_config.py → yesterday`\r\n- 全部 T-1 口径：当日跑昨日数据；管线缺省自动取昨天（`pipeline_config.yesterday()`）\r\n- 数据源未发布（节假日/延迟）：不回填不编造，按最近可得已发布日期重跑\r\n\r\n## 知识文档索引\r\n\r\n| 文档 | 内容 |\r\n|---|---|\r\n| `lib\\docs\\口径手册.md`（本文件） | 跨项目业务口径 |\r\n| `ARCHITECTURE.md`（工作区根） | 六层架构、部署 SOP、变更 SOP |\r\n| `pro\\capacity-daily\\README.md` | 八步管线与数据源 |\r\n| `pro\\kaohe-daily\\docs\\` | 换月 SOP 等考核工程文档 |\r\n",
+        "outline": [
+          "业务口径手册（知识库·文档化）",
+          "1. 运力数据恒等式（capacity-daily，检核强制）",
+          "2. 班次体系（11 个分析班次）",
+          "3. 区域与城市",
+          "4. 城市/名称别名归一",
+          "5. 履约考核口径（kaohe-daily）",
+          "6. 数据日期语义",
+          "知识文档索引"
+        ],
+        "chars": 1817,
+        "truncated": false
+      }
     },
     {
       "name": "考核看板系统总览",
       "cat": "考核",
       "path": "pro\\kaohe-daily\\docs\\考核看板系统总览.md",
-      "desc": "整套考核体系一页通：看板入口/六层数据链/月更节奏/口径速查/文档地图（R488）"
+      "desc": "整套考核体系一页通：看板入口/六层数据链/月更节奏/口径速查/文档地图（R488）",
+      "doc": {
+        "content": "# 考核看板系统总览\n\n> 面向运营同学的项目级总览文档：一页看懂整套系统的定位、入口、数据流、月更节奏与文档地图。\n> 口径细节以各专篇文档为准（见文末「文档地图」）；本文只讲结构与节奏，不重复专篇内容。\n> 生成：R488（2026-11-01），后续结构变更请同步更新本文。\n\n---\n\n## 1. 系统定位与看板入口\n\n本工程（`F:\\work\\mtcapacity`）是下沉市场运力考核与骑手数据的**看板 + 管线 + 工作台**三位一体体系：\n\n| 入口 | 内容 | 载体 |\n|---|---|---|\n| 履约考核看板（月更） | 整月测算/预估罚款/计分示例/企客SKA/月度评估/下月预看 | 单文件遗留板（sep / oct 双月并行，legacy 通道） |\n| 骑手数据主看板（日更） | 天维度运营数据、趋势图、城市对比 | Vue3+Vite MPA（rider-data 通道） |\n| 日常任务工作台 | 调度任务/部署审计/门禁报告/知识库/数据链总览 | 同主看板工程（workbench 页） |\n| 调度台账 | 每日任务登记与执行记录 | sched 层 |\n\n看板入口链接以工作台「知识库 / 站点入口」卡与部署仓为准，此处不重复罗列（避免双源漂移）。\n\n## 2. 六层数据链（全链路）\n\n工作台「考核数据链」卡（R487）同构的六层结构：\n\n1. **数据源层**：BI 魔数各页签（07:30 主跑抓取，T-1 数据日；幂等跳过已抓批次）。\n2. **数据层**：`pro/kaohe-daily/src/data/data-YYYY-MM.js`（26 个数据块，按月归档；config-YYYY-MM.js 承载目标与口径配置）。\n3. **配置层**：月度目标（`_repo/data/assessment/targets-nov.json` 等）、评分类方案（SCHEME_CFG）、考核方案原文（docs/方案_*.txt）。\n4. **构建校验层**：`build/build.py` 模板注入单文件构建 + `build/check_data.py` 8 项数据完整性校验（第 8 项 SKA 周期一致性，R487）+ `build/selftest.py` 62 用例回归锁。\n5. **部署层**：`kaohe_pipeline.py` 四道门（抓取→月度评估→构建→部署）+ 三通道对账（`build/verify_remote.py`：CDN/ghapi/git 身份）+ 备份归档 + **日更简报**（自动落月目录，R487）。\n6. **渲染消费层**：三引擎（engine-render/engine-charts/engine-ska）+ 工作台 Vue 组件；考核页口径变更须与 SKA 周期口径三原则一致（见《数据源映射与取数清单》§5.5）。\n\n## 3. 月更节奏（关键时间点）\n\n| 时点 | 动作 |\n|---|---|\n| 每日 07:30 | 主跑：抓 T-1 数据 → 月度评估 → 看板刷新 → 部署 → 对账 → 备份 → 日更简报；异常自动降级（空仓/板产物缺失/BI 抖动均有守卫，防线清单见《换月SOP》附表） |\n| 月初 1 号 | 空仓降级链实证（R492）：抓取空转 → 工作簿/月度跳过（R489）→ html [SKIP-EMPTY]（R446+R491）→ 备份/复检照常，整跑 exit 0；月末收官日自动补录上板（R444/R449/R451） |\n| 月末/月初 | 新月预接线（config-nov 骨架 + TODO 占位）；官方目标下发后回填 targets |\n| 次月中 | 官方月评估核算值回填（详见《换月SOP》与挂账清单） |\n| 已完成月 | 结果校对（kaohe-monthly-verify 技能：看板 vs 官方逐项核对） |\n\n## 4. 考核口径速查（详见考核方案原文）\n\n- 悦跑/普众完成度 90%~110%（＜90% 记 0；悦跑第 2 期 10/19 起新口径不乘系数）。\n- HD 完成率 90%~100% 计分；推单完成率 110% 封顶、日均≥98.8% 人效兜底。\n- 履约完结率 80%~110% 计分；体验分=复合超时 40% + 虚假点送达 30% + 配送取消单 30%。\n- SKA 企客：加权率须剔除未核算率单量（有效分母=总单量−未核算单量），列头显式标周期。\n\n## 5. 文档地图\n\n| 想了解 | 看这篇 |\n|---|---|\n| 新月份上线怎么操作 | docs/换月SOP.md |\n| 每个数据块从哪来 | docs/数据源映射与取数清单.md |\n| 官方核算值怎么回填 | docs/官方核算值回填映射核对清单-2026-09.md |\n| 整套工程架构与职责 | ARCHITECTURE.md（仓库根） |\n| 数据流程图 / NoCode 提示词 | teamflow/考核看板数据流程图-NoCode.md |\n| 跨项目口径与共享函数 | lib/docs/口径手册.md |\n| 自动化管线案例 | docs/履约考核看板自动化流程案例文档.md |\n| 历轮变更 | teamflow/变更记录.md + round-state.json |\n\n## 6. 运维与自检速记\n\n- 数据完整性：`check_data` 8 项（警告级第 8 项 SKA 周期一致性；SKA_DAILY 跨月保留属周窗口合法聚合，勿清理）。\n- 回归锁：`selftest` 65 用例（docstring「用例总数」为单一事实源）；前端 `npm test` 架构锚测试（含 R489/R490/R491 三道守卫的行为锁 T50/T51/T52）。\n- 空仓与换月边界防线：空仓日工作簿/月度降级跳过（R489）、换月板产物缺失上线四段降级（R490）、空数据日防线自身健壮（R491）——排查入口见《换月SOP》「常见问题」末三行。\n- 部署注意：`kaohe_pipeline` **不含构建段**——src 层改动后必须先 `build.py --month` 重建 dist 再推（R472/R488 两度应验）。\n- 对账四态：PASS / PASS-GIT / SKIP / FAIL；三通道全不可达属网络环境问题非内容不一致。\n",
+        "outline": [
+          "考核看板系统总览",
+          "1. 系统定位与看板入口",
+          "2. 六层数据链（全链路）",
+          "3. 月更节奏（关键时间点）",
+          "4. 考核口径速查（详见考核方案原文）",
+          "5. 文档地图",
+          "6. 运维与自检速记"
+        ],
+        "chars": 2676,
+        "truncated": false
+      }
     },
     {
       "name": "换月SOP",
       "cat": "考核",
       "path": "pro\\kaohe-daily\\docs\\换月SOP.md",
-      "desc": "新月份上线操作清单：预接线/目标回填/官方核算值回填/演练与门禁"
+      "desc": "新月份上线操作清单：预接线/目标回填/官方核算值回填/演练与门禁",
+      "doc": {
+        "content": "# 换月 SOP —— 履约考核看板新月份上线操作清单\n\n> 适用对象：看板维护人（使用者视角）。\n> 依据：02-tech-design.md §3/§5、03-dev-B.md §9（遗留登记）、03-dev-C.md、05-review-report.md（P1-2/P1-3/P2-2/P2-3/P2-4/P3-4/P3-6）。\n> 工具链版本：工作包F 优化后（build.py 支持 `--skip-markers`；new_board.py 数值字段自动推导 + 人工核对清单 + 自动 check_data；check_data.py CFG schema 并集校验）。\n> R436 现代化（2026-10-31）：部署/登记机制已从 deploy_pipeline.py 迁移至 kaohe_pipeline.py BOARDS（markers 单一来源）+ deploy 层统一通道；本文全篇已对齐现行机制，并沉淀 R435 实操经验（targets 占位策略 / 骨架紧凑声明 / DEFAULT_KEYS 切换）。\n> 原则：**每一步都有命令与检查点，未打勾不得进入下一步；上线前 markers 必须登记。**\n\n---\n\n## 总览\n\n```\n生成 → 官方目标 targets-<月>.json → 人工核对 → 填充数据 → 校验 → 构建 → 登记 markers → 重新构建 → 上线确认\n 1        1.5              2          3        4      5         6            7          8\n```\n\n以下以生成 **2026-11（11月）** 板、基于 **2026-10（10月）** 板为例。替换月度时同步替换命令中的 `2026-11` / `2026-10`。\n\n---\n\n## 步骤 1：生成新月份 config/data 骨架\n\n```powershell\npython build/new_board.py --month 2026-11 --based-on 2026-10\n# 已存在目标文件时需 --force 覆盖（确认无未合并的手工改动后才允许）\n```\n\n自动完成：\n- `src/config/config-2026-11.js`：复制 10 月版 + 月度字面量替换 + **数值字段自动推导**；\n- `src/data/data-2026-11.js`：空骨架（全部原变量名保留，数据块 noData 占位，`dataDates=[]`、`currentDate=null`）；\n- 自动调用 `check_data.py` 预检（失败即退出非 0）。\n\n**检查点（命令输出确认）：**\n- [ ] 输出含 `已生成` 两行，且 `自动调用 check_data.py` 段以 `校验通过: 0 项错误` 结尾；\n- [ ] `人工核对清单（TODO-2026-11）` 已打印，`自动推导项` 中应看到：\n  - `daysInMonth`（按日历：11月=30）；\n  - `monthIdx`（月序-1：11月=10）；\n  - `monthCn / monthShort / monthNumLabel`（'11月' / '11' / '11'）；\n  - `prevMm / prevMonthCn`（'2026-10' / '10月'）；\n  - `period.p1 首日 '11-01'`、`period.p2 末日 '11-30'`；\n  - `peakDaysOfMonth`（若 `peakDays` 尚无当月项，会显示\"未能自动推导\"——正常，见步骤 2）。\n\n> 若生成前 `config-2026-10.js` 被手工改过结构（增删字段），先跑 `python build/check_data.py` 确认双月 schema 仍一致再生成。\n\n---\n\n## 步骤 1.5：建立当月官方目标 targets-<月>.json（换月新增，必办）\n\n评分自算（体验三子项 + HD 折算）已改为**按月自动加载目标文件**，无需改任何代码。换月时新建 `frontend/public/data/assessment/targets-<月>.json`（参照 targets-oct.json）：\n\n- `meta.month`：`\"2026-11\"` 格式——**代码按此字段匹配当月**，字段缺失或格式不对会静默回退旧目标，务必核对；\n- `meta.hdK`：HD 折算系数。**0 是合法值**（9月官方口径经验证为 k=0，仅达标数计入），不得用 `or` 类回退逻辑吞掉 0；系数未下发时沿用上月口径并在 KG 待办登记（如 KG-OCT-HDK-PENDING）；\n- 体验三子项目标：复合超时 `csTg` + 内外分档 `csInTg/csOutTg`（官方为内外分别【50,110】×内单量占比加权，非直接混合除）、虚假点 `xjTh/xjTg`、配送取消 `qxTh/qxTg`（≤目标→110 平顶）；\n- `phase2`：期 2 天数 `hdDays.days1/days2` 与期 2 目标（未下发时沿用上月并登记待办）。\n\n**检查点：**\n- [ ] `meta.month` 与当月一致；\n- [ ] 换月后必跑规则校验（**已接入发布前门禁，kaohe_pipeline 的前端回灌与主流程都会先执行，不过则发布中断**；门禁共四道）：\n  1. **目标文件深度校验**（validate_targets.py → VALIDATE_OK）：meta.month 匹配、hdK 显式声明、体验三子项门槛/目标关系、每城期1目标与罚则齐备；phase2 缺失仅告警；\n  2. 评分公式自检（common.py → SELF_TEST_OK）；\n  3. 前后端双端一致性（build/fe_xval.py → XVAL_OK）；\n  4. 看板日期连续性（build/validate_board_dates.py → DATES_OK）：dataDates 升序无缺口、currentDate 与末位一致（src 与 dist 双端核对）。\n\n**官方目标未下发时的占位策略（R435 沉淀）：**\n- 全月门槛/周目标沿用上月数值，并在 KG 待办系统登记（如 `KG-NOV-TGT-PENDING`），`pendingNote` 字段写明待补项；\n- `cities[*].weeks` 与 `snapshot` 置空（`\"weeks\": []` / `\"ymWeekly\": {}, \"pzWeekly\": {}`）——空快照走推演分支安全；**`phase2` 整键省略而非沿用上月**（沿用会把当月首日错误吸归上月末周周期）；\n- `validate_targets` 对置空/省略仅 WARN 不阻断；\n- 校验命令月份格式为 **6 位无连字符**：`python build/validate_targets.py --month 202611`。\n\n---\n\n## 步骤 2：人工核对（构建前必须逐项打勾）\n\n### 2.1 行内 TODO 标记扫描\n\n```powershell\n# 列出全部行内 TODO 标记（逐条核对后删除标记或确认保留）\nSelect-String -Path src\\config\\config-2026-11.js -Pattern \"TODO-2026-11\"\n```\n\n### 2.2 核对清单（对应 new_board 输出的\"人工核对清单\"）\n\n| # | 核对项 | 说明 / 检查点 |\n|---|---|---|\n| 1 | **周期业务切分日** `period.pbCut` / `period.caliberSwitchDay` | 运营口径，不可自动推导；p1/p2 起止结构已按日历推导，但切分日必须人工确认。同步检查 `p1Short/p2Short/allShort/p1Label/p2Label/p1EndDay/p2StartDay` 文案与数值 |\n| 2 | **高峰日** `var peakDays` 清单 | 继承值，必须按当月方案人工重排（含跨月日如 12-01）；随后同步 `CFG.peakDaysOfMonth`（月内\"日\"序号，供周期进度条）与所有含\"高峰日\"的叙事文案（`periodSummary/estimateDescHead/ptbPlaceholder/formula.peak/summaryStripHtml` 等） |\n| 3 | **自然周** `CFG.weeks` | `ymWeeks/weekStarts/weekNames/weekPeriodTag` 按当月自然周重排（首周常跨月，如 10/26-11/1 形态）；`kfcTargetWeeks` 为运营口径 |\n| 4 | **企客规则** `qikeRules` + `qikeWatchCutoff` | 档位（churnDeduct/newSignBonus/newSignCap/expDeduct）与监控截止日按当月方案确认 |\n| 5 | **静态元素开关** `CFG.flags` | `profileNote/backTop`（DEF-06 月度差异元素）按当月模板形态确认 |\n| 6 | **页头文案** | `boardTitle/subtitle/badg\n…（内容过长已截断，全文见工作区文件）",
+        "outline": [
+          "换月 SOP —— 履约考核看板新月份上线操作清单",
+          "总览",
+          "步骤 1：生成新月份 config/data 骨架",
+          "已存在目标文件时需 --force 覆盖（确认无未合并的手工改动后才允许）",
+          "步骤 1.5：建立当月官方目标 targets-<月>.json（换月新增，必办）",
+          "步骤 2：人工核对（构建前必须逐项打勾）",
+          "2.1 行内 TODO 标记扫描",
+          "列出全部行内 TODO 标记（逐条核对后删除标记或确认保留）",
+          "2.2 核对清单（对应 new_board 输出的\"人工核对清单\"）",
+          "2.3 校验 WARN 档处置指引（R214：warn>0 时人工确认有据可依）",
+          "步骤 3：填充数据 data-2026-11.js",
+          "步骤 4：数据完整性校验",
+          "三月并跑：schema 并集覆盖双月+新月，能发现新月配置漏字段",
+          "步骤 4.5：接线盘点（R217：wire 后验收 + 构建闸门联动）",
+          "预期输出：逐月 [PASS] <月>（<键>）四点接线齐全 + ===== wire-audit 汇总：全月齐全 =====",
+          "步骤 4.6：主工程接线（R322/R323/R324：一条命令接线 + 缺线不出包）",
+          "步骤 5：构建（markers 未登记时会被阻断）",
+          "首次构建（markers 尚未登记）：预期被阻断——这是刻意的保护（P2-2）",
+          "预期输出：[错误] 构建 2026-11 失败: month=2026-11 未登记markers，请在 kaohe_pipeline.py 登记后再上线…",
+          "仅本地预览时才允许显式跳过（产物不得直接部署）：",
+          "步骤 6：登记发布板（kaohe_pipeline.py BOARDS，上线前必办）",
+          "步骤 7：全量回归（上线前）",
+          "步骤 8：上线确认",
+          "附：月初主跑预案（每月 1 号 07:30 适用）"
+        ],
+        "chars": 24172,
+        "truncated": true
+      }
     },
     {
       "name": "数据源映射与取数清单",
       "cat": "考核",
       "path": "pro\\kaohe-daily\\docs\\数据源映射与取数清单.md",
-      "desc": "每个数据块的 BI 页签取数映射与归属漂移登记（含 SKA 周期口径三原则 §5.5）"
+      "desc": "每个数据块的 BI 页签取数映射与归属漂移登记（含 SKA 周期口径三原则 §5.5）",
+      "doc": {
+        "content": "# 数据源映射与取数清单 —— 履约考核看板（2026-09 / 2026-10）\r\n\r\n> 依据：`docs/方案_9月考核.txt`、`docs/方案_10月考核.txt` 中全部「数据查看路径」条目；\r\n> `src/config/config-2026-{09,10}.js` 的 `narrative.datasourceRows`；\r\n> `dev-team/重构履约考核看板/03-dev-B.md` 数据块清单。\r\n> 用途：数据填充人按本清单逐块取数回填；`build/verify_coverage.py` 的\r\n> `MAPPING` / `KG_CATALOG` 与本文 §3 / §4 同步维护（改一处须改另一处）。\r\n> 红线：本文仅为映射与操作清单，不含考核规则改动；未实际访问 BI（全部路径为静态登记）。\r\n\r\n---\r\n\r\n## 1. BI 源清单（总表）\r\n\r\n| # | 源 | 标识 | 用途 | 状态 |\r\n|---|---|---|---|---|\r\n| S1 | 履约数据考核看板（合作商用） | bi.sankuai.com/v2/dashboard/274665 | 推单完成率all / 体验考核含PHF / 加盟 / 完结率 / 承托比 / 悦跑 / 骑手工装 / 普通众包 | 主数据源，T-1 日更 |\r\n| S2 | 旧版加盟看板 | BI 244021 | 9月方案曾引用（加盟运力页签新旧看板口径差异） | 已由 S1 取代，仅备查 |\r\n| S3 | SKA体验 / 企客体验明细看板 | BI 269707 | 企客流失/有效/体验达标门店；SKA 六品牌历史月维度 | 官方自 2026-03 起未更新（KG-269707-STALE） |\r\n| S4 | 企客KA履约监控 | BI 253744（readata ID 17805 实际指向此板） | 企客KA品牌/门店日粒度准时率；SKA 当月实际数据源 | 在用，T-1 日更 |\r\n| S5 | 《SKA考核指标口径和看板》 | 学城 2741734785 | SKA 考核线/预警线口径、企客体验达标判定口径 | 静态口径 |\r\n| S6 | 任务系统 | — | 兜底阈值（人效/承托比/工装目标/警告罚款） | 待下发（KG-TASKSYS-PENDING） |\r\n| S7 | 《SKA品牌KPI赔付规则》 | 学城 2772140471 | SKA 品牌 KPI 赔付规则（10月方案新增引用） | 静态口径 |\r\n\r\n---\r\n\r\n## 2. 考核指标 → BI 源映射（9月 / 10月分列，标口径差异）\r\n\r\n| 考核模块/指标 | 9月 BI 源 | 10月 BI 源 | 口径差异 |\r\n|---|---|---|---|\r\n| 推单完成率 all | S1 · 推单完成率all 页签 | 同 9月 | 无（分子/分母明细 9 月实测全月有值，旧登记 R485 已核销） |\r\n| 体验考核 · 绝对超时 | S1 · 体验考核含PHF 页签 | 同 9月 | 10月起剔除企客麦肯必瑞订单；**官方计分源为剔除PHF口径，与自算源系统性偏差 1.4~2.0 倍（见下方说明）** |\r\n| 体验考核 · 虚假点送达 | S1 · 体验考核含PHF 页签 | 同 9月 | 同上 |\r\n| 体验考核 · 配送原因取消 | S1 · 体验考核含PHF 页签 | 同 9月 | 同上 |\r\n| 加盟（HD） | S1 · 加盟页签（T-3，未剔除异常骑手；旧板 S2 曾引用） | 同 9月 | 数据源统一至 S1，越久越准以核算下发为准；**折算系数官方口径 k=0（9月官方达成文件验证，10月沿用）** |\r\n| 完结率（wj，餐饮cy/非餐fc/混调mix） | S1 · 完结率 页签 | 同 9月 | 无 |\r\n| 承托比（ct） | S1 · 承托比 页签 | 同 9月 | 无 |\r\n| 悦跑完成率 / 排班出勤合格率 | S1 · 悦跑 页签 | 同 9月 | **10/19 起新口径（排班班次全量达成）→ S1「待更新」页签，官方未上线（KG-YM-NEW-CALIBER）** |\r\n| 普通众包 | S1 · 普通众包 页签 | 同 9月 | 无 |\r\n| 骑手工装（加盟+悦跑） | S1 · 骑手工装 页签 | 同 9月 | 考核周期差异：9月 8/31-9/27；10月 9/28-11/1 |\r\n| 企客流失门店数 | S3（BI 269707） | S3（BI 269707） | 扣分档位 5% → 3%（qikeMode v1→v2，取数源不变） |\r\n| 企客有效门店数 | —（9月无此指标） | S3（BI 269707） | **10月新增**（新签 +2% 封顶 3% 的基数） |\r\n| 企客体验达标门店 | —（9月无此指标） | S3（BI 269707）+ S5（学城 2741734785 判定口径） | **10月新增**（体验未达标 -2%） |\r\n| 企客KA 当日有单门店/准时率 | S4（BI 253744 / readata 17805） | 同 9月 | 无 |\r\n| SKA 六品牌月维度 | S4（实际取数）＋S3（历史，269707 停更） | 同 9月 | 9月板无 SKA 模块（modules.ska=false），数据块为空壳（KG-SKA-SHELL-09） |\r\n| SKA 门店/日维度明细 | S4（BI 253744 / readata 17805） | 同 9月 | 10月起 ska=true 消费 |\r\n| SKA 考核线/预警线 | S5（学城 2741734785） | 同 9月 | 静态 |\r\n| 兜底阈值（人效/承托/工装/罚款） | S6 任务系统 | 同 9月 | 未下发（KG-TASKSYS-PENDING） |\r\n\r\n### 2.1 体验分自算源与官方计分源的口径差（2026-10 复核结论）\r\n\r\n- **官方计分口径**（由 2026-09《体验考核结果》官方文件逐列验证）：复合超时率 =（一般超时 + 严重超时×5）/ 完成单量，3km外完成单量剔除5km外；复合超时率分数 = 内/外分别达成率【50,110】× 内单量占比加权；配取 ≤目标 → 110 平顶。源数据**剔除 PHF（拼好饭）**。\r\n- **现有自算源**：S1「体验考核含PHF」页签（含 PHF、含混调、不含散单）。PHF 超时率显著偏高，导致自算复合超时率约为官方 1.4~2.0 倍（泰兴内率 2.895% vs 官方 1.434%），且比例不恒定，无法换算。\r\n- **影响**：体验分自算参考值系统性偏低（泰兴 58 vs 官方 99），仅作趋势参考；公式本体已按官方口径实现（用官方分子分母复算 3/3 城误差≤0.5分，见《履约考核口径检核报告_202609-202610.md》）。\r\n- **9月每日汇总官方日更值**为 BI 独立展示口径（周期发布），与月末计分口径不同，勿用公式复算。\r\n\r\n---\r\n\r\n## 3. 三级映射：数据块 → 考核模块 → BI 源（含更新节奏）\r\n\r\n> 与 `build/verify_coverage.py` 的 `MAPPING` 字典同步。填充落点均在\r\n> `src/data/data-YYYY-MM.js`（除注明 config 外）。\r\n\r\n| 数据块 | 考核模块 | BI 源（页签） | 更新节奏 | 填充落点 |\r\n|---|---|---|---|---|\r\n| `dataDates` | 全部模块的日更轴 | S1 各页签 | T-1 日更 | `var dataDates` |\r\n| `currentDate` | 同上 | S1 | T-1 | `var currentDate` |\r\n| `fullDataByDate` | 推完(twRate/twNum/twDen) · 体验(tyScore) · 加盟(hdRate) · 完结(wjRate) · 承托(ctRate) · 悦跑日值(ymRate/ymCq, 10月起) · 普众(pzAct, 10月起) | S1 · 推单完成率all / 体验含PHF / 加盟 / 完结率 / 承托比 / 悦跑 / 普通众包 | T-1 日更（加盟可 T-3；tyScore/hdRate/wjRate/pzAct 为官方核算值，发布后补录） | `var fullDataByDate` |\r\n| `trendRaw` | 趋势图 tw/ty/hd | S1 · 推单完成率all / 体验含PHF / 加盟 | T-1；官方值发布后尾段固化 | `var trendRaw` |\r\n| `monthlyData` | 月度总分与等级 | 官方核算 + S1 汇总 | 月末快照 | `var monthlyData` |\r\n| `SLICE_M` | 切片分析（收官口径 hd/ty/tw/wj/score/level） | 官方月评估 + S1 全月日均 | 月末快照 | `var SLICE_M` |\r\n| `DAILY_EXTRA` | 悦跑(ymRate/ymCq) · 工装(gzYm/gzJm) · 加盟达标骑手(jmDb/jmTotal) · 企客KA当日(qkKAStores/qkKAWb/qkKAOntime) | S1 · 悦跑/骑手工装/加盟；企客KA当日 → S4 |\n…（内容过长已截断，全文见工作区文件）",
+        "outline": [
+          "数据源映射与取数清单 —— 履约考核看板（2026-09 / 2026-10）",
+          "1. BI 源清单（总表）",
+          "2. 考核指标 → BI 源映射（9月 / 10月分列，标口径差异）",
+          "2.1 体验分自算源与官方计分源的口径差（2026-10 复核结论）",
+          "3. 三级映射：数据块 → 考核模块 → BI 源（含更新节奏）",
+          "4. 已知合理缺口登记（KG-*，与 verify_coverage.py KG_CATALOG 同步）",
+          "5. 每月取数操作清单（按顺序执行）",
+          "5.1 9月（收官模式 MONTH_MODE=month，数据日 09-01~09-30）",
+          "5.2 10月（收官模式 MONTH_MODE=month，数据日 10-01~10-31；R482 起收官，官方核算值回填见 §4 挂账）",
+          "5.3 硬约束（换月SOP 步骤 3 引用）",
+          "5.4 月间归属层漂移登记（R481 实测，check_data 双月一致性警告长期可见）",
+          "5.5 SKA 模块周期口径统一（R487）",
+          "6. 2026-11-10 行动日志：11月普众/工装目标入库 + 诸暨 17805 直取日更",
+          "6.1 普众/工装目标（KG-TASKSYS-PENDING 部分核销：期1已下发）",
+          "6.2 诸暨 17805 直取日更（KG-QIKE-ZHUJI 进展）"
+        ],
+        "chars": 16609,
+        "truncated": true
+      }
     },
     {
       "name": "项目工作区规范",
       "cat": "工作区",
       "path": "pro\\README.md",
-      "desc": "pro 子项目路径约定与管线结构"
+      "desc": "pro 子项目路径约定与管线结构",
+      "doc": {
+        "content": "# pro — 项目层（业务项目工作区）\r\n\r\n所有业务项目统一收在本目录下，每个项目一个子目录、单一职责：**产出数据/看板产物，调用系统层（deploy）上线**。项目自带 git 发布逻辑是禁止项。\r\n\r\n## 当前项目\r\n\r\n| 项目 | 目录 | 职责 | 每日调度 |\r\n|---|---|---|---|\r\n| 履约考核工程 | `kaohe-daily\\` | 统一构建引擎 + 月度配置 + 月度数据；遗留板部署 + 前端回灌 | 每日 08:00（kaohe-daily） |\r\n| 新商评考核 | `xsp-weekly\\` | BI 双看板取数 → 三城 MTD 周报 Excel（产物落 `reports\\`） | 每日 08:30（xsp-weekly） |\r\n| 通用运力监控 | `capacity-daily\\` | 三源合并清洗 → 数据构建 → 看板渲染增强 → 三表 → 检核 → 发布 | 每日 09:00（capacity-daily） |\r\n| 骑手解约登记 | `rider-hourly\\` | 问卷星增量 → 原始 Excel 落地 → 看板生成 → 主工程部署链路上线 | 每小时（rider-hourly） |\r\n| 部署体系审计 | `deploy-audit\\` | 8 项只读体检（通道/双入口/锁/漂移/产物/新鲜度/调度/合规），报告供工作台与自愈巡检 | 手动 / 定时（deploy-audit） |\r\n\r\n## 新项目入板四步\r\n\r\n1. 建目录：从 `pro\\_template\\` 复制骨架（含 README 模板与标准目录），按项目实际填写\r\n2. 路径纪律：脚本相对自身定位（`dirname(__file__)`），工作区根取两层上溯；全局配置进 `pipeline_config.py` 样式的单源文件，禁止散落硬编码\r\n3. 登记任务：在 `sched\\tasks.json` 加任务条目（command 或 agent 型），定时器侧同步登记触发时间\r\n4. 回归门禁：入板前跑通一次全流程 + 检核脚本；上线走 `deploy\\` 通道（需要新通道就在 `deploy\\channels.json` 登记）\r\n\r\n## 项目目录规范（标准骨架）\r\n\r\n| 目录/文件 | 职责 | 现状对照 |\r\n|---|---|---|\r\n| `README.md` | 必备：职责/数据源/产物/运行方式 | 四项目均已就位 |\r\n| 入口脚本（项目根） | 管线/编排主入口 | daily_pipeline.py / kaohe_pipeline.py / rider_hourly.py |\r\n| `src\\` | 源码/引擎/配置 | kaohe-daily src\\ |\r\n| `data\\` | 数据源文件 | kaohe-daily data\\ |\r\n| `output\\` | 当日产物 | capacity-daily output\\；kaohe-daily 产物在 `build\\dist\\`（历史沿袭，等效 output） |\r\n| `history\\` 或日期目录 | 历史产物归档 | capacity-daily history\\、合并数据_<D>\\；xsp-weekly reports\\ |\r\n| `cache\\` | 运行缓存，必须带自清策略 | capacity-daily cache\\（保留 3 天） |\r\n| `docs\\` | 方案/SOP/口径文档 | kaohe-daily docs\\ |\r\n| `archive\\` | 历史脚本/事故归档（含 README） | kaohe-daily archive\\ |\r\n\r\n> 存量项目已于 2026-10-17 统一改为任务ID名（目录↔任务一一对应）；新增项目一律从模板开且目录名取任务ID；口径冲突或可复用逻辑 → 上收 `lib\\`。\r\n\r\n## 任务设置规范\r\n\r\n- 定时任务信息以 `sched\\tasks.json` 为唯一事实源（id、触发时间、入口、工作区）\r\n- command 型任务可由调度器直接执行：`pwsh sched\\run_task.ps1 -Id <任务id>`；agent 型由自动化/技能编排，清单里登记入口供全链路查看\r\n- 运行日志与最近状态：`sched\\logs\\<任务id>\\`\r\n\r\n## 产物约定\r\n\r\n- 当日产物进项目内 `output\\`，缓存进 `cache\\`（带自清），历史归档进 `history\\` 或备份目录\r\n- 需要上前端展示的数据，由渲染层（frontend）的数据导出脚本从项目产物抽取，项目不直接写 `frontend\\`\r\n\r\n## 历史证据归档与外部目录清理（2026-10-17）\r\n\r\n- 一段时期的诊断/修复脚本随事故归档：`kaohe-daily\\archive\\bi-列码修复-20261014\\`（BI 列码变动事故，含修复过程 README）；更早重构过程见 `kaohe-daily\\dev-team\\`\r\n- **目录名 = 任务ID**（2026-10-17 起）：pro 下每个项目目录与 sched\\tasks.json 的任务 id 一一对应，便于「目录↔任务↔定时器」三向定位；改名需同步 tasks.json cwd、定时器 projectPath、跨层脚本路径引用\r\n- 曾散落在外部的老工作区已清理：`Documents\\CatPaw\\履约考核`（脚本已归档、老 _repo 与远端一致后删除）；新商评、骑手解约已收编至本项目层，老目录仅剩可重建缓存，保留观察期后可删\r\n- 判定标准：有追溯价值 → 归档进项目 archive；纯缓存/会话数据 → 留外部观察期；死代码/垃圾 → 不收编\r\n",
+        "outline": [
+          "pro — 项目层（业务项目工作区）",
+          "当前项目",
+          "新项目入板四步",
+          "项目目录规范（标准骨架）",
+          "任务设置规范",
+          "产物约定",
+          "历史证据归档与外部目录清理（2026-10-17）"
+        ],
+        "chars": 2445,
+        "truncated": false
+      }
     },
     {
       "name": "调度层用法",
       "cat": "调度",
       "path": "sched\\README.md",
-      "desc": "任务登记唯一事实源与统一执行器用法"
+      "desc": "任务登记唯一事实源与统一执行器用法",
+      "doc": {
+        "content": "# sched — 调度层\n\n全工作区定时/周期任务的**统一调度与登记层**：任务清单是唯一事实源，command 型任务可一键执行并留痕。\n\n## 调度双轨收敛（C1，2026-11-05）\n\n- **双轨语义**：`tasks.json`（任务清单唯一事实源）↔ 桌面自动化 JSON（运行态唯一事实源），`automationId` 关联\n- **核对单源**：`lib\\sched.py coverage_gaps()`（只读不双侧修改）四类缺口：① automationId 在自动化侧存在 ② 状态一致（登记 `paused` ↔ 自动化 PAUSED）③ 节奏一致（`expectHour` ↔ RRULE BYHOUR）④ 覆盖完整（指向本工作区的自动化必须入册）；CLI 直跑 `python lib\\sched.py` 退出码 0/1\n- **常驻防线**：kaohe selftest T110（临时 fixtures 行为实测逐负例抓到 + 真实双轨缺口=0 不变量）；审计 [11] 发布自愈检查已升级伴生任务口径（C1）\n- **盘点收敛记录**：此前 3 个自动化未入册（两个发布自愈探测仅在 note 提及、月度备份完全脱档）+ capacity-daily 已 PAUSED 登记表不知情——均已补齐；新增任务务必双侧同步（tasks.json 条目 + 桌面自动化），单侧漂移 T110 即红\n\n## 组成\n\n| 文件/目录 | 职责 |\n|---|---|\n| `tasks.json` | 任务清单（唯一事实源）：id、类型、触发时间、入口、工作区、关联定时任务；`cadence`（daily/hourly/manual）+ `expectHour` 为运行预期监控字段；`paused: true` 照实声明桌面自动化侧已暂停的任务（C1） |\n| `intent-registry.json` | 意图豁免登记（R266）：审计据此消解已知噪声（paused-by-user 主动暂停 / probe-silent-by-design 探测任务按设计无留痕，C1 扩充） |\n| `run_task.ps1` | 统一执行器：执行 / 演示 / 查清单 / 查状态 / 查历史 |\n| `logs\\<任务id>\\` | 运行日志（每次一个 .log，自动清理仅保留最近 30 份）+ `last_run.json` 最近状态 + `history.jsonl` 运行历史（趋势，超 200 行自动瘦身） |\n\n## 用法\n\n```powershell\npwsh sched\\run_task.ps1 -List                    # 任务清单总览\npwsh sched\\run_task.ps1 -Status                  # 各任务最近一次运行状态\npwsh sched\\run_task.ps1 -History                 # 各任务近 5 次运行历史（趋势）\npwsh sched\\run_task.ps1 -History -Id deploy-audit -Tail 10   # 指定任务、指定条数\npwsh sched\\run_task.ps1 -Id capacity-daily       # 执行（缺省取昨日数据）\npwsh sched\\run_task.ps1 -Id capacity-daily -Date 2026-10-15   # 指定数据日期\npwsh sched\\run_task.ps1 -Id capacity-daily -DryRun            # 仅打印将执行的命令\npwsh sched\\run_task.ps1 -Auto                                 # 自愈模式：补跑错过的每日任务\npwsh sched\\run_task.ps1 -Id deploy-audit-ro -DryRun           # 只读巡检（-NoHeal）；生产自愈仍用 deploy-audit\npwsh sched\\run_task.ps1 -Id kaohe-daily -Record PASS          # 编排型任务收尾留痕\npwsh sched\\run_task.ps1 -Id kaohe-daily -Record FAIL -Note '步骤4部署失败'\n```\n\n## 留痕与日志\n\n- command 型任务执行后自动写 `last_run.json` + 当次日志 + 追加 `history.jsonl`；每任务日志自动保留最近 30 份，历史自动保留最近 200 条\n- agent（编排型）任务由定时任务收尾时用 `-Record PASS|FAIL -Note 备注` 登记状态（同样进历史），供工作台与 `-Status`/`-History` 展示\n- **真实耗时自动折算（2026-10-17 起，发布感知版）**：agent 任务留痕会自动读取其全部触发源（绑定定时器 ∪ 指令含 `Id <任务id>` 的定时器，支持同一任务多触发源如 kaohe 08:00 主跑 + 10:30 自愈）中「留痕时刻之前最近一次」的触发时刻，折算 `durationSec`（常态 3h 内完成，超 4h 视为无法归因不记）——工作台任务卡的耗时趋势条由此对编排型任务同样生效；手工补记的留痕若距触发过远（如补录昨日），会因超出有效域而不计耗时，属预期行为\n- **运行预期监控**：daily 任务（expectHour + 2h 缓冲）无今日成功留痕、hourly 任务距上次超 2.5h → 审计亮 WARN、工作台红标「应跑未跑」——这是定时器断链的第一信号\n\n## 错过补跑（-Auto 自愈模式）\n\n机器休眠错过定时触发时（触发直接丢失，只能等次日），用 `-Auto` 一次性补偿：\n\n- **判定**：daily 任务已过 expectHour + 1h 仍无今日 **PASS** 留痕（比审计报警的 +2h 缓冲更积极，补跑幂等无害）\n- **command 型**：子进程直接补跑；带日期参数的任务自动复用最近一次成功运行的数据日期（= 最近可得数据日），避免默认日期数据源未发布时空跑\n- **已知态感知（R320→R363）**：最近留痕为 FAIL 且命中已知态时不盲补。登录态 pattern 真单源在 `frontend/src/utils/knownState.js`（`KNOWN_LOGIN_PATTERN`，容错窗口 `登录态.{0,4}失效`，覆盖「仍/仍然」插字变体）；调度/审计经 `sched/known-pattern.ps1` 运行时抽取，禁止字面量影拷贝回流。命中登录态已知态 → 打印归因并 **exit 3**（需人工恢复问卷星登录）；命中换月SOP人工核对挂账（`MONTH_SOP_PATTERN`：`换月SOP|人工核对挂账`）→ 跳过补跑并 **exit 0**（主跑已完成，非断链，等待人工核对上线）\n- **agent 型**：无法自动补跑（需技能编排/浏览器登录态），打印入口提示（退出码 3 = 存在需人工介入项）\n- 推荐挂定时器：每日上午（如 10:30）跑一次 `run_task.ps1 -Auto` + 审计，断链当天即自愈/告警，不再等到次日。审计 `[12/12] 断链自愈` 会调 `-Auto`，嵌套审计靠 `MT_HEAL_DEPTH` 防递归（R362），勿在子链重复强推补跑\n\n## 任务类型\n\n- **command**：单命令可执行（如运力监控八步管线、骑手解约管线、部署审计），由 run_task.ps1 直接执行，自动写日志与状态\n- **agent**：技能/自动化编排型（履约考核、新商评主跑 + 两个发布自愈探测 + 月度备份），由各自定时任务驱动，此处登记入口与触发时间供全链路查看。白名单冻结（R320，C1 扩充）：agent 型每日任务限 kaohe-daily / xsp-weekly / kaohe-daily-selfheal / xsp-weekly-selfheal / monthly-kaohe-backup（均需 BI 登录态不可 command 化；白名单外 agent 每日任务即测试失败）\n\n## 任务总览（2026-10-17 定稿）\n\n| id | 触发 | 类型 | 名称 |\n|---|---|---|---|\n| kaohe-daily | 每日 09:00 主跑 + 10:30 发布自愈 | agent | 履约考核看板刷新与备份（发布感知双探测） |\n| xsp-weekly | 每日 08:00 主跑 + 10:30 发布自愈 | agent | 新商评考核周报 |\n| capacity-daily | 每日 09:00 | command | 通用运力监控每日刷新 |\n| rider-hourly | 每日 16:00 | command | 骑手解约数据检查与刷新（R320 由 agent 型统一化，run_task 可直跑/-Auto 可补跑） |\n| kaohe-daily-selfheal | 每日 10:30 | agent | 考核看板发布自愈探测（C1 入册；按设计无 PASS 留痕，语义归主跑） |\n| xsp-weekly-selfheal | 每日 10:30 | \n…（内容过长已截断，全文见工作区文件）",
+        "outline": [
+          "sched — 调度层",
+          "调度双轨收敛（C1，2026-11-05）",
+          "组成",
+          "用法",
+          "留痕与日志",
+          "错过补跑（-Auto 自愈模式）",
+          "任务类型",
+          "任务总览（2026-10-17 定稿）",
+          "新增任务"
+        ],
+        "chars": 4538,
+        "truncated": true
+      }
     },
     {
       "name": "部署基建说明",
       "cat": "部署",
       "path": "deploy\\README.md",
-      "desc": "通道配置、发布引擎、断网重试/锁等待预案"
+      "desc": "通道配置、发布引擎、断网重试/锁等待预案",
+      "doc": {
+        "content": "# deploy — 全工程唯一部署基建\n\n主看板中心（gitsick/rider-data，GitHub Pages）的统一部署入口。任何部署都走本目录，禁止绕过。\n\n## 文件\n\n| 文件 | 职责 |\n|---|---|\n| `deploy.ps1` | 通用部署引擎（配置化、插拔式，通道定义读 channels.json） |\n| `publish_file.py` | 单文件产物发布器（single-file 通道，支持 subpath 子路径发布，如 legacy/） |\n| `channels.json` | 通道配置唯一事实源：repo / dist / rootFiles / rootDirs / protectFiles / subpath / 重试参数；现 3 通道：rider-data（dist 整树）+ capacity-monitor / assessment-legacy（单文件，legacy 子路径） |\n| `deploy-when-up.ps1` | 断网守护发布：每 20 秒探测 GitHub 连通，恢复后自动补跑 `deploy.ps1`（-Channel 默认 rider-data；-MaxWaitMin 默认 60 分钟超时退出码 2；R80 沉淀） |\n| ~~audit.ps1~~ | 已迁出（2026-10-17）：审计属调度型任务工程，现位于 `pro\\deploy-audit\\audit.ps1`（目录名=任务ID；报告 audit_last.json 同步迁至其目录下） |\n\n## 用法\n\n```\npwsh -File deploy.ps1 -Channel rider-data -Mode preview   # 仅校验配置与路径，不部署\npwsh -File deploy.ps1 -Channel rider-data -Mode cutover   # 正式部署（默认通道可省略 -Channel）\npwsh -File deploy.ps1 -SkipPull                           # 网络波动时离线直发（推送阶段仍重试）\npwsh -File pro\\deploy-audit\\audit.ps1                    # 部署体系审计 13 项（通道/门禁/新鲜度/调度/架构合规/补发/日志清扫/编排完整性/断链自愈/发布清单与回滚记录；也可 sched\\run_task.ps1 -Id deploy-audit；只读：-NoHeal 或 -Id deploy-audit-ro）\n```\n\n## 通道要点（rider-data）\n\n- `repo`：`_repo`（工程根下）（线上仓库）｜`dist`：`frontend\\dist`（工程根下）\n- `rootFiles`：随部署覆盖的根文件清单；`rootDirs`：assets / data 整目录覆盖\n- `protectFiles`：`rider_agreement.html` 部署时跳过（手工维护页，不构建产物覆盖）\n- **单文件产物**：`capacity_monitor_latest.html`（运力监控每日看板）走 `publish_file.py`（capacity-monitor 单文件通道）提交到 repo，不经 dist\n- **考核引擎版遗留板**：`legacy/delivery-assessment-dashboard(-oct).html` 走 assessment-legacy 单文件通道（subpath 发布；换月板由 publish_file.py `--src/--dest` 指定，channels.json 零改动）；线上根路径同名页面为渲染层 Vue 版，由 rider-data dist 整树通道覆盖\n- `deploy.ps1` 与 `publish_file.py` 同为系统级发布器：前者部署 dist 整树，后者发布单文件产物，均由 `channels.json` 驱动；全工程上线动作唯一入口在 deploy\\（kaohe-daily 管线已接入，不再绕行技能发布器）\n- **发布后强制校验（B1，remote==local）**：两者推送成功后均强制校验远端分支指针 == 本地 HEAD——publish_file.py 另比对远端 blob（内容级），不通过 fail-closed 退出码非 0（本地提交已就绪，重跑补发）；deploy.ps1 校验块见 push 成功后（3 轮重试后仍不齐则 throw）\n- **工程覆盖闭环（B1）**：`channels.json` 顶层 `projectCoverage` 登记每个子工程的发布通道名或 `\"local-only\"`（如 xsp-weekly 周报产物为本地 xlsx，无线上化需求）；lib.publish.coverage_gaps() 与 kaohe selftest T104 常驻校验覆盖面闭环，新增工程未登记即红\n- **原子发布语义（B2）**：两个发布器均不再直覆产物——先写 `<目标>.staging` 临时名并校验（publish_file.py filecmp 逐字节 / deploy.ps1 MD5），失守即中止（旧版本始终在位，失败态不可见）；校验通过后旧版本备份进 `deploy\\.rollback\\` 并写 `<channel>.pointer.json` 回滚指针，再原子改名（os.replace / Move-Item）替换。`publish_file.py --rollback <通道>` 一键回退上一版本（恢复→提交→推送→远端校验，回滚前先备份当前版本，支持回滚的回滚）；deploy.ps1 finally 自动清理 staging 残留（防被 git add 误收）\n- **发布清单与回滚记录（B3）**：deploy-audit 第 13 项逐通道取主产物 git 版本指针（哪板/哪版本/何时），校验回滚指针双形态（单文件 backup 文件 / 整树 backupDir 目录）与备份在位性（备份缺失=一键回退能力失效即告）；audit_last.json 新增 `publishList`（发布清单一屏可查），audit_history.jsonl 每行追加 `publishHeads` 版本指针 + `rollbackArmed` 回滚可用通道\n\n## 新增看板通道\n\n在 `channels.json` 复制一个 channel 条目，改 repo/dist/文件清单，然后 `deploy.ps1 -Channel 新通道名` 即可。\n\n## 调用方（谁在用本目录）\n\n- `frontend\\scripts\\refresh.ps1`（一键刷新的第 5 步）\n- `kaohe-daily\\kaohe_pipeline.py`（考核前端回灌阶段；项目层路径为 pro\\kaohe-daily，目录名=任务ID）\n- `deploy\\publish_file.py`（单文件发布器，读 channels.json 的 single-file 通道；每日管线步骤 8 自动调用）\n\n\n## 更新 SOP（主通道 / 运营后台）\n\n本地完善与校验路径（**本环境默认不自动 push**；未获用户明确批准前，禁止对 `_repo` / GitHub Pages 真实同步发布）：\n\n1. **构建**：在 `frontend\\` 执行 `npm run build`（或项目惯例 `pwsh scripts\\refresh.ps1` 全链；仅改渲染层时 build 即可）。\n2. **运营后台随 root 发布**：`admin.html` 已登记在 `vite.config.js` input、`pages.js`（`siteEntriesOf`）与 `channels.json` → `rider-data.rootFiles`；构建后随 dist 整树 / root 通道覆盖上线（assets 由 `rootDirs: [\"assets\",\"data\"]` 一并带上）。\n3. **先只读审计再决定是否 heal**：推荐 `pwsh sched\\run_task.ps1 -Id deploy-audit-ro`，或 `pwsh -File pro\\deploy-audit\\audit.ps1 -NoHeal`（`-ReadOnly` 同义）。**不要**默认 `run_task -Auto` / 无 `-NoHeal` 的 heal 外发；确认缺口后再显式跑 `deploy-audit`。\n4. **权限 / SSO**：公开 GitHub Pages 为静态站，无真实 IdP；前端 soft-gate + 矩阵预览（不写盘）。内网反代注入会话见 `frontend\\docs\\sso-reverse-proxy.md`。\n5. **正式上线**（需用户明确批准后再执行）：`pwsh -File deploy\\deploy.ps1 -Channel rider-data -Mode preview` 校验 → 批准后 `-Mode cutover`（或经 `frontend\\scripts\\refresh.ps1` 第 5 步）。本批 / 本环境默认停在 preview 与只读审计。\n",
+        "outline": [
+          "deploy — 全工程唯一部署基建",
+          "文件",
+          "用法",
+          "通道要点（rider-data）",
+          "新增看板通道",
+          "调用方（谁在用本目录）",
+          "更新 SOP（主通道 / 运营后台）"
+        ],
+        "chars": 3964,
+        "truncated": false
+      }
     }
   ]
 }
