@@ -1,0 +1,1 @@
+const i=["区域","提交时间","来源","市/区县","站点","解除合作原因","解除合作去向","预计解除合作时间","骑手ID"];function f(t,n){return!Array.isArray(t)||!Array.isArray(n)?[]:n.map(e=>{const a={};for(let r=0;r<t.length;r++)a[t[r]]=e[r];return a})}export{i as R,f as i};
