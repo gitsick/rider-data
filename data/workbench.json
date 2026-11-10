@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 18:42:24",
+  "generatedAt": "2026-11-10 18:50:09",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -2285,7 +2285,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 30.5h）"
+        "overdueText": "运行超时（距上次 30.6h）"
       },
       "timer": null,
       "heal": {
@@ -2518,7 +2518,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 5.4h）"
+        "overdueText": "运行超时（距上次 5.5h）"
       },
       "timer": {
         "state": "ok",
@@ -2903,7 +2903,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-11 02:42:19）"
+      "detail": "本轮发布前置 10 段全过（2026-11-11 02:50:08）"
     },
     {
       "layer": "项目层",
@@ -3536,7 +3536,7 @@
             }
           ]
         },
-        "ageH": 27
+        "ageH": 28
       },
       {
         "name": "r565-visual-patrol",
@@ -3585,7 +3585,7 @@
             }
           ]
         },
-        "ageH": 27
+        "ageH": 28
       }
     ],
     "load": [
@@ -3635,13 +3635,13 @@
         "name": "r565-visual-patrol",
         "pct": 0,
         "sev": "",
-        "ageH": 27
+        "ageH": 28
       },
       {
         "name": "r566-dark-patrol",
         "pct": 0,
         "sev": "",
-        "ageH": 27
+        "ageH": 28
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -3688,12 +3688,12 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 30.5h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 30.6h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 5.4h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 5.5h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4046,8 +4046,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "afd68ff",
-        "at": "2026-11-11T02:39:00+08:00",
+        "hash": "4038405",
+        "at": "2026-11-11T02:42:53+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4146,21 +4146,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-11 02:42:19",
+    "runAt": "2026-11-11 02:50:08",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 11.5,
+        "seconds": 8.5,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -4172,19 +4172,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 46.5,
+        "seconds": 41.1,
         "note": "npm test pass=1479 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.2,
+        "seconds": 7.4,
         "note": ""
       },
       {
@@ -4202,37 +4202,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 22.3,
+        "seconds": 25,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 25.8,
+        "seconds": 26.4,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 160,
-        "note": "拷贝回验 130 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 45.7,
-        "note": "指纹+探针 assets/SchemaBanner-COsdCBK2.js 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-09 12:27:19",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 782.2,
-      "fails": []
-    },
     {
       "runAt": "2026-11-09 12:32:14",
       "scope": "complete",
@@ -4434,6 +4415,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 319.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-11 02:50:08",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 109.6,
       "fails": []
     }
   ],
@@ -5105,7 +5093,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 18:42:24",
+      "at": "2026-11-10 18:50:09",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5200,7 +5188,7 @@
   "perf": {
     "assets": {
       "count": 90,
-      "totalKB": 1309.6,
+      "totalKB": 1312.2,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
@@ -5219,7 +5207,7 @@
           "kb": 51.3
         },
         {
-          "name": "workbench-jTdFt3Pr.js",
+          "name": "workbench-D_-5eBix.js",
           "kb": 47.2
         },
         {
@@ -5238,7 +5226,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 1917.5,
+      "totalKB": 1971.7,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5253,12 +5241,12 @@
           "kb": 328.7
         },
         {
-          "name": "rider-agreements.json",
-          "kb": 161.7
+          "name": "workbench.json",
+          "kb": 193.8
         },
         {
-          "name": "workbench.json",
-          "kb": 139.7
+          "name": "rider-agreements.json",
+          "kb": 161.7
         },
         {
           "name": "assessment/oct.json",
