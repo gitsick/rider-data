@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 00:29:30",
+  "generatedAt": "2026-11-10 11:43:05",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -1228,8 +1228,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-10 07:53:24",
-        "durationSec": 1127,
+        "finishedAt": "2026-11-10 08:46:56",
+        "durationSec": 3187,
         "note": ""
       },
       "monitor": {
@@ -1250,11 +1250,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-26 20:16:44",
-          "durationSec": 3824.8
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 20:16:45",
@@ -1515,6 +1510,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-10 07:53:24",
           "durationSec": 1127
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-10 08:46:56",
+          "durationSec": 3187
         }
       ],
       "gaps": {
@@ -1646,7 +1646,6 @@
         "passCount": 15
       },
       "durTrend": [
-        1146,
         2290,
         1826,
         11016,
@@ -1659,7 +1658,8 @@
         2066,
         2522,
         1924,
-        1127
+        1127,
+        3187
       ]
     },
     {
@@ -1674,7 +1674,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:30",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -1706,7 +1710,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:30",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -2285,7 +2293,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 12.3h）"
+        "overdueText": "运行超时（距上次 23.5h）"
       },
       "timer": null,
       "heal": {
@@ -2517,7 +2525,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 13.8h）"
+        "overdueText": "运行超时（距上次 25.1h）"
       },
       "timer": {
         "state": "ok",
@@ -2927,7 +2935,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "7/9 任务正常 · 2 逾期 · 近 30 天触发断档 3 天"
+      "detail": "5/9 任务正常 · 4 逾期 · 近 30 天触发断档 3 天"
     },
     {
       "layer": "部署层",
@@ -2945,7 +2953,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 0h 前"
+      "detail": "2 项目，最新产出 11h 前"
     },
     {
       "layer": "渲染层",
@@ -2984,7 +2992,7 @@
           "size": 1426639
         }
       ],
-      "ageHours": 8,
+      "ageHours": 19,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3021,7 +3029,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 0,
+      "ageHours": 11,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-10",
@@ -3230,61 +3238,71 @@
         "name": "r570-pending-card-exempt",
         "files": 1,
         "latestAt": "2026-11-09 15:36:14",
-        "ageH": 8
+        "ageH": 20
       },
       {
         "name": "r569-heal-intent-exempt",
         "files": 1,
         "latestAt": "2026-11-09 15:25:19",
-        "ageH": 9
+        "ageH": 20
       },
       {
         "name": "r568-audit-trace-surface",
         "files": 1,
         "latestAt": "2026-11-09 15:15:01",
-        "ageH": 9
+        "ageH": 20
       },
       {
         "name": "r567-remaining-pages-patrol",
         "files": 1,
         "latestAt": "2026-11-09 14:59:53",
-        "ageH": 9
+        "ageH": 20
       },
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
         "latestAt": "2026-11-09 14:48:33",
-        "ageH": 9
+        "ageH": 20
       },
       {
         "name": "r566-dark-patrol",
         "files": 1,
         "latestAt": "2026-11-09 14:48:33",
-        "ageH": 9
+        "ageH": 20
       },
       {
         "name": "r565-visual-patrol",
         "files": 1,
         "latestAt": "2026-11-09 14:45:09",
-        "ageH": 9
+        "ageH": 20
       },
       {
         "name": "r564-pull-trace-wiring",
         "files": 4,
         "latestAt": "2026-11-09 14:36:53",
-        "ageH": 9
+        "ageH": 21
       }
     ]
   },
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 12.3h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：考核看板发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 13.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：新商评周报发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 23.5h），需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 25.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3632,8 +3650,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "45345b9",
-        "at": "2026-11-10T08:26:15+08:00",
+        "hash": "d4aac0d",
+        "at": "2026-11-10T08:31:19+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4691,7 +4709,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 00:29:30",
+      "at": "2026-11-10 11:43:05",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -4777,14 +4795,14 @@
   "perf": {
     "assets": {
       "count": 45,
-      "totalKB": 1280,
+      "totalKB": 1279.9,
       "top": [
         {
           "name": "vendor-echarts-DzrHUZAj.js",
           "kb": 575.1
         },
         {
-          "name": "main-RRVDGzue.js",
+          "name": "main-Cvlf7Y04.js",
           "kb": 161
         },
         {
@@ -4792,30 +4810,30 @@
           "kb": 74
         },
         {
-          "name": "workbench-CDQrXymn.js",
+          "name": "workbench-D3jBNfI_.js",
           "kb": 73.5
         },
         {
-          "name": "rider_dashboard-DbVuX4eC.js",
+          "name": "rider_dashboard-Co1ij4Uo.js",
           "kb": 57.5
         },
         {
-          "name": "swRegister-DZyP3cje.css",
+          "name": "swRegister-DQPs3Qfc.css",
           "kb": 51.3
         },
         {
-          "name": "swRegister-BX09KzOv.js",
+          "name": "swRegister-CbRRStLA.js",
           "kb": 45.2
         },
         {
-          "name": "admin-D4e-QnHD.js",
+          "name": "admin-CusPealv.js",
           "kb": 40.3
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 1907.2,
+      "totalKB": 1907.8,
       "top": [
         {
           "name": "rider-detail.json",
@@ -4835,7 +4853,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 129.2
+          "kb": 129.8
         },
         {
           "name": "assessment/oct.json",
