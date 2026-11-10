@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 19:28:14",
+  "generatedAt": "2026-11-10 19:33:10",
   "runDate": "2026-11-10",
   "tasks": [
     {
@@ -2285,7 +2285,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 31.3h）"
+        "overdueText": "运行超时（距上次 31.4h）"
       },
       "timer": null,
       "heal": {
@@ -2518,7 +2518,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 6.1h）"
+        "overdueText": "运行超时（距上次 6.2h）"
       },
       "timer": {
         "state": "ok",
@@ -2545,10 +2545,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-11 02:13:34",
+    "auditedAt": "2026-11-11 03:33:09",
     "status": "PASS",
-    "pass": 54,
-    "warn": 1,
+    "pass": 53,
+    "warn": 2,
     "fail": 0,
     "checks": [
       {
@@ -2584,7 +2584,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 369fe3d 2026-11-11 02:50:13 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: a40352c 2026-11-11 03:30:02 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2592,9 +2592,9 @@
         "msg": "dist 根文件齐全（16 个）"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "capacity-monitor",
-        "msg": "单文件产物存在（26 小时前生成）"
+        "msg": "每日产物已 27 小时未刷新（阈值 26h）——每日管线可能断链/失败"
       },
       {
         "level": "PASS",
@@ -2609,7 +2609,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 30 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "monitor_status 31 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "PASS",
@@ -2739,7 +2739,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行 30h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "[monitor-aggregate] 运行 31h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "PASS",
@@ -2769,7 +2769,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（5h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（6h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -2809,7 +2809,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-11 02:50:11 替换，含 3 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-11 03:30:01 替换，含 2 文件）"
       },
       {
         "level": "PASS",
@@ -2828,10 +2828,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-09 20:12:35",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-09 20:13:48",
         "status": "PASS"
@@ -2883,6 +2879,10 @@
       {
         "auditedAt": "2026-11-11 02:13:34",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-11 03:33:09",
+        "status": "PASS"
       }
     ]
   },
@@ -2897,13 +2897,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-11 02:13:34）"
+      "detail": "审计 PASS（2026-11-11 03:33:09）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-11 03:28:14）"
+      "detail": "上轮全链 12 段全过（2026-11-11 03:33:04）"
     },
     {
       "layer": "项目层",
@@ -3712,12 +3712,12 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 31.3h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 31.4h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6.1h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6.2h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3727,7 +3727,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-11-11 02:13:34）",
+      "text": "审计有 2 项警告（2026-11-11 03:33:09）",
       "anchor": "sec-audit"
     },
     {
@@ -4075,8 +4075,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "f12905f",
-        "at": "2026-11-11T03:23:07+08:00",
+        "hash": "a40352c",
+        "at": "2026-11-11T03:30:02+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4175,10 +4175,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-11 03:28:14",
+    "runAt": "2026-11-11 03:33:04",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -4239,17 +4239,22 @@
         "pass": true,
         "seconds": 26.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 258.1,
+        "note": "拷贝回验 130 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 31.2,
+        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-09 13:01:00",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 462.4,
-      "fails": []
-    },
     {
       "runAt": "2026-11-09 13:14:12",
       "scope": "pre-deploy",
@@ -4451,6 +4456,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 97,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-11 03:33:04",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 386.3,
       "fails": []
     }
   ],
@@ -5122,7 +5134,7 @@
     },
     {
       "date": "2026-11-10",
-      "at": "2026-11-10 19:28:14",
+      "at": "2026-11-10 19:33:10",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5255,7 +5267,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2000.6,
+      "totalKB": 2000.3,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5271,7 +5283,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 194.5
+          "kb": 194.2
         },
         {
           "name": "rider-agreements.json",
