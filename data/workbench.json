@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-11 18:37:28",
+  "generatedAt": "2026-11-11 19:14:44",
   "runDate": "2026-11-11",
   "tasks": [
     {
@@ -2295,7 +2295,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 54.4h）"
+        "overdueText": "运行超时（距上次 55.1h）"
       },
       "timer": null,
       "heal": {
@@ -2528,7 +2528,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 29.3h）"
+        "overdueText": "运行超时（距上次 29.9h）"
       },
       "timer": {
         "state": "ok",
@@ -2913,13 +2913,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 13 段全过（2026-11-12 02:37:00）"
+      "detail": "本轮发布前置 10 段全过（2026-11-12 03:14:43）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 3h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 4h 前"
     },
     {
       "layer": "渲染层",
@@ -2958,7 +2958,7 @@
           "size": 1426639
         }
       ],
-      "ageHours": 3,
+      "ageHours": 4,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3208,7 +3208,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-11 01:19:33",
+        "latestAt": "2026-11-11 19:10:28",
         "flow": {
           "done": false,
           "current": "分析",
@@ -3233,8 +3233,8 @@
               "role": "builder",
               "label": "开发",
               "state": "done",
-              "at": "2026-11-11 01:19:33",
-              "durH": 590
+              "at": "2026-11-11 19:10:28",
+              "durH": 608
             },
             {
               "role": "reviewer",
@@ -3252,10 +3252,10 @@
             }
           ]
         },
-        "ageH": 17,
-        "totalH": 595,
+        "ageH": 0,
+        "totalH": 613,
         "deltaH": null,
-        "gapH": 13
+        "gapH": 31
       },
       {
         "name": "r571-style-unify",
@@ -3512,7 +3512,7 @@
             }
           ]
         },
-        "ageH": 51,
+        "ageH": 52,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3564,7 +3564,7 @@
             }
           ]
         },
-        "ageH": 51,
+        "ageH": 52,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3616,7 +3616,7 @@
             }
           ]
         },
-        "ageH": 51,
+        "ageH": 52,
         "totalH": null,
         "deltaH": null,
         "gapH": null
@@ -3644,8 +3644,8 @@
         "label": "开发",
         "rounds": 1,
         "done": 1,
-        "avgDurH": 590,
-        "maxDurH": 590
+        "avgDurH": 608,
+        "maxDurH": 608
       },
       {
         "role": "reviewer",
@@ -3669,19 +3669,19 @@
         "name": "r565-visual-patrol",
         "pct": 0,
         "sev": "warn",
-        "ageH": 51
+        "ageH": 52
       },
       {
         "name": "r566-dark-patrol",
         "pct": 0,
         "sev": "warn",
-        "ageH": 51
+        "ageH": 52
       },
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 0,
         "sev": "warn",
-        "ageH": 51
+        "ageH": 52
       },
       {
         "name": "r568-audit-trace-surface",
@@ -3711,7 +3711,7 @@
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 17
+        "ageH": 0
       }
     ],
     "stall": {
@@ -3722,12 +3722,12 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 54.4h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 55.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 29.3h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 29.9h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4085,8 +4085,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "da3ec3e",
-        "at": "2026-11-12T02:34:06+08:00",
+        "hash": "78e390b",
+        "at": "2026-11-12T02:38:59+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4185,27 +4185,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-12 02:37:00",
+    "runAt": "2026-11-12 03:14:43",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
-      {
-        "name": "excel",
-        "pass": true,
-        "seconds": 9.6,
-        "note": ""
-      },
       {
         "name": "visits",
         "pass": true,
-        "seconds": 9.6,
+        "seconds": 10,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -4223,13 +4217,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 63.1,
-        "note": "npm test pass=1545 fail=0"
+        "seconds": 51.1,
+        "note": "npm test pass=1560 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 11.5,
+        "seconds": 8.9,
         "note": ""
       },
       {
@@ -4247,37 +4241,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 32.6,
+        "seconds": 28.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 64.4,
+        "seconds": 31.8,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 240.6,
-        "note": "拷贝回验 131 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 46.1,
-        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-11 04:46:10",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 460.9,
-      "fails": []
-    },
     {
       "runAt": "2026-11-11 04:48:50",
       "scope": "complete",
@@ -4479,6 +4454,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 479.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-12 03:14:43",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 132.4,
       "fails": []
     }
   ],
@@ -5178,7 +5160,7 @@
     },
     {
       "date": "2026-11-11",
-      "at": "2026-11-11 18:37:28",
+      "at": "2026-11-11 19:14:44",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5273,45 +5255,45 @@
   "perf": {
     "assets": {
       "count": 91,
-      "totalKB": 1388.4,
+      "totalKB": 1391.1,
       "top": [
         {
           "name": "vendor-echarts-CVJelJj7.js",
           "kb": 599.2
         },
         {
-          "name": "main-Ct75XDvm.js",
+          "name": "main-D4waYrLF.js",
           "kb": 93.4
         },
         {
-          "name": "vendor-vue-D_rhaTfS.js",
+          "name": "vendor-vue-Dve98cKa.js",
           "kb": 76.8
         },
         {
-          "name": "swRegister-UyeIq3Nr.css",
-          "kb": 51.6
+          "name": "swRegister-C5dy0Q5r.css",
+          "kb": 52.3
         },
         {
-          "name": "workbench-Bsd5XyqO.js",
+          "name": "workbench-DDFvFAG3.js",
           "kb": 48.3
         },
         {
-          "name": "swRegister-CgcpMb6N.js",
+          "name": "swRegister-CfSHjoFN.js",
           "kb": 45.2
         },
         {
-          "name": "MonthlyTab-Bkh4Mu9P.js",
+          "name": "MonthlyTab-DF2rHJTr.js",
           "kb": 40.7
         },
         {
-          "name": "rider_dashboard-DiHJN8YR.js",
-          "kb": 28.7
+          "name": "rider_dashboard-BOD_sYJN.js",
+          "kb": 29
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 2044,
+      "totalKB": 2044.2,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5327,7 +5309,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 196
+          "kb": 196.3
         },
         {
           "name": "rider-agreements.json",
