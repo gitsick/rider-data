@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-11 00:58:47",
+  "generatedAt": "2026-11-11 01:09:04",
   "runDate": "2026-11-11",
   "tasks": [
     {
@@ -2290,7 +2290,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 36.8h）"
+        "overdueText": "运行超时（距上次 37h）"
       },
       "timer": null,
       "heal": {
@@ -2523,7 +2523,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 11.6h）"
+        "overdueText": "运行超时（距上次 11.8h）"
       },
       "timer": {
         "state": "ok",
@@ -2973,7 +2973,7 @@
           "size": 1426639
         }
       ],
-      "ageHours": 32,
+      "ageHours": 33,
       "stale": true,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3527,7 +3527,7 @@
             }
           ]
         },
-        "ageH": 33,
+        "ageH": 34,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3696,7 +3696,7 @@
         "name": "r567-remaining-pages-patrol",
         "pct": 0,
         "sev": "",
-        "ageH": 33
+        "ageH": 34
       },
       {
         "name": "r568-audit-trace-surface",
@@ -3737,12 +3737,12 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 36.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 37h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 11.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 11.8h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3757,7 +3757,7 @@
     },
     {
       "level": "WARN",
-      "text": "产物陈旧：通用运力监控（32h 未更新，阈值 26h）",
+      "text": "产物陈旧：通用运力监控（33h 未更新，阈值 26h）",
       "anchor": "sec-fresh"
     },
     {
@@ -4100,8 +4100,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "3a14578",
-        "at": "2026-11-11T08:28:41+08:00",
+        "hash": "4039d72",
+        "at": "2026-11-11T09:01:03+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -5187,7 +5187,7 @@
     },
     {
       "date": "2026-11-11",
-      "at": "2026-11-11 00:58:47",
+      "at": "2026-11-11 01:09:04",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5282,7 +5282,7 @@
   "perf": {
     "assets": {
       "count": 91,
-      "totalKB": 1366.1,
+      "totalKB": 1367.9,
       "top": [
         {
           "name": "vendor-echarts-CVJelJj7.js",
@@ -5313,14 +5313,14 @@
           "kb": 40.7
         },
         {
-          "name": "rider_dashboard-Bgs2ysVM.js",
+          "name": "rider_dashboard-Dl7cV_WP.js",
           "kb": 25.9
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 2037.8,
+      "totalKB": 2038.7,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5336,7 +5336,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 195.9
+          "kb": 196.8
         },
         {
           "name": "rider-agreements.json",
