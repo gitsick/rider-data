@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-11 14:53:51",
+  "generatedAt": "2026-11-11 15:39:37",
   "runDate": "2026-11-11",
   "tasks": [
     {
@@ -2303,7 +2303,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 50.7h）"
+        "overdueText": "运行超时（距上次 51.5h）"
       },
       "timer": null,
       "heal": {
@@ -2536,7 +2536,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 25.6h）"
+        "overdueText": "运行超时（距上次 26.3h）"
       },
       "timer": {
         "state": "ok",
@@ -2966,13 +2966,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-11 22:53:45）"
+      "detail": "本轮发布前置 10 段全过（2026-11-11 23:39:36）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 1h 前"
     },
     {
       "layer": "渲染层",
@@ -3011,7 +3011,7 @@
           "size": 1426639
         }
       ],
-      "ageHours": 0,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3053,7 +3053,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 14,
+      "ageHours": 15,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-11",
@@ -3305,7 +3305,7 @@
             }
           ]
         },
-        "ageH": 13,
+        "ageH": 14,
         "totalH": 595,
         "deltaH": null,
         "gapH": 13
@@ -3357,7 +3357,7 @@
             }
           ]
         },
-        "ageH": 26,
+        "ageH": 27,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -3369,8 +3369,8 @@
         "flow": {
           "done": false,
           "current": "分析",
-          "stalled": false,
-          "sev": "",
+          "stalled": true,
+          "sev": "warn",
           "chain": [
             {
               "role": "lead",
@@ -3409,7 +3409,7 @@
             }
           ]
         },
-        "ageH": 47,
+        "ageH": 48,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3421,8 +3421,8 @@
         "flow": {
           "done": false,
           "current": "分析",
-          "stalled": false,
-          "sev": "",
+          "stalled": true,
+          "sev": "warn",
           "chain": [
             {
               "role": "lead",
@@ -3461,7 +3461,7 @@
             }
           ]
         },
-        "ageH": 47,
+        "ageH": 48,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3473,8 +3473,8 @@
         "flow": {
           "done": false,
           "current": "分析",
-          "stalled": false,
-          "sev": "",
+          "stalled": true,
+          "sev": "warn",
           "chain": [
             {
               "role": "lead",
@@ -3513,7 +3513,7 @@
             }
           ]
         },
-        "ageH": 47,
+        "ageH": 48,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3525,8 +3525,8 @@
         "flow": {
           "done": false,
           "current": "分析",
-          "stalled": false,
-          "sev": "",
+          "stalled": true,
+          "sev": "warn",
           "chain": [
             {
               "role": "lead",
@@ -3565,7 +3565,7 @@
             }
           ]
         },
-        "ageH": 47,
+        "ageH": 48,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3733,38 +3733,38 @@
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 0,
-        "sev": "",
-        "ageH": 47
+        "sev": "warn",
+        "ageH": 48
       },
       {
         "name": "r568-audit-trace-surface",
         "pct": 0,
-        "sev": "",
-        "ageH": 47
+        "sev": "warn",
+        "ageH": 48
       },
       {
         "name": "r569-heal-intent-exempt",
         "pct": 0,
-        "sev": "",
-        "ageH": 47
+        "sev": "warn",
+        "ageH": 48
       },
       {
         "name": "r570-pending-card-exempt",
         "pct": 0,
-        "sev": "",
-        "ageH": 47
+        "sev": "warn",
+        "ageH": 48
       },
       {
         "name": "r571-style-unify",
         "pct": 0,
         "sev": "",
-        "ageH": 26
+        "ageH": 27
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 13
+        "ageH": 14
       }
     ],
     "stall": {
@@ -3785,12 +3785,12 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 50.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 51.5h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 25.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 26.3h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3810,7 +3810,7 @@
     },
     {
       "level": "WARN",
-      "text": "Agent 接力停滞 ≥48h：r566-dark-patrol 停在「分析」（阈值可调 pro\\config\\teamflow-stall.json）",
+      "text": "Agent 接力停滞 ≥48h：r570-pending-card-exempt 停在「分析」（阈值可调 pro\\config\\teamflow-stall.json）",
       "anchor": "sec-teamflow"
     },
     {
@@ -4148,8 +4148,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "122fc21",
-        "at": "2026-11-11T22:48:09+08:00",
+        "hash": "b4c0ba4",
+        "at": "2026-11-11T22:53:55+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4248,21 +4248,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-11 22:53:45",
+    "runAt": "2026-11-11 23:39:36",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.9,
+        "seconds": 9.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -4274,19 +4274,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 93.8,
-        "note": "npm test pass=1522 fail=0"
+        "seconds": 103.6,
+        "note": "npm test pass=1537 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.7,
+        "seconds": 7.8,
         "note": ""
       },
       {
@@ -4304,37 +4304,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 24.1,
+        "seconds": 23.1,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 30.9,
+        "seconds": 25.4,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 382.2,
-        "note": "拷贝回验 129 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 68.4,
-        "note": "指纹+探针 assets/SchemaBanner-DToa4Srx.js 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-11 02:10:39",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 119.1,
-      "fails": []
-    },
     {
       "runAt": "2026-11-11 02:13:27",
       "scope": "complete",
@@ -4536,6 +4517,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 613.6,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-11 23:39:36",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 170.7,
       "fails": []
     }
   ],
@@ -5235,7 +5223,7 @@
     },
     {
       "date": "2026-11-11",
-      "at": "2026-11-11 14:53:51",
+      "at": "2026-11-11 15:39:37",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5329,8 +5317,8 @@
   ],
   "perf": {
     "assets": {
-      "count": 89,
-      "totalKB": 1374.4,
+      "count": 91,
+      "totalKB": 1385.6,
       "top": [
         {
           "name": "vendor-echarts-CVJelJj7.js",
@@ -5361,14 +5349,14 @@
           "kb": 40.7
         },
         {
-          "name": "rider_dashboard-BrOYnM_n.js",
-          "kb": 27.8
+          "name": "rider_dashboard-BhcPUkWZ.js",
+          "kb": 28.6
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 2034.4,
+      "totalKB": 2034.6,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5384,7 +5372,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 198.3
+          "kb": 198.5
         },
         {
           "name": "rider-agreements.json",
