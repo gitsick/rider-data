@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-11 01:09:04",
+  "generatedAt": "2026-11-11 01:22:48",
   "runDate": "2026-11-11",
   "tasks": [
     {
@@ -2290,7 +2290,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 37h）"
+        "overdueText": "运行超时（距上次 37.2h）"
       },
       "timer": null,
       "heal": {
@@ -2523,7 +2523,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 11.8h）"
+        "overdueText": "运行超时（距上次 12h）"
       },
       "timer": {
         "state": "ok",
@@ -2928,7 +2928,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-11 08:58:15）"
+      "detail": "本轮发布前置 10 段全过（2026-11-11 09:22:47）"
     },
     {
       "layer": "项目层",
@@ -3223,7 +3223,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 16,
-        "latestAt": "2026-11-10 22:52:05",
+        "latestAt": "2026-11-11 01:19:33",
         "flow": {
           "done": false,
           "current": "分析",
@@ -3248,8 +3248,8 @@
               "role": "builder",
               "label": "开发",
               "state": "done",
-              "at": "2026-11-10 22:52:05",
-              "durH": 587
+              "at": "2026-11-11 01:19:33",
+              "durH": 590
             },
             {
               "role": "reviewer",
@@ -3267,10 +3267,10 @@
             }
           ]
         },
-        "ageH": 2,
-        "totalH": 593,
+        "ageH": 0,
+        "totalH": 595,
         "deltaH": null,
-        "gapH": 11
+        "gapH": 13
       },
       {
         "name": "r571-style-unify",
@@ -3319,7 +3319,7 @@
             }
           ]
         },
-        "ageH": 12,
+        "ageH": 13,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -3475,7 +3475,7 @@
             }
           ]
         },
-        "ageH": 33,
+        "ageH": 34,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3659,8 +3659,8 @@
         "label": "开发",
         "rounds": 1,
         "done": 1,
-        "avgDurH": 587,
-        "maxDurH": 587
+        "avgDurH": 590,
+        "maxDurH": 590
       },
       {
         "role": "reviewer",
@@ -3702,7 +3702,7 @@
         "name": "r568-audit-trace-surface",
         "pct": 0,
         "sev": "",
-        "ageH": 33
+        "ageH": 34
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -3720,13 +3720,13 @@
         "name": "r571-style-unify",
         "pct": 0,
         "sev": "",
-        "ageH": 12
+        "ageH": 13
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 2
+        "ageH": 0
       }
     ],
     "stall": {
@@ -3737,12 +3737,12 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 37h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 37.2h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 11.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 12h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4100,8 +4100,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "4039d72",
-        "at": "2026-11-11T09:01:03+08:00",
+        "hash": "73caa01",
+        "at": "2026-11-11T09:16:48+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4200,93 +4200,74 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-11 08:58:15",
+    "runAt": "2026-11-11 09:22:47",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.2,
+        "seconds": 8.5,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.8,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 33.8,
+        "seconds": 92,
         "note": "npm test pass=1503 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 5.4,
+        "seconds": 11,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.1,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 22.7,
+        "seconds": 39.8,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 23.7,
+        "seconds": 29.9,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 1731.7,
-        "note": "拷贝回验 131 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 69.8,
-        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-10 08:09:56",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 138,
-      "fails": []
-    },
     {
       "runAt": "2026-11-10 08:14:25",
       "scope": "complete",
@@ -4488,6 +4469,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 1893.9,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-11 09:22:47",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 183.5,
       "fails": []
     }
   ],
@@ -5187,7 +5175,7 @@
     },
     {
       "date": "2026-11-11",
-      "at": "2026-11-11 01:09:04",
+      "at": "2026-11-11 01:22:48",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5313,18 +5301,18 @@
           "kb": 40.7
         },
         {
-          "name": "rider_dashboard-Dl7cV_WP.js",
+          "name": "rider_dashboard-BO9PUvEc.js",
           "kb": 25.9
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 2038.7,
+      "totalKB": 2032.9,
       "top": [
         {
           "name": "rider-detail.json",
-          "kb": 539.7
+          "kb": 536.4
         },
         {
           "name": "rider_base.json",
@@ -5332,7 +5320,7 @@
         },
         {
           "name": "rider-index.json",
-          "kb": 384.7
+          "kb": 382.3
         },
         {
           "name": "workbench.json",
@@ -5340,7 +5328,7 @@
         },
         {
           "name": "rider-agreements.json",
-          "kb": 163.3
+          "kb": 163.2
         },
         {
           "name": "assessment/oct.json",
