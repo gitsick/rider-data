@@ -1,7 +1,7 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-10 23:55:50",
-  "runDate": "2026-11-10",
+  "generatedAt": "2026-11-11 00:02:51",
+  "runDate": "2026-11-11",
   "tasks": [
     {
       "id": "kaohe-daily",
@@ -292,10 +292,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-12",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-13",
             "state": "pre"
           },
@@ -410,10 +406,14 @@
           {
             "date": "2026-11-10",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-11",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-18",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 1,
         "passCount": 23
       },
@@ -460,7 +460,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-10 08:17"
+        "lastRunAt": "2026-11-11 08:00"
       },
       "heal": {
         "can": false,
@@ -626,10 +626,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-12",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-13",
             "state": "pre"
           },
@@ -744,10 +740,14 @@
           {
             "date": "2026-11-10",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-11",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 2,
+        "gapCount": 3,
         "failCount": 0,
         "passCount": 23
       },
@@ -1075,10 +1075,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-12",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-13",
             "state": "pre"
           },
@@ -1193,10 +1189,14 @@
           {
             "date": "2026-11-10",
             "state": "gap"
+          },
+          {
+            "date": "2026-11-11",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-23",
-        "gapCount": 3,
+        "gapCount": 4,
         "failCount": 0,
         "passCount": 16
       },
@@ -1520,10 +1520,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-12",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-13",
             "state": "pre"
           },
@@ -1638,10 +1634,14 @@
           {
             "date": "2026-11-10",
             "state": "pass"
+          },
+          {
+            "date": "2026-11-11",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-26",
-        "gapCount": 0,
+        "gapCount": 1,
         "failCount": 1,
         "passCount": 15
       },
@@ -1960,10 +1960,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-12",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-13",
             "state": "pre"
           },
@@ -2078,10 +2074,14 @@
           {
             "date": "2026-11-10",
             "state": "gap"
+          },
+          {
+            "date": "2026-11-11",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 23,
+        "gapCount": 24,
         "failCount": 0,
         "passCount": 2
       },
@@ -2142,10 +2142,6 @@
       "gaps": {
         "days": [
           {
-            "date": "2026-10-12",
-            "state": "pre"
-          },
-          {
             "date": "2026-10-13",
             "state": "pre"
           },
@@ -2260,10 +2256,14 @@
           {
             "date": "2026-11-10",
             "state": "gap"
+          },
+          {
+            "date": "2026-11-11",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-11-03",
-        "gapCount": 6,
+        "gapCount": 7,
         "failCount": 0,
         "passCount": 2
       },
@@ -2285,7 +2285,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 35.7h）"
+        "overdueText": "运行超时（距上次 35.9h）"
       },
       "timer": null,
       "heal": {
@@ -2299,10 +2299,6 @@
       ],
       "gaps": {
         "days": [
-          {
-            "date": "2026-10-12",
-            "state": "pre"
-          },
           {
             "date": "2026-10-13",
             "state": "pre"
@@ -2418,10 +2414,14 @@
           {
             "date": "2026-11-10",
             "state": "gap"
+          },
+          {
+            "date": "2026-11-11",
+            "state": "gap"
           }
         ],
         "firstDate": "2026-11-09",
-        "gapCount": 1,
+        "gapCount": 2,
         "failCount": 1,
         "passCount": 0
       },
@@ -2518,11 +2518,11 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 10.6h）"
+        "overdueText": "运行超时（距上次 10.7h）"
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-11 00:01"
+        "lastRunAt": "2026-11-11 08:00"
       },
       "heal": {
         "can": false,
@@ -2545,10 +2545,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-11 03:33:09",
+    "auditedAt": "2026-11-11 08:02:50",
     "status": "PASS",
-    "pass": 53,
-    "warn": 2,
+    "pass": 52,
+    "warn": 3,
     "fail": 0,
     "checks": [
       {
@@ -2584,7 +2584,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 003d020 2026-11-11 06:18:04 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 4f0b91b 2026-11-11 07:56:19 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2594,12 +2594,12 @@
       {
         "level": "WARN",
         "item": "capacity-monitor",
-        "msg": "每日产物已 30 小时未刷新（阈值 26h）——每日管线可能断链/失败"
+        "msg": "每日产物已 31 小时未刷新（阈值 26h）——每日管线可能断链/失败"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（29 小时前生成）"
+        "msg": "单文件产物存在（31 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2609,7 +2609,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 34 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "monitor_status 35 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "PASS",
@@ -2619,7 +2619,7 @@
       {
         "level": "WARN",
         "item": "考核取数",
-        "msg": "加盟达标列断供存疑：7 天达标数=0 但总骑手数正常（11-03~11-09）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
+        "msg": "加盟达标列断供存疑：8 天达标数=0 但总骑手数正常（11-03~11-10）——BI 加盟明细「达标/合格有单」分类翻转、全员归入合格有单，页面 0% 为忠实呈现不可当真值解读；建议 BI 侧核查加盟明细达标列断供原因与口径"
       },
       {
         "level": "PASS",
@@ -2739,7 +2739,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行 34h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "[monitor-aggregate] 运行 35h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "PASS",
@@ -2769,7 +2769,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（9h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（10h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -2802,14 +2802,14 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "断链自愈",
-        "msg": "跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
+        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；补跑 kaohe-daily（每日 07:00 主跑 + 10:30 发布自愈）；  [kaohe-daily] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-11 06:18:03 替换，含 2 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-11 07:56:17 替换，含 6 文件）"
       },
       {
         "level": "PASS",
@@ -2828,10 +2828,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-09 20:13:48",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-09 21:55:49",
         "status": "PASS"
@@ -2883,6 +2879,10 @@
       {
         "auditedAt": "2026-11-11 03:33:09",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-11 08:02:50",
+        "status": "PASS"
       }
     ]
   },
@@ -2891,19 +2891,19 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "7/9 任务正常 · 2 逾期 · 近 30 天触发断档 3 天"
+      "detail": "7/9 任务正常 · 2 逾期 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-11 03:33:09）"
+      "detail": "审计 PASS（2026-11-11 08:02:50）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-11 07:55:49）"
+      "detail": "上轮全链 12 段全过（2026-11-11 08:02:24）"
     },
     {
       "layer": "项目层",
@@ -2957,7 +2957,7 @@
       "dataLagThreshold": 2,
       "outage": {
         "since": "2026-11-09",
-        "dayCount": 2,
+        "dayCount": 3,
         "cause": null
       }
     },
@@ -3502,7 +3502,7 @@
             }
           ]
         },
-        "ageH": 32,
+        "ageH": 33,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3671,7 +3671,7 @@
         "name": "r567-remaining-pages-patrol",
         "pct": 0,
         "sev": "",
-        "ageH": 32
+        "ageH": 33
       },
       {
         "name": "r568-audit-trace-surface",
@@ -3712,22 +3712,22 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 35.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 35.9h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 10.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 10.7h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：2 个任务近 30 天共 3 天零留痕（新商评考核周报 2 天 · undefined 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：4 个任务近 30 天共 7 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天 · 骑手解约数据检查与刷新 1 天 · undefined 2 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-11-11 03:33:09）",
+      "text": "审计有 3 项警告（2026-11-11 08:02:50）",
       "anchor": "sec-audit"
     },
     {
@@ -3737,7 +3737,7 @@
     },
     {
       "level": "WARN",
-      "text": "看板数据滞后：通用运力监控 数据日期 2026-11-08（滞后 3 天，超 2 天）——疑似源停发第 2 天（自 2026-11-09 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
+      "text": "看板数据滞后：通用运力监控 数据日期 2026-11-08（滞后 3 天，超 2 天）——疑似源停发第 3 天（自 2026-11-09 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
     },
     {
@@ -4075,8 +4075,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5e5d810",
-        "at": "2026-11-11T07:46:22+08:00",
+        "hash": "4f0b91b",
+        "at": "2026-11-11T07:56:19+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4175,10 +4175,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-11 07:55:49",
+    "runAt": "2026-11-11 08:02:24",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -4239,17 +4239,22 @@
         "pass": true,
         "seconds": 45.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 353.7,
+        "note": "拷贝回验 131 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 40.4,
+        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-09 22:19:03",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 1148.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-10 07:37:45",
       "scope": "pre-deploy",
@@ -4451,6 +4456,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 121.1,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-11 08:02:24",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 515.2,
       "fails": []
     }
   ],
@@ -5147,6 +5159,34 @@
           "status": "PASS"
         }
       ]
+    },
+    {
+      "date": "2026-11-11",
+      "at": "2026-11-11 00:02:51",
+      "score": 80,
+      "grade": "良",
+      "layers": [
+        {
+          "layer": "调度层",
+          "status": "WARN"
+        },
+        {
+          "layer": "部署层",
+          "status": "PASS"
+        },
+        {
+          "layer": "门禁层",
+          "status": "PASS"
+        },
+        {
+          "layer": "项目层",
+          "status": "WARN"
+        },
+        {
+          "layer": "渲染层",
+          "status": "PASS"
+        }
+      ]
     }
   ],
   "outages": [
@@ -5207,9 +5247,9 @@
     {
       "project": "通用运力监控",
       "since": "2026-11-09",
-      "dayCount": 2,
+      "dayCount": 3,
       "lastDataDate": "2026-11-08",
-      "lastSeenAt": "2026-11-10",
+      "lastSeenAt": "2026-11-11",
       "resolvedAt": null,
       "resolvedDataDate": null
     }
@@ -5255,7 +5295,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2026.5,
+      "totalKB": 2026.2,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5271,7 +5311,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 195.1
+          "kb": 194.8
         },
         {
           "name": "rider-agreements.json",
