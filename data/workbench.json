@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-12 08:44:55",
+  "generatedAt": "2026-11-12 08:52:29",
   "runDate": "2026-11-12",
   "tasks": [
     {
@@ -2307,7 +2307,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 68.6h）"
+        "overdueText": "运行超时（距上次 68.7h）"
       },
       "timer": null,
       "heal": {
@@ -2540,7 +2540,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 43.4h）"
+        "overdueText": "运行超时（距上次 43.5h）"
       },
       "timer": {
         "state": "ok",
@@ -3621,7 +3621,7 @@
             }
           ]
         },
-        "ageH": 65,
+        "ageH": 66,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3673,7 +3673,7 @@
             }
           ]
         },
-        "ageH": 65,
+        "ageH": 66,
         "totalH": null,
         "deltaH": null,
         "gapH": null
@@ -3726,13 +3726,13 @@
         "name": "r565-visual-patrol",
         "pct": 0,
         "sev": "warn",
-        "ageH": 65
+        "ageH": 66
       },
       {
         "name": "r566-dark-patrol",
         "pct": 0,
         "sev": "warn",
-        "ageH": 65
+        "ageH": 66
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -3789,12 +3789,12 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 68.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 68.7h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 43.4h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 43.5h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4152,8 +4152,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "be9f840",
-        "at": "2026-11-12T16:35:58+08:00",
+        "hash": "62c2570",
+        "at": "2026-11-12T16:47:02+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -5255,7 +5255,7 @@
     },
     {
       "date": "2026-11-12",
-      "at": "2026-11-12 08:44:55",
+      "at": "2026-11-12 08:52:29",
       "score": 80,
       "grade": "良",
       "layers": [
