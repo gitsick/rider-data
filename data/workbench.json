@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-12 03:55:29",
+  "generatedAt": "2026-11-12 03:57:28",
   "runDate": "2026-11-12",
   "tasks": [
     {
@@ -2303,7 +2303,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 63.7h）"
+        "overdueText": "运行超时（距上次 63.8h）"
       },
       "timer": null,
       "heal": {
@@ -2602,7 +2602,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 5a9c56d 2026-11-12 11:46:38 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 3805693 2026-11-12 11:55:35 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2857,7 +2857,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-12 11:46:35 替换，含 9 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-12 11:55:32 替换，含 7 文件）"
       },
       {
         "level": "PASS",
@@ -2951,7 +2951,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-12 11:55:29）"
+      "detail": "上轮全链 12 段全过（2026-11-12 11:57:21）"
     },
     {
       "layer": "项目层",
@@ -3760,7 +3760,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 63.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 63.8h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4123,8 +4123,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "63eea71",
-        "at": "2026-11-12T11:48:36+08:00",
+        "hash": "3805693",
+        "at": "2026-11-12T11:55:35+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4223,10 +4223,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-12 11:55:29",
+    "runAt": "2026-11-12 11:57:21",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -4287,17 +4287,22 @@
         "pass": true,
         "seconds": 34,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 34,
+        "note": "拷贝回验 131 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 77.3,
+        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-11 11:39:57",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 368.4,
-      "fails": []
-    },
     {
       "runAt": "2026-11-11 12:56:03",
       "scope": "pre-deploy",
@@ -4499,6 +4504,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 132.3,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-12 11:57:21",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 243.6,
       "fails": []
     }
   ],
@@ -5226,7 +5238,7 @@
     },
     {
       "date": "2026-11-12",
-      "at": "2026-11-12 03:55:29",
+      "at": "2026-11-12 03:57:28",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5359,7 +5371,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2050.9,
+      "totalKB": 2050.6,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5375,7 +5387,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 197.5
+          "kb": 197.2
         },
         {
           "name": "rider-agreements.json",
