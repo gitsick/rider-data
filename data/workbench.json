@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-12 04:21:29",
+  "generatedAt": "2026-11-12 04:24:07",
   "runDate": "2026-11-12",
   "tasks": [
     {
@@ -2535,7 +2535,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 39h）"
+        "overdueText": "运行超时（距上次 39.1h）"
       },
       "timer": {
         "state": "ok",
@@ -2562,9 +2562,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-12 11:48:31",
+    "auditedAt": "2026-11-12 12:24:06",
     "status": "PASS",
-    "pass": 59,
+    "pass": 60,
     "warn": 2,
     "fail": 0,
     "checks": [
@@ -2601,7 +2601,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 3805693 2026-11-12 11:55:35 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 68cab9f 2026-11-12 12:21:36 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2626,7 +2626,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 63 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "monitor_status 64 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "PASS",
@@ -2731,7 +2731,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/12/2026 11:35:09），耗时折算可用"
+        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/12/2026 12:01:07），耗时折算可用"
       },
       {
         "level": "PASS",
@@ -2776,6 +2776,11 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[monthly-kaohe-backup] 已登记用户主动暂停——今日无留痕不判断链（R266 意图豁免）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[deploy-audit] command 入口可用（pwsh）"
       },
       {
@@ -2786,7 +2791,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行 63h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "[monitor-aggregate] 运行 64h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "PASS",
@@ -2816,7 +2821,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行超时（距上次 38 h，预期每 8h）——疑似断链"
+        "msg": "[access-code-patrol] 运行超时（距上次 39 h，预期每 8h）——疑似断链"
       },
       {
         "level": "PASS",
@@ -2856,7 +2861,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-12 11:55:32 替换，含 7 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-12 12:21:34 替换，含 7 文件）"
       },
       {
         "level": "PASS",
@@ -2875,10 +2880,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-11 03:33:09",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-11 08:02:50",
         "status": "PASS"
@@ -2930,6 +2931,10 @@
       {
         "auditedAt": "2026-11-12 11:48:31",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-12 12:24:06",
+        "status": "PASS"
       }
     ]
   },
@@ -2944,13 +2949,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-12 11:48:31）"
+      "detail": "审计 PASS（2026-11-12 12:24:06）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-12 12:21:28）"
+      "detail": "上轮全链 12 段全过（2026-11-12 12:24:00）"
     },
     {
       "layer": "项目层",
@@ -3764,7 +3769,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 39h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 39.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3774,7 +3779,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 2 项警告（2026-11-12 11:48:31）",
+      "text": "审计有 2 项警告（2026-11-12 12:24:06）",
       "anchor": "sec-audit"
     },
     {
@@ -4122,8 +4127,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "d6846af",
-        "at": "2026-11-12T11:57:34+08:00",
+        "hash": "68cab9f",
+        "at": "2026-11-12T12:21:36+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4222,10 +4227,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-12 12:21:28",
+    "runAt": "2026-11-12 12:24:00",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -4286,17 +4291,22 @@
         "pass": true,
         "seconds": 74.8,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 36.5,
+        "note": "拷贝回验 131 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 113.9,
+        "note": "指纹+探针 data/visits.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-11 13:01:47",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 504.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-11 16:02:39",
       "scope": "pre-deploy",
@@ -4498,6 +4508,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 207.5,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-12 12:24:00",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 357.9,
       "fails": []
     }
   ],
@@ -5225,7 +5242,7 @@
     },
     {
       "date": "2026-11-12",
-      "at": "2026-11-12 04:21:29",
+      "at": "2026-11-12 04:24:07",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5358,7 +5375,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2008.2,
+      "totalKB": 2007.9,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5374,7 +5391,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 197.4
+          "kb": 197.1
         },
         {
           "name": "rider-agreements.json",
