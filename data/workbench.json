@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-12 06:06:06",
+  "generatedAt": "2026-11-12 07:19:16",
   "runDate": "2026-11-12",
   "tasks": [
     {
@@ -1249,8 +1249,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-12 13:45:25",
-        "durationSec": 6257,
+        "finishedAt": "2026-11-12 14:18:15",
+        "durationSec": 8227,
         "note": ""
       },
       "monitor": {
@@ -1271,11 +1271,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-28 19:17:27",
-          "durationSec": 1475.4
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-28 19:19:44",
@@ -1529,6 +1524,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-12 13:45:25",
           "durationSec": 6257
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-12 14:18:15",
+          "durationSec": 8227
         }
       ],
       "gaps": {
@@ -1660,7 +1660,6 @@
         "passCount": 15
       },
       "durTrend": [
-        2066,
         2522,
         1924,
         1127,
@@ -1673,7 +1672,8 @@
         1520,
         1698,
         4025,
-        6257
+        6257,
+        8227
       ]
     },
     {
@@ -2307,7 +2307,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 65.9h）"
+        "overdueText": "运行超时（距上次 67.1h）"
       },
       "timer": null,
       "heal": {
@@ -2540,7 +2540,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 40.8h）"
+        "overdueText": "运行超时（距上次 42h）"
       },
       "timer": {
         "state": "ok",
@@ -2970,13 +2970,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-12 14:05:54）"
+      "detail": "本轮发布前置 10 段全过（2026-11-12 15:19:15）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 5h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 6h 前"
     },
     {
       "layer": "渲染层",
@@ -3015,7 +3015,7 @@
           "size": 1426639
         }
       ],
-      "ageHours": 15,
+      "ageHours": 16,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3057,7 +3057,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 5,
+      "ageHours": 6,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-12",
@@ -3309,7 +3309,7 @@
             }
           ]
         },
-        "ageH": 6,
+        "ageH": 7,
         "totalH": 618,
         "deltaH": null,
         "gapH": 35
@@ -3361,7 +3361,7 @@
             }
           ]
         },
-        "ageH": 41,
+        "ageH": 43,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -3413,7 +3413,7 @@
             }
           ]
         },
-        "ageH": 62,
+        "ageH": 63,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3465,7 +3465,7 @@
             }
           ]
         },
-        "ageH": 62,
+        "ageH": 63,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3517,7 +3517,7 @@
             }
           ]
         },
-        "ageH": 62,
+        "ageH": 64,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3569,7 +3569,7 @@
             }
           ]
         },
-        "ageH": 63,
+        "ageH": 64,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3621,7 +3621,7 @@
             }
           ]
         },
-        "ageH": 63,
+        "ageH": 64,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3673,7 +3673,7 @@
             }
           ]
         },
-        "ageH": 63,
+        "ageH": 64,
         "totalH": null,
         "deltaH": null,
         "gapH": null
@@ -3726,49 +3726,49 @@
         "name": "r565-visual-patrol",
         "pct": 0,
         "sev": "warn",
-        "ageH": 63
+        "ageH": 64
       },
       {
         "name": "r566-dark-patrol",
         "pct": 0,
         "sev": "warn",
-        "ageH": 63
+        "ageH": 64
       },
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 0,
         "sev": "warn",
-        "ageH": 63
+        "ageH": 64
       },
       {
         "name": "r568-audit-trace-surface",
         "pct": 0,
         "sev": "warn",
-        "ageH": 62
+        "ageH": 64
       },
       {
         "name": "r569-heal-intent-exempt",
         "pct": 0,
         "sev": "warn",
-        "ageH": 62
+        "ageH": 63
       },
       {
         "name": "r570-pending-card-exempt",
         "pct": 0,
         "sev": "warn",
-        "ageH": 62
+        "ageH": 63
       },
       {
         "name": "r571-style-unify",
         "pct": 0,
         "sev": "",
-        "ageH": 41
+        "ageH": 43
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 6
+        "ageH": 7
       }
     ],
     "stall": {
@@ -3789,12 +3789,12 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 65.9h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 67.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 40.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 42h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4152,8 +4152,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "44ebe8e",
-        "at": "2026-11-12T14:01:52+08:00",
+        "hash": "3e98bd4",
+        "at": "2026-11-12T14:06:12+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4252,21 +4252,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-12 14:05:54",
+    "runAt": "2026-11-12 15:19:15",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 9.3,
+        "seconds": 9.2,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -4278,19 +4278,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 49.2,
+        "seconds": 69.8,
         "note": "npm test pass=1563 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.9,
+        "seconds": 7,
         "note": ""
       },
       {
@@ -4308,37 +4308,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 31.8,
+        "seconds": 82.8,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 46.5,
+        "seconds": 54.9,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 34.4,
-        "note": "拷贝回验 131 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 212.5,
-        "note": "指纹+探针 assets/ResignPanel-BkDDTF-s.css 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-12 00:35:53",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 126.8,
-      "fails": []
-    },
     {
       "runAt": "2026-11-12 00:39:32",
       "scope": "complete",
@@ -4540,6 +4521,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 394.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-12 15:19:15",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 225.3,
       "fails": []
     }
   ],
@@ -5267,7 +5255,7 @@
     },
     {
       "date": "2026-11-12",
-      "at": "2026-11-12 06:06:06",
+      "at": "2026-11-12 07:19:16",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5362,7 +5350,7 @@
   "perf": {
     "assets": {
       "count": 91,
-      "totalKB": 1391.7,
+      "totalKB": 1392.1,
       "top": [
         {
           "name": "vendor-echarts-CVJelJj7.js",
@@ -5393,14 +5381,14 @@
           "kb": 40.7
         },
         {
-          "name": "rider_dashboard-DJ54NGBA.js",
-          "kb": 29
+          "name": "rider_dashboard-Ca210xi9.js",
+          "kb": 29.1
         }
       ]
     },
     "data": {
       "count": 14,
-      "totalKB": 2009.1,
+      "totalKB": 2009.5,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5416,7 +5404,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 198.2
+          "kb": 198.5
         },
         {
           "name": "rider-agreements.json",
