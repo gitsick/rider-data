@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-13 23:07:20",
+  "generatedAt": "2026-11-13 23:40:30",
   "runDate": "2026-11-13",
   "tasks": [
     {
@@ -12,11 +12,11 @@
       "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）",
       "note": "技能编排型任务，需浏览器 BI 登录态；发布感知双探测：07:00 主跑（定时器 BYHOUR=7;BYMINUTE=0，与 expectHour=7 对齐；11-10 21:02 用户确认定时器以 07:00 为准，登记按 R195 惯例向运行态真源对齐）+ 10:30 自愈探测补跑（OdrLWZHZtb8IhMG8W8kgp）。换月SOP人工核对挂账导致的 FAIL 为已知态（非断链）。留痕耗时按最近触发源折算。2026-11-14 R585：主跑留痕代码级收口（管线自写+幂等），prompt 收尾 Record 指令恢复后双通道并存互不冲突",
       "last": {
-        "status": "PASS",
-        "exitCode": 0,
-        "finishedAt": "2026-11-14 07:07:18",
-        "durationSec": 6.3,
-        "note": "数据日 20261114：流水线完成（R585 管线自写留痕）"
+        "status": "FAIL",
+        "exitCode": 1,
+        "finishedAt": "2026-11-14 07:34:00",
+        "durationSec": 43.8,
+        "note": "数据日 20261113：流水线失败退出"
       },
       "monitor": {
         "cadence": "daily",
@@ -36,11 +36,6 @@
         "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id kaohe-daily -Record PASS 留痕"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-19 11:10:39",
-          "durationSec": 2325
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-19 12:12:35",
@@ -288,6 +283,12 @@
           "finishedAt": "2026-11-14 07:05:17",
           "durationSec": 0,
           "note": "数据日 20261114：流水线完成（R585 管线自写留痕）"
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-11-14 07:34:00",
+          "durationSec": 43.8,
+          "note": "数据日 20261113：流水线失败退出"
         }
       ],
       "gaps": {
@@ -419,7 +420,6 @@
         "passCount": 25
       },
       "durTrend": [
-        1911,
         114,
         2800,
         89,
@@ -432,7 +432,8 @@
         1743,
         169,
         224,
-        99
+        99,
+        44
       ]
     },
     {
@@ -1277,7 +1278,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-13 16:21"
+        "lastRunAt": "2026-11-14 07:26"
       },
       "heal": {
         "can": true,
@@ -2309,7 +2310,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 106.9h）"
+        "overdueText": "运行超时（距上次 107.5h）"
       },
       "timer": null,
       "heal": {
@@ -2531,14 +2532,14 @@
       "id": "rider-daily-patrol",
       "name": "骑手看板每日巡检",
       "type": "agent",
-      "trigger": "工作日每日 12:00",
+      "trigger": "每日 12:00",
       "cwd": "F:\\work\\mtcapacity",
-      "entry": "桌面端自动化编排：frontend 全量回归测试（node --test tests/*.test.mjs）+ 线上门禁（frontend/scripts/live_gate.ps1）+ 数据文件抽查（frontend/public/data/rider-index.json 行数与最新日期），全过收件箱一句带过、异常开条目说明失败点与建议下一步；只巡检不发布不修改代码",
-      "note": "R-UX3 轮双轨收敛：桌面自动化 C3nrVg-UnL6MvOIxueUJZ（RRULE FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=12;BYMINUTE=0）由用户确认创建后指向本工作区未登记，coverage_gaps 报「未登记」缺口；照实入册消除缺口。R195 口径：登记向运行态真源对齐（实际 BYHOUR=12，非建议稿 9 点）；cadence=weekly 与 FREQ=WEEKLY 同形，白名单冻结语义（R320）不适用于 agent+daily 组合",
+      "entry": "桌面端自动化编排：frontend 全量回归测试（node --test tests/*.test.mjs）+ 线上门禁（frontend/scripts/live_gate.ps1）+ 数据文件抽查（frontend/public/data/rider-index.json 行数与最新日期），全过收件箱一句带过、异常开条目说明失败点与建议下一步；只巡检不发布不修改代码；收尾 run_task 留痕 PASS/FAIL（R589 重建 prompt 后补）",
+      "note": "R-UX3 轮双轨收敛：桌面自动化 C3nrVg-UnL6MvOIxueUJZ 由用户确认创建后指向本工作区未登记，coverage_gaps 报「未登记」缺口；照实入册消除缺口。R195 口径：登记向运行态真源对齐（实际 BYHOUR=12，非建议稿 9 点）。R589 裁决（用户 11-14）：以实际为准登记改每日（cadence weekly→daily，自动化 rrule 实为 FREQ=DAILY 全周）；同轮发现其自动化 prompt 仅 7 字残句（「执行自动化任务」），按 R585 同款重建完整三步巡检指令+收尾 run_task 留痕，白名单冻结语义（R320）不适用于 agent 组合",
       "last": null,
       "monitor": {
         "cadence": "daily",
-        "trigger": "工作日每日 12:00",
+        "trigger": "每日 12:00",
         "expect": true
       },
       "timer": {
@@ -2576,7 +2577,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 81.8h）"
+        "overdueText": "运行超时（距上次 82.3h）"
       },
       "timer": {
         "state": "ok",
@@ -2603,10 +2604,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-14 06:55:18",
+    "auditedAt": "2026-11-14 07:14:10",
     "status": "PASS",
-    "pass": 53,
-    "warn": 5,
+    "pass": 56,
+    "warn": 4,
     "fail": 0,
     "checks": [
       {
@@ -2642,7 +2643,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 005dba1 2026-11-14 06:51:15 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 7e5bf39 2026-11-14 07:08:06 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2667,7 +2668,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 106 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "monitor_status 107 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "WARN",
@@ -2708,6 +2709,16 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[kaohe-daily] 定时器排期 07:00 与 expectHour=7 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（11/14/2026 07:06:43），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 今日已运行"
       },
       {
         "level": "PASS",
@@ -2797,7 +2808,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行 106h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "[monitor-aggregate] 运行 107h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "PASS",
@@ -2825,9 +2836,9 @@
         "msg": "[rider-daily-patrol] 已关联定时器"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-daily-patrol] 自动化 prompt 疑似截断/异常简短（7 字符 < 150，R585 事故口径：40 字残句静默 3 天）——人工核对是否被改坏"
+        "msg": "[rider-daily-patrol] 定时器排期 12:00 与 expectHour=12 一致"
       },
       {
         "level": "PASS",
@@ -2877,7 +2888,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-14 06:51:13 替换，含 1 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-14 07:08:04 替换，含 5 文件）"
       },
       {
         "level": "PASS",
@@ -2897,14 +2908,10 @@
       {
         "level": "WARN",
         "item": "监控聚合自监控兑底",
-        "msg": "[src=monitor-self] {\"level\": \"WARN\", \"src\": \"monitor-self\", \"text\": \"监控大盘聚合停跑 106.7 小时（generatedAt=2026-11-09 20:11:19，阈值 26h）——告警器自身失联则全部告警静默，需恢复聚合\"}"
+        "msg": "[src=monitor-self] {\"level\": \"WARN\", \"src\": \"monitor-self\", \"text\": \"监控大盘聚合停跑 107.0 小时（generatedAt=2026-11-09 20:11:19，阈值 26h）——告警器自身失联则全部告警静默，需恢复聚合\"}"
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-12 02:11:39",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-12 08:35:10",
         "status": "PASS"
@@ -2956,6 +2963,10 @@
       {
         "auditedAt": "2026-11-14 06:55:18",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-14 07:14:10",
+        "status": "PASS"
       }
     ]
   },
@@ -2963,20 +2974,20 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "WARN",
-      "detail": "8/10 任务正常 · 2 逾期 · 近 30 天触发断档 6 天"
+      "status": "FAIL",
+      "detail": "7/10 任务正常 · 1 失败 · 2 逾期 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-14 06:55:18）"
+      "detail": "审计 PASS（2026-11-14 07:14:10）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-14 06:51:07）"
+      "detail": "本轮发布前置 10 段全过（2026-11-14 07:40:30）"
     },
     {
       "layer": "项目层",
@@ -3039,8 +3050,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-13 08:01",
-          "size": 75271
+          "mtime": "2026-11-13 23:38",
+          "size": 76460
         },
         {
           "name": "oct.json",
@@ -3063,7 +3074,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 15,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-14",
@@ -3269,9 +3280,113 @@
     ],
     "runs": [
       {
-        "name": "r589-prompt-guard",
+        "name": "r591-trace-guard",
         "files": 1,
-        "latestAt": "2026-11-13 22:56:24",
+        "latestAt": "2026-11-13 23:39:23",
+        "flow": {
+          "done": false,
+          "current": "编排",
+          "stalled": false,
+          "sev": "",
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 0,
+        "totalH": null,
+        "deltaH": null,
+        "gapH": 0
+      },
+      {
+        "name": "20261017-efficiency-naming",
+        "files": 17,
+        "latestAt": "2026-11-13 23:27:49",
+        "flow": {
+          "done": false,
+          "current": "分析",
+          "stalled": false,
+          "sev": "",
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "done",
+              "at": "2026-10-17 05:54:07",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-10-17 11:37:32",
+              "durH": 6
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "done",
+              "at": "2026-11-13 23:27:37",
+              "durH": 660
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 0,
+        "totalH": 666,
+        "deltaH": 666,
+        "gapH": 0
+      },
+      {
+        "name": "r590-note-label",
+        "files": 2,
+        "latestAt": "2026-11-13 23:27:25",
         "flow": {
           "done": false,
           "current": "编排",
@@ -3296,7 +3411,7 @@
               "role": "builder",
               "label": "开发",
               "state": "done",
-              "at": "2026-11-13 22:56:24",
+              "at": "2026-11-13 23:27:25",
               "durH": null
             },
             {
@@ -3316,8 +3431,60 @@
           ]
         },
         "ageH": 0,
-        "totalH": null,
-        "deltaH": null,
+        "totalH": 0,
+        "deltaH": 0,
+        "gapH": 0
+      },
+      {
+        "name": "r589-prompt-guard",
+        "files": 4,
+        "latestAt": "2026-11-13 23:12:48",
+        "flow": {
+          "done": false,
+          "current": "分析",
+          "stalled": false,
+          "sev": "",
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "half",
+              "at": "2026-11-13 23:12:18",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "done",
+              "at": "2026-11-13 22:56:24",
+              "durH": 0
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "done",
+              "at": "2026-11-13 23:12:31",
+              "durH": 0
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "done",
+              "at": "2026-11-13 23:12:48",
+              "durH": 0
+            }
+          ]
+        },
+        "ageH": 0,
+        "totalH": 0,
+        "deltaH": 0,
         "gapH": 0
       },
       {
@@ -3370,58 +3537,6 @@
         "ageH": 0,
         "totalH": null,
         "deltaH": null,
-        "gapH": 0
-      },
-      {
-        "name": "20261017-efficiency-naming",
-        "files": 17,
-        "latestAt": "2026-11-13 22:45:32",
-        "flow": {
-          "done": false,
-          "current": "分析",
-          "stalled": false,
-          "sev": "",
-          "chain": [
-            {
-              "role": "lead",
-              "label": "编排",
-              "state": "done",
-              "at": "2026-10-17 05:54:07",
-              "durH": null
-            },
-            {
-              "role": "analyst",
-              "label": "分析",
-              "state": "half",
-              "at": "2026-10-17 11:37:32",
-              "durH": 6
-            },
-            {
-              "role": "builder",
-              "label": "开发",
-              "state": "done",
-              "at": "2026-11-13 22:45:31",
-              "durH": 659
-            },
-            {
-              "role": "reviewer",
-              "label": "审核",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            },
-            {
-              "role": "reporter",
-              "label": "简报",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            }
-          ]
-        },
-        "ageH": 0,
-        "totalH": 665,
-        "deltaH": 665,
         "gapH": 0
       },
       {
@@ -3523,7 +3638,7 @@
             }
           ]
         },
-        "ageH": 0,
+        "ageH": 1,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -3575,112 +3690,8 @@
             }
           ]
         },
-        "ageH": 0,
+        "ageH": 1,
         "totalH": 1,
-        "deltaH": 0,
-        "gapH": 6
-      },
-      {
-        "name": "r584-monitor-heartbeat",
-        "files": 4,
-        "latestAt": "2026-11-13 16:30:40",
-        "flow": {
-          "done": false,
-          "current": "分析",
-          "stalled": false,
-          "sev": "",
-          "chain": [
-            {
-              "role": "lead",
-              "label": "编排",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            },
-            {
-              "role": "analyst",
-              "label": "分析",
-              "state": "half",
-              "at": "2026-11-13 15:51:46",
-              "durH": null
-            },
-            {
-              "role": "builder",
-              "label": "开发",
-              "state": "done",
-              "at": "2026-11-13 16:19:38",
-              "durH": 0
-            },
-            {
-              "role": "reviewer",
-              "label": "审核",
-              "state": "done",
-              "at": "2026-11-13 16:25:56",
-              "durH": 0
-            },
-            {
-              "role": "reporter",
-              "label": "简报",
-              "state": "done",
-              "at": "2026-11-13 16:30:40",
-              "durH": 0
-            }
-          ]
-        },
-        "ageH": 6,
-        "totalH": 1,
-        "deltaH": null,
-        "gapH": 76
-      },
-      {
-        "name": "r571-style-unify",
-        "files": 1,
-        "latestAt": "2026-11-10 12:15:37",
-        "flow": {
-          "done": false,
-          "current": "分析",
-          "stalled": true,
-          "sev": "warn",
-          "chain": [
-            {
-              "role": "lead",
-              "label": "编排",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            },
-            {
-              "role": "analyst",
-              "label": "分析",
-              "state": "half",
-              "at": "2026-11-10 12:15:37",
-              "durH": null
-            },
-            {
-              "role": "builder",
-              "label": "开发",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            },
-            {
-              "role": "reviewer",
-              "label": "审核",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            },
-            {
-              "role": "reporter",
-              "label": "简报",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            }
-          ]
-        },
-        "ageH": 82,
-        "totalH": null,
         "deltaH": null,
         "gapH": null
       }
@@ -3697,7 +3708,7 @@
       {
         "role": "analyst",
         "label": "分析",
-        "rounds": 5,
+        "rounds": 4,
         "done": 0,
         "avgDurH": 6,
         "maxDurH": 6
@@ -3708,7 +3719,7 @@
         "rounds": 5,
         "done": 5,
         "avgDurH": 220,
-        "maxDurH": 659
+        "maxDurH": 660
       },
       {
         "role": "reviewer",
@@ -3729,38 +3740,20 @@
     ],
     "trend": [
       {
-        "name": "r571-style-unify",
-        "pct": 0,
-        "sev": "warn",
-        "ageH": 82
-      },
-      {
-        "name": "r584-monitor-heartbeat",
-        "pct": 60,
-        "sev": "",
-        "ageH": 6
-      },
-      {
         "name": "r585-heal-trace",
         "pct": 60,
         "sev": "",
-        "ageH": 0
+        "ageH": 1
       },
       {
         "name": "r586-orchestration-promote",
         "pct": 20,
         "sev": "",
-        "ageH": 0
+        "ageH": 1
       },
       {
         "name": "r587-metrics-struct",
         "pct": 60,
-        "sev": "",
-        "ageH": 0
-      },
-      {
-        "name": "20261017-efficiency-naming",
-        "pct": 40,
         "sev": "",
         "ageH": 0
       },
@@ -3772,7 +3765,25 @@
       },
       {
         "name": "r589-prompt-guard",
+        "pct": 60,
+        "sev": "",
+        "ageH": 0
+      },
+      {
+        "name": "r590-note-label",
         "pct": 20,
+        "sev": "",
+        "ageH": 0
+      },
+      {
+        "name": "20261017-efficiency-naming",
+        "pct": 40,
+        "sev": "",
+        "ageH": 0
+      },
+      {
+        "name": "r591-trace-guard",
+        "pct": 0,
         "sev": "",
         "ageH": 0
       }
@@ -3784,13 +3795,18 @@
   },
   "alerts": [
     {
-      "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 106.9h），需在对应自动化重跑并留痕",
+      "level": "FAIL",
+      "text": "任务失败：履约考核看板刷新与备份（2026-11-14 07:34:00 · 数据日 20261113：流水线失败退出）",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 81.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 107.5h），需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 82.3h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3800,18 +3816,13 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 5 项警告（2026-11-14 06:55:18）",
+      "text": "审计有 4 项警告（2026-11-14 07:14:10）",
       "anchor": "sec-audit"
     },
     {
       "level": "WARN",
       "text": "看板数据滞后：通用运力监控 数据日期 2026-11-08（滞后 6 天，超 2 天）——疑似源停发第 5 天（自 2026-11-09 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
-    },
-    {
-      "level": "WARN",
-      "text": "Agent 接力停滞 ≥48h：r571-style-unify 停在「分析」（阈值可调 pro\\config\\teamflow-stall.json）",
-      "anchor": "sec-teamflow"
     },
     {
       "level": "WARN",
@@ -4148,20 +4159,9 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "005dba1",
-        "at": "2026-11-14T06:51:15+08:00",
+        "hash": "7e5bf39",
+        "at": "2026-11-14T07:08:06+08:00",
         "msg": "Deploy: 主看板中心构建发布"
-      }
-    },
-    {
-      "name": "capacity-monitor",
-      "desc": "通用运力监控每日看板（单文件发布：capacity_monitor_latest.html）",
-      "mode": "single-file",
-      "target": "capacity_monitor_latest.html",
-      "last": {
-        "hash": "4f03272",
-        "at": "2026-11-14T06:46:54+08:00",
-        "msg": "Deploy: 通用运力监控 capacity_monitor_latest.html（每日管线刷新）"
       }
     },
     {
@@ -4170,9 +4170,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "de82d0d",
-        "at": "2026-11-13T07:52:41+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-12"
+        "hash": "023ed6d",
+        "at": "2026-11-14T07:29:50+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-13"
       }
     }
   ],
@@ -4248,15 +4248,15 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-14 06:51:07",
+    "runAt": "2026-11-14 07:40:30",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 4.8,
+        "seconds": 5.3,
         "note": ""
       },
       {
@@ -4280,13 +4280,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 34.3,
-        "note": "npm test pass=1597 fail=0"
+        "seconds": 42.6,
+        "note": "npm test pass=1600 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.4,
+        "seconds": 6.9,
         "note": ""
       },
       {
@@ -4304,37 +4304,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 22.1,
+        "seconds": 30.7,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 60.3,
+        "seconds": 24.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 31.3,
-        "note": "拷贝回验 131 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 62.5,
-        "note": "指纹+探针 data/workbench.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-12 15:19:15",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 225.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-12 15:23:34",
       "scope": "complete",
@@ -4537,6 +4518,13 @@
       "allPass": true,
       "totalSec": 223.1,
       "fails": []
+    },
+    {
+      "runAt": "2026-11-14 07:40:30",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 111,
+      "fails": []
     }
   ],
   "preflight": {
@@ -4605,14 +4593,14 @@
     ]
   },
   "health": {
-    "score": 80,
-    "grade": "良",
+    "score": 68,
+    "grade": "中",
     "layers": [
       {
         "layer": "调度层",
-        "status": "WARN",
+        "status": "FAIL",
         "weight": 25,
-        "points": 50
+        "points": 0
       },
       {
         "layer": "门禁层",
@@ -5291,13 +5279,13 @@
     },
     {
       "date": "2026-11-13",
-      "at": "2026-11-13 23:07:20",
-      "score": 80,
-      "grade": "良",
+      "at": "2026-11-13 23:40:30",
+      "score": 68,
+      "grade": "中",
       "layers": [
         {
           "layer": "调度层",
-          "status": "WARN"
+          "status": "FAIL"
         },
         {
           "layer": "部署层",
@@ -5424,7 +5412,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2041.1,
+      "totalKB": 2042.7,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5440,7 +5428,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 199.2
+          "kb": 199.6
         },
         {
           "name": "rider-agreements.json",
@@ -5456,7 +5444,7 @@
         },
         {
           "name": "assessment/nov.json",
-          "kb": 73.5
+          "kb": 74.7
         }
       ]
     },
@@ -5516,7 +5504,7 @@
       "path": "ARCHITECTURE.md",
       "desc": "七层架构、职责矩阵、部署/调度全链路唯一权威说明",
       "doc": {
-        "content": "# mtcapacity 工程结构统一规范\n\n> 本文档是全工程结构、部署、调度、口径的唯一权威说明。目录与职责的任何调整须同步更新本文。\n> 最后更新：2026-11-14（R573：运力监控模块切换视图——三行胶囊筛选栏（模块 9 胶囊/区域/城市带送达单量计数）替代吸顶章导航+左侧导航+小地图+悬浮导航+返回顶部，选模块只渲染对应章节（全部=总览），日更页 597KB→585KB；localStorage 记忆 + 增强器 8 导航层在模块切换宿主退役）\n\n## 一、七层架构（目录 = 架构）\n\n```\nmtcapacity\\\n├── _repo\\               ① 线上部署层   仓库 gitsick/rider-data（GitHub Pages 发布源，只被 deploy 层写入）\n├── deploy\\              ② 部署基建层   配置（channels.json）+ 引擎（deploy.ps1/publish_file.py 双入口）+ 共用库（deploy_common.psm1：网络韧性环境/R89 锁/拉推退避重试/远端校验五件套单源，refresh.ps1 与 deploy.ps1 共用）+ 通道发布管线\n├── lib\\                 ③ 知识库层     共享函数库 + 知识文档化（docs\\口径手册.md）\n├── frontend\\            ④ 渲染层       Vue 3 + Vite 统一前端工程（12 入口页），含运力统一壳主页 + 项目看板渲染器（scripts\\capacity\\，组件包 dashboard_kit\\：theme=样式单源含 CSS_ENH 注入段、fmt/charts/datactx=格式化与图表构建；改运力监控样式只改 theme.py 单源，禁止在增强器加 CSS 层）\n├── pro\\                 ⑤ 项目层       业务项目工作区（任务设置、产物产出）\n│   ├── kaohe-daily\\         履约考核工程（构建器 + 数据层 + 发布流水线）\n│   ├── capacity-daily\\      通用运力监控每日管线（数据→看板→三表→检核）\n│   ├── xsp-weekly\\          新商评考核周报（BI 取数 → 三城 Excel）\n│   ├── rider-hourly\\        骑手解约登记（问卷星增量 → 看板 → 部署）\n│   └── deploy-audit\\        部署体系审计（13 项体检含断链自愈，供工作台/自愈巡检）\n└── sched\\               ⑥ 调度层       任务清单唯一事实源（tasks.json）+ 统一执行器（run_task.ps1）+ 运行日志\n\nmtcapacity\\（续）\n└── teamflow\\            ⑦ 开发流程层   多角色开发工作流：角色定义（roles.json）+ 流程 SOP + 需求运行目录（runs\\）\n```\n\n### 全链路（数据怎么流动）\n\n```\nM:\\数据源（日监控/下载中心）\n   → pro\\<项目>\\ 每日管线（合并清洗→构建→渲染→增强→检核）\n   → 项目产物（output\\）\n       ├─ 线上链路：deploy\\ 发布引擎 → _repo → GitHub Pages 上线\n       └─ 展示链路：frontend\\export-data → public\\data → Vite 构建 → 同样经 deploy 上线\n调度链路：sched\\tasks.json 登记全部任务 → 定时器/统一执行器驱动（日志在 sched\\logs\\）\n```\n\n### 职责矩阵（谁做什么、不做什么）\n\n> 项目层路径约定：`pro\\<项目名>\\`；项目内脚本一律相对自身定位（`dirname(__file__)`），工作区根取两层上溯，禁止再写死完整绝对路径。\n>\n> **Owner 角色绑定**：每层唯一归属一个角色（见 `teamflow\\roles.json` layers 数组）；层内变更须由该 Owner 签认后交接（方案.md Owner 签认表），跨层联改由架构角色在方案中列出各层 Owner。\n\n| 层 | Owner 角色 | 只负责 | 禁止 |\n|---|---|---|---|\n| 线上部署层 `_repo` | 发布运维 | 被 deploy 层写入；不手改（`rider_agreement.html` 除外） | 项目/构建逻辑 |\n| 部署基建层 `deploy` | 发布运维 | 一切上线动作：配置（channels.json）、引擎（dist 整树/单文件双入口）；git 重试/互斥锁/校验 | 业务口径、页面代码 |\n| 知识库 `lib` | 架构 | 被 ≥2 处复用的**口径/规则/领域函数** + 口径知识文档（docs\\） | 流程编排、数据源适配、部署机制 |\n| 渲染层 `frontend` | 开发 | 页面、组件、数据展示；入口 HTML 在 `vite.config.js` 登记；生成型看板渲染器（如运力看板 make_capacity_dashboard.py）也归此层，项目层只产数据 | 各项目自带部署脚本、项目内渲染页面 |\n| 项目层 `pro` | 开发 | 产出产物（看板/数据表/JSON）+ 项目任务设置，调用系统层上线；新增业务项目也放这里 | 自带 git 发布逻辑 |\n| 调度层 `sched` | 发布运维 | 任务登记唯一事实源、统一执行、运行留痕 | 业务逻辑（只编排不实现） |\n| 开发流程层 `teamflow` | 架构 | 角色↔层所有权（roles.json）、协同规则、运行目录（runs\\）、交接模板 | 具体业务实现 |\n| 回归门禁（测试/QA） | 测试 QA | 变更验收清单执行、构建/审计回归确认（方案.md 验收项） | 直接改层内代码 |\n| 监控体系（审计+预警+自愈） | 审计监控 | audit.ps1 十三项体检（项目层 deploy-audit，含编排完整性/断链自愈闭环/发布清单与回滚记录）、工作台预警面板值守、预警直达责任层 Owner | 代替 Owner 修复（只报警+定位+自动补跑） |\n\n## 二、部署规范（防抖动机制）\n\n**唯一部署入口 = `deploy\\`**（配置 + 引擎 + 通道管线）。两条发布路径：\n\n| 场景 | 入口 | 通道 |\n|---|---|---|\n| 前端构建产物（整树） | `pwsh deploy\\deploy.ps1 [-Channel rider-data] [-Mode preview\\|cutover] [-SkipPull]` | rider-data |\n| 单文件产物（如运力监控每日看板） | `python deploy\\publish_file.py [--channel capacity-monitor]` | capacity-monitor |\n\n**防抖四件套**（全部已内建，无需人工干预）：\n\n1. **互斥锁** `deploy\\.deploy.lock`：两发布器共用；10 分钟内拒绝并发部署（防争抢推送），超时锁自动接管；正常结束/异常退出均自动释放；R431 锁残留快接管——持锁进程已不存在（崩溃/被杀残留）立即接管，不再干等超时窗（开跑与等待轮询双路径）\n2. **指数退避重试**（R319 提速重设计）：pull 4 轮（3s 起倍增，上限 15s——初始 pull 只赌短抖动，长抖动由 R258 离线发布兜底 + push 轮间 rebase 接管）、push 30 轮（1.3 倍增，上限 30s），轮间自动 rebase\n3. **网络参数硬化**（_repo 本地配置）：HTTP/1.1 + 大 postBuffer + 关闭低速中断，针对 GitHub 闪断优化\n4. **失败就绪语义**：推送彻底失败时本地提交保留，**直接重跑同一命令即可补发**；pull 持续失败可用 `-SkipPull` 离线发布\n5. **远端校验提速**（R430 四期 + R431 五期）：push exit 0 后 verify 传播延迟 12 轮×5s fail-closed；连接抖动 8s 退避 + 连续 3 轮早停降级放行（live_gate HTTP 通道独立兜底）——抖动最坏拖尾 ~2 分钟→~30 秒；publish_file.py 跨语言镜像同口径\n6. **无差异快速通道**（R431）：增量拷贝零更新（重复发布/幂等重跑）时跳过逐文件回验与陈旧清理，直达 git add（无变更即退）；R189 语义不变（旧回验摘要仍成立）\n\n**发布顺序铁律**：先产物、后发布；产物内容未变时自动跳过提交（幂等）。\n\n## 三、数据管线规范（capacity-daily 为样板）\n\n- **配置单源**：路径/区域/别名/班次全部收敛 `pipeline_config.py`（BASE/OUT/MON/DL/LIB/REGION/CANON），脚本禁止硬编码绝对路径\n- **分层目录**：脚本根目录 / `output\\` 当日产物 / `cache\\` 解析缓存（指纹失效+3天自清）/ `history\\` 归档 / \n…（内容过长已截断，全文见工作区文件）",
+        "content": "# mtcapacity 工程结构统一规范\n\n> 本文档是全工程结构、部署、调度、口径的唯一权威说明。目录与职责的任何调整须同步更新本文。\n> 最后更新：2026-11-14（R573：运力监控模块切换视图——三行胶囊筛选栏（模块 9 胶囊/区域/城市带送达单量计数）替代吸顶章导航+左侧导航+小地图+悬浮导航+返回顶部，选模块只渲染对应章节（全部=总览），日更页 597KB→585KB；localStorage 记忆 + 增强器 8 导航层在模块切换宿主退役）\n\n## 一、七层架构（目录 = 架构）\n\n```\nmtcapacity\\\n├── _repo\\               ① 线上部署层   仓库 gitsick/rider-data（GitHub Pages 发布源，只被 deploy 层写入）\n├── deploy\\              ② 部署基建层   配置（channels.json）+ 引擎（deploy.ps1/publish_file.py 双入口）+ 共用库（deploy_common.psm1：网络韧性环境/R89 锁/拉推退避重试/远端校验五件套单源，refresh.ps1 与 deploy.ps1 共用）+ 通道发布管线\n├── lib\\                 ③ 知识库层     共享函数库 + 知识文档化（docs\\口径手册.md）\n├── frontend\\            ④ 渲染层       Vue 3 + Vite 统一前端工程（12 入口页），含运力统一壳主页 + 项目看板渲染器（scripts\\capacity\\，组件包 dashboard_kit\\：theme=样式单源含 CSS_ENH 注入段、fmt/charts/datactx=格式化与图表构建；改运力监控样式只改 theme.py 单源，禁止在增强器加 CSS 层）\n├── pro\\                 ⑤ 项目层       业务项目工作区（任务设置、产物产出）\n│   ├── kaohe-daily\\         履约考核工程（构建器 + 数据层 + 发布流水线）\n│   ├── capacity-daily\\      通用运力监控每日管线（数据→看板→三表→检核）\n│   ├── xsp-weekly\\          新商评考核周报（BI 取数 → 三城 Excel）\n│   ├── rider-hourly\\        骑手解约登记（问卷星增量 → 看板 → 部署）\n│   └── deploy-audit\\        部署体系审计（13 项体检含断链自愈，供工作台/自愈巡检）\n└── sched\\               ⑥ 调度层       任务清单唯一事实源（tasks.json）+ 统一执行器（run_task.ps1）+ 运行日志\n\nmtcapacity\\（续）\n└── teamflow\\            ⑦ 开发流程层   多角色开发工作流：角色定义（roles.json）+ 流程 SOP + 需求运行目录（runs\\）\n```\n\n### 全链路（数据怎么流动）\n\n```\nM:\\数据源（日监控/下载中心）\n   → pro\\<项目>\\ 每日管线（合并清洗→构建→渲染→增强→检核）\n   → 项目产物（output\\）\n       ├─ 线上链路：deploy\\ 发布引擎 → _repo → GitHub Pages 上线\n       └─ 展示链路：frontend\\export-data → public\\data → Vite 构建 → 同样经 deploy 上线\n调度链路：sched\\tasks.json 登记全部任务 → 定时器/统一执行器驱动（日志在 sched\\logs\\）\n```\n\n### 职责矩阵（谁做什么、不做什么）\n\n> 项目层路径约定：`pro\\<项目名>\\`；项目内脚本一律相对自身定位（`dirname(__file__)`），工作区根取两层上溯，禁止再写死完整绝对路径。\n>\n> **Owner 角色绑定**：每层唯一归属一个角色（见 `teamflow\\roles.json` layers 数组）；层内变更须由该 Owner 签认后交接（方案.md Owner 签认表），跨层联改由架构角色在方案中列出各层 Owner。\n\n| 层 | Owner 角色 | 只负责 | 禁止 |\n|---|---|---|---|\n| 线上部署层 `_repo` | 发布运维 | 被 deploy 层写入；不手改（`rider_agreement.html` 除外） | 项目/构建逻辑 |\n| 部署基建层 `deploy` | 发布运维 | 一切上线动作：配置（channels.json）、引擎（dist 整树/单文件双入口）；git 重试/互斥锁/校验 | 业务口径、页面代码 |\n| 知识库 `lib` | 架构 | 被 ≥2 处复用的**口径/规则/领域函数** + 口径知识文档（docs\\） | 流程编排、数据源适配、部署机制 |\n| 渲染层 `frontend` | 开发 | 页面、组件、数据展示；入口 HTML 在 `vite.config.js` 登记；生成型看板渲染器（如运力看板 make_capacity_dashboard.py）也归此层，项目层只产数据 | 各项目自带部署脚本、项目内渲染页面 |\n| 项目层 `pro` | 开发 | 产出产物（看板/数据表/JSON）+ 项目任务设置，调用系统层上线；新增业务项目也放这里 | 自带 git 发布逻辑 |\n| 调度层 `sched` | 发布运维 | 任务登记唯一事实源、统一执行、运行留痕 | 业务逻辑（只编排不实现） |\n| 开发流程层 `teamflow` | 架构 | 角色↔层所有权（roles.json）、协同规则、运行目录（runs\\）、交接模板 | 具体业务实现 |\n| 回归门禁（测试/QA） | 测试 QA | 变更验收清单执行、构建/审计回归确认（方案.md 验收项） | 直接改层内代码 |\n| 监控体系（审计+预警+自愈） | 审计监控 | audit.ps1 十三项体检（项目层 deploy-audit，含编排完整性/断链自愈闭环/发布清单与回滚记录）、工作台预警面板值守、预警直达责任层 Owner | 代替 Owner 修复（只报警+定位+自动补跑） |\n\n## 二、部署规范（防抖动机制）\n\n**唯一部署入口 = `deploy\\`**（配置 + 引擎 + 通道管线）。两条发布路径：\n\n| 场景 | 入口 | 通道 |\n|---|---|---|\n| 前端构建产物（整树） | `pwsh deploy\\deploy.ps1 [-Channel rider-data] [-Mode preview\\|cutover] [-SkipPull]` | rider-data |\n| 单文件产物（考核旧板 legacy 子路径） | `python deploy\\publish_file.py [--channel assessment-legacy --src ... --dest ...]` | assessment-legacy |\n| 运力日更巨页（R591 并入整树） | 产物 → dist 后 `pwsh deploy\\deploy.ps1`（每日管线步骤 8 / refresh 链均已接入） | rider-data |\n\n**防抖四件套**（全部已内建，无需人工干预）：\n\n1. **互斥锁** `deploy\\.deploy.lock`：两发布器共用；10 分钟内拒绝并发部署（防争抢推送），超时锁自动接管；正常结束/异常退出均自动释放；R431 锁残留快接管——持锁进程已不存在（崩溃/被杀残留）立即接管，不再干等超时窗（开跑与等待轮询双路径）\n2. **指数退避重试**（R319 提速重设计）：pull 4 轮（3s 起倍增，上限 15s——初始 pull 只赌短抖动，长抖动由 R258 离线发布兜底 + push 轮间 rebase 接管）、push 30 轮（1.3 倍增，上限 30s），轮间自动 rebase\n3. **网络参数硬化**（_repo 本地配置）：HTTP/1.1 + 大 postBuffer + 关闭低速中断，针对 GitHub 闪断优化\n4. **失败就绪语义**：推送彻底失败时本地提交保留，**直接重跑同一命令即可补发**；pull 持续失败可用 `-SkipPull` 离线发布\n5. **远端校验提速**（R430 四期 + R431 五期）：push exit 0 后 verify 传播延迟 12 轮×5s fail-closed；连接抖动 8s 退避 + 连续 3 轮早停降级放行（live_gate HTTP 通道独立兜底）——抖动最坏拖尾 ~2 分钟→~30 秒；publish_file.py 跨语言镜像同口径\n6. **无差异快速通道**（R431）：增量拷贝零更新（重复发布/幂等重跑）时跳过逐文件回验与陈旧清理，直达 git add（无变更即退）；R189 语义不变（旧回验摘要仍成立）\n\n**发布顺序铁律**：先产物、后发布；产物内容未变时自动跳过提交（幂等）。\n\n## 三、数据管线规范（capacity-daily 为样板）\n\n- **配置单源**：路径/区域/别名/班次全部收敛 `pipeline_config\n…（内容过长已截断，全文见工作区文件）",
         "outline": [
           "mtcapacity 工程结构统一规范",
           "一、七层架构（目录 = 架构）",
@@ -5534,7 +5522,7 @@
           "九、变更 SOP（改任何东西前看这里）",
           "十、前端渲染层现状与可优化点（2026-11-03）"
         ],
-        "chars": 10900,
+        "chars": 11168,
         "truncated": true,
         "mtime": "2026-11-13"
       },
@@ -5621,7 +5609,7 @@
           "步骤 8：上线确认",
           "附：月初主跑预案（每月 1 号 07:30 适用）"
         ],
-        "chars": 25449,
+        "chars": 25476,
         "truncated": true,
         "mtime": "2026-11-13"
       },
@@ -5713,7 +5701,7 @@
       "path": "deploy\\README.md",
       "desc": "通道配置、发布引擎、断网重试/锁等待预案",
       "doc": {
-        "content": "# deploy — 全工程唯一部署基建\n\n主看板中心（gitsick/rider-data，GitHub Pages）的统一部署入口。任何部署都走本目录，禁止绕过。\n\n## 文件\n\n| 文件 | 职责 |\n|---|---|\n| `deploy.ps1` | 通用部署引擎（配置化、插拔式，通道定义读 channels.json） |\n| `publish_file.py` | 单文件产物发布器（single-file 通道，支持 subpath 子路径发布，如 legacy/） |\n| `channels.json` | 通道配置唯一事实源：repo / dist / rootFiles / rootDirs / protectFiles / subpath / 重试参数；现 3 通道：rider-data（dist 整树）+ capacity-monitor / assessment-legacy（单文件，legacy 子路径） |\n| `deploy-when-up.ps1` | 断网守护发布：每 20 秒探测 GitHub 连通，恢复后自动补跑 `deploy.ps1`（-Channel 默认 rider-data；-MaxWaitMin 默认 60 分钟超时退出码 2；R80 沉淀） |\n| ~~audit.ps1~~ | 已迁出（2026-10-17）：审计属调度型任务工程，现位于 `pro\\deploy-audit\\audit.ps1`（目录名=任务ID；报告 audit_last.json 同步迁至其目录下） |\n\n## 用法\n\n```\npwsh -File deploy.ps1 -Channel rider-data -Mode preview   # 仅校验配置与路径，不部署\npwsh -File deploy.ps1 -Channel rider-data -Mode cutover   # 正式部署（默认通道可省略 -Channel）\npwsh -File deploy.ps1 -SkipPull                           # 网络波动时离线直发（推送阶段仍重试）\npwsh -File pro\\deploy-audit\\audit.ps1                    # 部署体系审计 13 项（通道/门禁/新鲜度/调度/架构合规/补发/日志清扫/编排完整性/断链自愈/发布清单与回滚记录；也可 sched\\run_task.ps1 -Id deploy-audit；只读：-NoHeal 或 -Id deploy-audit-ro）\n```\n\n## 通道要点（rider-data）\n\n- `repo`：`_repo`（工程根下）（线上仓库）｜`dist`：`frontend\\dist`（工程根下）\n- `rootFiles`：随部署覆盖的根文件清单；`rootDirs`：assets / data 整目录覆盖\n- `protectFiles`：`rider_agreement.html` 部署时跳过（手工维护页，不构建产物覆盖）\n- **单文件产物**：`capacity_monitor_latest.html`（运力监控每日看板）走 `publish_file.py`（capacity-monitor 单文件通道）提交到 repo，不经 dist\n- **考核引擎版遗留板**：`legacy/delivery-assessment-dashboard(-oct).html` 走 assessment-legacy 单文件通道（subpath 发布；换月板由 publish_file.py `--src/--dest` 指定，channels.json 零改动）；线上根路径同名页面为渲染层 Vue 版，由 rider-data dist 整树通道覆盖\n- `deploy.ps1` 与 `publish_file.py` 同为系统级发布器：前者部署 dist 整树，后者发布单文件产物，均由 `channels.json` 驱动；全工程上线动作唯一入口在 deploy\\（kaohe-daily 管线已接入，不再绕行技能发布器）\n- **发布后强制校验（B1，remote==local）**：两者推送成功后均强制校验远端分支指针 == 本地 HEAD——publish_file.py 另比对远端 blob（内容级），不通过 fail-closed 退出码非 0（本地提交已就绪，重跑补发）；deploy.ps1 校验块见 push 成功后（3 轮重试后仍不齐则 throw）\n- **工程覆盖闭环（B1）**：`channels.json` 顶层 `projectCoverage` 登记每个子工程的发布通道名或 `\"local-only\"`（如 xsp-weekly 周报产物为本地 xlsx，无线上化需求）；lib.publish.coverage_gaps() 与 kaohe selftest T104 常驻校验覆盖面闭环，新增工程未登记即红\n- **原子发布语义（B2）**：两个发布器均不再直覆产物——先写 `<目标>.staging` 临时名并校验（publish_file.py filecmp 逐字节 / deploy.ps1 MD5），失守即中止（旧版本始终在位，失败态不可见）；校验通过后旧版本备份进 `deploy\\.rollback\\` 并写 `<channel>.pointer.json` 回滚指针，再原子改名（os.replace / Move-Item）替换。`publish_file.py --rollback <通道>` 一键回退上一版本（恢复→提交→推送→远端校验，回滚前先备份当前版本，支持回滚的回滚）；deploy.ps1 finally 自动清理 staging 残留（防被 git add 误收）\n- **发布清单与回滚记录（B3）**：deploy-audit 第 13 项逐通道取主产物 git 版本指针（哪板/哪版本/何时），校验回滚指针双形态（单文件 backup 文件 / 整树 backupDir 目录）与备份在位性（备份缺失=一键回退能力失效即告）；audit_last.json 新增 `publishList`（发布清单一屏可查），audit_history.jsonl 每行追加 `publishHeads` 版本指针 + `rollbackArmed` 回滚可用通道\n\n## 新增看板通道\n\n在 `channels.json` 复制一个 channel 条目，改 repo/dist/文件清单，然后 `deploy.ps1 -Channel 新通道名` 即可。\n\n## 调用方（谁在用本目录）\n\n- `frontend\\scripts\\refresh.ps1`（一键刷新的第 5 步）\n- `kaohe-daily\\kaohe_pipeline.py`（考核前端回灌阶段；项目层路径为 pro\\kaohe-daily，目录名=任务ID）\n- `deploy\\publish_file.py`（单文件发布器，读 channels.json 的 single-file 通道；每日管线步骤 8 自动调用）\n\n\n## 更新 SOP（主通道 / 运营后台）\n\n本地完善与校验路径（**本环境默认不自动 push**；未获用户明确批准前，禁止对 `_repo` / GitHub Pages 真实同步发布）：\n\n1. **构建**：在 `frontend\\` 执行 `npm run build`（或项目惯例 `pwsh scripts\\refresh.ps1` 全链；仅改渲染层时 build 即可）。\n2. **运营后台随 root 发布**：`admin.html` 已登记在 `vite.config.js` input、`pages.js`（`siteEntriesOf`）与 `channels.json` → `rider-data.rootFiles`；构建后随 dist 整树 / root 通道覆盖上线（assets 由 `rootDirs: [\"assets\",\"data\"]` 一并带上）。\n3. **先只读审计再决定是否 heal**：推荐 `pwsh sched\\run_task.ps1 -Id deploy-audit-ro`，或 `pwsh -File pro\\deploy-audit\\audit.ps1 -NoHeal`（`-ReadOnly` 同义）。**不要**默认 `run_task -Auto` / 无 `-NoHeal` 的 heal 外发；确认缺口后再显式跑 `deploy-audit`。\n4. **权限 / SSO**：公开 GitHub Pages 为静态站，无真实 IdP；前端 soft-gate + 矩阵预览（不写盘）。内网反代注入会话见 `frontend\\docs\\sso-reverse-proxy.md`。\n5. **正式上线**（需用户明确批准后再执行）：`pwsh -File deploy\\deploy.ps1 -Channel rider-data -Mode preview` 校验 → 批准后 `-Mode cutover`（或经 `frontend\\scripts\\refresh.ps1` 第 5 步）。本批 / 本环境默认停在 preview 与只读审计。\n",
+        "content": "# deploy — 全工程唯一部署基建\n\n主看板中心（gitsick/rider-data，GitHub Pages）的统一部署入口。任何部署都走本目录，禁止绕过。\n\n## 文件\n\n| 文件 | 职责 |\n|---|---|\n| `deploy.ps1` | 通用部署引擎（配置化、插拔式，通道定义读 channels.json） |\n| `publish_file.py` | 单文件产物发布器（single-file 通道，支持 subpath 子路径发布，如 legacy/） |\n| `channels.json` | 通道配置唯一事实源：repo / dist / rootFiles / rootDirs / protectFiles / subpath / 重试参数；R591 后 2 通道：rider-data（dist 整树，含日更巨页 capacity_monitor_latest.html）+ assessment-legacy（单文件，legacy 子路径） |\n| `deploy-when-up.ps1` | 断网守护发布：每 20 秒探测 GitHub 连通，恢复后自动补跑 `deploy.ps1`（-Channel 默认 rider-data；-MaxWaitMin 默认 60 分钟超时退出码 2；R80 沉淀） |\n| ~~audit.ps1~~ | 已迁出（2026-10-17）：审计属调度型任务工程，现位于 `pro\\deploy-audit\\audit.ps1`（目录名=任务ID；报告 audit_last.json 同步迁至其目录下） |\n\n## 用法\n\n```\npwsh -File deploy.ps1 -Channel rider-data -Mode preview   # 仅校验配置与路径，不部署\npwsh -File deploy.ps1 -Channel rider-data -Mode cutover   # 正式部署（默认通道可省略 -Channel）\npwsh -File deploy.ps1 -SkipPull                           # 网络波动时离线直发（推送阶段仍重试）\npwsh -File pro\\deploy-audit\\audit.ps1                    # 部署体系审计 13 项（通道/门禁/新鲜度/调度/架构合规/补发/日志清扫/编排完整性/断链自愈/发布清单与回滚记录；也可 sched\\run_task.ps1 -Id deploy-audit；只读：-NoHeal 或 -Id deploy-audit-ro）\n```\n\n## 通道要点（rider-data）\n\n- `repo`：`_repo`（工程根下）（线上仓库）｜`dist`：`frontend\\dist`（工程根下）\n- `rootFiles`：随部署覆盖的根文件清单；`rootDirs`：assets / data 整目录覆盖\n- `protectFiles`：`rider_agreement.html` 部署时跳过（手工维护页，不构建产物覆盖）\n- **日更巨页（R591 接入统一）**：`capacity_monitor_latest.html` 已并入 rider-data rootFiles 随 dist 整树发布（capacity-monitor 单文件通道退役）。生产者同步双入口：每日管线步骤 8（产物 → dist → deploy.ps1，增量拷贝仅提交当日巨页变更）；refresh 链发布前产物 → dist 同步（Hash 比对，未变不拷）。发布/回滚/回验/互斥锁与主站同一套\n- **考核引擎版遗留板**：`legacy/delivery-assessment-dashboard(-oct).html` 走 assessment-legacy 单文件通道（subpath 发布；换月板由 publish_file.py `--src/--dest` 指定，channels.json 零改动）；线上根路径同名页面为渲染层 Vue 版，由 rider-data dist 整树通道覆盖\n- `deploy.ps1` 与 `publish_file.py` 同为系统级发布器：前者部署 dist 整树，后者发布单文件产物，均由 `channels.json` 驱动；全工程上线动作唯一入口在 deploy\\（kaohe-daily 管线已接入，不再绕行技能发布器）\n- **发布后强制校验（B1，remote==local）**：两者推送成功后均强制校验远端分支指针 == 本地 HEAD——publish_file.py 另比对远端 blob（内容级），不通过 fail-closed 退出码非 0（本地提交已就绪，重跑补发）；deploy.ps1 校验块见 push 成功后（3 轮重试后仍不齐则 throw）\n- **工程覆盖闭环（B1）**：`channels.json` 顶层 `projectCoverage` 登记每个子工程的发布通道名或 `\"local-only\"`（如 xsp-weekly 周报产物为本地 xlsx，无线上化需求）；lib.publish.coverage_gaps() 与 kaohe selftest T104 常驻校验覆盖面闭环，新增工程未登记即红\n- **原子发布语义（B2）**：两个发布器均不再直覆产物——先写 `<目标>.staging` 临时名并校验（publish_file.py filecmp 逐字节 / deploy.ps1 MD5），失守即中止（旧版本始终在位，失败态不可见）；校验通过后旧版本备份进 `deploy\\.rollback\\` 并写 `<channel>.pointer.json` 回滚指针，再原子改名（os.replace / Move-Item）替换。`publish_file.py --rollback <通道>` 一键回退上一版本（恢复→提交→推送→远端校验，回滚前先备份当前版本，支持回滚的回滚）；deploy.ps1 finally 自动清理 staging 残留（防被 git add 误收）\n- **发布清单与回滚记录（B3）**：deploy-audit 第 13 项逐通道取主产物 git 版本指针（哪板/哪版本/何时），校验回滚指针双形态（单文件 backup 文件 / 整树 backupDir 目录）与备份在位性（备份缺失=一键回退能力失效即告）；audit_last.json 新增 `publishList`（发布清单一屏可查），audit_history.jsonl 每行追加 `publishHeads` 版本指针 + `rollbackArmed` 回滚可用通道\n\n## 新增看板通道\n\n在 `channels.json` 复制一个 channel 条目，改 repo/dist/文件清单，然后 `deploy.ps1 -Channel 新通道名` 即可。\n\n## 调用方（谁在用本目录）\n\n- `frontend\\scripts\\refresh.ps1`（一键刷新的第 5 步）\n- `kaohe-daily\\kaohe_pipeline.py`（考核前端回灌阶段；项目层路径为 pro\\kaohe-daily，目录名=任务ID）\n- `deploy\\publish_file.py`（单文件发布器，读 channels.json 的 single-file 通道；R591 后仅考核旧板换月发布使用，运力日更已改走 deploy.ps1 统一入口）\n\n\n## 更新 SOP（主通道 / 运营后台）\n\n本地完善与校验路径（**本环境默认不自动 push**；未获用户明确批准前，禁止对 `_repo` / GitHub Pages 真实同步发布）：\n\n1. **构建**：在 `frontend\\` 执行 `npm run build`（或项目惯例 `pwsh scripts\\refresh.ps1` 全链；仅改渲染层时 build 即可）。\n2. **运营后台随 root 发布**：`admin.html` 已登记在 `vite.config.js` input、`pages.js`（`siteEntriesOf`）与 `channels.json` → `rider-data.rootFiles`；构建后随 dist 整树 / root 通道覆盖上线（assets 由 `rootDirs: [\"assets\",\"data\"]` 一并带上）。\n3. **先只读审计再决定是否 heal**：推荐 `pwsh sched\\run_task.ps1 -Id deploy-audit-ro`，或 `pwsh -File pro\\deploy-audit\\audit.ps1 -NoHeal`（`-ReadOnly` 同义）。**不要**默认 `run_task -Auto` / 无 `-NoHeal` 的 heal 外发；确认缺口后再显式跑 `deploy-audit`。\n4. **权限 / SSO**：公开 GitHub Pages 为静态站，无真实 IdP；前端 soft-gate + 矩阵预览（不写盘）。内网反代注入会话见 `frontend\\docs\\sso-reverse-proxy.md`。\n5. **正式上线**（需用户明确批准后再执行）：`pwsh -File deploy\\deploy.ps\n…（内容过长已截断，全文见工作区文件）",
         "outline": [
           "deploy — 全工程唯一部署基建",
           "文件",
@@ -5723,11 +5711,11 @@
           "调用方（谁在用本目录）",
           "更新 SOP（主通道 / 运营后台）"
         ],
-        "chars": 3964,
-        "truncated": false,
-        "mtime": "2026-11-05"
+        "chars": 4131,
+        "truncated": true,
+        "mtime": "2026-11-13"
       },
-      "staleDays": 9,
+      "staleDays": 1,
       "stale": null
     }
   ]
