@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-13 00:13:24",
+  "generatedAt": "2026-11-13 00:18:14",
   "runDate": "2026-11-13",
   "tasks": [
     {
@@ -445,22 +445,22 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-12 10:31:53",
-        "durationSec": 113,
+        "finishedAt": "2026-11-13 08:14:32",
+        "durationSec": 871,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-13 08:00"
+        "lastRunAt": "2026-11-13 08:15"
       },
       "heal": {
         "can": false,
@@ -642,6 +642,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-12 10:31:53",
           "durationSec": 113
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-13 08:14:32",
+          "durationSec": 871
         }
       ],
       "gaps": {
@@ -764,16 +769,15 @@
           },
           {
             "date": "2026-11-13",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 3,
+        "gapCount": 2,
         "failCount": 0,
-        "passCount": 25
+        "passCount": 26
       },
       "durTrend": [
-        138,
         1040,
         109,
         241,
@@ -786,7 +790,8 @@
         694,
         82,
         1483,
-        113
+        113,
+        871
       ]
     },
     {
@@ -2298,7 +2303,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 84h）"
+        "overdueText": "运行超时（距上次 84.1h）"
       },
       "timer": null,
       "heal": {
@@ -2532,7 +2537,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 58.9h）"
+        "overdueText": "运行超时（距上次 59h）"
       },
       "timer": {
         "state": "ok",
@@ -2915,7 +2920,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "7/9 任务正常 · 2 逾期 · 近 30 天触发断档 8 天"
+      "detail": "7/9 任务正常 · 2 逾期 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -3318,7 +3323,7 @@
             }
           ]
         },
-        "ageH": 59,
+        "ageH": 60,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -3474,7 +3479,7 @@
             }
           ]
         },
-        "ageH": 80,
+        "ageH": 81,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3701,7 +3706,7 @@
         "name": "r568-audit-trace-surface",
         "pct": 0,
         "sev": "warn",
-        "ageH": 80
+        "ageH": 81
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -3719,7 +3724,7 @@
         "name": "r571-style-unify",
         "pct": 0,
         "sev": "warn",
-        "ageH": 59
+        "ageH": 60
       },
       {
         "name": "20261017-efficiency-naming",
@@ -3736,18 +3741,18 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 84h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 84.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 58.9h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 59h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 8 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 3 天 · undefined 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：3 个任务近 30 天共 7 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 2 天 · undefined 4 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -5247,7 +5252,7 @@
     },
     {
       "date": "2026-11-13",
-      "at": "2026-11-13 00:13:24",
+      "at": "2026-11-13 00:18:14",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5380,7 +5385,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2040.8,
+      "totalKB": 2041.7,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5396,7 +5401,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 196.9
+          "kb": 197.8
         },
         {
           "name": "rider-agreements.json",
