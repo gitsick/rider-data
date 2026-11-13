@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-13 12:24:43",
+  "generatedAt": "2026-11-13 12:30:47",
   "runDate": "2026-11-13",
   "tasks": [
     {
@@ -2314,7 +2314,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 96.2h）"
+        "overdueText": "运行超时（距上次 96.3h）"
       },
       "timer": null,
       "heal": {
@@ -2584,7 +2584,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 71.1h）"
+        "overdueText": "运行超时（距上次 71.2h）"
       },
       "timer": {
         "state": "ok",
@@ -2650,7 +2650,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: d33bab7 2026-11-13 16:47:45 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 23bd4f0 2026-11-13 20:24:51 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2660,12 +2660,12 @@
       {
         "level": "WARN",
         "item": "capacity-monitor",
-        "msg": "每日产物已 42 小时未刷新（阈值 26h）——每日管线可能断链/失败"
+        "msg": "每日产物已 45 小时未刷新（阈值 26h）——每日管线可能断链/失败"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（88 小时前生成）"
+        "msg": "单文件产物存在（91 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2675,7 +2675,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 92 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "monitor_status 96 小时前已聚合——聚合定时器待确认卡（R562 二段），心跳龄为已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "WARN",
@@ -2850,7 +2850,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行 92h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
+        "msg": "[monitor-aggregate] 运行 96h 前——定时器待确认卡（R562 二段，automationId 未回填）属已知态（R570 意图豁免；确认后自动复检）"
       },
       {
         "level": "PASS",
@@ -2885,7 +2885,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行超时（距上次 67 h，预期每 8h）——疑似断链"
+        "msg": "[access-code-patrol] 运行超时（距上次 71 h，预期每 8h）——疑似断链"
       },
       {
         "level": "PASS",
@@ -2925,7 +2925,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-13 16:47:43 替换，含 4 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-13 20:24:48 替换，含 6 文件）"
       },
       {
         "level": "PASS",
@@ -3019,7 +3019,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-13 20:24:42）"
+      "detail": "上轮全链 12 段全过（2026-11-13 20:30:36）"
     },
     {
       "layer": "项目层",
@@ -3514,7 +3514,7 @@
             }
           ]
         },
-        "ageH": 92,
+        "ageH": 93,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3799,7 +3799,7 @@
         "name": "r569-heal-intent-exempt",
         "pct": 0,
         "sev": "warn",
-        "ageH": 92
+        "ageH": 93
       },
       {
         "name": "r570-pending-card-exempt",
@@ -3838,7 +3838,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 96.2h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 96.3h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3848,7 +3848,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 71.1h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 71.2h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4211,8 +4211,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "410f4f8",
-        "at": "2026-11-13T16:56:53+08:00",
+        "hash": "23bd4f0",
+        "at": "2026-11-13T20:24:51+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4311,10 +4311,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-13 20:24:42",
+    "runAt": "2026-11-13 20:30:36",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -4375,17 +4375,22 @@
         "pass": true,
         "seconds": 70.8,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 37.3,
+        "note": "拷贝回验 131 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 315.3,
+        "note": "指纹+探针 data/rider-agreements.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-12 11:57:21",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 243.6,
-      "fails": []
-    },
     {
       "runAt": "2026-11-12 12:21:28",
       "scope": "pre-deploy",
@@ -4587,6 +4592,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 267.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-13 20:30:36",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 620.3,
       "fails": []
     }
   ],
@@ -5342,7 +5354,7 @@
     },
     {
       "date": "2026-11-13",
-      "at": "2026-11-13 12:24:43",
+      "at": "2026-11-13 12:30:47",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5475,7 +5487,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2043.2,
+      "totalKB": 2043,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5491,7 +5503,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 201.3
+          "kb": 201.1
         },
         {
           "name": "rider-agreements.json",
