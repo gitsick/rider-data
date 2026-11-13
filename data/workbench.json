@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-13 14:07:08",
+  "generatedAt": "2026-11-13 14:19:06",
   "runDate": "2026-11-13",
   "tasks": [
     {
@@ -2314,7 +2314,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 97.9h）"
+        "overdueText": "运行超时（距上次 98.1h）"
       },
       "timer": null,
       "heal": {
@@ -2585,7 +2585,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 72.8h）"
+        "overdueText": "运行超时（距上次 73h）"
       },
       "timer": {
         "state": "ok",
@@ -3411,7 +3411,7 @@
             }
           ]
         },
-        "ageH": 73,
+        "ageH": 74,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -3567,7 +3567,7 @@
             }
           ]
         },
-        "ageH": 94,
+        "ageH": 95,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3794,7 +3794,7 @@
         "name": "r568-audit-trace-surface",
         "pct": 0,
         "sev": "warn",
-        "ageH": 94
+        "ageH": 95
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -3812,7 +3812,7 @@
         "name": "r571-style-unify",
         "pct": 0,
         "sev": "warn",
-        "ageH": 73
+        "ageH": 74
       },
       {
         "name": "20261017-efficiency-naming",
@@ -3839,7 +3839,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 97.9h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 98.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -3849,7 +3849,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 72.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 73h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4212,8 +4212,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "ed4a7bf",
-        "at": "2026-11-13T21:19:26+08:00",
+        "hash": "c798593",
+        "at": "2026-11-13T22:07:14+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -5349,7 +5349,7 @@
     },
     {
       "date": "2026-11-13",
-      "at": "2026-11-13 14:07:08",
+      "at": "2026-11-13 14:19:06",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5444,7 +5444,7 @@
   "perf": {
     "assets": {
       "count": 91,
-      "totalKB": 1424.3,
+      "totalKB": 1425.1,
       "top": [
         {
           "name": "vendor-echarts-C6gMPsEI.js",
@@ -5475,7 +5475,7 @@
           "kb": 40.7
         },
         {
-          "name": "OverviewPanel-BnUMeCBi.js",
+          "name": "OverviewPanel-X4-uYim_.js",
           "kb": 30.8
         }
       ]
