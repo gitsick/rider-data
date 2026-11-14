@@ -376,26 +376,7 @@ details[open]>summary{color:#1c5bd0}
 .v25foot a:hover{color:#1967D2;text-decoration:underline}
 @media(max-width:640px){.card h2{font-size:14px}}
 html{scrollbar-width:thin;scrollbar-color:#c6cbd8 transparent}
-/* ===== v24nav 左侧导航栏 ===== */
-body{padding-left:188px}
-#v24side{position:fixed;left:0;top:0;bottom:0;width:172px;background:linear-gradient(180deg,#1B2233 0%,#2D3447 100%);z-index:99;display:flex;flex-direction:column;box-shadow:2px 0 12px rgba(27,34,51,.28)}
-#v24side .v24brand{color:#fff;font-weight:700;font-size:14px;padding:14px 16px 4px;letter-spacing:.5px}
-#v24side .v24brand::before{content:"";display:inline-block;width:3px;height:12px;border-radius:2px;background:linear-gradient(180deg,#FFC300,#F5A623);margin-right:8px;vertical-align:-1px}
-#v24side .v24date{color:#A9B7D8;font-size:11px;padding:0 16px 10px;border-bottom:1px solid rgba(255,255,255,.10)}
-#v24side ul{list-style:none;margin:0;padding:8px 0;flex:1;overflow-y:auto}
-#v24side ul::-webkit-scrollbar{width:6px}
-#v24side ul::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:3px;border:none;background-clip:border-box}
-#v24side ul::-webkit-scrollbar-track{background:transparent}
-#v24side li a{display:block;color:#E2E8F0;font-size:12.5px;line-height:1.35;padding:8px 14px;text-decoration:none;border-left:3px solid transparent;transition:all .15s ease;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#v24side li a:hover{color:#FFC300;background:rgba(255,255,255,.08)}
-#v24side li a.on{color:#fff;background:linear-gradient(135deg,#ffc30042,#ffc30021);border-left-color:#FFC300;font-weight:700;box-shadow:inset 0 0 0 1px #ffc30059}
-#v24side .v24top{color:#A9B7D8;font-size:11px;text-align:center;padding:10px 0 12px;cursor:pointer;border-top:1px solid rgba(255,255,255,.10);margin:0}
-#v24side .v24top:hover{color:#FFC300}
-#v24side .v24brand,#v24side .v24date{margin:0}
-@media (max-width:1180px){#v24side{display:none}body{padding-left:0}}
-@media (min-width:1181px){body .site-nav{margin-left:0;width:auto}}
-h2[id]{scroll-margin-top:14px}
-/* v24side-u1 样式统一标记：主站 navy+gold（与主站 top-nav 同源：hover 金字、选中金渐变+金描边） */
+
 
 #v26float{position:fixed;right:18px;bottom:22px;z-index:98;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 #v26float .fbtn{width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,#1B2233,#2D3447);color:#FFC300;font-size:17px;cursor:pointer;box-shadow:0 4px 14px rgba(27,34,51,.28);transition:transform .15s ease;padding:0}
@@ -445,26 +426,13 @@ body{font-variant-numeric:tabular-nums}
 #v35expbtn.done{color:#7CE38B}
 @media(max-width:768px){#v35expbtn{right:10px;bottom:134px;font-size:11px;height:30px;padding:0 11px}}
 
-/* enh-side-u2 侧栏功能增强：折叠/阅读进度条/快捷键/悬停提示 */
-#v24prog{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,#FFC300,#F5A623);z-index:1000;pointer-events:none}
-#v24side{transition:transform .25s ease}
-#v24side .v24fold{position:absolute;top:16px;right:-20px;width:20px;height:44px;border:none;border-radius:0 8px 8px 0;background:linear-gradient(180deg,#1B2233,#2D3447);color:#FFC300;font-size:12px;line-height:1;cursor:pointer;padding:0;box-shadow:2px 2px 8px rgba(27,34,51,.28)}
-#v24side .v24fold:hover{color:#fff;background:linear-gradient(180deg,#2D3447,#1B2233)}
-html.v24folded body{padding-left:0}
-html.v24folded #v24side{transform:translateX(-100%);box-shadow:none}
-@media (max-width:1180px){#v24side .v24fold{display:none}}
+
 
 /* enh-jp29 章节切换：落点校正+高亮反馈 */
 h2[id].v29flash{border-radius:6px;animation:v29glow 1.3s ease-out 1}
 @keyframes v29glow{0%{box-shadow:0 0 0 3px rgba(255,195,0,.50);background:rgba(255,195,0,.10)}100%{box-shadow:0 0 0 3px rgba(255,195,0,0);background:transparent}}
 
-/* enh-map30 侧栏章节小地图：位置指示+章节刻度+点击拖拽定位 */
-#v24map{position:absolute;right:3px;top:72px;bottom:46px;width:12px;cursor:pointer;z-index:2;user-select:none;touch-action:none}
-#v24map .v24map-track{position:absolute;right:4px;top:0;bottom:0;width:4px;border-radius:2px;background:rgba(255,255,255,.10)}
-#v24map .v24map-thumb{position:absolute;right:0;width:4px;border-radius:2px;background:linear-gradient(180deg,#FFC300,#F5A623);min-height:8px;box-shadow:0 0 6px rgba(255,195,0,.45)}
-#v24map .v24map-tick{position:absolute;right:0;width:4px;height:2px;background:rgba(255,255,255,.35)}
-#v24map:hover .v24map-tick{background:rgba(255,255,255,.6)}
-@media (max-width:1180px){#v24map{display:none}}
+/* enh-map30 侧栏章节小地图样式已随侧栏族整体删除（R595） */
 </style><script>try{if(localStorage.getItem("mt-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script></head><body>
 <div class="stalebar" id="staleBar" hidden>⚠️ <span id="staleBarTxt"></span></div>
 <div class="hero"><h1>运力监控 · 2026-11-08<span class="gold">（全天 · 区域/城市下钻视图）</span></h1>
@@ -1879,7 +1847,7 @@ h2[id].v29flash{border-radius:6px;animation:v29glow 1.3s ease-out 1}
 <script>/* R573 模块切换记忆：首屏渲染前按记忆收起非当前模块（body[data-am] CSS 接管显隐），避免整页闪现 */
 (function(){try{var m=localStorage.getItem('cap-mod');if(!/^(all|[1-8])$/.test(m))m='all';document.body.setAttribute('data-am',m);}catch(e){}})();
 </script>
-</div><div class="verbadge" id="verBadge">本页版本：生成于 2026-11-14 07:41 · 数据日 2026-11-08 · 渲染器 R573</div>
+</div><div class="verbadge" id="verBadge">本页版本：生成于 2026-11-14 16:24 · 数据日 2026-11-08 · 渲染器 R573</div>
 <script>
 /* H-cap 双主题（D9）：与主站 mt-theme 单键同源（浅色默认；本页 head 已有防闪烁引导） */
 function capThemeCur(){return document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light'}
