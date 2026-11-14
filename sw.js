@@ -6,9 +6,10 @@
  *  - 页面导航（HTML）：network-first —— 始终优先最新，断网/超时回退缓存
  *  - 带查询串的导航请求（门禁/调试 stamp）直连网络，完全不经过 SW
  * 版本升级：改 VER 即弃用全部旧缓存（R92 → v2；v4：capacity 单文件页不入 C_PAGES；
- * v5/R592：巨页瘦至 585KB 后消除例外，恢复 C_PAGES 写入——回访/弱网秒开，日更 network-first 自动换新）
+ * v5/R592：巨页瘦至 585KB 后消除例外，恢复 C_PAGES 写入；R602：巨页退役，capacity.html 为
+ * dist 树内 SPA 页，navigate 统一 C_PAGES 通道无豁免）
  */
-const VER = 'v5'
+const VER = 'v6'
 const C_ASSETS = `rd-assets-${VER}`
 const C_PAGES = `rd-pages-${VER}`
 const C_DATA = `rd-data-${VER}`
@@ -69,9 +70,9 @@ self.addEventListener('fetch', e => {
   }
 
   if (req.mode === 'navigate') {
-    /* R592：capacity_monitor 巨页缓存豁免退役——产物已从 ~2MB 瘦至 585KB（R573 模块切换视图），
-     * 与主站 HTML 同口径入 C_PAGES（network-first 取最新后写入，离线回退可用）。
-     * 日更后首次访问仍取最新，缓存不滞留旧数据。 */
+    /* R602：capacity.html 为 dist 树内 SPA 页（巨页退役），与主站 HTML 统一走
+     * C_PAGES（network-first 取最新后写入，离线回退可用）；日更数据 JSON 走上方 /data/*
+     * network-first 通道，缓存不滞留旧数据。 */
     e.respondWith((async () => {
       try {
         const res = await fetch(req)
