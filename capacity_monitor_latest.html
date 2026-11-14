@@ -388,6 +388,17 @@ html{scrollbar-width:thin;scrollbar-color:#c6cbd8 transparent}
 #v26float .fmenu a{display:block;padding:8px 18px;font-size:12.5px;color:#1B1B33;text-decoration:none;border-bottom:1px solid #F0F2F5;white-space:nowrap}
 #v26float .fmenu li:last-child a{border-bottom:none}
 #v26float .fmenu a:hover{background:#FFF8E1}
+/* ===== R600 嵌入态悬浮宿主 + 章节懒渲染（2026-11-14「优化巨页」） =====
+ * 背景：R599 嵌件改实高自适应后，巨页内 position:fixed 元素锚定到整个文档底（不在视口内），
+ * 悬浮导航 DOM 亦在此前退役仅剩死 CSS——本轮回补 DOM/JS，并以 sticky 宿主在嵌入态重锚定；
+ * 同型问题顺带救回增强层 v35exp 导出钮（fixed 在嵌入态同样被钉到页底）。直开态 fixed 原生可用，
+ * 宿主仅在嵌入态由 JS 创建并收养两个悬浮件。 */
+.v26host{position:sticky;top:0;height:100vh;margin-bottom:-100vh;pointer-events:none;z-index:98}
+.v26host #v26float{position:absolute;right:18px;bottom:22px;pointer-events:auto}
+.v26host #v35expbtn{position:absolute;right:18px;bottom:142px;pointer-events:auto}
+
+.capmod{content-visibility:auto;contain-intrinsic-size:auto 1200px}
+@media print{.capmod{content-visibility:visible}}
 /* ===== v27align 滚动修复+看板中心对齐 ===== */
 
 body .stickyhead{position:sticky;top:0;z-index:900}
@@ -1847,7 +1858,7 @@ h2[id].v29flash{border-radius:6px;animation:v29glow 1.3s ease-out 1}
 <script>/* R573 模块切换记忆：首屏渲染前按记忆收起非当前模块（body[data-am] CSS 接管显隐），避免整页闪现 */
 (function(){try{var m=localStorage.getItem('cap-mod');if(!/^(all|[1-8])$/.test(m))m='all';document.body.setAttribute('data-am',m);}catch(e){}})();
 </script>
-</div><div class="verbadge" id="verBadge">本页版本：生成于 2026-11-14 16:24 · 数据日 2026-11-08 · 渲染器 R573</div>
+</div><div class="verbadge" id="verBadge">本页版本：生成于 2026-11-14 21:28 · 数据日 2026-11-08 · 渲染器 R573</div>
 <script>
 /* H-cap 双主题（D9）：与主站 mt-theme 单键同源（浅色默认；本页 head 已有防闪烁引导） */
 function capThemeCur(){return document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light'}
@@ -2364,6 +2375,58 @@ function wire(){
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
 else wire();
 window.__v12wire = wire;   /* 懒加载明细渲染后补挂每表/每图导出钮 */
+})();
+</script>
+<script>
+/* R600 右下悬浮导航（2026-11-14「优化巨页」）：返回顶部 + 章节菜单。
+ * v26float 样式常驻而 DOM 早前退役——本轮回补；R599 嵌件实高化后巨页内 fixed 失效，
+ * 嵌入态建 sticky 宿主（.v26host）重锚定悬浮件，并收养增强层后置注入的 v35exp 导出钮（同型钉底）。 */
+(function(){
+  var emb = false; try { emb = window.self !== window.top; } catch (e) { emb = true; }
+  var host = null, tries = 0;
+  function ensureHost(){
+    if (!emb || !document.body) return null;
+    if (!host) { host = document.createElement('div'); host.className = 'v26host'; document.body.insertBefore(host, document.body.firstChild); }
+    return host;
+  }
+  function topAnchor(){
+    try { if (emb && window.top && window.top !== window.self) { window.top.scrollTo({top:0, behavior:'smooth'}); return; } } catch (e) {}
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  function buildNav(){
+    if (document.getElementById('v26float') || !document.body) return;
+    var menu = [].slice.call(document.querySelectorAll('.capmod h2[id]')).map(function(h){
+      var t = ((h.childNodes[0] && h.childNodes[0].textContent) || h.textContent || '').trim();
+      return '<li><a href="#' + h.id + '">' + t + '</a></li>';
+    }).join('');
+    var el = document.createElement('div');
+    el.id = 'v26float';
+    el.innerHTML = '<div class="fmenu"><ul>' + menu + '</ul></div>'
+      + '<button class="fbtn ftop" id="v26up" type="button" title="回到顶部">↑</button>'
+      + '<button class="fbtn" id="v26nav" type="button" title="章节导航">☰</button>';
+    (ensureHost() || document.body).appendChild(el);
+    var fm = el.querySelector('.fmenu');
+    el.querySelector('#v26nav').onclick = function(ev){ ev.stopPropagation(); el.classList.toggle('open'); };
+    el.querySelector('#v26up').onclick = topAnchor;
+    fm.addEventListener('click', function(ev){
+      var a = ev.target.closest('a'); if (!a) return;
+      ev.preventDefault(); el.classList.remove('open');
+      var t = document.getElementById((a.getAttribute('href') || '').slice(1));
+      if (t) t.scrollIntoView({behavior:'smooth', block:'start'}); /* 嵌入态浏览器沿滚动链把外层窗口带到锚位 */
+    });
+    document.addEventListener('click', function(ev){ if (!el.contains(ev.target)) el.classList.remove('open'); });
+  }
+  function adoptFixed(){
+    if (!emb || !host) return;
+    var exp = document.querySelector('#v35expbtn');
+    if (exp && exp.parentNode !== host) host.appendChild(exp); /* 直开态 fixed 原生可用，不动 */
+  }
+  function boot(){
+    buildNav(); ensureHost(); adoptFixed();
+    if (++tries < 40) setTimeout(boot, 400); /* 导出钮由增强管线后置注入，轮询收养至多 16s */
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 })();
 </script>
 <script>if('serviceWorker' in navigator&&location.protocol==='https:'&&!/[?&]nosw/.test(location.search)){addEventListener('load',function(){navigator.serviceWorker.register('/rider-data/sw.js').catch(function(){})})}</script><script>/* v20btn 筛选按钮联动显示 */
