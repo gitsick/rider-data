@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-14 01:01:54",
+  "generatedAt": "2026-11-14 01:04:03",
   "runDate": "2026-11-14",
   "tasks": [
     {
@@ -2319,7 +2319,7 @@
         "trigger": "",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 108.8h）"
+        "overdueText": "运行超时（距上次 108.9h）"
       },
       "timer": null,
       "heal": {
@@ -2652,7 +2652,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 231f6fe 2026-11-14 08:50:18 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 67abba1 2026-11-14 09:01:58 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2927,7 +2927,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-14 08:50:16 替换，含 6 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-14 09:01:57 替换，含 3 文件）"
       },
       {
         "level": "PASS",
@@ -2942,7 +2942,7 @@
       {
         "level": "WARN",
         "item": "监控聚合自监控兑底",
-        "msg": "[src=monitor-self] {\"level\": \"WARN\", \"src\": \"monitor-self\", \"text\": \"监控大盘聚合停跑 108.8 小时（generatedAt=2026-11-09 20:11:19，阈值 26h）——告警器自身失联则全部告警静默，需恢复聚合\"}"
+        "msg": "[src=monitor-self] {\"level\": \"WARN\", \"src\": \"monitor-self\", \"text\": \"监控大盘聚合停跑 108.9 小时（generatedAt=2026-11-09 20:11:19，阈值 26h）——告警器自身失联则全部告警静默，需恢复聚合\"}"
       }
     ],
     "history": [
@@ -3021,7 +3021,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-14 09:01:54）"
+      "detail": "上轮全链 12 段全过（2026-11-14 09:03:57）"
     },
     {
       "layer": "项目层",
@@ -3412,7 +3412,7 @@
             }
           ]
         },
-        "ageH": 0,
+        "ageH": 1,
         "totalH": 666,
         "deltaH": 666,
         "gapH": 0
@@ -3813,7 +3813,7 @@
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 0
+        "ageH": 1
       },
       {
         "name": "r592-observe",
@@ -3830,7 +3830,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 108.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：undefined —— 运行超时（距上次 108.9h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4188,8 +4188,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "44afdff",
-        "at": "2026-11-14T09:00:14+08:00",
+        "hash": "67abba1",
+        "at": "2026-11-14T09:01:58+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4277,10 +4277,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-14 09:01:54",
+    "runAt": "2026-11-14 09:03:57",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -4341,17 +4341,22 @@
         "pass": true,
         "seconds": 26.5,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 31.7,
+        "note": "拷贝回验 132 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 90.9,
+        "note": "指纹+探针 data/workbench.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-12 16:14:28",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 819.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-12 16:28:31",
       "scope": "pre-deploy",
@@ -4553,6 +4558,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 160.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-14 09:03:57",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 283.3,
       "fails": []
     }
   ],
@@ -5336,7 +5348,7 @@
     },
     {
       "date": "2026-11-14",
-      "at": "2026-11-14 01:01:54",
+      "at": "2026-11-14 01:04:03",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5469,7 +5481,7 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2044.9,
+      "totalKB": 2044.7,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5485,7 +5497,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 201.2
+          "kb": 201
         },
         {
           "name": "rider-agreements.json",
