@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-14 07:38:57",
+  "generatedAt": "2026-11-14 08:02:50",
   "runDate": "2026-11-14",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-14 15:38:45",
-        "durationSec": 8.2,
+        "finishedAt": "2026-11-14 15:40:42",
+        "durationSec": 106.1,
         "note": "数据日 20261113：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -1300,7 +1300,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-14 07:48"
+        "lastRunAt": "2026-11-14 16:00"
       },
       "heal": {
         "can": true,
@@ -2332,7 +2332,7 @@
       "entry": "桌面端自动化编排：运行 python F:\\work\\mtcapacity\\lib\\monitor.py（统一监控大盘聚合：六板对账+审计+心跳+留痕快照+告警派生落 sched\\cache\\monitor_status.json，R559 起告警非空自动追加 monitor_alert_history.jsonl）。跑完在收件箱开一条结果条目：聚合时刻、六板对账结论、告警条数与明细（告警明细逐条列出 level/src）；全部正常时收件箱条目一句话带过即可",
       "note": "R562 定时接线：大盘聚合此前无任何定时触发（monitor_status 靠轮次手工刷新，11-05 起断链 4 天才被 R562 盘点发现——审计 6a 心跳检查同轮补盲）。自动化「监控大盘聚合」建议 2h 节奏（FREQ=HOURLY;INTERVAL=2;BYMINUTE=0），UI 确认创建后回填 automationId（R562 二段）\n2026-11-13 R584：用户裁决本轮不建聚合自动化，wiringDeferred 照实声明；建自动化后回填 automationId 并删本字段\n2026-11-14 体检轮接线落地：桌面自动化 DV-YKvKI5cxwfG6KUewd3 建（FREQ=HOURLY;INTERVAL=2，全工程体检双决策项之一，用户卡片确认），automationId 已回填、wiringDeferred 删除——R562 二段闭环。首轮确认卡曾截断（prompt 只落 4 字+排期回落默认），修正卡重发后完整落地。\n2026-11-14 12:01 首次自动触发成功（runStatus=completed，心跳 12:00:20 落盘），intent-registry 条目按 R266 恢复约定移除——全闭环。",
       "last": {
-        "finishedAt": "2026-11-14 14:02:23",
+        "finishedAt": "2026-11-14 16:00:22",
         "note": ""
       },
       "monitor": {
@@ -2344,7 +2344,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-14 14:03"
+        "lastRunAt": "2026-11-14 16:02"
       },
       "heal": {
         "can": false,
@@ -2352,7 +2352,7 @@
       },
       "history": [
         {
-          "finishedAt": "2026-11-14 14:02:23"
+          "finishedAt": "2026-11-14 16:00:22"
         }
       ],
       "gaps": {
@@ -2749,11 +2749,11 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 6h）"
+        "overdueText": "运行超时（距上次 6.4h）"
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-14 08:01"
+        "lastRunAt": "2026-11-14 16:01"
       },
       "heal": {
         "can": false,
@@ -3217,7 +3217,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-14 09:03:57）"
+      "detail": "本轮发布前置 10 段全过（2026-11-14 16:02:50）"
     },
     {
       "layer": "项目层",
@@ -3262,7 +3262,7 @@
           "size": 585167
         }
       ],
-      "ageHours": 7,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3280,7 +3280,7 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-14 07:38",
+          "mtime": "2026-11-14 08:00",
           "size": 77044
         },
         {
@@ -3556,7 +3556,7 @@
             }
           ]
         },
-        "ageH": 2,
+        "ageH": 3,
         "totalH": 671,
         "deltaH": 671,
         "gapH": 5
@@ -3608,7 +3608,7 @@
             }
           ]
         },
-        "ageH": 7,
+        "ageH": 8,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -3764,7 +3764,7 @@
             }
           ]
         },
-        "ageH": 8,
+        "ageH": 9,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3816,7 +3816,7 @@
             }
           ]
         },
-        "ageH": 8,
+        "ageH": 9,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -3985,13 +3985,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "",
-        "ageH": 8
+        "ageH": 9
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 8
+        "ageH": 9
       },
       {
         "name": "r589-prompt-guard",
@@ -4009,13 +4009,13 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "",
-        "ageH": 7
+        "ageH": 8
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 2
+        "ageH": 3
       }
     ],
     "stall": {
@@ -4036,7 +4036,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6.4h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4389,8 +4389,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "e7a1975",
-        "at": "2026-11-14T14:48:12+08:00",
+        "hash": "78e0a7c",
+        "at": "2026-11-14T15:40:15+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4408,7 +4408,7 @@
   ],
   "monitor": {
     "schemaVer": 1,
-    "generatedAt": "2026-11-14 14:02:23",
+    "generatedAt": "2026-11-14 16:00:22",
     "boards": {
       "sep": "PASS",
       "oct": "PASS",
@@ -4424,22 +4424,21 @@
       "capacity-daily": {
         "dataDay": "2026-11-08",
         "checkedAt": "2026-11-14T07:42:28",
-        "ageH": 6.332056198333333,
+        "ageH": 8.2984610525,
         "pending": []
       },
       "kaohe-daily": {
         "dataDay": "2026-11-13",
-        "checkedAt": "2026-11-14T09:21:58",
-        "ageH": 4.673722864999999,
+        "checkedAt": "2026-11-14T15:40:42",
+        "ageH": 0.32790549694444443,
         "pending": [
-          "ym",
           "qk"
         ]
       },
       "xsp-weekly": {
         "dataDay": "2026-11-14",
         "checkedAt": "2026-11-14T10:30:45",
-        "ageH": 3.5273342536111114,
+        "ageH": 5.4937391075,
         "pending": []
       },
       "rider-hourly": {
@@ -4460,8 +4459,8 @@
     "pairs": [
       {
         "name": "kaohe-mtd-eval",
-        "status": "PASS",
-        "msg": "全部一致（eval 块 2 处，date=20261113）"
+        "status": "SKIP",
+        "msg": "SPA 壳板：单数据源由 verify_remote 对账覆盖（SKIP）"
       }
     ],
     "auditTrail": {
@@ -4479,27 +4478,27 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-14 09:03:57",
+    "runAt": "2026-11-14 16:02:50",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 6.9,
+        "seconds": 1.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -4511,13 +4510,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 97.7,
+        "seconds": 64.9,
         "note": "npm test pass=1601 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 6.2,
+        "seconds": 5.7,
         "note": ""
       },
       {
@@ -4535,37 +4534,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 21.8,
+        "seconds": 23.3,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 26.5,
+        "seconds": 30.4,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 31.7,
-        "note": "拷贝回验 132 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 90.9,
-        "note": "指纹+探针 data/workbench.json 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-12 16:28:31",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 133.6,
-      "fails": []
-    },
     {
       "runAt": "2026-11-12 16:31:28",
       "scope": "complete",
@@ -4767,6 +4747,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 283.3,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-14 16:02:50",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 126.9,
       "fails": []
     }
   ],
@@ -5550,7 +5537,7 @@
     },
     {
       "date": "2026-11-14",
-      "at": "2026-11-14 07:38:57",
+      "at": "2026-11-14 08:02:50",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5683,11 +5670,11 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2054.6,
+      "totalKB": 2050.9,
       "top": [
         {
           "name": "rider-detail.json",
-          "kb": 545.3
+          "kb": 542
         },
         {
           "name": "rider_base.json",
@@ -5699,7 +5686,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 206.7
+          "kb": 206.5
         },
         {
           "name": "rider-agreements.json",
