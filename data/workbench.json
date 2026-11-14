@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-14 06:47:19",
+  "generatedAt": "2026-11-14 07:38:57",
   "runDate": "2026-11-14",
   "tasks": [
     {
@@ -12,11 +12,11 @@
       "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）",
       "note": "技能编排型任务，需浏览器 BI 登录态；发布感知双探测：07:00 主跑（定时器 BYHOUR=7;BYMINUTE=0，与 expectHour=7 对齐；11-10 21:02 用户确认定时器以 07:00 为准，登记按 R195 惯例向运行态真源对齐）+ 10:30 自愈探测补跑（OdrLWZHZtb8IhMG8W8kgp）。换月SOP人工核对挂账导致的 FAIL 为已知态（非断链）。留痕耗时按最近触发源折算。2026-11-14 R585：主跑留痕代码级收口（管线自写+幂等），prompt 收尾 Record 指令恢复后双通道并存互不冲突",
       "last": {
-        "status": "FAIL",
-        "exitCode": 1,
-        "finishedAt": "2026-11-14 14:41:52",
-        "durationSec": 99,
-        "note": "数据日 20261113：流水线失败退出"
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-11-14 15:38:45",
+        "durationSec": 8.2,
+        "note": "数据日 20261113：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
         "cadence": "daily",
@@ -2749,7 +2749,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 5.2h）"
+        "overdueText": "运行超时（距上次 6h）"
       },
       "timer": {
         "state": "ok",
@@ -3204,8 +3204,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "FAIL",
-      "detail": "7/11 任务正常 · 1 失败 · 3 逾期 · 近 30 天触发断档 8 天"
+      "status": "WARN",
+      "detail": "8/11 任务正常 · 3 逾期 · 近 30 天触发断档 8 天"
     },
     {
       "layer": "部署层",
@@ -3280,8 +3280,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-14 06:39",
-          "size": 77028
+          "mtime": "2026-11-14 07:38",
+          "size": 77044
         },
         {
           "name": "oct.json",
@@ -3556,7 +3556,7 @@
             }
           ]
         },
-        "ageH": 1,
+        "ageH": 2,
         "totalH": 671,
         "deltaH": 671,
         "gapH": 5
@@ -3608,7 +3608,7 @@
             }
           ]
         },
-        "ageH": 6,
+        "ageH": 7,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -3660,7 +3660,7 @@
             }
           ]
         },
-        "ageH": 7,
+        "ageH": 8,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -3712,7 +3712,7 @@
             }
           ]
         },
-        "ageH": 7,
+        "ageH": 8,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -3868,7 +3868,7 @@
             }
           ]
         },
-        "ageH": 8,
+        "ageH": 9,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -3920,7 +3920,7 @@
             }
           ]
         },
-        "ageH": 8,
+        "ageH": 9,
         "totalH": 1,
         "deltaH": null,
         "gapH": null
@@ -3973,13 +3973,13 @@
         "name": "r585-heal-trace",
         "pct": 60,
         "sev": "",
-        "ageH": 8
+        "ageH": 9
       },
       {
         "name": "r586-orchestration-promote",
         "pct": 20,
         "sev": "",
-        "ageH": 8
+        "ageH": 9
       },
       {
         "name": "r587-metrics-struct",
@@ -3997,25 +3997,25 @@
         "name": "r589-prompt-guard",
         "pct": 60,
         "sev": "",
-        "ageH": 7
+        "ageH": 8
       },
       {
         "name": "r590-note-label",
         "pct": 20,
         "sev": "",
-        "ageH": 7
+        "ageH": 8
       },
       {
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "",
-        "ageH": 6
+        "ageH": 7
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 1
+        "ageH": 2
       }
     ],
     "stall": {
@@ -4024,11 +4024,6 @@
     }
   },
   "alerts": [
-    {
-      "level": "FAIL",
-      "text": "任务失败：履约考核看板刷新与备份（2026-11-14 14:41:52 · 数据日 20261113：流水线失败退出）",
-      "anchor": "sec-tasks"
-    },
     {
       "level": "WARN",
       "text": "应跑未跑：考核看板发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
@@ -4041,7 +4036,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 5.2h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4394,8 +4389,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "aad3cef",
-        "at": "2026-11-14T09:04:07+08:00",
+        "hash": "e7a1975",
+        "at": "2026-11-14T14:48:12+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4405,9 +4400,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "023ed6d",
-        "at": "2026-11-14T07:29:50+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-13"
+        "hash": "37ee6ba",
+        "at": "2026-11-14T15:38:38+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html（assessment-legacy 通道）"
       }
     }
   ],
@@ -4841,14 +4836,14 @@
     ]
   },
   "health": {
-    "score": 68,
-    "grade": "中",
+    "score": 80,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "FAIL",
+        "status": "WARN",
         "weight": 25,
-        "points": 0
+        "points": 50
       },
       {
         "layer": "门禁层",
@@ -5555,13 +5550,13 @@
     },
     {
       "date": "2026-11-14",
-      "at": "2026-11-14 06:47:19",
-      "score": 68,
-      "grade": "中",
+      "at": "2026-11-14 07:38:57",
+      "score": 80,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "FAIL"
+          "status": "WARN"
         },
         {
           "layer": "部署层",
@@ -5688,11 +5683,11 @@
     },
     "data": {
       "count": 14,
-      "totalKB": 2044.9,
+      "totalKB": 2054.6,
       "top": [
         {
           "name": "rider-detail.json",
-          "kb": 542
+          "kb": 545.3
         },
         {
           "name": "rider_base.json",
@@ -5704,7 +5699,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 201.2
+          "kb": 206.7
         },
         {
           "name": "rider-agreements.json",
@@ -5720,7 +5715,7 @@
         },
         {
           "name": "assessment/nov.json",
-          "kb": 74.7
+          "kb": 75.2
         }
       ]
     },
