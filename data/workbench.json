@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-14 15:36:57",
+  "generatedAt": "2026-11-14 15:50:58",
   "runDate": "2026-11-14",
   "tasks": [
     {
@@ -2824,7 +2824,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 6ea4ee5 2026-11-14 22:25:45 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 916219e 2026-11-14 23:39:01 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2839,7 +2839,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（118 小时前生成）"
+        "msg": "单文件产物存在（119 小时前生成）"
       },
       {
         "level": "PASS",
@@ -3109,7 +3109,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（1h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（2h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -3144,12 +3144,12 @@
       {
         "level": "PASS",
         "item": "断链自愈",
-        "msg": "显式 -NoHeal ——跳过 run_task -Auto（只读体检；MT_HEAL_DEPTH=0 未参与补跑）"
+        "msg": "跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-14 22:25:44 替换，含 1 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-14 23:38:57 替换，含 18 文件）"
       },
       {
         "level": "PASS",
@@ -3243,7 +3243,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 11 段全过（2026-11-14 23:36:57）"
+      "detail": "上轮全链 13 段全过（2026-11-14 23:50:52）"
     },
     {
       "layer": "项目层",
@@ -3330,7 +3330,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 1,
+      "ageHours": 2,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-14",
@@ -3582,7 +3582,7 @@
             }
           ]
         },
-        "ageH": 0,
+        "ageH": 1,
         "totalH": 681,
         "deltaH": 681,
         "gapH": 15
@@ -3790,7 +3790,7 @@
             }
           ]
         },
-        "ageH": 16,
+        "ageH": 17,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3842,7 +3842,7 @@
             }
           ]
         },
-        "ageH": 16,
+        "ageH": 17,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4011,13 +4011,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "",
-        "ageH": 16
+        "ageH": 17
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 16
+        "ageH": 17
       },
       {
         "name": "r589-prompt-guard",
@@ -4041,7 +4041,7 @@
         "name": "20261017-efficiency-naming",
         "pct": 40,
         "sev": "",
-        "ageH": 0
+        "ageH": 1
       }
     ],
     "stall": {
@@ -4410,8 +4410,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "6ea4ee5",
-        "at": "2026-11-14T22:25:45+08:00",
+        "hash": "916219e",
+        "at": "2026-11-14T23:39:01+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4499,10 +4499,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-14 23:36:57",
+    "runAt": "2026-11-14 23:50:52",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "excel",
@@ -4569,17 +4569,22 @@
         "pass": true,
         "seconds": 26.9,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 624.2,
+        "note": "拷贝回验 134 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 210.6,
+        "note": "指纹+探针 assets/CopyLinkButton-BPy6o2gn.js 生效；10 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-13 07:19:07",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 168.9,
-      "fails": []
-    },
     {
       "runAt": "2026-11-13 07:35:14",
       "scope": "pre-deploy",
@@ -4781,6 +4786,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 113.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-14 23:50:52",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 948,
       "fails": []
     }
   ],
@@ -5564,7 +5576,7 @@
     },
     {
       "date": "2026-11-14",
-      "at": "2026-11-14 15:36:57",
+      "at": "2026-11-14 15:50:58",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -5697,7 +5709,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2277.2,
+      "totalKB": 2277,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5717,7 +5729,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 207.9
+          "kb": 207.7
         },
         {
           "name": "rider-agreements.json",
