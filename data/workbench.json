@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-15 00:36:45",
+  "generatedAt": "2026-11-15 01:01:41",
   "runDate": "2026-11-15",
   "tasks": [
     {
@@ -825,40 +825,30 @@
       "entry": "python daily_pipeline.py",
       "note": "八步管线：关键步骤2-7失败即停；步骤1/8失败仅告警；数据源未发布时用日期参数按最近可得日期重跑。R572：用户确认长期手工跑，cadence 由 daily 转 manual（审计运行预期监控不再按 expectHour 推算）；自动化 G_ndbjAhhr6_cS7hbbZpO 维持 PAUSED，登记 paused:true 照实声明与双轨核对一致——若恢复定时，同步改回 daily+expectHour 并删本说明",
       "last": {
-        "status": "PASS",
-        "exitCode": 0,
-        "finishedAt": "2026-11-14 07:43:04",
-        "durationSec": null,
-        "note": "manual 数据日期 2026-11-08"
+        "status": "FAIL",
+        "exitCode": 1,
+        "finishedAt": "2026-11-15 09:00:58",
+        "durationSec": 59,
+        "note": "manual 数据日期 2026-11-14"
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 09:00（2026-11-14 恢复自动化 G_ndbjAhhr6_cS7hbbZpO=ACTIVE；R572 曾转人工，R592 统一通道后随全工程体检决策恢复）",
         "expectHour": 9,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
-        "state": "failed",
-        "lastRunAt": "2026-10-23 10:30"
+        "state": "ok",
+        "lastRunAt": "2026-11-15 09:00"
       },
       "heal": {
         "can": true,
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id capacity-daily）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-25 10:24:08",
-          "durationSec": 26.5
-        },
-        {
-          "status": "PASS",
-          "finishedAt": "2026-10-26 11:09:22",
-          "durationSec": 461.9
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-10-26 21:45:47",
@@ -1128,6 +1118,18 @@
           "finishedAt": "2026-11-14 07:43:04",
           "durationSec": null,
           "note": "manual 数据日期 2026-11-08"
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-11-15 08:49:35",
+          "durationSec": null,
+          "note": "manual 数据日期 2026-11-14"
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-11-15 09:00:58",
+          "durationSec": 59,
+          "note": "manual 数据日期 2026-11-14"
         }
       ],
       "gaps": {
@@ -1166,7 +1168,7 @@
           },
           {
             "date": "2026-10-25",
-            "state": "pass"
+            "state": "pre"
           },
           {
             "date": "2026-10-26",
@@ -1250,16 +1252,15 @@
           },
           {
             "date": "2026-11-15",
-            "state": "gap"
+            "state": "fail"
           }
         ],
-        "firstDate": "2026-10-25",
-        "gapCount": 7,
-        "failCount": 0,
-        "passCount": 15
+        "firstDate": "2026-10-26",
+        "gapCount": 6,
+        "failCount": 1,
+        "passCount": 14
       },
       "durTrend": [
-        3,
         563,
         28,
         48,
@@ -1272,6 +1273,7 @@
         41,
         40,
         317,
+        59,
         59
       ]
     },
@@ -3165,8 +3167,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "11/11 任务正常 · 近 30 天触发断档 11 天"
+      "status": "FAIL",
+      "detail": "10/11 任务正常 · 1 失败 · 近 30 天触发断档 10 天"
     },
     {
       "layer": "部署层",
@@ -3199,31 +3201,31 @@
       "recent": [
         {
           "name": "订单运力分析_2026-11-08.xlsx",
-          "mtime": "2026-11-13 23:42",
-          "size": 19353
+          "mtime": "2026-11-15 00:58",
+          "size": 19354
         },
         {
           "name": "悦跑排班差异_站点跟进清单_2026-11-08.xlsx",
-          "mtime": "2026-11-13 23:42",
+          "mtime": "2026-11-15 00:58",
           "size": 14461
         },
         {
           "name": "时段运力拆解_2026-11-08.xlsx",
-          "mtime": "2026-11-13 23:42",
-          "size": 164338
+          "mtime": "2026-11-15 00:58",
+          "size": 164341
         },
         {
           "name": "data15_2026-11-08.json",
-          "mtime": "2026-11-13 23:41",
+          "mtime": "2026-11-15 00:56",
           "size": 386055
         },
         {
           "name": "data15_2026-11-08_enh.json",
-          "mtime": "2026-11-13 23:41",
+          "mtime": "2026-11-15 00:56",
           "size": 242855
         }
       ],
-      "ageHours": 24,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-08",
@@ -3473,7 +3475,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 17,
-        "latestAt": "2026-11-15 00:09:32",
+        "latestAt": "2026-11-15 00:46:47",
         "flow": {
           "done": false,
           "current": "分析",
@@ -3498,7 +3500,7 @@
               "role": "builder",
               "label": "开发",
               "state": "done",
-              "at": "2026-11-15 00:09:32",
+              "at": "2026-11-15 00:46:47",
               "durH": 685
             },
             {
@@ -3518,9 +3520,9 @@
           ]
         },
         "ageH": 0,
-        "totalH": 690,
-        "deltaH": 690,
-        "gapH": 24
+        "totalH": 691,
+        "deltaH": 691,
+        "gapH": 25
       },
       {
         "name": "r591-trace-guard",
@@ -3725,7 +3727,7 @@
             }
           ]
         },
-        "ageH": 25,
+        "ageH": 26,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -3777,7 +3779,7 @@
             }
           ]
         },
-        "ageH": 25,
+        "ageH": 26,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -3946,13 +3948,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "",
-        "ageH": 25
+        "ageH": 26
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 25
+        "ageH": 26
       },
       {
         "name": "r589-prompt-guard",
@@ -3986,9 +3988,14 @@
   },
   "alerts": [
     {
+      "level": "FAIL",
+      "text": "任务失败：通用运力监控每日刷新（2026-11-15 09:00:58 · manual 数据日期 2026-11-14）——可用 run_task.ps1 -Auto / -Id capacity-daily 重跑",
+      "anchor": "sec-tasks"
+    },
+    {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 11 天零留痕（新商评考核周报 3 天 · 通用运力监控每日刷新 7 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：3 个任务近 30 天共 10 天零留痕（新商评考核周报 3 天 · 通用运力监控每日刷新 6 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -4335,8 +4342,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "65a5a89",
-        "at": "2026-11-15T08:30:24+08:00",
+        "hash": "6f36df5",
+        "at": "2026-11-15T09:01:13+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4787,14 +4794,14 @@
     ]
   },
   "health": {
-    "score": 93,
-    "grade": "优",
+    "score": 68,
+    "grade": "中",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "FAIL",
         "weight": 25,
-        "points": 100
+        "points": 0
       },
       {
         "layer": "门禁层",
@@ -5529,13 +5536,13 @@
     },
     {
       "date": "2026-11-15",
-      "at": "2026-11-15 00:36:45",
-      "score": 93,
-      "grade": "优",
+      "at": "2026-11-15 01:01:41",
+      "score": 68,
+      "grade": "中",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "FAIL"
         },
         {
           "layer": "部署层",
@@ -5662,7 +5669,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2275.4,
+      "totalKB": 2275.9,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5682,7 +5689,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 204.9
+          "kb": 205.4
         },
         {
           "name": "rider-agreements.json",
