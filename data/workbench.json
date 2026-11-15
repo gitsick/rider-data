@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-15 00:03:06",
+  "generatedAt": "2026-11-15 00:03:52",
   "runDate": "2026-11-15",
   "tasks": [
     {
@@ -467,7 +467,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-15 08:00"
+        "lastRunAt": "2026-11-15 08:03"
       },
       "heal": {
         "can": false,
@@ -2819,7 +2819,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 3cdfa5f 2026-11-15 08:01:53 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: acfe089 2026-11-15 08:03:09 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3074,7 +3074,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-15 08:01:51 替换，含 2 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-15 08:03:08 替换，含 1 文件）"
       },
       {
         "level": "PASS",
@@ -3168,7 +3168,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 13 段全过（2026-11-15 08:02:59）"
+      "detail": "上轮全链 12 段全过（2026-11-15 08:03:46）"
     },
     {
       "layer": "项目层",
@@ -4325,8 +4325,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "3cdfa5f",
-        "at": "2026-11-15T08:01:53+08:00",
+        "hash": "acfe089",
+        "at": "2026-11-15T08:03:09+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4414,27 +4414,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-15 08:02:59",
+    "runAt": "2026-11-15 08:03:46",
     "allPass": true,
     "scope": "complete",
     "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
-        "name": "excel",
-        "pass": true,
-        "seconds": 2.8,
-        "note": ""
-      },
-      {
         "name": "visits",
         "pass": true,
-        "seconds": 2.8,
+        "seconds": 1.3,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -4446,37 +4440,37 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 34.2,
+        "seconds": 343.6,
         "note": "npm test pass=1565 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 5.9,
+        "seconds": 8.5,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.1,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 23.1,
+        "seconds": 30,
         "note": ""
       },
       {
@@ -4488,25 +4482,18 @@
       {
         "name": "deploy",
         "pass": true,
-        "seconds": 457.8,
+        "seconds": 35.2,
         "note": "拷贝回验 134 文件 repo≡dist（MD5）"
       },
       {
         "name": "live_gate",
         "pass": true,
-        "seconds": 157.1,
+        "seconds": 82.4,
         "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-13 16:06:55",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 358.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-13 16:45:57",
       "scope": "pre-deploy",
@@ -4708,6 +4695,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 715.7,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-15 08:03:46",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 533.4,
       "fails": []
     }
   ],
@@ -5519,7 +5513,7 @@
     },
     {
       "date": "2026-11-15",
-      "at": "2026-11-15 00:03:06",
+      "at": "2026-11-15 00:03:52",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -5652,7 +5646,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2275.3,
+      "totalKB": 2275.9,
       "top": [
         {
           "name": "rider-detail.json",
@@ -5672,7 +5666,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 204.8
+          "kb": 205.4
         },
         {
           "name": "rider-agreements.json",
