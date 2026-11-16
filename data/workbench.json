@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 18:39:20",
+  "generatedAt": "2026-11-16 18:48:14",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-17 02:31:19",
-        "durationSec": 155.9,
+        "finishedAt": "2026-11-17 02:40:38",
+        "durationSec": 80.3,
         "note": "数据日 20261115：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -2784,7 +2784,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 2.6h）"
+        "overdueText": "运行超时（距上次 2.8h）"
       },
       "timer": {
         "state": "ok",
@@ -3252,7 +3252,7 @@
           "size": 470977
         }
       ],
-      "ageHours": 6,
+      "ageHours": 7,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-15",
@@ -4029,7 +4029,7 @@
             }
           ]
         },
-        "ageH": 67,
+        "ageH": 68,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4083,7 +4083,7 @@
             }
           ]
         },
-        "ageH": 67,
+        "ageH": 68,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4623,7 +4623,7 @@
             }
           ]
         },
-        "ageH": 171,
+        "ageH": 172,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4839,7 +4839,7 @@
             }
           ]
         },
-        "ageH": 175,
+        "ageH": 176,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4947,7 +4947,7 @@
             }
           ]
         },
-        "ageH": 176,
+        "ageH": 177,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5001,7 +5001,7 @@
             }
           ]
         },
-        "ageH": 177,
+        "ageH": 178,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5414,13 +5414,13 @@
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 177
+        "ageH": 178
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 176
+        "ageH": 177
       },
       {
         "name": "r560-lib-readme-roster",
@@ -5432,7 +5432,7 @@
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 175
+        "ageH": 176
       },
       {
         "name": "r562-monitor-aggregate-wiring",
@@ -5456,7 +5456,7 @@
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r566-dark-patrol",
@@ -5516,13 +5516,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "warn",
-        "ageH": 67
+        "ageH": 68
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "warn",
-        "ageH": 67
+        "ageH": 68
       },
       {
         "name": "r589-prompt-guard",
@@ -5658,7 +5658,7 @@
       },
       {
         "name": "r565-visual-patrol",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -5674,7 +5674,7 @@
       },
       {
         "name": "r561-patrol-trace-wiring",
-        "ageH": 175
+        "ageH": 176
       },
       {
         "name": "r560-lib-readme-roster",
@@ -5682,11 +5682,11 @@
       },
       {
         "name": "r559-alert-history",
-        "ageH": 176
+        "ageH": 177
       },
       {
         "name": "r558-b1-capacity-resume",
-        "ageH": 177
+        "ageH": 178
       },
       {
         "name": "r557-plan-closeout",
@@ -5713,7 +5713,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 2.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 2.8h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6066,8 +6066,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "41ca47fe",
-        "at": "2026-11-17T02:30:05+08:00",
+        "hash": "751f0627",
+        "at": "2026-11-17T02:43:32+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7288,7 +7288,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 18:39:20",
+      "at": "2026-11-16 18:48:14",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7392,23 +7392,23 @@
   "perf": {
     "assets": {
       "count": 95,
-      "totalKB": 1579.5,
+      "totalKB": 1581.5,
       "top": [
         {
           "name": "vendor-echarts-C6gMPsEI.js",
           "kb": 611.5
         },
         {
-          "name": "capacity-Dunx9u4_.js",
-          "kb": 105.6
+          "name": "capacity-CVA660wL.js",
+          "kb": 105.5
         },
         {
           "name": "vendor-vue-Sha_iTNp.js",
           "kb": 76.8
         },
         {
-          "name": "main-IWmSUu0O.js",
-          "kb": 68
+          "name": "main-C4VWLA-f.js",
+          "kb": 68.8
         },
         {
           "name": "swRegister-DpR6iPQ0.css",
@@ -7423,14 +7423,14 @@
           "kb": 45.1
         },
         {
-          "name": "MonthlyTab-C6zxeTKU.js",
+          "name": "MonthlyTab-CSvtIA_U.js",
           "kb": 40.8
         }
       ]
     },
     "data": {
       "count": 15,
-      "totalKB": 2756.2,
+      "totalKB": 2756.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -7450,7 +7450,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 247.6
+          "kb": 247.8
         },
         {
           "name": "rider-agreements.json",
