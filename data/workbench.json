@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 04:34:02",
+  "generatedAt": "2026-11-16 04:45:39",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -2781,7 +2781,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 4.6h）"
+        "overdueText": "运行超时（距上次 4.8h）"
       },
       "timer": {
         "state": "ok",
@@ -3212,7 +3212,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-16 00:02:48）"
+      "detail": "本轮发布前置 10 段全过（2026-11-16 12:45:39）"
     },
     {
       "layer": "项目层",
@@ -3806,7 +3806,7 @@
             }
           ]
         },
-        "ageH": 53,
+        "ageH": 54,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -3975,7 +3975,7 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "warn",
-        "ageH": 53
+        "ageH": 54
       },
       {
         "name": "r588-prose-cleanup",
@@ -4016,7 +4016,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.8h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -4028,11 +4028,6 @@
       "level": "WARN",
       "text": "审计有 3 项警告（2026-11-16 06:44:06）",
       "anchor": "sec-audit"
-    },
-    {
-      "level": "FAIL",
-      "text": "体积超预算：数据 JSON 总量 2707KB > 预算 2560KB——perf-gate 已拦截，瘦身后重跑（调预算需评审）",
-      "anchor": "sec-perf"
     },
     {
       "level": "WARN",
@@ -4374,8 +4369,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "c5014a5",
-        "at": "2026-11-16T12:29:30+08:00",
+        "hash": "c622db1",
+        "at": "2026-11-16T12:43:52+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -4463,21 +4458,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-16 00:02:48",
+    "runAt": "2026-11-16 12:45:39",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 4.6,
+        "seconds": 3.3,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -4489,14 +4484,14 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.4,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 94.4,
-        "note": "npm test pass=1595 fail=0"
+        "seconds": 368.9,
+        "note": "npm test pass=1602 fail=0"
       },
       {
         "name": "build",
@@ -4519,37 +4514,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 27.8,
+        "seconds": 22.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 35.8,
+        "seconds": 32.9,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 291.3,
-        "note": "拷贝回验 135 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 116.2,
-        "note": "指纹+探针 assets/rider_overview-D3gRRsV3.css 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-14 06:49:33",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 129.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-14 06:51:07",
       "scope": "complete",
@@ -4751,6 +4727,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 579.9,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-16 12:45:39",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 437.1,
       "fails": []
     }
   ],
@@ -5590,7 +5573,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 04:34:02",
+      "at": "2026-11-16 04:45:39",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -5694,15 +5677,15 @@
   "perf": {
     "assets": {
       "count": 95,
-      "totalKB": 1554.2,
+      "totalKB": 1556,
       "top": [
         {
           "name": "vendor-echarts-C6gMPsEI.js",
           "kb": 611.5
         },
         {
-          "name": "capacity-vh1clXHf.js",
-          "kb": 94.1
+          "name": "capacity-DCu2AawH.js",
+          "kb": 95.9
         },
         {
           "name": "vendor-vue-Bfujfbmg.js",
@@ -5732,7 +5715,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2707.4,
+      "totalKB": 2707.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -5752,7 +5735,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 207.5
+          "kb": 207.2
         },
         {
           "name": "rider-agreements.json",
@@ -5809,20 +5792,13 @@
     "budgets": {
       "totalAssetsKB": 1600,
       "maxChunkKB": 700,
-      "totalDataKB": 2560,
+      "totalDataKB": 2880,
       "maxDataKB": 800,
       "totalDailyKB": 30000,
       "maxDailyKB": 4500
     },
-    "breaches": [
-      {
-        "key": "totalDataKB",
-        "label": "数据 JSON 总量",
-        "actualKB": 2707.4,
-        "budgetKB": 2560
-      }
-    ],
-    "status": "FAIL"
+    "breaches": [],
+    "status": "PASS"
   },
   "knowledge": [
     {
