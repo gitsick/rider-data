@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 17:29:31",
+  "generatedAt": "2026-11-16 17:43:47",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-17 01:14:15",
-        "durationSec": 85.7,
+        "finishedAt": "2026-11-17 01:31:33",
+        "durationSec": 123.4,
         "note": "数据日 20261115：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -3289,7 +3289,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 12,
+      "ageHours": 13,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-17",
@@ -3497,7 +3497,7 @@
       {
         "name": "20261017-efficiency-naming",
         "files": 17,
-        "latestAt": "2026-11-16 17:20:14",
+        "latestAt": "2026-11-16 17:35:37",
         "flow": {
           "done": false,
           "light": false,
@@ -3524,7 +3524,7 @@
               "role": "builder",
               "label": "开发",
               "state": "done",
-              "at": "2026-11-16 17:20:14",
+              "at": "2026-11-16 17:35:37",
               "durH": 726
             },
             {
@@ -3544,9 +3544,9 @@
           ]
         },
         "ageH": 0,
-        "totalH": 731,
-        "deltaH": 731,
-        "gapH": 4
+        "totalH": 732,
+        "deltaH": 732,
+        "gapH": 5
       },
       {
         "name": "r647-legacy-exempt",
@@ -3651,7 +3651,7 @@
             }
           ]
         },
-        "ageH": 5,
+        "ageH": 6,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 1
@@ -3759,7 +3759,7 @@
             }
           ]
         },
-        "ageH": 7,
+        "ageH": 8,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -3813,7 +3813,7 @@
             }
           ]
         },
-        "ageH": 8,
+        "ageH": 9,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 57
@@ -4083,7 +4083,7 @@
             }
           ]
         },
-        "ageH": 66,
+        "ageH": 67,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4245,7 +4245,7 @@
             }
           ]
         },
-        "ageH": 72,
+        "ageH": 73,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -4353,7 +4353,7 @@
             }
           ]
         },
-        "ageH": 169,
+        "ageH": 170,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4677,7 +4677,7 @@
             }
           ]
         },
-        "ageH": 170,
+        "ageH": 171,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4839,7 +4839,7 @@
             }
           ]
         },
-        "ageH": 174,
+        "ageH": 175,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4947,7 +4947,7 @@
             }
           ]
         },
-        "ageH": 175,
+        "ageH": 176,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5001,7 +5001,7 @@
             }
           ]
         },
-        "ageH": 176,
+        "ageH": 177,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5163,7 +5163,7 @@
             }
           ]
         },
-        "ageH": 178,
+        "ageH": 179,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5271,7 +5271,7 @@
             }
           ]
         },
-        "ageH": 179,
+        "ageH": 180,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -5384,7 +5384,7 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r554-archmode-agentroles",
@@ -5396,7 +5396,7 @@
         "name": "r555-third-orchestrated",
         "pct": 80,
         "sev": "",
-        "ageH": 178
+        "ageH": 179
       },
       {
         "name": "r556-legacy-and-xsp",
@@ -5414,13 +5414,13 @@
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 176
+        "ageH": 177
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 175
+        "ageH": 176
       },
       {
         "name": "r560-lib-readme-roster",
@@ -5432,7 +5432,7 @@
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 174
+        "ageH": 175
       },
       {
         "name": "r562-monitor-aggregate-wiring",
@@ -5450,7 +5450,7 @@
         "name": "r564-pull-trace-wiring",
         "pct": 80,
         "sev": "",
-        "ageH": 170
+        "ageH": 171
       },
       {
         "name": "r565-visual-patrol",
@@ -5486,7 +5486,7 @@
         "name": "r570-pending-card-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 169
+        "ageH": 170
       },
       {
         "name": "r571-style-unify",
@@ -5498,7 +5498,7 @@
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "warn",
-        "ageH": 72
+        "ageH": 73
       },
       {
         "name": "r585-heal-trace",
@@ -5516,7 +5516,7 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "warn",
-        "ageH": 66
+        "ageH": 67
       },
       {
         "name": "r588-prose-cleanup",
@@ -5546,13 +5546,13 @@
         "name": "r632-teamflow-optimize",
         "pct": 100,
         "sev": "done",
-        "ageH": 8
+        "ageH": 9
       },
       {
         "name": "r644-teamflow-p2",
         "pct": 80,
         "sev": "done",
-        "ageH": 7
+        "ageH": 8
       },
       {
         "name": "r645-teamflow-p2b",
@@ -5564,7 +5564,7 @@
         "name": "r646-teamflow-p2c",
         "pct": 80,
         "sev": "done",
-        "ageH": 5
+        "ageH": 6
       },
       {
         "name": "r647-legacy-exempt",
@@ -5638,7 +5638,7 @@
       },
       {
         "name": "r570-pending-card-exempt",
-        "ageH": 169
+        "ageH": 170
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -5662,7 +5662,7 @@
       },
       {
         "name": "r564-pull-trace-wiring",
-        "ageH": 170
+        "ageH": 171
       },
       {
         "name": "r563-audit-regression-lock",
@@ -5674,7 +5674,7 @@
       },
       {
         "name": "r561-patrol-trace-wiring",
-        "ageH": 174
+        "ageH": 175
       },
       {
         "name": "r560-lib-readme-roster",
@@ -5682,11 +5682,11 @@
       },
       {
         "name": "r559-alert-history",
-        "ageH": 175
+        "ageH": 176
       },
       {
         "name": "r558-b1-capacity-resume",
-        "ageH": 176
+        "ageH": 177
       },
       {
         "name": "r557-plan-closeout",
@@ -5698,7 +5698,7 @@
       },
       {
         "name": "r555-third-orchestrated",
-        "ageH": 178
+        "ageH": 179
       },
       {
         "name": "r554-archmode-agentroles",
@@ -5706,7 +5706,7 @@
       },
       {
         "name": "r553-rup-first-run",
-        "ageH": 179
+        "ageH": 180
       }
     ]
   },
@@ -6061,8 +6061,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "877da65b",
-        "at": "2026-11-17T01:13:46+08:00",
+        "hash": "1bb4a0f9",
+        "at": "2026-11-17T01:42:48+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7283,7 +7283,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 17:29:31",
+      "at": "2026-11-16 17:43:47",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -7387,22 +7387,22 @@
   "perf": {
     "assets": {
       "count": 95,
-      "totalKB": 1575,
+      "totalKB": 1578.7,
       "top": [
         {
           "name": "vendor-echarts-C6gMPsEI.js",
           "kb": 611.5
         },
         {
-          "name": "capacity-DbaoRsUQ.js",
-          "kb": 102.7
+          "name": "capacity-_y9fDXOO.js",
+          "kb": 104.8
         },
         {
-          "name": "vendor-vue-Bfujfbmg.js",
+          "name": "vendor-vue-Sha_iTNp.js",
           "kb": 76.8
         },
         {
-          "name": "main-Cby_k2lB.js",
+          "name": "main-DD8bZEkq.js",
           "kb": 68
         },
         {
@@ -7410,15 +7410,15 @@
           "kb": 59.9
         },
         {
-          "name": "workbench-CaD04Syt.js",
+          "name": "workbench-CRUa82BY.js",
           "kb": 48.7
         },
         {
-          "name": "swRegister-CeRKSkYa.js",
+          "name": "swRegister-TrAsYzw0.js",
           "kb": 45.1
         },
         {
-          "name": "MonthlyTab-C9gXSerX.js",
+          "name": "MonthlyTab-BJfmRsH7.js",
           "kb": 40.8
         }
       ]
