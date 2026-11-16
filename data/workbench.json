@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 18:28:56",
+  "generatedAt": "2026-11-16 18:39:20",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-17 02:23:36",
-        "durationSec": 96.5,
+        "finishedAt": "2026-11-17 02:31:19",
+        "durationSec": 155.9,
         "note": "数据日 20261115：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -2783,8 +2783,8 @@
         "cadence": "hourly",
         "trigger": "每 8 小时整点巡检",
         "expect": true,
-        "overdue": false,
-        "overdueText": ""
+        "overdue": true,
+        "overdueText": "运行超时（距上次 2.6h）"
       },
       "timer": {
         "state": "ok",
@@ -3194,8 +3194,8 @@
     {
       "layer": "调度层",
       "anchor": "sec-tasks",
-      "status": "PASS",
-      "detail": "11/11 任务正常 · 近 30 天触发断档 8 天"
+      "status": "WARN",
+      "detail": "10/11 任务正常 · 1 逾期 · 近 30 天触发断档 8 天"
     },
     {
       "layer": "部署层",
@@ -3651,7 +3651,7 @@
             }
           ]
         },
-        "ageH": 6,
+        "ageH": 7,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 1
@@ -3759,7 +3759,7 @@
             }
           ]
         },
-        "ageH": 8,
+        "ageH": 9,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -3813,7 +3813,7 @@
             }
           ]
         },
-        "ageH": 9,
+        "ageH": 10,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 57
@@ -4245,7 +4245,7 @@
             }
           ]
         },
-        "ageH": 73,
+        "ageH": 74,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -4353,7 +4353,7 @@
             }
           ]
         },
-        "ageH": 170,
+        "ageH": 171,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4677,7 +4677,7 @@
             }
           ]
         },
-        "ageH": 171,
+        "ageH": 172,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5163,7 +5163,7 @@
             }
           ]
         },
-        "ageH": 179,
+        "ageH": 180,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5271,7 +5271,7 @@
             }
           ]
         },
-        "ageH": 180,
+        "ageH": 181,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -5384,7 +5384,7 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "",
-        "ageH": 180
+        "ageH": 181
       },
       {
         "name": "r554-archmode-agentroles",
@@ -5396,7 +5396,7 @@
         "name": "r555-third-orchestrated",
         "pct": 80,
         "sev": "",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r556-legacy-and-xsp",
@@ -5450,7 +5450,7 @@
         "name": "r564-pull-trace-wiring",
         "pct": 80,
         "sev": "",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r565-visual-patrol",
@@ -5486,7 +5486,7 @@
         "name": "r570-pending-card-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 170
+        "ageH": 171
       },
       {
         "name": "r571-style-unify",
@@ -5498,7 +5498,7 @@
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "warn",
-        "ageH": 73
+        "ageH": 74
       },
       {
         "name": "r585-heal-trace",
@@ -5546,13 +5546,13 @@
         "name": "r632-teamflow-optimize",
         "pct": 100,
         "sev": "done",
-        "ageH": 9
+        "ageH": 10
       },
       {
         "name": "r644-teamflow-p2",
         "pct": 80,
         "sev": "done",
-        "ageH": 8
+        "ageH": 9
       },
       {
         "name": "r645-teamflow-p2b",
@@ -5564,7 +5564,7 @@
         "name": "r646-teamflow-p2c",
         "pct": 80,
         "sev": "done",
-        "ageH": 6
+        "ageH": 7
       },
       {
         "name": "r647-legacy-exempt",
@@ -5638,7 +5638,7 @@
       },
       {
         "name": "r570-pending-card-exempt",
-        "ageH": 170
+        "ageH": 171
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -5662,7 +5662,7 @@
       },
       {
         "name": "r564-pull-trace-wiring",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r563-audit-regression-lock",
@@ -5698,7 +5698,7 @@
       },
       {
         "name": "r555-third-orchestrated",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r554-archmode-agentroles",
@@ -5706,11 +5706,16 @@
       },
       {
         "name": "r553-rup-first-run",
-        "ageH": 180
+        "ageH": 181
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 2.6h），需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
@@ -6061,8 +6066,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "1cf3e099",
-        "at": "2026-11-17T02:24:10+08:00",
+        "hash": "41ca47fe",
+        "at": "2026-11-17T02:30:05+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6513,14 +6518,14 @@
     ]
   },
   "health": {
-    "score": 100,
-    "grade": "优",
+    "score": 88,
+    "grade": "良",
     "layers": [
       {
         "layer": "调度层",
-        "status": "PASS",
+        "status": "WARN",
         "weight": 25,
-        "points": 100
+        "points": 50
       },
       {
         "layer": "门禁层",
@@ -7283,13 +7288,13 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 18:28:56",
-      "score": 100,
-      "grade": "优",
+      "at": "2026-11-16 18:39:20",
+      "score": 88,
+      "grade": "良",
       "layers": [
         {
           "layer": "调度层",
-          "status": "PASS"
+          "status": "WARN"
         },
         {
           "layer": "部署层",
