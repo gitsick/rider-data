@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 17:52:18",
+  "generatedAt": "2026-11-16 17:54:11",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-17 01:47:51",
-        "durationSec": 244.8,
+        "finishedAt": "2026-11-17 01:53:46",
+        "durationSec": 88.5,
         "note": "数据日 20261115：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -3597,7 +3597,7 @@
             }
           ]
         },
-        "ageH": 4,
+        "ageH": 5,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4893,7 +4893,7 @@
             }
           ]
         },
-        "ageH": 175,
+        "ageH": 176,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5109,7 +5109,7 @@
             }
           ]
         },
-        "ageH": 178,
+        "ageH": 179,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5402,7 +5402,7 @@
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 178
+        "ageH": 179
       },
       {
         "name": "r557-plan-closeout",
@@ -5426,7 +5426,7 @@
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 175
+        "ageH": 176
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -5570,7 +5570,7 @@
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 4
+        "ageH": 5
       },
       {
         "name": "20261017-efficiency-naming",
@@ -5678,7 +5678,7 @@
       },
       {
         "name": "r560-lib-readme-roster",
-        "ageH": 175
+        "ageH": 176
       },
       {
         "name": "r559-alert-history",
@@ -5694,7 +5694,7 @@
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 178
+        "ageH": 179
       },
       {
         "name": "r555-third-orchestrated",
@@ -6061,8 +6061,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5040222e",
-        "at": "2026-11-17T01:44:43+08:00",
+        "hash": "357d392b",
+        "at": "2026-11-17T01:53:17+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7283,7 +7283,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 17:52:18",
+      "at": "2026-11-16 17:54:11",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -7394,7 +7394,7 @@
           "kb": 611.5
         },
         {
-          "name": "capacity-_y9fDXOO.js",
+          "name": "capacity-C4LgxV8N.js",
           "kb": 104.8
         },
         {
@@ -7402,7 +7402,7 @@
           "kb": 76.8
         },
         {
-          "name": "main-DD8bZEkq.js",
+          "name": "main-IWmSUu0O.js",
           "kb": 68
         },
         {
@@ -7418,7 +7418,7 @@
           "kb": 45.1
         },
         {
-          "name": "MonthlyTab-BJfmRsH7.js",
+          "name": "MonthlyTab-C6zxeTKU.js",
           "kb": 40.8
         }
       ]
