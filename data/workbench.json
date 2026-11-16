@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 09:27:41",
+  "generatedAt": "2026-11-16 09:34:58",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -2828,9 +2828,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-16 13:04:38",
+    "auditedAt": "2026-11-16 17:34:57",
     "status": "PASS",
-    "pass": 71,
+    "pass": 72,
     "warn": 1,
     "fail": 0,
     "checks": [
@@ -2867,7 +2867,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 0fb675f 2026-11-16 16:47:58 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: d36c50f 2026-11-16 17:29:33 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2892,7 +2892,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 0 小时前已聚合（告警 1 条）"
+        "msg": "monitor_status 1 小时前已聚合（告警 1 条）"
       },
       {
         "level": "PASS",
@@ -3007,12 +3007,17 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[rider-hourly] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[rider-hourly] 定时器排期 16:00 与 expectHour=16 一致"
       },
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/16/2026 16:00:01），耗时折算可用"
+        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/16/2026 17:00:04），耗时折算可用"
       },
       {
         "level": "PASS",
@@ -3087,7 +3092,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行正常（0h 前，节奏每 2h）"
+        "msg": "[monitor-aggregate] 运行正常（1h 前，节奏每 2h）"
       },
       {
         "level": "PASS",
@@ -3137,7 +3142,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（0h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（1h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -3177,7 +3182,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-16 16:47:56 替换，含 5 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-16 17:29:28 替换，含 14 文件）"
       },
       {
         "level": "PASS",
@@ -3196,10 +3201,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-15 08:03:05",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-15 08:36:44",
         "status": "PASS"
@@ -3251,6 +3252,10 @@
       {
         "auditedAt": "2026-11-16 13:04:38",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-16 17:34:57",
+        "status": "PASS"
       }
     ]
   },
@@ -3265,19 +3270,19 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-16 13:04:38）"
+      "detail": "审计 PASS（2026-11-16 17:34:57）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 11 段全过（2026-11-16 17:27:40）"
+      "detail": "上轮全链 13 段全过（2026-11-16 17:34:34）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 4h 前"
+      "detail": "2 项目，最新产出 5h 前"
     },
     {
       "layer": "渲染层",
@@ -3353,7 +3358,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 4,
+      "ageHours": 5,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-16",
@@ -3559,11 +3564,65 @@
     ],
     "runs": [
       {
+        "name": "r645-teamflow-p2b",
+        "files": 1,
+        "latestAt": "2026-11-16 09:34:14",
+        "flow": {
+          "done": false,
+          "light": false,
+          "current": "分析",
+          "stalled": false,
+          "sev": "",
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "done",
+              "at": "2026-11-16 09:34:14",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 0,
+        "totalH": null,
+        "deltaH": null,
+        "gapH": 0
+      },
+      {
         "name": "r644-teamflow-p2",
         "files": 4,
         "latestAt": "2026-11-16 09:26:05",
         "flow": {
           "done": false,
+          "light": false,
           "current": "分析",
           "stalled": false,
           "sev": "",
@@ -3616,6 +3675,7 @@
         "latestAt": "2026-11-16 09:25:10",
         "flow": {
           "done": false,
+          "light": false,
           "current": "审核",
           "stalled": false,
           "sev": "",
@@ -3668,6 +3728,7 @@
         "latestAt": "2026-11-16 08:33:50",
         "flow": {
           "done": true,
+          "light": false,
           "current": "",
           "stalled": false,
           "sev": "",
@@ -3709,7 +3770,7 @@
             }
           ]
         },
-        "ageH": 0,
+        "ageH": 1,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 57
@@ -3720,6 +3781,7 @@
         "latestAt": "2026-11-14 00:01:43",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -3772,6 +3834,7 @@
         "latestAt": "2026-11-13 23:27:25",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -3824,6 +3887,7 @@
         "latestAt": "2026-11-13 23:12:48",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -3876,6 +3940,7 @@
         "latestAt": "2026-11-13 22:45:54",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -3928,6 +3993,7 @@
         "latestAt": "2026-11-13 22:42:51",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -3980,6 +4046,7 @@
         "latestAt": "2026-11-13 22:22:35",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -4032,6 +4099,7 @@
         "latestAt": "2026-11-13 22:15:34",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -4084,6 +4152,7 @@
         "latestAt": "2026-11-13 16:30:40",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -4125,7 +4194,7 @@
             }
           ]
         },
-        "ageH": 64,
+        "ageH": 65,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -4136,6 +4205,7 @@
         "latestAt": "2026-11-10 12:15:37",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4188,6 +4258,7 @@
         "latestAt": "2026-11-09 15:36:14",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4240,6 +4311,7 @@
         "latestAt": "2026-11-09 15:25:19",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4292,6 +4364,7 @@
         "latestAt": "2026-11-09 15:15:01",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4344,6 +4417,7 @@
         "latestAt": "2026-11-09 14:59:53",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4396,6 +4470,7 @@
         "latestAt": "2026-11-09 14:48:33",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4448,6 +4523,7 @@
         "latestAt": "2026-11-09 14:45:09",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4500,6 +4576,7 @@
         "latestAt": "2026-11-09 14:36:53",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4552,6 +4629,7 @@
         "latestAt": "2026-11-09 14:14:34",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4604,6 +4682,7 @@
         "latestAt": "2026-11-09 12:16:12",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4656,6 +4735,7 @@
         "latestAt": "2026-11-09 10:42:14",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4708,6 +4788,7 @@
         "latestAt": "2026-11-09 09:53:17",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4760,6 +4841,7 @@
         "latestAt": "2026-11-09 09:43:24",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4812,6 +4894,7 @@
         "latestAt": "2026-11-09 08:43:25",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4864,6 +4947,7 @@
         "latestAt": "2026-11-09 07:02:20",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4916,6 +5000,7 @@
         "latestAt": "2026-11-09 06:53:00",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -4968,6 +5053,7 @@
         "latestAt": "2026-11-09 06:33:15",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -5009,7 +5095,7 @@
             }
           ]
         },
-        "ageH": 170,
+        "ageH": 171,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5020,6 +5106,7 @@
         "latestAt": "2026-11-09 06:10:51",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -5072,6 +5159,7 @@
         "latestAt": "2026-11-09 05:31:11",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": true,
           "sev": "crit",
@@ -5113,7 +5201,7 @@
             }
           ]
         },
-        "ageH": 171,
+        "ageH": 172,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -5124,6 +5212,7 @@
         "latestAt": "",
         "flow": {
           "done": false,
+          "light": false,
           "current": "编排",
           "stalled": false,
           "sev": "",
@@ -5175,8 +5264,8 @@
       {
         "role": "lead",
         "label": "编排",
-        "rounds": 3,
-        "done": 3,
+        "rounds": 4,
+        "done": 4,
         "avgDurH": null,
         "maxDurH": null
       },
@@ -5224,7 +5313,7 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "crit",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r554-archmode-agentroles",
@@ -5236,7 +5325,7 @@
         "name": "r555-third-orchestrated",
         "pct": 80,
         "sev": "crit",
-        "ageH": 170
+        "ageH": 171
       },
       {
         "name": "r556-legacy-and-xsp",
@@ -5338,7 +5427,7 @@
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "warn",
-        "ageH": 64
+        "ageH": 65
       },
       {
         "name": "r585-heal-trace",
@@ -5386,7 +5475,7 @@
         "name": "r632-teamflow-optimize",
         "pct": 100,
         "sev": "done",
-        "ageH": 0
+        "ageH": 1
       },
       {
         "name": "20261017-efficiency-naming",
@@ -5399,6 +5488,12 @@
         "pct": 80,
         "sev": "",
         "ageH": 0
+      },
+      {
+        "name": "r645-teamflow-p2b",
+        "pct": 20,
+        "sev": "",
+        "ageH": 0
       }
     ],
     "stall": {
@@ -5408,7 +5503,7 @@
     "scanSkipped": 0,
     "scanFatal": false,
     "agentRoleIssues": [],
-    "totalRuns": 31,
+    "totalRuns": 32,
     "totalDone": 1,
     "stallWarn": [
       {
@@ -5566,7 +5661,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-11-16 13:04:38）",
+      "text": "审计有 1 项警告（2026-11-16 17:34:57）",
       "anchor": "sec-audit"
     },
     {
@@ -5909,8 +6004,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "1059e06",
-        "at": "2026-11-16T17:20:19+08:00",
+        "hash": "d36c50f",
+        "at": "2026-11-16T17:29:33+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -5998,10 +6093,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-16 17:27:40",
+    "runAt": "2026-11-16 17:34:34",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "excel",
@@ -6068,17 +6163,22 @@
         "pass": true,
         "seconds": 66.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 235.2,
+        "note": "拷贝回验 136 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 177.9,
+        "note": "指纹+探针 assets/RStatsPanel-CINM_nFO.css 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-14 09:03:57",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 283.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-14 16:02:50",
       "scope": "pre-deploy",
@@ -6280,6 +6380,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 179.5,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-16 17:34:34",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 592.6,
       "fails": []
     }
   ],
@@ -7119,7 +7226,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 09:27:41",
+      "at": "2026-11-16 09:34:58",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7261,7 +7368,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2749.8,
+      "totalKB": 2749.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -7281,7 +7388,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 245.4
+          "kb": 245.3
         },
         {
           "name": "rider-agreements.json",
