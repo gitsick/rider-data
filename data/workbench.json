@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 12:47:45",
+  "generatedAt": "2026-11-16 12:49:46",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -2868,7 +2868,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 889ddbc 2026-11-16 20:31:12 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 03dfc3e 2026-11-16 20:47:49 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2878,12 +2878,12 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（0 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（1 小时前刷新）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（163 小时前生成）"
+        "msg": "单文件产物存在（164 小时前生成）"
       },
       {
         "level": "PASS",
@@ -3183,7 +3183,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-16 20:31:09 替换，含 5 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-16 20:47:47 替换，含 2 文件）"
       },
       {
         "level": "PASS",
@@ -3277,7 +3277,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 11 段全过（2026-11-16 20:47:44）"
+      "detail": "上轮全链 13 段全过（2026-11-16 20:49:40）"
     },
     {
       "layer": "项目层",
@@ -3565,6 +3565,60 @@
     ],
     "runs": [
       {
+        "name": "r647-legacy-exempt",
+        "files": 5,
+        "latestAt": "2026-11-16 12:48:06",
+        "flow": {
+          "done": true,
+          "light": true,
+          "legacy": false,
+          "current": "",
+          "stalled": false,
+          "sev": "",
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "done",
+              "at": "2026-11-16 12:46:13",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "skip",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "done",
+              "at": "2026-11-16 12:46:14",
+              "durH": 0
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "done",
+              "at": "2026-11-16 12:48:06",
+              "durH": 0
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "done",
+              "at": "2026-11-16 12:48:06",
+              "durH": 0
+            }
+          ]
+        },
+        "ageH": 0,
+        "totalH": 0,
+        "deltaH": -727,
+        "gapH": 0
+      },
+      {
         "name": "20261017-efficiency-naming",
         "files": 17,
         "latestAt": "2026-11-16 12:47:43",
@@ -3616,60 +3670,6 @@
         "ageH": 0,
         "totalH": 727,
         "deltaH": 727,
-        "gapH": 0
-      },
-      {
-        "name": "r647-legacy-exempt",
-        "files": 4,
-        "latestAt": "2026-11-16 12:46:57",
-        "flow": {
-          "done": false,
-          "light": true,
-          "legacy": false,
-          "current": "轻任务豁免",
-          "stalled": false,
-          "sev": "",
-          "chain": [
-            {
-              "role": "lead",
-              "label": "编排",
-              "state": "done",
-              "at": "2026-11-16 12:46:13",
-              "durH": null
-            },
-            {
-              "role": "analyst",
-              "label": "分析",
-              "state": "skip",
-              "at": "",
-              "durH": null
-            },
-            {
-              "role": "builder",
-              "label": "开发",
-              "state": "done",
-              "at": "2026-11-16 12:46:14",
-              "durH": 0
-            },
-            {
-              "role": "reviewer",
-              "label": "审核",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            },
-            {
-              "role": "reporter",
-              "label": "简报",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            }
-          ]
-        },
-        "ageH": 0,
-        "totalH": 0,
-        "deltaH": 0,
         "gapH": 1
       },
       {
@@ -3677,10 +3677,10 @@
         "files": 5,
         "latestAt": "2026-11-16 11:31:31",
         "flow": {
-          "done": false,
+          "done": true,
           "light": true,
           "legacy": false,
-          "current": "轻任务豁免",
+          "current": "",
           "stalled": false,
           "sev": "",
           "chain": [
@@ -3731,10 +3731,10 @@
         "files": 5,
         "latestAt": "2026-11-16 10:15:01",
         "flow": {
-          "done": false,
+          "done": true,
           "light": true,
           "legacy": false,
-          "current": "轻任务豁免",
+          "current": "",
           "stalled": false,
           "sev": "",
           "chain": [
@@ -3785,10 +3785,10 @@
         "files": 5,
         "latestAt": "2026-11-16 09:36:22",
         "flow": {
-          "done": false,
+          "done": true,
           "light": true,
           "legacy": false,
-          "current": "轻任务豁免",
+          "current": "",
           "stalled": false,
           "sev": "",
           "chain": [
@@ -4639,7 +4639,7 @@
             }
           ]
         },
-        "ageH": 165,
+        "ageH": 166,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5429,16 +5429,16 @@
       {
         "role": "reviewer",
         "label": "审核",
-        "rounds": 14,
-        "done": 14,
+        "rounds": 15,
+        "done": 15,
         "avgDurH": 0,
         "maxDurH": 0
       },
       {
         "role": "reporter",
         "label": "简报",
-        "rounds": 22,
-        "done": 22,
+        "rounds": 23,
+        "done": 23,
         "avgDurH": 0,
         "maxDurH": 0
       }
@@ -5532,7 +5532,7 @@
         "name": "r566-dark-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 165
+        "ageH": 166
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -5621,31 +5621,31 @@
       {
         "name": "r644-teamflow-p2",
         "pct": 80,
-        "sev": "",
+        "sev": "done",
         "ageH": 3
       },
       {
         "name": "r645-teamflow-p2b",
         "pct": 80,
-        "sev": "",
+        "sev": "done",
         "ageH": 2
       },
       {
         "name": "r646-teamflow-p2c",
         "pct": 80,
-        "sev": "",
+        "sev": "done",
         "ageH": 1
-      },
-      {
-        "name": "r647-legacy-exempt",
-        "pct": 40,
-        "sev": "",
-        "ageH": 0
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 60,
         "sev": "",
+        "ageH": 0
+      },
+      {
+        "name": "r647-legacy-exempt",
+        "pct": 80,
+        "sev": "done",
         "ageH": 0
       }
     ],
@@ -5658,7 +5658,7 @@
     "scanFatal": false,
     "agentRoleIssues": [],
     "totalRuns": 34,
-    "totalDone": 1,
+    "totalDone": 5,
     "stallWarn": [
       {
         "name": "r591-trace-guard",
@@ -5724,7 +5724,7 @@
       },
       {
         "name": "r566-dark-patrol",
-        "ageH": 165
+        "ageH": 166
       },
       {
         "name": "r565-visual-patrol",
@@ -6146,8 +6146,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5b037be",
-        "at": "2026-11-16T20:45:21+08:00",
+        "hash": "03dfc3e",
+        "at": "2026-11-16T20:47:49+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6235,10 +6235,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-16 20:47:44",
+    "runAt": "2026-11-16 20:49:40",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "excel",
@@ -6305,17 +6305,22 @@
         "pass": true,
         "seconds": 34.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 35.3,
+        "note": "拷贝回验 136 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 79.6,
+        "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-15 08:01:48",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 415.8,
-      "fails": []
-    },
     {
       "runAt": "2026-11-15 08:02:59",
       "scope": "complete",
@@ -6517,6 +6522,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 165.8,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-16 20:49:40",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 280.7,
       "fails": []
     }
   ],
@@ -7356,7 +7368,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 12:47:45",
+      "at": "2026-11-16 12:49:46",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7498,7 +7510,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2753.2,
+      "totalKB": 2754.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -7518,7 +7530,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 248.8
+          "kb": 250
         },
         {
           "name": "rider-agreements.json",
