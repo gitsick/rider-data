@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 12:22:35",
+  "generatedAt": "2026-11-16 12:31:06",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -2790,7 +2790,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 4.4h）"
+        "overdueText": "运行超时（距上次 4.5h）"
       },
       "timer": {
         "state": "ok",
@@ -3277,7 +3277,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 13 段全过（2026-11-16 20:22:27）"
+      "detail": "本轮发布前置 11 段全过（2026-11-16 20:31:04）"
     },
     {
       "layer": "项目层",
@@ -3930,7 +3930,7 @@
             }
           ]
         },
-        "ageH": 60,
+        "ageH": 61,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4142,7 +4142,7 @@
             }
           ]
         },
-        "ageH": 61,
+        "ageH": 62,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4248,7 +4248,7 @@
             }
           ]
         },
-        "ageH": 67,
+        "ageH": 68,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -4407,7 +4407,7 @@
             }
           ]
         },
-        "ageH": 164,
+        "ageH": 165,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5463,7 +5463,7 @@
         "name": "r569-heal-intent-exempt",
         "pct": 20,
         "sev": "crit",
-        "ageH": 164
+        "ageH": 165
       },
       {
         "name": "r570-pending-card-exempt",
@@ -5481,7 +5481,7 @@
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "warn",
-        "ageH": 67
+        "ageH": 68
       },
       {
         "name": "r585-heal-trace",
@@ -5493,7 +5493,7 @@
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "warn",
-        "ageH": 61
+        "ageH": 62
       },
       {
         "name": "r587-metrics-struct",
@@ -5517,7 +5517,7 @@
         "name": "r590-note-label",
         "pct": 20,
         "sev": "warn",
-        "ageH": 60
+        "ageH": 61
       },
       {
         "name": "r591-trace-guard",
@@ -5716,7 +5716,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.4h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.5h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6069,8 +6069,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "fea102d",
-        "at": "2026-11-16T20:20:24+08:00",
+        "hash": "a8ee0f0",
+        "at": "2026-11-16T20:22:40+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6158,33 +6158,33 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-16 20:22:27",
+    "runAt": "2026-11-16 20:31:04",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "excel",
         "pass": true,
-        "seconds": 5.6,
+        "seconds": 5.7,
         "note": ""
       },
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.6,
+        "seconds": 5.7,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -6196,19 +6196,19 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 56.8,
+        "seconds": 52.7,
         "note": "npm test pass=1618 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 15,
+        "seconds": 8.5,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -6220,37 +6220,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 30.2,
+        "seconds": 29.5,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 67.8,
+        "seconds": 62.7,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 37.4,
-        "note": "拷贝回验 136 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 91.7,
-        "note": "指纹+探针 assets/ResignPanel-DGUwwylE.css 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-15 07:31:02",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 104.9,
-      "fails": []
-    },
     {
       "runAt": "2026-11-15 07:36:34",
       "scope": "complete",
@@ -6452,6 +6433,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 312.3,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-16 20:31:04",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 166.7,
       "fails": []
     }
   ],
@@ -7291,7 +7279,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 12:22:35",
+      "at": "2026-11-16 12:31:06",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7433,7 +7421,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2753.6,
+      "totalKB": 2753.9,
       "top": [
         {
           "name": "rider_base.json",
@@ -7453,7 +7441,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 249.2
+          "kb": 249.5
         },
         {
           "name": "rider-agreements.json",
