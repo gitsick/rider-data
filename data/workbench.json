@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 12:33:10",
+  "generatedAt": "2026-11-16 12:43:31",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -2790,7 +2790,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 4.6h）"
+        "overdueText": "运行超时（距上次 4.7h）"
       },
       "timer": {
         "state": "ok",
@@ -3571,6 +3571,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "审核",
           "stalled": false,
           "sev": "",
@@ -3624,6 +3625,7 @@
         "flow": {
           "done": false,
           "light": true,
+          "legacy": false,
           "current": "轻任务豁免",
           "stalled": false,
           "sev": "",
@@ -3677,6 +3679,7 @@
         "flow": {
           "done": false,
           "light": true,
+          "legacy": false,
           "current": "轻任务豁免",
           "stalled": false,
           "sev": "",
@@ -3730,6 +3733,7 @@
         "flow": {
           "done": false,
           "light": true,
+          "legacy": false,
           "current": "轻任务豁免",
           "stalled": false,
           "sev": "",
@@ -3771,7 +3775,7 @@
             }
           ]
         },
-        "ageH": 2,
+        "ageH": 3,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -3783,6 +3787,7 @@
         "flow": {
           "done": true,
           "light": false,
+          "legacy": false,
           "current": "",
           "stalled": false,
           "sev": "",
@@ -3824,7 +3829,7 @@
             }
           ]
         },
-        "ageH": 3,
+        "ageH": 4,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 57
@@ -3836,6 +3841,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -3889,6 +3895,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -3942,6 +3949,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -3995,6 +4003,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -4048,6 +4057,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -4089,7 +4099,7 @@
             }
           ]
         },
-        "ageH": 61,
+        "ageH": 62,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4101,6 +4111,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -4154,6 +4165,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -4207,6 +4219,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": true,
           "sev": "warn",
@@ -4260,9 +4273,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4313,9 +4327,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4354,7 +4369,7 @@
             }
           ]
         },
-        "ageH": 164,
+        "ageH": 165,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4366,9 +4381,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4419,9 +4435,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4472,9 +4489,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4525,9 +4543,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4578,9 +4597,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4631,9 +4651,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4672,7 +4693,7 @@
             }
           ]
         },
-        "ageH": 165,
+        "ageH": 166,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4684,9 +4705,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4737,9 +4759,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4790,9 +4813,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4831,7 +4855,7 @@
             }
           ]
         },
-        "ageH": 169,
+        "ageH": 170,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4843,9 +4867,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4896,9 +4921,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4937,7 +4963,7 @@
             }
           ]
         },
-        "ageH": 170,
+        "ageH": 171,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -4949,9 +4975,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -4990,7 +5017,7 @@
             }
           ]
         },
-        "ageH": 171,
+        "ageH": 172,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5002,9 +5029,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -5055,9 +5083,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -5108,9 +5137,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -5149,7 +5179,7 @@
             }
           ]
         },
-        "ageH": 173,
+        "ageH": 174,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5161,9 +5191,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -5214,9 +5245,10 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": true,
           "current": "编排",
-          "stalled": true,
-          "sev": "crit",
+          "stalled": false,
+          "sev": "",
           "chain": [
             {
               "role": "lead",
@@ -5267,6 +5299,7 @@
         "flow": {
           "done": false,
           "light": false,
+          "legacy": false,
           "current": "编排",
           "stalled": false,
           "sev": "",
@@ -5366,115 +5399,115 @@
       {
         "name": "r553-rup-first-run",
         "pct": 80,
-        "sev": "crit",
+        "sev": "",
         "ageH": 175
       },
       {
         "name": "r554-archmode-agentroles",
         "pct": 80,
-        "sev": "crit",
+        "sev": "",
         "ageH": 174
       },
       {
         "name": "r555-third-orchestrated",
         "pct": 80,
-        "sev": "crit",
-        "ageH": 173
+        "sev": "",
+        "ageH": 174
       },
       {
         "name": "r556-legacy-and-xsp",
         "pct": 40,
-        "sev": "crit",
+        "sev": "",
         "ageH": 173
       },
       {
         "name": "r557-plan-closeout",
         "pct": 40,
-        "sev": "crit",
+        "sev": "",
         "ageH": 173
       },
       {
         "name": "r558-b1-capacity-resume",
         "pct": 40,
-        "sev": "crit",
-        "ageH": 171
+        "sev": "",
+        "ageH": 172
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
-        "sev": "crit",
-        "ageH": 170
+        "sev": "",
+        "ageH": 171
       },
       {
         "name": "r560-lib-readme-roster",
         "pct": 40,
-        "sev": "crit",
+        "sev": "",
         "ageH": 170
       },
       {
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
-        "sev": "crit",
-        "ageH": 169
+        "sev": "",
+        "ageH": 170
       },
       {
         "name": "r562-monitor-aggregate-wiring",
         "pct": 40,
-        "sev": "crit",
+        "sev": "",
         "ageH": 168
       },
       {
         "name": "r563-audit-regression-lock",
         "pct": 80,
-        "sev": "crit",
+        "sev": "",
         "ageH": 166
       },
       {
         "name": "r564-pull-trace-wiring",
         "pct": 80,
-        "sev": "crit",
-        "ageH": 165
+        "sev": "",
+        "ageH": 166
       },
       {
         "name": "r565-visual-patrol",
         "pct": 20,
-        "sev": "crit",
+        "sev": "",
         "ageH": 165
       },
       {
         "name": "r566-dark-patrol",
         "pct": 20,
-        "sev": "crit",
+        "sev": "",
         "ageH": 165
       },
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
-        "sev": "crit",
+        "sev": "",
         "ageH": 165
       },
       {
         "name": "r568-audit-trace-surface",
         "pct": 20,
-        "sev": "crit",
+        "sev": "",
         "ageH": 165
       },
       {
         "name": "r569-heal-intent-exempt",
         "pct": 20,
-        "sev": "crit",
+        "sev": "",
         "ageH": 165
       },
       {
         "name": "r570-pending-card-exempt",
         "pct": 20,
-        "sev": "crit",
-        "ageH": 164
+        "sev": "",
+        "ageH": 165
       },
       {
         "name": "r571-style-unify",
         "pct": 20,
-        "sev": "crit",
+        "sev": "",
         "ageH": 144
       },
       {
@@ -5499,7 +5532,7 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "warn",
-        "ageH": 61
+        "ageH": 62
       },
       {
         "name": "r588-prose-cleanup",
@@ -5529,13 +5562,13 @@
         "name": "r632-teamflow-optimize",
         "pct": 100,
         "sev": "done",
-        "ageH": 3
+        "ageH": 4
       },
       {
         "name": "r644-teamflow-p2",
         "pct": 80,
         "sev": "",
-        "ageH": 2
+        "ageH": 3
       },
       {
         "name": "r645-teamflow-p2b",
@@ -5558,7 +5591,8 @@
     ],
     "stall": {
       "warnH": 48,
-      "critH": 96
+      "critH": 96,
+      "legacyH": 96
     },
     "scanSkipped": 0,
     "scanFatal": false,
@@ -5605,101 +5639,84 @@
         "name": "r584-monitor-heartbeat",
         "sev": "warn",
         "current": "编排"
-      },
+      }
+    ],
+    "legacyWarn": [
       {
         "name": "r571-style-unify",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 144
       },
       {
         "name": "r570-pending-card-exempt",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 165
       },
       {
         "name": "r569-heal-intent-exempt",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 165
       },
       {
         "name": "r568-audit-trace-surface",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 165
       },
       {
         "name": "r567-remaining-pages-patrol",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 165
       },
       {
         "name": "r566-dark-patrol",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 165
       },
       {
         "name": "r565-visual-patrol",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 165
       },
       {
         "name": "r564-pull-trace-wiring",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 166
       },
       {
         "name": "r563-audit-regression-lock",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 166
       },
       {
         "name": "r562-monitor-aggregate-wiring",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 168
       },
       {
         "name": "r561-patrol-trace-wiring",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 170
       },
       {
         "name": "r560-lib-readme-roster",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 170
       },
       {
         "name": "r559-alert-history",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 171
       },
       {
         "name": "r558-b1-capacity-resume",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 172
       },
       {
         "name": "r557-plan-closeout",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 173
       },
       {
         "name": "r556-legacy-and-xsp",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 173
       },
       {
         "name": "r555-third-orchestrated",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 174
       },
       {
         "name": "r554-archmode-agentroles",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 174
       },
       {
         "name": "r553-rup-first-run",
-        "sev": "crit",
-        "current": "编排"
+        "ageH": 175
       }
     ]
   },
@@ -5716,7 +5733,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.7h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -5730,8 +5747,8 @@
       "anchor": "sec-audit"
     },
     {
-      "level": "FAIL",
-      "text": "Agent 接力停滞（严重） ≥96h：r591-trace-guard 停在「编排」；r590-note-label 停在「编排」；r589-prompt-guard 停在「编排」；r588-prose-cleanup 停在「编排」；r587-metrics-struct 停在「编排」；r586-orchestration-promote 停在「编排」；r585-heal-trace 停在「编排」；r584-monitor-heartbeat 停在「编排」；r571-style-unify 停在「编排」；r570-pending-card-exempt 停在「编排」；r569-heal-intent-exempt 停在「编排」；r568-audit-trace-surface 停在「编排」；r567-remaining-pages-patrol 停在「编排」；r566-dark-patrol 停在「编排」；r565-visual-patrol 停在「编排」；r564-pull-trace-wiring 停在「编排」；r563-audit-regression-lock 停在「编排」；r562-monitor-aggregate-wiring 停在「编排」；r561-patrol-trace-wiring 停在「编排」；r560-lib-readme-roster 停在「编排」；r559-alert-history 停在「编排」；r558-b1-capacity-resume 停在「编排」；r557-plan-closeout 停在「编排」；r556-legacy-and-xsp 停在「编排」；r555-third-orchestrated 停在「编排」；r554-archmode-agentroles 停在「编排」；r553-rup-first-run 停在「编排」（共 27 轮，阈值可调 pro\\config\\teamflow-stall.json）",
+      "level": "WARN",
+      "text": "Agent 接力停滞 ≥48h：r591-trace-guard 停在「编排」；r590-note-label 停在「编排」；r589-prompt-guard 停在「编排」；r588-prose-cleanup 停在「编排」；r587-metrics-struct 停在「编排」；r586-orchestration-promote 停在「编排」；r585-heal-trace 停在「编排」；r584-monitor-heartbeat 停在「编排」（共 8 轮，阈值可调 pro\\config\\teamflow-stall.json）",
       "anchor": "sec-teamflow"
     },
     {
@@ -6069,8 +6086,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "889ddbc",
-        "at": "2026-11-16T20:31:12+08:00",
+        "hash": "b43f668",
+        "at": "2026-11-16T20:33:15+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7291,7 +7308,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 12:33:10",
+      "at": "2026-11-16 12:43:31",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7433,7 +7450,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2753.6,
+      "totalKB": 2753.9,
       "top": [
         {
           "name": "rider_base.json",
@@ -7453,7 +7470,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 249.2
+          "kb": 249.5
         },
         {
           "name": "rider-agreements.json",
