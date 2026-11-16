@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 18:48:14",
+  "generatedAt": "2026-11-16 18:52:25",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-17 02:40:38",
-        "durationSec": 80.3,
+        "finishedAt": "2026-11-17 02:51:04",
+        "durationSec": 171.6,
         "note": "数据日 20261115：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -2784,7 +2784,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 2.8h）"
+        "overdueText": "运行超时（距上次 2.9h）"
       },
       "timer": {
         "state": "ok",
@@ -4569,7 +4569,7 @@
             }
           ]
         },
-        "ageH": 171,
+        "ageH": 172,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5462,7 +5462,7 @@
         "name": "r566-dark-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -5654,7 +5654,7 @@
       },
       {
         "name": "r566-dark-patrol",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r565-visual-patrol",
@@ -5713,7 +5713,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 2.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 2.9h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6066,8 +6066,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "751f0627",
-        "at": "2026-11-17T02:43:32+08:00",
+        "hash": "7fa847db",
+        "at": "2026-11-17T02:50:36+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7288,7 +7288,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 18:48:14",
+      "at": "2026-11-16 18:52:25",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7407,7 +7407,7 @@
           "kb": 76.8
         },
         {
-          "name": "main-C4VWLA-f.js",
+          "name": "main-DlofPPZt.js",
           "kb": 68.8
         },
         {
@@ -7423,7 +7423,7 @@
           "kb": 45.1
         },
         {
-          "name": "MonthlyTab-CSvtIA_U.js",
+          "name": "MonthlyTab-3bDUGQXG.js",
           "kb": 40.8
         }
       ]
