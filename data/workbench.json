@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 08:52:28",
+  "generatedAt": "2026-11-16 09:06:16",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -1309,8 +1309,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-16 13:14:36",
-        "durationSec": 2658,
+        "finishedAt": "2026-11-16 17:02:41",
+        "durationSec": 157,
         "note": ""
       },
       "monitor": {
@@ -1323,19 +1323,14 @@
         "overdueText": ""
       },
       "timer": {
-        "state": "ok",
-        "lastRunAt": "2026-11-16 16:00"
+        "state": "failed",
+        "lastRunAt": "2026-11-16 17:00"
       },
       "heal": {
         "can": true,
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-11-02 17:01:15",
-          "durationSec": 3557
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-11-02 17:24:33",
@@ -1587,6 +1582,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-16 13:14:36",
           "durationSec": 2658
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-16 17:02:41",
+          "durationSec": 157
         }
       ],
       "gaps": {
@@ -1718,7 +1718,6 @@
         "passCount": 14
       },
       "durTrend": [
-        8227,
         2724,
         2755,
         589,
@@ -1731,7 +1730,8 @@
         2198,
         1446,
         1605,
-        2658
+        2658,
+        157
       ]
     },
     {
@@ -3559,61 +3559,9 @@
     ],
     "runs": [
       {
-        "name": "20261017-efficiency-naming",
-        "files": 17,
-        "latestAt": "2026-11-16 08:44:39",
-        "flow": {
-          "done": false,
-          "current": "分析",
-          "stalled": false,
-          "sev": "",
-          "chain": [
-            {
-              "role": "lead",
-              "label": "编排",
-              "state": "done",
-              "at": "2026-10-17 05:54:07",
-              "durH": null
-            },
-            {
-              "role": "analyst",
-              "label": "分析",
-              "state": "half",
-              "at": "2026-10-17 11:37:32",
-              "durH": 6
-            },
-            {
-              "role": "builder",
-              "label": "开发",
-              "state": "done",
-              "at": "2026-11-16 08:44:39",
-              "durH": 717
-            },
-            {
-              "role": "reviewer",
-              "label": "审核",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            },
-            {
-              "role": "reporter",
-              "label": "简报",
-              "state": "wait",
-              "at": "",
-              "durH": null
-            }
-          ]
-        },
-        "ageH": 0,
-        "totalH": 723,
-        "deltaH": 722,
-        "gapH": 0
-      },
-      {
         "name": "r644-teamflow-p2",
-        "files": 1,
-        "latestAt": "2026-11-16 08:41:44",
+        "files": 2,
+        "latestAt": "2026-11-16 08:57:07",
         "flow": {
           "done": false,
           "current": "分析",
@@ -3658,8 +3606,60 @@
           ]
         },
         "ageH": 0,
-        "totalH": null,
-        "deltaH": null,
+        "totalH": 0,
+        "deltaH": -723,
+        "gapH": 0
+      },
+      {
+        "name": "20261017-efficiency-naming",
+        "files": 17,
+        "latestAt": "2026-11-16 08:44:39",
+        "flow": {
+          "done": false,
+          "current": "审核",
+          "stalled": false,
+          "sev": "",
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "done",
+              "at": "2026-10-17 05:54:07",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "done",
+              "at": "2026-10-17 11:37:32",
+              "durH": 6
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "done",
+              "at": "2026-11-16 08:44:39",
+              "durH": 717
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 0,
+        "totalH": 723,
+        "deltaH": 722,
         "gapH": 0
       },
       {
@@ -3667,8 +3667,8 @@
         "files": 5,
         "latestAt": "2026-11-16 08:33:50",
         "flow": {
-          "done": false,
-          "current": "分析",
+          "done": true,
+          "current": "",
           "stalled": false,
           "sev": "",
           "chain": [
@@ -3682,7 +3682,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-16 07:49:38",
               "durH": 0
             },
@@ -3761,7 +3761,7 @@
             }
           ]
         },
-        "ageH": 56,
+        "ageH": 57,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -3824,7 +3824,7 @@
         "latestAt": "2026-11-13 23:12:48",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "warn",
           "chain": [
@@ -3838,7 +3838,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-13 23:12:18",
               "durH": null
             },
@@ -3980,7 +3980,7 @@
         "latestAt": "2026-11-13 22:22:35",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "warn",
           "chain": [
@@ -3994,7 +3994,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-13 22:20:38",
               "durH": null
             },
@@ -4032,7 +4032,7 @@
         "latestAt": "2026-11-13 22:15:34",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "warn",
           "chain": [
@@ -4046,7 +4046,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-13 21:45:31",
               "durH": null
             },
@@ -4084,7 +4084,7 @@
         "latestAt": "2026-11-13 16:30:40",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "warn",
           "chain": [
@@ -4098,7 +4098,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-13 15:51:46",
               "durH": null
             },
@@ -4136,7 +4136,7 @@
         "latestAt": "2026-11-10 12:15:37",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4150,7 +4150,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-10 12:15:37",
               "durH": null
             },
@@ -4188,7 +4188,7 @@
         "latestAt": "2026-11-09 15:36:14",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4202,7 +4202,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 15:36:14",
               "durH": null
             },
@@ -4240,7 +4240,7 @@
         "latestAt": "2026-11-09 15:25:19",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4254,7 +4254,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 15:25:19",
               "durH": null
             },
@@ -4292,7 +4292,7 @@
         "latestAt": "2026-11-09 15:15:01",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4306,7 +4306,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 15:15:01",
               "durH": null
             },
@@ -4344,7 +4344,7 @@
         "latestAt": "2026-11-09 14:59:53",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4358,7 +4358,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 14:59:53",
               "durH": null
             },
@@ -4385,7 +4385,7 @@
             }
           ]
         },
-        "ageH": 161,
+        "ageH": 162,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4396,7 +4396,7 @@
         "latestAt": "2026-11-09 14:48:33",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4410,7 +4410,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 14:48:33",
               "durH": null
             },
@@ -4448,7 +4448,7 @@
         "latestAt": "2026-11-09 14:45:09",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4462,7 +4462,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 14:45:09",
               "durH": null
             },
@@ -4500,7 +4500,7 @@
         "latestAt": "2026-11-09 14:36:53",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4514,7 +4514,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 14:17:31",
               "durH": null
             },
@@ -4552,7 +4552,7 @@
         "latestAt": "2026-11-09 14:14:34",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4566,7 +4566,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 13:36:55",
               "durH": null
             },
@@ -4604,7 +4604,7 @@
         "latestAt": "2026-11-09 12:16:12",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4618,7 +4618,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 12:16:12",
               "durH": null
             },
@@ -4656,7 +4656,7 @@
         "latestAt": "2026-11-09 10:42:14",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4670,7 +4670,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 10:42:14",
               "durH": null
             },
@@ -4708,7 +4708,7 @@
         "latestAt": "2026-11-09 09:53:17",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4722,7 +4722,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 09:53:17",
               "durH": null
             },
@@ -4749,7 +4749,7 @@
             }
           ]
         },
-        "ageH": 166,
+        "ageH": 167,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4760,7 +4760,7 @@
         "latestAt": "2026-11-09 09:43:24",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4774,7 +4774,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 09:10:01",
               "durH": null
             },
@@ -4812,7 +4812,7 @@
         "latestAt": "2026-11-09 08:43:25",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4826,7 +4826,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 08:43:25",
               "durH": null
             },
@@ -4864,7 +4864,7 @@
         "latestAt": "2026-11-09 07:02:20",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4878,7 +4878,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 07:02:20",
               "durH": null
             },
@@ -4905,7 +4905,7 @@
             }
           ]
         },
-        "ageH": 169,
+        "ageH": 170,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4916,7 +4916,7 @@
         "latestAt": "2026-11-09 06:53:00",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4930,7 +4930,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 06:46:36",
               "durH": null
             },
@@ -4957,7 +4957,7 @@
             }
           ]
         },
-        "ageH": 169,
+        "ageH": 170,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4968,7 +4968,7 @@
         "latestAt": "2026-11-09 06:33:15",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -4982,7 +4982,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 06:18:17",
               "durH": null
             },
@@ -5020,7 +5020,7 @@
         "latestAt": "2026-11-09 06:10:51",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -5034,7 +5034,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 05:40:31",
               "durH": null
             },
@@ -5072,7 +5072,7 @@
         "latestAt": "2026-11-09 05:31:11",
         "flow": {
           "done": false,
-          "current": "分析",
+          "current": "编排",
           "stalled": true,
           "sev": "crit",
           "chain": [
@@ -5086,7 +5086,7 @@
             {
               "role": "analyst",
               "label": "分析",
-              "state": "half",
+              "state": "done",
               "at": "2026-11-09 05:06:46",
               "durH": null
             },
@@ -5184,7 +5184,7 @@
         "role": "analyst",
         "label": "分析",
         "rounds": 25,
-        "done": 0,
+        "done": 25,
         "avgDurH": 3,
         "maxDurH": 6
       },
@@ -5222,133 +5222,133 @@
       },
       {
         "name": "r553-rup-first-run",
-        "pct": 60,
+        "pct": 80,
         "sev": "crit",
         "ageH": 171
       },
       {
         "name": "r554-archmode-agentroles",
-        "pct": 60,
+        "pct": 80,
         "sev": "crit",
         "ageH": 170
       },
       {
         "name": "r555-third-orchestrated",
-        "pct": 60,
+        "pct": 80,
         "sev": "crit",
         "ageH": 170
       },
       {
         "name": "r556-legacy-and-xsp",
-        "pct": 20,
+        "pct": 40,
         "sev": "crit",
-        "ageH": 169
+        "ageH": 170
       },
       {
         "name": "r557-plan-closeout",
-        "pct": 20,
+        "pct": 40,
         "sev": "crit",
-        "ageH": 169
+        "ageH": 170
       },
       {
         "name": "r558-b1-capacity-resume",
-        "pct": 20,
+        "pct": 40,
         "sev": "crit",
         "ageH": 168
       },
       {
         "name": "r559-alert-history",
-        "pct": 60,
+        "pct": 80,
         "sev": "crit",
         "ageH": 167
       },
       {
         "name": "r560-lib-readme-roster",
-        "pct": 20,
+        "pct": 40,
         "sev": "crit",
-        "ageH": 166
+        "ageH": 167
       },
       {
         "name": "r561-patrol-trace-wiring",
-        "pct": 20,
+        "pct": 40,
         "sev": "crit",
         "ageH": 166
       },
       {
         "name": "r562-monitor-aggregate-wiring",
-        "pct": 20,
+        "pct": 40,
         "sev": "crit",
         "ageH": 164
       },
       {
         "name": "r563-audit-regression-lock",
-        "pct": 60,
+        "pct": 80,
         "sev": "crit",
         "ageH": 162
       },
       {
         "name": "r564-pull-trace-wiring",
-        "pct": 60,
+        "pct": 80,
         "sev": "crit",
         "ageH": 162
       },
       {
         "name": "r565-visual-patrol",
-        "pct": 0,
+        "pct": 20,
         "sev": "crit",
         "ageH": 162
       },
       {
         "name": "r566-dark-patrol",
-        "pct": 0,
+        "pct": 20,
         "sev": "crit",
         "ageH": 162
       },
       {
         "name": "r567-remaining-pages-patrol",
-        "pct": 0,
+        "pct": 20,
         "sev": "crit",
-        "ageH": 161
+        "ageH": 162
       },
       {
         "name": "r568-audit-trace-surface",
-        "pct": 0,
+        "pct": 20,
         "sev": "crit",
         "ageH": 161
       },
       {
         "name": "r569-heal-intent-exempt",
-        "pct": 0,
+        "pct": 20,
         "sev": "crit",
         "ageH": 161
       },
       {
         "name": "r570-pending-card-exempt",
-        "pct": 0,
+        "pct": 20,
         "sev": "crit",
         "ageH": 161
       },
       {
         "name": "r571-style-unify",
-        "pct": 0,
+        "pct": 20,
         "sev": "crit",
         "ageH": 140
       },
       {
         "name": "r584-monitor-heartbeat",
-        "pct": 60,
+        "pct": 80,
         "sev": "warn",
         "ageH": 64
       },
       {
         "name": "r585-heal-trace",
-        "pct": 60,
+        "pct": 80,
         "sev": "warn",
         "ageH": 58
       },
       {
         "name": "r586-orchestration-promote",
-        "pct": 20,
+        "pct": 40,
         "sev": "warn",
         "ageH": 58
       },
@@ -5366,7 +5366,7 @@
       },
       {
         "name": "r589-prompt-guard",
-        "pct": 60,
+        "pct": 80,
         "sev": "warn",
         "ageH": 57
       },
@@ -5380,23 +5380,23 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "warn",
-        "ageH": 56
+        "ageH": 57
       },
       {
         "name": "r632-teamflow-optimize",
-        "pct": 80,
+        "pct": 100,
+        "sev": "done",
+        "ageH": 0
+      },
+      {
+        "name": "20261017-efficiency-naming",
+        "pct": 60,
         "sev": "",
         "ageH": 0
       },
       {
         "name": "r644-teamflow-p2",
         "pct": 20,
-        "sev": "",
-        "ageH": 0
-      },
-      {
-        "name": "20261017-efficiency-naming",
-        "pct": 40,
         "sev": "",
         "ageH": 0
       }
@@ -5407,6 +5407,9 @@
     },
     "scanSkipped": 0,
     "scanFatal": false,
+    "agentRoleIssues": [],
+    "totalRuns": 31,
+    "totalDone": 1,
     "stallWarn": [
       {
         "name": "r591-trace-guard",
@@ -5421,7 +5424,7 @@
       {
         "name": "r589-prompt-guard",
         "sev": "warn",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r588-prose-cleanup",
@@ -5436,112 +5439,112 @@
       {
         "name": "r586-orchestration-promote",
         "sev": "warn",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r585-heal-trace",
         "sev": "warn",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r584-monitor-heartbeat",
         "sev": "warn",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r571-style-unify",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r570-pending-card-exempt",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r569-heal-intent-exempt",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r568-audit-trace-surface",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r567-remaining-pages-patrol",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r566-dark-patrol",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r565-visual-patrol",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r564-pull-trace-wiring",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r563-audit-regression-lock",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r562-monitor-aggregate-wiring",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r561-patrol-trace-wiring",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r560-lib-readme-roster",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r559-alert-history",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r558-b1-capacity-resume",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r557-plan-closeout",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r556-legacy-and-xsp",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r555-third-orchestrated",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r554-archmode-agentroles",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       },
       {
         "name": "r553-rup-first-run",
         "sev": "crit",
-        "current": "分析"
+        "current": "编排"
       }
     ]
   },
@@ -5568,7 +5571,7 @@
     },
     {
       "level": "FAIL",
-      "text": "Agent 接力停滞（严重） ≥96h：r591-trace-guard 停在「编排」；r590-note-label 停在「编排」；r589-prompt-guard 停在「分析」；r588-prose-cleanup 停在「编排」；r587-metrics-struct 停在「编排」；r586-orchestration-promote 停在「分析」；r585-heal-trace 停在「分析」；r584-monitor-heartbeat 停在「分析」；r571-style-unify 停在「分析」；r570-pending-card-exempt 停在「分析」；r569-heal-intent-exempt 停在「分析」；r568-audit-trace-surface 停在「分析」；r567-remaining-pages-patrol 停在「分析」；r566-dark-patrol 停在「分析」；r565-visual-patrol 停在「分析」；r564-pull-trace-wiring 停在「分析」；r563-audit-regression-lock 停在「分析」；r562-monitor-aggregate-wiring 停在「分析」；r561-patrol-trace-wiring 停在「分析」；r560-lib-readme-roster 停在「分析」；r559-alert-history 停在「分析」；r558-b1-capacity-resume 停在「分析」；r557-plan-closeout 停在「分析」；r556-legacy-and-xsp 停在「分析」；r555-third-orchestrated 停在「分析」；r554-archmode-agentroles 停在「分析」；r553-rup-first-run 停在「分析」（共 27 轮，阈值可调 pro\\config\\teamflow-stall.json）",
+      "text": "Agent 接力停滞（严重） ≥96h：r591-trace-guard 停在「编排」；r590-note-label 停在「编排」；r589-prompt-guard 停在「编排」；r588-prose-cleanup 停在「编排」；r587-metrics-struct 停在「编排」；r586-orchestration-promote 停在「编排」；r585-heal-trace 停在「编排」；r584-monitor-heartbeat 停在「编排」；r571-style-unify 停在「编排」；r570-pending-card-exempt 停在「编排」；r569-heal-intent-exempt 停在「编排」；r568-audit-trace-surface 停在「编排」；r567-remaining-pages-patrol 停在「编排」；r566-dark-patrol 停在「编排」；r565-visual-patrol 停在「编排」；r564-pull-trace-wiring 停在「编排」；r563-audit-regression-lock 停在「编排」；r562-monitor-aggregate-wiring 停在「编排」；r561-patrol-trace-wiring 停在「编排」；r560-lib-readme-roster 停在「编排」；r559-alert-history 停在「编排」；r558-b1-capacity-resume 停在「编排」；r557-plan-closeout 停在「编排」；r556-legacy-and-xsp 停在「编排」；r555-third-orchestrated 停在「编排」；r554-archmode-agentroles 停在「编排」；r553-rup-first-run 停在「编排」（共 27 轮，阈值可调 pro\\config\\teamflow-stall.json）",
       "anchor": "sec-teamflow"
     },
     {
@@ -5906,8 +5909,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "0fb675f",
-        "at": "2026-11-16T16:47:58+08:00",
+        "hash": "c266d4a",
+        "at": "2026-11-16T16:54:17+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6387,7 +6390,7 @@
       }
     ],
     "extra": {
-      "tests": 1609,
+      "tests": 1611,
       "src": "frontend/README.md 用例锚"
     }
   },
@@ -7122,7 +7125,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 08:52:28",
+      "at": "2026-11-16 09:06:16",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7226,7 +7229,7 @@
   "perf": {
     "assets": {
       "count": 95,
-      "totalKB": 1562,
+      "totalKB": 1562.3,
       "top": [
         {
           "name": "vendor-echarts-C6gMPsEI.js",
@@ -7249,7 +7252,7 @@
           "kb": 58
         },
         {
-          "name": "workbench-CrRl0B7K.js",
+          "name": "workbench-B25vhVRp.js",
           "kb": 48.7
         },
         {
@@ -7264,7 +7267,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2749.4,
+      "totalKB": 2749.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -7284,7 +7287,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 245
+          "kb": 245.4
         },
         {
           "name": "rider-agreements.json",
