@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 13:07:32",
+  "generatedAt": "2026-11-16 13:13:24",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -2791,7 +2791,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 5.1h）"
+        "overdueText": "运行超时（距上次 5.2h）"
       },
       "timer": {
         "state": "ok",
@@ -2830,9 +2830,9 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-16 17:34:57",
+    "auditedAt": "2026-11-16 21:13:23",
     "status": "PASS",
-    "pass": 72,
+    "pass": 74,
     "warn": 1,
     "fail": 0,
     "checks": [
@@ -2869,7 +2869,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 03dfc3e 2026-11-16 20:47:49 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: d5a4ca2 2026-11-16 21:09:25 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2894,7 +2894,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 0 小时前已聚合（告警 1 条）"
+        "msg": "monitor_status 1 小时前已聚合（告警 1 条）"
       },
       {
         "level": "PASS",
@@ -3094,7 +3094,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行正常（0h 前，节奏每 2h）"
+        "msg": "[monitor-aggregate] 运行正常（1h 前，节奏每 2h）"
       },
       {
         "level": "PASS",
@@ -3110,6 +3110,16 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[audit-trail-pull] 定时器排期 21:00 与 expectHour=21 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[audit-trail-pull] 定时器状态时间戳新鲜（11/16/2026 21:00:42），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[audit-trail-pull] 今日已运行"
       },
       {
         "level": "PASS",
@@ -3144,7 +3154,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（4h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（5h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -3184,7 +3194,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-16 20:47:47 替换，含 2 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-16 21:09:19 替换，含 14 文件）"
       },
       {
         "level": "PASS",
@@ -3203,10 +3213,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-15 08:36:44",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-15 09:38:55",
         "status": "PASS"
@@ -3258,6 +3264,10 @@
       {
         "auditedAt": "2026-11-16 17:34:57",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-16 21:13:23",
+        "status": "PASS"
       }
     ]
   },
@@ -3272,13 +3282,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-16 17:34:57）"
+      "detail": "审计 PASS（2026-11-16 21:13:23）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 11 段全过（2026-11-16 21:07:31）"
+      "detail": "上轮全链 13 段全过（2026-11-16 21:13:17）"
     },
     {
       "layer": "项目层",
@@ -4046,7 +4056,7 @@
             }
           ]
         },
-        "ageH": 61,
+        "ageH": 62,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5288,7 +5298,7 @@
             }
           ]
         },
-        "ageH": 174,
+        "ageH": 175,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5461,7 +5471,7 @@
         "name": "r554-archmode-agentroles",
         "pct": 80,
         "sev": "",
-        "ageH": 174
+        "ageH": 175
       },
       {
         "name": "r555-third-orchestrated",
@@ -5599,7 +5609,7 @@
         "name": "r589-prompt-guard",
         "pct": 80,
         "sev": "warn",
-        "ageH": 61
+        "ageH": 62
       },
       {
         "name": "r590-note-label",
@@ -5773,7 +5783,7 @@
       },
       {
         "name": "r554-archmode-agentroles",
-        "ageH": 174
+        "ageH": 175
       },
       {
         "name": "r553-rup-first-run",
@@ -5794,7 +5804,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 5.1h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 5.2h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -5804,7 +5814,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-11-16 17:34:57）",
+      "text": "审计有 1 项警告（2026-11-16 21:13:23）",
       "anchor": "sec-audit"
     },
     {
@@ -6147,8 +6157,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "d9cc303",
-        "at": "2026-11-16T20:51:04+08:00",
+        "hash": "d5a4ca2",
+        "at": "2026-11-16T21:09:25+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6236,10 +6246,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-16 21:07:31",
+    "runAt": "2026-11-16 21:13:17",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "excel",
@@ -6306,17 +6316,22 @@
         "pass": true,
         "seconds": 29.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 247.2,
+        "note": "拷贝回验 136 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 98.4,
+        "note": "指纹+探针 assets/rider_dashboard-DMS8ZHHY.css 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-15 08:03:46",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 533.4,
-      "fails": []
-    },
     {
       "runAt": "2026-11-15 08:28:37",
       "scope": "pre-deploy",
@@ -6518,6 +6533,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 134.3,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-16 21:13:17",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 479.9,
       "fails": []
     }
   ],
@@ -7357,7 +7379,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 13:07:32",
+      "at": "2026-11-16 13:13:24",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7461,14 +7483,14 @@
   "perf": {
     "assets": {
       "count": 95,
-      "totalKB": 1566.7,
+      "totalKB": 1567.6,
       "top": [
         {
           "name": "vendor-echarts-C6gMPsEI.js",
           "kb": 611.5
         },
         {
-          "name": "capacity-uGRUMiJg.js",
+          "name": "capacity-CFomb65i.js",
           "kb": 97.8
         },
         {
@@ -7476,30 +7498,30 @@
           "kb": 76.8
         },
         {
-          "name": "main-bhmEw_ir.js",
+          "name": "main-73YiSIkc.js",
           "kb": 68
         },
         {
-          "name": "swRegister-B2Kaky_h.css",
-          "kb": 59.2
+          "name": "swRegister-BLgjvVqj.css",
+          "kb": 59.5
         },
         {
-          "name": "workbench-DY4RMd2K.js",
+          "name": "workbench-DWG_ockJ.js",
           "kb": 48.7
         },
         {
-          "name": "swRegister-T6ucZIqe.js",
+          "name": "swRegister-DZ2UlB1z.js",
           "kb": 45.1
         },
         {
-          "name": "MonthlyTab-7PnjGWu5.js",
+          "name": "MonthlyTab-xA4OWifF.js",
           "kb": 40.8
         }
       ]
     },
     "data": {
       "count": 15,
-      "totalKB": 2754.6,
+      "totalKB": 2754.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -7519,7 +7541,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 250.2
+          "kb": 250
         },
         {
           "name": "rider-agreements.json",
