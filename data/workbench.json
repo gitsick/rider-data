@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-16 18:14:29",
+  "generatedAt": "2026-11-16 18:22:12",
   "runDate": "2026-11-16",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-17 01:55:26",
-        "durationSec": 76.8,
+        "finishedAt": "2026-11-17 02:16:06",
+        "durationSec": 98.6,
         "note": "数据日 20261115：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -3265,8 +3265,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-16 18:14",
-          "size": 79675
+          "mtime": "2026-11-16 18:22",
+          "size": 80026
         },
         {
           "name": "oct.json",
@@ -3705,7 +3705,7 @@
             }
           ]
         },
-        "ageH": 7,
+        "ageH": 8,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -4191,7 +4191,7 @@
             }
           ]
         },
-        "ageH": 67,
+        "ageH": 68,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 6
@@ -4299,7 +4299,7 @@
             }
           ]
         },
-        "ageH": 149,
+        "ageH": 150,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -4461,7 +4461,7 @@
             }
           ]
         },
-        "ageH": 170,
+        "ageH": 171,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4731,7 +4731,7 @@
             }
           ]
         },
-        "ageH": 171,
+        "ageH": 172,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 2
@@ -4785,7 +4785,7 @@
             }
           ]
         },
-        "ageH": 173,
+        "ageH": 174,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5438,13 +5438,13 @@
         "name": "r562-monitor-aggregate-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 173
+        "ageH": 174
       },
       {
         "name": "r563-audit-regression-lock",
         "pct": 80,
         "sev": "",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -5474,7 +5474,7 @@
         "name": "r568-audit-trace-surface",
         "pct": 20,
         "sev": "",
-        "ageH": 170
+        "ageH": 171
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -5492,7 +5492,7 @@
         "name": "r571-style-unify",
         "pct": 20,
         "sev": "",
-        "ageH": 149
+        "ageH": 150
       },
       {
         "name": "r584-monitor-heartbeat",
@@ -5504,7 +5504,7 @@
         "name": "r585-heal-trace",
         "pct": 80,
         "sev": "warn",
-        "ageH": 67
+        "ageH": 68
       },
       {
         "name": "r586-orchestration-promote",
@@ -5558,7 +5558,7 @@
         "name": "r645-teamflow-p2b",
         "pct": 80,
         "sev": "done",
-        "ageH": 7
+        "ageH": 8
       },
       {
         "name": "r646-teamflow-p2c",
@@ -5634,7 +5634,7 @@
     "legacyWarn": [
       {
         "name": "r571-style-unify",
-        "ageH": 149
+        "ageH": 150
       },
       {
         "name": "r570-pending-card-exempt",
@@ -5646,7 +5646,7 @@
       },
       {
         "name": "r568-audit-trace-surface",
-        "ageH": 170
+        "ageH": 171
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -5666,11 +5666,11 @@
       },
       {
         "name": "r563-audit-regression-lock",
-        "ageH": 171
+        "ageH": 172
       },
       {
         "name": "r562-monitor-aggregate-wiring",
-        "ageH": 173
+        "ageH": 174
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -6061,8 +6061,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b72c0b78",
-        "at": "2026-11-17T02:11:32+08:00",
+        "hash": "63aeae29",
+        "at": "2026-11-17T02:16:58+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6072,9 +6072,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "0c21fda4",
-        "at": "2026-11-16T08:01:25+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-15"
+        "hash": "c7045dff",
+        "at": "2026-11-17T02:22:05+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html（assessment-legacy 通道）"
       }
     }
   ],
@@ -7283,7 +7283,7 @@
     },
     {
       "date": "2026-11-16",
-      "at": "2026-11-16 18:14:29",
+      "at": "2026-11-16 18:22:12",
       "score": 100,
       "grade": "优",
       "layers": [
@@ -7394,7 +7394,7 @@
           "kb": 611.5
         },
         {
-          "name": "capacity-C67a5MlN.js",
+          "name": "capacity-kswwuk3t.js",
           "kb": 105.6
         },
         {
