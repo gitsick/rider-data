@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-17 14:55:00",
+  "generatedAt": "2026-11-17 15:03:27",
   "runDate": "2026-11-17",
   "tasks": [
     {
@@ -2811,7 +2811,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 6.9h）"
+        "overdueText": "运行超时（距上次 7h）"
       },
       "timer": {
         "state": "ok",
@@ -3311,7 +3311,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-17 22:54:51）"
+      "detail": "本轮发布前置 10 段全过（2026-11-17 23:03:26）"
     },
     {
       "layer": "项目层",
@@ -3971,7 +3971,7 @@
             }
           ]
         },
-        "ageH": 86,
+        "ageH": 87,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -4619,7 +4619,7 @@
             }
           ]
         },
-        "ageH": 191,
+        "ageH": 192,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5159,7 +5159,7 @@
             }
           ]
         },
-        "ageH": 199,
+        "ageH": 200,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5512,7 +5512,7 @@
         "name": "r557-plan-closeout",
         "pct": 40,
         "sev": "",
-        "ageH": 199
+        "ageH": 200
       },
       {
         "name": "r558-b1-capacity-resume",
@@ -5572,7 +5572,7 @@
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 191
+        "ageH": 192
       },
       {
         "name": "r568-audit-trace-surface",
@@ -5644,7 +5644,7 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "warn",
-        "ageH": 86
+        "ageH": 87
       },
       {
         "name": "r632-teamflow-optimize",
@@ -5754,7 +5754,7 @@
       },
       {
         "name": "r567-remaining-pages-patrol",
-        "ageH": 191
+        "ageH": 192
       },
       {
         "name": "r566-dark-patrol",
@@ -5794,7 +5794,7 @@
       },
       {
         "name": "r557-plan-closeout",
-        "ageH": 199
+        "ageH": 200
       },
       {
         "name": "r556-legacy-and-xsp",
@@ -5832,7 +5832,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6.9h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 7h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6185,8 +6185,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "9e670836",
-        "at": "2026-11-17T22:24:25+08:00",
+        "hash": "9e290325",
+        "at": "2026-11-17T22:55:05+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6281,10 +6281,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-17 22:54:51",
+    "runAt": "2026-11-17 23:03:26",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
@@ -6295,7 +6295,7 @@
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -6313,13 +6313,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 131.1,
+        "seconds": 100.2,
         "note": "npm test pass=1705 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.3,
+        "seconds": 8.7,
         "note": ""
       },
       {
@@ -6337,37 +6337,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 31,
+        "seconds": 29.2,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 66,
+        "seconds": 59.2,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 59.4,
-        "note": "拷贝回验 137 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 1771.7,
-        "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-17 00:07:35",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 163.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-17 00:12:19",
       "scope": "complete",
@@ -6569,6 +6550,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 2071,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-17 23:03:26",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 201,
       "fails": []
     }
   ],
@@ -7436,7 +7424,7 @@
     },
     {
       "date": "2026-11-17",
-      "at": "2026-11-17 14:55:00",
+      "at": "2026-11-17 15:03:27",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -7578,7 +7566,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2818.5,
+      "totalKB": 2819.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -7586,7 +7574,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 557.5
+          "kb": 557.8
         },
         {
           "name": "capacity-daily.json",
@@ -7594,11 +7582,11 @@
         },
         {
           "name": "rider-index.json",
-          "kb": 401.4
+          "kb": 401.6
         },
         {
           "name": "workbench.json",
-          "kb": 253.3
+          "kb": 253.6
         },
         {
           "name": "rider-agreements.json",
