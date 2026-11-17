@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-17 02:42:16",
+  "generatedAt": "2026-11-17 03:01:55",
   "runDate": "2026-11-17",
   "tasks": [
     {
@@ -866,7 +866,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-16 09:01"
+        "lastRunAt": "2026-11-17 11:01"
       },
       "heal": {
         "can": true,
@@ -2791,7 +2791,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 2.7h）"
+        "overdueText": "运行超时（距上次 3h）"
       },
       "timer": {
         "state": "ok",
@@ -3640,7 +3640,7 @@
             }
           ]
         },
-        "ageH": 13,
+        "ageH": 14,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -3910,7 +3910,7 @@
             }
           ]
         },
-        "ageH": 74,
+        "ageH": 75,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -4072,7 +4072,7 @@
             }
           ]
         },
-        "ageH": 75,
+        "ageH": 76,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4126,7 +4126,7 @@
             }
           ]
         },
-        "ageH": 75,
+        "ageH": 76,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4558,7 +4558,7 @@
             }
           ]
         },
-        "ageH": 179,
+        "ageH": 180,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4612,7 +4612,7 @@
             }
           ]
         },
-        "ageH": 179,
+        "ageH": 180,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4666,7 +4666,7 @@
             }
           ]
         },
-        "ageH": 179,
+        "ageH": 180,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4936,7 +4936,7 @@
             }
           ]
         },
-        "ageH": 184,
+        "ageH": 185,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4990,7 +4990,7 @@
             }
           ]
         },
-        "ageH": 184,
+        "ageH": 185,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5044,7 +5044,7 @@
             }
           ]
         },
-        "ageH": 185,
+        "ageH": 186,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5152,7 +5152,7 @@
             }
           ]
         },
-        "ageH": 187,
+        "ageH": 188,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5445,7 +5445,7 @@
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 187
+        "ageH": 188
       },
       {
         "name": "r557-plan-closeout",
@@ -5457,19 +5457,19 @@
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 185
+        "ageH": 186
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 184
+        "ageH": 185
       },
       {
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 184
+        "ageH": 185
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -5499,19 +5499,19 @@
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r566-dark-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r568-audit-trace-surface",
@@ -5559,13 +5559,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "warn",
-        "ageH": 75
+        "ageH": 76
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "warn",
-        "ageH": 75
+        "ageH": 76
       },
       {
         "name": "r589-prompt-guard",
@@ -5583,7 +5583,7 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "warn",
-        "ageH": 74
+        "ageH": 75
       },
       {
         "name": "r632-teamflow-optimize",
@@ -5613,7 +5613,7 @@
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 13
+        "ageH": 14
       },
       {
         "name": "20261017-efficiency-naming",
@@ -5693,15 +5693,15 @@
       },
       {
         "name": "r567-remaining-pages-patrol",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r566-dark-patrol",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r565-visual-patrol",
-        "ageH": 179
+        "ageH": 180
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -5721,15 +5721,15 @@
       },
       {
         "name": "r560-lib-readme-roster",
-        "ageH": 184
+        "ageH": 185
       },
       {
         "name": "r559-alert-history",
-        "ageH": 184
+        "ageH": 185
       },
       {
         "name": "r558-b1-capacity-resume",
-        "ageH": 185
+        "ageH": 186
       },
       {
         "name": "r557-plan-closeout",
@@ -5737,7 +5737,7 @@
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 187
+        "ageH": 188
       },
       {
         "name": "r555-third-orchestrated",
@@ -5761,7 +5761,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 2.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 3h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6114,8 +6114,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "f490f699",
-        "at": "2026-11-17T10:26:01+08:00",
+        "hash": "4405bd48",
+        "at": "2026-11-17T10:42:23+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7360,7 +7360,7 @@
     },
     {
       "date": "2026-11-17",
-      "at": "2026-11-17 02:42:16",
+      "at": "2026-11-17 03:01:55",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -7464,7 +7464,7 @@
   "perf": {
     "assets": {
       "count": 95,
-      "totalKB": 1656.6,
+      "totalKB": 1656.8,
       "top": [
         {
           "name": "vendor-echarts-DyZQEMzr.js",
@@ -7487,7 +7487,7 @@
           "kb": 61
         },
         {
-          "name": "workbench-oB-LmFxZ.js",
+          "name": "workbench-i3edJ3_C.js",
           "kb": 48.7
         },
         {
@@ -7502,7 +7502,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2827.3,
+      "totalKB": 2661.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -7513,16 +7513,16 @@
           "kb": 555.1
         },
         {
-          "name": "capacity-daily.json",
-          "kb": 553.6
-        },
-        {
           "name": "rider-index.json",
           "kb": 399.6
         },
         {
+          "name": "capacity-daily.json",
+          "kb": 349.1
+        },
+        {
           "name": "workbench.json",
-          "kb": 248
+          "kb": 286.7
         },
         {
           "name": "rider-agreements.json",
