@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-17 04:35:54",
+  "generatedAt": "2026-11-17 04:40:50",
   "runDate": "2026-11-17",
   "tasks": [
     {
@@ -12,11 +12,11 @@
       "entry": "bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --frontend→归档→第2期目标检测）",
       "note": "技能编排型任务，需浏览器 BI 登录态；发布感知双探测：07:00 主跑（定时器 BYHOUR=7;BYMINUTE=0，与 expectHour=7 对齐；11-10 21:02 用户确认定时器以 07:00 为准，登记按 R195 惯例向运行态真源对齐）+ 10:30 自愈探测补跑（OdrLWZHZtb8IhMG8W8kgp）。换月SOP人工核对挂账导致的 FAIL 为已知态（非断链）。留痕耗时按最近触发源折算。2026-11-14 R585：主跑留痕代码级收口（管线自写+幂等），prompt 收尾 Record 指令恢复后双通道并存互不冲突",
       "last": {
-        "status": "FAIL",
-        "exitCode": 1,
-        "finishedAt": "2026-11-17 12:00:45",
-        "durationSec": 62.2,
-        "note": "数据日 20261116：流水线失败退出"
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-11-17 12:37:33",
+        "durationSec": 849.3,
+        "note": "数据日 20261116：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
         "cadence": "daily",
@@ -2799,7 +2799,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 4.6h）"
+        "overdueText": "运行超时（距上次 4.7h）"
       },
       "timer": {
         "state": "ok",
@@ -2840,10 +2840,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-17 12:33:30",
+    "auditedAt": "2026-11-17 12:40:50",
     "status": "PASS",
-    "pass": 62,
-    "warn": 8,
+    "pass": 68,
+    "warn": 3,
     "fail": 0,
     "checks": [
       {
@@ -2862,9 +2862,9 @@
         "msg": "publish_file.py 在位"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "互斥锁",
-        "msg": "锁存在（7 分钟前创建）——可能有部署进行中，或上次异常未释放（10 分钟后可自动接管/手动删除）"
+        "msg": "无残留锁"
       },
       {
         "level": "PASS",
@@ -2872,14 +2872,14 @@
         "msg": "工作区干净"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "仓库漂移",
-        "msg": "领先远端 1 个提交，落后 0 个（领先=待推送/待补发；落后=需 pull）"
+        "msg": "与远端 main 同步"
       },
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 73678658 2026-11-17 12:26:19 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 479f362e 2026-11-17 12:36:37 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2894,7 +2894,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（179 小时前生成）"
+        "msg": "单文件产物存在（180 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2947,9 +2947,14 @@
         "msg": "[kaohe-daily] 定时器排期 07:00 与 expectHour=7 一致"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily] 今日应跑（每日 07:00 主跑 + 10:30 发布自愈）但无今日成功留痕——疑似断链；command 型可用 run_task.ps1 -Auto 补跑，agent 型手动重跑后 -Record PASS 留痕"
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（11/17/2026 07:46:30），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 今日已运行"
       },
       {
         "level": "PASS",
@@ -3147,9 +3152,9 @@
         "msg": "分层约定无违规（无外部工作区引用 / 无项目层渲染器 / 无项目自建部署脚本）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "发布补发",
-        "msg": "1 个提交补推仍失败（网络/权限），本地已就绪，下次审计或手动 git push 补发"
+        "msg": "本地与 origin/main 一致，无滞留提交"
       },
       {
         "level": "PASS",
@@ -3172,14 +3177,14 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "断链自愈",
-        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；补跑 kaohe-daily（每日 07:00 主跑 + 10:30 发布自愈）；  [kaohe-daily] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: bi-kaohe-backup 技能一键流水线（抓数→备份表→看板→kaohe_pipeline.py --…（截断，全文见审计控制台输出）"
+        "msg": "跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-17 12:26:13 替换，含 16 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-17 12:36:36 替换，含 6 文件）"
       },
       {
         "level": "PASS",
@@ -3198,10 +3203,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-16 00:02:54",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-16 00:44:24",
         "status": "PASS"
@@ -3253,6 +3254,10 @@
       {
         "auditedAt": "2026-11-17 12:33:30",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-17 12:40:50",
+        "status": "PASS"
       }
     ]
   },
@@ -3261,19 +3266,19 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "8/11 任务正常 · 2 失败 · 1 逾期 · 近 30 天触发断档 7 天"
+      "detail": "9/11 任务正常 · 1 失败 · 1 逾期 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-17 12:33:30）"
+      "detail": "审计 PASS（2026-11-17 12:40:50）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-17 12:35:53）"
+      "detail": "上轮全链 12 段全过（2026-11-17 12:40:24）"
     },
     {
       "layer": "项目层",
@@ -3825,7 +3830,7 @@
             }
           ]
         },
-        "ageH": 18,
+        "ageH": 19,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -4419,7 +4424,7 @@
             }
           ]
         },
-        "ageH": 180,
+        "ageH": 181,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4743,7 +4748,7 @@
             }
           ]
         },
-        "ageH": 181,
+        "ageH": 182,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5516,7 +5521,7 @@
         "name": "r564-pull-trace-wiring",
         "pct": 80,
         "sev": "",
-        "ageH": 181
+        "ageH": 182
       },
       {
         "name": "r565-visual-patrol",
@@ -5552,7 +5557,7 @@
         "name": "r570-pending-card-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 180
+        "ageH": 181
       },
       {
         "name": "r571-style-unify",
@@ -5618,7 +5623,7 @@
         "name": "r644-teamflow-p2",
         "pct": 80,
         "sev": "done",
-        "ageH": 18
+        "ageH": 19
       },
       {
         "name": "r645-teamflow-p2b",
@@ -5704,7 +5709,7 @@
       },
       {
         "name": "r570-pending-card-exempt",
-        "ageH": 180
+        "ageH": 181
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -5728,7 +5733,7 @@
       },
       {
         "name": "r564-pull-trace-wiring",
-        "ageH": 181
+        "ageH": 182
       },
       {
         "name": "r563-audit-regression-lock",
@@ -5779,17 +5784,12 @@
   "alerts": [
     {
       "level": "FAIL",
-      "text": "任务失败：履约考核看板刷新与备份（2026-11-17 12:00:45 · 数据日 20261116：流水线失败退出）",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "FAIL",
       "text": "任务失败：骑手看板每日巡检（2026-11-17 12:24:51 · 线上门禁FAIL：本地dist(11:59重建,指纹index-BvoYvB2p.js)与线上(11:41发布,index-C-Iosm5n.js)内容等价但chunk命名不同,指纹轮询480s超时;线上本身为最新发布产物未见异常）",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.7h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -5799,7 +5799,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 8 项警告（2026-11-17 12:33:30）",
+      "text": "审计有 3 项警告（2026-11-17 12:40:50）",
       "anchor": "sec-audit"
     },
     {
@@ -6142,8 +6142,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "73678658",
-        "at": "2026-11-17T12:26:19+08:00",
+        "hash": "479f362e",
+        "at": "2026-11-17T12:36:37+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6233,10 +6233,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-17 12:35:53",
+    "runAt": "2026-11-17 12:40:24",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -6297,17 +6297,22 @@
         "pass": true,
         "seconds": 32.3,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 73.7,
+        "note": "拷贝回验 136 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 196.7,
+        "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-16 17:34:34",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 592.6,
-      "fails": []
-    },
     {
       "runAt": "2026-11-16 18:15:19",
       "scope": "pre-deploy",
@@ -6509,6 +6514,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 276.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-17 12:40:24",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 546.8,
       "fails": []
     }
   ],
@@ -7376,7 +7388,7 @@
     },
     {
       "date": "2026-11-17",
-      "at": "2026-11-17 04:35:54",
+      "at": "2026-11-17 04:40:50",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -7518,7 +7530,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2812.3,
+      "totalKB": 2812.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -7538,7 +7550,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 251.1
+          "kb": 251.6
         },
         {
           "name": "rider-agreements.json",
