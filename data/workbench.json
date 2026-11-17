@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-17 13:53:14",
+  "generatedAt": "2026-11-17 14:24:20",
   "runDate": "2026-11-17",
   "tasks": [
     {
@@ -1336,7 +1336,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-17 16:22"
+        "lastRunAt": "2026-11-17 22:19"
       },
       "heal": {
         "can": true,
@@ -2371,7 +2371,7 @@
       "entry": "桌面端自动化编排：运行 python F:\\work\\mtcapacity\\lib\\monitor.py（统一监控大盘聚合：六板对账+审计+心跳+留痕快照+告警派生落 sched\\cache\\monitor_status.json，R559 起告警非空自动追加 monitor_alert_history.jsonl）。跑完在收件箱开一条结果条目：聚合时刻、六板对账结论、告警条数与明细（告警明细逐条列出 level/src）；全部正常时收件箱条目一句话带过即可",
       "note": "R562 定时接线：大盘聚合此前无任何定时触发（monitor_status 靠轮次手工刷新，11-05 起断链 4 天才被 R562 盘点发现——审计 6a 心跳检查同轮补盲）。自动化「监控大盘聚合」建议 2h 节奏（FREQ=HOURLY;INTERVAL=2;BYMINUTE=0），UI 确认创建后回填 automationId（R562 二段）\n2026-11-13 R584：用户裁决本轮不建聚合自动化，wiringDeferred 照实声明；建自动化后回填 automationId 并删本字段\n2026-11-14 体检轮接线落地：桌面自动化 DV-YKvKI5cxwfG6KUewd3 建（FREQ=HOURLY;INTERVAL=2，全工程体检双决策项之一，用户卡片确认），automationId 已回填、wiringDeferred 删除——R562 二段闭环。首轮确认卡曾截断（prompt 只落 4 字+排期回落默认），修正卡重发后完整落地。\n2026-11-14 12:01 首次自动触发成功（runStatus=completed，心跳 12:00:20 落盘），intent-registry 条目按 R266 恢复约定移除——全闭环。",
       "last": {
-        "finishedAt": "2026-11-17 20:00:31",
+        "finishedAt": "2026-11-17 22:00:30",
         "note": ""
       },
       "monitor": {
@@ -2383,7 +2383,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-17 20:01"
+        "lastRunAt": "2026-11-17 22:01"
       },
       "heal": {
         "can": false,
@@ -2391,7 +2391,7 @@
       },
       "history": [
         {
-          "finishedAt": "2026-11-17 20:00:31"
+          "finishedAt": "2026-11-17 22:00:30"
         }
       ],
       "gaps": {
@@ -2811,7 +2811,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 5.9h）"
+        "overdueText": "运行超时（距上次 6.4h）"
       },
       "timer": {
         "state": "ok",
@@ -3311,13 +3311,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-17 21:52:48）"
+      "detail": "本轮发布前置 10 段全过（2026-11-17 22:24:19）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 7h 前"
+      "detail": "2 项目，最新产出 8h 前"
     },
     {
       "layer": "渲染层",
@@ -3356,7 +3356,7 @@
           "size": 464761
         }
       ],
-      "ageHours": 10,
+      "ageHours": 11,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-16",
@@ -3393,7 +3393,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 7,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-17",
@@ -3701,7 +3701,7 @@
             }
           ]
         },
-        "ageH": 24,
+        "ageH": 25,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -3809,7 +3809,7 @@
             }
           ]
         },
-        "ageH": 27,
+        "ageH": 28,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -3971,7 +3971,7 @@
             }
           ]
         },
-        "ageH": 85,
+        "ageH": 86,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -4079,7 +4079,7 @@
             }
           ]
         },
-        "ageH": 86,
+        "ageH": 87,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4241,7 +4241,7 @@
             }
           ]
         },
-        "ageH": 87,
+        "ageH": 88,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4295,7 +4295,7 @@
             }
           ]
         },
-        "ageH": 87,
+        "ageH": 88,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 6
@@ -4403,7 +4403,7 @@
             }
           ]
         },
-        "ageH": 169,
+        "ageH": 170,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -4565,7 +4565,7 @@
             }
           ]
         },
-        "ageH": 190,
+        "ageH": 191,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4619,7 +4619,7 @@
             }
           ]
         },
-        "ageH": 190,
+        "ageH": 191,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4835,7 +4835,7 @@
             }
           ]
         },
-        "ageH": 191,
+        "ageH": 192,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 2
@@ -4889,7 +4889,7 @@
             }
           ]
         },
-        "ageH": 193,
+        "ageH": 194,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -4997,7 +4997,7 @@
             }
           ]
         },
-        "ageH": 195,
+        "ageH": 196,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5159,7 +5159,7 @@
             }
           ]
         },
-        "ageH": 198,
+        "ageH": 199,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5321,7 +5321,7 @@
             }
           ]
         },
-        "ageH": 199,
+        "ageH": 200,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5494,7 +5494,7 @@
         "name": "r554-archmode-agentroles",
         "pct": 80,
         "sev": "",
-        "ageH": 199
+        "ageH": 200
       },
       {
         "name": "r555-third-orchestrated",
@@ -5512,7 +5512,7 @@
         "name": "r557-plan-closeout",
         "pct": 40,
         "sev": "",
-        "ageH": 198
+        "ageH": 199
       },
       {
         "name": "r558-b1-capacity-resume",
@@ -5530,7 +5530,7 @@
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 195
+        "ageH": 196
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -5542,13 +5542,13 @@
         "name": "r562-monitor-aggregate-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r563-audit-regression-lock",
         "pct": 80,
         "sev": "",
-        "ageH": 191
+        "ageH": 192
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -5572,13 +5572,13 @@
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 190
+        "ageH": 191
       },
       {
         "name": "r568-audit-trace-surface",
         "pct": 20,
         "sev": "",
-        "ageH": 190
+        "ageH": 191
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -5596,7 +5596,7 @@
         "name": "r571-style-unify",
         "pct": 20,
         "sev": "",
-        "ageH": 169
+        "ageH": 170
       },
       {
         "name": "r584-monitor-heartbeat",
@@ -5608,13 +5608,13 @@
         "name": "r585-heal-trace",
         "pct": 80,
         "sev": "warn",
-        "ageH": 87
+        "ageH": 88
       },
       {
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "warn",
-        "ageH": 87
+        "ageH": 88
       },
       {
         "name": "r587-metrics-struct",
@@ -5632,7 +5632,7 @@
         "name": "r589-prompt-guard",
         "pct": 80,
         "sev": "warn",
-        "ageH": 86
+        "ageH": 87
       },
       {
         "name": "r590-note-label",
@@ -5644,7 +5644,7 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "warn",
-        "ageH": 85
+        "ageH": 86
       },
       {
         "name": "r632-teamflow-optimize",
@@ -5662,7 +5662,7 @@
         "name": "r645-teamflow-p2b",
         "pct": 80,
         "sev": "done",
-        "ageH": 27
+        "ageH": 28
       },
       {
         "name": "r646-teamflow-p2c",
@@ -5674,7 +5674,7 @@
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 24
+        "ageH": 25
       },
       {
         "name": "20261017-efficiency-naming",
@@ -5738,7 +5738,7 @@
     "legacyWarn": [
       {
         "name": "r571-style-unify",
-        "ageH": 169
+        "ageH": 170
       },
       {
         "name": "r570-pending-card-exempt",
@@ -5750,11 +5750,11 @@
       },
       {
         "name": "r568-audit-trace-surface",
-        "ageH": 190
+        "ageH": 191
       },
       {
         "name": "r567-remaining-pages-patrol",
-        "ageH": 190
+        "ageH": 191
       },
       {
         "name": "r566-dark-patrol",
@@ -5770,11 +5770,11 @@
       },
       {
         "name": "r563-audit-regression-lock",
-        "ageH": 191
+        "ageH": 192
       },
       {
         "name": "r562-monitor-aggregate-wiring",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -5782,7 +5782,7 @@
       },
       {
         "name": "r560-lib-readme-roster",
-        "ageH": 195
+        "ageH": 196
       },
       {
         "name": "r559-alert-history",
@@ -5794,7 +5794,7 @@
       },
       {
         "name": "r557-plan-closeout",
-        "ageH": 198
+        "ageH": 199
       },
       {
         "name": "r556-legacy-and-xsp",
@@ -5806,7 +5806,7 @@
       },
       {
         "name": "r554-archmode-agentroles",
-        "ageH": 199
+        "ageH": 200
       },
       {
         "name": "r553-rup-first-run",
@@ -5832,7 +5832,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 5.9h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 6.4h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6185,8 +6185,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b75a4549",
-        "at": "2026-11-17T21:50:05+08:00",
+        "hash": "b0368562",
+        "at": "2026-11-17T21:55:01+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6204,7 +6204,7 @@
   ],
   "monitor": {
     "schemaVer": 1,
-    "generatedAt": "2026-11-17 20:00:31",
+    "generatedAt": "2026-11-17 22:00:30",
     "boards": {
       "sep": "PASS",
       "oct": "PASS",
@@ -6220,13 +6220,13 @@
       "capacity-daily": {
         "dataDay": null,
         "checkedAt": "2026-11-17T11:10:06",
-        "ageH": 8.840360728055556,
+        "ageH": 10.840161880833334,
         "pending": []
       },
       "kaohe-daily": {
         "dataDay": "2026-11-16",
         "checkedAt": "2026-11-17T14:50:30",
-        "ageH": 5.167027394722223,
+        "ageH": 7.166828547500001,
         "pending": [
           "ym",
           "pz",
@@ -6236,21 +6236,21 @@
       "xsp-weekly": {
         "dataDay": "2026-11-17",
         "checkedAt": "2026-11-17T08:18:10",
-        "ageH": 11.705916560833332,
+        "ageH": 13.705717834444444,
         "pending": []
       },
       "rider-hourly": {
-        "srcAgeH": 0.1,
+        "srcAgeH": 0.2,
         "lagH": 0,
-        "generatedAt": "2026-11-17 18:27:28"
+        "generatedAt": "2026-11-17 21:47:03"
       }
     },
     "audit": {
       "status": "PASS",
-      "pass": 68,
-      "warn": 4,
+      "pass": 70,
+      "warn": 5,
       "fail": 0,
-      "auditedAt": "2026-11-17 16:07:42",
+      "auditedAt": "2026-11-17 21:30:56",
       "publishCount": 2,
       "rollbackReady": true
     },
@@ -6276,20 +6276,20 @@
       {
         "level": "WARN",
         "src": "audit",
-        "text": "部署审计有 4 项警告（2026-11-17 16:07:42）"
+        "text": "部署审计有 5 项警告（2026-11-17 21:30:56）"
       }
     ]
   },
   "gates": {
-    "runAt": "2026-11-17 21:52:48",
+    "runAt": "2026-11-17 22:24:19",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.2,
+        "seconds": 1.9,
         "note": ""
       },
       {
@@ -6301,31 +6301,31 @@
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.8,
+        "seconds": 0.7,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 104.2,
+        "seconds": 131.1,
         "note": "npm test pass=1705 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 9,
+        "seconds": 8.3,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -6337,37 +6337,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 28.2,
+        "seconds": 31,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 32.4,
+        "seconds": 66,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 33.7,
-        "note": "拷贝回验 137 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 133.9,
-        "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-16 23:35:13",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 203.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-16 23:37:43",
       "scope": "complete",
@@ -6569,6 +6550,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 348.5,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-17 22:24:19",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 239.9,
       "fails": []
     }
   ],
@@ -7436,7 +7424,7 @@
     },
     {
       "date": "2026-11-17",
-      "at": "2026-11-17 13:53:14",
+      "at": "2026-11-17 14:24:20",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -7578,7 +7566,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2818.6,
+      "totalKB": 2818.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -7598,7 +7586,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 253.3
+          "kb": 253.6
         },
         {
           "name": "rider-agreements.json",
