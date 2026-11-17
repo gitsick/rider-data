@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-17 15:03:27",
+  "generatedAt": "2026-11-17 15:07:05",
   "runDate": "2026-11-17",
   "tasks": [
     {
@@ -2811,7 +2811,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 7h）"
+        "overdueText": "运行超时（距上次 7.1h）"
       },
       "timer": {
         "state": "ok",
@@ -2892,7 +2892,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 9e670836 2026-11-17 22:24:25 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 53fff4aa 2026-11-17 23:03:32 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2902,7 +2902,7 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（11 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（12 小时前刷新）"
       },
       {
         "level": "PASS",
@@ -2917,7 +2917,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 0 小时前已聚合（告警 2 条）"
+        "msg": "monitor_status 1 小时前已聚合（告警 2 条）"
       },
       {
         "level": "PASS",
@@ -3122,7 +3122,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行正常（0h 前，节奏每 2h）"
+        "msg": "[monitor-aggregate] 运行正常（1h 前，节奏每 2h）"
       },
       {
         "level": "PASS",
@@ -3177,7 +3177,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（6h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（7h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -3217,7 +3217,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-17 22:24:23 替换，含 3 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-17 23:03:30 替换，含 6 文件）"
       },
       {
         "level": "PASS",
@@ -3311,7 +3311,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-17 23:03:26）"
+      "detail": "上轮全链 12 段全过（2026-11-17 23:06:59）"
     },
     {
       "layer": "项目层",
@@ -3356,7 +3356,7 @@
           "size": 464761
         }
       ],
-      "ageHours": 11,
+      "ageHours": 12,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-16",
@@ -5832,7 +5832,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 7.1h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6185,8 +6185,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "9e290325",
-        "at": "2026-11-17T22:55:05+08:00",
+        "hash": "53fff4aa",
+        "at": "2026-11-17T23:03:32+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6281,10 +6281,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-17 23:03:26",
+    "runAt": "2026-11-17 23:06:59",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -6345,17 +6345,22 @@
         "pass": true,
         "seconds": 59.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 33.6,
+        "note": "拷贝回验 137 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 177.8,
+        "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-17 00:12:19",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 447.4,
-      "fails": []
-    },
     {
       "runAt": "2026-11-17 07:26:16",
       "scope": "pre-deploy",
@@ -6557,6 +6562,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 201,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-17 23:06:59",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 412.4,
       "fails": []
     }
   ],
@@ -7424,7 +7436,7 @@
     },
     {
       "date": "2026-11-17",
-      "at": "2026-11-17 15:03:27",
+      "at": "2026-11-17 15:07:05",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -7566,7 +7578,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2819.3,
+      "totalKB": 2819,
       "top": [
         {
           "name": "rider_base.json",
@@ -7586,7 +7598,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 253.6
+          "kb": 253.3
         },
         {
           "name": "rider-agreements.json",
