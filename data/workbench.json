@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-17 10:30:42",
+  "generatedAt": "2026-11-17 12:15:26",
   "runDate": "2026-11-17",
   "tasks": [
     {
@@ -2371,7 +2371,7 @@
       "entry": "桌面端自动化编排：运行 python F:\\work\\mtcapacity\\lib\\monitor.py（统一监控大盘聚合：六板对账+审计+心跳+留痕快照+告警派生落 sched\\cache\\monitor_status.json，R559 起告警非空自动追加 monitor_alert_history.jsonl）。跑完在收件箱开一条结果条目：聚合时刻、六板对账结论、告警条数与明细（告警明细逐条列出 level/src）；全部正常时收件箱条目一句话带过即可",
       "note": "R562 定时接线：大盘聚合此前无任何定时触发（monitor_status 靠轮次手工刷新，11-05 起断链 4 天才被 R562 盘点发现——审计 6a 心跳检查同轮补盲）。自动化「监控大盘聚合」建议 2h 节奏（FREQ=HOURLY;INTERVAL=2;BYMINUTE=0），UI 确认创建后回填 automationId（R562 二段）\n2026-11-13 R584：用户裁决本轮不建聚合自动化，wiringDeferred 照实声明；建自动化后回填 automationId 并删本字段\n2026-11-14 体检轮接线落地：桌面自动化 DV-YKvKI5cxwfG6KUewd3 建（FREQ=HOURLY;INTERVAL=2，全工程体检双决策项之一，用户卡片确认），automationId 已回填、wiringDeferred 删除——R562 二段闭环。首轮确认卡曾截断（prompt 只落 4 字+排期回落默认），修正卡重发后完整落地。\n2026-11-14 12:01 首次自动触发成功（runStatus=completed，心跳 12:00:20 落盘），intent-registry 条目按 R266 恢复约定移除——全闭环。",
       "last": {
-        "finishedAt": "2026-11-17 18:00:26",
+        "finishedAt": "2026-11-17 20:00:31",
         "note": ""
       },
       "monitor": {
@@ -2383,7 +2383,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-17 18:01"
+        "lastRunAt": "2026-11-17 20:01"
       },
       "heal": {
         "can": false,
@@ -2391,7 +2391,7 @@
       },
       "history": [
         {
-          "finishedAt": "2026-11-17 18:00:26"
+          "finishedAt": "2026-11-17 20:00:31"
         }
       ],
       "gaps": {
@@ -2810,7 +2810,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 2.5h）"
+        "overdueText": "运行超时（距上次 4.2h）"
       },
       "timer": {
         "state": "ok",
@@ -3301,7 +3301,7 @@
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 4h 前"
+      "detail": "2 项目，最新产出 6h 前"
     },
     {
       "layer": "渲染层",
@@ -3340,7 +3340,7 @@
           "size": 464761
         }
       ],
-      "ageHours": 7,
+      "ageHours": 9,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-16",
@@ -3377,7 +3377,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 4,
+      "ageHours": 6,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-17",
@@ -3631,7 +3631,7 @@
             }
           ]
         },
-        "ageH": 9,
+        "ageH": 11,
         "totalH": 739,
         "deltaH": 739,
         "gapH": 12
@@ -3685,7 +3685,7 @@
             }
           ]
         },
-        "ageH": 21,
+        "ageH": 23,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -3739,7 +3739,7 @@
             }
           ]
         },
-        "ageH": 22,
+        "ageH": 24,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 1
@@ -3793,7 +3793,7 @@
             }
           ]
         },
-        "ageH": 24,
+        "ageH": 26,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -3847,7 +3847,7 @@
             }
           ]
         },
-        "ageH": 24,
+        "ageH": 26,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -3901,7 +3901,7 @@
             }
           ]
         },
-        "ageH": 25,
+        "ageH": 27,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 57
@@ -3955,7 +3955,7 @@
             }
           ]
         },
-        "ageH": 82,
+        "ageH": 84,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -4009,7 +4009,7 @@
             }
           ]
         },
-        "ageH": 83,
+        "ageH": 84,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4063,7 +4063,7 @@
             }
           ]
         },
-        "ageH": 83,
+        "ageH": 85,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4117,7 +4117,7 @@
             }
           ]
         },
-        "ageH": 83,
+        "ageH": 85,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4171,7 +4171,7 @@
             }
           ]
         },
-        "ageH": 83,
+        "ageH": 85,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4225,7 +4225,7 @@
             }
           ]
         },
-        "ageH": 84,
+        "ageH": 85,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4279,7 +4279,7 @@
             }
           ]
         },
-        "ageH": 84,
+        "ageH": 85,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 6
@@ -4333,7 +4333,7 @@
             }
           ]
         },
-        "ageH": 90,
+        "ageH": 91,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -4387,7 +4387,7 @@
             }
           ]
         },
-        "ageH": 166,
+        "ageH": 167,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -4441,7 +4441,7 @@
             }
           ]
         },
-        "ageH": 186,
+        "ageH": 188,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4495,7 +4495,7 @@
             }
           ]
         },
-        "ageH": 187,
+        "ageH": 188,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4549,7 +4549,7 @@
             }
           ]
         },
-        "ageH": 187,
+        "ageH": 189,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4603,7 +4603,7 @@
             }
           ]
         },
-        "ageH": 187,
+        "ageH": 189,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4657,7 +4657,7 @@
             }
           ]
         },
-        "ageH": 187,
+        "ageH": 189,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4711,7 +4711,7 @@
             }
           ]
         },
-        "ageH": 187,
+        "ageH": 189,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4765,7 +4765,7 @@
             }
           ]
         },
-        "ageH": 187,
+        "ageH": 189,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4819,7 +4819,7 @@
             }
           ]
         },
-        "ageH": 188,
+        "ageH": 190,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 2
@@ -4873,7 +4873,7 @@
             }
           ]
         },
-        "ageH": 190,
+        "ageH": 191,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -4927,7 +4927,7 @@
             }
           ]
         },
-        "ageH": 191,
+        "ageH": 193,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4981,7 +4981,7 @@
             }
           ]
         },
-        "ageH": 192,
+        "ageH": 194,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5035,7 +5035,7 @@
             }
           ]
         },
-        "ageH": 192,
+        "ageH": 194,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5089,7 +5089,7 @@
             }
           ]
         },
-        "ageH": 193,
+        "ageH": 195,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5143,7 +5143,7 @@
             }
           ]
         },
-        "ageH": 195,
+        "ageH": 197,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5197,7 +5197,7 @@
             }
           ]
         },
-        "ageH": 195,
+        "ageH": 197,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5251,7 +5251,7 @@
             }
           ]
         },
-        "ageH": 195,
+        "ageH": 197,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5305,7 +5305,7 @@
             }
           ]
         },
-        "ageH": 196,
+        "ageH": 198,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5359,7 +5359,7 @@
             }
           ]
         },
-        "ageH": 196,
+        "ageH": 198,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -5472,199 +5472,199 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "",
-        "ageH": 196
+        "ageH": 198
       },
       {
         "name": "r554-archmode-agentroles",
         "pct": 80,
         "sev": "",
-        "ageH": 196
+        "ageH": 198
       },
       {
         "name": "r555-third-orchestrated",
         "pct": 80,
         "sev": "",
-        "ageH": 195
+        "ageH": 197
       },
       {
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 195
+        "ageH": 197
       },
       {
         "name": "r557-plan-closeout",
         "pct": 40,
         "sev": "",
-        "ageH": 195
+        "ageH": 197
       },
       {
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 193
+        "ageH": 195
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 192
+        "ageH": 194
       },
       {
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 192
+        "ageH": 194
       },
       {
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 191
+        "ageH": 193
       },
       {
         "name": "r562-monitor-aggregate-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 190
+        "ageH": 191
       },
       {
         "name": "r563-audit-regression-lock",
         "pct": 80,
         "sev": "",
-        "ageH": 188
+        "ageH": 190
       },
       {
         "name": "r564-pull-trace-wiring",
         "pct": 80,
         "sev": "",
-        "ageH": 187
+        "ageH": 189
       },
       {
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 187
+        "ageH": 189
       },
       {
         "name": "r566-dark-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 187
+        "ageH": 189
       },
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 187
+        "ageH": 189
       },
       {
         "name": "r568-audit-trace-surface",
         "pct": 20,
         "sev": "",
-        "ageH": 187
+        "ageH": 189
       },
       {
         "name": "r569-heal-intent-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 187
+        "ageH": 188
       },
       {
         "name": "r570-pending-card-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 186
+        "ageH": 188
       },
       {
         "name": "r571-style-unify",
         "pct": 20,
         "sev": "",
-        "ageH": 166
+        "ageH": 167
       },
       {
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "warn",
-        "ageH": 90
+        "ageH": 91
       },
       {
         "name": "r585-heal-trace",
         "pct": 80,
         "sev": "warn",
-        "ageH": 84
+        "ageH": 85
       },
       {
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "warn",
-        "ageH": 84
+        "ageH": 85
       },
       {
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "warn",
-        "ageH": 83
+        "ageH": 85
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "warn",
-        "ageH": 83
+        "ageH": 85
       },
       {
         "name": "r589-prompt-guard",
         "pct": 80,
         "sev": "warn",
-        "ageH": 83
+        "ageH": 85
       },
       {
         "name": "r590-note-label",
         "pct": 20,
         "sev": "warn",
-        "ageH": 83
+        "ageH": 84
       },
       {
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "warn",
-        "ageH": 82
+        "ageH": 84
       },
       {
         "name": "r632-teamflow-optimize",
         "pct": 100,
         "sev": "done",
-        "ageH": 25
+        "ageH": 27
       },
       {
         "name": "r644-teamflow-p2",
         "pct": 80,
         "sev": "done",
-        "ageH": 24
+        "ageH": 26
       },
       {
         "name": "r645-teamflow-p2b",
         "pct": 80,
         "sev": "done",
-        "ageH": 24
+        "ageH": 26
       },
       {
         "name": "r646-teamflow-p2c",
         "pct": 80,
         "sev": "done",
-        "ageH": 22
+        "ageH": 24
       },
       {
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 21
+        "ageH": 23
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 60,
         "sev": "",
-        "ageH": 9
+        "ageH": 11
       }
     ],
     "stall": {
@@ -5722,79 +5722,79 @@
     "legacyWarn": [
       {
         "name": "r571-style-unify",
-        "ageH": 166
+        "ageH": 167
       },
       {
         "name": "r570-pending-card-exempt",
-        "ageH": 186
-      },
-      {
-        "name": "r569-heal-intent-exempt",
-        "ageH": 187
-      },
-      {
-        "name": "r568-audit-trace-surface",
-        "ageH": 187
-      },
-      {
-        "name": "r567-remaining-pages-patrol",
-        "ageH": 187
-      },
-      {
-        "name": "r566-dark-patrol",
-        "ageH": 187
-      },
-      {
-        "name": "r565-visual-patrol",
-        "ageH": 187
-      },
-      {
-        "name": "r564-pull-trace-wiring",
-        "ageH": 187
-      },
-      {
-        "name": "r563-audit-regression-lock",
         "ageH": 188
       },
       {
-        "name": "r562-monitor-aggregate-wiring",
+        "name": "r569-heal-intent-exempt",
+        "ageH": 188
+      },
+      {
+        "name": "r568-audit-trace-surface",
+        "ageH": 189
+      },
+      {
+        "name": "r567-remaining-pages-patrol",
+        "ageH": 189
+      },
+      {
+        "name": "r566-dark-patrol",
+        "ageH": 189
+      },
+      {
+        "name": "r565-visual-patrol",
+        "ageH": 189
+      },
+      {
+        "name": "r564-pull-trace-wiring",
+        "ageH": 189
+      },
+      {
+        "name": "r563-audit-regression-lock",
         "ageH": 190
       },
       {
-        "name": "r561-patrol-trace-wiring",
+        "name": "r562-monitor-aggregate-wiring",
         "ageH": 191
       },
       {
-        "name": "r560-lib-readme-roster",
-        "ageH": 192
-      },
-      {
-        "name": "r559-alert-history",
-        "ageH": 192
-      },
-      {
-        "name": "r558-b1-capacity-resume",
+        "name": "r561-patrol-trace-wiring",
         "ageH": 193
       },
       {
-        "name": "r557-plan-closeout",
+        "name": "r560-lib-readme-roster",
+        "ageH": 194
+      },
+      {
+        "name": "r559-alert-history",
+        "ageH": 194
+      },
+      {
+        "name": "r558-b1-capacity-resume",
         "ageH": 195
+      },
+      {
+        "name": "r557-plan-closeout",
+        "ageH": 197
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 195
+        "ageH": 197
       },
       {
         "name": "r555-third-orchestrated",
-        "ageH": 195
+        "ageH": 197
       },
       {
         "name": "r554-archmode-agentroles",
-        "ageH": 196
+        "ageH": 198
       },
       {
         "name": "r553-rup-first-run",
-        "ageH": 196
+        "ageH": 198
       }
     ]
   },
@@ -5816,7 +5816,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 2.5h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.2h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6169,8 +6169,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "57a7f3d9",
-        "at": "2026-11-17T18:04:52+08:00",
+        "hash": "039db77b",
+        "at": "2026-11-17T18:33:12+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6188,7 +6188,7 @@
   ],
   "monitor": {
     "schemaVer": 1,
-    "generatedAt": "2026-11-17 18:00:26",
+    "generatedAt": "2026-11-17 20:00:31",
     "boards": {
       "sep": "PASS",
       "oct": "PASS",
@@ -6204,13 +6204,13 @@
       "capacity-daily": {
         "dataDay": null,
         "checkedAt": "2026-11-17T11:10:06",
-        "ageH": 6.838929260555555,
+        "ageH": 8.840360728055556,
         "pending": []
       },
       "kaohe-daily": {
         "dataDay": "2026-11-16",
         "checkedAt": "2026-11-17T14:50:30",
-        "ageH": 3.1655959272222223,
+        "ageH": 5.167027394722223,
         "pending": [
           "ym",
           "pz",
@@ -6220,13 +6220,13 @@
       "xsp-weekly": {
         "dataDay": "2026-11-17",
         "checkedAt": "2026-11-17T08:18:10",
-        "ageH": 9.704484816111112,
+        "ageH": 11.705916560833332,
         "pending": []
       },
       "rider-hourly": {
-        "srcAgeH": 0.2,
+        "srcAgeH": 0.1,
         "lagH": 0,
-        "generatedAt": "2026-11-17 17:49:42"
+        "generatedAt": "2026-11-17 18:27:28"
       }
     },
     "audit": {
@@ -7408,7 +7408,7 @@
     },
     {
       "date": "2026-11-17",
-      "at": "2026-11-17 10:30:42",
+      "at": "2026-11-17 12:15:26",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -7550,7 +7550,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2818.4,
+      "totalKB": 2818.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -7664,7 +7664,7 @@
         "truncated": true,
         "mtime": "2026-11-13"
       },
-      "staleDays": 4,
+      "staleDays": 5,
       "stale": null
     },
     {
@@ -7688,7 +7688,7 @@
         "truncated": false,
         "mtime": "2026-11-06"
       },
-      "staleDays": 11,
+      "staleDays": 12,
       "stale": null
     },
     {
@@ -7711,7 +7711,7 @@
         "truncated": false,
         "mtime": "2026-11-01"
       },
-      "staleDays": 16,
+      "staleDays": 17,
       "stale": null
     },
     {
@@ -7751,7 +7751,7 @@
         "truncated": true,
         "mtime": "2026-11-13"
       },
-      "staleDays": 4,
+      "staleDays": 5,
       "stale": null
     },
     {
@@ -7782,7 +7782,7 @@
         "truncated": true,
         "mtime": "2026-11-09"
       },
-      "staleDays": 8,
+      "staleDays": 9,
       "stale": null
     },
     {
@@ -7805,7 +7805,7 @@
         "truncated": false,
         "mtime": "2026-10-17"
       },
-      "staleDays": 31,
+      "staleDays": 32,
       "stale": "warn"
     },
     {
@@ -7830,7 +7830,7 @@
         "truncated": true,
         "mtime": "2026-11-13"
       },
-      "staleDays": 4,
+      "staleDays": 5,
       "stale": null
     },
     {
@@ -7853,7 +7853,7 @@
         "truncated": true,
         "mtime": "2026-11-13"
       },
-      "staleDays": 4,
+      "staleDays": 5,
       "stale": null
     }
   ]
