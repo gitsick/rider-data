@@ -33,8 +33,13 @@ self.addEventListener('activate', e => e.waitUntil((async () => {
  *    缓存键差异会让 HTTP 层不去重），正文一次性读入 ArrayBuffer 后按消费方分发（Response
  *    body 单次消费限制不再约束多消费方）；全部消费方接入后释放槽位。
  * 304 协商响应（R62 SWR）无正文可缓冲，原样透传（单消费方场景）。
+ * R669 宽限期复用：刚从网络取回的完整响应在 DATA_GRACE_MS 内同路径直接复用（不重验）——
+ * 应用取数晚于预载完成几毫秒时不再多跑一次 304 往返（移动端 RTT 0.5~1s）；只存 network-first
+ * 新鲜成功响应（304/离线回缓存不存），新鲜度语义不变。
  * R518 daily 直连通道不动（带查询串本就绕 SW）。 */
 const DATA_INFLIGHT = new Map()
+const DATA_GRACE = new Map()
+const DATA_GRACE_MS = 10000
 async function dataOnce(e) {
   const req = e.request
   let key = req.url
@@ -46,6 +51,8 @@ async function dataOnce(e) {
   if (held) {
     try { return fromMeta(await held) } catch { /* 前序失败：走自己的取数路径 */ }
   }
+  const g = DATA_GRACE.get(key)
+  if (g && Date.now() - g.t < DATA_GRACE_MS) return fromMeta(g.meta) // R669 宽限期内复用刚完成的新鲜响应
   const p = (async () => {
     try {
       let res = null
@@ -58,7 +65,10 @@ async function dataOnce(e) {
         const c = await caches.open(C_DATA)
         await c.put(req, new Response(buf.slice(0), { status: res.status, statusText: res.statusText, headers: res.headers }))
       } catch { /* 缓存写失败不影响响应 */ }
-      return { status: res.status, statusText: res.statusText, headers: res.headers, buf }
+      const meta = { status: res.status, statusText: res.statusText, headers: res.headers, buf }
+      if (DATA_GRACE.size > 8) DATA_GRACE.delete(DATA_GRACE.keys().next().value) // 容量保护
+      DATA_GRACE.set(key, { t: Date.now(), meta }) // R669：仅网络新鲜成功响应入宽限期
+      return meta
     } catch (err) {
       /* R69 离线回退语义保留：有缓存回缓存，无缓存 503 JSON */
       const c = await caches.open(C_DATA)
