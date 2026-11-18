@@ -5,26 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/rider-data/favicon.svg" />
   <title>运力监控 · 每日经营拆解 · 骑手数据看板</title>
-  <script type="module" crossorigin src="/rider-data/assets/capacity-Df2UzRY2.js"></script>
+  <script type="module" crossorigin src="/rider-data/assets/capacity-DG8H5w9Y.js"></script>
   <link rel="modulepreload" crossorigin href="/rider-data/assets/vendor-vue-CKSZar2C.js">
-  <link rel="modulepreload" crossorigin href="/rider-data/assets/swRegister-D3-4JLT-.js">
-  <link rel="modulepreload" crossorigin href="/rider-data/assets/StateBlock-CnyAd_8m.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/swRegister-B84F1qHN.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/StateBlock-CZnbwMX0.js">
   <link rel="modulepreload" crossorigin href="/rider-data/assets/KpiCard-CV5u38gM.js">
   <link rel="modulepreload" crossorigin href="/rider-data/assets/clipboard-azzgqV-q.js">
-  <link rel="modulepreload" crossorigin href="/rider-data/assets/ChartPanel-2wu_q92p.js">
-  <link rel="modulepreload" crossorigin href="/rider-data/assets/useTablePage-CGgQTqpx.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/ChartPanel-Bmhv1TZ5.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/useTablePage-BEzxY2FD.js">
   <link rel="modulepreload" crossorigin href="/rider-data/assets/useData-Cq8IgHQE.js">
-  <link rel="modulepreload" crossorigin href="/rider-data/assets/chart-QN59ugDr.js">
-  <link rel="modulepreload" crossorigin href="/rider-data/assets/dailyAgg-bXEEPZ0Q.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/chart-lQXcRgXX.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/dailyAgg-6GzXMCgF.js">
   <link rel="modulepreload" crossorigin href="/rider-data/assets/TabBar-DUkGVGDe.js">
   <link rel="stylesheet" crossorigin href="/rider-data/assets/swRegister-BxyQcgOV.css">
   <link rel="stylesheet" crossorigin href="/rider-data/assets/StateBlock-CFO7vybN.css">
   <link rel="stylesheet" crossorigin href="/rider-data/assets/ChartPanel-DnHQOMCr.css">
-  <link rel="stylesheet" crossorigin href="/rider-data/assets/capacity-_AF1hbjL.css">
+  <link rel="stylesheet" crossorigin href="/rider-data/assets/capacity-tsO81czD.css">
   <link rel="preload" as="fetch" href="/rider-data/data/capacity-daily.json" crossorigin="anonymous" />
   <script type="speculationrules">{"prerender":[{"source":"document","where":{"href_matches":"/rider-data/*"},"eagerness":"moderate"}]}</script>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+<style>
+#cap-skel{min-height:100vh;background:#f7f5f0;font-family:system-ui,'PingFang SC','Microsoft YaHei',sans-serif;padding:16px;max-width:1280px;margin:0 auto;box-sizing:border-box}
+#cap-skel *{box-sizing:border-box}
+.sk-bar{height:20px;border-radius:6px;margin-bottom:12px}
+.sk-kpis{display:flex;gap:10px;margin-bottom:16px}
+.sk-kpi{flex:1;background:#fff;border:1px solid #eee7d9;border-radius:10px;padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.sk-kpi i,.sk-line,.sk-tb i,.sk-tab{display:block;background:linear-gradient(90deg,#f0ead9 25%,#faf6ec 50%,#f0ead9 75%);background-size:200% 100%;animation:skS 1.2s infinite;border-radius:6px}
+.sk-kpi i:first-child{height:12px;width:40%;margin-bottom:10px}
+.sk-kpi i:last-child{height:22px;width:70%}
+.sk-tabs{display:flex;gap:8px;margin-bottom:16px}
+.sk-tab{width:72px;height:26px}
+.sk-tabs .sk-tab:first-child{background:#1f3a5f;animation:none}
+.sk-card{background:#fff;border:1px solid #eee7d9;border-radius:10px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.sk-chart{height:240px;display:flex;align-items:flex-end;gap:10px;padding:12px 8px 0}
+.sk-chart i{flex:1;background:linear-gradient(180deg,#e8d9b8,#d9c48f);border-radius:4px 4px 0 0;animation:skP 1.4s infinite alternate}
+.sk-tb{margin-top:4px}
+.sk-tb i{height:14px;margin-bottom:8px}
+.sk-tb i:nth-child(odd){width:92%}.sk-tb i:nth-child(3n){width:78%}
+@keyframes skS{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes skP{from{transform:scaleY(.55)}to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){#cap-skel i,#cap-skel .sk-line{animation:none}}
+</style>
+<div id="cap-skel" role="status" aria-label="看板加载中">
+  <div class="sk-bar sk-line" style="width:34%"></div>
+  <div class="sk-kpis">
+    <div class="sk-kpi"><i></i><i></i></div><div class="sk-kpi"><i></i><i></i></div>
+    <div class="sk-kpi"><i></i><i></i></div><div class="sk-kpi"><i></i><i></i></div>
+  </div>
+  <div class="sk-tabs"><span class="sk-tab"></span><span class="sk-tab"></span><span class="sk-tab"></span><span class="sk-tab"></span></div>
+  <div class="sk-card">
+    <div class="sk-bar sk-line" style="width:26%;height:14px"></div>
+    <div class="sk-chart"><i style="height:62%"></i><i style="height:88%"></i><i style="height:45%"></i><i style="height:74%"></i><i style="height:58%"></i><i style="height:92%"></i><i style="height:38%"></i><i style="height:66%"></i></div>
+    <div class="sk-tb"><i class="sk-line"></i><i class="sk-line"></i><i class="sk-line"></i><i class="sk-line"></i><i class="sk-line"></i></div>
+  </div>
+</div></div>
 </body>
 </html>
