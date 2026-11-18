@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-18 08:12:37",
+  "generatedAt": "2026-11-18 08:24:50",
   "runDate": "2026-11-18",
   "tasks": [
     {
@@ -3318,13 +3318,13 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-18 16:12:31）"
+      "detail": "本轮发布前置 10 段全过（2026-11-18 16:24:50）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "2 项目，最新产出 1h 前"
+      "detail": "2 项目，最新产出 2h 前"
     },
     {
       "layer": "渲染层",
@@ -3400,7 +3400,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 1,
+      "ageHours": 2,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-18",
@@ -3816,7 +3816,7 @@
             }
           ]
         },
-        "ageH": 45,
+        "ageH": 46,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -4086,7 +4086,7 @@
             }
           ]
         },
-        "ageH": 104,
+        "ageH": 105,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4248,7 +4248,7 @@
             }
           ]
         },
-        "ageH": 105,
+        "ageH": 106,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -4302,7 +4302,7 @@
             }
           ]
         },
-        "ageH": 105,
+        "ageH": 106,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 6
@@ -4410,7 +4410,7 @@
             }
           ]
         },
-        "ageH": 187,
+        "ageH": 188,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -4572,7 +4572,7 @@
             }
           ]
         },
-        "ageH": 208,
+        "ageH": 209,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4842,7 +4842,7 @@
             }
           ]
         },
-        "ageH": 209,
+        "ageH": 210,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 2
@@ -4896,7 +4896,7 @@
             }
           ]
         },
-        "ageH": 211,
+        "ageH": 212,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5549,13 +5549,13 @@
         "name": "r562-monitor-aggregate-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 211
+        "ageH": 212
       },
       {
         "name": "r563-audit-regression-lock",
         "pct": 80,
         "sev": "",
-        "ageH": 209
+        "ageH": 210
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -5585,7 +5585,7 @@
         "name": "r568-audit-trace-surface",
         "pct": 20,
         "sev": "",
-        "ageH": 208
+        "ageH": 209
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -5603,7 +5603,7 @@
         "name": "r571-style-unify",
         "pct": 20,
         "sev": "",
-        "ageH": 187
+        "ageH": 188
       },
       {
         "name": "r584-monitor-heartbeat",
@@ -5615,13 +5615,13 @@
         "name": "r585-heal-trace",
         "pct": 80,
         "sev": "",
-        "ageH": 105
+        "ageH": 106
       },
       {
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "",
-        "ageH": 105
+        "ageH": 106
       },
       {
         "name": "r587-metrics-struct",
@@ -5639,7 +5639,7 @@
         "name": "r589-prompt-guard",
         "pct": 80,
         "sev": "",
-        "ageH": 104
+        "ageH": 105
       },
       {
         "name": "r590-note-label",
@@ -5669,7 +5669,7 @@
         "name": "r645-teamflow-p2b",
         "pct": 80,
         "sev": "done",
-        "ageH": 45
+        "ageH": 46
       },
       {
         "name": "r646-teamflow-p2c",
@@ -5712,7 +5712,7 @@
       },
       {
         "name": "r589-prompt-guard",
-        "ageH": 104
+        "ageH": 105
       },
       {
         "name": "r588-prose-cleanup",
@@ -5724,11 +5724,11 @@
       },
       {
         "name": "r586-orchestration-promote",
-        "ageH": 105
+        "ageH": 106
       },
       {
         "name": "r585-heal-trace",
-        "ageH": 105
+        "ageH": 106
       },
       {
         "name": "r584-monitor-heartbeat",
@@ -5736,7 +5736,7 @@
       },
       {
         "name": "r571-style-unify",
-        "ageH": 187
+        "ageH": 188
       },
       {
         "name": "r570-pending-card-exempt",
@@ -5748,7 +5748,7 @@
       },
       {
         "name": "r568-audit-trace-surface",
-        "ageH": 208
+        "ageH": 209
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -5768,11 +5768,11 @@
       },
       {
         "name": "r563-audit-regression-lock",
-        "ageH": 209
+        "ageH": 210
       },
       {
         "name": "r562-monitor-aggregate-wiring",
-        "ageH": 211
+        "ageH": 212
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -6168,8 +6168,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "0291f7dc",
-        "at": "2026-11-18T16:05:17+08:00",
+        "hash": "7e65bead",
+        "at": "2026-11-18T16:12:41+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6259,21 +6259,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-18 16:12:31",
+    "runAt": "2026-11-18 16:24:50",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 1.7,
+        "seconds": 1.8,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.2,
         "note": ""
       },
       {
@@ -6285,19 +6285,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 48.4,
-        "note": "npm test pass=1713 fail=0"
+        "seconds": 44.4,
+        "note": "npm test pass=1714 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 7.8,
+        "seconds": 8.1,
         "note": ""
       },
       {
@@ -6315,37 +6315,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 28.4,
+        "seconds": 32.2,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 28.4,
+        "seconds": 55.5,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 426.8,
-        "note": "拷贝回验 137 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 149.1,
-        "note": "指纹+探针 assets/SchemaBanner-CHBoLZyf.js 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-17 12:35:53",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 276.4,
-      "fails": []
-    },
     {
       "runAt": "2026-11-17 12:40:24",
       "scope": "complete",
@@ -6547,6 +6528,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 692.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-18 16:24:50",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 143.4,
       "fails": []
     }
   ],
@@ -7442,7 +7430,7 @@
     },
     {
       "date": "2026-11-18",
-      "at": "2026-11-18 08:12:37",
+      "at": "2026-11-18 08:24:50",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7584,7 +7572,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2565.6,
+      "totalKB": 2567.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -7592,11 +7580,11 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 557.8
+          "kb": 558.3
         },
         {
           "name": "rider-index.json",
-          "kb": 401.6
+          "kb": 402
         },
         {
           "name": "capacity-daily.json",
@@ -7604,7 +7592,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 252.9
+          "kb": 254.2
         },
         {
           "name": "rider-agreements.json",
@@ -7825,17 +7813,18 @@
       "path": "pro\\README.md",
       "desc": "pro 子项目路径约定与管线结构",
       "doc": {
-        "content": "# pro — 项目层（业务项目工作区）\r\n\r\n所有业务项目统一收在本目录下，每个项目一个子目录、单一职责：**产出数据/看板产物，调用系统层（deploy）上线**。项目自带 git 发布逻辑是禁止项。\r\n\r\n## 当前项目\r\n\r\n| 项目 | 目录 | 职责 | 每日调度 |\r\n|---|---|---|---|\r\n| 履约考核工程 | `kaohe-daily\\` | 统一构建引擎 + 月度配置 + 月度数据；遗留板部署 + 前端回灌 | 每日 07:00 主跑 + 10:30 发布自愈 |\r\n| 新商评考核 | `xsp-weekly\\` | BI 双看板取数 → 三城 MTD 周报 Excel（产物落 `reports\\`） | 每日 08:00 主跑 + 10:30 发布自愈 |\r\n| 通用运力监控 | `capacity-daily\\` | 三源合并清洗 → 数据构建 → 看板渲染增强 → 三表 → 检核 → 发布 | 每日 09:00 |\r\n| 骑手解约登记 | `rider-hourly\\` | 问卷星增量 → 原始 Excel 落地 → 看板生成 → 主工程部署链路上线 | 每日 16:00 |\r\n| 部署体系审计 | `deploy-audit\\` | 13 项只读体检（通道/双入口/锁/漂移/产物/新鲜度/调度/合规/发布清单回滚），报告供工作台与自愈巡检 | 手动 / 定时（deploy-audit） |\r\n| 留痕快照拉取 | `audit-trail\\` | COS audit-trail/ 前缀拉取入仓 → lib/monitor 聚合进大盘 | 每日 21:00 |\r\n\r\n> 调度时刻以 `sched\\tasks.json` 为唯一事实源（P1 规范轮对齐：本表曾与登记表漂移，如 kaohe 08:00→07:00、rider「每小时」→每日 16:00）。\r\n\r\n## 新项目入板四步\r\n\r\n1. 建目录：从 `pro\\_template\\` 复制骨架（含 README 模板与标准目录），按项目实际填写\r\n2. 路径纪律：脚本相对自身定位（`dirname(__file__)`），工作区根取两层上溯；全局配置进 `pipeline_config.py` 样式的单源文件，禁止散落硬编码\r\n3. 登记任务：在 `sched\\tasks.json` 加任务条目（command 或 agent 型），定时器侧同步登记触发时间\r\n4. 回归门禁：入板前跑通一次全流程 + 检核脚本；上线走 `deploy\\` 通道（需要新通道就在 `deploy\\channels.json` 登记）\r\n\r\n## 项目目录规范（标准骨架）\r\n\r\n| 目录/文件 | 职责 | 现状对照 |\r\n|---|---|---|\r\n| `README.md` | 必备：职责/数据源/产物/运行方式 | 四项目均已就位 |\r\n| 入口脚本（项目根） | 管线/编排主入口 | daily_pipeline.py / kaohe_pipeline.py / rider_hourly.py |\r\n| `src\\` | 源码/引擎/配置 | kaohe-daily src\\ |\r\n| `data\\` | 数据源文件 | kaohe-daily data\\ |\r\n| `output\\` | 当日产物 | capacity-daily output\\；kaohe-daily 产物在 `build\\dist\\`（历史沿袭，等效 output） |\r\n| `history\\` 或日期目录 | 历史产物归档 | capacity-daily history\\、合并数据_<D>\\；xsp-weekly reports\\ |\r\n| `cache\\` | 运行缓存，必须带自清策略 | capacity-daily cache\\（保留 3 天） |\r\n| `docs\\` | 方案/SOP/口径文档 | kaohe-daily docs\\ |\r\n| `archive\\` | 历史脚本/事故归档（含 README） | kaohe-daily archive\\ |\r\n\r\n> 存量项目已于 2026-10-17 统一改为任务ID名（目录↔任务一一对应）；新增项目一律从模板开且目录名取任务ID；口径冲突或可复用逻辑 → 上收 `lib\\`。\r\n>\r\n> **骨架豁免登记（P1 规范轮 2026-11-18）**：① `xsp-weekly\\` 根的 `raw_<YYYY-MM-DD>\\` 目录是**数据日信号面**（lib/data_day SIGNALS glob 探测依据 + build_report 日期推导依据），移位会断每日触发链，按历史沿袭豁免（同 kaohe 产物在 build\\dist）；② `audit-trail\\` / `deploy-audit\\` 为纯本地产物工程，已在 deploy\\channels.json projectCoverage 显式登记 local-only（B1 覆盖闭环强制新增工程必登记）；③ cache 自清统一走 `lib\\cache_prune.py`（kaohe/rider 管线开头接线，png/log/临时探针超 7 天自动清，状态/数据文件永不触碰）。\r\n\r\n## 任务设置规范\r\n\r\n- 定时任务信息以 `sched\\tasks.json` 为唯一事实源（id、触发时间、入口、工作区）\r\n- command 型任务可由调度器直接执行：`pwsh sched\\run_task.ps1 -Id <任务id>`；agent 型由自动化/技能编排，清单里登记入口供全链路查看\r\n- 运行日志与最近状态：`sched\\logs\\<任务id>\\`\r\n\r\n## 产物约定\r\n\r\n- 当日产物进项目内 `output\\`，缓存进 `cache\\`（带自清），历史归档进 `history\\` 或备份目录\r\n- 需要上前端展示的数据，由渲染层（frontend）的数据导出脚本从项目产物抽取，项目不直接写 `frontend\\`\r\n\r\n## 历史证据归档与外部目录清理（2026-10-17）\r\n\r\n- 一段时期的诊断/修复脚本随事故归档：`kaohe-daily\\archive\\bi-列码修复-20261014\\`（BI 列码变动事故，含修复过程 README）；更早重构过程见 `kaohe-daily\\dev-team\\`\r\n- **目录名 = 任务ID**（2026-10-17 起）：pro 下每个项目目录与 sched\\tasks.json 的任务 id 一一对应，便于「目录↔任务↔定时器」三向定位；改名需同步 tasks.json cwd、定时器 projectPath、跨层脚本路径引用\r\n- 曾散落在外部的老工作区已清理：`Documents\\CatPaw\\履约考核`（脚本已归档、老 _repo 与远端一致后删除）；新商评、骑手解约已收编至本项目层，老目录仅剩可重建缓存，保留观察期后可删\r\n- 判定标准：有追溯价值 → 归档进项目 archive；纯缓存/会话数据 → 留外部观察期；死代码/垃圾 → 不收编\r\n",
+        "content": "# pro — 项目层（业务项目工作区）\r\n\r\n所有业务项目统一收在本目录下，每个项目一个子目录、单一职责：**产出数据/看板产物，调用系统层（deploy）上线**。项目自带 git 发布逻辑是禁止项。\r\n\r\n## 当前项目\r\n\r\n| 项目 | 目录 | 职责 | 每日调度 |\r\n|---|---|---|---|\r\n| 履约考核工程 | `kaohe-daily\\` | 统一构建引擎 + 月度配置 + 月度数据；遗留板部署 + 前端回灌 | 每日 07:00 主跑 + 10:30 发布自愈 |\r\n| 新商评考核 | `xsp-weekly\\` | BI 双看板取数 → 三城 MTD 周报 Excel（产物落 `reports\\`） | 每日 08:00 主跑 + 10:30 发布自愈 |\r\n| 通用运力监控 | `capacity-daily\\` | 三源合并清洗 → 数据构建 → 看板渲染增强 → 三表 → 检核 → 发布 | 每日 09:00 |\r\n| 骑手解约登记 | `rider-hourly\\` | 问卷星增量 → 原始 Excel 落地 → 看板生成 → 主工程部署链路上线 | 每日 16:00 |\r\n| 部署体系审计 | `deploy-audit\\` | 13 项只读体检（通道/双入口/锁/漂移/产物/新鲜度/调度/合规/发布清单回滚），报告供工作台与自愈巡检 | 手动 / 定时（deploy-audit） |\r\n| 留痕快照拉取 | `audit-trail\\` | COS audit-trail/ 前缀拉取入仓 → lib/monitor 聚合进大盘 | 每日 21:00 |\r\n\r\n> 调度时刻以 `sched\\tasks.json` 为唯一事实源（P1 规范轮对齐：本表曾与登记表漂移，如 kaohe 08:00→07:00、rider「每小时」→每日 16:00）。\r\n\r\n## 形态分级（P-OPT3 标准化轮登记）\r\n\r\n骨架对照与豁免口径按形态分级判定，不强行拉齐：\r\n\r\n| 形态 | 项目 | 骨架要求 |\r\n|---|---|---|\r\n| full 管线型 | kaohe-daily / capacity-daily / rider-hourly / xsp-weekly | 标准骨架（入口+cache+output/history+README）+ 每日调度 + cache 自清接线 |\r\n| light 工具型 | audit-trail / deploy-audit | README 齐备即可；产物为持久审计/留痕文件（audit_history.jsonl、pull_state.json），**cache/自清语义不适用**，见豁免登记④ |\r\n| doc 文档型 | skill-audit | 仅 README + 反馈文档沉淀；无调度、无 tasks.json 条目（非业务项目，入板仅为目录↔规范定位） |\r\n\r\n## 新项目入板四步\r\n\r\n1. 建目录：从 `pro\\_template\\` 复制骨架（含 README 模板与标准目录），按项目实际填写\r\n2. 路径纪律：脚本相对自身定位（`dirname(__file__)`），工作区根取两层上溯；全局配置进 `pipeline_config.py` 样式的单源文件，禁止散落硬编码\r\n3. 登记任务：在 `sched\\tasks.json` 加任务条目（command 或 agent 型），定时器侧同步登记触发时间\r\n4. 回归门禁：入板前跑通一次全流程 + 检核脚本；上线走 `deploy\\` 通道（需要新通道就在 `deploy\\channels.json` 登记）\r\n\r\n## 项目目录规范（标准骨架）\r\n\r\n| 目录/文件 | 职责 | 现状对照 |\r\n|---|---|---|\r\n| `README.md` | 必备：职责/数据源/产物/运行方式 | 四项目均已就位 |\r\n| 入口脚本（项目根） | 管线/编排主入口 | daily_pipeline.py / kaohe_pipeline.py / rider_hourly.py |\r\n| `src\\` | 源码/引擎/配置 | kaohe-daily src\\ |\r\n| `data\\` | 数据源文件 | kaohe-daily data\\ |\r\n| `output\\` | 当日产物 | capacity-daily output\\；kaohe-daily 产物在 `build\\dist\\`（历史沿袭，等效 output） |\r\n| `history\\` 或日期目录 | 历史产物归档 | capacity-daily history\\、合并数据_<D>\\；xsp-weekly reports\\ |\r\n| `cache\\` | 运行缓存，必须带自清策略（装持久状态文件须登记自清豁免判例，见豁免④） | capacity-daily cache\\（保留 3 天）；audit-trail cache\\ 为持久状态（自清豁免） |\r\n| `docs\\` | 方案/SOP/口径文档 | kaohe-daily docs\\ |\r\n| `archive\\` | 历史脚本/事故归档（含 README） | kaohe-daily archive\\ |\r\n\r\n> 存量项目已于 2026-10-17 统一改为任务ID名（目录↔任务一一对应）；新增项目一律从模板开且目录名取任务ID；口径冲突或可复用逻辑 → 上收 `lib\\`。\r\n>\r\n> **骨架豁免登记（P1 规范轮 2026-11-18，④ P-OPT3 补登）**：① `xsp-weekly\\` 根的 `raw_<YYYY-MM-DD>\\` 目录是**数据日信号面**（lib/data_day SIGNALS glob 探测依据 + build_report 日期推导依据），移位会断每日触发链，按历史沿袭豁免（同 kaohe 产物在 build\\dist）；② `audit-trail\\` / `deploy-audit\\` 为纯本地产物工程，已在 deploy\\channels.json projectCoverage 显式登记 local-only（B1 覆盖闭环强制新增工程必登记）；③ cache 自清统一走 `lib\\cache_prune.py`（kaohe/rider 管线开头接线，png/log/临时探针超 7 天自动清，状态/数据文件永不触碰）；④ `audit-trail\\cache\\` 装的是**持久拉取状态**（pull_state.json，断丢会重拉去重面失效），永不接 cache_prune 自清——cache 目录名≠必自清，装状态文件须随判例登记。\r\n\r\n## 任务设置规范\r\n\r\n- 定时任务信息以 `sched\\tasks.json` 为唯一事实源（id、触发时间、入口、工作区）\r\n- command 型任务可由调度器直接执行：`pwsh sched\\run_task.ps1 -Id <任务id>`；agent 型由自动化/技能编排，清单里登记入口供全链路查看\r\n- 运行日志与最近状态：`sched\\logs\\<任务id>\\`\r\n\r\n## 产物约定\r\n\r\n- 当日产物进项目内 `output\\`，缓存进 `cache\\`（带自清），历史归档进 `history\\` 或备份目录\r\n- 需要上前端展示的数据，由渲染层（frontend）的数据导出脚本从项目产物抽取，项目不直接写 `frontend\\`\r\n\r\n## 历史证据归档与外部目录清理（2026-10-17）\r\n\r\n- 一段时期的诊断/修复脚本随事故归档：`kaohe-daily\\archive\\bi-列码修复-20261014\\`（BI 列码变动事故，含修复过程 README）；更早重构过程见 `kaohe-daily\\dev-team\\`\r\n- **目录名 = 任务ID**（2026-10-17 起）：pro 下每个项目目录与 sched\\tasks.json 的任务 id 一一对应，便于「目录↔任务↔定时器」三向定位；改名需同步 tasks.json cwd、定时器 projectPath、跨层脚本路径引用\r\n- 曾散落在外部的老工作区已清理：`Documents\\CatPaw\\履约考核`（脚本已归档、老 _repo 与远端一致后删除）；新商评、骑手解约已收编至本项目层，老目录仅剩可重建缓存，保留观察期后可删\r\n- 判定标准：有追溯价值 → 归档进项目 archive；纯缓存/会话数据 → 留外部观察期；死代码/垃圾 → 不收编\r\n",
         "outline": [
           "pro — 项目层（业务项目工作区）",
           "当前项目",
+          "形态分级（P-OPT3 标准化轮登记）",
           "新项目入板四步",
           "项目目录规范（标准骨架）",
           "任务设置规范",
           "产物约定",
           "历史证据归档与外部目录清理（2026-10-17）"
         ],
-        "chars": 3011,
+        "chars": 3628,
         "truncated": false,
         "mtime": "2026-11-18"
       },
