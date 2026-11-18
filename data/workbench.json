@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-18 11:39:53",
+  "generatedAt": "2026-11-18 12:11:40",
   "runDate": "2026-11-18",
   "tasks": [
     {
@@ -2379,19 +2379,19 @@
       "entry": "桌面端自动化编排：运行 python F:\\work\\mtcapacity\\lib\\monitor.py（统一监控大盘聚合：六板对账+审计+心跳+留痕快照+告警派生落 sched\\cache\\monitor_status.json，R559 起告警非空自动追加 monitor_alert_history.jsonl）。跑完在收件箱开一条结果条目：聚合时刻、六板对账结论、告警条数与明细（告警明细逐条列出 level/src）；全部正常时收件箱条目一句话带过即可",
       "note": "R562 定时接线：大盘聚合此前无任何定时触发（monitor_status 靠轮次手工刷新，11-05 起断链 4 天才被 R562 盘点发现——审计 6a 心跳检查同轮补盲）。自动化「监控大盘聚合」建议 2h 节奏（FREQ=HOURLY;INTERVAL=2;BYMINUTE=0），UI 确认创建后回填 automationId（R562 二段）\n2026-11-13 R584：用户裁决本轮不建聚合自动化，wiringDeferred 照实声明；建自动化后回填 automationId 并删本字段\n2026-11-14 体检轮接线落地：桌面自动化 DV-YKvKI5cxwfG6KUewd3 建（FREQ=HOURLY;INTERVAL=2，全工程体检双决策项之一，用户卡片确认），automationId 已回填、wiringDeferred 删除——R562 二段闭环。首轮确认卡曾截断（prompt 只落 4 字+排期回落默认），修正卡重发后完整落地。\n2026-11-14 12:01 首次自动触发成功（runStatus=completed，心跳 12:00:20 落盘），intent-registry 条目按 R266 恢复约定移除——全闭环。",
       "last": {
-        "finishedAt": "2026-11-18 16:25:09",
+        "finishedAt": "2026-11-18 20:00:25",
         "note": ""
       },
       "monitor": {
         "cadence": "hourly",
         "trigger": "每 2 小时（FREQ=HOURLY;INTERVAL=2；2026-11-14 起桌面自动化承接）",
         "expect": true,
-        "overdue": true,
-        "overdueText": "运行超时（距上次 3.2h）"
+        "overdue": false,
+        "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-18 16:01"
+        "lastRunAt": "2026-11-18 20:01"
       },
       "heal": {
         "can": false,
@@ -2399,7 +2399,7 @@
       },
       "history": [
         {
-          "finishedAt": "2026-11-18 16:25:09"
+          "finishedAt": "2026-11-18 20:00:25"
         }
       ],
       "gaps": {
@@ -2825,7 +2825,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 3.7h）"
+        "overdueText": "运行超时（距上次 4.2h）"
       },
       "timer": {
         "state": "ok",
@@ -3301,7 +3301,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "7/11 任务正常 · 4 逾期 · 近 30 天触发断档 6 天"
+      "detail": "8/11 任务正常 · 3 逾期 · 近 30 天触发断档 6 天"
     },
     {
       "layer": "部署层",
@@ -3313,7 +3313,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-18 19:39:46）"
+      "detail": "本轮发布前置 10 段全过（2026-11-18 20:11:40）"
     },
     {
       "layer": "项目层",
@@ -3358,7 +3358,7 @@
           "size": 237753
         }
       ],
-      "ageHours": 5,
+      "ageHours": 6,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-17",
@@ -3601,6 +3601,60 @@
     ],
     "runs": [
       {
+        "name": "r676-ux-checkup-reports",
+        "files": 3,
+        "latestAt": "2026-11-18 12:00:24",
+        "flow": {
+          "done": false,
+          "light": false,
+          "legacy": false,
+          "current": "编排",
+          "stalled": false,
+          "sev": "",
+          "chain": [
+            {
+              "role": "lead",
+              "label": "编排",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "analyst",
+              "label": "分析",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "builder",
+              "label": "开发",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reviewer",
+              "label": "审核",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            },
+            {
+              "role": "reporter",
+              "label": "简报",
+              "state": "wait",
+              "at": "",
+              "durH": null
+            }
+          ]
+        },
+        "ageH": 0,
+        "totalH": 0,
+        "deltaH": -739,
+        "gapH": 35
+      },
+      {
         "name": "20261017-efficiency-naming",
         "files": 17,
         "latestAt": "2026-11-17 00:34:29",
@@ -3703,7 +3757,7 @@
             }
           ]
         },
-        "ageH": 46,
+        "ageH": 47,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -3973,7 +4027,7 @@
             }
           ]
         },
-        "ageH": 107,
+        "ageH": 108,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -4135,7 +4189,7 @@
             }
           ]
         },
-        "ageH": 108,
+        "ageH": 109,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4189,7 +4243,7 @@
             }
           ]
         },
-        "ageH": 108,
+        "ageH": 109,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4621,7 +4675,7 @@
             }
           ]
         },
-        "ageH": 212,
+        "ageH": 213,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4675,7 +4729,7 @@
             }
           ]
         },
-        "ageH": 212,
+        "ageH": 213,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4729,7 +4783,7 @@
             }
           ]
         },
-        "ageH": 212,
+        "ageH": 213,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4945,7 +4999,7 @@
             }
           ]
         },
-        "ageH": 216,
+        "ageH": 217,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4999,7 +5053,7 @@
             }
           ]
         },
-        "ageH": 217,
+        "ageH": 218,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5053,7 +5107,7 @@
             }
           ]
         },
-        "ageH": 217,
+        "ageH": 218,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5107,7 +5161,7 @@
             }
           ]
         },
-        "ageH": 218,
+        "ageH": 219,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5161,7 +5215,7 @@
             }
           ]
         },
-        "ageH": 220,
+        "ageH": 221,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5215,7 +5269,7 @@
             }
           ]
         },
-        "ageH": 220,
+        "ageH": 221,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5323,7 +5377,7 @@
             }
           ]
         },
-        "ageH": 221,
+        "ageH": 222,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5496,7 +5550,7 @@
         "name": "r554-archmode-agentroles",
         "pct": 80,
         "sev": "",
-        "ageH": 221
+        "ageH": 222
       },
       {
         "name": "r555-third-orchestrated",
@@ -5508,37 +5562,37 @@
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 220
+        "ageH": 221
       },
       {
         "name": "r557-plan-closeout",
         "pct": 40,
         "sev": "",
-        "ageH": 220
+        "ageH": 221
       },
       {
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 218
+        "ageH": 219
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 217
+        "ageH": 218
       },
       {
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 217
+        "ageH": 218
       },
       {
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 216
+        "ageH": 217
       },
       {
         "name": "r562-monitor-aggregate-wiring",
@@ -5562,19 +5616,19 @@
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 212
+        "ageH": 213
       },
       {
         "name": "r566-dark-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 212
+        "ageH": 213
       },
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 212
+        "ageH": 213
       },
       {
         "name": "r568-audit-trace-surface",
@@ -5622,13 +5676,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "",
-        "ageH": 108
+        "ageH": 109
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 108
+        "ageH": 109
       },
       {
         "name": "r589-prompt-guard",
@@ -5646,7 +5700,7 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "",
-        "ageH": 107
+        "ageH": 108
       },
       {
         "name": "r632-teamflow-optimize",
@@ -5676,13 +5730,19 @@
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 46
+        "ageH": 47
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 60,
         "sev": "",
         "ageH": 35
+      },
+      {
+        "name": "r676-ux-checkup-reports",
+        "pct": 0,
+        "sev": "",
+        "ageH": 0
       }
     ],
     "stall": {
@@ -5693,13 +5753,13 @@
     "scanSkipped": 0,
     "scanFatal": false,
     "agentRoleIssues": [],
-    "totalRuns": 34,
+    "totalRuns": 35,
     "totalDone": 5,
     "stallWarn": [],
     "legacyWarn": [
       {
         "name": "r591-trace-guard",
-        "ageH": 107
+        "ageH": 108
       },
       {
         "name": "r590-note-label",
@@ -5711,11 +5771,11 @@
       },
       {
         "name": "r588-prose-cleanup",
-        "ageH": 108
+        "ageH": 109
       },
       {
         "name": "r587-metrics-struct",
-        "ageH": 108
+        "ageH": 109
       },
       {
         "name": "r586-orchestration-promote",
@@ -5747,15 +5807,15 @@
       },
       {
         "name": "r567-remaining-pages-patrol",
-        "ageH": 212
+        "ageH": 213
       },
       {
         "name": "r566-dark-patrol",
-        "ageH": 212
+        "ageH": 213
       },
       {
         "name": "r565-visual-patrol",
-        "ageH": 212
+        "ageH": 213
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -5771,27 +5831,27 @@
       },
       {
         "name": "r561-patrol-trace-wiring",
-        "ageH": 216
+        "ageH": 217
       },
       {
         "name": "r560-lib-readme-roster",
-        "ageH": 217
-      },
-      {
-        "name": "r559-alert-history",
-        "ageH": 217
-      },
-      {
-        "name": "r558-b1-capacity-resume",
         "ageH": 218
       },
       {
+        "name": "r559-alert-history",
+        "ageH": 218
+      },
+      {
+        "name": "r558-b1-capacity-resume",
+        "ageH": 219
+      },
+      {
         "name": "r557-plan-closeout",
-        "ageH": 220
+        "ageH": 221
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 220
+        "ageH": 221
       },
       {
         "name": "r555-third-orchestrated",
@@ -5799,7 +5859,7 @@
       },
       {
         "name": "r554-archmode-agentroles",
-        "ageH": 221
+        "ageH": 222
       },
       {
         "name": "r553-rup-first-run",
@@ -5820,12 +5880,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：undefined —— 运行超时（距上次 3.2h），需在对应自动化重跑并留痕",
-      "anchor": "sec-tasks"
-    },
-    {
-      "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 3.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.2h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -6173,8 +6228,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "90dc7db7",
-        "at": "2026-11-18T19:35:37+08:00",
+        "hash": "eae7b4fa",
+        "at": "2026-11-18T19:40:11+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6192,7 +6247,7 @@
   ],
   "monitor": {
     "schemaVer": 1,
-    "generatedAt": "2026-11-18 16:25:09",
+    "generatedAt": "2026-11-18 20:00:25",
     "boards": {
       "sep": "PASS",
       "oct": "PASS",
@@ -6208,13 +6263,13 @@
       "capacity-daily": {
         "dataDay": null,
         "checkedAt": "2026-11-18T14:06:59",
-        "ageH": 2.3028905199999996,
+        "ageH": 5.890732528611111,
         "pending": []
       },
       "kaohe-daily": {
         "dataDay": "2026-11-17",
         "checkedAt": "2026-11-18T08:47:46",
-        "ageH": 7.623168297777777,
+        "ageH": 11.211010584444443,
         "pending": [
           "ym",
           "pz",
@@ -6224,21 +6279,21 @@
       "xsp-weekly": {
         "dataDay": "2026-11-18",
         "checkedAt": "2026-11-18T11:09:37",
-        "ageH": 5.2590019097222225,
+        "ageH": 8.846843917777779,
         "pending": []
       },
       "rider-hourly": {
-        "srcAgeH": 0.2,
+        "srcAgeH": 0.6,
         "lagH": 0,
-        "generatedAt": "2026-11-18 16:22:27"
+        "generatedAt": "2026-11-18 19:25:41"
       }
     },
     "audit": {
       "status": "PASS",
-      "pass": 71,
+      "pass": 70,
       "warn": 2,
       "fail": 0,
-      "auditedAt": "2026-11-18 16:12:36",
+      "auditedAt": "2026-11-18 19:39:52",
       "publishCount": 2,
       "rollbackReady": true
     },
@@ -6259,32 +6314,32 @@
       {
         "level": "WARN",
         "src": "audit",
-        "text": "部署审计有 2 项警告（2026-11-18 16:12:36）"
+        "text": "部署审计有 2 项警告（2026-11-18 19:39:52）"
       }
     ]
   },
   "gates": {
-    "runAt": "2026-11-18 19:39:46",
+    "runAt": "2026-11-18 20:11:40",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 4.4,
+        "seconds": 6.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.5,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -6296,13 +6351,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 384.7,
-        "note": "npm test pass=1715 fail=0"
+        "seconds": 124.1,
+        "note": "npm test pass=1716 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 7.6,
+        "seconds": 8.8,
         "note": ""
       },
       {
@@ -6320,37 +6375,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 27.4,
+        "seconds": 29.8,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 64.8,
+        "seconds": 29.8,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 219.2,
-        "note": "拷贝回验 137 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 138.5,
-        "note": "指纹+探针 assets/DeferMount-Bs6xDvqo.css 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-17 16:59:58",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 160.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-17 17:10:20",
       "scope": "complete",
@@ -6552,6 +6588,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 847.9,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-18 20:11:40",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 200.6,
       "fails": []
     }
   ],
@@ -7447,7 +7490,7 @@
     },
     {
       "date": "2026-11-18",
-      "at": "2026-11-18 11:39:53",
+      "at": "2026-11-18 12:11:40",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7551,14 +7594,14 @@
   "perf": {
     "assets": {
       "count": 95,
-      "totalKB": 1662.9,
+      "totalKB": 1663.3,
       "top": [
         {
           "name": "vendor-echarts-DyZQEMzr.js",
           "kb": 648.1
         },
         {
-          "name": "capacity-XMYRF1H4.js",
+          "name": "capacity-24OadS8o.js",
           "kb": 137.5
         },
         {
@@ -7566,30 +7609,30 @@
           "kb": 76.8
         },
         {
-          "name": "main-1c5gAgDT.js",
+          "name": "main-DO3Ylz3B.js",
           "kb": 68.8
         },
         {
-          "name": "swRegister-BKGoMIGD.css",
+          "name": "swRegister-BfDmTNci.css",
           "kb": 63.3
         },
         {
-          "name": "workbench-D3us0C0_.js",
+          "name": "workbench-CspiZCxc.js",
           "kb": 48.7
         },
         {
-          "name": "swRegister-BvVBGdnI.js",
-          "kb": 46.1
+          "name": "swRegister-yXw2KrZD.js",
+          "kb": 46.5
         },
         {
-          "name": "MonthlyTab-S7b1PDtT.js",
+          "name": "MonthlyTab-CrYKHFFb.js",
           "kb": 40.8
         }
       ]
     },
     "data": {
       "count": 15,
-      "totalKB": 2567.9,
+      "totalKB": 2569.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -7609,7 +7652,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 254.4
+          "kb": 255.7
         },
         {
           "name": "rider-agreements.json",
@@ -7703,7 +7746,7 @@
         "truncated": true,
         "mtime": "2026-11-13"
       },
-      "staleDays": 5,
+      "staleDays": 6,
       "stale": null
     },
     {
@@ -7727,7 +7770,7 @@
         "truncated": false,
         "mtime": "2026-11-06"
       },
-      "staleDays": 12,
+      "staleDays": 13,
       "stale": null
     },
     {
@@ -7750,7 +7793,7 @@
         "truncated": false,
         "mtime": "2026-11-01"
       },
-      "staleDays": 17,
+      "staleDays": 18,
       "stale": null
     },
     {
@@ -7790,7 +7833,7 @@
         "truncated": true,
         "mtime": "2026-11-13"
       },
-      "staleDays": 5,
+      "staleDays": 6,
       "stale": null
     },
     {
@@ -7821,7 +7864,7 @@
         "truncated": true,
         "mtime": "2026-11-09"
       },
-      "staleDays": 9,
+      "staleDays": 10,
       "stale": null
     },
     {
@@ -7845,7 +7888,7 @@
         "truncated": false,
         "mtime": "2026-11-18"
       },
-      "staleDays": 0,
+      "staleDays": 1,
       "stale": null
     },
     {
@@ -7870,7 +7913,7 @@
         "truncated": true,
         "mtime": "2026-11-13"
       },
-      "staleDays": 5,
+      "staleDays": 6,
       "stale": null
     },
     {
@@ -7893,7 +7936,7 @@
         "truncated": true,
         "mtime": "2026-11-13"
       },
-      "staleDays": 5,
+      "staleDays": 6,
       "stale": null
     }
   ]
