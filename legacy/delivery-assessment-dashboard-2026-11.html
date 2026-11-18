@@ -1910,7 +1910,7 @@ var CFG = {
     datasourceRows: [
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">加盟达标骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-加盟（数据可查T-3，越久越准，以核算下发为准）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（加盟明细：达标/总骑手）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑完成度 / 排班出勤</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-悦跑 / 悦跑排班出勤合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（出勤系数自动判定）</td></tr>',
-      '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑完成度（11月全月新口径）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-悦跑-城市-周度有效骑手数</td><td style="padding:5px 8px;border:1px solid #eef1f5;">⏳ 按11月方案口径接入，状态待核</td></tr>',
+      '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">悦跑完成度（11月全月新口径）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-悦跑-城市-周度有效骑手数</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（11月4周目标已下发·达标骑手数：W1/W2 泰兴89·诸暨300·响水47，W3/W4 泰兴110·诸暨320·响水48，源：任务49819附件1期/2期目标，双副本一致）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">普众活跃骑手</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-普通众包</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（期1周目标已下发：242/574/83）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">体验三项 / 推完 / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-体验考核含PHF / 推单完成率all / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（官方核算值发布后补录）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更</td></tr>',
@@ -2233,11 +2233,13 @@ g3Fine:'A'
 };
 
 /* ===== 方案参数统一配置：任务系统下发后改此处的值即可全表回填（空值回退默认占位） ===== */
+/* R682：兜底阈值已下发（任务49819 附件·dibottom 块）——人效三城一致 38；承托比分城 36%/47%/50%（泰兴/诸暨/响水），
+   分城值直接写进 tuotuobi（engine-boot 回填文案对纯数字自动补 %，含单位分城串原样展示） */
 var SCHEME_PARAMS={
-ymOrders:'x',    /* 悦跑合格出勤·每日完成单量 */
-ymHours:'Y',     /* 悦跑合格出勤·出勤时长（小时） */
-tuotuobi:'X',    /* 悦跑兜底·承托比（%） */
-renxiao:'X'      /* 加盟兜底·人效 */
+ymOrders:'x',    /* 悦跑合格出勤·每日完成单量（11月新口径不乘出勤系数，暂无下发值） */
+ymHours:'Y',     /* 悦跑合格出勤·出勤时长（小时）（暂无下发值） */
+tuotuobi:'36%/47%/50%（泰兴/诸暨/响水）',    /* 悦跑兜底·承托比（分城） */
+renxiao:'38'     /* 加盟兜底·人效（三城一致） */
 };
 </script>
 <script>/* ============================================================
@@ -6611,7 +6613,9 @@ set('sp-ctb',SCHEME_PARAMS.tuotuobi);
 set('sp-rx',SCHEME_PARAMS.renxiao);
 var hb=document.getElementById('sp-hd-status');
 if(hb&&has(SCHEME_PARAMS.tuotuobi)&&has(SCHEME_PARAMS.renxiao)&&String(SCHEME_PARAMS.tuotuobi)!=='X'&&String(SCHEME_PARAMS.renxiao)!=='X'){
-hb.textContent='✅ 已回填：人效≤'+SCHEME_PARAMS.renxiao+' · 承托比≥'+SCHEME_PARAMS.tuotuobi+'%';
+/* R682：纯数字值自动补 %，分城串（含 % 或括号注记）原样展示 */
+var _ctb=String(SCHEME_PARAMS.tuotuobi);
+hb.textContent='✅ 已回填：人效≤'+SCHEME_PARAMS.renxiao+' · 承托比≥'+_ctb+(/^\d+(\.\d+)?$/.test(_ctb)?'%':'');
 }
 }
 
