@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/rider-data/favicon.svg" />
+  <title>数据异常点 · 骑手数据看板</title>
+  <script type="module" crossorigin src="/rider-data/assets/anomaly-DLIJoE1_.js"></script>
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/vendor-vue-BfMCbSuh.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/swRegister-B_bHLJqU.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/StateBlock-BID9oHwJ.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/KpiCard-wx0z6Hbb.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/useData-C02v5OSN.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/riderDetailAgg-BTRy_4yg.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/chart-BRLjLkI7.js">
+  <link rel="modulepreload" crossorigin href="/rider-data/assets/capTools-Qw7cZ6qc.js">
+  <link rel="stylesheet" crossorigin href="/rider-data/assets/swRegister-BfDmTNci.css">
+  <link rel="stylesheet" crossorigin href="/rider-data/assets/StateBlock-CFO7vybN.css">
+  <link rel="stylesheet" crossorigin href="/rider-data/assets/anomaly-BWzQb8W2.css">
+  <link rel="preload" as="fetch" href="/rider-data/data/capacity-daily.json" crossorigin="anonymous" />
+  <link rel="preload" as="fetch" href="/rider-data/data/rider_base.json" crossorigin="anonymous" />
+  <script type="speculationrules">{"prerender":[{"source":"document","where":{"href_matches":"/rider-data/*"},"eagerness":"moderate"}]}</script>
+</head>
+<body>
+  <div id="app"><script>try{if(localStorage.getItem('mt-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+<style>
+#gen-skel{min-height:100vh;background:#f7f5f0;font-family:system-ui,'PingFang SC','Microsoft YaHei',sans-serif;padding:16px;max-width:1280px;margin:0 auto;box-sizing:border-box}
+#gen-skel *{box-sizing:border-box}
+.sk-bar{height:20px;border-radius:6px;margin-bottom:12px}
+.sk-kpis{display:flex;gap:10px;margin-bottom:16px}
+.sk-kpi{flex:1;background:#fff;border:1px solid #eee7d9;border-radius:10px;padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.sk-kpi i,.sk-line,.sk-tb i{display:block;background:linear-gradient(90deg,#f0ead9 25%,#faf6ec 50%,#f0ead9 75%);background-size:200% 100%;animation:skS 1.2s infinite;border-radius:6px}
+.sk-kpi i:first-child{height:12px;width:40%;margin-bottom:10px}
+.sk-kpi i:last-child{height:22px;width:70%}
+.sk-card{background:#fff;border:1px solid #eee7d9;border-radius:10px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.sk-chart{height:220px;display:flex;align-items:flex-end;gap:10px;padding:12px 8px 0}
+.sk-chart i{flex:1;background:linear-gradient(180deg,#e8d9b8,#d9c48f);border-radius:4px 4px 0 0;animation:skP 1.4s infinite alternate}
+.sk-tb{margin-top:4px}
+.sk-tb i{height:14px;margin-bottom:8px}
+.sk-tb i:nth-child(odd){width:92%}.sk-tb i:nth-child(3n){width:78%}
+@keyframes skS{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes skP{from{transform:scaleY(.55)}to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){#gen-skel i,#gen-skel .sk-line{animation:none}}
+html[data-theme="dark"] #cap-skel,html[data-theme="dark"] #gen-skel{background:#141926}
+html[data-theme="dark"] .sk-kpi,html[data-theme="dark"] .sk-card{background:#1D2433;border-color:#2A3247;box-shadow:none}
+html[data-theme="dark"] .sk-kpi i,html[data-theme="dark"] .sk-line,html[data-theme="dark"] .sk-tb i{background:linear-gradient(90deg,rgba(255,255,255,.06) 25%,rgba(255,255,255,.12) 50%,rgba(255,255,255,.06) 75%);background-size:200% 100%}
+html[data-theme="dark"] .sk-chart i{background:linear-gradient(180deg,#2E3850,#3A465F)}
+</style>
+<div id="gen-skel" role="status" aria-label="看板加载中">
+  <div class="sk-bar sk-line" style="width:30%"></div>
+  <div class="sk-bar sk-line" style="width:58%;height:12px;margin-bottom:18px"></div>
+  <div class="sk-kpis">
+    <div class="sk-kpi"><i></i><i></i></div><div class="sk-kpi"><i></i><i></i></div>
+    <div class="sk-kpi"><i></i><i></i></div>
+  </div>
+  <div class="sk-card">
+    <div class="sk-bar sk-line" style="width:24%;height:14px"></div>
+    <div class="sk-chart"><i style="height:55%"></i><i style="height:82%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:88%"></i><i style="height:48%"></i></div>
+    <div class="sk-tb"><i class="sk-line"></i><i class="sk-line"></i><i class="sk-line"></i><i class="sk-line"></i></div>
+  </div>
+</div></div>
+</body>
+</html>
