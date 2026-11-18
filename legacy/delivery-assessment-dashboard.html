@@ -1846,7 +1846,7 @@ var TY_CALC={"daily":{"09-03":{"诸暨":{"csAll":2.375,"csIn":2.142,"csOut":3.66
 var HD_CALC={"mtd":{"泰兴":{"dbAvg":217.3,"heAvg":5.0,"gfAvg":1.2,"totAvg":226.4,"dbLast":191,"totLast":204,"days":30},"诸暨":{"dbAvg":469.7,"heAvg":14.5,"gfAvg":1.1,"totAvg":494.9,"dbLast":410,"totLast":429,"days":30},"响水":{"dbAvg":82.8,"heAvg":4.6,"gfAvg":0.7,"totAvg":92.3,"dbLast":79,"totLast":83,"days":30}}};
 var MTD_DAILY_SCORES={}; /* R105 城市总分逐日序列补录槽位（9月板冻结，如需补录同口径填写） */
 /* R386 sep 板企客月度卡补数：stores/ok/okRatio 单源=ka-brand.json prev（BI 269707 9月基期与主看板同源同数：泰兴 4/4/100、诸暨 14/8/57.1、响水 1/1/100；城市序按 CITY_ORDER 泰兴-诸暨-响水；空白脏行 3 条同口径丢弃）；period=20260901-0930 与 meta.prevPeriod 同期；ontimeWb/doneWb/rate/brands/stations 暂 null——253744 全KA 城市清单基期列未接入，渲染 '—'（R383 brands null 守卫）；此前 sep 板 QKKA_MONTH 未定义致企客月度卡死卡（tbody 静态占位行），本轮随 sep 重建对齐引擎修复 */
-var QKKA_MONTH={"泰兴": {"period": "20260901-0930", "stores": 4, "ok": 4, "okRatio": 100.0, "ontimeWb": null, "doneWb": null, "rate": null, "brands": null, "stations": null}, "诸暨": {"period": "20260901-0930", "stores": 14, "ok": 8, "okRatio": 57.1, "ontimeWb": null, "doneWb": null, "rate": null, "brands": null, "stations": null}, "响水": {"period": "20260901-0930", "stores": 1, "ok": 1, "okRatio": 100.0, "ontimeWb": null, "doneWb": null, "rate": null, "brands": null, "stations": null}};
+var QKKA_MONTH={"泰兴":{"period":"20260901-0930","stores":4,"ok":4,"okRatio":100.0,"ontimeWb":null,"doneWb":null,"rate":null,"brands":null,"stations":null,"okSrc":"official"},"诸暨":{"period":"20260901-0930","stores":14,"ok":8,"okRatio":57.1,"ontimeWb":null,"doneWb":null,"rate":null,"brands":null,"stations":null,"okSrc":"official"},"响水":{"period":"20260901-0930","stores":1,"ok":1,"okRatio":100.0,"ontimeWb":null,"doneWb":null,"rate":null,"brands":null,"stations":null,"okSrc":"official"}};
 </script>
 <script>/* ===== 月度规则配置 · 2026-09 =====
  * 三层拆分-配置层：月度周期/权重画像/企客规则/方案参考全文。
@@ -3614,7 +3614,8 @@ selC.disabled = isP2;
 selC.title = isP2 ? (CFG.period.p2NewTitle || '') : '';
 }
 var pzl = document.getElementById('pz_act');
-if (pzl) pzl.textContent = (d.pzAct !== null && d.pzAct !== undefined) ? ('活跃骑手 ' + d.pzAct + '（完成率待任务系统目标）') : '';
+var _pzt = (typeof CFG !== 'undefined' && CFG.pzTarget1) ? CFG.pzTarget1[currentCity] : null;
+if (pzl) pzl.textContent = (d.pzAct !== null && d.pzAct !== undefined) ? ('活跃骑手 ' + d.pzAct + (_pzt ? ('（期1周目标 ' + _pzt + '，完成率 ' + Math.round(d.pzAct / _pzt * 1000) / 10 + '%）') : '（完成率待任务系统目标）')) : '';
 }
 calcScore();
 if (typeof renderWjSplit === 'function') renderWjSplit();
@@ -4542,7 +4543,10 @@ if (el && typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) {
 var h = '';
 Object.keys(QKKA_MONTH).forEach(function(c){ var v = QKKA_MONTH[c];
 h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + (v.stores != null ? v.stores : '—') + '</td>'
-+ '<td>' + (v.ok != null ? v.ok + '（' + v.okRatio + '%）' : '—') + '</td>'
++ '<td title="' + (v.okSrc === 'selfcalc'
+? '达标自算口径（R681）：17805 门店级最新考核日准时率 ≥ BI 后台下发的门店考核目标（gaz_mig_target，95%为主），仅光速达服务下发目标，分母=可评估门店' + (v.assessed != null ? '，本次可评估 ' + v.assessed + ' 家' : '') + '；官方源 BI 269707 已退役'
+: (v.ok == null ? '达标源 BI 269707 已退役，门店级目标未覆盖或底料缺失，如实展示（R679/R681）' : '官方源 BI 269707 月度达标（已退役，历史月份保留官方口径）')) + '">'
++ (v.ok != null ? v.ok + '（' + (v.okRatio != null ? v.okRatio + '%' : '—') + '）' + (v.okSrc === 'selfcalc' && v.assessed != null && v.assessed < (v.stores || 0) ? '<span style="color:#9aa0a6;font-size:10.5px;"> /可评' + v.assessed + '</span>' : '') : '—') + '</td>'
 + '<td>' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
 + '<td>' + (v.brands != null ? v.brands + '品牌' + (v.stations != null ? '/' + v.stations + '站点' : '') : '—') + '</td></tr>'; /* R383：brands/stations null 守卫（诸暨 253744 列暂缺，原裸拼接会出 null品牌） */
 });
@@ -4596,6 +4600,9 @@ h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.days + '</td>'
 });
 h += '</tbody></table></div>';
 h += '<div style="font-size:11px;color:#6b7280;margin-top:4px;">完整月度评估明细见「月维度」视图的月度评估卡。</div>';
+if (_M.backtestNote) { /* R681：上月回测结论（月预计缺陷评估），数据层 CFG.mtdEval.backtestNote */
+h += '<div style="font-size:11px;color:#b26a00;background:#fff8e1;border-left:3px solid #f5a623;border-radius:6px;padding:6px 10px;margin-top:4px;">📉 ' + _M.backtestNote + '</div>';
+}
 el.innerHTML = h;
 }
 
@@ -4963,7 +4970,7 @@ if (v.hit) { st = '⚠ 赔付预警（<' + v.line + '%）'; col = '#d93025'; hit
 else if (v.watch) { st = '观察（<98%）'; col = '#f5a623'; }
 else if (v.ska) { st = 'SKA达标（≥' + v.line + '%）'; col = '#34a853'; }
 else { st = '正常'; col = '#34a853'; }
-rows.push('<tr><td><b>' + cityFull(city) + '</b></td><td>' + b + (v.ska ? ' <span class="tag tag-red">SKA</span>' : '') + '</td><td>' + v.stores + '</td><td>' + v.wb + '</td><td style="color:' + col + ';font-weight:700;">' + (v.ontime!=null ? v.ontime.toFixed(2) + '%' : '—') + '</td><td style="color:' + col + '">' + st + '</td></tr>');
+rows.push('<tr><td><b>' + cityFull(city) + '</b></td><td>' + b + (v.ska ? ' <span class="tag tag-red">SKA</span>' : '') + '</td><td>' + v.stores + '</td><td>' + (v.stations != null ? v.stations : '—') + '</td><td>' + (v.target != null ? '<b>' + v.target + '%</b>' : '—') + '</td><td>' + (v.ok != null ? v.ok + '/' + v.okTotal : '—') + '</td><td>' + v.wb + '</td><td style="color:' + col + ';font-weight:700;">' + (v.ontime!=null ? v.ontime.toFixed(2) + '%' : '—') + '</td><td style="color:' + col + '">' + st + '</td></tr>');
 });
 });
 rows.sort(function(a, b) { return (a.indexOf('赔付预警') >= 0 ? -1 : 0) - (b.indexOf('赔付预警') >= 0 ? -1 : 0); });
@@ -4975,21 +4982,26 @@ h += '<div style="background:#e6f4ea;border-left:4px solid #34a853;border-radius
 }
 var m = (typeof QKKA_MONTH !== 'undefined' && QKKA_MONTH) ? QKKA_MONTH : null;
 if (m) {
-h += '<div class="table-scroll" style="margin-bottom:8px;"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>统计期</th><th>KA门店</th><th>达标门店（≥95%）</th><th>准时运单/完成运单</th><th>准时率</th><th>覆盖品牌/站点</th></tr></thead><tbody>';
+h += '<div class="table-scroll" style="margin-bottom:8px;"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>统计期</th><th>KA门店</th><th title="R681 双口径：okSrc=selfcalc 为达标自算（17805 门店级明细 + BI 后台下发的门店考核目标 gaz_mig_target，仅光速达服务下发目标，分母=可评估门店）；9 月板为官方源 BI 269707（现已退役）">达标门店</th><th>准时运单/完成运单</th><th>准时率</th><th>覆盖品牌/站点</th></tr></thead><tbody>';
 Object.keys(m).forEach(function(c) {
 var v = m[c];
 var rc = (v.rate != null && v.rate < 95) ? 'c-red' : '';
 var oc = (v.okRatio != null && v.okRatio < 90) ? 'c-red' : '';
+var okTip = v.okSrc === 'selfcalc'
+? '达标自算口径（R681）：17805 门店级最新考核日准时率 ≥ BI 后台下发的门店考核目标（gaz\u200bmig\u200b_target，95%为主/诸暨奈雪93%），仅光速达服务下发目标，分母=可评估门店'
++ (v.assessed != null ? '，本次可评估 ' + v.assessed + ' 家' : '')
++ '；官方源 BI 269707 已退役'
+: (v.ok == null ? '达标源 BI 269707 已退役，17805 门店级目标未覆盖或底料缺失，如实展示（R679/R681）' : '');
 h += '<tr><td><b>' + cityFull(c) + '</b></td><td>' + v.period + '</td><td>' + (v.stores != null ? v.stores : '—') + '</td>'
-+ '<td class="' + oc + '">' + (v.ok != null ? v.ok + '（' + (v.okRatio != null ? v.okRatio + '%' : '—') + '）' : '—') + '</td>'
++ '<td class="' + oc + '" title="' + okTip + '">' + (v.ok != null ? v.ok + '（' + (v.okRatio != null ? v.okRatio + '%' : '—') + '）' + (v.okSrc === 'selfcalc' && v.assessed != null && v.assessed < (v.stores || 0) ? '<span style="color:#9aa0a6;font-size:10.5px;"> /可评' + v.assessed + '</span>' : '') : '—') + '</td>'
 + '<td>' + (v.ontimeWb != null ? v.ontimeWb : '—') + ' / ' + (v.doneWb != null ? v.doneWb : '—') + '</td>'
 + '<td class="' + rc + '">' + (v.rate != null ? v.rate + '%' : '—') + '</td>'
 + '<td>' + v.brands + '品牌' + (v.stations != null ? ' / ' + v.stations + '站点' : '') + '</td></tr>';
 });
 h += '</tbody></table></div>';
 }
-h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>品牌</th><th>门店数</th><th>运单量（当日）</th><th>准时率（当日）</th><th>状态</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>';
-h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">数据：品牌x商家x履约站-履约明细（ID 17805，BI 253744，' + (QKKA_BRAND['泰兴'] ? QKKA_BRAND['泰兴'].date : '') + '）；准时率=客户考核准时运单量/配送完成运单量（累计），门店达标口径=门店准时率≥KPI目标95%（本表仅展示SKA品牌门店，非SKA品牌门店已不再展示）；门店月维度赔付以自然月累计为准，本预警为提前提示；配送原因取消率已按17805明细纳入赔付预判（肯/必），客诉率/提前点率口径待数据源开放后接入；<a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月维度数据源：SKA 体验看板（BI 269707）</a> · <a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度数据源：企客KA履约监控（BI 253744）</a></div>';
+h += '<div class="table-scroll"><table class="dt" style="font-size:11.5px;"><thead><tr><th>城市</th><th>品牌</th><th>门店数</th><th title="月累计去重履约站点（城市-代理配送站，17805 门店级明细，R680）">站点（月累计）</th><th title="BI 后台下发的门店考核目标（gaz\u200bmig\u200b_target，取品牌可评估行众数；个别门店 93% 按各行目标判定）">考核目标</th><th title="17805 门店级自算达标/可评估门店数（R681，仅光速达服务下发目标，未覆盖门店不计入）">达标（可评）</th><th>运单量（当日）</th><th>准时率（当日）</th><th>状态</th></tr></thead><tbody>' + rows.join('') + '</tbody></table></div>';
+h += '<div style="font-size:11px;color:#6b7280;margin-top:6px;">数据：品牌x商家x履约站-履约明细（ID 17805，BI 253744，' + (QKKA_BRAND['泰兴'] ? QKKA_BRAND['泰兴'].date : '') + '）；准时率=客户考核准时运单量/配送完成运单量（累计）；门店月度达标自算口径（R681）=门店最新考核日各品牌行准时率 ≥ BI 后台下发的门店考核目标（gaz\u200bmig\u200b_target，95%为主，仅光速达服务下发目标，分母=可评估门店），原官方达标源 BI 269707 已退役；门店月维度赔付以自然月累计为准，本预警为提前提示；配送原因取消率已按17805明细纳入赔付预判（肯/必），客诉率/提前点率口径待数据源开放后接入；<a href="https://bi.sankuai.com/v2/dashboard/269707" target="_blank" rel="noopener" style="color:#1967d2;">🔗 原月维度达标源：SKA 体验看板（BI 269707，已退役）</a> · <a href="https://readata.meituan.com/pages/105/1504367626388770865/6223?RPType=MoShu&amp;RPId=253744" target="_blank" rel="noopener" style="color:#1967d2;">🔗 月底天维度数据源：企客KA履约监控（BI 253744）</a></div>';
 box.innerHTML = h;
 }
 
