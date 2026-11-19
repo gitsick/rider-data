@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-19 00:24:25",
+  "generatedAt": "2026-11-19 00:25:44",
   "runDate": "2026-11-19",
   "tasks": [
     {
@@ -4618,7 +4618,7 @@
             }
           ]
         },
-        "ageH": 224,
+        "ageH": 225,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5691,7 +5691,7 @@
         "name": "r569-heal-intent-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 224
+        "ageH": 225
       },
       {
         "name": "r570-pending-card-exempt",
@@ -5862,7 +5862,7 @@
       },
       {
         "name": "r569-heal-intent-exempt",
-        "ageH": 224
+        "ageH": 225
       },
       {
         "name": "r568-audit-trace-surface",
@@ -7588,7 +7588,7 @@
     },
     {
       "date": "2026-11-19",
-      "at": "2026-11-19 00:24:25",
+      "at": "2026-11-19 00:25:44",
       "score": 75,
       "grade": "良",
       "layers": [
@@ -7730,7 +7730,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2622.4,
+      "totalKB": 2627.3,
       "top": [
         {
           "name": "rider_base.json",
@@ -7738,7 +7738,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 558.8
+          "kb": 562.2
         },
         {
           "name": "rider-index.json",
@@ -7750,7 +7750,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 256.3
+          "kb": 256.5
         },
         {
           "name": "rider-agreements.json",
@@ -7758,7 +7758,7 @@
         },
         {
           "name": "assessment/oct.json",
-          "kb": 99.6
+          "kb": 99.8
         },
         {
           "name": "assessment/sep.json",
