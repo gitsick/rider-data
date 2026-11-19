@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-19 12:05:04",
+  "generatedAt": "2026-11-19 12:08:36",
   "runDate": "2026-11-19",
   "tasks": [
     {
@@ -2929,7 +2929,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 4a5d7535 2026-11-19 17:33:37 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: f5a57c67 2026-11-19 20:05:11 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -2939,12 +2939,12 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（3 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（5 小时前刷新）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（4 小时前生成）"
+        "msg": "单文件产物存在（6 小时前生成）"
       },
       {
         "level": "PASS",
@@ -2954,7 +2954,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 1 小时前已聚合（告警 0 条）"
+        "msg": "monitor_status 0 小时前已聚合（告警 1 条）"
       },
       {
         "level": "PASS",
@@ -3154,7 +3154,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行正常（1h 前，节奏每 2h）"
+        "msg": "[monitor-aggregate] 运行正常（0h 前，节奏每 2h）"
       },
       {
         "level": "PASS",
@@ -3204,7 +3204,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（1h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（4h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -3244,7 +3244,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-19 17:33:35 替换，含 11 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-19 20:05:07 替换，含 10 文件）"
       },
       {
         "level": "PASS",
@@ -3338,7 +3338,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-19 20:05:03）"
+      "detail": "上轮全链 12 段全过（2026-11-19 20:08:29）"
     },
     {
       "layer": "项目层",
@@ -6745,8 +6745,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "79ed84c2",
-        "at": "2026-11-19T17:47:34+08:00",
+        "hash": "f5a57c67",
+        "at": "2026-11-19T20:05:11+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6834,10 +6834,10 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-19 20:05:03",
+    "runAt": "2026-11-19 20:08:29",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -6898,17 +6898,22 @@
         "pass": true,
         "seconds": 57.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 36.3,
+        "note": "拷贝回验 142 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 168.7,
+        "note": "指纹+探针 assets/ResignPanel-BO6NZFM8.css 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-18 00:18:36",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 576.2,
-      "fails": []
-    },
     {
       "runAt": "2026-11-18 00:26:39",
       "scope": "pre-deploy",
@@ -7110,6 +7115,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 246,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-19 20:08:29",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 451,
       "fails": []
     }
   ],
@@ -8033,7 +8045,7 @@
     },
     {
       "date": "2026-11-19",
-      "at": "2026-11-19 12:05:04",
+      "at": "2026-11-19 12:08:36",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -8175,7 +8187,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2650.7,
+      "totalKB": 2650.4,
       "top": [
         {
           "name": "rider_base.json",
@@ -8195,7 +8207,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 269.2
+          "kb": 268.9
         },
         {
           "name": "rider-agreements.json",
