@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-19 02:43:55",
+  "generatedAt": "2026-11-19 03:12:39",
   "runDate": "2026-11-19",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-19 10:43:40",
-        "durationSec": 221.8,
+        "finishedAt": "2026-11-19 11:12:35",
+        "durationSec": 373.7,
         "note": "数据日 20261118：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -462,15 +462,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-18 11:10:08",
-        "durationSec": 2408,
+        "finishedAt": "2026-11-19 10:44:04",
+        "durationSec": 709,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:00 主跑 + 10:30 发布自愈",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -705,6 +705,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-18 11:10:08",
           "durationSec": 2408
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-19 10:44:04",
+          "durationSec": 709
         }
       ],
       "gaps": {
@@ -827,16 +832,15 @@
           },
           {
             "date": "2026-11-19",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-10-17",
-        "gapCount": 1,
+        "gapCount": 0,
         "failCount": 0,
-        "passCount": 29
+        "passCount": 30
       },
       "durTrend": [
-        184,
         1029,
         694,
         82,
@@ -849,7 +853,8 @@
         1177,
         78,
         1107,
-        2408
+        2408,
+        709
       ]
     },
     {
@@ -1346,8 +1351,8 @@
         "overdueText": ""
       },
       "timer": {
-        "state": "failed",
-        "lastRunAt": "2026-11-19 08:37"
+        "state": "ok",
+        "lastRunAt": "2026-11-19 11:04"
       },
       "heal": {
         "can": true,
@@ -2822,7 +2827,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 2.7h）"
+        "overdueText": "运行超时（距上次 3.2h）"
       },
       "timer": {
         "state": "ok",
@@ -3245,7 +3250,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "WARN",
-      "detail": "10/11 任务正常 · 1 逾期 · 近 30 天触发断档 9 天"
+      "detail": "10/11 任务正常 · 1 逾期 · 近 30 天触发断档 8 天"
     },
     {
       "layer": "部署层",
@@ -3269,7 +3274,7 @@
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -3302,7 +3307,7 @@
           "size": 19299
         }
       ],
-      "ageHours": 9,
+      "ageHours": 10,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-17",
@@ -3315,18 +3320,18 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-19 02:43",
+          "mtime": "2026-11-19 03:07",
           "size": 85475
         },
         {
           "name": "oct.json",
-          "mtime": "2026-11-19 02:43",
+          "mtime": "2026-11-19 03:07",
           "size": 102177
         },
         {
           "name": "sep.json",
-          "mtime": "2026-11-19 00:18",
-          "size": 86487
+          "mtime": "2026-11-19 03:07",
+          "size": 86719
         },
         {
           "name": "targets-nov.json",
@@ -3551,9 +3556,9 @@
     ],
     "runs": [
       {
-        "name": "r685-qk-recheck",
-        "files": 16,
-        "latestAt": "2026-11-19 02:31:58",
+        "name": "r686-qk-sep",
+        "files": 7,
+        "latestAt": "2026-11-19 03:02:11",
         "flow": {
           "done": false,
           "light": false,
@@ -3600,8 +3605,8 @@
           ]
         },
         "ageH": 0,
-        "totalH": 1,
-        "deltaH": 0,
+        "totalH": 0,
+        "deltaH": -1,
         "gapH": 3
       },
       {
@@ -3653,7 +3658,7 @@
             }
           ]
         },
-        "ageH": 2,
+        "ageH": 3,
         "totalH": null,
         "deltaH": null,
         "gapH": 7
@@ -3707,7 +3712,7 @@
             }
           ]
         },
-        "ageH": 9,
+        "ageH": 10,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 5
@@ -3869,7 +3874,7 @@
             }
           ]
         },
-        "ageH": 61,
+        "ageH": 62,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4139,7 +4144,7 @@
             }
           ]
         },
-        "ageH": 122,
+        "ageH": 123,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -4301,7 +4306,7 @@
             }
           ]
         },
-        "ageH": 123,
+        "ageH": 124,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4787,7 +4792,7 @@
             }
           ]
         },
-        "ageH": 227,
+        "ageH": 228,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4841,7 +4846,7 @@
             }
           ]
         },
-        "ageH": 227,
+        "ageH": 228,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4895,7 +4900,7 @@
             }
           ]
         },
-        "ageH": 227,
+        "ageH": 228,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5165,7 +5170,7 @@
             }
           ]
         },
-        "ageH": 232,
+        "ageH": 233,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5327,7 +5332,7 @@
             }
           ]
         },
-        "ageH": 235,
+        "ageH": 236,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5381,7 +5386,7 @@
             }
           ]
         },
-        "ageH": 235,
+        "ageH": 236,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5489,7 +5494,7 @@
             }
           ]
         },
-        "ageH": 236,
+        "ageH": 237,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5722,7 +5727,7 @@
         "name": "r554-archmode-agentroles",
         "pct": 80,
         "sev": "",
-        "ageH": 236
+        "ageH": 237
       },
       {
         "name": "r555-third-orchestrated",
@@ -5734,13 +5739,13 @@
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 235
+        "ageH": 236
       },
       {
         "name": "r557-plan-closeout",
         "pct": 40,
         "sev": "",
-        "ageH": 235
+        "ageH": 236
       },
       {
         "name": "r558-b1-capacity-resume",
@@ -5758,7 +5763,7 @@
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 232
+        "ageH": 233
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -5788,19 +5793,19 @@
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 227
+        "ageH": 228
       },
       {
         "name": "r566-dark-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 227
+        "ageH": 228
       },
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 227
+        "ageH": 228
       },
       {
         "name": "r568-audit-trace-surface",
@@ -5854,7 +5859,7 @@
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 123
+        "ageH": 124
       },
       {
         "name": "r589-prompt-guard",
@@ -5872,7 +5877,7 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "",
-        "ageH": 122
+        "ageH": 123
       },
       {
         "name": "r632-teamflow-optimize",
@@ -5902,7 +5907,7 @@
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 61
+        "ageH": 62
       },
       {
         "name": "20261017-efficiency-naming",
@@ -5920,16 +5925,16 @@
         "name": "r683-kaohe-monthly-ux",
         "pct": 40,
         "sev": "",
-        "ageH": 9
+        "ageH": 10
       },
       {
         "name": "r684-kaohe-module-data",
         "pct": 20,
         "sev": "",
-        "ageH": 2
+        "ageH": 3
       },
       {
-        "name": "r685-qk-recheck",
+        "name": "r686-qk-sep",
         "pct": 0,
         "sev": "",
         "ageH": 0
@@ -5955,7 +5960,7 @@
     "legacyWarn": [
       {
         "name": "r591-trace-guard",
-        "ageH": 122
+        "ageH": 123
       },
       {
         "name": "r590-note-label",
@@ -5967,7 +5972,7 @@
       },
       {
         "name": "r588-prose-cleanup",
-        "ageH": 123
+        "ageH": 124
       },
       {
         "name": "r587-metrics-struct",
@@ -6003,15 +6008,15 @@
       },
       {
         "name": "r567-remaining-pages-patrol",
-        "ageH": 227
+        "ageH": 228
       },
       {
         "name": "r566-dark-patrol",
-        "ageH": 227
+        "ageH": 228
       },
       {
         "name": "r565-visual-patrol",
-        "ageH": 227
+        "ageH": 228
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -6031,7 +6036,7 @@
       },
       {
         "name": "r560-lib-readme-roster",
-        "ageH": 232
+        "ageH": 233
       },
       {
         "name": "r559-alert-history",
@@ -6043,11 +6048,11 @@
       },
       {
         "name": "r557-plan-closeout",
-        "ageH": 235
+        "ageH": 236
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 235
+        "ageH": 236
       },
       {
         "name": "r555-third-orchestrated",
@@ -6055,7 +6060,7 @@
       },
       {
         "name": "r554-archmode-agentroles",
-        "ageH": 236
+        "ageH": 237
       },
       {
         "name": "r553-rup-first-run",
@@ -6066,13 +6071,13 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 2.7h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 3.2h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：3 个任务近 30 天共 9 天零留痕（新商评考核周报 1 天 · 通用运力监控每日刷新 7 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：2 个任务近 30 天共 8 天零留痕（通用运力监控每日刷新 7 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -6429,8 +6434,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "d15efdb2",
-        "at": "2026-11-19T09:18:29+08:00",
+        "hash": "9becd1c5",
+        "at": "2026-11-19T10:46:09+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6440,9 +6445,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "f75eda2e",
-        "at": "2026-11-19T10:41:46+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
+        "hash": "407ee639",
+        "at": "2026-11-19T11:08:28+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard.html（assessment-legacy 通道）"
       }
     }
   ],
@@ -7730,7 +7735,7 @@
     },
     {
       "date": "2026-11-19",
-      "at": "2026-11-19 02:43:55",
+      "at": "2026-11-19 03:12:39",
       "score": 88,
       "grade": "良",
       "layers": [
@@ -7872,7 +7877,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2626.7,
+      "totalKB": 2631.6,
       "top": [
         {
           "name": "rider_base.json",
@@ -7880,7 +7885,7 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 558.8
+          "kb": 562.2
         },
         {
           "name": "rider-index.json",
@@ -7892,7 +7897,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 259.4
+          "kb": 260.5
         },
         {
           "name": "rider-agreements.json",
@@ -8100,7 +8105,7 @@
           "6.1 普众/工装目标（KG-TASKSYS-PENDING 部分核销：期1已下发）",
           "6.2 诸暨 17805 直取日更（KG-QIKE-ZHUJI 进展）"
         ],
-        "chars": 18075,
+        "chars": 18450,
         "truncated": true,
         "mtime": "2026-11-19"
       },
