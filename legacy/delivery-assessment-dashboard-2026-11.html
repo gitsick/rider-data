@@ -1479,7 +1479,7 @@ body.theme-align th a,body.theme-align th span{color:#fff!important}
 <tr><td class="td-qk">体验三项 / 推完 / 完结率</td><td class="td-qk">履约数据考核看板-体验考核含PHF / 推单完成率all / 完结率</td><td class="td-qk">✅ 已接入（官方核算值发布后补录）</td></tr>
 <tr><td class="td-qk">承托比</td><td class="td-qk">履约数据考核看板-承托比</td><td class="td-qk">✅ 已接入日更</td></tr>
 <tr><td class="td-qk">工装抽检合格率</td><td class="td-qk">履约数据考核看板-骑手工装（悦跑考核周期9/28-11/1）</td><td class="td-qk">✅ 已接入日更</td></tr>
-<tr><td class="td-qk">企客流失 / 企客体验达标</td><td class="td-qk">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td class="td-qk">✅ 已接入监控（当前三城无门店数据，有门店自动预警）</td></tr>
+<tr><td class="td-qk">企客流失 / 企客体验达标</td><td class="td-qk">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td class="td-qk">✅ 已接入监控（269707死通道 → 17805自算通道日更，R692 修复伞品牌过滤后全量门店覆盖；截至11-18 无流失/无新签）</td></tr>
 <tr><td class="td-qk">企客KA商家履约（商家/门店日维度）</td><td class="td-qk">readata·KA客户履约监控 → 品牌x商家x履约站-履约明细数据（ID 17805，实际指向 BI 253744），KA商家口径与企客体验明细看板一致</td><td class="td-qk">✅ 已接入（10月MTD累计截至10-01：泰兴22品牌/75店、响水13品牌/50店，覆盖门店口径；9月整月：泰兴36品牌/117店、响水22品牌/37店，有单门店口径；诸暨无维值权限待申请）</td></tr>
 <tr><td class="td-qk">兜底阈值（人效X / 承托比X）</td><td class="td-qk">以任务系统下发为准</td><td class="td-qk" id="sp-hd-status">⏳ 待下发后接入预警判定</td></tr>
 </table>
@@ -1928,7 +1928,7 @@ var CFG = {
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">体验三项 / 推完 / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-体验考核含PHF / 推单完成率all / 完结率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入（官方核算值发布后补录）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-承托比</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">工装抽检合格率</td><td style="padding:5px 8px;border:1px solid #eef1f5;">履约数据考核看板-骑手工装（悦跑考核周期11/2-11/29）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更</td></tr>',
-      '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客流失 / 企客体验达标</td><td style="padding:5px 8px;border:1px solid #eef1f5;">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入监控（当前三城无门店数据，有门店自动预警）</td></tr>',
+      '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客流失 / 企客体验达标</td><td style="padding:5px 8px;border:1px solid #eef1f5;">企客体验明细看板（bi 269707，麦肯必瑞星沃门店维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入监控（269707死通道 → 17805自算通道日更，R692 修复伞品牌过滤后全量门店覆盖；截至11-18 无流失/无新签）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">企客KA商家履约（商家/门店日维度）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">readata·KA客户履约监控 → 品牌x商家x履约站-履约明细数据（ID 17805，实际指向 BI 253744），KA商家口径与企客体验明细看板一致</td><td style="padding:5px 8px;border:1px solid #eef1f5;">✅ 已接入日更（泰兴/响水官方重放；诸暨自算通道日更，官方维值6176权限仍在TT审批）</td></tr>',
       '<tr><td style="padding:5px 8px;border:1px solid #eef1f5;">兜底阈值（人效X / 承托比X）</td><td style="padding:5px 8px;border:1px solid #eef1f5;">以任务系统下发为准</td><td style="padding:5px 8px;border:1px solid #eef1f5;" id="sp-hd-status">⏳ 待下发后接入预警判定</td></tr>'
     ],
@@ -1972,7 +1972,7 @@ var CFG = {
     qikeCardHtml: '<table style="width:100%;border-collapse:collapse;font-size:11.5px;margin:4px 0;">'
       + '<tr style="background:#f3e8fd;"><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">子项</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">扣/加分</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">判定条件</th><th style="text-align:left;padding:4px 8px;border:1px solid #e8def8;">当前状态</th></tr>'
       + '<tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❶ 门店流失</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#d93025;">−3%</b>（原5%）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">流失有效门店≥1家（仅因体验问题流失，七天内未发单即流失）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">✅ 监控中</td></tr>'
-      + '<tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❷ 门店新签</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#2e7d32;">+2%/家</b>（最高+3%）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">当月新签履约承接品牌有效门店（美配首次发单日计，含月内新签）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">⏳ 待接入（企客体验明细看板）</td></tr>'
+      + '<tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❷ 门店新签</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#2e7d32;">+2%/家</b>（最高+3%）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">当前月新签履约承接品牌有效门店（美配首次发单日计，含月内新签）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">✅ 监控中（17805自算通道，截至11-18 MTD无新签，落地自动预警）</td></tr>'
       + '<tr><td style="padding:4px 8px;border:1px solid #eef1f5;">❸ 门店体验达标</td><td style="padding:4px 8px;border:1px solid #eef1f5;"><b style="color:#d93025;">−2%</b></td><td style="padding:4px 8px;border:1px solid #eef1f5;">≤3家城≥1家未达标、或>3家城≥2家未达标（口径同SKA考核指标）</td><td style="padding:4px 8px;border:1px solid #eef1f5;">✅ 监控中</td></tr>'
       + '</table>'
       + '<div style="font-size:11.5px;color:#6b7280;">体验&amp;推完指标剔除企客麦肯必瑞订单（10月起口径，11月延续）。</div>'
@@ -2002,20 +2002,20 @@ var CFG = {
       + '· 注：赔付规则与预警/流失要求不完全一致，日常追踪以《SKA考核指标口径和看板》为准',
     scopeNote: '评估口径（11月方案原文，与10月一致）：有效门店=日均10单以上门店（含新签），口径=麦肯必瑞星沃企客服务包；流失仅限因体验问题不再使用美配（停业/低单未发单不算），流失日=美配首次未发单日，7天未发单即流失。看板日常展示的「企客KA当日有单门店」为当日口径、逐日波动（泰兴 58→63），<b>不能用于流失认定</b>——本卡按门店级日粒度数据核算。',
     baseCell: '泰兴 <b>4家</b>（星巴克专星送×4）、响水 <b>1家</b>（星巴克爱琴海）、诸暨 <b>19家</b>（星巴克专星送×14、肯德基×4、必胜客×1，17805口径10月整月核算）',
-    churnCell: '10月有效门店20家（泰兴4、响水1、诸暨19）：泰兴/响水全部延续在营；诸暨18家延续在营，星巴克新天地店自10-28停发（截至数据日11-03停发6天入观察，11-04起满7天即触发流失扣3%，建议地推核实）；基期14家零星单调拨行已过滤',
+    churnCell: '10月基期有效门店（泰兴4、响水1、诸暨19）：截至11-18三城24家全部18/18天活跃；星巴克新天地店（10月曾有效）10-28起停发已21天（不计确认流失，流失原因核实中）；基期14家零星单调拨行已过滤',
     churnRule: '流失≥1家 扣3%（原5%）',
     newSignRule: '新签1家 +2%，封顶 +3%',
-    newSignCell: '11月MTD暂无六品牌新签（三城基期有效门店均为10月延续，无基期无单当期首单门店；持续监控）',
+    newSignCell: '11月MTD暂无六品牌新签（截至11-18：三城基期有效门店均为10月延续且18/18天在营，无基期无单当期首单门店；持续监控）',
     expRule: '扣2%分档：门店≤3家未达标≥1家，或门店>3家未达标≥2家',
     expCellTail: '；泰兴低于100%，需核到门店级体验明细定位未达标门店',
     expPred: '<b style="color:#ef6c00;">泰兴存扣2%风险</b>，响水暂安全',
     healthTitle: '② 有效门店 11月健康度（守住即为守住不扣分 · 仅SKA考核门店）',
     healthAvgTh: '11月日均单量',
-    healthActiveDenom: 3, /* 11月窗口=11-01~11-03（3个数据日），随 MTD 推进复查时更新 */
+    healthActiveDenom: 18, /* 11月窗口=11-01~11-18（R692 刷新，18个数据日），随 MTD 推进复查时更新 */
     watchOrdersTh: '10月单量',
     watchAvgTh: '10月日均',
-    skaScopeNote: '※ 企客模块仅展示当月SKA考核门店（11月：泰兴星巴克专星送×4、响水星巴克爱琴海×1、诸暨星巴克专星送×14+肯德基×5+必胜客×1；17805口径，肯德基时代店0.3单/日为存险观察项）。',
-    zhujiNote: '<b>诸暨</b>：门店级数据已接入（17805自算通道；组织筛选器维值6176权限仍在审批，开通后切换官方重放口径复核）。<b>小结</b>：按方案口径，当前企客模块扣分预判 <b style="color:#188038;">0分</b>、加分预判 +0；主要风险点为 ①泰兴门店体验达标率（10月97.93%）可能触发扣2%档 ②诸暨星巴克新天地店（10月95单/日）10-28起停发，11-04起满7天未发单将转为流失扣3%——建议当日内核实停用原因 ③诸暨7家门店低于SKA预警线（赔付预判见分析报告页签）。'
+    skaScopeNote: '※ 企客模块仅展示当月SKA考核门店（11月：泰兴星巴克专星送×4、响水星巴克爱琴海×1、诸暨星巴克专星送×14+肯德基×4+必胜客×1；17805口径，肯德基时代店11月全窗0单为存险观察项，疑调拨噪音）。',
+    zhujiNote: '<b>诸暨</b>：门店级数据已接入（17805自算通道；组织筛选器维值6176权限仍在审批，开通后切换官方重放口径复核）。<b>小结</b>：截至11-18，企客模块扣分预判 <b style="color:#188038;">0分</b>、加分预判 +0；主要风险点为 ①泰兴门店体验达标率（10月97.93%）可能触发扣2%档 ②诸暨星巴克新天地店（10月95单/日）10-28起停发已21天，按「仅因体验问题流失」口径需核实原因后定损，若确认体验型流失将扣3% ③肯德基时代店11月全窗0单（疑调拨噪音，存险观察） ④诸暨7家门店低于SKA预警线（赔付预判见分析报告页签）。'
   }
 };
 
