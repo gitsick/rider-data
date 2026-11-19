@@ -10,15 +10,20 @@
  *  - 带查询串的导航请求（门禁/调试 stamp）直连网络，完全不经过 SW
  * 版本升级：改 VER 即弃用全部旧缓存（R92 → v2；v4：capacity 单文件页不入 C_PAGES；
  * v5/R592：巨页瘦至 585KB 后消除例外，恢复 C_PAGES 写入；R602：巨页退役，capacity.html 为
- * dist 树内 SPA 页，navigate 统一 C_PAGES 通道无豁免；v7/R672：有界网络优先上线）
- */
-const VER = 'v7'
+ * dist 树内 SPA 页，navigate 统一 C_PAGES 通道无豁免；v7/R672：有界网络优先上线；
+ * v8/R-STALEFIX：入口 HTML 回退危害远大于慢——旧 HTML+新数据=渲染丢行事故族，
+ * NAV_TIMEOUT 3s→10s（劣化网络白屏 10s 换「永远跑旧代码」消除）；VER 升级触发全量旧缓存清退，
+ * 兼容 buildVersion 心跳自动刷新（R-VERHEART-AUTO），形成自愈闭环：
+ * 旧页签心跳发现新版 → 自动 reload → 新导航网络优先（缓存已被 v8 清空 → 全程等网络）→ 新代码上岗 */
+const VER = 'v8'
 const C_ASSETS = `rd-assets-${VER}`
 const C_PAGES = `rd-pages-${VER}`
 const C_DATA = `rd-data-${VER}`
 const KEEP = [C_ASSETS, C_PAGES, C_DATA]
-/* R672 有界网络优先超时：劣化网络（TTFB 实测最高 16.4s）下缓存命中即回，不再空等网络 */
-const NAV_TIMEOUT_MS = 3000
+/* R672 有界网络优先超时：/data/* 缓存命中即回（数据旧一点下次心跳自愈，安全）；
+ * R-STALEFIX：导航（HTML）超时放宽 3s→10s —— 旧 HTML 回退会让用户停留在旧代码上
+ * （实测用户 Chrome 卡旧版数日，离职列表丢行），宁可首屏多等也不回旧版 */
+const NAV_TIMEOUT_MS = 10000
 const DATA_TIMEOUT_MS = 3000
 
 self.addEventListener('install', () => self.skipWaiting())
