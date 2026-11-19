@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-19 04:48:58",
+  "generatedAt": "2026-11-19 04:57:51",
   "runDate": "2026-11-19",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-19 11:14:21",
-        "durationSec": 106.1,
+        "finishedAt": "2026-11-19 12:51:26",
+        "durationSec": 170,
         "note": "数据日 20261118：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -2833,7 +2833,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 4.8h）"
+        "overdueText": "运行超时（距上次 4.9h）"
       },
       "timer": {
         "state": "ok",
@@ -3288,14 +3288,14 @@
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
-      "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 0h 前"
+      "status": "PASS",
+      "detail": "2 项目，最新产出 0h 前"
     },
     {
       "layer": "渲染层",
       "anchor": "sec-fresh",
       "status": "PASS",
-      "detail": "站点数据 1h 前刷新"
+      "detail": "站点数据 0h 前刷新"
     }
   ],
   "projects": [
@@ -3328,7 +3328,7 @@
           "size": 19299
         }
       ],
-      "ageHours": 0,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-18",
@@ -3340,19 +3340,19 @@
       "name": "履约考核工程",
       "recent": [
         {
+          "name": "nov.json",
+          "mtime": "2026-11-19 04:57",
+          "size": 85467
+        },
+        {
           "name": "oct.json",
-          "mtime": "2026-11-19 04:48",
-          "size": 102523
+          "mtime": "2026-11-19 04:57",
+          "size": 102517
         },
         {
           "name": "sep.json",
           "mtime": "2026-11-19 04:48",
           "size": 86888
-        },
-        {
-          "name": "nov.json",
-          "mtime": "2026-11-19 03:07",
-          "size": 85475
         },
         {
           "name": "targets-nov.json",
@@ -3368,15 +3368,10 @@
       "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-10-31",
-      "dataLag": 19,
-      "staleData": true,
+      "dataDate": "2026-11-19",
+      "dataLag": 0,
+      "staleData": false,
       "dataLagThreshold": 2,
-      "outage": {
-        "since": "2026-11-01",
-        "dayCount": 19,
-        "cause": null
-      },
       "validation": [
         {
           "file": "nov.json",
@@ -3583,8 +3578,8 @@
     "runs": [
       {
         "name": "r690-scan",
-        "files": 32,
-        "latestAt": "2026-11-19 04:44:30",
+        "files": 34,
+        "latestAt": "2026-11-19 04:50:35",
         "flow": {
           "done": false,
           "light": false,
@@ -3684,7 +3679,7 @@
             }
           ]
         },
-        "ageH": 4,
+        "ageH": 5,
         "totalH": null,
         "deltaH": null,
         "gapH": 7
@@ -3900,7 +3895,7 @@
             }
           ]
         },
-        "ageH": 63,
+        "ageH": 64,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -5196,7 +5191,7 @@
             }
           ]
         },
-        "ageH": 234,
+        "ageH": 235,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5412,7 +5407,7 @@
             }
           ]
         },
-        "ageH": 237,
+        "ageH": 238,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5765,7 +5760,7 @@
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 237
+        "ageH": 238
       },
       {
         "name": "r557-plan-closeout",
@@ -5789,7 +5784,7 @@
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 234
+        "ageH": 235
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -5933,7 +5928,7 @@
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 63
+        "ageH": 64
       },
       {
         "name": "20261017-efficiency-naming",
@@ -5957,7 +5952,7 @@
         "name": "r684-kaohe-module-data",
         "pct": 20,
         "sev": "",
-        "ageH": 4
+        "ageH": 5
       },
       {
         "name": "r690-scan",
@@ -6062,7 +6057,7 @@
       },
       {
         "name": "r560-lib-readme-roster",
-        "ageH": 234
+        "ageH": 235
       },
       {
         "name": "r559-alert-history",
@@ -6078,7 +6073,7 @@
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 237
+        "ageH": 238
       },
       {
         "name": "r555-third-orchestrated",
@@ -6097,18 +6092,13 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.8h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 4.9h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
       "level": "WARN",
       "anchor": "sec-tasks",
       "text": "触发断档：通用运力监控每日刷新 近 30 天有 6 天零留痕（11-04、11-05、11-10、11-11、11-12、11-13；首次留痕 2026-11-02）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
-    },
-    {
-      "level": "WARN",
-      "text": "看板数据滞后：履约考核工程 数据日期 2026-10-31（滞后 19 天，超 2 天）——疑似源停发第 19 天（自 2026-11-01 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
-      "anchor": "sec-fresh"
     },
     {
       "level": "WARN",
@@ -6460,8 +6450,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "0678f242",
-        "at": "2026-11-19T11:35:51+08:00",
+        "hash": "ae7a8346",
+        "at": "2026-11-19T12:50:54+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -6901,7 +6891,7 @@
     ]
   },
   "health": {
-    "score": 80,
+    "score": 88,
     "grade": "良",
     "layers": [
       {
@@ -6924,9 +6914,9 @@
       },
       {
         "layer": "项目层",
-        "status": "WARN",
+        "status": "PASS",
         "weight": 15,
-        "points": 50
+        "points": 100
       },
       {
         "layer": "渲染层",
@@ -7755,8 +7745,8 @@
     },
     {
       "date": "2026-11-19",
-      "at": "2026-11-19 04:48:58",
-      "score": 80,
+      "at": "2026-11-19 04:57:51",
+      "score": 88,
       "grade": "良",
       "layers": [
         {
@@ -7773,7 +7763,7 @@
         },
         {
           "layer": "项目层",
-          "status": "WARN"
+          "status": "PASS"
         },
         {
           "layer": "渲染层",
@@ -7825,8 +7815,8 @@
       "dayCount": 19,
       "lastDataDate": "2026-10-31",
       "lastSeenAt": "2026-11-19",
-      "resolvedAt": null,
-      "resolvedDataDate": null
+      "resolvedAt": "2026-11-19",
+      "resolvedDataDate": "2026-11-19"
     },
     {
       "project": "通用运力监控",
@@ -7859,7 +7849,7 @@
   "perf": {
     "assets": {
       "count": 99,
-      "totalKB": 1695,
+      "totalKB": 1695.5,
       "top": [
         {
           "name": "vendor-echarts-DyZQEMzr.js",
@@ -7897,7 +7887,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2631.7,
+      "totalKB": 2633.9,
       "top": [
         {
           "name": "rider_base.json",
@@ -7917,7 +7907,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 259.6
+          "kb": 261.3
         },
         {
           "name": "rider-agreements.json",
@@ -7925,11 +7915,11 @@
         },
         {
           "name": "assessment/oct.json",
-          "kb": 99.8
+          "kb": 100.1
         },
         {
           "name": "assessment/sep.json",
-          "kb": 84.7
+          "kb": 84.9
         }
       ]
     },
@@ -8094,7 +8084,7 @@
           "步骤 8：上线确认",
           "附：月初主跑预案（每月 1 号 07:30 适用）"
         ],
-        "chars": 25760,
+        "chars": 25870,
         "truncated": true,
         "mtime": "2026-11-19"
       },
@@ -8107,7 +8097,7 @@
       "path": "pro\\kaohe-daily\\docs\\数据源映射与取数清单.md",
       "desc": "每个数据块的 BI 页签取数映射与归属漂移登记（含 SKA 周期口径三原则 §5.5）",
       "doc": {
-        "content": "# 数据源映射与取数清单 —— 履约考核看板（2026-09 / 2026-10）\n\n> 依据：`docs/方案_9月考核.txt`、`docs/方案_10月考核.txt` 中全部「数据查看路径」条目；\n> `src/config/config-2026-{09,10}.js` 的 `narrative.datasourceRows`；\n> `dev-team/重构履约考核看板/03-dev-B.md` 数据块清单。\n> 用途：数据填充人按本清单逐块取数回填；`build/verify_coverage.py` 的\n> `MAPPING` / `KG_CATALOG` 与本文 §3 / §4 同步维护（改一处须改另一处）。\n> 红线：本文仅为映射与操作清单，不含考核规则改动；未实际访问 BI（全部路径为静态登记）。\n\n---\n\n## 1. BI 源清单（总表）\n\n| # | 源 | 标识 | 用途 | 状态 |\n|---|---|---|---|---|\n| S1 | 履约数据考核看板（合作商用） | bi.sankuai.com/v2/dashboard/274665 | 推单完成率all / 体验考核含PHF / 加盟 / 完结率 / 承托比 / 悦跑 / 骑手工装 / 普通众包 | 主数据源，T-1 日更 |\n| S2 | 旧版加盟看板 | BI 244021 | 9月方案曾引用（加盟运力页签新旧看板口径差异） | 已由 S1 取代，仅备查 |\n| S3 | SKA体验 / 企客体验明细看板 | BI 269707 | 企客流失/有效/体验达标门店；SKA 六品牌历史月维度 | 官方自 2026-03 起未更新（KG-269707-STALE） |\n| S4 | 企客KA履约监控 | BI 253744（readata ID 17805 实际指向此板） | 企客KA品牌/门店日粒度准时率；SKA 当月实际数据源 | 在用，T-1 日更 |\n| S5 | 《SKA考核指标口径和看板》 | 学城 2741734785 | SKA 考核线/预警线口径、企客体验达标判定口径 | 静态口径 |\n| S6 | 任务系统 | — | 兜底阈值（人效/承托比/工装目标/警告罚款） | 待下发（KG-TASKSYS-PENDING） |\n| S7 | 《SKA品牌KPI赔付规则》 | 学城 2772140471 | SKA 品牌 KPI 赔付规则（10月方案新增引用） | 静态口径 |\n\n---\n\n## 2. 考核指标 → BI 源映射（9月 / 10月分列，标口径差异）\n\n| 考核模块/指标 | 9月 BI 源 | 10月 BI 源 | 口径差异 |\n|---|---|---|---|\n| 推单完成率 all | S1 · 推单完成率all 页签 | 同 9月 | 无（分子/分母明细 9 月实测全月有值，旧登记 R485 已核销） |\n| 体验考核 · 绝对超时 | S1 · 体验考核含PHF 页签 | 同 9月 | 10月起剔除企客麦肯必瑞订单；**官方计分源为剔除PHF口径，与自算源系统性偏差 1.4~2.0 倍（见下方说明）** |\n| 体验考核 · 虚假点送达 | S1 · 体验考核含PHF 页签 | 同 9月 | 同上 |\n| 体验考核 · 配送原因取消 | S1 · 体验考核含PHF 页签 | 同 9月 | 同上 |\n| 加盟（HD） | S1 · 加盟页签（T-3，未剔除异常骑手；旧板 S2 曾引用） | 同 9月 | 数据源统一至 S1，越久越准以核算下发为准；**折算系数官方口径 k=0（9月官方达成文件验证，10月沿用）** |\n| 完结率（wj，餐饮cy/非餐fc/混调mix） | S1 · 完结率 页签 | 同 9月 | 无 |\n| 承托比（ct） | S1 · 承托比 页签 | 同 9月 | 无 |\n| 悦跑完成率 / 排班出勤合格率 | S1 · 悦跑 页签 | 同 9月 | **10/19 起新口径：官方已上线（S1 悦跑-城市-周度有效骑手数，旧「待更新」页签撤销）；10月五周官方核算已回填 ymWeeks/ymWeekWorst（KG-YM-NEW-CALIBER 已核销 R687）** |\n| 普通众包 | S1 · 普通众包 页签 | 同 9月 | 无 |\n| 骑手工装（加盟+悦跑） | S1 · 骑手工装 页签 | 同 9月 | 考核周期差异：9月 8/31-9/27；10月 9/28-11/1 |\n| 企客流失门店数 | S3（BI 269707） | S3（BI 269707） | 扣分档位 5% → 3%（qikeMode v1→v2，取数源不变） |\n| 企客有效门店数 | —（9月无此指标） | S3（BI 269707） | **10月新增**（新签 +2% 封顶 3% 的基数） |\n| 企客体验达标门店 | —（9月无此指标） | S3（BI 269707）+ S5（学城 2741734785 判定口径） | **10月新增**（体验未达标 -2%） |\n| 企客KA 当日有单门店/准时率 | S4（BI 253744 / readata 17805） | 同 9月 | 无 |\n| SKA 六品牌月维度 | S4（实际取数）＋S3（历史，269707 停更） | 同 9月 | 9月板无 SKA 模块（modules.ska=false），数据块为空壳（KG-SKA-SHELL-09） |\n| SKA 门店/日维度明细 | S4（BI 253744 / readata 17805） | 同 9月 | 10月起 ska=true 消费 |\n| SKA 考核线/预警线 | S5（学城 2741734785） | 同 9月 | 静态 |\n| 兜底阈值（人效/承托/工装/罚款） | S6 任务系统 | 同 9月 | 未下发（KG-TASKSYS-PENDING） |\n\n### 2.1 体验分自算源与官方计分源的口径差（2026-10 复核结论）\n\n- **官方计分口径**（由 2026-09《体验考核结果》官方文件逐列验证）：复合超时率 =（一般超时 + 严重超时×5）/ 完成单量，3km外完成单量剔除5km外；复合超时率分数 = 内/外分别达成率【50,110】× 内单量占比加权；配取 ≤目标 → 110 平顶。源数据**剔除 PHF（拼好饭）**。\n- **现有自算源**：S1「体验考核含PHF」页签（含 PHF、含混调、不含散单）。PHF 超时率显著偏高，导致自算复合超时率约为官方 1.4~2.0 倍（泰兴内率 2.895% vs 官方 1.434%），且比例不恒定，无法换算。\n- **影响**：体验分自算参考值系统性偏低（泰兴 58 vs 官方 99），仅作趋势参考；公式本体已按官方口径实现（用官方分子分母复算 3/3 城误差≤0.5分，见《履约考核口径检核报告_202609-202610.md》）。\n- **9月每日汇总官方日更值**为 BI 独立展示口径（周期发布），与月末计分口径不同，勿用公式复算。\n\n---\n\n## 3. 三级映射：数据块 → 考核模块 → BI 源（含更新节奏）\n\n> 与 `build/verify_coverage.py` 的 `MAPPING` 字典同步。填充落点均在\n> `src/data/data-YYYY-MM.js`（除注明 config 外）。\n\n| 数据块 | 考核模块 | BI 源（页签） | 更新节奏 | 填充落点 |\n|---|---|---|---|---|\n| `dataDates` | 全部模块的日更轴 | S1 各页签 | T-1 日更 | `var dataDates` |\n| `currentDate` | 同上 | S1 | T-1 | `var currentDate` |\n| `fullDataByDate` | 推完(twRate/twNum/twDen) · 体验(tyScore) · 加盟(hdRate) · 完结(wjRate) · 承托(ctRate) · 悦跑日值(ymRate/ymCq, 10月起) · 普众(pzAct, 10月起) | S1 · 推单完成率all / 体验含PHF / 加盟 / 完结率 / 承托比 / 悦跑 / 普通众包 | T-1 日更（加盟可 T-3；tyScore/hdRate/wjRate/pzAct 为官方核算值，发布后补录） | `var fullDataByDate` |\n| `trendRaw` | 趋势图 tw/ty/hd | S1 · 推单完成率all / 体验含PHF / 加盟 | T-1；官方值发布后尾段固化 | `var trendRaw` |\n| `monthlyData` | 月度总分与等级 | 官方核算 + S1 汇总 | 月末快照 | `var monthlyData` |\n| `SLICE_M` | 切片分析（收官口径 hd/ty/tw/wj/score/level） | 官方月评估 + S1 全月日均 | 月末快照 | `var SLICE_M` |\n| `DAILY_EXTRA` | 悦跑(ymRate/ymCq) · 工装(gzYm/gzJm) · 加盟达标骑手(jmDb/jmTotal) · 企客KA当日(qkKAStores/qkKAWb/qkKAOntime) | S1 · 悦跑/骑手工装/加盟；企客KA当日 → S4 | T-1 日更 | `var DAILY\n…（内容过长已截断，全文见工作区文件）",
+        "content": "# 数据源映射与取数清单 —— 履约考核看板（2026-09 / 2026-10）\n\n> 依据：`docs/方案_9月考核.txt`、`docs/方案_10月考核.txt` 中全部「数据查看路径」条目；\n> `src/config/config-2026-{09,10}.js` 的 `narrative.datasourceRows`；\n> `dev-team/重构履约考核看板/03-dev-B.md` 数据块清单。\n> 用途：数据填充人按本清单逐块取数回填；`build/verify_coverage.py` 的\n> `MAPPING` / `KG_CATALOG` 与本文 §3 / §4 同步维护（改一处须改另一处）。\n> 红线：本文仅为映射与操作清单，不含考核规则改动；未实际访问 BI（全部路径为静态登记）。\n\n---\n\n## 1. BI 源清单（总表）\n\n| # | 源 | 标识 | 用途 | 状态 |\n|---|---|---|---|---|\n| S1 | 履约数据考核看板（合作商用） | bi.sankuai.com/v2/dashboard/274665 | 推单完成率all / 体验考核含PHF / 加盟 / 完结率 / 承托比 / 悦跑 / 骑手工装 / 普通众包 | 主数据源，T-1 日更 |\n| S2 | 旧版加盟看板 | BI 244021 | 9月方案曾引用（加盟运力页签新旧看板口径差异） | 已由 S1 取代，仅备查 |\n| S3 | SKA体验 / 企客体验明细看板 | BI 269707 | 企客流失/有效/体验达标门店；SKA 六品牌历史月维度 | 官方自 2026-03 起未更新（KG-269707-STALE） |\n| S4 | 企客KA履约监控 | BI 253744（readata ID 17805 实际指向此板） | 企客KA品牌/门店日粒度准时率；SKA 当月实际数据源 | 在用，T-1 日更 |\n| S5 | 《SKA考核指标口径和看板》 | 学城 2741734785 | SKA 考核线/预警线口径、企客体验达标判定口径 | 静态口径 |\n| S6 | 任务系统 | — | 兜底阈值（人效/承托比/工装目标/警告罚款） | 待下发（KG-TASKSYS-PENDING） |\n| S7 | 《SKA品牌KPI赔付规则》 | 学城 2772140471 | SKA 品牌 KPI 赔付规则（10月方案新增引用） | 静态口径 |\n\n---\n\n## 2. 考核指标 → BI 源映射（9月 / 10月分列，标口径差异）\n\n| 考核模块/指标 | 9月 BI 源 | 10月 BI 源 | 口径差异 |\n|---|---|---|---|\n| 推单完成率 all | S1 · 推单完成率all 页签 | 同 9月 | 无（分子/分母明细 9 月实测全月有值，旧登记 R485 已核销） |\n| 体验考核 · 绝对超时 | S1 · 体验考核含PHF 页签 | 同 9月 | 10月起剔除企客麦肯必瑞订单；**官方计分源为剔除PHF口径，与自算源系统性偏差 1.4~2.0 倍（见下方说明）** |\n| 体验考核 · 虚假点送达 | S1 · 体验考核含PHF 页签 | 同 9月 | 同上 |\n| 体验考核 · 配送原因取消 | S1 · 体验考核含PHF 页签 | 同 9月 | 同上 |\n| 加盟（HD） | S1 · 加盟页签（T-3，未剔除异常骑手；旧板 S2 曾引用） | 同 9月 | 数据源统一至 S1，越久越准以核算下发为准；**折算系数官方口径 k=0（9月官方达成文件验证，10月沿用）** |\n| 完结率（wj，餐饮cy/非餐fc/混调mix） | S1 · 完结率 页签 | 同 9月 | 无 |\n| 承托比（ct） | S1 · 承托比 页签 | 同 9月 | 无 |\n| 悦跑完成率 / 排班出勤合格率 | S1 · 悦跑 页签 | 同 9月 | **10/19 起新口径：官方已上线（S1 悦跑-城市-周度有效骑手数，旧「待更新」页签撤销）；10月五周官方核算已回填 ymWeeks/ymWeekWorst（KG-YM-NEW-CALIBER 已核销 R690）** |\n| 普通众包 | S1 · 普通众包 页签 | 同 9月 | 无 |\n| 骑手工装（加盟+悦跑） | S1 · 骑手工装 页签 | 同 9月 | 考核周期差异：9月 8/31-9/27；10月 9/28-11/1 |\n| 企客流失门店数 | S3（BI 269707） | S3（BI 269707） | 扣分档位 5% → 3%（qikeMode v1→v2，取数源不变） |\n| 企客有效门店数 | —（9月无此指标） | S3（BI 269707） | **10月新增**（新签 +2% 封顶 3% 的基数） |\n| 企客体验达标门店 | —（9月无此指标） | S3（BI 269707）+ S5（学城 2741734785 判定口径） | **10月新增**（体验未达标 -2%） |\n| 企客KA 当日有单门店/准时率 | S4（BI 253744 / readata 17805） | 同 9月 | 无 |\n| SKA 六品牌月维度 | S4（实际取数）＋S3（历史，269707 停更） | 同 9月 | 9月板无 SKA 模块（modules.ska=false），数据块为空壳（KG-SKA-SHELL-09） |\n| SKA 门店/日维度明细 | S4（BI 253744 / readata 17805） | 同 9月 | 10月起 ska=true 消费 |\n| SKA 考核线/预警线 | S5（学城 2741734785） | 同 9月 | 静态 |\n| 兜底阈值（人效/承托/工装/罚款） | S6 任务系统 | 同 9月 | 未下发（KG-TASKSYS-PENDING） |\n\n### 2.1 体验分自算源与官方计分源的口径差（2026-10 复核结论）\n\n- **官方计分口径**（由 2026-09《体验考核结果》官方文件逐列验证）：复合超时率 =（一般超时 + 严重超时×5）/ 完成单量，3km外完成单量剔除5km外；复合超时率分数 = 内/外分别达成率【50,110】× 内单量占比加权；配取 ≤目标 → 110 平顶。源数据**剔除 PHF（拼好饭）**。\n- **现有自算源**：S1「体验考核含PHF」页签（含 PHF、含混调、不含散单）。PHF 超时率显著偏高，导致自算复合超时率约为官方 1.4~2.0 倍（泰兴内率 2.895% vs 官方 1.434%），且比例不恒定，无法换算。\n- **影响**：体验分自算参考值系统性偏低（泰兴 58 vs 官方 99），仅作趋势参考；公式本体已按官方口径实现（用官方分子分母复算 3/3 城误差≤0.5分，见《履约考核口径检核报告_202609-202610.md》）。\n- **9月每日汇总官方日更值**为 BI 独立展示口径（周期发布），与月末计分口径不同，勿用公式复算。\n\n---\n\n## 3. 三级映射：数据块 → 考核模块 → BI 源（含更新节奏）\n\n> 与 `build/verify_coverage.py` 的 `MAPPING` 字典同步。填充落点均在\n> `src/data/data-YYYY-MM.js`（除注明 config 外）。\n\n| 数据块 | 考核模块 | BI 源（页签） | 更新节奏 | 填充落点 |\n|---|---|---|---|---|\n| `dataDates` | 全部模块的日更轴 | S1 各页签 | T-1 日更 | `var dataDates` |\n| `currentDate` | 同上 | S1 | T-1 | `var currentDate` |\n| `fullDataByDate` | 推完(twRate/twNum/twDen) · 体验(tyScore) · 加盟(hdRate) · 完结(wjRate) · 承托(ctRate) · 悦跑日值(ymRate/ymCq, 10月起) · 普众(pzAct, 10月起) | S1 · 推单完成率all / 体验含PHF / 加盟 / 完结率 / 承托比 / 悦跑 / 普通众包 | T-1 日更（加盟可 T-3；tyScore/hdRate/wjRate/pzAct 为官方核算值，发布后补录） | `var fullDataByDate` |\n| `trendRaw` | 趋势图 tw/ty/hd | S1 · 推单完成率all / 体验含PHF / 加盟 | T-1；官方值发布后尾段固化 | `var trendRaw` |\n| `monthlyData` | 月度总分与等级 | 官方核算 + S1 汇总 | 月末快照 | `var monthlyData` |\n| `SLICE_M` | 切片分析（收官口径 hd/ty/tw/wj/score/level） | 官方月评估 + S1 全月日均 | 月末快照 | `var SLICE_M` |\n| `DAILY_EXTRA` | 悦跑(ymRate/ymCq) · 工装(gzYm/gzJm) · 加盟达标骑手(jmDb/jmTotal) · 企客KA当日(qkKAStores/qkKAWb/qkKAOntime) | S1 · 悦跑/骑手工装/加盟；企客KA当日 → S4 | T-1 日更 | `var DAILY\n…（内容过长已截断，全文见工作区文件）",
         "outline": [
           "数据源映射与取数清单 —— 履约考核看板（2026-09 / 2026-10）",
           "1. BI 源清单（总表）",
@@ -8126,7 +8116,7 @@
           "6.1 普众/工装目标（KG-TASKSYS-PENDING 部分核销：期1已下发）",
           "6.2 诸暨 17805 直取日更（KG-QIKE-ZHUJI 进展）"
         ],
-        "chars": 21312,
+        "chars": 22025,
         "truncated": true,
         "mtime": "2026-11-19"
       },
