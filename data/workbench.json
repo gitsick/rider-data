@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 15:23:46",
+  "generatedAt": "2026-11-20 15:28:51",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -3026,7 +3026,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: fff4797d 2026-11-20 22:05:39 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: b7624c88 2026-11-20 23:23:57 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3036,12 +3036,12 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（8 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（10 小时前刷新）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（32 小时前生成）"
+        "msg": "单文件产物存在（34 小时前生成）"
       },
       {
         "level": "PASS",
@@ -3051,7 +3051,7 @@
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 0 小时前已聚合（告警 1 条）"
+        "msg": "monitor_status 1 小时前已聚合（告警 1 条）"
       },
       {
         "level": "PASS",
@@ -3261,7 +3261,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行正常（0h 前，节奏每 2h）"
+        "msg": "[monitor-aggregate] 运行正常（1h 前，节奏每 2h）"
       },
       {
         "level": "PASS",
@@ -3316,7 +3316,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（6h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（7h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -3376,12 +3376,12 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-20 22:05:36 替换，含 12 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-20 23:23:54 替换，含 4 文件）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[assessment-legacy] 回滚可用：上一版本 e4a2bc0（2026-11-19 14:16:13 替换，备份在位）"
+        "msg": "[assessment-legacy] 回滚可用：上一版本 6871327（2026-11-20 23:11:37 替换，备份在位）"
       },
       {
         "level": "PASS",
@@ -3470,7 +3470,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-20 23:23:45）"
+      "detail": "上轮全链 12 段全过（2026-11-20 23:28:43）"
     },
     {
       "layer": "项目层",
@@ -3515,7 +3515,7 @@
           "size": 385861
         }
       ],
-      "ageHours": 9,
+      "ageHours": 10,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-17",
@@ -3925,7 +3925,7 @@
             }
           ]
         },
-        "ageH": 12,
+        "ageH": 13,
         "totalH": 813,
         "deltaH": 813,
         "gapH": 9
@@ -4627,7 +4627,7 @@
             }
           ]
         },
-        "ageH": 24,
+        "ageH": 25,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -4681,7 +4681,7 @@
             }
           ]
         },
-        "ageH": 26,
+        "ageH": 27,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5491,7 +5491,7 @@
             }
           ]
         },
-        "ageH": 159,
+        "ageH": 160,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5977,7 +5977,7 @@
             }
           ]
         },
-        "ageH": 263,
+        "ageH": 264,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -7170,7 +7170,7 @@
         "name": "r569-heal-intent-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 263
+        "ageH": 264
       },
       {
         "name": "r570-pending-card-exempt",
@@ -7224,7 +7224,7 @@
         "name": "r590-note-label",
         "pct": 20,
         "sev": "",
-        "ageH": 159
+        "ageH": 160
       },
       {
         "name": "r591-trace-guard",
@@ -7314,13 +7314,13 @@
         "name": "r706-intake",
         "pct": 0,
         "sev": "",
-        "ageH": 26
+        "ageH": 27
       },
       {
         "name": "r707-redrill",
         "pct": 0,
         "sev": "",
-        "ageH": 24
+        "ageH": 25
       },
       {
         "name": "r708-jobcard",
@@ -7398,7 +7398,7 @@
         "name": "20261017-efficiency-naming",
         "pct": 60,
         "sev": "",
-        "ageH": 12
+        "ageH": 13
       },
       {
         "name": "r721-lockdrill",
@@ -7439,7 +7439,7 @@
       },
       {
         "name": "r590-note-label",
-        "ageH": 159
+        "ageH": 160
       },
       {
         "name": "r589-prompt-guard",
@@ -7475,7 +7475,7 @@
       },
       {
         "name": "r569-heal-intent-exempt",
-        "ageH": 263
+        "ageH": 264
       },
       {
         "name": "r568-audit-trace-surface",
@@ -7590,154 +7590,9 @@
       "anchor": "sec-preflight"
     }
   ],
-  "todos": [
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-11.js",
-      "line": 4,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "人工核对清单（构建前必须逐项确认）："
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 4,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "人工核对清单（构建前必须逐项确认）："
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 24,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */   subtitle: '下沉市场合作商 | 文档负责人：李韶雯 | 考核方案更新 10-29 | 11月考核周期 11/1-11/30',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 28,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "页头 BI 数据日期 headerSourceNote 需人工更新 */   headerSourceNote: 'BI数据：2026-12-01 | 来源：bi.sankuai.com/v2/dashboard/274665',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 30,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "月度差异静态元素开关 flags（profileNote/backTop，DEF-06）需按当月模板确认 */   flags: { profileNote: false, backTop: true }, /* DEF-06 月度差异静态"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 33,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     p1: ['12-01', '11-15'], p2: ['11-16', '12-31'],"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 39,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     pbCut: '11-15',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 40,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     caliberSwitchDay: '11-01',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 42,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     caliberTipOld: '出勤系数旧口径已于10/19停用；11月全月（4个自然周）均按新口径计分（纯完成度，班次全量达成）',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 43,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     periodSummary: '11月考核周期 11/1-11/30，共30天，含9个高峰日（均为周末）',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 44,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     periodSummaryShort: '11月考核周期 11/1-11/30',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 46,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     estimateDescHead: '11月考核周期 11/1-11/30（30天），含9个高峰日（均为周末）。',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 47,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     biNoteEmpty: '11月BI数据待更新，考核周期 11/1-11/30 | 切换城市标签自动联动下方考核模块',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 48,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     emptyDateStatus: '⏳ 11月数据待更新',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 49,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "工装考核周期 workwearPeriod/End 跨月边界需人工确认 */     workwearPeriod: '11/2-11/29', workwearEnd: '11/29',"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 54,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     ymWeeklyNote: '自然周维度（方案口径：周均＜90%该周记0，周均不控制区间；11月4个自然周全月适用新口径，周得分=周均完成度、不乘出勤系数；各周得分均值为悦跑运力月值"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 62,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     ymWeeks: [['11-02','11-08'],['11-09','11-15'],['11-16','11-22'],['11-23','11-29']],"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 63,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */     weekStarts: ['11-02','11-09','11-16','11-23'],"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 66,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "KFC 目标周数 kfcTargetWeeks 为运营口径 */     kfcTargetWeeks: 4,"
-    },
-    {
-      "file": "pro\\kaohe-daily\\src\\config\\config-2026-12.js",
-      "line": 72,
-      "kind": "TODO",
-      "owner": "未认领",
-      "text": "继承自 2026-11 的月度/日期字面量 */   qikeWatchCutoff: '20261129',"
-    }
-  ],
-  "todoOwners": [
-    {
-      "owner": "未认领",
-      "count": 20
-    }
-  ],
+  "todos": [],
+  "todosTotal": 0,
+  "todoOwners": [],
   "changes": [
     {
       "run": "20261017-efficiency-naming",
@@ -7919,8 +7774,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "07b78129",
-        "at": "2026-11-20T23:20:03+08:00",
+        "hash": "b7624c88",
+        "at": "2026-11-20T23:23:57+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8359,10 +8214,10 @@
     }
   },
   "gates": {
-    "runAt": "2026-11-20 23:23:45",
+    "runAt": "2026-11-20 23:28:43",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -8423,17 +8278,22 @@
         "pass": true,
         "seconds": 78.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 40.5,
+        "note": "拷贝回验 142 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 256,
+        "note": "指纹+探针 data/workbench.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-19 22:02:41",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 804.7,
-      "fails": []
-    },
     {
       "runAt": "2026-11-20 01:28:34",
       "scope": "pre-deploy",
@@ -8635,6 +8495,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 273,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-20 23:28:43",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 569.5,
       "fails": []
     }
   ],
@@ -9586,7 +9453,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 15:23:46",
+      "at": "2026-11-20 15:28:51",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9737,7 +9604,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2768.8,
+      "totalKB": 2768.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -9757,7 +9624,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 305.2
+          "kb": 304.9
         },
         {
           "name": "rider-agreements.json",
