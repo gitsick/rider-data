@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 03:11:46",
+  "generatedAt": "2026-11-20 03:24:39",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -2424,7 +2424,7 @@
       "entry": "桌面端自动化编排：运行 python F:\\work\\mtcapacity\\lib\\monitor.py（统一监控大盘聚合：六板对账+审计+心跳+留痕快照+告警派生落 sched\\cache\\monitor_status.json，R559 起告警非空自动追加 monitor_alert_history.jsonl）。跑完在收件箱开一条结果条目：聚合时刻、六板对账结论、告警条数与明细（告警明细逐条列出 level/src）；全部正常时收件箱条目一句话带过即可",
       "note": "R562 定时接线：大盘聚合此前无任何定时触发（monitor_status 靠轮次手工刷新，11-05 起断链 4 天才被 R562 盘点发现——审计 6a 心跳检查同轮补盲）。自动化「监控大盘聚合」建议 2h 节奏（FREQ=HOURLY;INTERVAL=2;BYMINUTE=0），UI 确认创建后回填 automationId（R562 二段）\n2026-11-13 R584：用户裁决本轮不建聚合自动化，wiringDeferred 照实声明；建自动化后回填 automationId 并删本字段\n2026-11-14 体检轮接线落地：桌面自动化 DV-YKvKI5cxwfG6KUewd3 建（FREQ=HOURLY;INTERVAL=2，全工程体检双决策项之一，用户卡片确认），automationId 已回填、wiringDeferred 删除——R562 二段闭环。首轮确认卡曾截断（prompt 只落 4 字+排期回落默认），修正卡重发后完整落地。\n2026-11-14 12:01 首次自动触发成功（runStatus=completed，心跳 12:00:20 落盘），intent-registry 条目按 R266 恢复约定移除——全闭环。",
       "last": {
-        "finishedAt": "2026-11-20 10:01:05",
+        "finishedAt": "2026-11-20 11:22:09",
         "note": ""
       },
       "monitor": {
@@ -2444,7 +2444,7 @@
       },
       "history": [
         {
-          "finishedAt": "2026-11-20 10:01:05"
+          "finishedAt": "2026-11-20 11:22:09"
         }
       ],
       "gaps": {
@@ -3407,7 +3407,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-20 10:12:37）"
+      "detail": "本轮发布前置 10 段全过（2026-11-20 11:24:38）"
     },
     {
       "layer": "项目层",
@@ -3494,7 +3494,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 2,
+      "ageHours": 3,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-20",
@@ -3862,7 +3862,7 @@
             }
           ]
         },
-        "ageH": 9,
+        "ageH": 10,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -3916,7 +3916,7 @@
             }
           ]
         },
-        "ageH": 9,
+        "ageH": 10,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4348,7 +4348,7 @@
             }
           ]
         },
-        "ageH": 11,
+        "ageH": 12,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4402,7 +4402,7 @@
             }
           ]
         },
-        "ageH": 11,
+        "ageH": 12,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -5158,7 +5158,7 @@
             }
           ]
         },
-        "ageH": 88,
+        "ageH": 89,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -5428,7 +5428,7 @@
             }
           ]
         },
-        "ageH": 147,
+        "ageH": 148,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5590,7 +5590,7 @@
             }
           ]
         },
-        "ageH": 148,
+        "ageH": 149,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5644,7 +5644,7 @@
             }
           ]
         },
-        "ageH": 148,
+        "ageH": 149,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 6
@@ -5752,7 +5752,7 @@
             }
           ]
         },
-        "ageH": 230,
+        "ageH": 231,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -5914,7 +5914,7 @@
             }
           ]
         },
-        "ageH": 251,
+        "ageH": 252,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -6184,7 +6184,7 @@
             }
           ]
         },
-        "ageH": 252,
+        "ageH": 253,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 2
@@ -6238,7 +6238,7 @@
             }
           ]
         },
-        "ageH": 254,
+        "ageH": 255,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -7011,13 +7011,13 @@
         "name": "r562-monitor-aggregate-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 254
+        "ageH": 255
       },
       {
         "name": "r563-audit-regression-lock",
         "pct": 80,
         "sev": "",
-        "ageH": 252
+        "ageH": 253
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -7047,7 +7047,7 @@
         "name": "r568-audit-trace-surface",
         "pct": 20,
         "sev": "",
-        "ageH": 251
+        "ageH": 252
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -7065,7 +7065,7 @@
         "name": "r571-style-unify",
         "pct": 20,
         "sev": "",
-        "ageH": 230
+        "ageH": 231
       },
       {
         "name": "r584-monitor-heartbeat",
@@ -7077,13 +7077,13 @@
         "name": "r585-heal-trace",
         "pct": 80,
         "sev": "",
-        "ageH": 148
+        "ageH": 149
       },
       {
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "",
-        "ageH": 148
+        "ageH": 149
       },
       {
         "name": "r587-metrics-struct",
@@ -7101,7 +7101,7 @@
         "name": "r589-prompt-guard",
         "pct": 80,
         "sev": "",
-        "ageH": 147
+        "ageH": 148
       },
       {
         "name": "r590-note-label",
@@ -7131,7 +7131,7 @@
         "name": "r645-teamflow-p2b",
         "pct": 80,
         "sev": "done",
-        "ageH": 88
+        "ageH": 89
       },
       {
         "name": "r646-teamflow-p2c",
@@ -7215,13 +7215,13 @@
         "name": "r709-close",
         "pct": 0,
         "sev": "",
-        "ageH": 11
+        "ageH": 12
       },
       {
         "name": "r710-recheck",
         "pct": 0,
         "sev": "",
-        "ageH": 11
+        "ageH": 12
       },
       {
         "name": "r711-boardcount",
@@ -7269,13 +7269,13 @@
         "name": "r718-orch",
         "pct": 60,
         "sev": "",
-        "ageH": 9
+        "ageH": 10
       },
       {
         "name": "r719-pathfix",
         "pct": 0,
         "sev": "",
-        "ageH": 9
+        "ageH": 10
       },
       {
         "name": "20261017-efficiency-naming",
@@ -7312,7 +7312,7 @@
       },
       {
         "name": "r589-prompt-guard",
-        "ageH": 147
+        "ageH": 148
       },
       {
         "name": "r588-prose-cleanup",
@@ -7324,11 +7324,11 @@
       },
       {
         "name": "r586-orchestration-promote",
-        "ageH": 148
+        "ageH": 149
       },
       {
         "name": "r585-heal-trace",
-        "ageH": 148
+        "ageH": 149
       },
       {
         "name": "r584-monitor-heartbeat",
@@ -7336,7 +7336,7 @@
       },
       {
         "name": "r571-style-unify",
-        "ageH": 230
+        "ageH": 231
       },
       {
         "name": "r570-pending-card-exempt",
@@ -7348,7 +7348,7 @@
       },
       {
         "name": "r568-audit-trace-surface",
-        "ageH": 251
+        "ageH": 252
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -7368,11 +7368,11 @@
       },
       {
         "name": "r563-audit-regression-lock",
-        "ageH": 252
+        "ageH": 253
       },
       {
         "name": "r562-monitor-aggregate-wiring",
-        "ageH": 254
+        "ageH": 255
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -7768,8 +7768,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "fb167db8",
-        "at": "2026-11-20T10:15:08+08:00",
+        "hash": "2ac576ac",
+        "at": "2026-11-20T11:21:50+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7787,7 +7787,7 @@
   ],
   "monitor": {
     "schemaVer": 1,
-    "generatedAt": "2026-11-20 10:01:05",
+    "generatedAt": "2026-11-20 11:22:09",
     "boards": {
       "oct": "PASS"
     },
@@ -7797,13 +7797,13 @@
       "capacity-daily": {
         "dataDay": null,
         "checkedAt": "2026-11-20T08:45:12",
-        "ageH": 1.2647379197222222,
+        "ageH": 2.6160430916666666,
         "pending": []
       },
       "kaohe-daily": {
         "dataDay": "2026-11-19",
         "checkedAt": "2026-11-20T08:48:36",
-        "ageH": 1.2080712530555555,
+        "ageH": 2.559376425,
         "pending": [
           "ym",
           "qk"
@@ -7812,13 +7812,13 @@
       "xsp-weekly": {
         "dataDay": "2026-11-20",
         "checkedAt": "2026-11-20T08:11:38",
-        "ageH": 1.8241823641666666,
+        "ageH": 3.175487536111111,
         "pending": []
       },
       "rider-hourly": {
-        "srcAgeH": 0.5,
+        "srcAgeH": 0.1,
         "lagH": 0,
-        "generatedAt": "2026-11-20 09:58:15"
+        "generatedAt": "2026-11-20 11:11:44"
       }
     },
     "audit": {
@@ -7843,6 +7843,18 @@
       "devices": 1,
       "events": 3
     },
+    "relay": {
+      "cfg": {
+        "warnH": 48,
+        "critH": 96,
+        "legacyH": 96
+      },
+      "scanned": 59,
+      "done": 5,
+      "light": 4,
+      "legacy": 27,
+      "stalled": []
+    },
     "alerts": [
       {
         "level": "WARN",
@@ -7852,21 +7864,21 @@
     ]
   },
   "gates": {
-    "runAt": "2026-11-20 10:12:37",
+    "runAt": "2026-11-20 11:24:38",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 5.6,
+        "seconds": 2.5,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.3,
         "note": ""
       },
       {
@@ -7878,19 +7890,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 0.8,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 54.3,
+        "seconds": 56.4,
         "note": "npm test pass=1776 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.8,
+        "seconds": 11.1,
         "note": ""
       },
       {
@@ -7908,37 +7920,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 27.2,
+        "seconds": 27.5,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 31.9,
+        "seconds": 33,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 34.8,
-        "note": "拷贝回验 142 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 156.5,
-        "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-19 01:50:58",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 116.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-19 02:18:39",
       "scope": "complete",
@@ -8140,6 +8133,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 321,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-20 11:24:38",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 132.2,
       "fails": []
     }
   ],
@@ -9091,7 +9091,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 03:11:46",
+      "at": "2026-11-20 03:24:39",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -9204,7 +9204,7 @@
   "perf": {
     "assets": {
       "count": 99,
-      "totalKB": 1702.1,
+      "totalKB": 1706.2,
       "top": [
         {
           "name": "vendor-echarts-DyZQEMzr.js",
@@ -9227,8 +9227,8 @@
           "kb": 63.4
         },
         {
-          "name": "workbench-DYdx-_d7.js",
-          "kb": 48.7
+          "name": "workbench-CA9PvZLQ.js",
+          "kb": 50.4
         },
         {
           "name": "swRegister-COZlwn9t.js",
@@ -9242,11 +9242,11 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2748.7,
+      "totalKB": 2754.3,
       "top": [
         {
           "name": "rider_base.json",
-          "kb": 579.5
+          "kb": 581.8
         },
         {
           "name": "rider-detail.json",
@@ -9262,7 +9262,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 291.1
+          "kb": 294.3
         },
         {
           "name": "rider-agreements.json",
