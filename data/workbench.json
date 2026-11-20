@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 01:13:21",
+  "generatedAt": "2026-11-20 01:26:13",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -2995,7 +2995,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 2225dd26 2026-11-20 08:49:49 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 0a19e7f0 2026-11-20 09:19:32 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3305,7 +3305,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-20 08:49:47 替换，含 2 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-20 09:19:30 替换，含 5 文件）"
       },
       {
         "level": "PASS",
@@ -3399,7 +3399,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-20 09:13:21）"
+      "detail": "上轮全链 12 段全过（2026-11-20 09:25:11）"
     },
     {
       "layer": "项目层",
@@ -3486,7 +3486,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 0,
+      "ageHours": 1,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-20",
@@ -3800,7 +3800,7 @@
             }
           ]
         },
-        "ageH": 7,
+        "ageH": 8,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4286,7 +4286,7 @@
             }
           ]
         },
-        "ageH": 9,
+        "ageH": 10,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4448,7 +4448,7 @@
             }
           ]
         },
-        "ageH": 10,
+        "ageH": 11,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5096,7 +5096,7 @@
             }
           ]
         },
-        "ageH": 86,
+        "ageH": 87,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -5528,7 +5528,7 @@
             }
           ]
         },
-        "ageH": 146,
+        "ageH": 147,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5582,7 +5582,7 @@
             }
           ]
         },
-        "ageH": 146,
+        "ageH": 147,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 6
@@ -5690,7 +5690,7 @@
             }
           ]
         },
-        "ageH": 228,
+        "ageH": 229,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -5798,7 +5798,7 @@
             }
           ]
         },
-        "ageH": 249,
+        "ageH": 250,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5852,7 +5852,7 @@
             }
           ]
         },
-        "ageH": 249,
+        "ageH": 250,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -6122,7 +6122,7 @@
             }
           ]
         },
-        "ageH": 250,
+        "ageH": 251,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 2
@@ -6176,7 +6176,7 @@
             }
           ]
         },
-        "ageH": 252,
+        "ageH": 253,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -6889,13 +6889,13 @@
         "name": "r562-monitor-aggregate-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 252
+        "ageH": 253
       },
       {
         "name": "r563-audit-regression-lock",
         "pct": 80,
         "sev": "",
-        "ageH": 250
+        "ageH": 251
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -6925,13 +6925,13 @@
         "name": "r568-audit-trace-surface",
         "pct": 20,
         "sev": "",
-        "ageH": 249
+        "ageH": 250
       },
       {
         "name": "r569-heal-intent-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 249
+        "ageH": 250
       },
       {
         "name": "r570-pending-card-exempt",
@@ -6943,7 +6943,7 @@
         "name": "r571-style-unify",
         "pct": 20,
         "sev": "",
-        "ageH": 228
+        "ageH": 229
       },
       {
         "name": "r584-monitor-heartbeat",
@@ -6955,13 +6955,13 @@
         "name": "r585-heal-trace",
         "pct": 80,
         "sev": "",
-        "ageH": 146
+        "ageH": 147
       },
       {
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "",
-        "ageH": 146
+        "ageH": 147
       },
       {
         "name": "r587-metrics-struct",
@@ -7009,7 +7009,7 @@
         "name": "r645-teamflow-p2b",
         "pct": 80,
         "sev": "done",
-        "ageH": 86
+        "ageH": 87
       },
       {
         "name": "r646-teamflow-p2c",
@@ -7081,7 +7081,7 @@
         "name": "r707-redrill",
         "pct": 0,
         "sev": "",
-        "ageH": 10
+        "ageH": 11
       },
       {
         "name": "r708-jobcard",
@@ -7099,7 +7099,7 @@
         "name": "r710-recheck",
         "pct": 0,
         "sev": "",
-        "ageH": 9
+        "ageH": 10
       },
       {
         "name": "r711-boardcount",
@@ -7153,7 +7153,7 @@
         "name": "r719-pathfix",
         "pct": 0,
         "sev": "",
-        "ageH": 7
+        "ageH": 8
       },
       {
         "name": "20261017-efficiency-naming",
@@ -7196,11 +7196,11 @@
       },
       {
         "name": "r586-orchestration-promote",
-        "ageH": 146
+        "ageH": 147
       },
       {
         "name": "r585-heal-trace",
-        "ageH": 146
+        "ageH": 147
       },
       {
         "name": "r584-monitor-heartbeat",
@@ -7208,7 +7208,7 @@
       },
       {
         "name": "r571-style-unify",
-        "ageH": 228
+        "ageH": 229
       },
       {
         "name": "r570-pending-card-exempt",
@@ -7216,11 +7216,11 @@
       },
       {
         "name": "r569-heal-intent-exempt",
-        "ageH": 249
+        "ageH": 250
       },
       {
         "name": "r568-audit-trace-surface",
-        "ageH": 249
+        "ageH": 250
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -7240,11 +7240,11 @@
       },
       {
         "name": "r563-audit-regression-lock",
-        "ageH": 250
+        "ageH": 251
       },
       {
         "name": "r562-monitor-aggregate-wiring",
-        "ageH": 252
+        "ageH": 253
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -7635,8 +7635,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "5f783551",
-        "at": "2026-11-20T09:07:36+08:00",
+        "hash": "0a19e7f0",
+        "at": "2026-11-20T09:19:32+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7718,10 +7718,10 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-20 09:13:21",
+    "runAt": "2026-11-20 09:25:11",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -7782,17 +7782,22 @@
         "pass": true,
         "seconds": 31.9,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 441.3,
+        "note": "拷贝回验 142 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 268.6,
+        "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-18 20:18:54",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 634.3,
-      "fails": []
-    },
     {
       "runAt": "2026-11-18 23:18:46",
       "scope": "pre-deploy",
@@ -7994,6 +7999,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 143,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-20 09:25:11",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 852.9,
       "fails": []
     }
   ],
@@ -8945,7 +8957,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 01:13:21",
+      "at": "2026-11-20 01:26:13",
       "score": 93,
       "grade": "优",
       "layers": [
@@ -9096,7 +9108,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2748.4,
+      "totalKB": 2748.1,
       "top": [
         {
           "name": "rider_base.json",
@@ -9116,7 +9128,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 291.1
+          "kb": 290.8
         },
         {
           "name": "rider-agreements.json",
