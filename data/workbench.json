@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 15:48:47",
+  "generatedAt": "2026-11-20 15:59:39",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-20 23:45:29",
-        "durationSec": 538.2,
+        "finishedAt": "2026-11-20 23:59:01",
+        "durationSec": 186.7,
         "note": "数据日 20261119：流水线完成（R585 管线自写留痕）"
       },
       "monitor": {
@@ -3823,7 +3823,7 @@
             }
           ]
         },
-        "ageH": 11,
+        "ageH": 12,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4255,7 +4255,7 @@
             }
           ]
         },
-        "ageH": 23,
+        "ageH": 24,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4309,7 +4309,7 @@
             }
           ]
         },
-        "ageH": 23,
+        "ageH": 24,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4795,7 +4795,7 @@
             }
           ]
         },
-        "ageH": 27,
+        "ageH": 28,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4903,7 +4903,7 @@
             }
           ]
         },
-        "ageH": 29,
+        "ageH": 30,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5011,7 +5011,7 @@
             }
           ]
         },
-        "ageH": 39,
+        "ageH": 40,
         "totalH": null,
         "deltaH": null,
         "gapH": 7
@@ -5173,7 +5173,7 @@
             }
           ]
         },
-        "ageH": 98,
+        "ageH": 99,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -6469,7 +6469,7 @@
             }
           ]
         },
-        "ageH": 269,
+        "ageH": 270,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -6685,7 +6685,7 @@
             }
           ]
         },
-        "ageH": 272,
+        "ageH": 273,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -7098,7 +7098,7 @@
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 272
+        "ageH": 273
       },
       {
         "name": "r557-plan-closeout",
@@ -7122,7 +7122,7 @@
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 269
+        "ageH": 270
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -7266,7 +7266,7 @@
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 98
+        "ageH": 99
       },
       {
         "name": "r676-ux-checkup-reports",
@@ -7284,7 +7284,7 @@
         "name": "r684-kaohe-module-data",
         "pct": 20,
         "sev": "",
-        "ageH": 39
+        "ageH": 40
       },
       {
         "name": "r701-docfix",
@@ -7296,7 +7296,7 @@
         "name": "r702-selftolog",
         "pct": 0,
         "sev": "",
-        "ageH": 29
+        "ageH": 30
       },
       {
         "name": "r703-countanchor",
@@ -7308,7 +7308,7 @@
         "name": "r704-stalelock",
         "pct": 0,
         "sev": "",
-        "ageH": 27
+        "ageH": 28
       },
       {
         "name": "r705-negdrill",
@@ -7362,13 +7362,13 @@
         "name": "r713-dualledger",
         "pct": 0,
         "sev": "",
-        "ageH": 23
+        "ageH": 24
       },
       {
         "name": "r714-countlock",
         "pct": 0,
         "sev": "",
-        "ageH": 23
+        "ageH": 24
       },
       {
         "name": "r715-redrill",
@@ -7416,7 +7416,7 @@
         "name": "r722-theme",
         "pct": 0,
         "sev": "",
-        "ageH": 11
+        "ageH": 12
       }
     ],
     "stall": {
@@ -7517,7 +7517,7 @@
       },
       {
         "name": "r560-lib-readme-roster",
-        "ageH": 269
+        "ageH": 270
       },
       {
         "name": "r559-alert-history",
@@ -7533,7 +7533,7 @@
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 272
+        "ageH": 273
       },
       {
         "name": "r555-third-orchestrated",
@@ -7785,8 +7785,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "a1303162",
-        "at": "2026-11-20T23:45:01+08:00",
+        "hash": "bc15efb4",
+        "at": "2026-11-20T23:51:00+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7796,9 +7796,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "e346bb5f",
-        "at": "2026-11-20T23:29:39+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard.html（assessment-legacy 通道）"
+        "hash": "2bd623de",
+        "at": "2026-11-20T23:58:52+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-oct.html（assessment-legacy 通道）"
       }
     }
   ],
@@ -9452,7 +9452,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 15:48:47",
+      "at": "2026-11-20 15:59:39",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9603,7 +9603,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2765.5,
+      "totalKB": 2765,
       "top": [
         {
           "name": "rider_base.json",
@@ -9623,7 +9623,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 300.2
+          "kb": 299.7
         },
         {
           "name": "rider-agreements.json",
