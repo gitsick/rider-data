@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 23:39:13",
+  "generatedAt": "2026-11-20 23:41:00",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -2437,7 +2437,7 @@
         "trigger": "每 2 小时（FREQ=HOURLY;INTERVAL=2；2026-11-14 起桌面自动化承接）",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 7.6h）"
+        "overdueText": "运行超时（距上次 7.7h）"
       },
       "timer": {
         "state": "ok",
@@ -2975,10 +2975,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-21 00:02:49",
+    "auditedAt": "2026-11-21 07:41:00",
     "status": "PASS",
-    "pass": 65,
-    "warn": 1,
+    "pass": 62,
+    "warn": 3,
     "fail": 0,
     "checks": [
       {
@@ -3014,7 +3014,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 1ca7d96a 2026-11-21 00:01:38 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 40c38862 2026-11-21 07:39:30 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3024,12 +3024,12 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（10 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（18 小时前刷新）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（0 小时前生成）"
+        "msg": "单文件产物存在（8 小时前生成）"
       },
       {
         "level": "PASS",
@@ -3037,9 +3037,9 @@
         "msg": "workbench.json 0 小时前已刷新"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "监控大盘",
-        "msg": "monitor_status 0 小时前已聚合（告警 1 条）"
+        "msg": "monitor_status 已 7 小时未聚合（阈值 5h，节奏每 2h）——聚合任务疑似断链"
       },
       {
         "level": "PASS",
@@ -3079,17 +3079,12 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
-      },
-      {
-        "level": "PASS",
-        "item": "调度配置",
         "msg": "[kaohe-daily] 定时器排期 07:00 与 expectHour=7 一致"
       },
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[kaohe-daily] 定时器 lastRunAt 停在 11/20/2026 08:38:05 —— 未到今日触发时刻（expectHour 7，当前 0 点），今日留痕来自链路自愈/手动，属预期（R268 触发时机感知）"
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（11/21/2026 07:11:16），耗时折算可用"
       },
       {
         "level": "PASS",
@@ -3197,9 +3192,9 @@
         "msg": "[monitor-aggregate] 已关联定时器"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行正常（0h 前，节奏每 2h）"
+        "msg": "[monitor-aggregate] 运行超时（距上次 7 h，预期每 2h）——疑似断链"
       },
       {
         "level": "PASS",
@@ -3239,7 +3234,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（0h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（7h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -3294,7 +3289,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-21 00:01:36 替换，含 6 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-21 07:39:27 替换，含 4 文件）"
       },
       {
         "level": "PASS",
@@ -3313,10 +3308,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-19 08:08:54",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-19 09:18:21",
         "status": "PASS"
@@ -3368,6 +3359,10 @@
       {
         "auditedAt": "2026-11-21 00:02:49",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-21 07:41:00",
+        "status": "PASS"
       }
     ]
   },
@@ -3382,13 +3377,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-21 00:02:49）"
+      "detail": "审计 PASS（2026-11-21 07:41:00）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-21 07:30:57）"
+      "detail": "上轮全链 12 段全过（2026-11-21 07:40:54）"
     },
     {
       "layer": "项目层",
@@ -4471,7 +4466,7 @@
             }
           ]
         },
-        "ageH": 32,
+        "ageH": 33,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -7224,7 +7219,7 @@
         "name": "r708-jobcard",
         "pct": 0,
         "sev": "",
-        "ageH": 32
+        "ageH": 33
       },
       {
         "name": "r709-close",
@@ -7450,7 +7445,7 @@
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：监控大盘聚合与告警推送 —— 运行超时（距上次 7.6h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：监控大盘聚合与告警推送 —— 运行超时（距上次 7.7h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -7465,7 +7460,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 1 项警告（2026-11-21 00:02:49）",
+      "text": "审计有 3 项警告（2026-11-21 07:41:00）",
       "anchor": "sec-audit"
     },
     {
@@ -7668,8 +7663,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "72b32847",
-        "at": "2026-11-21T07:32:49+08:00",
+        "hash": "40c38862",
+        "at": "2026-11-21T07:39:30+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8097,32 +8092,32 @@
         },
         {
           "d": "11-21",
-          "runs": 1,
+          "runs": 2,
           "fails": 0,
-          "warns": 1
+          "warns": 2
         }
       ],
-      "runsTotal": 241,
+      "runsTotal": 242,
       "failRunsTotal": 5,
-      "lastAt": "2026-11-21 00:02:49"
+      "lastAt": "2026-11-21 07:41:00"
     }
   },
   "gates": {
-    "runAt": "2026-11-21 07:30:57",
+    "runAt": "2026-11-21 07:40:54",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2.2,
+        "seconds": 2,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.8,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -8134,55 +8129,60 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 0.8,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 64,
+        "seconds": 287.4,
         "note": "npm test pass=1809 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 12,
+        "seconds": 11.1,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.3,
+        "seconds": 0.2,
         "note": ""
       },
       {
         "name": "wire_gate",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.1,
         "note": ""
       },
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 32.5,
+        "seconds": 41.8,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 36,
+        "seconds": 72.6,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 44.1,
+        "note": "拷贝回验 142 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 55.4,
+        "note": "指纹+探针 assets/OverviewPanel-QEm_TDFR.css 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-20 07:42:32",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 200.4,
-      "fails": []
-    },
     {
       "runAt": "2026-11-20 08:11:16",
       "scope": "pre-deploy",
@@ -8384,6 +8384,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 149,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-21 07:40:54",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 516.3,
       "fails": []
     }
   ],
@@ -9335,7 +9342,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 23:39:13",
+      "at": "2026-11-20 23:41:00",
       "score": 68,
       "grade": "中",
       "layers": [
