@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 12:37:36",
+  "generatedAt": "2026-11-20 12:49:35",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -3458,7 +3458,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-20 20:37:29）"
+      "detail": "本轮发布前置 10 段全过（2026-11-20 20:49:34）"
     },
     {
       "layer": "项目层",
@@ -4075,7 +4075,7 @@
             }
           ]
         },
-        "ageH": 19,
+        "ageH": 20,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4291,7 +4291,7 @@
             }
           ]
         },
-        "ageH": 20,
+        "ageH": 21,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4345,7 +4345,7 @@
             }
           ]
         },
-        "ageH": 20,
+        "ageH": 21,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4561,7 +4561,7 @@
             }
           ]
         },
-        "ageH": 21,
+        "ageH": 22,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4831,7 +4831,7 @@
             }
           ]
         },
-        "ageH": 24,
+        "ageH": 25,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -4939,7 +4939,7 @@
             }
           ]
         },
-        "ageH": 26,
+        "ageH": 27,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 10
@@ -4993,7 +4993,7 @@
             }
           ]
         },
-        "ageH": 36,
+        "ageH": 37,
         "totalH": null,
         "deltaH": null,
         "gapH": 7
@@ -5101,7 +5101,7 @@
             }
           ]
         },
-        "ageH": 47,
+        "ageH": 48,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 48
@@ -5587,7 +5587,7 @@
             }
           ]
         },
-        "ageH": 157,
+        "ageH": 158,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5641,7 +5641,7 @@
             }
           ]
         },
-        "ageH": 157,
+        "ageH": 158,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -6127,7 +6127,7 @@
             }
           ]
         },
-        "ageH": 261,
+        "ageH": 262,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -6181,7 +6181,7 @@
             }
           ]
         },
-        "ageH": 261,
+        "ageH": 262,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -6397,7 +6397,7 @@
             }
           ]
         },
-        "ageH": 265,
+        "ageH": 266,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -6505,7 +6505,7 @@
             }
           ]
         },
-        "ageH": 266,
+        "ageH": 267,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -6559,7 +6559,7 @@
             }
           ]
         },
-        "ageH": 267,
+        "ageH": 268,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -7092,13 +7092,13 @@
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 267
+        "ageH": 268
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 266
+        "ageH": 267
       },
       {
         "name": "r560-lib-readme-roster",
@@ -7110,7 +7110,7 @@
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 265
+        "ageH": 266
       },
       {
         "name": "r562-monitor-aggregate-wiring",
@@ -7134,13 +7134,13 @@
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 261
+        "ageH": 262
       },
       {
         "name": "r566-dark-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 261
+        "ageH": 262
       },
       {
         "name": "r567-remaining-pages-patrol",
@@ -7194,13 +7194,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "",
-        "ageH": 157
+        "ageH": 158
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 157
+        "ageH": 158
       },
       {
         "name": "r589-prompt-guard",
@@ -7254,7 +7254,7 @@
         "name": "r676-ux-checkup-reports",
         "pct": 0,
         "sev": "",
-        "ageH": 47
+        "ageH": 48
       },
       {
         "name": "r683-kaohe-monthly-ux",
@@ -7266,13 +7266,13 @@
         "name": "r684-kaohe-module-data",
         "pct": 20,
         "sev": "",
-        "ageH": 36
+        "ageH": 37
       },
       {
         "name": "r701-docfix",
         "pct": 0,
         "sev": "",
-        "ageH": 26
+        "ageH": 27
       },
       {
         "name": "r702-selftolog",
@@ -7284,7 +7284,7 @@
         "name": "r703-countanchor",
         "pct": 0,
         "sev": "",
-        "ageH": 24
+        "ageH": 25
       },
       {
         "name": "r704-stalelock",
@@ -7314,7 +7314,7 @@
         "name": "r708-jobcard",
         "pct": 0,
         "sev": "",
-        "ageH": 21
+        "ageH": 22
       },
       {
         "name": "r709-close",
@@ -7338,13 +7338,13 @@
         "name": "r712-redrill",
         "pct": 0,
         "sev": "",
-        "ageH": 20
+        "ageH": 21
       },
       {
         "name": "r713-dualledger",
         "pct": 0,
         "sev": "",
-        "ageH": 20
+        "ageH": 21
       },
       {
         "name": "r714-countlock",
@@ -7368,7 +7368,7 @@
         "name": "r717-exempt",
         "pct": 0,
         "sev": "",
-        "ageH": 19
+        "ageH": 20
       },
       {
         "name": "r718-orch",
@@ -7435,11 +7435,11 @@
       },
       {
         "name": "r588-prose-cleanup",
-        "ageH": 157
+        "ageH": 158
       },
       {
         "name": "r587-metrics-struct",
-        "ageH": 157
+        "ageH": 158
       },
       {
         "name": "r586-orchestration-promote",
@@ -7475,11 +7475,11 @@
       },
       {
         "name": "r566-dark-patrol",
-        "ageH": 261
+        "ageH": 262
       },
       {
         "name": "r565-visual-patrol",
-        "ageH": 261
+        "ageH": 262
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -7495,7 +7495,7 @@
       },
       {
         "name": "r561-patrol-trace-wiring",
-        "ageH": 265
+        "ageH": 266
       },
       {
         "name": "r560-lib-readme-roster",
@@ -7503,11 +7503,11 @@
       },
       {
         "name": "r559-alert-history",
-        "ageH": 266
+        "ageH": 267
       },
       {
         "name": "r558-b1-capacity-resume",
-        "ageH": 267
+        "ageH": 268
       },
       {
         "name": "r557-plan-closeout",
@@ -7907,8 +7907,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "eb52ed26",
-        "at": "2026-11-20T20:35:05+08:00",
+        "hash": "7f53f46d",
+        "at": "2026-11-20T20:39:07+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8347,45 +8347,45 @@
     }
   },
   "gates": {
-    "runAt": "2026-11-20 20:37:29",
+    "runAt": "2026-11-20 20:49:34",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 6.9,
+        "seconds": 2.6,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.6,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.3,
         "note": ""
       },
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.9,
+        "seconds": 1,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 89.5,
+        "seconds": 90.9,
         "note": "npm test pass=1784 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 10.4,
+        "seconds": 11.2,
         "note": ""
       },
       {
@@ -8403,37 +8403,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 30.8,
+        "seconds": 32.2,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 65.2,
+        "seconds": 29.8,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 145.6,
-        "note": "拷贝回验 142 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 114.1,
-        "note": "指纹+探针 assets/SchemaBanner-DkQvzIZu.js 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-19 20:05:03",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 246,
-      "fails": []
-    },
     {
       "runAt": "2026-11-19 20:08:29",
       "scope": "complete",
@@ -8635,6 +8616,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 464.9,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-20 20:49:34",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 168.8,
       "fails": []
     }
   ],
@@ -9586,7 +9574,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 12:37:36",
+      "at": "2026-11-20 12:49:35",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9699,14 +9687,14 @@
   "perf": {
     "assets": {
       "count": 99,
-      "totalKB": 1724.5,
+      "totalKB": 1724.3,
       "top": [
         {
           "name": "vendor-echarts-DyZQEMzr.js",
           "kb": 648.1
         },
         {
-          "name": "capacity-DTvLQdll.js",
+          "name": "capacity-DKir57gB.js",
           "kb": 136.2
         },
         {
@@ -9714,7 +9702,7 @@
           "kb": 76.8
         },
         {
-          "name": "main-Bxds1FzO.js",
+          "name": "main-ZhYMRSLd.js",
           "kb": 73
         },
         {
@@ -9722,22 +9710,22 @@
           "kb": 63.7
         },
         {
-          "name": "workbench-gI9TPtmk.js",
+          "name": "workbench-BdvZ2crQ.js",
           "kb": 50.4
         },
         {
-          "name": "swRegister-Cd4t4c00.js",
-          "kb": 47.8
+          "name": "swRegister-B5m_69Fz.js",
+          "kb": 47.6
         },
         {
-          "name": "MonthlyTab-BFfqKZx-.js",
+          "name": "MonthlyTab-CDCf5-wu.js",
           "kb": 40.8
         }
       ]
     },
     "data": {
       "count": 15,
-      "totalKB": 2766.5,
+      "totalKB": 2766.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -9757,7 +9745,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 304.6
+          "kb": 304.9
         },
         {
           "name": "rider-agreements.json",
