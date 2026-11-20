@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 23:30:58",
+  "generatedAt": "2026-11-20 23:39:13",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -2437,7 +2437,7 @@
         "trigger": "每 2 小时（FREQ=HOURLY;INTERVAL=2；2026-11-14 起桌面自动化承接）",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 7.5h）"
+        "overdueText": "运行超时（距上次 7.6h）"
       },
       "timer": {
         "state": "ok",
@@ -4039,7 +4039,7 @@
             }
           ]
         },
-        "ageH": 30,
+        "ageH": 31,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4309,7 +4309,7 @@
             }
           ]
         },
-        "ageH": 31,
+        "ageH": 32,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5011,7 +5011,7 @@
             }
           ]
         },
-        "ageH": 58,
+        "ageH": 59,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 48
@@ -5119,7 +5119,7 @@
             }
           ]
         },
-        "ageH": 107,
+        "ageH": 108,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 1
@@ -5227,7 +5227,7 @@
             }
           ]
         },
-        "ageH": 109,
+        "ageH": 110,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -5281,7 +5281,7 @@
             }
           ]
         },
-        "ageH": 110,
+        "ageH": 111,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 57
@@ -5821,7 +5821,7 @@
             }
           ]
         },
-        "ageH": 271,
+        "ageH": 272,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -6145,7 +6145,7 @@
             }
           ]
         },
-        "ageH": 272,
+        "ageH": 273,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -6631,7 +6631,7 @@
             }
           ]
         },
-        "ageH": 280,
+        "ageH": 281,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -6739,7 +6739,7 @@
             }
           ]
         },
-        "ageH": 281,
+        "ageH": 282,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -6972,7 +6972,7 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "",
-        "ageH": 281
+        "ageH": 282
       },
       {
         "name": "r554-archmode-agentroles",
@@ -6984,7 +6984,7 @@
         "name": "r555-third-orchestrated",
         "pct": 80,
         "sev": "",
-        "ageH": 280
+        "ageH": 281
       },
       {
         "name": "r556-legacy-and-xsp",
@@ -7038,7 +7038,7 @@
         "name": "r564-pull-trace-wiring",
         "pct": 80,
         "sev": "",
-        "ageH": 272
+        "ageH": 273
       },
       {
         "name": "r565-visual-patrol",
@@ -7074,7 +7074,7 @@
         "name": "r570-pending-card-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 271
+        "ageH": 272
       },
       {
         "name": "r571-style-unify",
@@ -7134,13 +7134,13 @@
         "name": "r632-teamflow-optimize",
         "pct": 100,
         "sev": "done",
-        "ageH": 110
+        "ageH": 111
       },
       {
         "name": "r644-teamflow-p2",
         "pct": 80,
         "sev": "done",
-        "ageH": 109
+        "ageH": 110
       },
       {
         "name": "r645-teamflow-p2b",
@@ -7152,7 +7152,7 @@
         "name": "r646-teamflow-p2c",
         "pct": 80,
         "sev": "done",
-        "ageH": 107
+        "ageH": 108
       },
       {
         "name": "r647-legacy-exempt",
@@ -7164,7 +7164,7 @@
         "name": "r676-ux-checkup-reports",
         "pct": 0,
         "sev": "",
-        "ageH": 58
+        "ageH": 59
       },
       {
         "name": "r683-kaohe-monthly-ux",
@@ -7242,7 +7242,7 @@
         "name": "r711-boardcount",
         "pct": 0,
         "sev": "",
-        "ageH": 31
+        "ageH": 32
       },
       {
         "name": "r712-redrill",
@@ -7272,7 +7272,7 @@
         "name": "r716-orch",
         "pct": 60,
         "sev": "",
-        "ageH": 30
+        "ageH": 31
       },
       {
         "name": "r717-exempt",
@@ -7375,7 +7375,7 @@
       },
       {
         "name": "r570-pending-card-exempt",
-        "ageH": 271
+        "ageH": 272
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -7399,7 +7399,7 @@
       },
       {
         "name": "r564-pull-trace-wiring",
-        "ageH": 272
+        "ageH": 273
       },
       {
         "name": "r563-audit-regression-lock",
@@ -7435,7 +7435,7 @@
       },
       {
         "name": "r555-third-orchestrated",
-        "ageH": 280
+        "ageH": 281
       },
       {
         "name": "r554-archmode-agentroles",
@@ -7443,14 +7443,14 @@
       },
       {
         "name": "r553-rup-first-run",
-        "ageH": 281
+        "ageH": 282
       }
     ]
   },
   "alerts": [
     {
       "level": "WARN",
-      "text": "应跑未跑：监控大盘聚合与告警推送 —— 运行超时（距上次 7.5h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：监控大盘聚合与告警推送 —— 运行超时（距上次 7.6h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -7668,8 +7668,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "9e1f056d",
-        "at": "2026-11-21T00:02:57+08:00",
+        "hash": "72b32847",
+        "at": "2026-11-21T07:32:49+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -9335,7 +9335,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 23:30:58",
+      "at": "2026-11-20 23:39:13",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9448,7 +9448,7 @@
   "perf": {
     "assets": {
       "count": 99,
-      "totalKB": 1728.8,
+      "totalKB": 1726.6,
       "top": [
         {
           "name": "vendor-echarts-DyZQEMzr.js",
@@ -9486,7 +9486,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2766,
+      "totalKB": 2765.7,
       "top": [
         {
           "name": "rider_base.json",
@@ -9506,7 +9506,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 295.3
+          "kb": 295
         },
         {
           "name": "rider-agreements.json",
