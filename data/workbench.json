@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 12:16:58",
+  "generatedAt": "2026-11-20 12:19:55",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -3024,7 +3024,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 782af892 2026-11-20 19:57:11 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 5e9ab7f7 2026-11-20 20:17:10 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3034,7 +3034,7 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（6 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（7 小时前刷新）"
       },
       {
         "level": "PASS",
@@ -3364,7 +3364,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-20 19:57:08 替换，含 4 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-20 20:17:03 替换，含 16 文件）"
       },
       {
         "level": "PASS",
@@ -3458,7 +3458,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-20 20:16:57）"
+      "detail": "上轮全链 12 段全过（2026-11-20 20:19:47）"
     },
     {
       "layer": "项目层",
@@ -4453,7 +4453,7 @@
             }
           ]
         },
-        "ageH": 20,
+        "ageH": 21,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -7326,7 +7326,7 @@
         "name": "r710-recheck",
         "pct": 0,
         "sev": "",
-        "ageH": 20
+        "ageH": 21
       },
       {
         "name": "r711-boardcount",
@@ -7907,8 +7907,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "a0cc7510",
-        "at": "2026-11-20T20:04:18+08:00",
+        "hash": "5e9ab7f7",
+        "at": "2026-11-20T20:17:10+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8347,10 +8347,10 @@
     }
   },
   "gates": {
-    "runAt": "2026-11-20 20:16:57",
+    "runAt": "2026-11-20 20:19:47",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -8411,17 +8411,22 @@
         "pass": true,
         "seconds": 34.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 41.7,
+        "note": "拷贝回验 142 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 127.5,
+        "note": "指纹+探针 assets/SchemaBanner-BYgaUbvG.js 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-19 11:25:36",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 1048.9,
-      "fails": []
-    },
     {
       "runAt": "2026-11-19 17:31:02",
       "scope": "pre-deploy",
@@ -8623,6 +8628,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 130.1,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-20 20:19:47",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 299.3,
       "fails": []
     }
   ],
@@ -9574,7 +9586,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 12:16:58",
+      "at": "2026-11-20 12:19:55",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9725,7 +9737,7 @@
     },
     "data": {
       "count": 15,
-      "totalKB": 2767.1,
+      "totalKB": 2766.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -9745,7 +9757,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 304.9
+          "kb": 304.6
         },
         {
           "name": "rider-agreements.json",
