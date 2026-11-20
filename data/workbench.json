@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-20 00:49:42",
+  "generatedAt": "2026-11-20 01:07:28",
   "runDate": "2026-11-20",
   "tasks": [
     {
@@ -2956,10 +2956,10 @@
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-20 07:42:38",
+    "auditedAt": "2026-11-20 09:07:27",
     "status": "PASS",
-    "pass": 63,
-    "warn": 0,
+    "pass": 71,
+    "warn": 1,
     "fail": 0,
     "checks": [
       {
@@ -2995,7 +2995,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: fe14c12c 2026-11-20 07:41:11 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 2225dd26 2026-11-20 08:49:49 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3005,12 +3005,12 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（8 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（0 小时前刷新）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（18 小时前生成）"
+        "msg": "单文件产物存在（19 小时前生成）"
       },
       {
         "level": "PASS",
@@ -3030,7 +3030,7 @@
       {
         "level": "PASS",
         "item": "考核取数",
-        "msg": "取数缺口均在发布节奏内（nov 最新 11-18，待发布：qk）"
+        "msg": "取数缺口均在发布节奏内（nov 最新 11-19，待发布：ym/qk）"
       },
       {
         "level": "PASS",
@@ -3060,7 +3060,22 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[kaohe-daily] 今日任务已成功留痕（定时器失败状态为陈旧残留，自动刷新）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[kaohe-daily] 定时器排期 07:00 与 expectHour=7 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 定时器状态时间戳新鲜（11/20/2026 08:38:05），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[kaohe-daily] 今日已运行"
       },
       {
         "level": "PASS",
@@ -3071,6 +3086,16 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[xsp-weekly] 定时器排期 08:00 与 expectHour=8 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 定时器状态时间戳新鲜（11/20/2026 08:12:08），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -3086,6 +3111,16 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[capacity-daily] 定时器排期 08:30 与 expectHour=8 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[capacity-daily] 定时器状态时间戳新鲜（11/20/2026 08:49:33），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[capacity-daily] 今日已运行"
       },
       {
         "level": "PASS",
@@ -3111,6 +3146,16 @@
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] 定时器排期 16:00 与 expectHour=16 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 定时器状态时间戳新鲜（11/20/2026 08:02:49），耗时折算可用"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[rider-hourly] 今日已运行"
       },
       {
         "level": "PASS",
@@ -3205,7 +3250,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行正常（7h 前，节奏每 8h）"
+        "msg": "[access-code-patrol] 运行正常（1h 前，节奏每 8h）"
       },
       {
         "level": "PASS",
@@ -3253,14 +3298,14 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "PASS",
+        "level": "WARN",
         "item": "断链自愈",
-        "msg": "跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
+        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；补跑 capacity-monitor-daily（每日 08:30）；  [capacity-monitor-daily] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: 桌面端自动化主跑入口（capacity-monitor-daily 技能：每日抓数→构建→发布全…（截断，全文见审计控制台输出）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-20 07:41:10 替换，含 3 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-20 08:49:47 替换，含 2 文件）"
       },
       {
         "level": "PASS",
@@ -3279,10 +3324,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-18 14:27:14",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-18 16:12:36",
         "status": "PASS"
@@ -3334,6 +3375,10 @@
       {
         "auditedAt": "2026-11-20 07:42:38",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-20 09:07:27",
+        "status": "PASS"
       }
     ]
   },
@@ -3348,13 +3393,13 @@
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-20 07:42:38）"
+      "detail": "审计 PASS（2026-11-20 09:07:27）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-20 08:11:16）"
+      "detail": "上轮全链 12 段全过（2026-11-20 09:07:20）"
     },
     {
       "layer": "项目层",
@@ -4025,7 +4070,7 @@
             }
           ]
         },
-        "ageH": 8,
+        "ageH": 9,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4511,7 +4556,7 @@
             }
           ]
         },
-        "ageH": 12,
+        "ageH": 13,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4565,7 +4610,7 @@
             }
           ]
         },
-        "ageH": 12,
+        "ageH": 13,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4673,7 +4718,7 @@
             }
           ]
         },
-        "ageH": 14,
+        "ageH": 15,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4943,7 +4988,7 @@
             }
           ]
         },
-        "ageH": 83,
+        "ageH": 84,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -5213,7 +5258,7 @@
             }
           ]
         },
-        "ageH": 144,
+        "ageH": 145,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -5861,7 +5906,7 @@
             }
           ]
         },
-        "ageH": 249,
+        "ageH": 250,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -6239,7 +6284,7 @@
             }
           ]
         },
-        "ageH": 254,
+        "ageH": 255,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -6401,7 +6446,7 @@
             }
           ]
         },
-        "ageH": 257,
+        "ageH": 258,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -6455,7 +6500,7 @@
             }
           ]
         },
-        "ageH": 257,
+        "ageH": 258,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -6808,13 +6853,13 @@
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 257
+        "ageH": 258
       },
       {
         "name": "r557-plan-closeout",
         "pct": 40,
         "sev": "",
-        "ageH": 257
+        "ageH": 258
       },
       {
         "name": "r558-b1-capacity-resume",
@@ -6832,7 +6877,7 @@
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 254
+        "ageH": 255
       },
       {
         "name": "r561-patrol-trace-wiring",
@@ -6874,7 +6919,7 @@
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 249
+        "ageH": 250
       },
       {
         "name": "r568-audit-trace-surface",
@@ -6946,7 +6991,7 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "",
-        "ageH": 144
+        "ageH": 145
       },
       {
         "name": "r632-teamflow-optimize",
@@ -6976,7 +7021,7 @@
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 83
+        "ageH": 84
       },
       {
         "name": "r676-ux-checkup-reports",
@@ -7006,7 +7051,7 @@
         "name": "r702-selftolog",
         "pct": 0,
         "sev": "",
-        "ageH": 14
+        "ageH": 15
       },
       {
         "name": "r703-countanchor",
@@ -7018,13 +7063,13 @@
         "name": "r704-stalelock",
         "pct": 0,
         "sev": "",
-        "ageH": 12
+        "ageH": 13
       },
       {
         "name": "r705-negdrill",
         "pct": 0,
         "sev": "",
-        "ageH": 12
+        "ageH": 13
       },
       {
         "name": "r706-intake",
@@ -7078,7 +7123,7 @@
         "name": "r714-countlock",
         "pct": 0,
         "sev": "",
-        "ageH": 8
+        "ageH": 9
       },
       {
         "name": "r715-redrill",
@@ -7131,7 +7176,7 @@
     "legacyWarn": [
       {
         "name": "r591-trace-guard",
-        "ageH": 144
+        "ageH": 145
       },
       {
         "name": "r590-note-label",
@@ -7179,7 +7224,7 @@
       },
       {
         "name": "r567-remaining-pages-patrol",
-        "ageH": 249
+        "ageH": 250
       },
       {
         "name": "r566-dark-patrol",
@@ -7207,7 +7252,7 @@
       },
       {
         "name": "r560-lib-readme-roster",
-        "ageH": 254
+        "ageH": 255
       },
       {
         "name": "r559-alert-history",
@@ -7219,11 +7264,11 @@
       },
       {
         "name": "r557-plan-closeout",
-        "ageH": 257
+        "ageH": 258
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 257
+        "ageH": 258
       },
       {
         "name": "r555-third-orchestrated",
@@ -7244,6 +7289,11 @@
       "level": "WARN",
       "anchor": "sec-tasks",
       "text": "触发断档：2 个任务近 30 天共 5 天零留痕（通用运力监控每日刷新 4 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+    },
+    {
+      "level": "WARN",
+      "text": "审计有 1 项警告（2026-11-20 09:07:27）",
+      "anchor": "sec-audit"
     },
     {
       "level": "WARN",
@@ -7585,8 +7635,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "e3e8dfeb",
-        "at": "2026-11-20T08:48:04+08:00",
+        "hash": "2225dd26",
+        "at": "2026-11-20T08:49:49+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7668,21 +7718,21 @@
     "alerts": []
   },
   "gates": {
-    "runAt": "2026-11-20 08:11:16",
+    "runAt": "2026-11-20 09:07:20",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 2,
+        "seconds": 2.3,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.5,
+        "seconds": 0.4,
         "note": ""
       },
       {
@@ -7694,25 +7744,25 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.8,
+        "seconds": 0.9,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 47.5,
+        "seconds": 169.6,
         "note": "npm test pass=1776 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 8.5,
+        "seconds": 11.8,
         "note": ""
       },
       {
         "name": "check_paths",
         "pass": true,
-        "seconds": 0.2,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -7724,25 +7774,30 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 22.7,
+        "seconds": 26.5,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 27.4,
+        "seconds": 64.3,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 35.5,
+        "note": "拷贝回验 142 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 1022.5,
+        "note": "指纹+探针 data/workbench.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-18 19:39:46",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 847.9,
-      "fails": []
-    },
     {
       "runAt": "2026-11-18 20:11:40",
       "scope": "pre-deploy",
@@ -7944,6 +7999,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 110,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-20 09:07:20",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 1334.7,
       "fails": []
     }
   ],
@@ -8895,7 +8957,7 @@
     },
     {
       "date": "2026-11-20",
-      "at": "2026-11-20 00:49:42",
+      "at": "2026-11-20 01:07:28",
       "score": 93,
       "grade": "优",
       "layers": [
