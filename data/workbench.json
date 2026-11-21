@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-21 17:01:00",
+  "generatedAt": "2026-11-21 17:06:55",
   "runDate": "2026-11-21",
   "tasks": [
     {
@@ -3629,7 +3629,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-22 01:00:59）"
+      "detail": "本轮发布前置 11 段全过（2026-11-22 01:06:54）"
     },
     {
       "layer": "项目层",
@@ -4064,7 +4064,7 @@
             }
           ]
         },
-        "ageH": 15,
+        "ageH": 16,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 21
@@ -4658,7 +4658,7 @@
             }
           ]
         },
-        "ageH": 184,
+        "ageH": 185,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -5846,7 +5846,7 @@
             }
           ]
         },
-        "ageH": 297,
+        "ageH": 298,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -7339,7 +7339,7 @@
         "name": "r557-plan-closeout",
         "pct": 40,
         "sev": "",
-        "ageH": 297
+        "ageH": 298
       },
       {
         "name": "r558-b1-capacity-resume",
@@ -7471,7 +7471,7 @@
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "",
-        "ageH": 184
+        "ageH": 185
       },
       {
         "name": "r632-teamflow-optimize",
@@ -7537,7 +7537,7 @@
         "name": "r705-negdrill",
         "pct": 0,
         "sev": "",
-        "ageH": 15
+        "ageH": 16
       },
       {
         "name": "r683-kaohe-monthly-ux",
@@ -7580,7 +7580,7 @@
     "legacyWarn": [
       {
         "name": "r591-trace-guard",
-        "ageH": 184
+        "ageH": 185
       },
       {
         "name": "r590-note-label",
@@ -7668,7 +7668,7 @@
       },
       {
         "name": "r557-plan-closeout",
-        "ageH": 297
+        "ageH": 298
       },
       {
         "name": "r556-legacy-and-xsp",
@@ -7904,8 +7904,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "1c764efd",
-        "at": "2026-11-22T00:33:53+08:00",
+        "hash": "26c90d48",
+        "at": "2026-11-22T01:01:13+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8353,21 +8353,27 @@
     }
   },
   "gates": {
-    "runAt": "2026-11-22 01:00:59",
+    "runAt": "2026-11-22 01:06:54",
     "allPass": true,
     "scope": "pre-deploy",
     "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
+        "name": "excel",
+        "pass": true,
+        "seconds": 4.4,
+        "note": ""
+      },
+      {
         "name": "visits",
         "pass": true,
-        "seconds": 5.4,
+        "seconds": 4.4,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 0.8,
+        "seconds": 0.9,
         "note": ""
       },
       {
@@ -8379,19 +8385,19 @@
       {
         "name": "workbench",
         "pass": true,
-        "seconds": 0.7,
+        "seconds": 0.6,
         "note": ""
       },
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 75.7,
+        "seconds": 129.4,
         "note": "npm test pass=1839 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 9.3,
+        "seconds": 9.1,
         "note": ""
       },
       {
@@ -8409,25 +8415,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 42.5,
+        "seconds": 50.6,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 46.4,
+        "seconds": 39.5,
         "note": ""
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-20 21:33:32",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 434.2,
-      "fails": []
-    },
     {
       "runAt": "2026-11-20 22:03:44",
       "scope": "pre-deploy",
@@ -8629,6 +8628,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 181.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-22 01:06:54",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 239.5,
       "fails": []
     }
   ],
@@ -9608,7 +9614,7 @@
     },
     {
       "date": "2026-11-21",
-      "at": "2026-11-21 17:01:00",
+      "at": "2026-11-21 17:06:55",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9759,7 +9765,7 @@
     },
     "data": {
       "count": 16,
-      "totalKB": 2771.6,
+      "totalKB": 2771.2,
       "top": [
         {
           "name": "rider_base.json",
@@ -9779,7 +9785,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 303.8
+          "kb": 303.4
         },
         {
           "name": "rider-agreements.json",
