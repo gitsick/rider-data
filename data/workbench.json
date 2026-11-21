@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-21 16:28:20",
+  "generatedAt": "2026-11-21 16:32:00",
   "runDate": "2026-11-21",
   "tasks": [
     {
@@ -3235,7 +3235,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 1d167789 2026-11-22 00:06:16 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 080e5822 2026-11-22 00:28:31 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3250,7 +3250,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（24 小时前生成）"
+        "msg": "单文件产物存在（25 小时前生成）"
       },
       {
         "level": "PASS",
@@ -3535,7 +3535,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 00:06:13 替换，含 7 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 00:28:26 替换，含 9 文件）"
       },
       {
         "level": "PASS",
@@ -3629,7 +3629,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 11 段全过（2026-11-22 00:28:20）"
+      "detail": "上轮全链 13 段全过（2026-11-22 00:31:34）"
     },
     {
       "layer": "项目层",
@@ -4442,7 +4442,7 @@
             }
           ]
         },
-        "ageH": 124,
+        "ageH": 125,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 1
@@ -5036,7 +5036,7 @@
             }
           ]
         },
-        "ageH": 191,
+        "ageH": 192,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -6062,7 +6062,7 @@
             }
           ]
         },
-        "ageH": 298,
+        "ageH": 299,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -7315,7 +7315,7 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "",
-        "ageH": 298
+        "ageH": 299
       },
       {
         "name": "r554-archmode-agentroles",
@@ -7429,7 +7429,7 @@
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "",
-        "ageH": 191
+        "ageH": 192
       },
       {
         "name": "r585-heal-trace",
@@ -7495,7 +7495,7 @@
         "name": "r646-teamflow-p2c",
         "pct": 80,
         "sev": "done",
-        "ageH": 124
+        "ageH": 125
       },
       {
         "name": "r647-legacy-exempt",
@@ -7602,7 +7602,7 @@
       },
       {
         "name": "r584-monitor-heartbeat",
-        "ageH": 191
+        "ageH": 192
       },
       {
         "name": "r571-style-unify",
@@ -7678,7 +7678,7 @@
       },
       {
         "name": "r553-rup-first-run",
-        "ageH": 298
+        "ageH": 299
       }
     ]
   },
@@ -7893,8 +7893,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "b01a2dbb",
-        "at": "2026-11-22T00:16:10+08:00",
+        "hash": "080e5822",
+        "at": "2026-11-22T00:28:31+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8342,10 +8342,10 @@
     }
   },
   "gates": {
-    "runAt": "2026-11-22 00:28:20",
+    "runAt": "2026-11-22 00:31:34",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "excel",
@@ -8412,17 +8412,22 @@
         "pass": true,
         "seconds": 72.5,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 38.9,
+        "note": "拷贝回验 161 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 154.5,
+        "note": "指纹+探针 assets/CapDigestCard-C9NwsGU4.js 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-20 20:53:00",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 373.4,
-      "fails": []
-    },
     {
       "runAt": "2026-11-20 21:29:39",
       "scope": "pre-deploy",
@@ -8624,6 +8629,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 231.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-22 00:31:34",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 424.6,
       "fails": []
     }
   ],
@@ -9603,7 +9615,7 @@
     },
     {
       "date": "2026-11-21",
-      "at": "2026-11-21 16:28:20",
+      "at": "2026-11-21 16:32:00",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9754,7 +9766,7 @@
     },
     "data": {
       "count": 16,
-      "totalKB": 2771.3,
+      "totalKB": 2771,
       "top": [
         {
           "name": "rider_base.json",
@@ -9774,7 +9786,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 303.5
+          "kb": 303.2
         },
         {
           "name": "rider-agreements.json",
