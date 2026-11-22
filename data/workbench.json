@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-22 16:28:39",
+  "generatedAt": "2026-11-22 16:32:52",
   "runDate": "2026-11-22",
   "tasks": [
     {
@@ -3446,7 +3446,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 8e3364eb 2026-11-22 19:04:29 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 62963d56 2026-11-23 00:28:48 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3461,12 +3461,12 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（48 小时前生成）"
+        "msg": "单文件产物存在（49 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 5 小时前已刷新"
+        "msg": "workbench.json 0 小时前已刷新"
       },
       {
         "level": "PASS",
@@ -3771,12 +3771,12 @@
       {
         "level": "PASS",
         "item": "断链自愈",
-        "msg": "显式 -NoHeal ——跳过 run_task -Auto（只读体检；MT_HEAL_DEPTH=0 未参与补跑）"
+        "msg": "跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；无需补跑（各每日任务均有今日成功留痕，或未到补跑时间）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 19:04:26 替换，含 1 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-23 00:28:45 替换，含 6 文件）"
       },
       {
         "level": "PASS",
@@ -3870,7 +3870,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-23 00:28:37）"
+      "detail": "上轮全链 12 段全过（2026-11-23 00:32:44）"
     },
     {
       "layer": "项目层",
@@ -4683,7 +4683,7 @@
             }
           ]
         },
-        "ageH": 148,
+        "ageH": 149,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 1
@@ -5277,7 +5277,7 @@
             }
           ]
         },
-        "ageH": 215,
+        "ageH": 216,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -6303,7 +6303,7 @@
             }
           ]
         },
-        "ageH": 322,
+        "ageH": 323,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -7556,7 +7556,7 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "",
-        "ageH": 322
+        "ageH": 323
       },
       {
         "name": "r554-archmode-agentroles",
@@ -7670,7 +7670,7 @@
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "",
-        "ageH": 215
+        "ageH": 216
       },
       {
         "name": "r585-heal-trace",
@@ -7736,7 +7736,7 @@
         "name": "r646-teamflow-p2c",
         "pct": 80,
         "sev": "done",
-        "ageH": 148
+        "ageH": 149
       },
       {
         "name": "r647-legacy-exempt",
@@ -7875,7 +7875,7 @@
       },
       {
         "name": "r584-monitor-heartbeat",
-        "ageH": 215
+        "ageH": 216
       },
       {
         "name": "r571-style-unify",
@@ -7951,7 +7951,7 @@
       },
       {
         "name": "r553-rup-first-run",
-        "ageH": 322
+        "ageH": 323
       }
     ]
   },
@@ -8172,8 +8172,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "8e3364eb",
-        "at": "2026-11-22T19:04:29+08:00",
+        "hash": "62963d56",
+        "at": "2026-11-23T00:28:48+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8655,10 +8655,10 @@
     }
   },
   "gates": {
-    "runAt": "2026-11-23 00:28:37",
+    "runAt": "2026-11-23 00:32:44",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -8719,17 +8719,22 @@
         "pass": true,
         "seconds": 39.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 38.6,
+        "note": "拷贝回验 161 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 206.7,
+        "note": "指纹+探针 assets/ResignPanel-ChgcDkXH.css 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-22 01:06:54",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 239.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-22 01:07:33",
       "scope": "complete",
@@ -8931,6 +8936,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 176.8,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-23 00:32:44",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 422.1,
       "fails": []
     }
   ],
@@ -9938,7 +9950,7 @@
     },
     {
       "date": "2026-11-22",
-      "at": "2026-11-22 16:28:39",
+      "at": "2026-11-22 16:32:52",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -10089,7 +10101,7 @@
     },
     "data": {
       "count": 16,
-      "totalKB": 2786,
+      "totalKB": 2785.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -10109,7 +10121,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 313.3
+          "kb": 313.1
         },
         {
           "name": "rider-agreements.json",
