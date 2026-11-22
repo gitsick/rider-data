@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-22 04:27:17",
+  "generatedAt": "2026-11-22 10:53:02",
   "runDate": "2026-11-22",
   "tasks": [
     {
@@ -1375,7 +1375,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:00",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:00）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -1420,8 +1424,8 @@
         "overdueText": ""
       },
       "timer": {
-        "state": "failed",
-        "lastRunAt": "2026-11-22 09:10"
+        "state": "ok",
+        "lastRunAt": "2026-11-22 18:09"
       },
       "heal": {
         "can": true,
@@ -1845,7 +1849,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:30",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:30）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -1877,7 +1885,11 @@
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 10:45",
-        "expect": true
+        "expectHour": 10,
+        "doneToday": false,
+        "expect": true,
+        "overdue": true,
+        "overdueText": "今日应跑（每日 10:45）但无任何留痕"
       },
       "timer": {
         "state": "ok",
@@ -2482,7 +2494,7 @@
       "entry": "桌面端自动化编排：运行 python F:\\work\\mtcapacity\\lib\\monitor.py（统一监控大盘聚合：六板对账+审计+心跳+留痕快照+告警派生落 sched\\cache\\monitor_status.json，R559 起告警非空自动追加 monitor_alert_history.jsonl）。跑完在收件箱开一条结果条目：聚合时刻、六板对账结论、告警条数与明细（告警明细逐条列出 level/src）；全部正常时收件箱条目一句话带过即可",
       "note": "R562 定时接线：大盘聚合此前无任何定时触发（monitor_status 靠轮次手工刷新，11-05 起断链 4 天才被 R562 盘点发现——审计 6a 心跳检查同轮补盲）。自动化「监控大盘聚合」建议 2h 节奏（FREQ=HOURLY;INTERVAL=2;BYMINUTE=0），UI 确认创建后回填 automationId（R562 二段）\n2026-11-13 R584：用户裁决本轮不建聚合自动化，wiringDeferred 照实声明；建自动化后回填 automationId 并删本字段\n2026-11-14 体检轮接线落地：桌面自动化 DV-YKvKI5cxwfG6KUewd3 建（FREQ=HOURLY;INTERVAL=2，全工程体检双决策项之一，用户卡片确认），automationId 已回填、wiringDeferred 删除——R562 二段闭环。首轮确认卡曾截断（prompt 只落 4 字+排期回落默认），修正卡重发后完整落地。\n2026-11-14 12:01 首次自动触发成功（runStatus=completed，心跳 12:00:20 落盘），intent-registry 条目按 R266 恢复约定移除——全闭环。",
       "last": {
-        "finishedAt": "2026-11-22 12:00:35",
+        "finishedAt": "2026-11-22 18:05:29",
         "note": ""
       },
       "monitor": {
@@ -2494,7 +2506,7 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-22 12:01"
+        "lastRunAt": "2026-11-22 18:06"
       },
       "heal": {
         "can": false,
@@ -2502,7 +2514,7 @@
       },
       "history": [
         {
-          "finishedAt": "2026-11-22 12:00:35"
+          "finishedAt": "2026-11-22 18:05:29"
         }
       ],
       "gaps": {
@@ -2960,7 +2972,7 @@
         "trigger": "每 8 小时整点巡检",
         "expect": true,
         "overdue": true,
-        "overdueText": "运行超时（距上次 12.4h）"
+        "overdueText": "运行超时（距上次 18.9h）"
       },
       "timer": {
         "state": "ok",
@@ -3205,13 +3217,211 @@
         "firstDate": null
       },
       "durTrend": []
+    },
+    {
+      "id": "agent-patrol-daily",
+      "name": "Agent 平台每日巡检（DAG daily-patrol）",
+      "type": "command",
+      "trigger": "每日 09:00（桌面自动化已接线：26QlsMcBVNQbpTX-wvdMA）",
+      "cwd": "F:\\work\\mtcapacity",
+      "entry": "python agent\\run_patrol.py",
+      "note": "P3 平台化收口（2026-11-22）：智能执行层每日巡检接入调度层。执行 agent\\dag\\daily-patrol.json（数据新鲜度→看板告警→调度复核，全只读白名单），run_id 按日滚动（同日中断续跑、跨日全新执行），结果落 agent\\cache\\dag\\，由 run_task 自动留痕 last_run/history。automationId 已回填（先例 R195/R562 二段/R717）：桌面自动化经用户确认创建（此前重复两条经裁决删除后重建单条），expectHour=9 与 BYHOUR=9 对齐",
+      "last": {
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-11-22 12:39:56",
+        "durationSec": 0.2,
+        "note": ""
+      },
+      "monitor": {
+        "cadence": "daily",
+        "trigger": "每日 09:00（桌面自动化已接线：26QlsMcBVNQbpTX-wvdMA）",
+        "expectHour": 9,
+        "doneToday": true,
+        "expect": true,
+        "overdue": false,
+        "overdueText": ""
+      },
+      "timer": {
+        "state": "ok",
+        "lastRunAt": ""
+      },
+      "heal": {
+        "can": true,
+        "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id agent-patrol-daily）；带日期参数的任务自动复用最近成功数据日期"
+      },
+      "history": [
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-22 12:39:56",
+          "durationSec": 0.2
+        }
+      ],
+      "gaps": {
+        "days": [
+          {
+            "date": "2026-10-24",
+            "state": "pre"
+          },
+          {
+            "date": "2026-10-25",
+            "state": "pre"
+          },
+          {
+            "date": "2026-10-26",
+            "state": "pre"
+          },
+          {
+            "date": "2026-10-27",
+            "state": "pre"
+          },
+          {
+            "date": "2026-10-28",
+            "state": "pre"
+          },
+          {
+            "date": "2026-10-29",
+            "state": "pre"
+          },
+          {
+            "date": "2026-10-30",
+            "state": "pre"
+          },
+          {
+            "date": "2026-10-31",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-01",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-02",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-03",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-04",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-05",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-06",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-07",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-08",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-09",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-10",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-11",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-12",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-13",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-14",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-15",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-16",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-17",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-18",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-19",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-20",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-21",
+            "state": "pre"
+          },
+          {
+            "date": "2026-11-22",
+            "state": "pass"
+          }
+        ],
+        "firstDate": "2026-11-22",
+        "gapCount": 0,
+        "failCount": 0,
+        "passCount": 1
+      },
+      "durTrend": []
+    },
+    {
+      "id": "ws-hygiene-zombie",
+      "name": "工作区卫生巡检（空壳，已暂停）",
+      "type": "agent",
+      "trigger": "每日 09:00（已暂停）",
+      "cwd": "F:\\work\\mtcapacity",
+      "entry": "桌面端空壳自动化：prompt 被截断仅 4 字（“巡检），名称带杂引号，创建以来 0 次成功运行，无实际职责",
+      "note": "2026-11-22 骑手解约定时轮发现并处置：畸形空壳（agent-patrol-daily 26QlsMcBVNQbpTX-wvdMA 创建过程重复残留，prompt 截断+名称杂引号，runCount=0），用户授权照实入册消除未登记缺口并桌面侧暂停，desktop-unnamed-zombie 先例同构；如后续启用须先重建完整 prompt 并恢复桌面侧 ACTIVE、删 paused 字段",
+      "last": null,
+      "monitor": {
+        "cadence": "paused",
+        "trigger": "每日 09:00（已暂停）",
+        "expect": false
+      },
+      "timer": null,
+      "heal": {
+        "can": false,
+        "text": "编排型需在对应自动化重跑；完成后 pwsh sched\\run_task.ps1 -Id ws-hygiene-zombie -Record PASS 留痕"
+      },
+      "history": [],
+      "gaps": {
+        "days": [],
+        "gapCount": 0,
+        "failCount": 0,
+        "passCount": 0,
+        "firstDate": null
+      },
+      "durTrend": []
     }
   ],
   "audit": {
-    "auditedAt": "2026-11-22 12:27:16",
+    "auditedAt": "2026-11-22 15:10:06",
     "status": "PASS",
-    "pass": 74,
-    "warn": 8,
+    "pass": 81,
+    "warn": 9,
     "fail": 0,
     "checks": [
       {
@@ -3247,7 +3457,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 401e1c25 2026-11-22 12:25:17 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: f58183aa 2026-11-22 12:27:24 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3257,22 +3467,22 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（3 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（6 小时前刷新）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（36 小时前生成）"
+        "msg": "单文件产物存在（39 小时前生成）"
       },
       {
         "level": "PASS",
         "item": "工作台数据",
-        "msg": "workbench.json 0 小时前已刷新"
+        "msg": "workbench.json 2 小时前已刷新"
       },
       {
         "level": "PASS",
         "item": "监控大盘",
-        "msg": "monitor_status 0 小时前已聚合（告警 5 条）"
+        "msg": "monitor_status 1 小时前已聚合（告警 5 条）"
       },
       {
         "level": "PASS",
@@ -3302,7 +3512,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "tasks.json 可解析，共 18 个登记任务"
+        "msg": "tasks.json 可解析，共 19 个登记任务"
       },
       {
         "level": "PASS",
@@ -3385,6 +3595,11 @@
         "msg": "[capacity-daily-selfheal] 定时器排期 10:00 与 expectHour=10 一致"
       },
       {
+        "level": "WARN",
+        "item": "调度配置",
+        "msg": "[capacity-daily-selfheal] 今日应跑（每日 10:00）但无今日成功留痕——疑似断链；command 型可用 run_task.ps1 -Auto 补跑，agent 型手动重跑后 -Record PASS 留痕"
+      },
+      {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[rider-hourly] command 入口可用（pwsh）"
@@ -3427,12 +3642,22 @@
       {
         "level": "PASS",
         "item": "调度配置",
+        "msg": "[kaohe-daily-selfheal] 已登记按设计无留痕探测（C1）：自愈探测 BI 未发布早退不留 PASS 痕、留痕语义归主跑——无今日留痕非断链"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
         "msg": "[xsp-weekly-selfheal] 已关联定时器"
       },
       {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[xsp-weekly-selfheal] 定时器排期 10:45 与 expectHour=10 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[xsp-weekly-selfheal] 已登记按设计无留痕探测（C1）：自愈探测 BI 未发布早退不留 PASS 痕、留痕语义归主跑——无今日留痕非断链"
       },
       {
         "level": "PASS",
@@ -3477,7 +3702,7 @@
       {
         "level": "PASS",
         "item": "调度配置",
-        "msg": "[monitor-aggregate] 运行正常（0h 前，节奏每 2h）"
+        "msg": "[monitor-aggregate] 运行正常（1h 前，节奏每 2h）"
       },
       {
         "level": "PASS",
@@ -3510,6 +3735,11 @@
         "msg": "[rider-daily-patrol] 定时器排期 12:00 与 expectHour=12 一致"
       },
       {
+        "level": "WARN",
+        "item": "调度配置",
+        "msg": "[rider-daily-patrol] 今日应跑（每日 12:00）但无今日成功留痕——疑似断链；command 型可用 run_task.ps1 -Auto 补跑，agent 型手动重跑后 -Record PASS 留痕"
+      },
+      {
         "level": "PASS",
         "item": "调度配置",
         "msg": "[access-code-patrol] 已关联定时器"
@@ -3517,7 +3747,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[access-code-patrol] 运行超时（距上次 12 h，预期每 8h）——疑似断链"
+        "msg": "[access-code-patrol] 运行超时（距上次 15 h，预期每 8h）——疑似断链"
       },
       {
         "level": "PASS",
@@ -3566,6 +3796,26 @@
       },
       {
         "level": "PASS",
+        "item": "调度配置",
+        "msg": "[agent-patrol-daily] command 入口可用（python）"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[agent-patrol-daily] 已关联定时器"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[agent-patrol-daily] 定时器排期 09:00 与 expectHour=9 一致"
+      },
+      {
+        "level": "PASS",
+        "item": "调度配置",
+        "msg": "[agent-patrol-daily] 今日已运行"
+      },
+      {
+        "level": "PASS",
         "item": "架构合规",
         "msg": "分层约定无违规（无外部工作区引用 / 无项目层渲染器 / 无项目自建部署脚本）"
       },
@@ -3600,14 +3850,14 @@
         "msg": "无任务清单外的 ACTIVE 定时器（孤儿巡检干净）"
       },
       {
-        "level": "WARN",
+        "level": "PASS",
         "item": "断链自愈",
-        "msg": "command 型已补跑/确认，另存在需人工补跑的编排型任务（详见上方提示）：跳过 kaohe-daily-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 xsp-weekly-selfheal：意图登记 probe-silent-by-design（R266/C1 豁免，非断链）；跳过 monthly-kaohe-backup：意图登记 paused-by-user（R266/C1 豁免，非断链）；补跑 capacity-daily-selfheal（每日 10:00）；  [capacity-daily-selfheal] 编排型任务无法自动补跑（需技能编排/浏览器登录态）——请在对应自动化里重跑或按入口手动执行：；    入口: 桌面端自动化自愈入口（查今日 capacity-daily 成功留痕，缺失则按最近可得数据日…（截断，全文见审计控制台输出）"
+        "msg": "显式 -ReadOnly ——跳过 run_task -Auto（只读体检；MT_HEAL_DEPTH=0 未参与补跑）"
       },
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 12:25:14 替换，含 5 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 12:27:22 替换，含 1 文件）"
       },
       {
         "level": "PASS",
@@ -3626,22 +3876,6 @@
       }
     ],
     "history": [
-      {
-        "auditedAt": "2026-11-21 09:44:41",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-11-21 10:06:08",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-11-21 20:19:06",
-        "status": "PASS"
-      },
-      {
-        "auditedAt": "2026-11-21 21:22:39",
-        "status": "PASS"
-      },
       {
         "auditedAt": "2026-11-21 22:12:02",
         "status": "PASS"
@@ -3681,6 +3915,22 @@
       {
         "auditedAt": "2026-11-22 12:27:16",
         "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-22 12:47:58",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-22 13:20:27",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-22 13:36:13",
+        "status": "PASS"
+      },
+      {
+        "auditedAt": "2026-11-22 15:10:06",
+        "status": "PASS"
       }
     ]
   },
@@ -3689,25 +3939,25 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "11/13 任务正常 · 1 失败 · 1 逾期 · 近 30 天触发断档 4 天"
+      "detail": "9/14 任务正常 · 1 失败 · 4 逾期 · 近 30 天触发断档 4 天"
     },
     {
       "layer": "部署层",
       "anchor": "sec-audit",
       "status": "PASS",
-      "detail": "审计 PASS（2026-11-22 12:27:16）"
+      "detail": "审计 PASS（2026-11-22 15:10:06）"
     },
     {
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "上轮全链 12 段全过（2026-11-22 12:27:11）"
+      "detail": "本轮发布前置 10 段全过（2026-11-22 18:53:01）"
     },
     {
       "layer": "项目层",
       "anchor": "sec-fresh",
       "status": "WARN",
-      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 2h 前"
+      "detail": "2 项目 · 1 数据滞后（超 2 天），最新产出 8h 前"
     },
     {
       "layer": "渲染层",
@@ -3726,7 +3976,7 @@
           "size": 411132
         }
       ],
-      "ageHours": 3,
+      "ageHours": 10,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-18",
@@ -3768,7 +4018,7 @@
           "size": 4282
         }
       ],
-      "ageHours": 2,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-21",
@@ -4028,7 +4278,7 @@
             }
           ]
         },
-        "ageH": 26,
+        "ageH": 32,
         "totalH": 51,
         "deltaH": -7,
         "gapH": 0
@@ -4082,7 +4332,7 @@
             }
           ]
         },
-        "ageH": 26,
+        "ageH": 32,
         "totalH": 58,
         "deltaH": 58,
         "gapH": 1
@@ -4136,7 +4386,7 @@
             }
           ]
         },
-        "ageH": 27,
+        "ageH": 33,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 21
@@ -4190,7 +4440,7 @@
             }
           ]
         },
-        "ageH": 48,
+        "ageH": 54,
         "totalH": 0,
         "deltaH": -813,
         "gapH": 1
@@ -4244,7 +4494,7 @@
             }
           ]
         },
-        "ageH": 50,
+        "ageH": 56,
         "totalH": 813,
         "deltaH": 813,
         "gapH": 9
@@ -4298,7 +4548,7 @@
             }
           ]
         },
-        "ageH": 59,
+        "ageH": 65,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4352,7 +4602,7 @@
             }
           ]
         },
-        "ageH": 59,
+        "ageH": 66,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 28
@@ -4406,7 +4656,7 @@
             }
           ]
         },
-        "ageH": 87,
+        "ageH": 94,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 48
@@ -4460,7 +4710,7 @@
             }
           ]
         },
-        "ageH": 135,
+        "ageH": 141,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -4514,7 +4764,7 @@
             }
           ]
         },
-        "ageH": 136,
+        "ageH": 143,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 1
@@ -4568,7 +4818,7 @@
             }
           ]
         },
-        "ageH": 138,
+        "ageH": 144,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -4622,7 +4872,7 @@
             }
           ]
         },
-        "ageH": 138,
+        "ageH": 145,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -4676,7 +4926,7 @@
             }
           ]
         },
-        "ageH": 139,
+        "ageH": 146,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 57
@@ -4730,7 +4980,7 @@
             }
           ]
         },
-        "ageH": 196,
+        "ageH": 202,
         "totalH": null,
         "deltaH": null,
         "gapH": 1
@@ -4784,7 +5034,7 @@
             }
           ]
         },
-        "ageH": 196,
+        "ageH": 203,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4838,7 +5088,7 @@
             }
           ]
         },
-        "ageH": 197,
+        "ageH": 203,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4892,7 +5142,7 @@
             }
           ]
         },
-        "ageH": 197,
+        "ageH": 204,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4946,7 +5196,7 @@
             }
           ]
         },
-        "ageH": 197,
+        "ageH": 204,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5000,7 +5250,7 @@
             }
           ]
         },
-        "ageH": 198,
+        "ageH": 204,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5054,7 +5304,7 @@
             }
           ]
         },
-        "ageH": 198,
+        "ageH": 204,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 6
@@ -5108,7 +5358,7 @@
             }
           ]
         },
-        "ageH": 203,
+        "ageH": 210,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -5162,7 +5412,7 @@
             }
           ]
         },
-        "ageH": 280,
+        "ageH": 286,
         "totalH": null,
         "deltaH": null,
         "gapH": 21
@@ -5216,7 +5466,7 @@
             }
           ]
         },
-        "ageH": 300,
+        "ageH": 307,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5270,7 +5520,7 @@
             }
           ]
         },
-        "ageH": 301,
+        "ageH": 307,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5324,7 +5574,7 @@
             }
           ]
         },
-        "ageH": 301,
+        "ageH": 307,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5378,7 +5628,7 @@
             }
           ]
         },
-        "ageH": 301,
+        "ageH": 307,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5432,7 +5682,7 @@
             }
           ]
         },
-        "ageH": 301,
+        "ageH": 308,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5486,7 +5736,7 @@
             }
           ]
         },
-        "ageH": 301,
+        "ageH": 308,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5540,7 +5790,7 @@
             }
           ]
         },
-        "ageH": 301,
+        "ageH": 308,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5594,7 +5844,7 @@
             }
           ]
         },
-        "ageH": 302,
+        "ageH": 308,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 2
@@ -5648,7 +5898,7 @@
             }
           ]
         },
-        "ageH": 304,
+        "ageH": 310,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5702,7 +5952,7 @@
             }
           ]
         },
-        "ageH": 305,
+        "ageH": 312,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -5756,7 +6006,7 @@
             }
           ]
         },
-        "ageH": 306,
+        "ageH": 312,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5810,7 +6060,7 @@
             }
           ]
         },
-        "ageH": 306,
+        "ageH": 313,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5864,7 +6114,7 @@
             }
           ]
         },
-        "ageH": 307,
+        "ageH": 314,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5918,7 +6168,7 @@
             }
           ]
         },
-        "ageH": 309,
+        "ageH": 315,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5972,7 +6222,7 @@
             }
           ]
         },
-        "ageH": 309,
+        "ageH": 316,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -6026,7 +6276,7 @@
             }
           ]
         },
-        "ageH": 309,
+        "ageH": 316,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -6080,7 +6330,7 @@
             }
           ]
         },
-        "ageH": 310,
+        "ageH": 316,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -6134,7 +6384,7 @@
             }
           ]
         },
-        "ageH": 310,
+        "ageH": 317,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -7387,241 +7637,241 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "",
-        "ageH": 310
+        "ageH": 317
       },
       {
         "name": "r554-archmode-agentroles",
         "pct": 80,
         "sev": "",
-        "ageH": 310
+        "ageH": 316
       },
       {
         "name": "r555-third-orchestrated",
         "pct": 80,
         "sev": "",
-        "ageH": 309
+        "ageH": 316
       },
       {
         "name": "r556-legacy-and-xsp",
         "pct": 40,
         "sev": "",
-        "ageH": 309
+        "ageH": 316
       },
       {
         "name": "r557-plan-closeout",
         "pct": 40,
         "sev": "",
-        "ageH": 309
+        "ageH": 315
       },
       {
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 307
+        "ageH": 314
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 306
+        "ageH": 313
       },
       {
         "name": "r560-lib-readme-roster",
         "pct": 40,
         "sev": "",
-        "ageH": 306
+        "ageH": 312
       },
       {
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 305
+        "ageH": 312
       },
       {
         "name": "r562-monitor-aggregate-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 304
+        "ageH": 310
       },
       {
         "name": "r563-audit-regression-lock",
         "pct": 80,
         "sev": "",
-        "ageH": 302
+        "ageH": 308
       },
       {
         "name": "r564-pull-trace-wiring",
         "pct": 80,
         "sev": "",
-        "ageH": 301
+        "ageH": 308
       },
       {
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 301
+        "ageH": 308
       },
       {
         "name": "r566-dark-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 301
+        "ageH": 308
       },
       {
         "name": "r567-remaining-pages-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 301
+        "ageH": 307
       },
       {
         "name": "r568-audit-trace-surface",
         "pct": 20,
         "sev": "",
-        "ageH": 301
+        "ageH": 307
       },
       {
         "name": "r569-heal-intent-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 301
+        "ageH": 307
       },
       {
         "name": "r570-pending-card-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 300
+        "ageH": 307
       },
       {
         "name": "r571-style-unify",
         "pct": 20,
         "sev": "",
-        "ageH": 280
+        "ageH": 286
       },
       {
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "",
-        "ageH": 203
+        "ageH": 210
       },
       {
         "name": "r585-heal-trace",
         "pct": 80,
         "sev": "",
-        "ageH": 198
+        "ageH": 204
       },
       {
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "",
-        "ageH": 198
+        "ageH": 204
       },
       {
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "",
-        "ageH": 197
+        "ageH": 204
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 197
+        "ageH": 204
       },
       {
         "name": "r589-prompt-guard",
         "pct": 80,
         "sev": "",
-        "ageH": 197
+        "ageH": 203
       },
       {
         "name": "r590-note-label",
         "pct": 20,
         "sev": "",
-        "ageH": 196
+        "ageH": 203
       },
       {
         "name": "r591-trace-guard",
         "pct": 20,
         "sev": "",
-        "ageH": 196
+        "ageH": 202
       },
       {
         "name": "r632-teamflow-optimize",
         "pct": 100,
         "sev": "done",
-        "ageH": 139
+        "ageH": 146
       },
       {
         "name": "r644-teamflow-p2",
         "pct": 80,
         "sev": "done",
-        "ageH": 138
+        "ageH": 145
       },
       {
         "name": "r645-teamflow-p2b",
         "pct": 80,
         "sev": "done",
-        "ageH": 138
+        "ageH": 144
       },
       {
         "name": "r646-teamflow-p2c",
         "pct": 80,
         "sev": "done",
-        "ageH": 136
+        "ageH": 143
       },
       {
         "name": "r647-legacy-exempt",
         "pct": 80,
         "sev": "done",
-        "ageH": 135
+        "ageH": 141
       },
       {
         "name": "r676-ux-checkup-reports",
         "pct": 0,
         "sev": "",
-        "ageH": 87
+        "ageH": 94
       },
       {
         "name": "r716-orch",
         "pct": 60,
         "sev": "warn",
-        "ageH": 59
+        "ageH": 66
       },
       {
         "name": "r718-orch",
         "pct": 60,
         "sev": "warn",
-        "ageH": 59
+        "ageH": 65
       },
       {
         "name": "20261017-efficiency-naming",
         "pct": 60,
         "sev": "warn",
-        "ageH": 50
+        "ageH": 56
       },
       {
         "name": "r722-theme",
         "pct": 0,
         "sev": "",
-        "ageH": 48
+        "ageH": 54
       },
       {
         "name": "r705-negdrill",
         "pct": 0,
         "sev": "",
-        "ageH": 27
+        "ageH": 33
       },
       {
         "name": "r683-kaohe-monthly-ux",
         "pct": 100,
         "sev": "done",
-        "ageH": 26
+        "ageH": 32
       },
       {
         "name": "r684-kaohe-module-data",
         "pct": 100,
         "sev": "done",
-        "ageH": 26
+        "ageH": 32
       }
     ],
     "stall": {
@@ -7678,115 +7928,130 @@
     "legacyWarn": [
       {
         "name": "r591-trace-guard",
-        "ageH": 196
+        "ageH": 202
       },
       {
         "name": "r590-note-label",
-        "ageH": 196
-      },
-      {
-        "name": "r589-prompt-guard",
-        "ageH": 197
-      },
-      {
-        "name": "r588-prose-cleanup",
-        "ageH": 197
-      },
-      {
-        "name": "r587-metrics-struct",
-        "ageH": 197
-      },
-      {
-        "name": "r586-orchestration-promote",
-        "ageH": 198
-      },
-      {
-        "name": "r585-heal-trace",
-        "ageH": 198
-      },
-      {
-        "name": "r584-monitor-heartbeat",
         "ageH": 203
       },
       {
+        "name": "r589-prompt-guard",
+        "ageH": 203
+      },
+      {
+        "name": "r588-prose-cleanup",
+        "ageH": 204
+      },
+      {
+        "name": "r587-metrics-struct",
+        "ageH": 204
+      },
+      {
+        "name": "r586-orchestration-promote",
+        "ageH": 204
+      },
+      {
+        "name": "r585-heal-trace",
+        "ageH": 204
+      },
+      {
+        "name": "r584-monitor-heartbeat",
+        "ageH": 210
+      },
+      {
         "name": "r571-style-unify",
-        "ageH": 280
+        "ageH": 286
       },
       {
         "name": "r570-pending-card-exempt",
-        "ageH": 300
-      },
-      {
-        "name": "r569-heal-intent-exempt",
-        "ageH": 301
-      },
-      {
-        "name": "r568-audit-trace-surface",
-        "ageH": 301
-      },
-      {
-        "name": "r567-remaining-pages-patrol",
-        "ageH": 301
-      },
-      {
-        "name": "r566-dark-patrol",
-        "ageH": 301
-      },
-      {
-        "name": "r565-visual-patrol",
-        "ageH": 301
-      },
-      {
-        "name": "r564-pull-trace-wiring",
-        "ageH": 301
-      },
-      {
-        "name": "r563-audit-regression-lock",
-        "ageH": 302
-      },
-      {
-        "name": "r562-monitor-aggregate-wiring",
-        "ageH": 304
-      },
-      {
-        "name": "r561-patrol-trace-wiring",
-        "ageH": 305
-      },
-      {
-        "name": "r560-lib-readme-roster",
-        "ageH": 306
-      },
-      {
-        "name": "r559-alert-history",
-        "ageH": 306
-      },
-      {
-        "name": "r558-b1-capacity-resume",
         "ageH": 307
       },
       {
+        "name": "r569-heal-intent-exempt",
+        "ageH": 307
+      },
+      {
+        "name": "r568-audit-trace-surface",
+        "ageH": 307
+      },
+      {
+        "name": "r567-remaining-pages-patrol",
+        "ageH": 307
+      },
+      {
+        "name": "r566-dark-patrol",
+        "ageH": 308
+      },
+      {
+        "name": "r565-visual-patrol",
+        "ageH": 308
+      },
+      {
+        "name": "r564-pull-trace-wiring",
+        "ageH": 308
+      },
+      {
+        "name": "r563-audit-regression-lock",
+        "ageH": 308
+      },
+      {
+        "name": "r562-monitor-aggregate-wiring",
+        "ageH": 310
+      },
+      {
+        "name": "r561-patrol-trace-wiring",
+        "ageH": 312
+      },
+      {
+        "name": "r560-lib-readme-roster",
+        "ageH": 312
+      },
+      {
+        "name": "r559-alert-history",
+        "ageH": 313
+      },
+      {
+        "name": "r558-b1-capacity-resume",
+        "ageH": 314
+      },
+      {
         "name": "r557-plan-closeout",
-        "ageH": 309
+        "ageH": 315
       },
       {
         "name": "r556-legacy-and-xsp",
-        "ageH": 309
+        "ageH": 316
       },
       {
         "name": "r555-third-orchestrated",
-        "ageH": 309
+        "ageH": 316
       },
       {
         "name": "r554-archmode-agentroles",
-        "ageH": 310
+        "ageH": 316
       },
       {
         "name": "r553-rup-first-run",
-        "ageH": 310
+        "ageH": 317
       }
     ]
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "text": "应跑未跑：运力日更自愈探测 —— 今日应跑（每日 10:00）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：考核看板发布自愈探测 —— 今日应跑（每日 10:30）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
+    {
+      "level": "WARN",
+      "text": "应跑未跑：新商评周报发布自愈探测 —— 今日应跑（每日 10:45）但无任何留痕，需在对应自动化重跑并留痕",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "FAIL",
       "text": "任务失败：骑手看板每日巡检（2026-11-22 12:09:28 · ①回归FAIL: 1847例3失败(R703计数锚+运力页窄屏收口+运力页硬编码色,疑重构锚漂移); ②线上门禁PASS; ③数据抽查FAIL: last_day=2026-11-19应为11-21, gen_time仍r3·2026-11-20 11:10, 上游日更连续第2天未产出）",
@@ -7794,7 +8059,7 @@
     },
     {
       "level": "WARN",
-      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 12.4h），需在对应自动化重跑并留痕",
+      "text": "应跑未跑：运营后台访问码巡检推送 —— 运行超时（距上次 18.9h），需在对应自动化重跑并留痕",
       "anchor": "sec-tasks"
     },
     {
@@ -7804,7 +8069,7 @@
     },
     {
       "level": "WARN",
-      "text": "审计有 8 项警告（2026-11-22 12:27:16）",
+      "text": "审计有 9 项警告（2026-11-22 15:10:06）",
       "anchor": "sec-audit"
     },
     {
@@ -8008,8 +8273,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "401e1c25",
-        "at": "2026-11-22T12:25:17+08:00",
+        "hash": "f58183aa",
+        "at": "2026-11-22T12:27:24+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8027,7 +8292,7 @@
   ],
   "monitor": {
     "schemaVer": 1,
-    "generatedAt": "2026-11-22 12:00:35",
+    "generatedAt": "2026-11-22 18:05:29",
     "boards": {
       "oct": "PASS"
     },
@@ -8037,13 +8302,13 @@
       "capacity-daily": {
         "dataDay": null,
         "checkedAt": "2026-11-22T08:37:46",
-        "ageH": 3.380423268611111,
+        "ageH": 9.46206233638889,
         "pending": []
       },
       "kaohe-daily": {
         "dataDay": "2026-11-21",
         "checkedAt": "2026-11-22T09:31:06",
-        "ageH": 2.4915343797222222,
+        "ageH": 8.573173725833334,
         "pending": [
           "ym",
           "qk"
@@ -8052,21 +8317,21 @@
       "xsp-weekly": {
         "dataDay": "2026-11-22",
         "checkedAt": "2026-11-22T10:56:03",
-        "ageH": 1.0757013241666666,
+        "ageH": 7.1573403925,
         "pending": []
       },
       "rider-hourly": {
-        "srcAgeH": 0.1,
+        "srcAgeH": 0.3,
         "lagH": 0,
-        "generatedAt": "2026-11-22 11:38:03"
+        "generatedAt": "2026-11-22 12:22:09"
       }
     },
     "audit": {
       "status": "PASS",
-      "pass": 73,
-      "warn": 7,
+      "pass": 81,
+      "warn": 9,
       "fail": 0,
-      "auditedAt": "2026-11-22 11:10:49",
+      "auditedAt": "2026-11-22 15:10:06",
       "publishCount": 2,
       "rollbackReady": true
     },
@@ -8078,7 +8343,7 @@
       }
     ],
     "locks": {
-      "scanned": 11,
+      "scanned": 13,
       "hitFiles": 0
     },
     "auditTrail": {
@@ -8102,47 +8367,47 @@
           "name": "20261017-efficiency-naming",
           "current": "审核",
           "sev": "warn",
-          "lagH": 49.6
+          "lagH": 55.7
         },
         {
           "name": "r716-orch",
           "current": "编排",
           "sev": "warn",
-          "lagH": 59.4
+          "lagH": 65.5
         },
         {
           "name": "r718-orch",
           "current": "编排",
           "sev": "warn",
-          "lagH": 58.8
+          "lagH": 64.9
         }
       ]
     },
     "alerts": [
       {
-        "level": "WARN",
+        "level": "FAIL",
         "src": "rider-daily-patrol",
-        "text": "任务 rider-daily-patrol 连续 2 次失败（最近 2026-11-21 12:11:27 · ③数据抽查FAIL: rider-index/detail last_day=2026-11-19(应为11-20), ）——自动补跑已重试未自愈，需人工介入"
+        "text": "任务 rider-daily-patrol 连续 3 次失败（最近 2026-11-22 12:09:28 · ①回归FAIL: 1847例3失败(R703计数锚+运力页窄屏收口+运力页硬编码色,疑重构锚漂移); ②线上门禁PASS）——自动补跑已重试未自愈，需人工介入"
       },
       {
         "level": "WARN",
         "src": "relay:20261017-efficiency-naming",
-        "text": "Agent 接力停滞 50h：轮 20261017-efficiency-naming 停在「审核」棒——需对应角色续棒（续跑入口：对应自动化重跑或手动接棒；阈值 48/96h 可调 pro\\config\\teamflow-stall.json）"
+        "text": "Agent 接力停滞 56h：轮 20261017-efficiency-naming 停在「审核」棒——需对应角色续棒（续跑入口：对应自动化重跑或手动接棒；阈值 48/96h 可调 pro\\config\\teamflow-stall.json）"
       },
       {
         "level": "WARN",
         "src": "relay:r716-orch",
-        "text": "Agent 接力停滞 59h：轮 r716-orch 停在「编排」棒——需对应角色续棒（续跑入口：对应自动化重跑或手动接棒；阈值 48/96h 可调 pro\\config\\teamflow-stall.json）"
+        "text": "Agent 接力停滞 66h：轮 r716-orch 停在「编排」棒——需对应角色续棒（续跑入口：对应自动化重跑或手动接棒；阈值 48/96h 可调 pro\\config\\teamflow-stall.json）"
       },
       {
         "level": "WARN",
         "src": "relay:r718-orch",
-        "text": "Agent 接力停滞 59h：轮 r718-orch 停在「编排」棒——需对应角色续棒（续跑入口：对应自动化重跑或手动接棒；阈值 48/96h 可调 pro\\config\\teamflow-stall.json）"
+        "text": "Agent 接力停滞 65h：轮 r718-orch 停在「编排」棒——需对应角色续棒（续跑入口：对应自动化重跑或手动接棒；阈值 48/96h 可调 pro\\config\\teamflow-stall.json）"
       },
       {
         "level": "WARN",
         "src": "audit",
-        "text": "部署审计有 7 项警告（2026-11-22 11:10:49）"
+        "text": "部署审计有 9 项警告（2026-11-22 15:10:06）"
       }
     ],
     "alertTrend": {
@@ -8294,13 +8559,13 @@
         },
         {
           "d": "11-22",
-          "fail": 0,
-          "warn": 23
+          "fail": 2,
+          "warn": 31
         }
       ],
-      "failTotal": 8,
-      "warnTotal": 134,
-      "lastAt": "2026-11-22 12:00:35"
+      "failTotal": 10,
+      "warnTotal": 142,
+      "lastAt": "2026-11-22 18:05:29"
     },
     "auditTrend": {
       "days": [
@@ -8480,38 +8745,38 @@
         },
         {
           "d": "11-22",
-          "runs": 9,
+          "runs": 13,
           "fails": 0,
-          "warns": 9
+          "warns": 13
         }
       ],
-      "runsTotal": 237,
+      "runsTotal": 241,
       "failRunsTotal": 5,
-      "lastAt": "2026-11-22 12:27:16"
+      "lastAt": "2026-11-22 15:10:06"
     }
   },
   "gates": {
-    "runAt": "2026-11-22 12:27:11",
+    "runAt": "2026-11-22 18:53:01",
     "allPass": true,
-    "scope": "complete",
-    "label": "全链快照（含部署与线上回验）",
+    "scope": "pre-deploy",
+    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
     "stages": [
       {
         "name": "visits",
         "pass": true,
-        "seconds": 3.5,
+        "seconds": 2.3,
         "note": ""
       },
       {
         "name": "export-data",
         "pass": true,
-        "seconds": 1.2,
+        "seconds": 1.3,
         "note": ""
       },
       {
         "name": "mask",
         "pass": true,
-        "seconds": 0.4,
+        "seconds": 0.5,
         "note": ""
       },
       {
@@ -8523,13 +8788,13 @@
       {
         "name": "unit_gate",
         "pass": true,
-        "seconds": 93,
-        "note": "npm test pass=1847 fail=0"
+        "seconds": 84.3,
+        "note": "npm test pass=1849 fail=0"
       },
       {
         "name": "build",
         "pass": true,
-        "seconds": 11.2,
+        "seconds": 11,
         "note": ""
       },
       {
@@ -8547,37 +8812,18 @@
       {
         "name": "mobile_gate",
         "pass": true,
-        "seconds": 34.4,
+        "seconds": 36,
         "note": ""
       },
       {
         "name": "smoke_gate",
         "pass": true,
-        "seconds": 34.4,
+        "seconds": 38.1,
         "note": ""
-      },
-      {
-        "name": "deploy",
-        "pass": true,
-        "seconds": 39.7,
-        "note": "拷贝回验 161 文件 repo≡dist（MD5）"
-      },
-      {
-        "name": "live_gate",
-        "pass": true,
-        "seconds": 83.3,
-        "note": "指纹+探针 assets/CapDigestCard-xlj3WeQm.js 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-22 00:05:40",
-      "scope": "pre-deploy",
-      "allPass": true,
-      "totalSec": 172,
-      "fails": []
-    },
     {
       "runAt": "2026-11-22 00:15:54",
       "scope": "complete",
@@ -8779,6 +9025,13 @@
       "scope": "complete",
       "allPass": true,
       "totalSec": 302.6,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-22 18:53:01",
+      "scope": "pre-deploy",
+      "allPass": true,
+      "totalSec": 175,
       "fails": []
     }
   ],
@@ -9786,7 +10039,7 @@
     },
     {
       "date": "2026-11-22",
-      "at": "2026-11-22 04:27:17",
+      "at": "2026-11-22 10:53:02",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9899,7 +10152,7 @@
   "perf": {
     "assets": {
       "count": 106,
-      "totalKB": 1787.2,
+      "totalKB": 1787.4,
       "top": [
         {
           "name": "vendor-echarts-DyZQEMzr.js",
@@ -9937,7 +10190,7 @@
     },
     "data": {
       "count": 16,
-      "totalKB": 2777.6,
+      "totalKB": 2790.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -9945,11 +10198,11 @@
         },
         {
           "name": "rider-detail.json",
-          "kb": 565.6
+          "kb": 567.6
         },
         {
           "name": "rider-index.json",
-          "kb": 407.2
+          "kb": 408.6
         },
         {
           "name": "capacity-daily.json",
@@ -9957,11 +10210,11 @@
         },
         {
           "name": "workbench.json",
-          "kb": 309
+          "kb": 317.9
         },
         {
           "name": "rider-agreements.json",
-          "kb": 155.4
+          "kb": 156
         },
         {
           "name": "assessment/oct.json",
@@ -10029,7 +10282,7 @@
       "path": "ARCHITECTURE.md",
       "desc": "七层架构、职责矩阵、部署/调度全链路唯一权威说明",
       "doc": {
-        "content": "# mtcapacity 工程结构统一规范\n\n> 本文档是全工程结构、部署、调度、口径的唯一权威说明。目录与职责的任何调整须同步更新本文。\n> 最后更新：2026-11-14（R573：运力监控模块切换视图——三行胶囊筛选栏（模块 9 胶囊/区域/城市带送达单量计数）替代吸顶章导航+左侧导航+小地图+悬浮导航+返回顶部，选模块只渲染对应章节（全部=总览），日更页 597KB→585KB；localStorage 记忆 + 增强器 8 导航层在模块切换宿主退役）\n> 最后更新：2026-11-22（新增 ⑧ 智能执行层 agent\\：P0 筑基落地——模型网关收口 + 只读工具注册中心 + 全链路审计 + 评测基线；目标架构 arch\\agent-platform-arch-v2.html、升级路线图 arch\\agent-platform-roadmap.html；既有七层流水线行为零改动）\n> 最后更新：2026-11-22 P1（agent 层新增：Supervisor 主 Agent——规则 playbook 编排 + LLM 可插拔规划（越权/失败自动回落规则）；任务状态机断点续跑 taskstate；知识检索 v1 knowledge（ARCHITECTURE/口径手册/docs 语料白名单，词典检索版，向量库为 P3 升级项）；HITL 审批钩子 hitl（非只读步骤挂起待审）；内置只读工具扩至 7 个，评测基线 9/9）\n> 最后更新：2026-11-22 P2（agent 层新增：DAG 任务图编排 dag——节点声明式规格 agent\\dag\\*.json、Kahn 拓扑+环检测、节点级断点续跑、依赖失败下游 skipped、只读白名单前置校验，默认规格 daily-patrol；ABAC 权限 abac——agent\\policy\\subjects.json/policies.json，deny 优先/默认放行存量，call_tool 全量接线；成本中心 cost——网关调用前预算门禁（agent\\policy\\budgets.json，超限拒），usage.json 记账扩 token 维度；语义缓存 v1 cache——归一化哈希+TTL，knowledge_search 读穿接线；灰度门禁 canary——agent\\policy\\rollout.json 按 feature 百分比+白名单，dag_run 已挂门禁；内置只读工具扩至 11 个，评测基线 13/13）\n> 最后更新：2026-11-22 P3（agent 层新增：知识图谱邻接增强 graph——共现词反查倒排索引+1-hop 邻接，融合分排序，knowledge.search 默认接入、异常回退纯词法（GraphRAG v0，向量库仍为后期项）；连接器框架 connector——声明式清单 agent\\connectors\\*.json，https-only、路径白名单、重定向漂移防护、SSRF 静态+DNS 双重拦截、凭据仅环境变量，模板见 connectors\\template-http-get.json.example；A2A 协议 v1 a2a——标准信封+收发件箱（agent\\cache\\a2a），同 id 幂等、done 守门防重投，本地文件通道 v1；ABAC 新增 strict 模式——策略文件声明 \"mode\":\"strict\" 后无命中规则默认拒绝（存量 permissive 不变）；内置只读工具扩至 14 个，评测基线 16/16）\n\n## 一、八层架构（目录 = 架构）\n\n```\nmtcapacity\\\n├── _repo\\               ① 线上部署层   仓库 gitsick/rider-data（GitHub Pages 发布源，只被 deploy 层写入）\n├── deploy\\              ② 部署基建层   配置（channels.json）+ 引擎（deploy.ps1/publish_file.py 双入口）+ 共用库（deploy_common.psm1：网络韧性环境/R89 锁/拉推退避重试/远端校验五件套单源，refresh.ps1 与 deploy.ps1 共用）+ 通道发布管线\n├── lib\\                 ③ 知识库层     共享函数库 + 知识文档化（docs\\口径手册.md）\n├── frontend\\            ④ 渲染层       Vue 3 + Vite 统一前端工程（13 入口页），含运力统一壳主页 + 项目看板渲染器（scripts\\capacity\\，组件包 dashboard_kit\\：theme=样式单源含 CSS_ENH 注入段、fmt/charts/datactx=格式化与图表构建；改运力监控样式只改 theme.py 单源，禁止在增强器加 CSS 层）\n├── pro\\                 ⑤ 项目层       业务项目工作区（任务设置、产物产出）\n│   ├── kaohe-daily\\         履约考核工程（构建器 + 数据层 + 发布流水线）\n│   ├── capacity-daily\\      通用运力监控每日管线（数据→看板→三表→检核）\n│   ├── xsp-weekly\\          新商评考核周报（BI 取数 → 三城 Excel）\n│   ├── rider-hourly\\        骑手解约登记（问卷星增量 → 看板 → 部署）\n│   └── deploy-audit\\        部署体系审计（13 项体检含断链自愈，供工作台/自愈巡检）\n└── sched\\               ⑥ 调度层       任务清单唯一事实源（tasks.json）+ 统一执行器（run_task.ps1）+ 运行日志\n\nmtcapacity\\（续）\n├── teamflow\\            ⑦ 开发流程层   多角色开发工作流：角色定义（roles.json）+ 流程 SOP + 需求运行目录（runs\\）\n└── agent\\               ⑧ 智能执行层   Agent 平台落地层（目标架构 v2.0）：P0 筑基——模型网关（model_gateway）+ 工具注册中心（tool_registry）+ 全链路审计（audit）+ 评测基线（eval_harness）；P1——Supervisor 主 Agent（supervisor）+ 状态机断点续跑（taskstate）+ 知识检索（knowledge）+ HITL 审批钩子（hitl）；P2 多 Agent 治理——DAG 任务图编排（dag）+ ABAC 权限（abac）+ 成本中心（cost）+ 语义缓存（cache）+ 灰度门禁（canary）；P3 平台化生态——知识图谱邻接增强（graph，GraphRAG v0）+ 连接器框架（connector，白名单+SSRF 防护）+ A2A Agent 间协议（a2a，信封+收发件箱）+ ABAC strict 模式；升级路线图 arch\\agent-platform-roadmap.html，自检 python agent/selfcheck.py\n```\n\n### 全链路（数据怎么流动）\n\n```\nM:\\数据源（日监控/下载中心）\n   → pro\\<项目>\\ 每日管线（合并清洗→构建→渲染→增强→检核）\n   → 项目产物（output\\）\n       ├─ 线上链路：deploy\\ 发布引擎 → _repo → GitHub Pages 上线\n       └─ 展示链路：frontend\\export-data → public\\data → Vite 构建 → 同样经 deploy 上线\n调度链路：sched\\tasks.json 登记全部任务 → 定时器/统一执行器驱动（日志在 sched\\logs\\）\nAgent 链路：LLM 调用必经 agent\\model_gateway（审计+记账，未配置 provider 即闸门拦截）；Agent 工具只读挂接 lib/sched 只读能力（agent\\tool_registry）\n```\n\n### 职责矩阵（谁做什么、不做什么）\n\n> 项目层路径约定：`pro\\<项目名>\\`；项目内脚本一律相对自身定位（`dirname(__file__)`），工作区根取两层上溯，禁止再写死完整绝对路径。\n>\n> **Owner 角色绑定**：每层唯一归属一个角色（见 `teamflow\\roles.json` layers 数组）；层内变更须由该 Owner 签认后交接（方案.md Owner 签认表），跨层联改由架构角色在方案中列出各层 Owner。\n\n| 层 | Owner 角色 | 只负责 | 禁止 |\n|---|---|---|---|\n| 线上部署层 `_repo` | 发布运维 | 被 deploy 层写入；不手改（`rider_agreement.html` 除外） | 项目/构建逻辑 |\n| 部署基建层 `deploy` | 发布运维 | 一切上线动作：配置（channels.json）、引擎（dist 整树/单文件双入口）；git 重试/互斥锁/校验 | 业务口径、页面代码 |\n| 知识库 `lib` | 架构 | 被 ≥2 处复用的**口径/规则/领域函数** \n…（内容过长已截断，全文见工作区文件）",
+        "content": "# mtcapacity 工程结构统一规范\n\n> 本文档是全工程结构、部署、调度、口径的唯一权威说明。目录与职责的任何调整须同步更新本文。\n> 最后更新：2026-11-14（R573：运力监控模块切换视图——三行胶囊筛选栏（模块 9 胶囊/区域/城市带送达单量计数）替代吸顶章导航+左侧导航+小地图+悬浮导航+返回顶部，选模块只渲染对应章节（全部=总览），日更页 597KB→585KB；localStorage 记忆 + 增强器 8 导航层在模块切换宿主退役）\n> 最后更新：2026-11-22（新增 ⑧ 智能执行层 agent\\：P0 筑基落地——模型网关收口 + 只读工具注册中心 + 全链路审计 + 评测基线；目标架构 arch\\agent-platform-arch-v2.html、升级路线图 arch\\agent-platform-roadmap.html；既有七层流水线行为零改动）\n> 最后更新：2026-11-22 P1（agent 层新增：Supervisor 主 Agent——规则 playbook 编排 + LLM 可插拔规划（越权/失败自动回落规则）；任务状态机断点续跑 taskstate；知识检索 v1 knowledge（ARCHITECTURE/口径手册/docs 语料白名单，词典检索版，向量库为 P3 升级项）；HITL 审批钩子 hitl（非只读步骤挂起待审）；内置只读工具扩至 7 个，评测基线 9/9）\n> 最后更新：2026-11-22 P2（agent 层新增：DAG 任务图编排 dag——节点声明式规格 agent\\dag\\*.json、Kahn 拓扑+环检测、节点级断点续跑、依赖失败下游 skipped、只读白名单前置校验，默认规格 daily-patrol；ABAC 权限 abac——agent\\policy\\subjects.json/policies.json，deny 优先/默认放行存量，call_tool 全量接线；成本中心 cost——网关调用前预算门禁（agent\\policy\\budgets.json，超限拒），usage.json 记账扩 token 维度；语义缓存 v1 cache——归一化哈希+TTL，knowledge_search 读穿接线；灰度门禁 canary——agent\\policy\\rollout.json 按 feature 百分比+白名单，dag_run 已挂门禁；内置只读工具扩至 11 个，评测基线 13/13）\n> 最后更新：2026-11-22 P3（agent 层新增：知识图谱邻接增强 graph——共现词反查倒排索引+1-hop 邻接，融合分排序，knowledge.search 默认接入、异常回退纯词法（GraphRAG v0，向量库仍为后期项）；连接器框架 connector——声明式清单 agent\\connectors\\*.json，https-only、路径白名单、重定向漂移防护、SSRF 静态+DNS 双重拦截、凭据仅环境变量，模板见 connectors\\template-http-get.json.example；A2A 协议 v1 a2a——标准信封+收发件箱（agent\\cache\\a2a），同 id 幂等、done 守门防重投，本地文件通道 v1；ABAC 新增 strict 模式——策略文件声明 \"mode\":\"strict\" 后无命中规则默认拒绝（存量 permissive 不变）；内置只读工具扩至 14 个，评测基线 21/21（含 tool_error 拒绝路径锚型））\n> 最后更新：2026-11-22 P3 收口（智能执行层接入调度层：新任务 agent-patrol-daily（command 型，执行 agent\\run_patrol.py → DAG daily-patrol，run_task 端到端验证 PASS）；平台运维手册 agent\\README.md（模块清单/配置文件/常用命令/升级路线）；桌面自动化排期建议 09:00，确认创建后回填 automationId，wiringDeferred 已声明）\n> 最后更新：2026-11-22 评测扩充（评测基线 16→21 例，进入路线图 20~50 口径：新增 tool_error 拒绝路径断言型——未注册连接器/白名单外路径/缺失 DAG 规格/非法 agent 四类治理锚，门禁误改开时在评测层暴露；audit 自检改尾行指纹断言（对并发追加与日志截断健壮）；demo-httpbin 示例连接器落位；deploy-audit 只读复核：agent-patrol-daily 登记无误报，command 入口可用+今日已运行）\n> 最后更新：2026-11-22 A² Gateway 治理补齐（a2a.send 增加两道接点：进程内滑动窗口限流——A2A_RATE_MAX/A2A_RATE_WIN 环境变量可调，默认 30 次/60s，超限审计 a2a.rate_limited；ABAC 鉴权——主体=from_agent、资源=a2a.send，permissive 默认放行存量不变，deny 规则可精确禁运某 Agent 外发；路线图 P2「Agent 间调用统一鉴权与限流」对齐，自检 16 模块 PASS、评测 21/21 不变）\n> 最后更新：2026-11-22 P1 沙箱运行时补齐（agent 层新增 sandbox——路线图 P1「代码执行/文件操作隔离，会话托管」落地项：python -I 隔离子进程执行、环境变量白名单四项、工作目录围栏 agent\\cache\\sandbox\\<session>\\、静态危险模式拦截（网络/二次派生/ctypes/rmtree）、代码 32KB/输出 64KB/超时 120s 上限，meta.json 会话托管+TTL 清理；写类工具 sandbox_run 仅 AGENT_ALLOW_WRITE=1 时登记、调用仍过 ABAC，路线图 P1「写操作 100% 过审批」由 HITL 承接；自检扩至 17 项，评测 21/21 不变）\n> 最后更新：2026-11-22 评测 21→22（新增 tool_error 锚：沙箱写类工具默认拒登记——AGENT_ALLOW_WRITE 误开时评测层立即暴露；运维手册 agent\\README.md 已入知识语料白名单，运营问题可检索命中；巡检自动化单条重建并回填 automationId，部署审计 PASS 81/警8/败0）\n> 最后更新：2026-11-22 灰度自动回滚落地（P2 验收门禁「评测不过不发布，异常自动回滚」对齐：canary 增运行时回滚态 disable/enable（agent\\cache\\canary_state.json，优先级高于灰度配置）；dag 执行前增评测守门——基线未全过→自动回滚 dag_run 并拒绝执行，守门可重入保护防自嵌套（评测用例本身含 dag_run）；自检注入失败基线验证自动回滚，17 模块 PASS、评测 22/22；run_patrol 端到端 exit 0 未误回滚）\n> 最后更新：2026-11-22 写操作 100% HITL 执行层闭环（P1 验收门禁对齐：call_tool 对写类工具强制「已批准且未消耗的 HITL 单」（args.hitl_id，action 须匹配 tool:<name> 防跨工具重用）；无单/单无效 → 自动创建待审单并拒绝执行；执行成功消耗批准单（一单一执行）；自检覆盖全链路：无单挂起→批准携单执行→复用拒绝→跨工具拒绝，17 模块 PASS、评测 22/22；写链路四层齐备：登记门禁（默认拒）→ AGENT_ALLOW_WRITE 显式开放 → ABAC → HITL 批准单）\n> 最后更新：2026-11-22 P3 ABAC strict 收口（评测基线 22→25：新增 abac 纯策略层用例型——strict 默认拒绝/命中 allow 放行/deny 优先三类判定语义全显式注入确定性判定，策略文件被误改时在评测层暴露；策略模板 agent\\policy\\policies.json.example 落位（strict 示例+规则语义注释，复制为 policies.json 才生效，文件缺失仍内置默认 permissive 存量零回归）；HITL 改动端到端零回归复核：run_patrol 3 节点 ok、部署审计只读 PASS 81/警8/败0；17 模块 PASS、评测 25/25）\n> 最后更新：2026-11-22 审计防篡改哈希链（每条记录带 prev（文件内前一条哈希）+h（sha256(prev+body) 截 32 位，body 含 prev——篡改 prev 同样断链）；prev 由写入前读文件尾部≤64KB 取末条 h，跨进程链连续；verify() 逐条重算校验报 bad_at；旧格式记录宽容跳过重置链头（存量零回归，真实日志 17357 行新旧混合全量校验 ok）；轮转后新文件链重起各自成链；自检新增真实文件校验+临时目录篡改检测（改动第 2 条→报 bad_at=1）；已知限制：多进程并发写极端交错下链可分叉（verify 报断点人工定位），本工程单写者部署已验证无分叉；run_patrol 3 节点 ok、部署审计只读 PASS 81/警8/败0 复核零回归）\n> 最后更新：2026-11-22 审计链校验接入每日巡检（新增只读工具 audi\n…（内容过长已截断，全文见工作区文件）",
         "outline": [
           "mtcapacity 工程结构统一规范",
           "一、八层架构（目录 = 架构）",
@@ -10047,7 +10300,7 @@
           "九、变更 SOP（改任何东西前看这里）",
           "十、前端渲染层现状与可优化点（2026-11-03）"
         ],
-        "chars": 14562,
+        "chars": 19733,
         "truncated": true,
         "mtime": "2026-11-22"
       },
