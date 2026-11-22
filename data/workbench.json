@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-22 00:32:02",
+  "generatedAt": "2026-11-22 00:46:58",
   "runDate": "2026-11-22",
   "tasks": [
     {
@@ -895,11 +895,11 @@
       "entry": "python daily_pipeline.py",
       "note": "六步管线（R602 缩编；ARCHITECTURE.md 八步描述待修订）：关键步骤2-5失败即停；步骤1/6失败仅告警；数据源未发布时用日期参数按最近可得日期重跑。R694 P0-2：①运行态核证自动化=ACTIVE（此前 note 的「转 manual/PAUSED」系 R572 旧态，11-14 已恢复，登记向运行态对齐）；②错峰 09:00→12:30——capacity 发布段已收编 build.lock（P0-1 publish_locked.ps1），错峰再消除与 kaohe 主跑拖尾/自愈的持锁排队等待；R195 口径：登记与运行态真源对齐；R695（2026-11-19）：R694 错峰 12:30 与运行态 rrule 08:30 失联（T110 双轨收敛+ schedRegistry 锚双红），登记 trigger/expectHour 12:30/12 → 08:30/8 向运行态收敛。2026-11-19 主定时器断链修复（prompt 截断 19 字符+工作目录漂移，11-17 起未触发），同日按审计 R349 处置指引增配自愈伴生任务 capacity-daily-selfheal（jHnUwbTiBN_abUzfBHUKB）",
       "last": {
-        "status": "FAIL",
-        "exitCode": 1,
-        "finishedAt": "2026-11-22 08:32:00",
-        "durationSec": 120,
-        "note": "manual 数据日期 2026-11-21"
+        "status": "PASS",
+        "exitCode": 0,
+        "finishedAt": "2026-11-22 08:40:03",
+        "durationSec": 357.1,
+        "note": ""
       },
       "monitor": {
         "cadence": "daily",
@@ -912,24 +912,13 @@
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-22 08:30"
+        "lastRunAt": "2026-11-22 08:40"
       },
       "heal": {
         "can": true,
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id capacity-daily）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-11-07 11:32:10",
-          "durationSec": 40
-        },
-        {
-          "status": "PASS",
-          "finishedAt": "2026-11-08 10:44:11",
-          "durationSec": null,
-          "note": "manual 数据日期 2026-11-06"
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-11-08 10:44:12",
@@ -1210,6 +1199,17 @@
           "finishedAt": "2026-11-22 08:32:00",
           "durationSec": 120,
           "note": "manual 数据日期 2026-11-21"
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-22 08:40:03",
+          "durationSec": 603,
+          "note": "manual 数据日期 2026-11-18"
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-22 08:40:03",
+          "durationSec": 357.1
         }
       ],
       "gaps": {
@@ -1272,7 +1272,7 @@
           },
           {
             "date": "2026-11-07",
-            "state": "pass"
+            "state": "pre"
           },
           {
             "date": "2026-11-08",
@@ -1332,17 +1332,15 @@
           },
           {
             "date": "2026-11-22",
-            "state": "fail"
+            "state": "pass"
           }
         ],
-        "firstDate": "2026-11-07",
+        "firstDate": "2026-11-08",
         "gapCount": 4,
-        "failCount": 1,
+        "failCount": 0,
         "passCount": 11
       },
       "durTrend": [
-        599,
-        53,
         997,
         767,
         7145,
@@ -1354,7 +1352,9 @@
         1996,
         3458,
         573,
-        120
+        120,
+        603,
+        357
       ]
     },
     {
@@ -3612,7 +3612,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "11/13 任务正常 · 2 失败 · 近 30 天触发断档 8 天"
+      "detail": "12/13 任务正常 · 1 失败 · 近 30 天触发断档 8 天"
     },
     {
       "layer": "部署层",
@@ -3645,11 +3645,11 @@
       "recent": [
         {
           "name": "capacity-daily.json",
-          "mtime": "2026-11-21 01:35",
+          "mtime": "2026-11-22 00:36",
           "size": 411132
         }
       ],
-      "ageHours": 22,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-18",
@@ -4275,7 +4275,7 @@
             }
           ]
         },
-        "ageH": 55,
+        "ageH": 56,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 28
@@ -4329,7 +4329,7 @@
             }
           ]
         },
-        "ageH": 83,
+        "ageH": 84,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 48
@@ -4545,7 +4545,7 @@
             }
           ]
         },
-        "ageH": 134,
+        "ageH": 135,
         "totalH": 1,
         "deltaH": 0,
         "gapH": 1
@@ -4599,7 +4599,7 @@
             }
           ]
         },
-        "ageH": 135,
+        "ageH": 136,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 57
@@ -4815,7 +4815,7 @@
             }
           ]
         },
-        "ageH": 193,
+        "ageH": 194,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -4869,7 +4869,7 @@
             }
           ]
         },
-        "ageH": 193,
+        "ageH": 194,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5139,7 +5139,7 @@
             }
           ]
         },
-        "ageH": 296,
+        "ageH": 297,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5409,7 +5409,7 @@
             }
           ]
         },
-        "ageH": 297,
+        "ageH": 298,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5463,7 +5463,7 @@
             }
           ]
         },
-        "ageH": 297,
+        "ageH": 298,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5625,7 +5625,7 @@
             }
           ]
         },
-        "ageH": 301,
+        "ageH": 302,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -5733,7 +5733,7 @@
             }
           ]
         },
-        "ageH": 302,
+        "ageH": 303,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -5787,7 +5787,7 @@
             }
           ]
         },
-        "ageH": 303,
+        "ageH": 304,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -5949,7 +5949,7 @@
             }
           ]
         },
-        "ageH": 305,
+        "ageH": 306,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -7322,7 +7322,7 @@
         "name": "r555-third-orchestrated",
         "pct": 80,
         "sev": "",
-        "ageH": 305
+        "ageH": 306
       },
       {
         "name": "r556-legacy-and-xsp",
@@ -7340,13 +7340,13 @@
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 303
+        "ageH": 304
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 302
+        "ageH": 303
       },
       {
         "name": "r560-lib-readme-roster",
@@ -7358,7 +7358,7 @@
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 301
+        "ageH": 302
       },
       {
         "name": "r562-monitor-aggregate-wiring",
@@ -7376,13 +7376,13 @@
         "name": "r564-pull-trace-wiring",
         "pct": 80,
         "sev": "",
-        "ageH": 297
+        "ageH": 298
       },
       {
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 297
+        "ageH": 298
       },
       {
         "name": "r566-dark-patrol",
@@ -7412,7 +7412,7 @@
         "name": "r570-pending-card-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 296
+        "ageH": 297
       },
       {
         "name": "r571-style-unify",
@@ -7442,13 +7442,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r589-prompt-guard",
@@ -7472,13 +7472,13 @@
         "name": "r632-teamflow-optimize",
         "pct": 100,
         "sev": "done",
-        "ageH": 135
+        "ageH": 136
       },
       {
         "name": "r644-teamflow-p2",
         "pct": 80,
         "sev": "done",
-        "ageH": 134
+        "ageH": 135
       },
       {
         "name": "r645-teamflow-p2b",
@@ -7502,13 +7502,13 @@
         "name": "r676-ux-checkup-reports",
         "pct": 0,
         "sev": "",
-        "ageH": 83
+        "ageH": 84
       },
       {
         "name": "r716-orch",
         "pct": 60,
         "sev": "warn",
-        "ageH": 55
+        "ageH": 56
       },
       {
         "name": "r718-orch",
@@ -7603,11 +7603,11 @@
       },
       {
         "name": "r588-prose-cleanup",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r587-metrics-struct",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r586-orchestration-promote",
@@ -7627,7 +7627,7 @@
       },
       {
         "name": "r570-pending-card-exempt",
-        "ageH": 296
+        "ageH": 297
       },
       {
         "name": "r569-heal-intent-exempt",
@@ -7647,11 +7647,11 @@
       },
       {
         "name": "r565-visual-patrol",
-        "ageH": 297
+        "ageH": 298
       },
       {
         "name": "r564-pull-trace-wiring",
-        "ageH": 297
+        "ageH": 298
       },
       {
         "name": "r563-audit-regression-lock",
@@ -7663,7 +7663,7 @@
       },
       {
         "name": "r561-patrol-trace-wiring",
-        "ageH": 301
+        "ageH": 302
       },
       {
         "name": "r560-lib-readme-roster",
@@ -7671,11 +7671,11 @@
       },
       {
         "name": "r559-alert-history",
-        "ageH": 302
+        "ageH": 303
       },
       {
         "name": "r558-b1-capacity-resume",
-        "ageH": 303
+        "ageH": 304
       },
       {
         "name": "r557-plan-closeout",
@@ -7687,7 +7687,7 @@
       },
       {
         "name": "r555-third-orchestrated",
-        "ageH": 305
+        "ageH": 306
       },
       {
         "name": "r554-archmode-agentroles",
@@ -7700,11 +7700,6 @@
     ]
   },
   "alerts": [
-    {
-      "level": "FAIL",
-      "text": "任务失败：通用运力监控每日刷新（2026-11-22 08:32:00 · manual 数据日期 2026-11-21）——可用 run_task.ps1 -Auto / -Id capacity-daily 重跑",
-      "anchor": "sec-tasks"
-    },
     {
       "level": "FAIL",
       "text": "任务失败：骑手看板每日巡检（2026-11-21 12:11:27 · ③数据抽查FAIL: rider-index/detail last_day=2026-11-19(应为11-20), 源gen_time仍r3·2026-11-20 11:10, 上游骑手板日更未产出11-20数据; ①回归PASS(首轮2例红系11:51并发编辑中间态, 复验1814/1814全绿); ②线上门禁PASS(指纹+探针一致,11页冒烟全过)）",
@@ -7724,6 +7719,11 @@
       "level": "WARN",
       "text": "看板数据滞后：通用运力监控 数据日期 2026-11-18（滞后 4 天，超 2 天）——疑似源停发第 5 天（自 2026-11-18 起）；确认源批次投递，缺失源补投后按最近可得日期重跑即自动补齐",
       "anchor": "sec-fresh"
+    },
+    {
+      "level": "FAIL",
+      "text": "体积超预算：JS/CSS 总量 1780KB > 预算 1768KB——perf-gate 已拦截，瘦身后重跑（调预算需评审）",
+      "anchor": "sec-perf"
     },
     {
       "level": "WARN",
@@ -7921,8 +7921,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "98c8bcf0",
-        "at": "2026-11-22T08:30:05+08:00",
+        "hash": "43fe261b",
+        "at": "2026-11-22T08:38:48+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -9688,7 +9688,7 @@
     },
     {
       "date": "2026-11-22",
-      "at": "2026-11-22 00:32:02",
+      "at": "2026-11-22 00:46:58",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9801,7 +9801,7 @@
   "perf": {
     "assets": {
       "count": 106,
-      "totalKB": 1767.1,
+      "totalKB": 1780.1,
       "top": [
         {
           "name": "vendor-echarts-DyZQEMzr.js",
@@ -9820,26 +9820,26 @@
           "kb": 73.2
         },
         {
-          "name": "swRegister-D8cSMcE6.css",
-          "kb": 64.8
+          "name": "workbench-CPnSM_Cx.js",
+          "kb": 65.7
         },
         {
-          "name": "workbench-BYc_F1wZ.js",
-          "kb": 58.4
+          "name": "swRegister-D8cSMcE6.css",
+          "kb": 64.8
         },
         {
           "name": "swRegister-CQbFmDj4.js",
           "kb": 47.3
         },
         {
-          "name": "MonthlyTab-BROQisst.js",
-          "kb": 41
+          "name": "workbench-hUDX0YUn.css",
+          "kb": 44.2
         }
       ]
     },
     "data": {
       "count": 16,
-      "totalKB": 2773.8,
+      "totalKB": 2774.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -9859,7 +9859,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 306
+          "kb": 306.6
         },
         {
           "name": "rider-agreements.json",
@@ -9921,8 +9921,15 @@
       "totalDailyKB": 30000,
       "maxDailyKB": 4500
     },
-    "breaches": [],
-    "status": "PASS"
+    "breaches": [
+      {
+        "key": "totalAssetsKB",
+        "label": "JS/CSS 总量",
+        "actualKB": 1780.1,
+        "budgetKB": 1768
+      }
+    ],
+    "status": "FAIL"
   },
   "knowledge": [
     {
