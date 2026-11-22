@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-22 00:29:57",
+  "generatedAt": "2026-11-22 00:32:02",
   "runDate": "2026-11-22",
   "tasks": [
     {
@@ -895,36 +895,30 @@
       "entry": "python daily_pipeline.py",
       "note": "六步管线（R602 缩编；ARCHITECTURE.md 八步描述待修订）：关键步骤2-5失败即停；步骤1/6失败仅告警；数据源未发布时用日期参数按最近可得日期重跑。R694 P0-2：①运行态核证自动化=ACTIVE（此前 note 的「转 manual/PAUSED」系 R572 旧态，11-14 已恢复，登记向运行态对齐）；②错峰 09:00→12:30——capacity 发布段已收编 build.lock（P0-1 publish_locked.ps1），错峰再消除与 kaohe 主跑拖尾/自愈的持锁排队等待；R195 口径：登记与运行态真源对齐；R695（2026-11-19）：R694 错峰 12:30 与运行态 rrule 08:30 失联（T110 双轨收敛+ schedRegistry 锚双红），登记 trigger/expectHour 12:30/12 → 08:30/8 向运行态收敛。2026-11-19 主定时器断链修复（prompt 截断 19 字符+工作目录漂移，11-17 起未触发），同日按审计 R349 处置指引增配自愈伴生任务 capacity-daily-selfheal（jHnUwbTiBN_abUzfBHUKB）",
       "last": {
-        "status": "PASS",
-        "exitCode": 0,
-        "finishedAt": "2026-11-21 09:44:40",
-        "durationSec": 572.5,
-        "note": ""
+        "status": "FAIL",
+        "exitCode": 1,
+        "finishedAt": "2026-11-22 08:32:00",
+        "durationSec": 120,
+        "note": "manual 数据日期 2026-11-21"
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 08:30 主跑 + 10:00 发布自愈（R695 运行态对齐：自动化 G_ndbjAhhr6_cS7hbbZpO rrule=BYHOUR=8;BYMINUTE=30；R694 错峰 12:30 只落登记未落运行态致双轨失联，按 R195/R694「运行态为准」收敛）",
         "expectHour": 8,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
       },
       "timer": {
         "state": "ok",
-        "lastRunAt": "2026-11-21 08:47"
+        "lastRunAt": "2026-11-22 08:30"
       },
       "heal": {
         "can": true,
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id capacity-daily）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-11-07 11:32:10",
-          "durationSec": null,
-          "note": "manual 数据日期 2026-11-06"
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-11-07 11:32:10",
@@ -1210,6 +1204,12 @@
           "status": "PASS",
           "finishedAt": "2026-11-21 09:44:40",
           "durationSec": 572.5
+        },
+        {
+          "status": "FAIL",
+          "finishedAt": "2026-11-22 08:32:00",
+          "durationSec": 120,
+          "note": "manual 数据日期 2026-11-21"
         }
       ],
       "gaps": {
@@ -1332,16 +1332,15 @@
           },
           {
             "date": "2026-11-22",
-            "state": "gap"
+            "state": "fail"
           }
         ],
         "firstDate": "2026-11-07",
-        "gapCount": 5,
-        "failCount": 0,
+        "gapCount": 4,
+        "failCount": 1,
         "passCount": 11
       },
       "durTrend": [
-        491,
         599,
         53,
         997,
@@ -1354,7 +1353,8 @@
         807,
         1996,
         3458,
-        573
+        573,
+        120
       ]
     },
     {
@@ -3612,7 +3612,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "12/13 任务正常 · 1 失败 · 近 30 天触发断档 9 天"
+      "detail": "11/13 任务正常 · 2 失败 · 近 30 天触发断档 8 天"
     },
     {
       "layer": "部署层",
@@ -4437,7 +4437,7 @@
             }
           ]
         },
-        "ageH": 132,
+        "ageH": 133,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 1
@@ -5031,7 +5031,7 @@
             }
           ]
         },
-        "ageH": 199,
+        "ageH": 200,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 76
@@ -6057,7 +6057,7 @@
             }
           ]
         },
-        "ageH": 306,
+        "ageH": 307,
         "totalH": 0,
         "deltaH": null,
         "gapH": null
@@ -7310,7 +7310,7 @@
         "name": "r553-rup-first-run",
         "pct": 80,
         "sev": "",
-        "ageH": 306
+        "ageH": 307
       },
       {
         "name": "r554-archmode-agentroles",
@@ -7424,7 +7424,7 @@
         "name": "r584-monitor-heartbeat",
         "pct": 80,
         "sev": "",
-        "ageH": 199
+        "ageH": 200
       },
       {
         "name": "r585-heal-trace",
@@ -7490,7 +7490,7 @@
         "name": "r646-teamflow-p2c",
         "pct": 80,
         "sev": "done",
-        "ageH": 132
+        "ageH": 133
       },
       {
         "name": "r647-legacy-exempt",
@@ -7619,7 +7619,7 @@
       },
       {
         "name": "r584-monitor-heartbeat",
-        "ageH": 199
+        "ageH": 200
       },
       {
         "name": "r571-style-unify",
@@ -7695,11 +7695,16 @@
       },
       {
         "name": "r553-rup-first-run",
-        "ageH": 306
+        "ageH": 307
       }
     ]
   },
   "alerts": [
+    {
+      "level": "FAIL",
+      "text": "任务失败：通用运力监控每日刷新（2026-11-22 08:32:00 · manual 数据日期 2026-11-21）——可用 run_task.ps1 -Auto / -Id capacity-daily 重跑",
+      "anchor": "sec-tasks"
+    },
     {
       "level": "FAIL",
       "text": "任务失败：骑手看板每日巡检（2026-11-21 12:11:27 · ③数据抽查FAIL: rider-index/detail last_day=2026-11-19(应为11-20), 源gen_time仍r3·2026-11-20 11:10, 上游骑手板日更未产出11-20数据; ①回归PASS(首轮2例红系11:51并发编辑中间态, 复验1814/1814全绿); ②线上门禁PASS(指纹+探针一致,11页冒烟全过)）",
@@ -7708,7 +7713,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：5 个任务近 30 天共 9 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 1 天 · 通用运力监控每日刷新 5 天 · 骑手解约数据检查与刷新 1 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：5 个任务近 30 天共 8 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 1 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -7916,8 +7921,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "963fc1c5",
-        "at": "2026-11-22T08:28:00+08:00",
+        "hash": "98c8bcf0",
+        "at": "2026-11-22T08:30:05+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -9683,7 +9688,7 @@
     },
     {
       "date": "2026-11-22",
-      "at": "2026-11-22 00:29:57",
+      "at": "2026-11-22 00:32:02",
       "score": 68,
       "grade": "中",
       "layers": [
