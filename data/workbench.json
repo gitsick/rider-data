@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-22 00:19:35",
+  "generatedAt": "2026-11-22 00:27:16",
   "runDate": "2026-11-22",
   "tasks": [
     {
@@ -3951,7 +3951,7 @@
             }
           ]
         },
-        "ageH": 21,
+        "ageH": 22,
         "totalH": 51,
         "deltaH": -7,
         "gapH": 0
@@ -4005,7 +4005,7 @@
             }
           ]
         },
-        "ageH": 21,
+        "ageH": 22,
         "totalH": 58,
         "deltaH": 58,
         "gapH": 1
@@ -4167,7 +4167,7 @@
             }
           ]
         },
-        "ageH": 45,
+        "ageH": 46,
         "totalH": 813,
         "deltaH": 813,
         "gapH": 9
@@ -4923,7 +4923,7 @@
             }
           ]
         },
-        "ageH": 193,
+        "ageH": 194,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5193,7 +5193,7 @@
             }
           ]
         },
-        "ageH": 296,
+        "ageH": 297,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -7406,7 +7406,7 @@
         "name": "r569-heal-intent-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 296
+        "ageH": 297
       },
       {
         "name": "r570-pending-card-exempt",
@@ -7436,7 +7436,7 @@
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r587-metrics-struct",
@@ -7520,7 +7520,7 @@
         "name": "20261017-efficiency-naming",
         "pct": 60,
         "sev": "",
-        "ageH": 45
+        "ageH": 46
       },
       {
         "name": "r722-theme",
@@ -7538,13 +7538,13 @@
         "name": "r683-kaohe-monthly-ux",
         "pct": 100,
         "sev": "done",
-        "ageH": 21
+        "ageH": 22
       },
       {
         "name": "r684-kaohe-module-data",
         "pct": 100,
         "sev": "done",
-        "ageH": 21
+        "ageH": 22
       }
     ],
     "stall": {
@@ -7611,7 +7611,7 @@
       },
       {
         "name": "r586-orchestration-promote",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r585-heal-trace",
@@ -7631,7 +7631,7 @@
       },
       {
         "name": "r569-heal-intent-exempt",
-        "ageH": 296
+        "ageH": 297
       },
       {
         "name": "r568-audit-trace-surface",
@@ -7916,8 +7916,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "40205dbf",
-        "at": "2026-11-22T08:15:33+08:00",
+        "hash": "cc4a740b",
+        "at": "2026-11-22T08:21:52+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -9671,7 +9671,7 @@
     },
     {
       "date": "2026-11-22",
-      "at": "2026-11-22 00:19:35",
+      "at": "2026-11-22 00:27:16",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9822,7 +9822,7 @@
     },
     "data": {
       "count": 16,
-      "totalKB": 2773.8,
+      "totalKB": 2773.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -9842,7 +9842,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 306
+          "kb": 305.7
         },
         {
           "name": "rider-agreements.json",
