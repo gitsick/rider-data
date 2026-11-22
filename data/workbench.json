@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-22 00:27:24",
+  "generatedAt": "2026-11-22 00:29:57",
   "runDate": "2026-11-22",
   "tasks": [
     {
@@ -3235,7 +3235,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: cc4a740b 2026-11-22 08:21:52 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 963fc1c5 2026-11-22 08:28:00 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3250,7 +3250,7 @@
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（32 小时前生成）"
+        "msg": "单文件产物存在（33 小时前生成）"
       },
       {
         "level": "PASS",
@@ -3530,7 +3530,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 08:27:22 替换，含 3 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 08:27:59 替换，含 1 文件）"
       },
       {
         "level": "PASS",
@@ -4707,7 +4707,7 @@
             }
           ]
         },
-        "ageH": 192,
+        "ageH": 193,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -7460,7 +7460,7 @@
         "name": "r590-note-label",
         "pct": 20,
         "sev": "",
-        "ageH": 192
+        "ageH": 193
       },
       {
         "name": "r591-trace-guard",
@@ -7595,7 +7595,7 @@
       },
       {
         "name": "r590-note-label",
-        "ageH": 192
+        "ageH": 193
       },
       {
         "name": "r589-prompt-guard",
@@ -7916,8 +7916,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "cc4a740b",
-        "at": "2026-11-22T08:21:52+08:00",
+        "hash": "963fc1c5",
+        "at": "2026-11-22T08:28:00+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -9683,7 +9683,7 @@
     },
     {
       "date": "2026-11-22",
-      "at": "2026-11-22 00:27:24",
+      "at": "2026-11-22 00:29:57",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9834,7 +9834,7 @@
     },
     "data": {
       "count": 16,
-      "totalKB": 2773.5,
+      "totalKB": 2773.8,
       "top": [
         {
           "name": "rider_base.json",
@@ -9854,7 +9854,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 305.7
+          "kb": 306
         },
         {
           "name": "rider-agreements.json",
