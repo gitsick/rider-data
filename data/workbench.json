@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-22 00:27:16",
+  "generatedAt": "2026-11-22 00:27:24",
   "runDate": "2026-11-22",
   "tasks": [
     {
@@ -3235,7 +3235,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: 3d6c9f12 2026-11-22 08:13:50 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: cc4a740b 2026-11-22 08:21:52 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3530,7 +3530,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 08:13:47 替换，含 1 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-22 08:27:22 替换，含 3 文件）"
       },
       {
         "level": "PASS",
@@ -3624,7 +3624,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-22 08:19:34）"
+      "detail": "上轮全链 12 段全过（2026-11-22 08:27:17）"
     },
     {
       "layer": "项目层",
@@ -8388,10 +8388,10 @@
     }
   },
   "gates": {
-    "runAt": "2026-11-22 08:19:34",
+    "runAt": "2026-11-22 08:27:17",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -8452,17 +8452,22 @@
         "pass": true,
         "seconds": 29.2,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 352.6,
+        "note": "拷贝回验 161 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 109.3,
+        "note": "指纹+探针 assets/WbAuditCard-abpkNNnG.js 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-21 20:33:35",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 447.2,
-      "fails": []
-    },
     {
       "runAt": "2026-11-21 21:14:20",
       "scope": "pre-deploy",
@@ -8664,6 +8669,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 114.4,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-22 08:27:17",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 576.3,
       "fails": []
     }
   ],
@@ -9671,7 +9683,7 @@
     },
     {
       "date": "2026-11-22",
-      "at": "2026-11-22 00:27:16",
+      "at": "2026-11-22 00:27:24",
       "score": 68,
       "grade": "中",
       "layers": [
