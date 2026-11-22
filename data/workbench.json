@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-22 01:20:25",
+  "generatedAt": "2026-11-22 01:29:19",
   "runDate": "2026-11-22",
   "tasks": [
     {
@@ -1400,15 +1400,15 @@
       "last": {
         "status": "PASS",
         "exitCode": 0,
-        "finishedAt": "2026-11-21 07:55:41",
-        "durationSec": 2676,
+        "finishedAt": "2026-11-22 09:21:52",
+        "durationSec": 700,
         "note": ""
       },
       "monitor": {
         "cadence": "daily",
         "trigger": "每日 16:00",
         "expectHour": 16,
-        "doneToday": false,
+        "doneToday": true,
         "expect": true,
         "overdue": false,
         "overdueText": ""
@@ -1422,12 +1422,6 @@
         "text": "可自动补跑：pwsh sched\\run_task.ps1 -Auto（或 -Id rider-hourly）；带日期参数的任务自动复用最近成功数据日期"
       },
       "history": [
-        {
-          "status": "PASS",
-          "finishedAt": "2026-11-08 11:02:42",
-          "durationSec": null,
-          "note": "多维分析四维上线(全部/区域/城市/站点)+图表增强,门禁1447全过,HEAD=a671fe7,live_gate PASS,浏览器实测四维切换与站点下钻OK"
-        },
         {
           "status": "PASS",
           "finishedAt": "2026-11-08 17:34:27",
@@ -1681,6 +1675,11 @@
           "status": "PASS",
           "finishedAt": "2026-11-21 07:55:41",
           "durationSec": 2676
+        },
+        {
+          "status": "PASS",
+          "finishedAt": "2026-11-22 09:21:52",
+          "durationSec": 700
         }
       ],
       "gaps": {
@@ -1803,16 +1802,15 @@
           },
           {
             "date": "2026-11-22",
-            "state": "gap"
+            "state": "pass"
           }
         ],
         "firstDate": "2026-11-08",
-        "gapCount": 1,
+        "gapCount": 0,
         "failCount": 0,
-        "passCount": 14
+        "passCount": 15
       },
       "durTrend": [
-        4305,
         3458,
         4583,
         2661,
@@ -1825,7 +1823,8 @@
         13188,
         13634,
         1300,
-        2676
+        2676,
+        700
       ]
     },
     {
@@ -3632,7 +3631,7 @@
       "layer": "调度层",
       "anchor": "sec-tasks",
       "status": "FAIL",
-      "detail": "12/13 任务正常 · 1 失败 · 近 30 天触发断档 8 天"
+      "detail": "12/13 任务正常 · 1 失败 · 近 30 天触发断档 7 天"
     },
     {
       "layer": "部署层",
@@ -3687,8 +3686,8 @@
       "recent": [
         {
           "name": "nov.json",
-          "mtime": "2026-11-22 00:08",
-          "size": 88379
+          "mtime": "2026-11-22 01:29",
+          "size": 89399
         },
         {
           "name": "oct.json",
@@ -3711,11 +3710,11 @@
           "size": 4282
         }
       ],
-      "ageHours": 1,
+      "ageHours": 0,
       "stale": false,
       "staleThreshold": 26,
-      "dataDate": "2026-11-20",
-      "dataLag": 2,
+      "dataDate": "2026-11-21",
+      "dataLag": 1,
       "staleData": false,
       "dataLagThreshold": 2,
       "validation": [
@@ -3971,7 +3970,7 @@
             }
           ]
         },
-        "ageH": 22,
+        "ageH": 23,
         "totalH": 51,
         "deltaH": -7,
         "gapH": 0
@@ -4025,7 +4024,7 @@
             }
           ]
         },
-        "ageH": 22,
+        "ageH": 23,
         "totalH": 58,
         "deltaH": 58,
         "gapH": 1
@@ -4187,7 +4186,7 @@
             }
           ]
         },
-        "ageH": 46,
+        "ageH": 47,
         "totalH": 813,
         "deltaH": 813,
         "gapH": 9
@@ -4727,7 +4726,7 @@
             }
           ]
         },
-        "ageH": 193,
+        "ageH": 194,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -4943,7 +4942,7 @@
             }
           ]
         },
-        "ageH": 194,
+        "ageH": 195,
         "totalH": 0,
         "deltaH": -1,
         "gapH": 0
@@ -5213,7 +5212,7 @@
             }
           ]
         },
-        "ageH": 297,
+        "ageH": 298,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -7426,7 +7425,7 @@
         "name": "r569-heal-intent-exempt",
         "pct": 20,
         "sev": "",
-        "ageH": 297
+        "ageH": 298
       },
       {
         "name": "r570-pending-card-exempt",
@@ -7456,7 +7455,7 @@
         "name": "r586-orchestration-promote",
         "pct": 40,
         "sev": "",
-        "ageH": 194
+        "ageH": 195
       },
       {
         "name": "r587-metrics-struct",
@@ -7480,7 +7479,7 @@
         "name": "r590-note-label",
         "pct": 20,
         "sev": "",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r591-trace-guard",
@@ -7540,7 +7539,7 @@
         "name": "20261017-efficiency-naming",
         "pct": 60,
         "sev": "",
-        "ageH": 46
+        "ageH": 47
       },
       {
         "name": "r722-theme",
@@ -7558,13 +7557,13 @@
         "name": "r683-kaohe-monthly-ux",
         "pct": 100,
         "sev": "done",
-        "ageH": 22
+        "ageH": 23
       },
       {
         "name": "r684-kaohe-module-data",
         "pct": 100,
         "sev": "done",
-        "ageH": 22
+        "ageH": 23
       }
     ],
     "stall": {
@@ -7615,7 +7614,7 @@
       },
       {
         "name": "r590-note-label",
-        "ageH": 193
+        "ageH": 194
       },
       {
         "name": "r589-prompt-guard",
@@ -7631,7 +7630,7 @@
       },
       {
         "name": "r586-orchestration-promote",
-        "ageH": 194
+        "ageH": 195
       },
       {
         "name": "r585-heal-trace",
@@ -7651,7 +7650,7 @@
       },
       {
         "name": "r569-heal-intent-exempt",
-        "ageH": 297
+        "ageH": 298
       },
       {
         "name": "r568-audit-trace-surface",
@@ -7728,7 +7727,7 @@
     {
       "level": "WARN",
       "anchor": "sec-tasks",
-      "text": "触发断档：5 个任务近 30 天共 8 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 1 天 · 通用运力监控每日刷新 4 天 · 骑手解约数据检查与刷新 1 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
+      "text": "触发断档：4 个任务近 30 天共 7 天零留痕（履约考核看板刷新与备份 1 天 · 新商评考核周报 1 天 · 通用运力监控每日刷新 4 天 · 骑手看板每日巡检 1 天）——断档日历已上工作台；当日缺跑由部署审计自愈兜底自动补跑（R178 -Auto），历史断档为不可补跑窗口（留观不处理）"
     },
     {
       "level": "WARN",
@@ -7936,8 +7935,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "34ad9d73",
-        "at": "2026-11-22T09:18:40+08:00",
+        "hash": "bd14c61e",
+        "at": "2026-11-22T09:20:33+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -7947,9 +7946,9 @@
       "mode": "single-file",
       "target": "legacy/delivery-assessment-dashboard.html",
       "last": {
-        "hash": "bc36121f",
-        "at": "2026-11-21T07:56:56+08:00",
-        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-20"
+        "hash": "34d2a3e0",
+        "at": "2026-11-22T09:27:08+08:00",
+        "msg": "Deploy: legacy/delivery-assessment-dashboard-2026-11.html 数据更新至 11-21"
       }
     }
   ],
@@ -9703,7 +9702,7 @@
     },
     {
       "date": "2026-11-22",
-      "at": "2026-11-22 01:20:25",
+      "at": "2026-11-22 01:29:19",
       "score": 68,
       "grade": "中",
       "layers": [
@@ -9854,7 +9853,7 @@
     },
     "data": {
       "count": 16,
-      "totalKB": 2773.6,
+      "totalKB": 2774.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -9874,7 +9873,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 305.8
+          "kb": 306.7
         },
         {
           "name": "rider-agreements.json",
