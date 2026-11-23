@@ -1,6 +1,6 @@
 {
   "schemaVer": 1,
-  "generatedAt": "2026-11-23 08:42:13",
+  "generatedAt": "2026-11-23 08:46:25",
   "runDate": "2026-11-23",
   "tasks": [
     {
@@ -3518,7 +3518,7 @@
       {
         "level": "PASS",
         "item": "仓库漂移",
-        "msg": "最新提交: d5e5616a 2026-11-23 16:10:07 +0800 Deploy: 主看板中心构建发布"
+        "msg": "最新提交: 13a67697 2026-11-23 16:42:20 +0800 Deploy: 主看板中心构建发布"
       },
       {
         "level": "PASS",
@@ -3528,12 +3528,12 @@
       {
         "level": "PASS",
         "item": "rider-data",
-        "msg": "运力监控日更数据新鲜（7 小时前刷新）"
+        "msg": "运力监控日更数据新鲜（8 小时前刷新）"
       },
       {
         "level": "PASS",
         "item": "assessment-legacy",
-        "msg": "单文件产物存在（64 小时前生成）"
+        "msg": "单文件产物存在（65 小时前生成）"
       },
       {
         "level": "PASS",
@@ -3548,7 +3548,7 @@
       {
         "level": "PASS",
         "item": "访问源",
-        "msg": "源新鲜（最新对象 2h 前）且消费同步（滞后 0h 内）"
+        "msg": "源新鲜（最新对象 0h 前）且消费同步（滞后 0h 内）"
       },
       {
         "level": "PASS",
@@ -3708,7 +3708,7 @@
       {
         "level": "WARN",
         "item": "调度配置",
-        "msg": "[kaohe-daily-selfheal] 定时器最近一次运行失败（4h 前）——排查自动化会话日志"
+        "msg": "[kaohe-daily-selfheal] 定时器最近一次运行失败（5h 前）——排查自动化会话日志"
       },
       {
         "level": "PASS",
@@ -3963,7 +3963,7 @@
       {
         "level": "PASS",
         "item": "发布清单",
-        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-23 16:10:05 替换，含 4 文件）"
+        "msg": "[rider-data] 回滚可用：整树备份在位（2026-11-23 16:42:18 替换，含 8 文件）"
       },
       {
         "level": "PASS",
@@ -4057,7 +4057,7 @@
       "layer": "门禁层",
       "anchor": "sec-gates",
       "status": "PASS",
-      "detail": "本轮发布前置 10 段全过（2026-11-23 16:42:13）"
+      "detail": "上轮全链 12 段全过（2026-11-23 16:46:18）"
     },
     {
       "layer": "项目层",
@@ -4082,7 +4082,7 @@
           "size": 411132
         }
       ],
-      "ageHours": 7,
+      "ageHours": 8,
       "stale": false,
       "staleThreshold": 26,
       "dataDate": "2026-11-18",
@@ -5248,7 +5248,7 @@
             }
           ]
         },
-        "ageH": 225,
+        "ageH": 226,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -5302,7 +5302,7 @@
             }
           ]
         },
-        "ageH": 225,
+        "ageH": 226,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 0
@@ -5842,7 +5842,7 @@
             }
           ]
         },
-        "ageH": 329,
+        "ageH": 330,
         "totalH": null,
         "deltaH": null,
         "gapH": 0
@@ -6058,7 +6058,7 @@
             }
           ]
         },
-        "ageH": 333,
+        "ageH": 334,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 1
@@ -6166,7 +6166,7 @@
             }
           ]
         },
-        "ageH": 334,
+        "ageH": 335,
         "totalH": 1,
         "deltaH": 1,
         "gapH": 1
@@ -6220,7 +6220,7 @@
             }
           ]
         },
-        "ageH": 335,
+        "ageH": 336,
         "totalH": 0,
         "deltaH": 0,
         "gapH": 2
@@ -7773,13 +7773,13 @@
         "name": "r558-b1-capacity-resume",
         "pct": 40,
         "sev": "",
-        "ageH": 335
+        "ageH": 336
       },
       {
         "name": "r559-alert-history",
         "pct": 80,
         "sev": "",
-        "ageH": 334
+        "ageH": 335
       },
       {
         "name": "r560-lib-readme-roster",
@@ -7791,7 +7791,7 @@
         "name": "r561-patrol-trace-wiring",
         "pct": 40,
         "sev": "",
-        "ageH": 333
+        "ageH": 334
       },
       {
         "name": "r562-monitor-aggregate-wiring",
@@ -7815,7 +7815,7 @@
         "name": "r565-visual-patrol",
         "pct": 20,
         "sev": "",
-        "ageH": 329
+        "ageH": 330
       },
       {
         "name": "r566-dark-patrol",
@@ -7875,13 +7875,13 @@
         "name": "r587-metrics-struct",
         "pct": 60,
         "sev": "",
-        "ageH": 225
+        "ageH": 226
       },
       {
         "name": "r588-prose-cleanup",
         "pct": 20,
         "sev": "",
-        "ageH": 225
+        "ageH": 226
       },
       {
         "name": "r589-prompt-guard",
@@ -8014,11 +8014,11 @@
       },
       {
         "name": "r588-prose-cleanup",
-        "ageH": 225
+        "ageH": 226
       },
       {
         "name": "r587-metrics-struct",
-        "ageH": 225
+        "ageH": 226
       },
       {
         "name": "r586-orchestration-promote",
@@ -8058,7 +8058,7 @@
       },
       {
         "name": "r565-visual-patrol",
-        "ageH": 329
+        "ageH": 330
       },
       {
         "name": "r564-pull-trace-wiring",
@@ -8074,7 +8074,7 @@
       },
       {
         "name": "r561-patrol-trace-wiring",
-        "ageH": 333
+        "ageH": 334
       },
       {
         "name": "r560-lib-readme-roster",
@@ -8082,11 +8082,11 @@
       },
       {
         "name": "r559-alert-history",
-        "ageH": 334
+        "ageH": 335
       },
       {
         "name": "r558-b1-capacity-resume",
-        "ageH": 335
+        "ageH": 336
       },
       {
         "name": "r557-plan-closeout",
@@ -8332,8 +8332,8 @@
       "mode": "mpa",
       "target": "多页站点 + assets/data",
       "last": {
-        "hash": "58925a0f",
-        "at": "2026-11-23T16:19:38+08:00",
+        "hash": "13a67697",
+        "at": "2026-11-23T16:42:20+08:00",
         "msg": "Deploy: 主看板中心构建发布"
       }
     },
@@ -8779,10 +8779,10 @@
     }
   },
   "gates": {
-    "runAt": "2026-11-23 16:42:13",
+    "runAt": "2026-11-23 16:46:18",
     "allPass": true,
-    "scope": "pre-deploy",
-    "label": "本轮发布前置快照（构建+门禁；部署与线上回验随链末补发上站）",
+    "scope": "complete",
+    "label": "全链快照（含部署与线上回验）",
     "stages": [
       {
         "name": "visits",
@@ -8843,17 +8843,22 @@
         "pass": true,
         "seconds": 44.7,
         "note": ""
+      },
+      {
+        "name": "deploy",
+        "pass": true,
+        "seconds": 35.2,
+        "note": "拷贝回验 161 文件 repo≡dist（MD5）"
+      },
+      {
+        "name": "live_gate",
+        "pass": true,
+        "seconds": 209.8,
+        "note": "指纹+探针 data/visits.json 生效；11 页线上冒烟全过"
       }
     ]
   },
   "gatesHistory": [
-    {
-      "runAt": "2026-11-22 09:20:17",
-      "scope": "complete",
-      "allPass": true,
-      "totalSec": 500.5,
-      "fails": []
-    },
     {
       "runAt": "2026-11-22 10:07:55",
       "scope": "pre-deploy",
@@ -9055,6 +9060,13 @@
       "scope": "pre-deploy",
       "allPass": true,
       "totalSec": 150.2,
+      "fails": []
+    },
+    {
+      "runAt": "2026-11-23 16:46:18",
+      "scope": "complete",
+      "allPass": true,
+      "totalSec": 395.2,
       "fails": []
     }
   ],
@@ -10090,7 +10102,7 @@
     },
     {
       "date": "2026-11-23",
-      "at": "2026-11-23 08:42:13",
+      "at": "2026-11-23 08:46:25",
       "score": 80,
       "grade": "良",
       "layers": [
@@ -10241,7 +10253,7 @@
     },
     "data": {
       "count": 16,
-      "totalKB": 2804.8,
+      "totalKB": 2804.5,
       "top": [
         {
           "name": "rider_base.json",
@@ -10261,7 +10273,7 @@
         },
         {
           "name": "workbench.json",
-          "kb": 320.8
+          "kb": 320.5
         },
         {
           "name": "rider-agreements.json",
